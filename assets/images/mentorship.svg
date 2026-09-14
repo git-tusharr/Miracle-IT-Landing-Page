@@ -1,0 +1,35 @@
+<svg width="600" height="380" viewBox="0 0 600 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="380" rx="12" fill="#0B132B"/>
+  <!-- Top Bar -->
+  <rect width="600" height="38" fill="#1E293B"/>
+  <circle cx="24" cy="19" r="6" fill="#EF4444"/>
+  <circle cx="44" cy="19" r="6" fill="#F59E0B"/>
+  <circle cx="64" cy="19" r="6" fill="#10B981"/>
+  <text x="300" y="24" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="12" font-weight="600" text-anchor="middle">1-on-1 Mentorship & Code Review Session — Miracle IT Bhopal</text>
+
+  <!-- Collaborative Discussion Card -->
+  <rect x="40" y="60" width="520" height="230" rx="10" fill="#0F172A" stroke="#1E293B" stroke-width="1.5"/>
+
+  <!-- Left: Code Review Card -->
+  <rect x="65" y="85" width="225" height="180" rx="6" fill="#030712" stroke="#334155"/>
+  <text x="80" y="110" fill="#38BDF8" font-family="'Inter', monospace" font-size="10" font-weight="bold">BUG DEBUGGING REVIEW</text>
+  <path d="M80 130 H250 M80 145 H200" stroke="#64748B" stroke-width="2" stroke-linecap="round"/>
+  <rect x="80" y="160" width="190" height="32" rx="4" fill="#7F1D1D"/>
+  <text x="90" y="180" fill="#FCA5A5" font-family="'Inter', monospace" font-size="9.5">✘ Memory Leak Detected: L42</text>
+  <rect x="80" y="205" width="190" height="32" rx="4" fill="#064E3B"/>
+  <text x="90" y="225" fill="#6EE7B7" font-family="'Inter', monospace" font-size="9.5">✔ Mentor Refactored with Async</text>
+
+  <!-- Right: Architecture Discussion -->
+  <rect x="310" y="85" width="225" height="180" rx="6" fill="#1E293B" stroke="#334155"/>
+  <text x="325" y="110" fill="#F59E0B" font-family="'Inter', sans-serif" font-size="11" font-weight="bold">MENTOR ROADMAP NOTES</text>
+  <text x="325" y="135" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="10">1. Master SQL window functions</text>
+  <text x="325" y="160" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="10">2. Deploy Capstone on AWS/Vercel</text>
+  <text x="325" y="185" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="10">3. Structure GitHub Portfolio</text>
+  <rect x="325" y="210" width="190" height="32" rx="4" fill="#1D4ED8"/>
+  <text x="420" y="230" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="bold" text-anchor="middle">Personalized Next Step Ready</text>
+
+  <!-- Bottom Details -->
+  <rect y="310" width="600" height="70" fill="#030712"/>
+  <text x="300" y="340" fill="#F8FAFC" font-family="'Inter', sans-serif" font-size="13" font-weight="bold" text-anchor="middle">Direct Trainer Attention • No Student Left Behind</text>
+  <text x="300" y="360" fill="#64748B" font-family="'Inter', sans-serif" font-size="11" text-anchor="middle">Individual code audits and conceptual guidance right in M.P. Nagar, Bhopal.</text>
+</svg>

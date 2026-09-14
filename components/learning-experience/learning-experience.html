@@ -1,0 +1,251 @@
+<!-- ==========================================================================
+     LEARNING EXPERIENCE SECTION COMPONENT — ULTRA OPTIMIZED (v3.0)
+     Interactive Studio Tour: Dedicated Lab, Classrooms, Project Bays, Mentorship
+     ========================================================================== -->
+<link rel="stylesheet" href="./components/learning-experience/learning-experience.css">
+<section class="section learning-experience-section" id="learning-experience">
+  <div class="container">
+    
+    <div class="section-header">
+      <span class="section-tag">Campus Infrastructure & Culture</span>
+      <h2>The Miracle IT Classroom & Lab Experience</h2>
+      <p class="text-lead">
+        We built our M.P. Nagar academy for serious, distraction-free technical skill building. Explore our physical facilities, learning workstations, and daily mentorship environment.
+      </p>
+
+      <!-- Facility Navigation Tabs -->
+      <div class="facility-nav-tabs" role="tablist" aria-label="Campus Facilities">
+        <button type="button" class="facility-tab is-active" data-facility="lab" role="tab" aria-selected="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="tab-icon"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          <span>1. Computer Lab</span>
+        </button>
+        <button type="button" class="facility-tab" data-facility="classroom" role="tab" aria-selected="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="tab-icon"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+          <span>2. Architecture Class</span>
+        </button>
+        <button type="button" class="facility-tab" data-facility="projects" role="tab" aria-selected="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="tab-icon"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          <span>3. Project Bays</span>
+        </button>
+        <button type="button" class="facility-tab" data-facility="mentorship" role="tab" aria-selected="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="tab-icon"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          <span>4. 1-on-1 Mentorship</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Interactive Facility Showcase Stage -->
+    <div class="facility-showcase-stage">
+      
+      <!-- Panel 1: Computer Lab (Active by default) -->
+      <div class="facility-panel is-active" id="facility-lab" role="tabpanel">
+        <div class="facility-grid">
+          <div class="facility-visual-wrap">
+            <img src="./assets/images/computer-lab.jpg" onerror="this.onerror=null; this.src='./assets/images/computer-lab.svg'" alt="Miracle IT Dedicated Computer Lab in M.P. Nagar Bhopal" width="600" height="338" loading="eager" decoding="async">
+            <div class="visual-pill-overlay">
+              <span class="pulsing-dot"></span>
+              <span>Daily Open Lab Hours: 9:00 AM – 7:00 PM</span>
+            </div>
+          </div>
+          <div class="facility-content">
+            <span class="badge badge-blue">Workstation Setup</span>
+            <h3 class="facility-title">Dedicated Computer Lab & Coding Bays</h3>
+            <p class="facility-desc">
+              A high-focus programming environment equipped with modern developer machines. Pre-configured with Node.js, Python, PostgreSQL, Docker, Git, and Linux tooling so you spend time building rather than fixing environment bugs.
+            </p>
+            <div class="facility-specs-list">
+              <div class="spec-item">
+                <span class="spec-check">✓</span>
+                <div>
+                  <strong>Pre-configured Local Servers:</strong>
+                  <p>Database engines and local dev stacks installed and ready for real project execution.</p>
+                </div>
+              </div>
+              <div class="spec-item">
+                <span class="spec-check">✓</span>
+                <div>
+                  <strong>Open Practice Access:</strong>
+                  <p>Students can practice in the lab before and after lectures without time limits.</p>
+                </div>
+              </div>
+              <div class="spec-item">
+                <span class="spec-check">✓</span>
+                <div>
+                  <strong>In-Lab Teaching Assistant:</strong>
+                  <p>Lab instructor available to unblock syntax errors and environment crashes live.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 2: Architecture Classrooms -->
+      <div class="facility-panel" id="facility-classroom" role="tabpanel" hidden>
+        <div class="facility-grid">
+          <div class="facility-visual-wrap">
+            <img src="./assets/images/classroom.jpg" onerror="this.onerror=null; this.src='./assets/images/classroom.svg'" alt="Interactive System Architecture Whiteboard Sessions" width="600" height="338" loading="eager" decoding="async">
+            <div class="visual-pill-overlay">
+              <span class="badge badge-emerald">Interactive Concept Whiteboards</span>
+            </div>
+          </div>
+          <div class="facility-content">
+            <span class="badge badge-emerald">Concept First</span>
+            <h3 class="facility-title">System Architecture & Code Classrooms</h3>
+            <p class="facility-desc">
+              Great developers understand system architecture before writing code. Our classrooms are designed for interactive concept breakdowns, whiteboard data flows, and database schema discussions.
+            </p>
+            <div class="facility-specs-list">
+              <div class="spec-item">
+                <span class="spec-check">✓</span>
+                <div>
+                  <strong>Architecture Whiteboard Design:</strong>
+                  <p>Learn client-server models, RESTful patterns, and normalization step-by-step.</p>
+                </div>
+              </div>
+              <div class="spec-item">
+                <span class="spec-check">✓</span>
+                <div>
+                  <strong>Intimate Batch Sizes (15–20 Max):</strong>
+                  <p>No 100-student crowded lecture halls. Every student can ask doubts directly.</p>
+                </div>
+              </div>
+              <div class="spec-item">
+                <span class="spec-check">✓</span>
+                <div>
+                  <strong>Live Code Demonstration:</strong>
+                  <p>Instructors write and execute code in front of you, showing authentic debugging workflows.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 3: Capstone Project Bays -->
+      <div class="facility-panel" id="facility-projects" role="tabpanel" hidden>
+        <div class="facility-grid">
+          <div class="facility-visual-wrap">
+            <img src="./assets/images/project-development.jpg" onerror="this.onerror=null; this.src='./assets/images/project-development.svg'" alt="Production Project Development at Miracle IT" width="600" height="338" loading="eager" decoding="async">
+            <div class="visual-pill-overlay">
+              <span class="badge badge-amber">Live GitHub Capstones</span>
+            </div>
+          </div>
+          <div class="facility-content">
+            <span class="badge badge-amber">Portfolio Construction</span>
+            <h3 class="facility-title">Production Capstone Project Bays</h3>
+            <p class="facility-desc">
+              Recruiters don't hire certificates—they hire people who build working software. You will develop multi-tier applications, implement user authentication, and deploy live URLs.
+            </p>
+            <div class="facility-specs-list">
+              <div class="spec-item">
+                <span class="spec-check">✓</span>
+                <div>
+                  <strong>Real Git Version Control:</strong>
+                  <p>Push real commits, write proper documentation, and structure production repositories.</p>
+                </div>
+              </div>
+              <div class="spec-item">
+                <span class="spec-check">✓</span>
+                <div>
+                  <strong>Full-Stack & Data Capstones:</strong>
+                  <p>Build applications with authentication, databases, and third-party API integrations.</p>
+                </div>
+              </div>
+              <div class="spec-item">
+                <span class="spec-check">✓</span>
+                <div>
+                  <strong>Cloud Deployment Readiness:</strong>
+                  <p>Deploy your projects on cloud platforms so recruiters can test live links.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 4: 1-on-1 Mentorship -->
+      <div class="facility-panel" id="facility-mentorship" role="tabpanel" hidden>
+        <div class="facility-grid">
+          <div class="facility-visual-wrap">
+            <img src="./assets/images/mentorship.jpg" onerror="this.onerror=null; this.src='./assets/images/mentorship.svg'" alt="1-on-1 Mentorship & Code Review Desk in Bhopal" width="600" height="338" loading="eager" decoding="async">
+            <div class="visual-pill-overlay">
+              <span class="badge badge-blue">Personal Code Audit</span>
+            </div>
+          </div>
+          <div class="facility-content">
+            <span class="badge badge-blue">Individual Attention</span>
+            <h3 class="facility-title">1-on-1 Code Audits & Mentorship Desks</h3>
+            <p class="facility-desc">
+              Every student learns at a different pace. Our faculty holds dedicated doubt-solving hours where trainers review your code line-by-line to ensure you grasp fundamental concepts.
+            </p>
+            <div class="facility-specs-list">
+              <div class="spec-item">
+                <span class="spec-check">✓</span>
+                <div>
+                  <strong>Line-by-Line Code Debugging:</strong>
+                  <p>Understand why errors occur and learn professional debugging techniques.</p>
+                </div>
+              </div>
+              <div class="spec-item">
+                <span class="spec-check">✓</span>
+                <div>
+                  <strong>Personal Roadmap Guidance:</strong>
+                  <p>Continuous feedback on whether your project velocity is on track for job applications.</p>
+                </div>
+              </div>
+              <div class="spec-item">
+                <span class="spec-check">✓</span>
+                <div>
+                  <strong>Technical Mock Interview Prep:</strong>
+                  <p>Practice answering architectural and code-specific interview questions with mentors.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Campus Highlights Bar -->
+    <div class="campus-stats-bar">
+      <div class="campus-stat">
+        <span class="stat-number">1:15</span>
+        <span class="stat-label">Trainer-to-Student Ratio</span>
+      </div>
+      <div class="campus-stat-divider"></div>
+      <div class="campus-stat">
+        <span class="stat-number">10 hrs/day</span>
+        <span class="stat-label">Open Lab Workstation Access</span>
+      </div>
+      <div class="campus-stat-divider"></div>
+      <div class="campus-stat">
+        <span class="stat-number">Zone-II</span>
+        <span class="stat-label">Central M.P. Nagar Location</span>
+      </div>
+      <div class="campus-stat-divider"></div>
+      <div class="campus-stat">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Practical Code-First Sessions</span>
+      </div>
+    </div>
+
+    <!-- Center Tour Invitation -->
+    <div class="experience-cta-wrap text-center">
+      <h3 class="experience-invitation">Experience Our Classrooms & Lab In Person</h3>
+      <p class="experience-cta-sub">
+        Walk into our M.P. Nagar center. Inspect live student code, talk with current trainees, and test the workstations before deciding on any course.
+      </p>
+      <div class="flex-center gap-3 flex-wrap">
+        <a href="#counselling-form" class="btn btn-primary btn-lg" data-track-cta="experience_visit_tour">
+          Book Free Campus Tour & Visit
+        </a>
+        <a href="https://maps.google.com/?q=M.P.+Nagar,+Bhopal" class="btn btn-secondary btn-lg" data-config-directions data-track-cta="experience_directions">
+          Get Directions (M.P. Nagar)
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>

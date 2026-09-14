@@ -1,0 +1,228 @@
+<!-- ==========================================================================
+     PROBLEM SECTION COMPONENT — ULTRA OPTIMIZED & CONVERSION-ENGINEERED
+     Addressing real student dilemmas with side-by-side clarity comparison
+     ========================================================================== -->
+<link rel="stylesheet" href="./components/problem/problem.css">
+<section class="section section-alt problem-section" id="problem">
+  <div class="container">
+    
+    <div class="section-header">
+      <span class="section-tag">Career Dilemmas We Solve</span>
+      <h2>Sound Familiar? You Are Not Alone in This Dilemma.</h2>
+      <p class="text-lead">
+        Most students in Bhopal complete their degree only to find that traditional college curriculum left them unprepared for real industry expectations. Here is how we break the cycle.
+      </p>
+
+      <!-- Dilemma / Solution View Switcher -->
+      <div class="problem-toggle-wrap">
+        <div class="problem-toggle-pills" role="tablist" aria-label="Dilemma and Solution Comparison">
+          <button type="button" class="dilemma-pill is-active" id="btnShowDilemmas" role="tab" aria-selected="true">
+            <span class="pill-dot warning-dot"></span> The 3 Common Dilemmas
+          </button>
+          <button type="button" class="dilemma-pill" id="btnShowComparison" role="tab" aria-selected="false">
+            <span class="pill-dot emerald-dot"></span> Without Guidance vs With Miracle IT
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW 1: The 3 Core Student Dilemma Cards (Default) -->
+    <div class="problem-view" id="viewDilemmas">
+      <div class="grid-3 problem-cards-grid">
+        
+        <!-- Dilemma 01 -->
+        <div class="card problem-card">
+          <div class="problem-card-header">
+            <div class="problem-number-badge">01</div>
+            <span class="dilemma-status-tag">The Post-College Void</span>
+          </div>
+
+          <div class="problem-quote-wrap">
+            <span class="quote-symbol">“</span>
+            <h3 class="problem-title">Degree ke baad next step kya?</h3>
+          </div>
+
+          <p class="problem-desc">
+            You studied theory for 3–4 years, passed exams, and now face job portals where every entry-level role asks for tools, frameworks, and practical database skills you were never taught.
+          </p>
+
+          <div class="problem-impact-box">
+            <div class="impact-label">The Risk:</div>
+            <p class="impact-text">Wasting 6–12 months trying random YouTube tutorials without ever completing a deployable project.</p>
+          </div>
+
+          <div class="problem-solution-link">
+            <a href="#counselling-form" class="solution-link-btn" data-track-cta="dilemma_solve_1">
+              <span>Get Your Post-Degree Roadmap</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Dilemma 02 -->
+        <div class="card problem-card">
+          <div class="problem-card-header">
+            <div class="problem-number-badge">02</div>
+            <span class="dilemma-status-tag">Domain Overload</span>
+          </div>
+
+          <div class="problem-quote-wrap">
+            <span class="quote-symbol">“</span>
+            <h3 class="problem-title">Which course fits me?</h3>
+          </div>
+
+          <p class="problem-desc">
+            Full Stack, Data Analytics, AI/ML, Cybersecurity, Cloud... Every coaching flyer claims their course is #1, but nobody assesses your natural math comfort, logic aptitude, or degree background first.
+          </p>
+
+          <div class="problem-impact-box">
+            <div class="impact-label">The Risk:</div>
+            <p class="impact-text">Paying high fees for a course that doesn't fit your strengths, leading to frustration and dropping out.</p>
+          </div>
+
+          <div class="problem-solution-link">
+            <a href="#counselling-form" class="solution-link-btn" data-track-cta="dilemma_solve_2">
+              <span>Assess Your Aptitude Free</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Dilemma 03 -->
+        <div class="card problem-card">
+          <div class="problem-card-header">
+            <div class="problem-number-badge">03</div>
+            <span class="dilemma-status-tag">Unfocused Learning</span>
+          </div>
+
+          <div class="problem-quote-wrap">
+            <span class="quote-symbol">“</span>
+            <h3 class="problem-title">Tech career roadmap unclear?</h3>
+          </div>
+
+          <p class="problem-desc">
+            You know you need to learn to code, but you have no structured curriculum, no code reviews from senior developers, and no idea how to build a portfolio that actually impresses recruiters.
+          </p>
+
+          <div class="problem-impact-box">
+            <div class="impact-label">The Risk:</div>
+            <p class="impact-text">Accumulating superficial certificates with zero GitHub portfolio proof to verify your skills.</p>
+          </div>
+
+          <div class="problem-solution-link">
+            <a href="#counselling-form" class="solution-link-btn" data-track-cta="dilemma_solve_3">
+              <span>Map a Step-by-Step Plan</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- VIEW 2: Comparison Table (Activated via toggle) -->
+    <div class="problem-view is-hidden" id="viewComparison">
+      <div class="comparison-card">
+        <div class="comparison-grid">
+          
+          <!-- Column A: Without Guidance -->
+          <div class="comparison-col col-without">
+            <div class="comparison-header">
+              <span class="comp-badge badge-danger">Without Career Guidance</span>
+              <h3>The Guesswork Route</h3>
+            </div>
+            <ul class="comp-list">
+              <li>
+                <span class="comp-icon red-cross">✕</span>
+                <div>
+                  <strong>Guessing course suitability:</strong>
+                  <p>Joining trendy tracks without knowing if you have the math/logic prerequisites.</p>
+                </div>
+              </li>
+              <li>
+                <span class="comp-icon red-cross">✕</span>
+                <div>
+                  <strong>Endless tutorial rabbit holes:</strong>
+                  <p>Watching passive video playlists without building independently.</p>
+                </div>
+              </li>
+              <li>
+                <span class="comp-icon red-cross">✕</span>
+                <div>
+                  <strong>Zero personalized code debugging:</strong>
+                  <p>Getting stuck on an error for days with no senior mentor to review your code.</p>
+                </div>
+              </li>
+              <li>
+                <span class="comp-icon red-cross">✕</span>
+                <div>
+                  <strong>Empty resume & no Git links:</strong>
+                  <p>Graduating with certificates that recruiters ignore without live URLs.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column B: With Miracle IT -->
+          <div class="comparison-col col-with">
+            <div class="comparison-header">
+              <span class="comp-badge badge-success">With Miracle IT Counselling</span>
+              <h3>The Guided Roadmap</h3>
+            </div>
+            <ul class="comp-list">
+              <li>
+                <span class="comp-icon green-tick">✓</span>
+                <div>
+                  <strong>Degree-to-domain matching:</strong>
+                  <p>We evaluate your academic background (CS, BCA, B.Com, etc.) before suggesting a path.</p>
+                </div>
+              </li>
+              <li>
+                <span class="comp-icon green-tick">✓</span>
+                <div>
+                  <strong>Production capstone focus:</strong>
+                  <p>Build real-world web apps and datasets you can showcase on GitHub.</p>
+                </div>
+              </li>
+              <li>
+                <span class="comp-icon green-tick">✓</span>
+                <div>
+                  <strong>1-on-1 In-person mentoring:</strong>
+                  <p>Trainers sit with you in M.P. Nagar, explain root causes, and guide your code.</p>
+                </div>
+              </li>
+              <li>
+                <span class="comp-icon green-tick">✓</span>
+                <div>
+                  <strong>Verified portfolio & interview readiness:</strong>
+                  <p>Targeted interview prep, resume structuring, and practical engineering skills.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Empathetic Transition Banner -->
+    <div class="problem-transition-banner">
+      <div class="transition-content">
+        <div class="transition-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+        </div>
+        <div>
+          <h4 class="transition-heading">Don't guess with your career. Get guidance before choosing your next course.</h4>
+          <p class="transition-sub">Visit our M.P. Nagar center for a free 30-minute consultation with a senior mentor. Zero sales pressure, complete honesty.</p>
+        </div>
+      </div>
+      <a href="#counselling-form" class="btn btn-primary btn-lg" data-track-cta="problem_cta_discuss">
+        Discuss Your Dilemma With A Counsellor
+      </a>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,46 @@
+<svg width="600" height="380" viewBox="0 0 600 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="380" rx="12" fill="#0F172A"/>
+  <!-- Top Window Bar -->
+  <rect width="600" height="38" fill="#1E293B"/>
+  <circle cx="24" cy="19" r="6" fill="#EF4444"/>
+  <circle cx="44" cy="19" r="6" fill="#F59E0B"/>
+  <circle cx="64" cy="19" r="6" fill="#10B981"/>
+  <text x="300" y="24" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="12" font-weight="600" text-anchor="middle">miracle-classroom-architecture.diagram — Visual System Design</text>
+
+  <!-- Whiteboard Architectural Workspace -->
+  <rect x="24" y="54" width="552" height="260" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+  
+  <!-- Architectural Nodes -->
+  <!-- Client Tier -->
+  <rect x="50" y="100" width="120" height="70" rx="8" fill="#1D4ED8" stroke="#3B82F6" stroke-width="2"/>
+  <text x="110" y="132" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="13" font-weight="bold" text-anchor="middle">Client Frontend</text>
+  <text x="110" y="152" fill="#BFDBFE" font-family="'Inter', sans-serif" font-size="10" text-anchor="middle">HTML5 / CSS / JS</text>
+
+  <!-- API Arrow -->
+  <path d="M170 135 H235" stroke="#60A5FA" stroke-width="2" stroke-dasharray="4 4"/>
+  <polygon points="235,131 245,135 235,139" fill="#60A5FA"/>
+
+  <!-- Backend API -->
+  <rect x="245" y="100" width="130" height="70" rx="8" fill="#0F766E" stroke="#14B8A6" stroke-width="2"/>
+  <text x="310" y="132" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="13" font-weight="bold" text-anchor="middle">Backend Server</text>
+  <text x="310" y="152" fill="#99F6E4" font-family="'Inter', sans-serif" font-size="10" text-anchor="middle">REST APIs / Auth</text>
+
+  <!-- DB Arrow -->
+  <path d="M375 135 H440" stroke="#14B8A6" stroke-width="2" stroke-dasharray="4 4"/>
+  <polygon points="440,131 450,135 440,139" fill="#14B8A6"/>
+
+  <!-- Database Tier -->
+  <rect x="450" y="100" width="105" height="70" rx="8" fill="#7C2D12" stroke="#F97316" stroke-width="2"/>
+  <text x="502" y="132" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="13" font-weight="bold" text-anchor="middle">Database</text>
+  <text x="502" y="152" fill="#FED7AA" font-family="'Inter', sans-serif" font-size="10" text-anchor="middle">SQL & Models</text>
+
+  <!-- Interactive Class Notes Banner -->
+  <rect x="50" y="200" width="505" height="90" rx="6" fill="#0B132B" stroke="#1E293B"/>
+  <text x="70" y="230" fill="#38BDF8" font-family="'Inter', sans-serif" font-size="12" font-weight="bold">● Classroom Live Concept Breakdown</text>
+  <text x="70" y="254" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">Trainers diagram full system workflows on whiteboard before writing a single line of code.</text>
+  <text x="70" y="274" fill="#64748B" font-family="'Inter', sans-serif" font-size="10">[REPLACEABLE: Replace with assets/images/classroom.jpg when available]</text>
+
+  <!-- Bottom status -->
+  <rect y="342" width="600" height="38" fill="#0B132B"/>
+  <text x="300" y="366" fill="#64748B" font-family="'Inter', sans-serif" font-size="11" text-anchor="middle">Miracle IT Classroom Session • In-Person Teaching Environment</text>
+</svg>

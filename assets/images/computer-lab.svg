@@ -1,0 +1,40 @@
+<svg width="600" height="380" viewBox="0 0 600 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="380" rx="12" fill="#0F172A"/>
+  <!-- Top Bar -->
+  <rect width="600" height="38" fill="#1E293B"/>
+  <circle cx="24" cy="19" r="6" fill="#EF4444"/>
+  <circle cx="44" cy="19" r="6" fill="#F59E0B"/>
+  <circle cx="64" cy="19" r="6" fill="#10B981"/>
+  <text x="300" y="24" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="12" font-weight="600" text-anchor="middle">Miracle IT Computer Lab Environment • M.P. Nagar Center</text>
+
+  <!-- Dual Workstation Setups -->
+  <!-- Left Workstation -->
+  <rect x="40" y="65" width="240" height="150" rx="8" fill="#030712" stroke="#334155" stroke-width="2"/>
+  <rect x="52" y="78" width="216" height="124" rx="4" fill="#0B132B"/>
+  <!-- Code on Left Screen -->
+  <path d="M65 95 H150 M65 110 H190 M80 125 H210 M80 140 H160 M65 155 H130" stroke="#38BDF8" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Workstation Stand -->
+  <rect x="145" y="215" width="30" height="35" fill="#475569"/>
+  <rect x="110" y="250" width="100" height="10" rx="4" fill="#334155"/>
+
+  <!-- Right Workstation -->
+  <rect x="320" y="65" width="240" height="150" rx="8" fill="#030712" stroke="#334155" stroke-width="2"/>
+  <rect x="332" y="78" width="216" height="124" rx="4" fill="#0B132B"/>
+  <!-- Data Charts on Right Screen -->
+  <rect x="350" y="150" width="24" height="40" rx="3" fill="#10B981"/>
+  <rect x="385" y="125" width="24" height="65" rx="3" fill="#3B82F6"/>
+  <rect x="420" y="110" width="24" height="80" rx="3" fill="#8B5CF6"/>
+  <rect x="455" y="135" width="24" height="55" rx="3" fill="#F59E0B"/>
+  <path d="M350 115 Q 400 95 480 85" stroke="#34D399" stroke-width="2.5" fill="none"/>
+  <!-- Workstation Stand -->
+  <rect x="425" y="215" width="30" height="35" fill="#475569"/>
+  <rect x="390" y="250" width="100" height="10" rx="4" fill="#334155"/>
+
+  <!-- Lab Workstation Bench -->
+  <rect x="20" y="260" width="560" height="20" rx="4" fill="#1E293B" stroke="#334155"/>
+
+  <!-- Bottom Details -->
+  <rect y="300" width="600" height="80" fill="#0B132B"/>
+  <text x="300" y="328" fill="#F8FAFC" font-family="'Inter', sans-serif" font-size="13" font-weight="bold" text-anchor="middle">Pre-Configured Local Development Environment</text>
+  <text x="300" y="350" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11" text-anchor="middle">High-speed workstations with Node, Python, Docker & Git configured for everyday coding.</text>
+</svg>

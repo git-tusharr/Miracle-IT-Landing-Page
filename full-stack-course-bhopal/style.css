@@ -1,0 +1,52 @@
+/* Full Stack Course Page Specific Styles */
+.course-page-header {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--color-border);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.course-brand {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.course-brand strong {
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.course-brand span {
+  font-size: 0.72rem;
+  color: var(--color-brand);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.course-hero-content {
+  max-width: 780px;
+}
+
+.course-hero-content h1 {
+  margin: 0.75rem 0 1.25rem;
+}
+
+.course-hero-content .text-lead {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 640px) {
+  .course-page-header .flex-between {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .course-page-header .flex.gap-3 {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

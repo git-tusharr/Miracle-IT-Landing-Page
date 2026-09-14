@@ -1,0 +1,137 @@
+/* ==========================================================================
+   FOOTER SECTION STYLES
+   ========================================================================== */
+
+.site-footer {
+  background-color: #0F172A;
+  color: #94A3B8;
+  padding-top: 4.5rem;
+  padding-bottom: 2rem;
+  border-top: 1px solid #1E293B;
+}
+
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+@media (min-width: 640px) {
+  .footer-top-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-top-grid {
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  }
+}
+
+.brand-col .footer-logo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.brand-col .brand-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.brand-col .brand-sub {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #60A5FA;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer-about {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #94A3B8;
+  margin-bottom: 1.25rem;
+}
+
+.footer-location-brief {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #CBD5E1;
+}
+
+.footer-icon {
+  width: 16px;
+  height: 16px;
+  color: #60A5FA;
+  flex-shrink: 0;
+}
+
+.footer-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+.footer-nav, .footer-contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.footer-nav a, .footer-contact-list a {
+  color: #94A3B8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color var(--transition-fast);
+}
+
+.footer-nav a:hover, .footer-contact-list a:hover {
+  color: #FFFFFF;
+}
+
+.footer-contact-list li {
+  font-size: 0.88rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.footer-contact-list strong {
+  color: #CBD5E1;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.footer-cta-li {
+  margin-top: 0.75rem;
+}
+
+/* Bottom Footer */
+.footer-bottom {
+  border-top: 1px solid #1E293B;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.footer-disclaimer p {
+  font-size: 0.78rem;
+  color: #64748B;
+  line-height: 1.55;
+}
+
+.footer-copyright p {
+  font-size: 0.82rem;
+  color: #64748B;
+  text-align: center;
+}

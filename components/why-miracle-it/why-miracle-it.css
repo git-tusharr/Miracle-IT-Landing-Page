@@ -1,0 +1,316 @@
+/* ==========================================================================
+   WHY MIRACLE IT SECTION STYLES (v3.0 ULTRA OPTIMIZED)
+   ========================================================================== */
+
+.why-section {
+  background-color: #F8FAFC;
+}
+
+/* 1. Ratio Breakdown Card */
+.ratio-breakdown-card {
+  background-color: #FFFFFF;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.75rem, 3.5vw, 2.75rem);
+  box-shadow: var(--shadow-md);
+  margin-bottom: 3.5rem;
+}
+
+.ratio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.ratio-title {
+  font-size: clamp(1.3rem, 2.4vw, 1.75rem);
+  color: var(--color-primary);
+  margin-top: 0.5rem;
+  line-height: 1.25;
+}
+
+.ratio-daily-badge {
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-brand);
+  background-color: var(--color-brand-soft);
+  border: 1px solid var(--color-brand-border);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+}
+
+.ratio-bar-track {
+  width: 100%;
+  height: 38px;
+  background-color: var(--color-bg-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  margin-bottom: 2rem;
+  border: 1px solid var(--color-border);
+}
+
+.ratio-segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.825rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  padding: 0 0.75rem;
+  white-space: nowrap;
+}
+
+.ratio-coding {
+  background: linear-gradient(90deg, #1D4ED8 0%, #2563EB 100%);
+  color: #FFFFFF;
+}
+
+.ratio-theory {
+  background-color: #CBD5E1;
+  color: #0F172A;
+}
+
+/* 3-Phase Daily Routine */
+.daily-routine-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .daily-routine-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.routine-phase {
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+}
+
+.routine-phase.phase-active {
+  background-color: var(--color-brand-soft);
+  border-color: var(--color-brand-border);
+}
+
+.phase-time {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-brand);
+  margin-bottom: 0.35rem;
+}
+
+.routine-phase strong {
+  display: block;
+  font-size: 1.05rem;
+  color: var(--color-primary);
+  margin-bottom: 0.25rem;
+}
+
+.routine-phase p {
+  font-size: 0.885rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* 2. Bento Grid of 4 Pillars */
+.why-pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+@media (min-width: 640px) {
+  .why-pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.pillar-bento-card {
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-xl);
+  transition: all var(--transition-normal);
+}
+
+.pillar-bento-card:hover {
+  border-color: var(--color-brand-border);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.pillar-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.pillar-icon-box svg {
+  width: 24px;
+  height: 24px;
+}
+
+.blue-box { background-color: var(--color-brand-soft); color: var(--color-brand); }
+.emerald-box { background-color: var(--color-emerald-soft); color: var(--color-emerald); }
+.amber-box { background-color: var(--color-amber-soft); color: var(--color-amber); }
+
+.pillar-heading {
+  font-size: 1.3rem;
+  color: var(--color-primary);
+  margin-bottom: 0.65rem;
+  line-height: 1.3;
+}
+
+.pillar-sub {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.pillar-footer-tag {
+  display: flex;
+  gap: 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-brand);
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+/* 3. Comparison Matrix Table */
+.institute-comparison-wrap {
+  margin-bottom: 3.5rem;
+}
+
+.comparison-table-card {
+  background-color: #FFFFFF;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.comp-table-header {
+  padding: 2rem 2.5rem;
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-bg-alt);
+}
+
+.comp-table-header h3 {
+  font-size: 1.35rem;
+  color: var(--color-primary);
+  margin-bottom: 0.35rem;
+}
+
+.comp-table-header p {
+  font-size: 0.925rem;
+  color: var(--color-text-muted);
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.miracle-comp-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 620px;
+}
+
+.miracle-comp-table th, .miracle-comp-table td {
+  padding: 1.15rem 1.75rem;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.925rem;
+  line-height: 1.5;
+}
+
+.miracle-comp-table th {
+  background-color: #F8FAFC;
+  font-weight: 800;
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.miracle-comp-table .highlight-col {
+  background-color: #EFF6FF;
+  color: var(--color-brand);
+  font-weight: 600;
+  border-left: 2px solid var(--color-brand-border);
+  border-right: 2px solid var(--color-brand-border);
+}
+
+.miracle-comp-table th.highlight-col {
+  background-color: #DBEAFE;
+  color: var(--color-brand);
+}
+
+/* 4. Transparency Pledge Banner */
+.why-pledge-banner {
+  background: linear-gradient(135deg, #0B132B 0%, #1C2541 100%);
+  color: #FFFFFF;
+  border-radius: var(--radius-xl);
+  padding: clamp(2.25rem, 4vw, 3.5rem);
+  box-shadow: var(--shadow-lg);
+}
+
+.pledge-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+@media (max-width: 900px) {
+  .pledge-banner-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
+  }
+}
+
+.pledge-banner-content {
+  max-width: 680px;
+}
+
+.pledge-banner-title {
+  color: #FFFFFF;
+  font-size: clamp(1.4rem, 2.6vw, 1.85rem);
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
+}
+
+.pledge-banner-text {
+  color: #94A3B8;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.pledge-banner-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  min-width: 260px;
+}
