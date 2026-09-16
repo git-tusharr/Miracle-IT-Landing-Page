@@ -209,6 +209,96 @@
   box-shadow: 0 0 15px rgba(99, 102, 241, 0.35);
 }
 
+/* Quick Course Selection Chips */
+.form-course-chips {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-bottom: 0.75rem !important;
+  justify-content: flex-start;
+}
+
+.form-course-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.52rem 0.95rem;
+  border-radius: var(--radius-md);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  color: #E2E8F0;
+  font-family: var(--font-sans);
+  font-size: 0.825rem;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+  touch-action: manipulation;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.form-course-chip:hover {
+  border-color: rgba(99, 102, 241, 0.45);
+  background-color: rgba(99, 102, 241, 0.12);
+  color: #FFFFFF;
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.25);
+}
+
+.form-course-chip:focus-visible {
+  outline: 2px solid #38BDF8;
+  outline-offset: 2px;
+}
+
+.form-course-chip.is-active {
+  color: #FFFFFF;
+  font-weight: 700;
+  transform: translateY(-1px);
+  background: rgba(99, 102, 241, 0.2);
+  border-color: var(--color-brand);
+  box-shadow: 0 0 16px rgba(99, 102, 241, 0.35);
+}
+
+/* Domain-specific energetic active states */
+.form-course-chip[data-val="Full Stack"].is-active {
+  background: rgba(245, 158, 11, 0.18);
+  border-color: #F59E0B;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.35);
+}
+
+.form-course-chip[data-val="Data Analytics / Data Science"].is-active {
+  background: rgba(56, 189, 248, 0.18);
+  border-color: #38BDF8;
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.35);
+}
+
+.form-course-chip[data-val="AI / ML"].is-active {
+  background: rgba(16, 185, 129, 0.18);
+  border-color: #10B981;
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.35);
+}
+
+.form-course-chip[data-val="Cybersecurity"].is-active {
+  background: rgba(129, 140, 248, 0.2);
+  border-color: #818CF8;
+  box-shadow: 0 0 16px rgba(129, 140, 248, 0.4);
+}
+
+@media (max-width: 480px) {
+  .form-course-chips {
+    gap: 0.45rem;
+  }
+  .form-course-chip {
+    flex: 1 1 calc(50% - 0.5rem);
+    justify-content: center;
+    padding: 0.55rem 0.65rem;
+    font-size: 0.785rem;
+  }
+}
+
 /* Error states */
 .error-msg {
   display: none;

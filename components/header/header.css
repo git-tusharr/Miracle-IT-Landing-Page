@@ -209,7 +209,75 @@
   flex: 0 0 auto;
 }
 
-/* Helpline button */
+/* Call / WhatsApp Dual Action Pill */
+.header-call-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.22rem 0.55rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 9999px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.header-call-whatsapp:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(99, 102, 241, 0.35);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+}
+
+.header-contact-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.55rem;
+  color: #E2E8F0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 9999px;
+  transition: color 150ms ease, background-color 150ms ease;
+  white-space: nowrap;
+}
+
+.header-contact-pill:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.header-contact-pill.call-pill:hover {
+  color: #38BDF8;
+}
+
+.header-contact-pill.whatsapp-pill:hover {
+  color: #34D399;
+}
+
+.header-contact-pill .contact-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.header-contact-pill.call-pill .contact-icon {
+  color: #38BDF8;
+}
+
+.header-contact-pill.whatsapp-pill .contact-icon {
+  color: #10B981;
+}
+
+.contact-sep {
+  color: rgba(255, 255, 255, 0.25);
+  font-weight: 600;
+  font-size: 0.8rem;
+  user-select: none;
+}
+
+/* Helpline button (Legacy / Fallback) */
 .header-phone-link {
   display: inline-flex;
   align-items: center;
@@ -439,10 +507,8 @@
   }
 
   /* Hide desktop action buttons */
-  .header-actions .header-phone-link {
-    display: none;
-  }
-
+  .header-actions .header-call-whatsapp,
+  .header-actions .header-phone-link,
   .header-actions .header-book-btn {
     display: none;
   }

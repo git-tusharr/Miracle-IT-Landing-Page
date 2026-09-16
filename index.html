@@ -107,14 +107,10 @@
     <!-- Desktop Navigation Menu -->
     <nav class="header-nav" id="navMenu" aria-label="Main Navigation">
       <ul class="nav-list">
-        <li><a href="#problem" class="nav-link">Dilemma</a></li>
         <li><a href="#courses" class="nav-link">Courses</a></li>
         <li><a href="#why-miracle-it" class="nav-link">Why Miracle IT</a></li>
-        <li><a href="#learning-experience" class="nav-link">Lab & Class</a></li>
-        <li><a href="#who-can-join" class="nav-link">Who Can Join</a></li>
-        <li><a href="#counselling-process" class="nav-link">Process</a></li>
+        <li><a href="#proof" class="nav-link">Reviews/Proof</a></li>
         <li><a href="#location" class="nav-link">Location</a></li>
-        <li><a href="#faq" class="nav-link">FAQs</a></li>
       </ul>
       
       <!-- Mobile Drawer Extra Actions -->
@@ -125,27 +121,41 @@
           </svg>
           <span data-config-text="phoneDisplay">Call Us</span>
         </a>
+        <a href="#" class="btn btn-secondary btn-full" data-config-whatsapp data-track-cta="header_whatsapp_mobile">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+          </svg>
+          <span>WhatsApp</span>
+        </a>
         <a href="#counselling-form" class="btn btn-primary btn-full btn-magnetic" data-track-cta="header_book_mobile">
-          Book Free Visit
+          Book Free Counselling Visit
         </a>
       </div>
     </nav>
 
-    <!-- Header Actions (Desktop & Mobile Toggle) -->
+    <!-- Header Actions (Desktop: Call/WhatsApp & Book Visit | Mobile Toggle) -->
     <div class="header-actions">
-      <a href="tel:+919876543210" class="header-phone-link" data-config-phone data-track-cta="header_phone_desktop" title="Call Academy">
-        <svg class="phone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-        </svg>
-        <span class="phone-text">
-          <span class="phone-label">Helpline</span>
-          <span class="phone-number" data-config-text="phoneDisplay">+91 98765 43210</span>
-        </span>
-      </a>
+      <!-- Call / WhatsApp Action Group -->
+      <div class="header-call-whatsapp" aria-label="Contact Options">
+        <a href="tel:+919876543210" class="header-contact-pill call-pill" data-config-phone data-track-cta="header_phone_desktop" title="Call Academy">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          <span class="contact-text">Call</span>
+        </a>
+        <span class="contact-sep" aria-hidden="true">/</span>
+        <a href="#" class="header-contact-pill whatsapp-pill" data-config-whatsapp data-track-cta="header_whatsapp_desktop" title="Chat on WhatsApp">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+          </svg>
+          <span class="contact-text">WhatsApp</span>
+        </a>
+      </div>
 
+      <!-- Main CTA: Book Visit -->
       <a href="#counselling-form" class="btn btn-primary btn-sm header-book-btn btn-magnetic" data-track-cta="header_book_counselling">
-        <span>Book Free Visit</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="btn-icon" style="width: 14px; height: 14px;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        <span>Book Visit</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="btn-icon" style="width: 14px; height: 14px;" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
       </a>
 
       <!-- Mobile Hamburger Button -->
@@ -767,7 +777,7 @@ metrics = model.train(epochs=<span class="c-number">50</span>, learning_rate=<sp
       </div>
 
       <!-- Instant Dilemma Diagnostic Quick-Filter (Skiper UI Pill Selector) -->
-      <div class="career-matcher-box problem-diagnostic-box" style="margin-top: 1.25rem;">
+      <div class="career-matcher-box problem-diagnostic-box">
         <span class="matcher-label">⚡ Identify Your Exact Dilemma:</span>
         <div class="matcher-chips">
           <button type="button" class="matcher-chip diagnostic-btn" data-target-card="0">🎓 Just Finished Degree?</button>
@@ -2037,22 +2047,22 @@ metrics = model.train(epochs=<span class="c-number">50</span>, learning_rate=<sp
     <!-- Campus Highlights Bar -->
     <div class="campus-stats-bar">
       <div class="campus-stat">
-        <span class="stat-number">1:15</span>
+        <span class="stat-number" data-stat-target="15" data-stat-prefix="1:">1:15</span>
         <span class="stat-label">Trainer-to-Student Ratio</span>
       </div>
       <div class="campus-stat-divider"></div>
       <div class="campus-stat">
-        <span class="stat-number">10 hrs/day</span>
+        <span class="stat-number" data-stat-target="10" data-stat-suffix=" hrs/day">10 hrs/day</span>
         <span class="stat-label">Open Lab Workstation Access</span>
       </div>
       <div class="campus-stat-divider"></div>
       <div class="campus-stat">
-        <span class="stat-number">Zone-II</span>
+        <span class="stat-number" data-stat-target="2" data-stat-type="roman">Zone-II</span>
         <span class="stat-label">Central M.P. Nagar Location</span>
       </div>
       <div class="campus-stat-divider"></div>
       <div class="campus-stat">
-        <span class="stat-number">100%</span>
+        <span class="stat-number" data-stat-target="100" data-stat-suffix="%">100%</span>
         <span class="stat-label">Practical Code-First Sessions</span>
       </div>
     </div>
@@ -2429,6 +2439,410 @@ metrics = model.train(epochs=<span class="c-number">50</span>, learning_rate=<sp
       <p class="text-lead">
         We do not fabricate student ratings or make false placement claims. We let student code, portfolio repositories, and institutional transparency speak for themselves.
       </p>
+    </div>
+
+    <!-- ====================================================================
+         PLACED STUDENTS FLOATING KINETIC SLIDER
+         Continuous infinite slide matching Top Hiring Ecosystem ticker
+         ==================================================================== -->
+    <div class="proof-students-slider-wrap" aria-label="Verified Placed Students Showcase">
+      <div class="proof-students-slider-header">
+        <span class="proof-slider-pill">
+          <span class="ticker-pulse-dot" aria-hidden="true"></span>
+          REAL ALUMNI PLACED ACROSS INDUSTRY
+        </span>
+        <p class="proof-slider-sub">
+          Hands-on project training directly translating to verified software engineering careers
+        </p>
+      </div>
+
+      <div class="proof-students-mask">
+        <div class="proof-students-track">
+          
+          <!-- SET 1: 10 Authentic Student Placement Cards -->
+          <article class="proof-student-card" style="--card-tilt: -2deg; --card-float-y: -6px;">
+            <div class="proof-student-card-inner">
+              <div class="proof-student-img-wrap">
+                <img src="./PlacedStudentsMiracleIt/Akshat-Accenture.jpg" alt="Akshat placed at Accenture" loading="eager" class="proof-student-img">
+                <span class="proof-student-badge">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  Verified
+                </span>
+              </div>
+              <div class="proof-student-info">
+                <h4 class="proof-student-name">Akshat</h4>
+                <div class="proof-student-company-pill">
+                  <span class="proof-student-at">Placed at</span>
+                  <strong class="proof-student-company">Accenture</strong>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="proof-student-card" style="--card-tilt: 2.5deg; --card-float-y: 8px;">
+            <div class="proof-student-card-inner">
+              <div class="proof-student-img-wrap">
+                <img src="./PlacedStudentsMiracleIt/Anuj Kumar Kaushal- TCS.jpeg" alt="Anuj Kumar Kaushal placed at TCS" loading="eager" class="proof-student-img">
+                <span class="proof-student-badge">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  Verified
+                </span>
+              </div>
+              <div class="proof-student-info">
+                <h4 class="proof-student-name">Anuj Kumar Kaushal</h4>
+                <div class="proof-student-company-pill">
+                  <span class="proof-student-at">Placed at</span>
+                  <strong class="proof-student-company">TCS</strong>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="proof-student-card" style="--card-tilt: -1.5deg; --card-float-y: -8px;">
+            <div class="proof-student-card-inner">
+              <div class="proof-student-img-wrap">
+                <img src="./PlacedStudentsMiracleIt/Astik Sarathe-Infosys.png" alt="Astik Sarathe placed at Infosys" loading="eager" class="proof-student-img">
+                <span class="proof-student-badge">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  Verified
+                </span>
+              </div>
+              <div class="proof-student-info">
+                <h4 class="proof-student-name">Astik Sarathe</h4>
+                <div class="proof-student-company-pill">
+                  <span class="proof-student-at">Placed at</span>
+                  <strong class="proof-student-company">Infosys</strong>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="proof-student-card" style="--card-tilt: 2deg; --card-float-y: 6px;">
+            <div class="proof-student-card-inner">
+              <div class="proof-student-img-wrap">
+                <img src="./PlacedStudentsMiracleIt/Mohit- Dot9 Games.jpeg" alt="Mohit placed at Dot9 Games" loading="eager" class="proof-student-img">
+                <span class="proof-student-badge">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  Verified
+                </span>
+              </div>
+              <div class="proof-student-info">
+                <h4 class="proof-student-name">Mohit</h4>
+                <div class="proof-student-company-pill">
+                  <span class="proof-student-at">Placed at</span>
+                  <strong class="proof-student-company">Dot9 Games</strong>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="proof-student-card" style="--card-tilt: -2.5deg; --card-float-y: -5px;">
+            <div class="proof-student-card-inner">
+              <div class="proof-student-img-wrap">
+                <img src="./PlacedStudentsMiracleIt/Namit Shirode- Uline (USA).jpeg" alt="Namit Shirode placed at Uline (USA)" loading="eager" class="proof-student-img">
+                <span class="proof-student-badge">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  Verified
+                </span>
+              </div>
+              <div class="proof-student-info">
+                <h4 class="proof-student-name">Namit Shirode</h4>
+                <div class="proof-student-company-pill">
+                  <span class="proof-student-at">Placed at</span>
+                  <strong class="proof-student-company">Uline (USA)</strong>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="proof-student-card" style="--card-tilt: 1.5deg; --card-float-y: 8px;">
+            <div class="proof-student-card-inner">
+              <div class="proof-student-img-wrap">
+                <img src="./PlacedStudentsMiracleIt/Prateek Gupta- Adit Technologies.jpeg" alt="Prateek Gupta placed at Adit Technologies" loading="eager" class="proof-student-img">
+                <span class="proof-student-badge">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  Verified
+                </span>
+              </div>
+              <div class="proof-student-info">
+                <h4 class="proof-student-name">Prateek Gupta</h4>
+                <div class="proof-student-company-pill">
+                  <span class="proof-student-at">Placed at</span>
+                  <strong class="proof-student-company">Adit Technologies</strong>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="proof-student-card" style="--card-tilt: -2deg; --card-float-y: -7px;">
+            <div class="proof-student-card-inner">
+              <div class="proof-student-img-wrap">
+                <img src="./PlacedStudentsMiracleIt/RUDRESH-TrustTags.jpg" alt="Rudresh placed at TrustTags" loading="eager" class="proof-student-img">
+                <span class="proof-student-badge">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  Verified
+                </span>
+              </div>
+              <div class="proof-student-info">
+                <h4 class="proof-student-name">Rudresh</h4>
+                <div class="proof-student-company-pill">
+                  <span class="proof-student-at">Placed at</span>
+                  <strong class="proof-student-company">TrustTags</strong>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="proof-student-card" style="--card-tilt: 2.2deg; --card-float-y: 6px;">
+            <div class="proof-student-card-inner">
+              <div class="proof-student-img-wrap">
+                <img src="./PlacedStudentsMiracleIt/Rani- Logikview Analytics.jpeg" alt="Rani placed at Logikview Analytics" loading="eager" class="proof-student-img">
+                <span class="proof-student-badge">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  Verified
+                </span>
+              </div>
+              <div class="proof-student-info">
+                <h4 class="proof-student-name">Rani</h4>
+                <div class="proof-student-company-pill">
+                  <span class="proof-student-at">Placed at</span>
+                  <strong class="proof-student-company">Logikview Analytics</strong>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="proof-student-card" style="--card-tilt: -1.8deg; --card-float-y: -8px;">
+            <div class="proof-student-card-inner">
+              <div class="proof-student-img-wrap">
+                <img src="./PlacedStudentsMiracleIt/Siddhant- Infosys.jpeg" alt="Siddhant placed at Infosys" loading="eager" class="proof-student-img">
+                <span class="proof-student-badge">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  Verified
+                </span>
+              </div>
+              <div class="proof-student-info">
+                <h4 class="proof-student-name">Siddhant</h4>
+                <div class="proof-student-company-pill">
+                  <span class="proof-student-at">Placed at</span>
+                  <strong class="proof-student-company">Infosys</strong>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="proof-student-card" style="--card-tilt: 1.8deg; --card-float-y: 7px;">
+            <div class="proof-student-card-inner">
+              <div class="proof-student-img-wrap">
+                <img src="./PlacedStudentsMiracleIt/Stuti Sharma- Silverarrow Technologies.jpeg" alt="Stuti Sharma placed at Silverarrow Technologies" loading="eager" class="proof-student-img">
+                <span class="proof-student-badge">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  Verified
+                </span>
+              </div>
+              <div class="proof-student-info">
+                <h4 class="proof-student-name">Stuti Sharma</h4>
+                <div class="proof-student-company-pill">
+                  <span class="proof-student-at">Placed at</span>
+                  <strong class="proof-student-company">Silverarrow Technologies</strong>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- SET 2: Duplicate Set for Seamless Continuous Infinite Marquee Loop -->
+          <article class="proof-student-card" aria-hidden="true" style="--card-tilt: -2deg; --card-float-y: -6px;">
+            <div class="proof-student-card-inner">
+              <div class="proof-student-img-wrap">
+                <img src="./PlacedStudentsMiracleIt/Akshat-Accenture.jpg" alt="" loading="eager" class="proof-student-img">
+                <span class="proof-student-badge">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  Verified
+                </span>
+              </div>
+              <div class="proof-student-info">
+                <h4 class="proof-student-name">Akshat</h4>
+                <div class="proof-student-company-pill">
+                  <span class="proof-student-at">Placed at</span>
+                  <strong class="proof-student-company">Accenture</strong>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="proof-student-card" aria-hidden="true" style="--card-tilt: 2.5deg; --card-float-y: 8px;">
+            <div class="proof-student-card-inner">
+              <div class="proof-student-img-wrap">
+                <img src="./PlacedStudentsMiracleIt/Anuj Kumar Kaushal- TCS.jpeg" alt="" loading="eager" class="proof-student-img">
+                <span class="proof-student-badge">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  Verified
+                </span>
+              </div>
+              <div class="proof-student-info">
+                <h4 class="proof-student-name">Anuj Kumar Kaushal</h4>
+                <div class="proof-student-company-pill">
+                  <span class="proof-student-at">Placed at</span>
+                  <strong class="proof-student-company">TCS</strong>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="proof-student-card" aria-hidden="true" style="--card-tilt: -1.5deg; --card-float-y: -8px;">
+            <div class="proof-student-card-inner">
+              <div class="proof-student-img-wrap">
+                <img src="./PlacedStudentsMiracleIt/Astik Sarathe-Infosys.png" alt="" loading="eager" class="proof-student-img">
+                <span class="proof-student-badge">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  Verified
+                </span>
+              </div>
+              <div class="proof-student-info">
+                <h4 class="proof-student-name">Astik Sarathe</h4>
+                <div class="proof-student-company-pill">
+                  <span class="proof-student-at">Placed at</span>
+                  <strong class="proof-student-company">Infosys</strong>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="proof-student-card" aria-hidden="true" style="--card-tilt: 2deg; --card-float-y: 6px;">
+            <div class="proof-student-card-inner">
+              <div class="proof-student-img-wrap">
+                <img src="./PlacedStudentsMiracleIt/Mohit- Dot9 Games.jpeg" alt="" loading="eager" class="proof-student-img">
+                <span class="proof-student-badge">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  Verified
+                </span>
+              </div>
+              <div class="proof-student-info">
+                <h4 class="proof-student-name">Mohit</h4>
+                <div class="proof-student-company-pill">
+                  <span class="proof-student-at">Placed at</span>
+                  <strong class="proof-student-company">Dot9 Games</strong>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="proof-student-card" aria-hidden="true" style="--card-tilt: -2.5deg; --card-float-y: -5px;">
+            <div class="proof-student-card-inner">
+              <div class="proof-student-img-wrap">
+                <img src="./PlacedStudentsMiracleIt/Namit Shirode- Uline (USA).jpeg" alt="" loading="eager" class="proof-student-img">
+                <span class="proof-student-badge">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  Verified
+                </span>
+              </div>
+              <div class="proof-student-info">
+                <h4 class="proof-student-name">Namit Shirode</h4>
+                <div class="proof-student-company-pill">
+                  <span class="proof-student-at">Placed at</span>
+                  <strong class="proof-student-company">Uline (USA)</strong>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="proof-student-card" aria-hidden="true" style="--card-tilt: 1.5deg; --card-float-y: 8px;">
+            <div class="proof-student-card-inner">
+              <div class="proof-student-img-wrap">
+                <img src="./PlacedStudentsMiracleIt/Prateek Gupta- Adit Technologies.jpeg" alt="" loading="eager" class="proof-student-img">
+                <span class="proof-student-badge">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  Verified
+                </span>
+              </div>
+              <div class="proof-student-info">
+                <h4 class="proof-student-name">Prateek Gupta</h4>
+                <div class="proof-student-company-pill">
+                  <span class="proof-student-at">Placed at</span>
+                  <strong class="proof-student-company">Adit Technologies</strong>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="proof-student-card" aria-hidden="true" style="--card-tilt: -2deg; --card-float-y: -7px;">
+            <div class="proof-student-card-inner">
+              <div class="proof-student-img-wrap">
+                <img src="./PlacedStudentsMiracleIt/RUDRESH-TrustTags.jpg" alt="" loading="eager" class="proof-student-img">
+                <span class="proof-student-badge">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  Verified
+                </span>
+              </div>
+              <div class="proof-student-info">
+                <h4 class="proof-student-name">Rudresh</h4>
+                <div class="proof-student-company-pill">
+                  <span class="proof-student-at">Placed at</span>
+                  <strong class="proof-student-company">TrustTags</strong>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="proof-student-card" aria-hidden="true" style="--card-tilt: 2.2deg; --card-float-y: 6px;">
+            <div class="proof-student-card-inner">
+              <div class="proof-student-img-wrap">
+                <img src="./PlacedStudentsMiracleIt/Rani- Logikview Analytics.jpeg" alt="" loading="eager" class="proof-student-img">
+                <span class="proof-student-badge">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  Verified
+                </span>
+              </div>
+              <div class="proof-student-info">
+                <h4 class="proof-student-name">Rani</h4>
+                <div class="proof-student-company-pill">
+                  <span class="proof-student-at">Placed at</span>
+                  <strong class="proof-student-company">Logikview Analytics</strong>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="proof-student-card" aria-hidden="true" style="--card-tilt: -1.8deg; --card-float-y: -8px;">
+            <div class="proof-student-card-inner">
+              <div class="proof-student-img-wrap">
+                <img src="./PlacedStudentsMiracleIt/Siddhant- Infosys.jpeg" alt="" loading="eager" class="proof-student-img">
+                <span class="proof-student-badge">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  Verified
+                </span>
+              </div>
+              <div class="proof-student-info">
+                <h4 class="proof-student-name">Siddhant</h4>
+                <div class="proof-student-company-pill">
+                  <span class="proof-student-at">Placed at</span>
+                  <strong class="proof-student-company">Infosys</strong>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="proof-student-card" aria-hidden="true" style="--card-tilt: 1.8deg; --card-float-y: 7px;">
+            <div class="proof-student-card-inner">
+              <div class="proof-student-img-wrap">
+                <img src="./PlacedStudentsMiracleIt/Stuti Sharma- Silverarrow Technologies.jpeg" alt="" loading="eager" class="proof-student-img">
+                <span class="proof-student-badge">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  Verified
+                </span>
+              </div>
+              <div class="proof-student-info">
+                <h4 class="proof-student-name">Stuti Sharma</h4>
+                <div class="proof-student-company-pill">
+                  <span class="proof-student-at">Placed at</span>
+                  <strong class="proof-student-company">Silverarrow Technologies</strong>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
     </div>
 
     <!-- Dual-Track Infinite Kinetic Marquee with Official Tech Logos -->
@@ -2883,6 +3297,263 @@ metrics = model.train(epochs=<span class="c-number">50</span>, learning_rate=<sp
         </div>
       </div>
 
+    </div>
+
+    <!-- ====================================================================
+         APPROVED STUDENT TESTIMONIALS & VERIFIED REVIEWS SLIDER
+         Continuous kinetic review cards with 5-star ratings & real quotes
+         ==================================================================== -->
+    <div class="proof-testimonials-slider-wrap" aria-label="Approved Student Testimonials and Verified Reviews">
+      <div class="proof-testimonials-header">
+        <span class="proof-slider-pill">
+          <span class="ticker-pulse-dot" aria-hidden="true"></span>
+          VERIFIED STUDENT TESTIMONIALS
+        </span>
+        <h3 class="proof-testimonials-title">Direct Feedback From Our Trainees</h3>
+        <p class="proof-slider-sub">
+          Genuine, verified reviews from students who leveled up their software engineering skills with our team
+        </p>
+      </div>
+
+      <div class="proof-testimonials-mask">
+        <div class="proof-testimonials-track">
+          
+          <!-- SET 1: Authentic Student Testimonial Cards -->
+          <!-- 1. Ankita -->
+          <article class="proof-review-card">
+            <div class="proof-review-top">
+              <div class="proof-stars-wrap" aria-label="5 out of 5 stars">
+                <svg class="proof-star-svg" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="proof-star-svg" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="proof-star-svg" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="proof-star-svg" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="proof-star-svg" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+              <span class="proof-review-badge">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Verified Review
+              </span>
+            </div>
+            <div class="proof-review-body">
+              <p class="proof-review-text">&ldquo;I had a great time during the full stack course. I look forward to recommending this course to my friends.&rdquo;</p>
+            </div>
+            <div class="proof-review-author">
+              <div class="proof-author-avatar-wrap">
+                <img src="./TestimonialImages/Ankita-I had a great time during the full stack course. I look forward to recommending this course to my friends..jpg" alt="Ankita" loading="eager" class="proof-author-avatar">
+              </div>
+              <div class="proof-author-meta">
+                <h4 class="proof-author-name">Ankita</h4>
+                <span class="proof-author-role">Full Stack Development Trainee</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Mohit -->
+          <article class="proof-review-card">
+            <div class="proof-review-top">
+              <div class="proof-stars-wrap" aria-label="5 out of 5 stars">
+                <svg class="proof-star-svg" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="proof-star-svg" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="proof-star-svg" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="proof-star-svg" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="proof-star-svg" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+              <span class="proof-review-badge">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Verified Review
+              </span>
+            </div>
+            <div class="proof-review-body">
+              <p class="proof-review-text">&ldquo;It's one of the best institutes in MP for getting professional knowledge in the IT field.&rdquo;</p>
+            </div>
+            <div class="proof-review-author">
+              <div class="proof-author-avatar-wrap">
+                <img src="./TestimonialImages/Mohit-It's one of the best institutes in MP for getting professional knowledge in the it filed.jpg" alt="Mohit" loading="eager" class="proof-author-avatar">
+              </div>
+              <div class="proof-author-meta">
+                <h4 class="proof-author-name">Mohit</h4>
+                <span class="proof-author-role">Professional IT Trainee</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Nilu -->
+          <article class="proof-review-card">
+            <div class="proof-review-top">
+              <div class="proof-stars-wrap" aria-label="5 out of 5 stars">
+                <svg class="proof-star-svg" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="proof-star-svg" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="proof-star-svg" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="proof-star-svg" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="proof-star-svg" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+              <span class="proof-review-badge">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Verified Review
+              </span>
+            </div>
+            <div class="proof-review-body">
+              <p class="proof-review-text">&ldquo;My overall experience is very good; the faculties are very helpful to me during training. Thank you, Miracle IT Career Academy.&rdquo;</p>
+            </div>
+            <div class="proof-review-author">
+              <div class="proof-author-avatar-wrap">
+                <img src="./TestimonialImages/nilu-My overall experience is very good; the faculties are very helpful to me during training. Thank you, Miracle IT Career Academy..jpg" alt="Nilu" loading="eager" class="proof-author-avatar">
+              </div>
+              <div class="proof-author-meta">
+                <h4 class="proof-author-name">Nilu</h4>
+                <span class="proof-author-role">Miracle IT Academy Alum</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Vinod -->
+          <article class="proof-review-card">
+            <div class="proof-review-top">
+              <div class="proof-stars-wrap" aria-label="5 out of 5 stars">
+                <svg class="proof-star-svg" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="proof-star-svg" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="proof-star-svg" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="proof-star-svg" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="proof-star-svg" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+              <span class="proof-review-badge">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Verified Review
+              </span>
+            </div>
+            <div class="proof-review-body">
+              <p class="proof-review-text">&ldquo;I had a great time during the full stack course. I look forward to recommending this course to my friends.&rdquo;</p>
+            </div>
+            <div class="proof-review-author">
+              <div class="proof-author-avatar-wrap">
+                <img src="./TestimonialImages/Vinod-I had a great time during the full stack course. I look forward to recommending this course to my friends..jpg" alt="Vinod" loading="eager" class="proof-author-avatar">
+              </div>
+              <div class="proof-author-meta">
+                <h4 class="proof-author-name">Vinod</h4>
+                <span class="proof-author-role">Full Stack Engineering Trainee</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- SET 2: Duplicate Set for Seamless Continuous Infinite Loop -->
+          <!-- 1. Ankita Duplicate -->
+          <article class="proof-review-card" aria-hidden="true">
+            <div class="proof-review-top">
+              <div class="proof-stars-wrap">
+                <svg class="proof-star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="proof-star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="proof-star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="proof-star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="proof-star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+              <span class="proof-review-badge">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                Verified Review
+              </span>
+            </div>
+            <div class="proof-review-body">
+              <p class="proof-review-text">&ldquo;I had a great time during the full stack course. I look forward to recommending this course to my friends.&rdquo;</p>
+            </div>
+            <div class="proof-review-author">
+              <div class="proof-author-avatar-wrap">
+                <img src="./TestimonialImages/Ankita-I had a great time during the full stack course. I look forward to recommending this course to my friends..jpg" alt="" loading="eager" class="proof-author-avatar">
+              </div>
+              <div class="proof-author-meta">
+                <h4 class="proof-author-name">Ankita</h4>
+                <span class="proof-author-role">Full Stack Development Trainee</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Mohit Duplicate -->
+          <article class="proof-review-card" aria-hidden="true">
+            <div class="proof-review-top">
+              <div class="proof-stars-wrap">
+                <svg class="proof-star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="proof-star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="proof-star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="proof-star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="proof-star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+              <span class="proof-review-badge">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                Verified Review
+              </span>
+            </div>
+            <div class="proof-review-body">
+              <p class="proof-review-text">&ldquo;It's one of the best institutes in MP for getting professional knowledge in the IT field.&rdquo;</p>
+            </div>
+            <div class="proof-review-author">
+              <div class="proof-author-avatar-wrap">
+                <img src="./TestimonialImages/Mohit-It's one of the best institutes in MP for getting professional knowledge in the it filed.jpg" alt="" loading="eager" class="proof-author-avatar">
+              </div>
+              <div class="proof-author-meta">
+                <h4 class="proof-author-name">Mohit</h4>
+                <span class="proof-author-role">Professional IT Trainee</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Nilu Duplicate -->
+          <article class="proof-review-card" aria-hidden="true">
+            <div class="proof-review-top">
+              <div class="proof-stars-wrap">
+                <svg class="proof-star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="proof-star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="proof-star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="proof-star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="proof-star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+              <span class="proof-review-badge">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                Verified Review
+              </span>
+            </div>
+            <div class="proof-review-body">
+              <p class="proof-review-text">&ldquo;My overall experience is very good; the faculties are very helpful to me during training. Thank you, Miracle IT Career Academy.&rdquo;</p>
+            </div>
+            <div class="proof-review-author">
+              <div class="proof-author-avatar-wrap">
+                <img src="./TestimonialImages/nilu-My overall experience is very good; the faculties are very helpful to me during training. Thank you, Miracle IT Career Academy..jpg" alt="" loading="eager" class="proof-author-avatar">
+              </div>
+              <div class="proof-author-meta">
+                <h4 class="proof-author-name">Nilu</h4>
+                <span class="proof-author-role">Miracle IT Academy Alum</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Vinod Duplicate -->
+          <article class="proof-review-card" aria-hidden="true">
+            <div class="proof-review-top">
+              <div class="proof-stars-wrap">
+                <svg class="proof-star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="proof-star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="proof-star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="proof-star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="proof-star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+              <span class="proof-review-badge">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                Verified Review
+              </span>
+            </div>
+            <div class="proof-review-body">
+              <p class="proof-review-text">&ldquo;I had a great time during the full stack course. I look forward to recommending this course to my friends.&rdquo;</p>
+            </div>
+            <div class="proof-review-author">
+              <div class="proof-author-avatar-wrap">
+                <img src="./TestimonialImages/Vinod-I had a great time during the full stack course. I look forward to recommending this course to my friends..jpg" alt="" loading="eager" class="proof-author-avatar">
+              </div>
+              <div class="proof-author-meta">
+                <h4 class="proof-author-name">Vinod</h4>
+                <span class="proof-author-role">Full Stack Engineering Trainee</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
     </div>
 
     <!-- Center Audit Callout -->
@@ -3667,7 +4338,7 @@ metrics = model.train(epochs=<span class="c-number">50</span>, learning_rate=<sp
                 <label for="courseInterest" class="form-label">
                   Course / Domain of Interest <span class="required-star" aria-hidden="true">*</span>
                 </label>
-                <div class="matcher-chips" style="margin-bottom: 0.65rem; justify-content: flex-start;">
+                <div class="matcher-chips form-course-chips">
                   <button type="button" class="matcher-chip form-course-chip" data-val="Full Stack">⚡ Full Stack</button>
                   <button type="button" class="matcher-chip form-course-chip" data-val="Data Analytics / Data Science">📊 Data & BI</button>
                   <button type="button" class="matcher-chip form-course-chip" data-val="AI / ML">🐍 AI/ML</button>
@@ -4016,7 +4687,7 @@ metrics = model.train(epochs=<span class="c-number">50</span>, learning_rate=<sp
       <span>WhatsApp</span>
     </a>
 
-    <!-- Action 3: Book Visit (Primary) -->
+    <!-- Action 3: Book Free Counselling Visit (Primary) -->
     <a href="#counselling-form" class="mobile-sticky-btn book-action" data-track-cta="sticky_mobile_book">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sticky-icon">
         <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
@@ -4024,7 +4695,7 @@ metrics = model.train(epochs=<span class="c-number">50</span>, learning_rate=<sp
         <line x1="8" y1="2" x2="8" y2="6"></line>
         <line x1="3" y1="10" x2="21" y2="10"></line>
       </svg>
-      <span>Book Visit</span>
+      <span>Book Free Counselling Visit</span>
     </a>
 
   </div>

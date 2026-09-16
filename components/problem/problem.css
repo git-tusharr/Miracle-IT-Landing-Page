@@ -85,6 +85,137 @@
   box-shadow: 0 0 8px #10B981;
 }
 
+/* ==========================================================================
+   Problem Diagnostic Dilemma Quick-Filter Chips
+   ========================================================================== */
+.problem-diagnostic-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.85rem 1rem;
+  margin: 1.5rem auto 0;
+  padding: 0.65rem 1.25rem;
+  background: rgba(13, 18, 31, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  width: fit-content;
+  max-width: 100%;
+}
+
+.problem-diagnostic-box .matcher-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #38BDF8;
+  text-shadow: 0 0 12px rgba(56, 189, 248, 0.3);
+  user-select: none;
+  white-space: nowrap;
+}
+
+.problem-diagnostic-box .matcher-chips {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.diagnostic-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.55rem 1.15rem;
+  border-radius: var(--radius-full);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  color: #CBD5E1;
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+  touch-action: manipulation;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.diagnostic-btn:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(99, 102, 241, 0.55);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+}
+
+.diagnostic-btn:focus-visible {
+  outline: 2px solid #38BDF8;
+  outline-offset: 2px;
+}
+
+.diagnostic-btn.is-active {
+  background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #FFFFFF;
+  font-weight: 700;
+  transform: translateY(-1px);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.55), 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Individual card accents on hover/active */
+.diagnostic-btn[data-target-card="0"]:hover {
+  border-color: rgba(244, 63, 94, 0.6);
+  box-shadow: 0 4px 16px rgba(244, 63, 94, 0.3);
+}
+.diagnostic-btn[data-target-card="1"]:hover {
+  border-color: rgba(245, 158, 11, 0.6);
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.3);
+}
+.diagnostic-btn[data-target-card="2"]:hover {
+  border-color: rgba(56, 189, 248, 0.6);
+  box-shadow: 0 4px 16px rgba(56, 189, 248, 0.3);
+}
+
+.diagnostic-btn[data-target-card="0"].is-active {
+  background: linear-gradient(135deg, #E11D48 0%, #9333EA 100%);
+  box-shadow: 0 0 20px rgba(225, 29, 72, 0.5), 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+.diagnostic-btn[data-target-card="1"].is-active {
+  background: linear-gradient(135deg, #D97706 0%, #7C3AED 100%);
+  box-shadow: 0 0 20px rgba(217, 119, 6, 0.5), 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+.diagnostic-btn[data-target-card="2"].is-active {
+  background: linear-gradient(135deg, #0284C7 0%, #4F46E5 100%);
+  box-shadow: 0 0 20px rgba(2, 132, 199, 0.5), 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .problem-diagnostic-box {
+    border-radius: var(--radius-lg);
+    flex-direction: column;
+    padding: 0.85rem 1rem;
+    width: 100%;
+    margin-top: 1.25rem;
+  }
+  .diagnostic-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.65rem 1rem;
+    font-size: 0.825rem;
+  }
+}
+
 /* Problem Cards View */
 .problem-view {
   animation: fadeIn 0.3s ease;

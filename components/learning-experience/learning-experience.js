@@ -360,11 +360,197 @@ function initLearningExperience(container = document) {
   // Initial layout mounting and start automatic scrolling
   updatePositions(true);
   startAutoplay();
+
+  // Initialize animated counter for campus stats bar (count up from 0)
+  initCampusStatsCounter(section);
+}
+
+/**
+ * CAMPUS STATS ANIMATED COUNTER
+ * Numbers count up from 0 when entering viewport or upon page load/refresh:
+ * - 1:0 -> 1:15 (Trainer-to-Student Ratio)
+ * - 0 hrs/day -> 10 hrs/day (Open Lab Workstation Access)
+ * - Zone-0 -> Zone-I -> Zone-II (Central M.P. Nagar Location)
+ * - 0% -> 100% (Practical Code-First Sessions)
+ */
+function initCampusStatsCounter(section) {
+  if (!section) return;
+  const statsBar = section.querySelector('.campus-stats-bar');
+  if (!statsBar) return;
+
+  const statElements = Array.from(statsBar.querySelectorAll('.campus-stat .stat-number'));
+  if (!statElements.length) return;
+
+  // Metadata definition for each statistic
+  const statsConfig = [
+    {
+      target: 15,
+      render: (val) => `1:${val}`,
+      finalText: '1:15'
+    },
+    {
+      target: 10,
+      render: (val) => `${val} hrs/day`,
+      finalText: '10 hrs/day'
+    },
+    {
+      target: 2,
+      render: (val) => {
+        if (val === 0) return 'Zone-0';
+        if (val === 1) return 'Zone-I';
+        return 'Zone-II';
+      },
+      finalText: 'Zone-II'
+    },
+    {
+      target: 100,
+      render: (val) => `${val}%`,
+      finalText: '100%'
+    }
+  ];
+
+  const setZeroState = () => {
+    statElements.forEach((el, idx) => {
+      const cfg = statsConfig[idx];
+      if (cfg) {
+        el.textContent = cfg.render(0);
+        el.classList.remove('is-complete');
+        el.classList.remove('is-counting');
+      }
+    });
+  };
+
+  const setFinalState = () => {
+    statElements.forEach((el, idx) => {
+      const cfg = statsConfig[idx];
+      if (cfg) {
+        el.textContent = cfg.finalText;
+        el.classList.remove('is-counting');
+        el.classList.add('is-complete');
+      }
+    });
+  };
+
+  // Respect reduced-motion preferences
+  const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) {
+    setFinalState();
+    return;
+  }
+
+  let isAnimating = false;
+  let hasAnimated = false;
+  let animationFrameId = null;
+
+  const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+
+  const startCountAnimation = () => {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    if (animationFrameId) {
+      cancelAnimationFrame(animationFrameId);
+    }
+
+    setZeroState();
+    statElements.forEach(el => {
+      el.classList.remove('is-complete');
+      el.classList.add('is-counting');
+    });
+
+    const duration = 1400; // 1.4 seconds smooth counter
+    let startTime = null;
+
+    const frame = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const elapsed = timestamp - startTime;
+      const rawProgress = Math.min(elapsed / duration, 1);
+      const easedProgress = easeOutCubic(rawProgress);
+
+      statElements.forEach((el, idx) => {
+        const cfg = statsConfig[idx];
+        if (!cfg) return;
+
+        if (rawProgress >= 1) {
+          el.textContent = cfg.finalText;
+        } else {
+          const currentVal = Math.round(cfg.target * easedProgress);
+          el.textContent = cfg.render(currentVal);
+        }
+      });
+
+      if (rawProgress < 1) {
+        animationFrameId = requestAnimationFrame(frame);
+      } else {
+        isAnimating = false;
+        hasAnimated = true;
+        setFinalState();
+      }
+    };
+
+    animationFrameId = requestAnimationFrame(frame);
+  };
+
+  // Check if currently visible in viewport
+  const isElementInViewport = () => {
+    const rect = statsBar.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    return rect.top < windowHeight * 0.9 && rect.bottom > windowHeight * 0.1;
+  };
+
+  // Set initial zero values
+  setZeroState();
+
+  // If already in viewport on load or refresh, start counting immediately with slight initial tick
+  if (isElementInViewport()) {
+    setTimeout(() => {
+      startCountAnimation();
+    }, 150);
+  }
+
+  // IntersectionObserver for scroll-in detection
+  if (typeof IntersectionObserver !== 'undefined') {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (!hasAnimated && !isAnimating) {
+            startCountAnimation();
+          }
+        } else {
+          // Scrolled completely out of view - re-arm for next entry
+          if (!isAnimating && hasAnimated) {
+            setZeroState();
+            hasAnimated = false;
+          }
+        }
+      });
+    }, {
+      threshold: 0.2,
+      rootMargin: '0px 0px -30px 0px'
+    });
+
+    observer.observe(statsBar);
+  } else {
+    // Fallback if IntersectionObserver not supported
+    window.addEventListener('scroll', () => {
+      if (isElementInViewport()) {
+        if (!hasAnimated && !isAnimating) {
+          startCountAnimation();
+        }
+      } else {
+        if (!isAnimating && hasAnimated) {
+          setZeroState();
+          hasAnimated = false;
+        }
+      }
+    }, { passive: true });
+  }
 }
 
 // Global registration and auto-initialization
 if (typeof window !== 'undefined') {
   window.initLearningExperience = initLearningExperience;
+  window.initCampusStatsCounter = initCampusStatsCounter;
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => initLearningExperience());
   } else {
