@@ -1,32 +1,41 @@
 /* ==========================================================================
-   FINAL CTA SECTION STYLES (v2.0 OPTIMIZED)
+   FINAL CTA SECTION STYLES — NEXT-GEN TECH AESTHETIC
    ========================================================================== */
 
 .final-cta-section {
-  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+  background: radial-gradient(circle at 50% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 70%),
+              linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%);
   border-top: 1px solid var(--color-border);
-  padding: clamp(4.5rem, 8vw, 7rem) 0;
+  padding: clamp(5rem, 9vw, 8rem) 0;
   position: relative;
   overflow: hidden;
+  text-align: center;
 }
 
 .final-cta-content {
   max-width: 820px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .final-cta-title {
-  font-size: clamp(2.1rem, 4.2vw, 3.15rem);
-  color: var(--color-primary);
+  font-size: clamp(2.2rem, 4.4vw, 3.4rem);
+  color: #FFFFFF;
   margin-bottom: 0.85rem;
-  line-height: 1.18;
-  letter-spacing: -0.03em;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  font-weight: 900;
 }
 
 .final-cta-subtitle {
-  font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+  font-size: clamp(1.3rem, 2.5vw, 1.7rem);
   font-weight: 800;
-  color: var(--color-brand);
+  background: var(--grad-accent-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
   margin-bottom: 1.5rem;
 }
 
@@ -42,13 +51,39 @@
 
 .final-hero-btn {
   font-size: 1.12rem;
-  padding: 1.15rem 2.75rem;
-  box-shadow: 0 4px 18px rgba(29, 78, 216, 0.3);
+  padding: 1.15rem 2.85rem;
+  box-shadow: 0 4px 25px rgba(99, 102, 241, 0.45);
 }
 
 .final-hero-btn:hover {
-  box-shadow: 0 8px 28px rgba(29, 78, 216, 0.42);
+  box-shadow: 0 8px 35px rgba(99, 102, 241, 0.65);
   transform: translateY(-2px);
+}
+
+/* Motion-ready entrance for Final CTA */
+html.motion-ready .final-cta-content {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 750ms cubic-bezier(0.22, 1, 0.36, 1), transform 750ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
+}
+
+html.motion-ready .final-cta-section.is-revealed .final-cta-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+html.motion-ready .final-hero-btn {
+  transform: scale(0.96);
+  transition: transform 600ms cubic-bezier(0.34, 1.4, 0.64, 1) 200ms, box-shadow var(--transition-normal);
+}
+
+html.motion-ready .final-cta-section.is-revealed .final-hero-btn {
+  transform: scale(1);
+}
+
+html.motion-ready .final-cta-section.is-revealed .final-hero-btn:hover {
+  transform: scale(1.02) translateY(-2px);
 }
 
 .final-shortcuts-bar {
@@ -62,9 +97,10 @@
 }
 
 .shortcuts-label {
+  font-family: var(--font-mono);
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--color-text-light);
+  color: var(--color-text-dim);
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
@@ -73,57 +109,36 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
 .shortcut-link {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.95rem;
+  font-family: var(--font-sans);
+  font-size: 0.925rem;
   font-weight: 600;
-  color: var(--color-primary);
-  padding: 0.5rem 1rem;
-  background-color: #FFFFFF;
-  border: 1.5px solid var(--color-border);
+  color: #E2E8F0;
+  padding: 0.55rem 1.15rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
   transition: all var(--transition-fast);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .shortcut-link svg {
   width: 16px;
   height: 16px;
-  color: var(--color-brand);
+  color: #38BDF8;
 }
 
 .shortcut-link:hover {
-  border-color: var(--color-brand-border);
-  background-color: var(--color-brand-soft);
+  border-color: rgba(99, 102, 241, 0.45);
+  color: #FFFFFF;
+  background-color: rgba(99, 102, 241, 0.15);
   transform: translateY(-2px);
-}
-
-.shortcut-link.whatsapp-color:hover {
-  border-color: #86EFAC;
-  background-color: #F0FDF4;
-  color: var(--color-whatsapp);
-}
-
-.shortcut-link.whatsapp-color svg {
-  color: var(--color-whatsapp);
-}
-
-@media (max-width: 500px) {
-  .shortcuts-links {
-    flex-direction: column;
-    width: 100%;
-    gap: 0.75rem;
-  }
-  .shortcut-link {
-    width: 100%;
-    justify-content: center;
-  }
-  .final-hero-btn {
-    width: 100%;
-    padding: 1.15rem 1.5rem;
-  }
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.25);
 }

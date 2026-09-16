@@ -1,5 +1,5 @@
 <!-- ==========================================================================
-     WHO CAN JOIN SECTION COMPONENT
+     WHO CAN JOIN SECTION COMPONENT — GSAP SCROLL STACKING CARDS
      Tailored guidance by academic background with strict honesty
      ========================================================================== -->
 <link rel="stylesheet" href="./components/who-can-join/who-can-join.css">
@@ -14,85 +14,178 @@
       </p>
     </div>
 
-    <!-- 4 Background Profiles Grid -->
-    <div class="grid-2 who-grid">
+    <!-- GSAP Stacking Cards Container -->
+    <div class="who-stack-container" id="whoStackContainer">
       
-      <!-- Profile 1: CS / IT Students & Engineers -->
-      <div class="card who-card">
-        <div class="who-header">
-          <div class="who-badge">Engineering & Tech Degrees</div>
-          <h3 class="who-title">B.Tech / BE / BCA / MCA / B.Sc (CS/IT)</h3>
-        </div>
-        <p class="who-desc">
-          You already have basic exposure to computer fundamentals or coding syntax, but need hands-on production experience, Git workflows, backend architectures, and project readiness to crack entry-level developer interviews.
-        </p>
-        <div class="who-recommended">
-          <span class="rec-label">Common Tracks:</span>
-          <span class="rec-tag">Full Stack Development</span>
-          <span class="rec-tag">Cybersecurity</span>
-          <span class="rec-tag">DevOps</span>
-        </div>
+      <!-- Interactive Stack Navigation Pill Bar -->
+      <div class="who-stack-nav" id="whoStackNav" aria-label="Audience Profile Navigation" role="tablist">
+        <button class="who-nav-pill is-active" data-card-target="0" role="tab" aria-selected="true" aria-controls="who-card-0">
+          <span class="pill-num">01</span>
+          <span class="pill-label">Tech & CS</span>
+        </button>
+        <button class="who-nav-pill" data-card-target="1" role="tab" aria-selected="false" aria-controls="who-card-1">
+          <span class="pill-num">02</span>
+          <span class="pill-label">Data & Math</span>
+        </button>
+        <button class="who-nav-pill" data-card-target="2" role="tab" aria-selected="false" aria-controls="who-card-2">
+          <span class="pill-num">03</span>
+          <span class="pill-label">Non-Tech</span>
+        </button>
+        <button class="who-nav-pill" data-card-target="3" role="tab" aria-selected="false" aria-controls="who-card-3">
+          <span class="pill-num">04</span>
+          <span class="pill-label">Switchers</span>
+        </button>
+        <div class="who-nav-indicator" id="whoNavIndicator"></div>
       </div>
 
-      <!-- Profile 2: Data & Analytics Seekers -->
-      <div class="card who-card">
-        <div class="who-header">
-          <div class="who-badge">Analytical Mindsets</div>
-          <h3 class="who-title">Math / Stats / Economics / AI Students</h3>
-        </div>
-        <p class="who-desc">
-          You enjoy data, pattern recognition, and statistics. You want to learn how to manipulate large datasets, build analytical dashboards, and explore data science or machine learning fundamentals.
-        </p>
-        <div class="who-recommended">
-          <span class="rec-label">Common Tracks:</span>
-          <span class="rec-tag">Data Analytics</span>
-          <span class="rec-tag">Python & SQL</span>
-          <span class="rec-tag">AI / ML Fundamentals</span>
-        </div>
-      </div>
+      <!-- Scroll Stacking Card Deck -->
+      <div class="who-stack-deck" id="whoStackDeck">
+        
+        <!-- Profile 1: CS / IT Students & Engineers -->
+        <article class="card who-stack-card who-card-tech" id="who-card-0" data-card-index="0" style="--accent-color: #6366F1; --accent-glow: rgba(99, 102, 241, 0.4);">
+          <div class="who-card-watermark">01</div>
+          <div class="who-card-glow"></div>
+          <div class="who-card-inner">
+            <div class="who-header">
+              <div class="who-meta-row">
+                <div class="who-badge">Engineering & Tech Degrees</div>
+                <div class="who-counter">01 / 04</div>
+              </div>
+              <h3 class="who-title">B.Tech / BE / BCA / MCA / B.Sc (CS/IT)</h3>
+            </div>
+            <p class="who-desc">
+              You already have basic exposure to computer fundamentals or coding syntax, but need hands-on production experience, Git workflows, backend architectures, and project readiness to crack entry-level developer interviews.
+            </p>
+            <div class="who-recommended">
+              <span class="rec-label">Common Tracks:</span>
+              <span class="rec-tag">Full Stack Development</span>
+              <span class="rec-tag">Cybersecurity</span>
+              <span class="rec-tag">DevOps</span>
+            </div>
+            <div class="who-card-footer">
+              <div class="who-fit-tag">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Direct match: Fast-track to architecture & project capstones</span>
+              </div>
+              <a href="#counselling-form" class="who-match-btn" data-track-cta="who_card_1_counsel">
+                <span>Explore Tech Roadmap</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
 
-      <!-- Profile 3: Non-Tech Graduates -->
-      <div class="card who-card">
-        <div class="who-header">
-          <div class="who-badge">Commerce & Management</div>
-          <h3 class="who-title">B.Com / M.Com / BBA / MBA Graduates</h3>
-        </div>
-        <p class="who-desc">
-          You do not have a prior programming background, but want to enter high-growth tech or tech-adjacent operations, business intelligence, or digital workflows without being overwhelmed by intense theory.
-        </p>
-        <div class="who-recommended">
-          <span class="rec-label">Common Tracks:</span>
-          <span class="rec-tag">Business Data Analytics</span>
-          <span class="rec-tag">Foundational IT Bridge</span>
-        </div>
-      </div>
+        <!-- Profile 2: Data & Analytics Seekers -->
+        <article class="card who-stack-card who-card-data" id="who-card-1" data-card-index="1" style="--accent-color: #06B6D4; --accent-glow: rgba(6, 182, 212, 0.4);">
+          <div class="who-card-watermark">02</div>
+          <div class="who-card-glow"></div>
+          <div class="who-card-inner">
+            <div class="who-header">
+              <div class="who-meta-row">
+                <div class="who-badge">Analytical Mindsets</div>
+                <div class="who-counter">02 / 04</div>
+              </div>
+              <h3 class="who-title">Math / Stats / Economics / AI Students</h3>
+            </div>
+            <p class="who-desc">
+              You enjoy data, pattern recognition, and statistics. You want to learn how to manipulate large datasets, build analytical dashboards, and explore data science or machine learning fundamentals.
+            </p>
+            <div class="who-recommended">
+              <span class="rec-label">Common Tracks:</span>
+              <span class="rec-tag">Data Analytics</span>
+              <span class="rec-tag">Python & SQL</span>
+              <span class="rec-tag">AI / ML Fundamentals</span>
+            </div>
+            <div class="who-card-footer">
+              <div class="who-fit-tag">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Direct match: Analytical Modeling & Predictive Pipelines</span>
+              </div>
+              <a href="#counselling-form" class="who-match-btn" data-track-cta="who_card_2_counsel">
+                <span>Explore Data Roadmap</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
 
-      <!-- Profile 4: Career Switchers -->
-      <div class="card who-card">
-        <div class="who-header">
-          <div class="who-badge">Working Professionals</div>
-          <h3 class="who-title">Working Professionals Looking to Switch</h3>
-        </div>
-        <p class="who-desc">
-          Currently in customer support, sales, BPO, or non-technical roles and aiming to pivot into software engineering or specialized IT roles through focused weekend or evening training.
-        </p>
-        <div class="who-recommended">
-          <span class="rec-label">Common Tracks:</span>
-          <span class="rec-tag">Full Stack Web</span>
-          <span class="rec-tag">Cloud Infrastructure</span>
-        </div>
-      </div>
+        <!-- Profile 3: Non-Tech Graduates -->
+        <article class="card who-stack-card who-card-commerce" id="who-card-2" data-card-index="2" style="--accent-color: #F59E0B; --accent-glow: rgba(245, 158, 11, 0.4);">
+          <div class="who-card-watermark">03</div>
+          <div class="who-card-glow"></div>
+          <div class="who-card-inner">
+            <div class="who-header">
+              <div class="who-meta-row">
+                <div class="who-badge">Commerce & Management</div>
+                <div class="who-counter">03 / 04</div>
+              </div>
+              <h3 class="who-title">B.Com / M.Com / BBA / MBA Graduates</h3>
+            </div>
+            <p class="who-desc">
+              You do not have a prior programming background, but want to enter high-growth tech or tech-adjacent operations, business intelligence, or digital workflows without being overwhelmed by intense theory.
+            </p>
+            <div class="who-recommended">
+              <span class="rec-label">Common Tracks:</span>
+              <span class="rec-tag">Business Data Analytics</span>
+              <span class="rec-tag">Foundational IT Bridge</span>
+            </div>
+            <div class="who-card-footer">
+              <div class="who-fit-tag">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Zero-Code Bridge: Business Intelligence & Logic Systems</span>
+              </div>
+              <a href="#counselling-form" class="who-match-btn" data-track-cta="who_card_3_counsel">
+                <span>Explore Bridge Roadmap</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
 
+        <!-- Profile 4: Career Switchers -->
+        <article class="card who-stack-card who-card-switcher" id="who-card-3" data-card-index="3" style="--accent-color: #8B5CF6; --accent-glow: rgba(139, 92, 246, 0.4);">
+          <div class="who-card-watermark">04</div>
+          <div class="who-card-glow"></div>
+          <div class="who-card-inner">
+            <div class="who-header">
+              <div class="who-meta-row">
+                <div class="who-badge">Working Professionals</div>
+                <div class="who-counter">04 / 04</div>
+              </div>
+              <h3 class="who-title">Working Professionals Looking to Switch</h3>
+            </div>
+            <p class="who-desc">
+              Currently in customer support, sales, BPO, or non-technical roles and aiming to pivot into software engineering or specialized IT roles through focused weekend or evening training.
+            </p>
+            <div class="who-recommended">
+              <span class="rec-label">Common Tracks:</span>
+              <span class="rec-tag">Full Stack Web</span>
+              <span class="rec-tag">Cloud Infrastructure</span>
+            </div>
+            <div class="who-card-footer">
+              <div class="who-fit-tag">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Flexible Shift: Weekend Cohorts & 1-on-1 Mentorship</span>
+              </div>
+              <a href="#counselling-form" class="who-match-btn" data-track-cta="who_card_4_counsel">
+                <span>Explore Switch Roadmap</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
     </div>
 
     <!-- Approved Mandatory Message & Call to Action -->
-    <div class="who-cta-box">
+    <div class="who-cta-box bento-spotlight">
       <div class="who-cta-inner">
         <div class="who-cta-text">
           <h3>Not sure which course fits your background?</h3>
           <p>That is exactly what the free counselling session is for. We evaluate your academic background, past experience, and aptitude before recommending any course path.</p>
         </div>
-        <a href="#counselling-form" class="btn btn-primary btn-lg" data-track-cta="who_discuss_counsellor">
+        <a href="#counselling-form" class="btn btn-primary btn-lg btn-magnetic" data-track-cta="who_discuss_counsellor">
           Discuss Your Career With A Counsellor
         </a>
       </div>

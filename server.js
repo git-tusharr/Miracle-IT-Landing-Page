@@ -76,6 +76,8 @@ server.listen(PORT, () => {
   console.log(` Press Ctrl + C to stop the server.`);
   console.log(`======================================================\n`);
 
-  // Automatically open default browser on Windows
-  exec(`start ${url}`);
+  // Automatically open default browser on Windows unless NO_BROWSER_OPEN is set
+  if (!process.env.NO_BROWSER_OPEN) {
+    exec(`start ${url}`);
+  }
 });

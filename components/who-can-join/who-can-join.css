@@ -1,88 +1,339 @@
 /* ==========================================================================
-   WHO CAN JOIN SECTION STYLES
+   WHO CAN JOIN SECTION STYLES — GSAP SCROLL STACKING CARDS DECK
+   Ultra-modern Obsidian Glass, Hardware-Accelerated 3D Depth, Responsive
    ========================================================================== */
 
 .who-join-section {
-  background-color: #F8FAFC;
+  background-color: var(--color-bg-alt);
+  position: relative;
+  overflow: visible;
+  padding-top: clamp(4rem, 8vw, 7rem);
+  padding-bottom: clamp(4rem, 8vw, 7rem);
 }
 
-.who-grid {
-  gap: 2rem;
-  margin-bottom: 3.5rem;
+/* --------------------------------------------------------------------------
+   Stack Container & Layout Wrapper
+   -------------------------------------------------------------------------- */
+.who-stack-container {
+  position: relative;
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
 }
 
-.who-card {
-  background-color: #FFFFFF;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
-  padding: 2rem;
+/* --------------------------------------------------------------------------
+   Interactive Navigation Pill Bar
+   -------------------------------------------------------------------------- */
+.who-stack-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0 auto 2.5rem auto;
+  padding: 0.375rem 0.5rem;
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-full, 9999px);
+  width: fit-content;
+  max-width: 100%;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  position: relative;
+  z-index: 20;
+}
+
+.who-nav-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.15rem;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-full, 9999px);
+  color: var(--color-text-muted, #94A3B8);
+  font-family: var(--font-sans, system-ui);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal, 0.25s ease);
+  outline: none;
+  white-space: nowrap;
+}
+
+.who-nav-pill:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.who-nav-pill .pill-num {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  opacity: 0.7;
+  letter-spacing: 0.04em;
+}
+
+.who-nav-pill.is-active {
+  background: rgba(99, 102, 241, 0.18);
+  border-color: rgba(99, 102, 241, 0.45);
+  color: #FFFFFF;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.25);
+}
+
+.who-nav-pill.is-active .pill-num {
+  color: #818CF8;
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Cards Deck Stage
+   -------------------------------------------------------------------------- */
+.who-stack-deck {
+  position: relative;
+  max-width: 900px;
+  min-height: 480px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Individual Stacking Card
+   -------------------------------------------------------------------------- */
+.who-stack-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #0B1120;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-2xl, 24px);
+  padding: clamp(2rem, 4vw, 2.75rem);
+  box-shadow: 0 30px 80px -15px rgba(0, 0, 0, 0.95), 
+              0 0 45px -5px var(--accent-glow, rgba(99, 102, 241, 0.3)),
+              inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  overflow: hidden;
+  will-change: transform, opacity;
+  transform-origin: top center;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.who-stack-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-color, #6366F1) 15%, var(--accent-color, #6366F1) 85%, transparent);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.who-stack-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 30px 70px -10px rgba(0, 0, 0, 0.9), 
+              0 0 50px -5px var(--accent-glow, rgba(99, 102, 241, 0.35)),
+              inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Card Glow Ambience */
+.who-card-glow {
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-glow, rgba(99, 102, 241, 0.3)) 0%, transparent 70%);
+  pointer-events: none;
+  opacity: 0.6;
+  filter: blur(40px);
+}
+
+/* Card Watermark Number */
+.who-card-watermark {
+  position: absolute;
+  top: 0.75rem;
+  right: 2rem;
+  font-family: var(--font-mono, monospace);
+  font-size: clamp(5rem, 9vw, 8rem);
+  font-weight: 900;
+  line-height: 1;
+  color: #FFFFFF;
+  opacity: 0.04;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Card Inner Content Structure */
+.who-card-inner {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
+  gap: 1.25rem;
 }
 
 .who-header {
-  margin-bottom: 1rem;
+  margin-bottom: 0;
+}
+
+.who-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
 }
 
 .who-badge {
+  font-family: var(--font-mono, monospace);
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--color-brand);
-  background-color: var(--color-brand-soft);
+  letter-spacing: 0.06em;
+  color: var(--accent-color, #38BDF8);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--accent-color, rgba(6, 182, 212, 0.35));
   display: inline-block;
-  padding: 0.2rem 0.6rem;
-  border-radius: var(--radius-sm);
-  margin-bottom: 0.5rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-full, 9999px);
+}
+
+.who-counter {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text-dim, #64748B);
+  letter-spacing: 0.08em;
 }
 
 .who-title {
-  font-size: 1.25rem;
-  color: var(--color-primary);
+  font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+  color: #FFFFFF;
   line-height: 1.3;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.015em;
 }
 
 .who-desc {
-  font-size: 0.95rem;
-  color: var(--color-text-muted);
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  flex-grow: 1;
+  font-size: clamp(0.92rem, 1.1vw, 1.02rem);
+  color: var(--color-text-muted, #94A3B8);
+  line-height: 1.65;
+  margin: 0;
 }
 
+/* Recommended Tracks Pill List */
 .who-recommended {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.55rem;
   padding-top: 1rem;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .rec-label {
+  font-family: var(--font-mono, monospace);
   font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--color-text-light);
+  font-weight: 700;
+  color: var(--accent-color, #818CF8);
 }
 
 .rec-tag {
+  font-family: var(--font-mono, monospace);
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--color-text-main);
-  background-color: var(--color-bg-alt);
-  padding: 0.2rem 0.5rem;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--color-border);
+  color: #E2E8F0;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-sm, 6px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all var(--transition-fast, 0.15s ease);
 }
 
-/* Callout Box */
-.who-cta-box {
-  background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+.who-stack-card:hover .rec-tag {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
   color: #FFFFFF;
-  border-radius: var(--radius-xl);
+}
+
+/* Card Footer Action Strip */
+.who-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  flex-wrap: wrap;
+}
+
+.who-fit-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-emerald, #10B981);
+}
+
+.who-fit-tag svg {
+  color: var(--color-emerald, #10B981);
+  flex-shrink: 0;
+}
+
+.who-match-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--accent-color, rgba(99, 102, 241, 0.4));
+  padding: 0.5rem 1.1rem;
+  border-radius: var(--radius-full, 9999px);
+  text-decoration: none;
+  transition: all var(--transition-normal, 0.25s ease);
+}
+
+.who-match-btn:hover {
+  background: var(--accent-color, #6366F1);
+  color: #FFFFFF;
+  box-shadow: 0 0 20px var(--accent-glow, rgba(99, 102, 241, 0.4));
+  transform: translateX(3px);
+}
+
+.who-match-btn svg {
+  transition: transform 0.2s ease;
+}
+
+.who-match-btn:hover svg {
+  transform: translateX(3px);
+}
+
+/* --------------------------------------------------------------------------
+   Bottom Callout CTA Box (Preserved)
+   -------------------------------------------------------------------------- */
+.who-cta-box {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.8) 100%);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+  border-left: 4px solid var(--color-brand, #6366F1);
+  color: #FFFFFF;
+  border-radius: var(--radius-xl, 20px);
   padding: clamp(2rem, 4vw, 3rem);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(99, 102, 241, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  margin-top: 2rem;
+  position: relative;
+  z-index: 5;
 }
 
 .who-cta-inner {
@@ -96,19 +347,105 @@
   color: #FFFFFF;
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
+  font-weight: 800;
 }
 
 .who-cta-text p {
-  color: #94A3B8;
+  color: var(--color-text-muted, #94A3B8);
   font-size: 1rem;
   line-height: 1.6;
-  max-width: 650px;
 }
 
-@media (max-width: 868px) {
+/* --------------------------------------------------------------------------
+   Mobile & Responsive Adaptations (< 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .who-stack-nav {
+    overflow-x: auto;
+    justify-content: flex-start;
+    max-width: 100%;
+    padding: 0.35rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .who-stack-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .who-nav-pill {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.8rem;
+  }
+
+  /* When JS Pin is disabled on mobile, stack cards stick with natural CSS sticky */
+  .who-stack-deck {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .who-stack-card {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    padding: 1.5rem 1.25rem;
+  }
+
+  /* Sticky stacking effect on mobile if desired */
+  .mobile-sticky-active .who-stack-card {
+    position: sticky;
+    top: 85px;
+    margin-bottom: 1.5rem;
+  }
+
+  .who-card-watermark {
+    font-size: 4.5rem;
+    right: 1rem;
+    top: 0.5rem;
+  }
+
+  .who-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .who-match-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
   .who-cta-inner {
     flex-direction: column;
     align-items: stretch;
+    gap: 1.5rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Accessibility: Prefers Reduced Motion
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .who-stack-deck {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
     gap: 1.75rem;
+  }
+
+  .who-stack-card {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+  }
+
+  .who-nav-pill {
+    transition: none;
   }
 }

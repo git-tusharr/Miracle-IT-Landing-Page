@@ -1,185 +1,326 @@
 /* ==========================================================================
-   COUNSELLING PROCESS SECTION STYLES (v3.0 OPTIMIZED)
+   COUNSELLING PROCESS SECTION STYLES
+   5-Step Centered Scroll Journey — Effortless On-Scroll Transitions
+   Miracle IT Career Academy — Bhopal
    ========================================================================== */
 
 .counselling-process-section {
-  background-color: #FFFFFF;
+  background-color: var(--color-bg);
+  position: relative;
+  transition: background-color 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+  overflow: hidden;
 }
 
-.process-steps-container {
+/* Container & Viewport Centering */
+.counselling-pin-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.counselling-sticky-viewport {
+  position: relative;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.counselling-container {
+  width: 100%;
   max-width: 920px;
-  margin: 0 auto 3.5rem auto;
-  position: relative;
-}
-
-.process-step-item {
+  margin: 0 auto;
+  padding: 0 1.5rem;
   display: flex;
-  align-items: stretch;
-  gap: 1.75rem;
-  position: relative;
-}
-
-/* Step Number Node */
-.step-badge-number {
-  width: 56px;
-  height: 56px;
-  border-radius: var(--radius-full);
-  background-color: var(--color-bg-alt);
-  color: var(--color-brand);
-  border: 2px solid var(--color-brand-border);
-  font-size: 1.2rem;
-  font-weight: 900;
-  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  z-index: 2;
-  box-shadow: var(--shadow-xs);
 }
 
-.process-step-item:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  top: 56px;
-  left: 27px;
-  bottom: -1.75rem;
-  width: 2px;
-  background-color: var(--color-border);
-  z-index: 1;
+.counselling-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  max-width: 720px;
 }
 
-.process-step-item.highlight-step .step-badge-number {
-  background-color: var(--color-brand);
+.counselling-header h2 {
+  font-size: 2.25rem;
   color: #FFFFFF;
-  border-color: var(--color-brand);
-  box-shadow: 0 0 0 5px var(--color-brand-soft);
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.02em;
 }
 
-/* Step Card */
+.counselling-header .text-lead {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   Step Card Styling (Common to Mobile & Desktop)
+   -------------------------------------------------------------------------- */
 .step-card {
-  background-color: #FFFFFF;
-  border: 1.5px solid var(--color-border);
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-xl);
-  padding: 1.75rem 2rem;
-  flex-grow: 1;
-  transition: all var(--transition-normal);
+  padding: 2.25rem 2.5rem;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
   display: flex;
   flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .step-card:hover {
-  border-color: var(--color-brand-border);
-  box-shadow: var(--shadow-md);
-  transform: translateX(4px);
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.95), 0 0 35px rgba(99, 102, 241, 0.25);
 }
 
-.process-step-item.highlight-step .step-card {
-  border: 1.5px solid var(--color-brand);
-  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+.highlight-step .step-card {
+  background: linear-gradient(135deg, rgba(26, 35, 62, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%);
+  border-color: rgba(99, 102, 241, 0.55);
+  box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.95), 0 0 35px rgba(99, 102, 241, 0.3);
 }
 
-.step-card-top {
+/* Card Header: Number + Step Indicator Pill */
+.step-card-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.85rem;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
 }
 
-.step-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-md);
-  background-color: var(--color-brand-soft);
-  color: var(--color-brand);
-  display: flex;
+.step-badge-number {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #38BDF8;
+  background: rgba(6, 182, 212, 0.12);
+  border: 1.5px solid rgba(6, 182, 212, 0.4);
+  border-radius: var(--radius-full);
+  width: 46px;
+  height: 46px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 0 16px rgba(6, 182, 212, 0.25);
 }
 
-.step-icon svg {
-  width: 20px;
-  height: 20px;
+.highlight-step .step-badge-number {
+  background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 25px rgba(99, 102, 241, 0.5);
 }
 
-.step-order-badge {
-  font-size: 0.72rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--color-text-light);
-  background-color: var(--color-bg-alt);
-  padding: 0.25rem 0.65rem;
+.step-indicator-pill {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #94A3B8;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.3rem 0.85rem;
   border-radius: var(--radius-full);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
-.step-order-badge.badge-active {
-  color: var(--color-brand);
-  background-color: var(--color-brand-soft);
-  border: 1px solid var(--color-brand-border);
+.step-indicator-pill.pill-active {
+  color: #A5B4FC;
+  background: rgba(99, 102, 241, 0.18);
+  border-color: rgba(99, 102, 241, 0.4);
 }
 
 .step-title {
-  font-size: 1.25rem;
-  color: var(--color-primary);
-  margin-bottom: 0.25rem;
-}
-
-.step-summary {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--color-brand);
-  margin-bottom: 0.5rem;
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
 }
 
 .step-detail {
-  font-size: 0.925rem;
-  color: var(--color-text-muted);
-  line-height: 1.6;
-  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  color: #94A3B8;
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
 }
 
-/* Step Tags Row */
 .step-tags-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
-  padding-top: 0.85rem;
-  border-top: 1px solid var(--color-border);
+  gap: 0.6rem;
 }
 
 .step-chip {
-  font-size: 0.76rem;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
   font-weight: 600;
-  color: var(--color-text-main);
-  background-color: var(--color-bg-alt);
-  padding: 0.2rem 0.55rem;
+  color: #CBD5E1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.35rem 0.8rem;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--color-border);
 }
 
-.process-note {
-  font-size: 0.85rem;
-  color: var(--color-text-light);
-  margin-top: 0.75rem;
+.step-actions-row {
+  margin-top: 0.5rem;
 }
 
-@media (max-width: 640px) {
-  .process-step-item {
-    gap: 1rem;
+/* ==========================================================================
+   DESKTOP PINNED STAGE (>= 992px)
+   Card is strictly centered in the viewport, fully visible with zero clipping
+   ========================================================================== */
+@media (min-width: 992px) {
+  .counselling-process-section {
+    padding: 0;
   }
-  .step-badge-number {
-    width: 42px;
-    height: 42px;
-    font-size: 1rem;
+
+  .counselling-sticky-viewport {
+    min-height: 100vh;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1.5rem;
   }
-  .process-step-item:not(:last-child)::after {
-    left: 20px;
-    top: 42px;
+
+  .counselling-header {
+    margin-bottom: 2rem;
   }
+
+  .counselling-header h2 {
+    font-size: clamp(1.85rem, 2.5vw, 2.35rem);
+    margin-bottom: 0.35rem;
+  }
+
+  /* Centered stage frame */
+  .process-scroll-window {
+    width: 100%;
+    max-width: 760px;
+    min-height: 380px;
+    position: relative;
+    overflow: visible;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .process-steps-container {
+    position: relative;
+    width: 100%;
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .counselling-step-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .counselling-step-panel.is-active {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 2;
+  }
+
+  .step-outer {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .step-card {
-    padding: 1.25rem 1.25rem;
+    max-width: 740px;
+    padding: 2rem 2.25rem;
+  }
+}
+
+/* ==========================================================================
+   MOBILE & TABLET VERTICAL STACK (< 992px)
+   ========================================================================== */
+@media (max-width: 991px) {
+  .counselling-process-section {
+    padding: 4.5rem 0;
+  }
+
+  .process-scroll-window,
+  .process-steps-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .process-steps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .counselling-step-panel {
+    position: static;
+    visibility: visible;
+    opacity: 1;
+    width: 100%;
+  }
+
+  .step-card {
+    padding: 1.75rem 1.5rem;
+  }
+
+  .step-title {
+    font-size: 1.35rem;
+  }
+
+  .step-detail {
+    font-size: 0.95rem;
+  }
+}
+
+/* ==========================================================================
+   ACCESSIBILITY & PREFERS-REDUCED-MOTION
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .counselling-sticky-viewport {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  .process-scroll-window,
+  .process-steps-container {
+    height: auto !important;
+  }
+
+  .counselling-step-panel {
+    position: static !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    margin-bottom: 1.5rem;
   }
 }

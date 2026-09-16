@@ -175,9 +175,14 @@ async function assemblePage() {
     window.populateFormUTMs(leadForm);
   }
 
-  // Initialize smooth scroll & subtle scroll observer
-  initSmoothScroll();
-  initScrollObserver();
+  // Initialize Miracle Motion Engine
+  if (window.MiracleMotion && typeof window.MiracleMotion.init === 'function') {
+    window.MiracleMotion.init();
+  } else {
+    // Fallback legacy smooth scroll & scroll observer
+    initSmoothScroll();
+    initScrollObserver();
+  }
 
   // Fire analytics page_view event
   if (typeof window.trackEvent === 'function') {

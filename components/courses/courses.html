@@ -1,9 +1,9 @@
 <!-- ==========================================================================
-     COURSES SECTION COMPONENT — ULTRA OPTIMIZED & CRO ENRICHED (v3.0)
-     Headline: Confused About Your IT Career? Start With The Right Course.
+     COURSES SECTION COMPONENT — EDITORIAL SELECTOR & SLIDING PREVIEW
+     Miracle IT Career Academy
      ========================================================================== -->
 <link rel="stylesheet" href="./components/courses/courses.css">
-<section class="section courses-section" id="courses">
+<section class="section courses-section" id="courses" data-theme="midnight">
   <div class="container">
     
     <div class="section-header">
@@ -12,262 +12,471 @@
       <p class="text-lead">
         Explore Full Stack, Data Analytics, AI/ML, Cybersecurity and other career-focused learning options in Bhopal.
       </p>
-
-      <!-- Interactive Background Quick-Matcher -->
-      <div class="career-matcher-box">
-        <span class="matcher-label">Quick Match by Background:</span>
-        <div class="matcher-chips">
-          <button type="button" class="matcher-chip" data-target-filter="web">🎓 BCA / B.Tech / CS</button>
-          <button type="button" class="matcher-chip" data-target-filter="data">📊 B.Com / MBA / Non-IT</button>
-          <button type="button" class="matcher-chip" data-target-filter="data">🧠 Strong in Math & Logic</button>
-          <button type="button" class="matcher-chip" data-target-filter="cloud-sec">🛡️ Systems & Security</button>
-        </div>
-      </div>
-
-      <!-- Category Filter Tabs (Vanilla JS) -->
-      <div class="courses-filter-tabs" role="tablist" aria-label="Course Category Filters">
-        <button type="button" class="filter-tab is-active" data-filter="all" role="tab" aria-selected="true">All Tracks (6)</button>
-        <button type="button" class="filter-tab" data-filter="web" role="tab" aria-selected="false">Full Stack Web (2)</button>
-        <button type="button" class="filter-tab" data-filter="data" role="tab" aria-selected="false">Data & AI (2)</button>
-        <button type="button" class="filter-tab" data-filter="cloud-sec" role="tab" aria-selected="false">Cloud & Security (2)</button>
-      </div>
     </div>
 
-    <!-- 6 Course Tracks Grid -->
-    <div class="grid-3 courses-grid" id="coursesGrid">
+    <!-- Editorial Two-Column Course Selector -->
+    <div class="courses-selector-layout">
       
-      <!-- Course 1: Full Stack Web Development (Featured Card) -->
-      <article class="card course-card card-featured" data-category="web">
-        <div class="card-featured-ribbon">Most In-Demand in Bhopal</div>
-        <div class="course-header">
-          <div class="course-badge-row">
-            <span class="badge badge-blue">Web Engineering</span>
-            <span class="course-duration-hint">⏱️ 4–6 Months • Intensive Lab</span>
+      <!-- LEFT COLUMN: Vertical Course Index -->
+      <nav class="course-nav-list" role="tablist" aria-label="Available Career Courses">
+        
+        <!-- Track 01 -->
+        <button type="button" class="course-nav-item is-active" role="tab" id="course-tab-0" aria-selected="true" aria-controls="course-panel-0" data-index="0">
+          <div class="course-nav-identity">
+            <span class="course-nav-number">01</span>
+            <div class="course-nav-meta">
+              <span class="course-nav-title">Full Stack Web Development</span>
+              <span class="course-nav-subtitle">4–6 Months • Web Engineering</span>
+            </div>
           </div>
-          <h3 class="course-title">Full Stack Web Development</h3>
-        </div>
-        <p class="course-summary">
-          Frontend + Backend + Database + APIs + Real Capstones. Master the modern web development stack from browser layouts to cloud-deployed production servers.
-        </p>
-        <div class="course-capstone-box">
-          <span class="capstone-tag">Featured Capstone</span>
-          <p class="capstone-desc">Production Multi-User SaaS Application with Secure Authentication, Relational DB, and Automated Payment Gateway.</p>
-        </div>
-        <div class="course-outcomes">
-          <span class="outcome-label">Hiring Roles:</span>
-          <span class="outcome-text">Full Stack Developer, Frontend Engineer, Node/Backend Dev, React Specialist</span>
-        </div>
-        <div class="course-modules">
-          <span class="module-chip">HTML5 / Modern CSS</span>
-          <span class="module-chip">JavaScript (ES6+)</span>
-          <span class="module-chip">Node.js & Express</span>
-          <span class="module-chip">PostgreSQL / SQL</span>
-          <span class="module-chip">REST APIs</span>
-          <span class="module-chip">Git / GitHub CI</span>
-        </div>
-        <div class="course-footer">
-          <a href="./full-stack-course-bhopal/" class="btn btn-secondary btn-sm" data-track-cta="view_course_fullstack">
-            Curriculum Details →
-          </a>
-          <a href="#counselling-form" class="btn btn-primary btn-sm" data-track-cta="book_course_fullstack">
-            Book Free Counselling
-          </a>
-        </div>
-      </article>
+          <span class="course-nav-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </span>
+        </button>
 
-      <!-- Course 2: Data Analytics / Data Science -->
-      <article class="card course-card" data-category="data">
-        <div class="course-header">
-          <div class="course-badge-row">
-            <span class="badge badge-emerald">Data & BI</span>
-            <span class="course-duration-hint">⏱️ 3–5 Months • Practical Labs</span>
+        <!-- Track 02 -->
+        <button type="button" class="course-nav-item" role="tab" id="course-tab-1" aria-selected="false" aria-controls="course-panel-1" data-index="1">
+          <div class="course-nav-identity">
+            <span class="course-nav-number">02</span>
+            <div class="course-nav-meta">
+              <span class="course-nav-title">Data Analytics & Data Science</span>
+              <span class="course-nav-subtitle">3–5 Months • Data & BI</span>
+            </div>
           </div>
-          <h3 class="course-title">Data Analytics & Data Science</h3>
-        </div>
-        <p class="course-summary">
-          Extract business value from real-world datasets. Learn data extraction, statistical querying, visual storytelling, and automated dashboard creation.
-        </p>
-        <div class="course-capstone-box">
-          <span class="capstone-tag">Featured Capstone</span>
-          <p class="capstone-desc">Interactive Retail Sales BI Dashboard with Automated ETL Pipeline and Executive KPI Metrics.</p>
-        </div>
-        <div class="course-outcomes">
-          <span class="outcome-label">Hiring Roles:</span>
-          <span class="outcome-text">Data Analyst, Business Intelligence Developer, Operations Data Lead</span>
-        </div>
-        <div class="course-modules">
-          <span class="module-chip">Advanced SQL</span>
-          <span class="module-chip">Python for Data</span>
-          <span class="module-chip">Pandas & NumPy</span>
-          <span class="module-chip">Power BI Dashboards</span>
-          <span class="module-chip">Data Cleaning & EDA</span>
-        </div>
-        <div class="course-footer">
-          <a href="./data-analytics-course-bhopal/" class="btn btn-secondary btn-sm" data-track-cta="view_course_data_analytics">
-            Curriculum Details →
-          </a>
-          <a href="#counselling-form" class="btn btn-primary btn-sm" data-track-cta="book_course_data_analytics">
-            Book Free Counselling
-          </a>
-        </div>
-      </article>
+          <span class="course-nav-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </span>
+        </button>
 
-      <!-- Course 3: AI / ML -->
-      <article class="card course-card" data-category="data">
-        <div class="course-header">
-          <div class="course-badge-row">
-            <span class="badge badge-amber">Artificial Intelligence</span>
-            <span class="course-duration-hint">⏱️ 4–6 Months • Code-First</span>
+        <!-- Track 03 -->
+        <button type="button" class="course-nav-item" role="tab" id="course-tab-2" aria-selected="false" aria-controls="course-panel-2" data-index="2">
+          <div class="course-nav-identity">
+            <span class="course-nav-number">03</span>
+            <div class="course-nav-meta">
+              <span class="course-nav-title">AI & Machine Learning</span>
+              <span class="course-nav-subtitle">4–6 Months • Applied AI</span>
+            </div>
           </div>
-          <h3 class="course-title">AI & Machine Learning</h3>
-        </div>
-        <p class="course-summary">
-          Practical machine learning without academic fluff. Learn data feature engineering, supervised regression/classification, and neural model deployment.
-        </p>
-        <div class="course-capstone-box">
-          <span class="capstone-tag">Featured Capstone</span>
-          <p class="capstone-desc">Production Machine Learning Model for Customer Retention Prediction deployed as a live REST API.</p>
-        </div>
-        <div class="course-outcomes">
-          <span class="outcome-label">Hiring Roles:</span>
-          <span class="outcome-text">Junior ML Engineer, Applied AI Associate, Data Scientist Trainee</span>
-        </div>
-        <div class="course-modules">
-          <span class="module-chip">Python AI Stack</span>
-          <span class="module-chip">Scikit-Learn</span>
-          <span class="module-chip">Supervised ML</span>
-          <span class="module-chip">Neural Networks</span>
-          <span class="module-chip">Model Deployment</span>
-        </div>
-        <div class="course-footer">
-          <a href="./ai-ml-course-bhopal/" class="btn btn-secondary btn-sm" data-track-cta="view_course_aiml">
-            Curriculum Details →
-          </a>
-          <a href="#counselling-form" class="btn btn-primary btn-sm" data-track-cta="book_course_aiml">
-            Book Free Counselling
-          </a>
-        </div>
-      </article>
+          <span class="course-nav-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </span>
+        </button>
 
-      <!-- Course 4: Cybersecurity -->
-      <article class="card course-card" data-category="cloud-sec">
-        <div class="course-header">
-          <div class="course-badge-row">
-            <span class="badge badge-blue">Security & Defense</span>
-            <span class="course-duration-hint">⏱️ 4–5 Months • Sandbox Labs</span>
+        <!-- Track 04 -->
+        <button type="button" class="course-nav-item" role="tab" id="course-tab-3" aria-selected="false" aria-controls="course-panel-3" data-index="3">
+          <div class="course-nav-identity">
+            <span class="course-nav-number">04</span>
+            <div class="course-nav-meta">
+              <span class="course-nav-title">Cybersecurity Fundamentals</span>
+              <span class="course-nav-subtitle">4–5 Months • Sandbox Defense</span>
+            </div>
           </div>
-          <h3 class="course-title">Cybersecurity Fundamentals</h3>
-        </div>
-        <p class="course-summary">
-          Defend digital systems and networks. Practice live packet tracing, ethical vulnerability assessments, and defensive perimeter architecture in sandbox labs.
-        </p>
-        <div class="course-capstone-box">
-          <span class="capstone-tag">Featured Capstone</span>
-          <p class="capstone-desc">Full Security Audit & Vulnerability Assessment Report for a Live Sandbox Enterprise Network.</p>
-        </div>
-        <div class="course-outcomes">
-          <span class="outcome-label">Hiring Roles:</span>
-          <span class="outcome-text">SOC Analyst, Cybersecurity Associate, Network Defense Technician</span>
-        </div>
-        <div class="course-modules">
-          <span class="module-chip">Network Protocols</span>
-          <span class="module-chip">Packet Sniffing</span>
-          <span class="module-chip">Vulnerability Scans</span>
-          <span class="module-chip">Linux Hardening</span>
-          <span class="module-chip">Threat Detection</span>
-        </div>
-        <div class="course-footer">
-          <a href="./cybersecurity-course-bhopal/" class="btn btn-secondary btn-sm" data-track-cta="view_course_cybersecurity">
-            Curriculum Details →
-          </a>
-          <a href="#counselling-form" class="btn btn-primary btn-sm" data-track-cta="book_course_cybersecurity">
-            Book Free Counselling
-          </a>
-        </div>
-      </article>
+          <span class="course-nav-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </span>
+        </button>
 
-      <!-- Course 5: Cloud & DevOps -->
-      <article class="card course-card" data-category="cloud-sec">
-        <div class="course-header">
-          <div class="course-badge-row">
-            <span class="badge badge-emerald">Cloud Infrastructure</span>
-            <span class="course-duration-hint">⏱️ 4–5 Months • Production Labs</span>
+        <!-- Track 05 -->
+        <button type="button" class="course-nav-item" role="tab" id="course-tab-4" aria-selected="false" aria-controls="course-panel-4" data-index="4">
+          <div class="course-nav-identity">
+            <span class="course-nav-number">05</span>
+            <div class="course-nav-meta">
+              <span class="course-nav-title">Cloud & DevOps Engineering</span>
+              <span class="course-nav-subtitle">4–5 Months • Cloud Infrastructure</span>
+            </div>
           </div>
-          <h3 class="course-title">Cloud & DevOps Engineering</h3>
-        </div>
-        <p class="course-summary">
-          Bridge software development and IT operations. Build robust CI/CD pipelines, containerize applications with Docker, and manage cloud environments.
-        </p>
-        <div class="course-capstone-box">
-          <span class="capstone-tag">Featured Capstone</span>
-          <p class="capstone-desc">Automated CI/CD Pipeline Deploying a Multi-Service Application onto Cloud Workstations with Zero Downtime.</p>
-        </div>
-        <div class="course-outcomes">
-          <span class="outcome-label">Hiring Roles:</span>
-          <span class="outcome-text">DevOps Engineer, Cloud Operations Associate, Build & Release Engineer</span>
-        </div>
-        <div class="course-modules">
-          <span class="module-chip">Linux Server CLI</span>
-          <span class="module-chip">Docker Containers</span>
-          <span class="module-chip">CI/CD Pipelines</span>
-          <span class="module-chip">Cloud Architectures</span>
-          <span class="module-chip">Monitoring & Logs</span>
-        </div>
-        <div class="course-footer">
-          <a href="./cloud-devops-course-bhopal/" class="btn btn-secondary btn-sm" data-track-cta="view_course_devops">
-            Curriculum Details →
-          </a>
-          <a href="#counselling-form" class="btn btn-primary btn-sm" data-track-cta="book_course_devops">
-            Book Free Counselling
-          </a>
-        </div>
-      </article>
+          <span class="course-nav-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </span>
+        </button>
 
-      <!-- Course 6: Custom Foundation / Transition Track -->
-      <article class="card course-card card-custom" data-category="web">
-        <div class="course-header">
-          <div class="course-badge-row">
-            <span class="badge badge-amber">Personalized Pathway</span>
-            <span class="course-duration-hint">⏱️ Flexible Duration</span>
+        <!-- Track 06 -->
+        <button type="button" class="course-nav-item" role="tab" id="course-tab-5" aria-selected="false" aria-controls="course-panel-5" data-index="5">
+          <div class="course-nav-identity">
+            <span class="course-nav-number">06</span>
+            <div class="course-nav-meta">
+              <span class="course-nav-title">Tech Transition & Logic Bridge</span>
+              <span class="course-nav-subtitle">Flexible • Non-IT Pathway</span>
+            </div>
           </div>
-          <h3 class="course-title">Tech Transition & Logic Bridge</h3>
+          <span class="course-nav-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </span>
+        </button>
+
+      </nav>
+
+      <!-- RIGHT COLUMN: Dynamic Course Card Stage with Directional Horizontal Slide -->
+      <div class="course-display-stage" id="courseDisplayStage" aria-live="polite">
+        <div class="course-stage-track">
+          
+          <!-- Card 01: Full Stack Web Development -->
+          <article class="course-preview-card is-active" id="course-panel-0" role="tabpanel" aria-labelledby="course-tab-0" data-index="0">
+            <div class="card-inner">
+              <div class="course-card-top">
+                <div class="course-badge-row">
+                  <span class="badge badge-blue">Web Engineering</span>
+                  <span class="course-duration-hint">⏱️ 4–6 Months • Intensive Lab</span>
+                  <span class="card-demand-tag">Most In-Demand in Bhopal</span>
+                </div>
+                <h3 class="course-card-title">Full Stack Web Development</h3>
+              </div>
+
+              <p class="course-card-desc">
+                Frontend + Backend + Database + APIs + Real Capstones. Master the modern web development stack from browser layouts to cloud-deployed production servers.
+              </p>
+
+              <div class="course-capstone-box">
+                <span class="capstone-tag">Featured Capstone</span>
+                <p class="capstone-desc">Production Multi-User SaaS Application with Secure Authentication, Relational DB, and Automated Payment Gateway.</p>
+              </div>
+
+              <!-- Interactive Syllabus Peek -->
+              <details class="syllabus-accordion">
+                <summary class="syllabus-summary"><span>⚡ Quick Syllabus Breakdown</span> <span class="accordion-arrow">▼</span></summary>
+                <div class="syllabus-content">
+                  <ul class="syllabus-list">
+                    <li><strong>Weeks 1–4:</strong> Modern ES6+ JavaScript, Responsive UI, Async &amp; DOM</li>
+                    <li><strong>Weeks 5–9:</strong> Node.js, Express REST APIs, PostgreSQL Relational Schema</li>
+                    <li><strong>Weeks 10–14:</strong> React 19, Full-Stack Auth, Redux, Microservices</li>
+                    <li><strong>Weeks 15–18:</strong> Production SaaS Deployment, CI/CD &amp; Portfolio Prep</li>
+                  </ul>
+                </div>
+              </details>
+
+              <div class="course-outcomes">
+                <span class="outcome-label">Hiring Roles:</span>
+                <span class="outcome-text">Full Stack Developer, Frontend Engineer, Node/Backend Dev, React Specialist</span>
+              </div>
+
+              <div class="course-modules">
+                <span class="module-chip">HTML5 / Modern CSS</span>
+                <span class="module-chip">JavaScript (ES6+)</span>
+                <span class="module-chip">Node.js &amp; Express</span>
+                <span class="module-chip">PostgreSQL / SQL</span>
+                <span class="module-chip">REST APIs</span>
+                <span class="module-chip">Git / GitHub CI</span>
+              </div>
+
+              <div class="course-card-footer">
+                <a href="./full-stack-course-bhopal/" class="btn btn-secondary btn-sm" data-track-cta="view_course_fullstack">
+                  Curriculum Details →
+                </a>
+                <a href="#counselling-form" class="btn btn-primary btn-sm btn-magnetic" data-track-cta="book_course_fullstack">
+                  Book Free Counselling
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 02: Data Analytics & Data Science -->
+          <article class="course-preview-card" id="course-panel-1" role="tabpanel" aria-labelledby="course-tab-1" data-index="1" hidden>
+            <div class="card-inner">
+              <div class="course-card-top">
+                <div class="course-badge-row">
+                  <span class="badge badge-emerald">Data &amp; BI</span>
+                  <span class="course-duration-hint">⏱️ 3–5 Months • Practical Labs</span>
+                </div>
+                <h3 class="course-card-title">Data Analytics &amp; Data Science</h3>
+              </div>
+
+              <p class="course-card-desc">
+                Extract business value from real-world datasets. Learn data extraction, statistical querying, visual storytelling, and automated dashboard creation.
+              </p>
+
+              <div class="course-capstone-box">
+                <span class="capstone-tag">Featured Capstone</span>
+                <p class="capstone-desc">Interactive Retail Sales BI Dashboard with Automated ETL Pipeline and Executive KPI Metrics.</p>
+              </div>
+
+              <!-- Interactive Syllabus Peek -->
+              <details class="syllabus-accordion">
+                <summary class="syllabus-summary"><span>⚡ Quick Syllabus Breakdown</span> <span class="accordion-arrow">▼</span></summary>
+                <div class="syllabus-content">
+                  <ul class="syllabus-list">
+                    <li><strong>Weeks 1–3:</strong> Advanced SQL, Window Functions, Complex Joins</li>
+                    <li><strong>Weeks 4–7:</strong> Python for Analytics, Pandas, NumPy, Data Cleaning</li>
+                    <li><strong>Weeks 8–11:</strong> Power BI Enterprise Dashboards, DAX Calculations</li>
+                    <li><strong>Weeks 12–14:</strong> End-to-End Business Case Studies &amp; Executive Storytelling</li>
+                  </ul>
+                </div>
+              </details>
+
+              <div class="course-outcomes">
+                <span class="outcome-label">Hiring Roles:</span>
+                <span class="outcome-text">Data Analyst, Business Intelligence Developer, Operations Data Lead</span>
+              </div>
+
+              <div class="course-modules">
+                <span class="module-chip">Advanced SQL</span>
+                <span class="module-chip">Python for Data</span>
+                <span class="module-chip">Pandas &amp; NumPy</span>
+                <span class="module-chip">Power BI Dashboards</span>
+                <span class="module-chip">Data Cleaning &amp; EDA</span>
+              </div>
+
+              <div class="course-card-footer">
+                <a href="./data-analytics-course-bhopal/" class="btn btn-secondary btn-sm" data-track-cta="view_course_data_analytics">
+                  Curriculum Details →
+                </a>
+                <a href="#counselling-form" class="btn btn-primary btn-sm btn-magnetic" data-track-cta="book_course_data_analytics">
+                  Book Free Counselling
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 03: AI & Machine Learning -->
+          <article class="course-preview-card" id="course-panel-2" role="tabpanel" aria-labelledby="course-tab-2" data-index="2" hidden>
+            <div class="card-inner">
+              <div class="course-card-top">
+                <div class="course-badge-row">
+                  <span class="badge badge-amber">Artificial Intelligence</span>
+                  <span class="course-duration-hint">⏱️ 4–6 Months • Code-First</span>
+                </div>
+                <h3 class="course-card-title">AI &amp; Machine Learning</h3>
+              </div>
+
+              <p class="course-card-desc">
+                Practical machine learning without academic fluff. Learn data feature engineering, supervised regression/classification, and neural model deployment.
+              </p>
+
+              <div class="course-capstone-box">
+                <span class="capstone-tag">Featured Capstone</span>
+                <p class="capstone-desc">Production Machine Learning Model for Customer Retention Prediction deployed as a live REST API.</p>
+              </div>
+
+              <!-- Interactive Syllabus Peek -->
+              <details class="syllabus-accordion">
+                <summary class="syllabus-summary"><span>⚡ Quick Syllabus Breakdown</span> <span class="accordion-arrow">▼</span></summary>
+                <div class="syllabus-content">
+                  <ul class="syllabus-list">
+                    <li><strong>Weeks 1–4:</strong> Math for ML, Python Vectorization &amp; Matrix Ops</li>
+                    <li><strong>Weeks 5–8:</strong> Scikit-Learn Algorithms, Regression, Decision Trees</li>
+                    <li><strong>Weeks 9–13:</strong> Neural Networks, PyTorch Basics, Computer Vision / NLP</li>
+                    <li><strong>Weeks 14–18:</strong> Live Model Serving, FastAPI, Docker Deployment</li>
+                  </ul>
+                </div>
+              </details>
+
+              <div class="course-outcomes">
+                <span class="outcome-label">Hiring Roles:</span>
+                <span class="outcome-text">Junior ML Engineer, Applied AI Associate, Data Scientist Trainee</span>
+              </div>
+
+              <div class="course-modules">
+                <span class="module-chip">Python AI Stack</span>
+                <span class="module-chip">Scikit-Learn</span>
+                <span class="module-chip">Supervised ML</span>
+                <span class="module-chip">Neural Networks</span>
+                <span class="module-chip">Model Deployment</span>
+              </div>
+
+              <div class="course-card-footer">
+                <a href="./ai-ml-course-bhopal/" class="btn btn-secondary btn-sm" data-track-cta="view_course_aiml">
+                  Curriculum Details →
+                </a>
+                <a href="#counselling-form" class="btn btn-primary btn-sm btn-magnetic" data-track-cta="book_course_aiml">
+                  Book Free Counselling
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 04: Cybersecurity Fundamentals -->
+          <article class="course-preview-card" id="course-panel-3" role="tabpanel" aria-labelledby="course-tab-3" data-index="3" hidden>
+            <div class="card-inner">
+              <div class="course-card-top">
+                <div class="course-badge-row">
+                  <span class="badge badge-blue">Security &amp; Defense</span>
+                  <span class="course-duration-hint">⏱️ 4–5 Months • Sandbox Labs</span>
+                </div>
+                <h3 class="course-card-title">Cybersecurity Fundamentals</h3>
+              </div>
+
+              <p class="course-card-desc">
+                Defend digital systems and networks. Practice live packet tracing, ethical vulnerability assessments, and defensive perimeter architecture in sandbox labs.
+              </p>
+
+              <div class="course-capstone-box">
+                <span class="capstone-tag">Featured Capstone</span>
+                <p class="capstone-desc">Full Security Audit &amp; Vulnerability Assessment Report for a Live Sandbox Enterprise Network.</p>
+              </div>
+
+              <!-- Interactive Syllabus Peek -->
+              <details class="syllabus-accordion">
+                <summary class="syllabus-summary"><span>⚡ Quick Syllabus Breakdown</span> <span class="accordion-arrow">▼</span></summary>
+                <div class="syllabus-content">
+                  <ul class="syllabus-list">
+                    <li><strong>Weeks 1–3:</strong> Networking Fundamentals, OSI Model, Wireshark Packet Tracing</li>
+                    <li><strong>Weeks 4–7:</strong> Linux Security, Kali Linux Utilities, Bash Hardening</li>
+                    <li><strong>Weeks 8–11:</strong> OWASP Top 10, Web Application Security Auditing</li>
+                    <li><strong>Weeks 12–15:</strong> SIEM Tools, Threat Intelligence &amp; Incident Response</li>
+                  </ul>
+                </div>
+              </details>
+
+              <div class="course-outcomes">
+                <span class="outcome-label">Hiring Roles:</span>
+                <span class="outcome-text">SOC Analyst, Cybersecurity Associate, Network Defense Technician</span>
+              </div>
+
+              <div class="course-modules">
+                <span class="module-chip">Network Protocols</span>
+                <span class="module-chip">Packet Sniffing</span>
+                <span class="module-chip">Vulnerability Scans</span>
+                <span class="module-chip">Linux Hardening</span>
+                <span class="module-chip">Threat Detection</span>
+              </div>
+
+              <div class="course-card-footer">
+                <a href="./cybersecurity-course-bhopal/" class="btn btn-secondary btn-sm" data-track-cta="view_course_cybersecurity">
+                  Curriculum Details →
+                </a>
+                <a href="#counselling-form" class="btn btn-primary btn-sm btn-magnetic" data-track-cta="book_course_cybersecurity">
+                  Book Free Counselling
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 05: Cloud & DevOps Engineering -->
+          <article class="course-preview-card" id="course-panel-4" role="tabpanel" aria-labelledby="course-tab-4" data-index="4" hidden>
+            <div class="card-inner">
+              <div class="course-card-top">
+                <div class="course-badge-row">
+                  <span class="badge badge-emerald">Cloud Infrastructure</span>
+                  <span class="course-duration-hint">⏱️ 4–5 Months • Production Labs</span>
+                </div>
+                <h3 class="course-card-title">Cloud &amp; DevOps Engineering</h3>
+              </div>
+
+              <p class="course-card-desc">
+                Bridge software development and IT operations. Build robust CI/CD pipelines, containerize applications with Docker, and manage cloud environments.
+              </p>
+
+              <div class="course-capstone-box">
+                <span class="capstone-tag">Featured Capstone</span>
+                <p class="capstone-desc">Automated CI/CD Pipeline Deploying a Multi-Service Application onto Cloud Workstations with Zero Downtime.</p>
+              </div>
+
+              <!-- Interactive Syllabus Peek -->
+              <details class="syllabus-accordion">
+                <summary class="syllabus-summary"><span>⚡ Quick Syllabus Breakdown</span> <span class="accordion-arrow">▼</span></summary>
+                <div class="syllabus-content">
+                  <ul class="syllabus-list">
+                    <li><strong>Weeks 1–3:</strong> Linux System Administration &amp; Shell Automation</li>
+                    <li><strong>Weeks 4–7:</strong> Docker Containers, Multi-Container Orchestration</li>
+                    <li><strong>Weeks 8–11:</strong> GitHub Actions, CI/CD Pipeline Configuration</li>
+                    <li><strong>Weeks 12–15:</strong> AWS Core Services, Terraform Basics, Cloud Monitoring</li>
+                  </ul>
+                </div>
+              </details>
+
+              <div class="course-outcomes">
+                <span class="outcome-label">Hiring Roles:</span>
+                <span class="outcome-text">DevOps Engineer, Cloud Operations Associate, Build &amp; Release Engineer</span>
+              </div>
+
+              <div class="course-modules">
+                <span class="module-chip">Linux Server CLI</span>
+                <span class="module-chip">Docker Containers</span>
+                <span class="module-chip">CI/CD Pipelines</span>
+                <span class="module-chip">Cloud Architectures</span>
+                <span class="module-chip">Monitoring &amp; Logs</span>
+              </div>
+
+              <div class="course-card-footer">
+                <a href="./cloud-devops-course-bhopal/" class="btn btn-secondary btn-sm" data-track-cta="view_course_devops">
+                  Curriculum Details →
+                </a>
+                <a href="#counselling-form" class="btn btn-primary btn-sm btn-magnetic" data-track-cta="book_course_devops">
+                  Book Free Counselling
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 06: Tech Transition & Logic Bridge -->
+          <article class="course-preview-card" id="course-panel-5" role="tabpanel" aria-labelledby="course-tab-5" data-index="5" hidden>
+            <div class="card-inner">
+              <div class="course-card-top">
+                <div class="course-badge-row">
+                  <span class="badge badge-amber">Personalized Pathway</span>
+                  <span class="course-duration-hint">⏱️ Flexible Duration</span>
+                </div>
+                <h3 class="course-card-title">Tech Transition &amp; Logic Bridge</h3>
+              </div>
+
+              <p class="course-card-desc">
+                Transitioning from a non-technical degree (B.Com, BA, BBA) or career gap? We build a tailored 1-on-1 bridge curriculum to bring you up to developer speed.
+              </p>
+
+              <div class="course-capstone-box">
+                <span class="capstone-tag">Personalized Milestone</span>
+                <p class="capstone-desc">From Zero Coding Experience to Building and Deploying Your First Full Web Application in 60 Days.</p>
+              </div>
+
+              <!-- Interactive Syllabus Peek -->
+              <details class="syllabus-accordion">
+                <summary class="syllabus-summary"><span>⚡ Quick Syllabus Breakdown</span> <span class="accordion-arrow">▼</span></summary>
+                <div class="syllabus-content">
+                  <ul class="syllabus-list">
+                    <li><strong>Module 1:</strong> Logical Problem Solving &amp; Everyday Code Syntax</li>
+                    <li><strong>Module 2:</strong> Data Structures &amp; Practical Problem Decomposition</li>
+                    <li><strong>Module 3:</strong> Building Real Projects with 1-on-1 Desk Mentorship</li>
+                    <li><strong>Module 4:</strong> Portfolio Curation &amp; Career Switching Preparation</li>
+                  </ul>
+                </div>
+              </details>
+
+              <div class="course-outcomes">
+                <span class="outcome-label">Target Goal:</span>
+                <span class="outcome-text">Confidently Pivot into Software Roles with Authentic Hands-On Code</span>
+              </div>
+
+              <div class="course-modules">
+                <span class="module-chip">Algorithmic Thinking</span>
+                <span class="module-chip">Daily Syntax Drills</span>
+                <span class="module-chip">1-on-1 Faculty Desk</span>
+                <span class="module-chip">Career Transition Plan</span>
+              </div>
+
+              <div class="course-card-footer">
+                <a href="#counselling-form" class="btn btn-primary btn-full btn-magnetic" data-track-cta="book_custom_track">
+                  Discuss Personalized Track →
+                </a>
+              </div>
+            </div>
+          </article>
+
         </div>
-        <p class="course-summary">
-          Transitioning from a non-technical degree (B.Com, BA, BBA) or career gap? We build a tailored 1-on-1 bridge curriculum to bring you up to developer speed.
-        </p>
-        <div class="course-capstone-box">
-          <span class="capstone-tag">Personalized Milestone</span>
-          <p class="capstone-desc">From Zero Coding Experience to Building and Deploying Your First Full Web Application in 60 Days.</p>
-        </div>
-        <div class="course-outcomes">
-          <span class="outcome-label">Target Goal:</span>
-          <span class="outcome-text">Confidently Pivot into Software Roles with Authentic Hands-On Code</span>
-        </div>
-        <div class="course-modules">
-          <span class="module-chip">Algorithmic Thinking</span>
-          <span class="module-chip">Daily Syntax Drills</span>
-          <span class="module-chip">1-on-1 Faculty Desk</span>
-          <span class="module-chip">Career Transition Plan</span>
-        </div>
-        <div class="course-footer">
-          <a href="#counselling-form" class="btn btn-primary btn-full" data-track-cta="book_custom_track">
-            Discuss Personalized Track →
-          </a>
-        </div>
-      </article>
+      </div>
 
     </div>
 
     <!-- Course Decision Advisory Banner -->
     <div class="courses-advisory-banner">
       <div class="advisory-inner">
-        <div class="advisory-icon">💡</div>
+        <div class="advisory-icon" aria-hidden="true">💡</div>
         <div class="advisory-text">
           <strong>Still Undecided Which Course Matches Your Natural Aptitude?</strong>
           <p>Don't guess or waste months on the wrong track. Take our free 15-minute diagnostic logic review in-person at M.P. Nagar before paying any fees.</p>
         </div>
         <div class="advisory-action">
-          <a href="#counselling-form" class="btn btn-secondary btn-sm" data-track-cta="course_advisory_counselling">
+          <a href="#counselling-form" class="btn btn-secondary btn-sm btn-magnetic" data-track-cta="course_advisory_counselling">
             Take Free Logic Evaluation
           </a>
         </div>

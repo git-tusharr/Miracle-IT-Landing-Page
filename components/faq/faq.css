@@ -1,9 +1,10 @@
 /* ==========================================================================
-   FAQ SECTION STYLES
+   FAQ SECTION STYLES — NEXT-GEN TECH AESTHETIC
    ========================================================================== */
 
 .faq-section {
-  background-color: #F8FAFC;
+  background-color: var(--color-bg-alt);
+  position: relative;
 }
 
 .faq-accordion {
@@ -14,25 +15,29 @@
 }
 
 .faq-item {
-  background-color: #FFFFFF;
+  background: var(--color-bg-card);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  transition: all var(--transition-normal);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 .faq-item:hover {
-  border-color: var(--color-border-hover);
+  border-color: rgba(99, 102, 241, 0.4);
+  background: var(--color-bg-card-hover);
 }
 
 .faq-item.is-active {
-  border-color: var(--color-brand-border);
-  box-shadow: var(--shadow-sm);
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 0 20px rgba(99, 102, 241, 0.2);
+  background: rgba(18, 26, 44, 0.85);
 }
 
 .faq-trigger {
   width: 100%;
-  padding: 1.25rem 1.5rem;
+  padding: 1.35rem 1.6rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -47,46 +52,70 @@
 .faq-question {
   font-size: 1.05rem;
   font-weight: 700;
-  color: var(--color-primary);
+  color: #FFFFFF;
   line-height: 1.4;
 }
 
 .faq-chevron {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   border-radius: var(--radius-full);
-  background-color: var(--color-bg-alt);
+  background-color: rgba(255, 255, 255, 0.05);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   transition: transform var(--transition-normal), background-color var(--transition-fast);
+  border: 1px solid var(--color-border);
 }
 
 .faq-chevron svg {
   width: 18px;
   height: 18px;
-  color: var(--color-text-muted);
+  color: var(--color-text-dim);
   transition: color var(--transition-fast);
 }
 
 .faq-item.is-active .faq-chevron {
   transform: rotate(180deg);
-  background-color: var(--color-brand-soft);
+  background-color: rgba(99, 102, 241, 0.2);
+  border-color: rgba(99, 102, 241, 0.4);
 }
 
 .faq-item.is-active .faq-chevron svg {
-  color: var(--color-brand);
+  color: #818CF8;
 }
 
 .faq-panel {
-  padding: 0 1.5rem 1.5rem 1.5rem;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 320ms cubic-bezier(0.22, 1, 0.36, 1), padding 320ms cubic-bezier(0.22, 1, 0.36, 1);
+  padding: 0 1.6rem;
+  overflow: hidden;
+}
+
+.faq-item.is-active .faq-panel {
+  grid-template-rows: 1fr;
+  padding: 0 1.6rem 1.6rem 1.6rem;
+}
+
+.faq-content {
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 280ms ease 40ms, transform 280ms ease 40ms;
+}
+
+.faq-item.is-active .faq-content {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .faq-content p {
   font-size: 0.95rem;
   color: var(--color-text-muted);
   line-height: 1.65;
+  margin: 0;
 }
 
 .faq-footer-callout {
@@ -96,10 +125,4 @@
   gap: 1rem;
   flex-wrap: wrap;
   padding-top: 1.5rem;
-}
-
-.faq-footer-callout p {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--color-text-main);
 }

@@ -67,6 +67,30 @@ function initCounsellingForm(container = document) {
     });
   });
 
+  // Interactive Course Chips Sync
+  const courseChips = form.querySelectorAll('.form-course-chip');
+  const courseSelect = form.querySelector('#courseInterest');
+  if (courseChips.length && courseSelect) {
+    courseChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        handleFormStart();
+        courseChips.forEach(c => c.classList.remove('is-active'));
+        chip.classList.add('is-active');
+        const val = chip.getAttribute('data-val');
+        courseSelect.value = val;
+        courseSelect.dispatchEvent(new Event('change'));
+        const group = courseSelect.closest('.form-group');
+        if (group) group.classList.remove('has-error');
+      });
+    });
+
+    courseSelect.addEventListener('change', () => {
+      courseChips.forEach(c => {
+        c.classList.toggle('is-active', c.getAttribute('data-val') === courseSelect.value);
+      });
+    });
+  }
+
   // Validation function
   function validateField(inputEl, condition) {
     const group = inputEl.closest('.form-group, .visit-day-section');

@@ -33,6 +33,38 @@ function initProblem(container = document) {
       viewDilemmas.classList.add('is-hidden');
     });
   }
+
+  // Instant Dilemma Diagnostic Quick-Filter
+  const diagnosticBtns = section.querySelectorAll('.diagnostic-btn');
+  const dilemmaCards = section.querySelectorAll('.problem-cards-grid .problem-card');
+
+  diagnosticBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Ensure dilemma view is active
+      if (btnDilemmas && !btnDilemmas.classList.contains('is-active')) {
+        btnDilemmas.click();
+      }
+
+      diagnosticBtns.forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+
+      const cardIdx = parseInt(btn.getAttribute('data-target-card'), 10);
+      const targetCard = dilemmaCards[cardIdx];
+      if (targetCard) {
+        targetCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        targetCard.style.transition = 'all 400ms cubic-bezier(0.22, 1, 0.36, 1)';
+        targetCard.style.boxShadow = '0 0 35px 4px rgba(99, 102, 241, 0.7), 0 0 15px rgba(56, 189, 248, 0.4)';
+        targetCard.style.borderColor = 'rgba(99, 102, 241, 0.9)';
+        targetCard.style.transform = 'translateY(-6px) scale(1.02)';
+
+        setTimeout(() => {
+          targetCard.style.boxShadow = '';
+          targetCard.style.borderColor = '';
+          targetCard.style.transform = '';
+        }, 1200);
+      }
+    });
+  });
 }
 
 if (typeof window !== 'undefined') {

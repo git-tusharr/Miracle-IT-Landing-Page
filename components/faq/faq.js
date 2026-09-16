@@ -9,6 +9,15 @@ function initFAQ(container = document) {
 
   const items = accordion.querySelectorAll('.faq-item');
 
+  // Remove physical hidden attribute so CSS grid rows can animate smoothly
+  items.forEach(item => {
+    const panel = item.querySelector('.faq-panel');
+    if (panel) {
+      panel.removeAttribute('hidden');
+      panel.setAttribute('aria-hidden', 'true');
+    }
+  });
+
   items.forEach(item => {
     const trigger = item.querySelector('.faq-trigger');
     const panel = item.querySelector('.faq-panel');
@@ -25,24 +34,40 @@ function initFAQ(container = document) {
           const otherPanel = otherItem.querySelector('.faq-panel');
           if (otherTrigger && otherPanel) {
             otherTrigger.setAttribute('aria-expanded', 'false');
-            otherPanel.hidden = true;
+            otherPanel.setAttribute('aria-hidden', 'true');
             otherItem.classList.remove('is-active');
           }
         }
       });
 
-      // Toggle current panel
+      // Toggle current panel smoothly
       if (isExpanded) {
         trigger.setAttribute('aria-expanded', 'false');
-        panel.hidden = true;
+        panel.setAttribute('aria-hidden', 'true');
         item.classList.remove('is-active');
       } else {
         trigger.setAttribute('aria-expanded', 'true');
-        panel.hidden = false;
+        panel.setAttribute('aria-hidden', 'false');
         item.classList.add('is-active');
       }
     });
   });
+
+  // Live Instant Search Filter (Skiper UI)
+  const searchInput = container.querySelector('#faqSearchInput') || document.querySelector('#faqSearchInput');
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        if (!query || text.includes(query)) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  }
 }
 
 if (typeof window !== 'undefined') {
