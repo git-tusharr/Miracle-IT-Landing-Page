@@ -126,3 +126,58 @@
   flex-wrap: wrap;
   padding-top: 1.5rem;
 }
+
+/* ==========================================================================
+   RESPONSIVE: SMALL & ULTRA-NARROW PHONES (<= 480px & 320px)
+   ========================================================================== */
+@media (max-width: 480px) {
+  .faq-trigger {
+    padding: 1.1rem 1.15rem;
+    gap: 0.75rem;
+  }
+
+  .faq-question {
+    font-size: 0.96rem;
+  }
+
+  .faq-panel {
+    padding: 0 1.15rem;
+  }
+
+  .faq-item.is-active .faq-panel {
+    padding: 0 1.15rem 1.25rem 1.15rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .faq-trigger {
+    padding: 0.95rem 0.85rem;
+    gap: 0.6rem;
+  }
+
+  .faq-question {
+    font-size: 0.9rem;
+  }
+
+  .faq-chevron {
+    width: 26px;
+    height: 26px;
+  }
+
+  .faq-chevron svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .faq-panel {
+    padding: 0 0.85rem;
+  }
+
+  .faq-item.is-active .faq-panel {
+    padding: 0 0.85rem 1rem 0.85rem;
+  }
+
+  .faq-content p {
+    font-size: 0.865rem;
+  }
+}

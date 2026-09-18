@@ -138,3 +138,47 @@
   font-size: 0.78rem;
   color: var(--color-text-dim);
 }
+
+/* ==========================================================================
+   RESPONSIVE: SMALL & ULTRA-NARROW PHONES (<= 480px & 320px)
+   ========================================================================== */
+@media (max-width: 480px) {
+  .site-footer {
+    padding-top: 3.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .footer-top-grid {
+    gap: 2.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .brand-col .brand-name {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .site-footer {
+    padding-top: 2.75rem;
+    padding-bottom: 1.75rem;
+  }
+
+  .footer-top-grid {
+    gap: 1.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer-heading {
+    font-size: 0.95rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .footer-about {
+    font-size: 0.86rem;
+  }
+
+  .footer-nav a, .footer-contact-list a {
+    font-size: 0.85rem;
+  }
+}

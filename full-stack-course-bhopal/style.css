@@ -70,3 +70,22 @@
     justify-content: space-between;
   }
 }
+
+/* ==========================================================================
+   RESPONSIVE: SMALL & ULTRA-NARROW PHONES (<= 380px & 320px)
+   ========================================================================== */
+@media (max-width: 380px) {
+  .course-brand strong {
+    font-size: 1rem;
+  }
+  .course-hero {
+    padding: 2.75rem 0;
+  }
+  .course-hero-content h1 {
+    font-size: 1.55rem;
+  }
+  .course-hero-content .text-lead {
+    font-size: 0.88rem;
+    margin-bottom: 1.5rem;
+  }
+}

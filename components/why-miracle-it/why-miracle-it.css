@@ -885,6 +885,95 @@
 }
 
 /* ==========================================================================
+   RESPONSIVE: SMALL & ULTRA-NARROW PHONES (<= 380px & 320px)
+   ========================================================================== */
+@media (max-width: 380px) {
+  .tablet-device-chassis {
+    padding: 6px 6px 8px 6px;
+    border-radius: 16px;
+  }
+
+  .tablet-screen-bezel {
+    border-radius: 12px;
+    min-height: 480px;
+  }
+
+  .tablet-os-bar {
+    padding: 0 0.5rem;
+    height: 32px;
+    min-height: 32px;
+  }
+
+  .os-clock {
+    font-size: 0.72rem;
+  }
+
+  .tablet-slide {
+    padding: 0.75rem 0.6rem;
+  }
+
+  .slide-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .slide-badge-pill {
+    font-size: 0.68rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .comp-row {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.78rem;
+    gap: 0.25rem;
+  }
+
+  .pledge-card-wrap {
+    padding: 1rem 0.75rem;
+    border-radius: 14px;
+  }
+
+  .pledge-quote-text {
+    font-size: 0.82rem;
+    padding-left: 0.65rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .pledge-trust-row {
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .pledge-pill {
+    font-size: 0.68rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .tablet-bottom-hud {
+    padding: 0 0.5rem;
+    height: 38px;
+    min-height: 38px;
+  }
+
+  .story-nav-dots {
+    gap: 0.35rem;
+  }
+
+  .story-dot {
+    width: 16px;
+    height: 4px;
+  }
+
+  .story-dot.is-active {
+    width: 24px;
+  }
+
+  .story-scroll-hint {
+    font-size: 0.65rem;
+  }
+}
+
+/* ==========================================================================
    ACCESSIBILITY & PREFERS-REDUCED-MOTION
    ========================================================================== */
 @media (prefers-reduced-motion: reduce) {

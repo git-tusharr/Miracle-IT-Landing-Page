@@ -680,3 +680,53 @@
   line-height: 1.5;
   margin: 0;
 }
+
+/* ==========================================================================
+   RESPONSIVE: SMALL & ULTRA-NARROW PHONES (<= 380px & 320px)
+   ========================================================================== */
+@media (max-width: 380px) {
+  .location-cta-strip {
+    padding: 1.25rem 0.85rem;
+    gap: 1.25rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .strip-title {
+    font-size: 1.18rem;
+  }
+
+  .strip-sub {
+    font-size: 0.85rem;
+  }
+
+  .media-toggle-tabs {
+    padding: 0.3rem 0.4rem;
+    gap: 0.25rem;
+  }
+
+  .media-tab {
+    padding: 0.45rem 0.65rem;
+    font-size: 0.76rem;
+  }
+
+  .transit-card {
+    padding: 1rem 0.85rem;
+  }
+
+  .transit-point-name {
+    font-size: 0.95rem;
+  }
+
+  .amenity-item {
+    padding: 0.85rem 0.75rem;
+    gap: 0.65rem;
+  }
+
+  .amenity-info strong {
+    font-size: 0.88rem;
+  }
+
+  .amenity-info p {
+    font-size: 0.78rem;
+  }
+}

@@ -50,7 +50,18 @@ function initLearningExperience(container = document) {
    */
   const getDimensions = () => {
     const width = window.innerWidth;
-    if (width <= 420) {
+    if (width <= 360) {
+      return {
+        sideOffset: 85,
+        depthCenter: 20,
+        depthSide: -30,
+        depthBack: -90,
+        rotateAngle: 8,
+        scaleCenter: 1,
+        scaleSide: 0.72,
+        scaleBack: 0.52
+      };
+    } else if (width <= 420) {
       return {
         sideOffset: 140,
         depthCenter: 30,

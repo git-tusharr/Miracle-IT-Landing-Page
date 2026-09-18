@@ -846,3 +846,48 @@
     font-size: 0.88rem;
   }
 }
+
+/* ==========================================================================
+   RESPONSIVE: SMALL & ULTRA-NARROW PHONES (<= 380px & 320px)
+   ========================================================================== */
+@media (max-width: 380px) {
+  .proof-review-card {
+    width: min(265px, calc(100vw - 44px));
+    padding: 0.95rem 0.85rem;
+  }
+
+  .proof-review-text {
+    font-size: 0.84rem;
+    line-height: 1.5;
+  }
+
+  .proof-student-card {
+    width: 170px;
+  }
+
+  .proof-student-img-wrap {
+    height: 155px;
+  }
+
+  .proof-student-info {
+    padding: 0.75rem;
+  }
+
+  .proof-student-name {
+    font-size: 0.9rem;
+  }
+
+  .proof-student-role {
+    font-size: 0.72rem;
+  }
+
+  .proof-student-company-pill {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.72rem;
+  }
+
+  .proof-verification-notice {
+    padding: 0.85rem 0.75rem;
+    font-size: 0.76rem;
+  }
+}

@@ -619,6 +619,66 @@
 }
 
 /* ==========================================================================
+   RESPONSIVE: ULTRA-NARROW PHONES (<= 380px & 320px)
+   ========================================================================== */
+
+@media (max-width: 380px) {
+  .course-nav-list {
+    padding: 0.35rem;
+    gap: 0.25rem;
+  }
+
+  .course-nav-item {
+    min-height: 42px;
+    padding: 0.55rem 0.65rem;
+  }
+
+  .course-nav-identity {
+    gap: 0.5rem;
+  }
+
+  .course-nav-number {
+    font-size: 0.76rem;
+  }
+
+  .course-nav-title {
+    font-size: 0.82rem;
+  }
+
+  .course-preview-card .card-inner {
+    padding: 1rem 0.75rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .course-card-title {
+    font-size: 1.18rem;
+  }
+
+  .course-card-desc {
+    font-size: 0.82rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .course-capstone-box {
+    padding: 0.65rem 0.75rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .capstone-desc {
+    font-size: 0.8rem;
+  }
+
+  .syllabus-summary {
+    padding: 0.55rem 0.75rem;
+    font-size: 0.78rem;
+  }
+
+  .courses-advisory-banner {
+    padding: 1.1rem 0.85rem;
+  }
+}
+
+/* ==========================================================================
    ACCESSIBILITY: REDUCED MOTION
    ========================================================================== */
 

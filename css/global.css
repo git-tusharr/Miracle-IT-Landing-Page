@@ -213,29 +213,36 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: clamp(2.2rem, 5vw, 3.6rem);
-  line-height: 1.12;
+  font-size: clamp(1.65rem, 5vw, 3.6rem);
+  line-height: 1.15;
   letter-spacing: -0.035em;
   font-weight: 900;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 h2 {
-  font-size: clamp(1.85rem, 3.6vw, 2.6rem);
-  line-height: 1.18;
+  font-size: clamp(1.35rem, 3.6vw, 2.6rem);
+  line-height: 1.2;
   letter-spacing: -0.028em;
   font-weight: 800;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 h3 {
-  font-size: clamp(1.25rem, 2.2vw, 1.55rem);
+  font-size: clamp(1.1rem, 2.2vw, 1.55rem);
   line-height: 1.25;
   font-weight: 700;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 p {
   color: var(--color-text-muted);
   font-size: 1.05rem;
   line-height: 1.65;
+  overflow-wrap: break-word;
 }
 
 .text-lead {
@@ -694,6 +701,42 @@ p {
 
 @media (min-width: 1024px) {
   .grid-3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ==========================================================================
+   RESPONSIVE: SMALL & ULTRA-NARROW MOBILE (<= 380px & 320px)
+   ========================================================================== */
+@media (max-width: 380px) {
+  .container,
+  .container-narrow {
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
+
+  .section {
+    padding-top: 3.25rem;
+    padding-bottom: 3.25rem;
+  }
+
+  .card {
+    padding: 1.25rem 0.85rem;
+    border-radius: var(--radius-md);
+  }
+
+  .btn-lg {
+    padding: 0.85rem 1.25rem;
+    font-size: 0.95rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .dynamic-island-status {
+    white-space: normal;
+    text-align: center;
+    font-size: 0.72rem;
+    padding: 4px 8px;
+    border-radius: 12px;
+  }
 }
 
 .flex { display: flex; }
@@ -1160,9 +1203,9 @@ body[data-theme="obsidian-glow"] {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 600;
-  padding: 3px 10px;
+  padding: 4px 10px;
   border-radius: 9999px;
-  white-space: nowrap;
+  max-width: 100%;
 }
 
 .dynamic-island-status .pulse-dot {

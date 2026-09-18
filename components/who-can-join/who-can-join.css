@@ -425,6 +425,65 @@
   }
 }
 
+/* ==========================================================================
+   RESPONSIVE: SMALL & ULTRA-NARROW PHONES (<= 380px & 320px)
+   ========================================================================== */
+@media (max-width: 380px) {
+  .who-stack-nav {
+    padding: 0.25rem;
+    gap: 0.35rem;
+  }
+
+  .who-nav-pill {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.74rem;
+  }
+
+  .who-stack-card {
+    padding: 1.15rem 0.85rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .who-title {
+    font-size: 1.15rem;
+  }
+
+  .who-desc {
+    font-size: 0.85rem;
+  }
+
+  .rec-label {
+    font-size: 0.75rem;
+  }
+
+  .rec-tag {
+    font-size: 0.72rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .who-fit-tag {
+    font-size: 0.76rem;
+  }
+
+  .who-match-btn {
+    font-size: 0.76rem;
+    padding: 0.45rem 0.85rem;
+  }
+
+  .who-cta-box {
+    padding: 1.25rem 0.85rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .who-cta-text h3 {
+    font-size: 1.2rem;
+  }
+
+  .who-cta-text p {
+    font-size: 0.85rem;
+  }
+}
+
 /* --------------------------------------------------------------------------
    Accessibility: Prefers Reduced Motion
    -------------------------------------------------------------------------- */
