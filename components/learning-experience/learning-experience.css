@@ -586,7 +586,7 @@
 
 @media (max-width: 420px) {
   :root {
-    --carousel-card-width: 320px;
+    --carousel-card-width: min(320px, calc(100vw - 32px));
     --carousel-stage-height: 500px;
     --carousel-side-offset: 145px;
     --carousel-rotation: 12deg;

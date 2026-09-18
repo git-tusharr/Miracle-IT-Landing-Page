@@ -696,8 +696,13 @@
     transform: translate3d(0, 24px, -40px) scale(0.92);
   }
 
+  .hero-visual {
+    overflow: hidden;
+    max-width: 100%;
+  }
+
   .code-stack-card.is-shuffling-out {
-    transform: translate3d(35px, -20px, 20px) rotate(4deg) scale(1.02);
+    transform: translate3d(0, -28px, 15px) scale(0.98);
   }
 }
 

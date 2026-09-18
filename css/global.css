@@ -132,6 +132,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--header-height, 76px);
   -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   overflow-x: clip;
   background-color: var(--color-bg);
   color-scheme: dark;
@@ -704,8 +705,30 @@ p {
 }
 
 /* ==========================================================================
-   RESPONSIVE: SMALL & ULTRA-NARROW MOBILE (<= 380px & 320px)
+   RESPONSIVE: MOBILE VIEWPORTS (<= 768px, <= 380px & <= 340px/320px)
    ========================================================================== */
+@media (max-width: 768px) {
+  .container,
+  .container-narrow {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .section {
+    padding-top: clamp(3.5rem, 7vw, 5rem);
+    padding-bottom: clamp(3.5rem, 7vw, 5rem);
+  }
+
+  .card {
+    padding: 1.5rem 1.15rem;
+  }
+
+  .btn-lg {
+    padding: 0.95rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 380px) {
   .container,
   .container-narrow {
@@ -736,6 +759,18 @@ p {
     font-size: 0.72rem;
     padding: 4px 8px;
     border-radius: 12px;
+  }
+}
+
+@media (max-width: 340px) {
+  .container,
+  .container-narrow {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .card {
+    padding: 1.1rem 0.75rem;
   }
 }
 

@@ -808,6 +808,10 @@
     padding: 4.5rem 0;
   }
 
+  .why-container {
+    padding: 0 1rem;
+  }
+
   .tablet-device-chassis {
     padding: 10px 10px 12px 10px;
     border-radius: 24px;
@@ -831,7 +835,7 @@
 
   .tablet-slide {
     scroll-snap-align: center;
-    padding: 1.25rem 1.5rem;
+    padding: 1.15rem 1rem;
   }
 
   .pillars-slide-grid {
@@ -858,6 +862,15 @@
 }
 
 @media (max-width: 576px) {
+  .why-container {
+    padding: 0 0.75rem;
+  }
+
+  .tablet-device-chassis {
+    padding: 8px 8px 10px 8px;
+    border-radius: 20px;
+  }
+
   .tablet-os-bar {
     padding: 0 0.75rem;
   }
@@ -867,7 +880,7 @@
   }
 
   .tablet-slide {
-    padding: 1rem 0.85rem;
+    padding: 0.95rem 0.75rem;
   }
 
   .slide-title {

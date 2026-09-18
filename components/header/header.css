@@ -521,6 +521,11 @@
     left: 0;
     right: 0;
     width: 100%;
+    max-height: calc(100vh - var(--header-height, 74px));
+    max-height: calc(100dvh - var(--header-height, 74px));
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
 
     margin: 0;
     padding: 1.25rem 1.5rem 1.75rem;
@@ -643,6 +648,8 @@
 
   .header-nav {
     top: 68px;
+    max-height: calc(100vh - 68px);
+    max-height: calc(100dvh - 68px);
     padding: 1rem 1.25rem 1.5rem;
   }
 }

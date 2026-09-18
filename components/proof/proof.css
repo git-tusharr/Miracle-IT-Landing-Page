@@ -839,7 +839,7 @@
 
 @media (max-width: 768px) {
   .proof-review-card {
-    width: 290px;
+    width: min(290px, calc(100vw - 36px));
     padding: 1.15rem;
   }
   .proof-review-text {

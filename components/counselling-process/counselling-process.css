@@ -289,8 +289,12 @@
     width: 100%;
   }
 
+  .counselling-container {
+    padding: 0 1rem;
+  }
+
   .step-card {
-    padding: 1.75rem 1.5rem;
+    padding: 1.5rem 1.15rem;
   }
 
   .step-title {
