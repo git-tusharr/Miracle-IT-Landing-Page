@@ -26,7 +26,7 @@ function initWhyMiracleIt(container = document) {
   const chapterText = section.querySelector('#tabletChapterText');
   const progressBar = section.querySelector('#tabletProgressBar');
 
-  const chapterTitles = [
+  const chapterTitlesFull = [
     'Chapter 1 of 5 • Classroom Formula',
     'Chapter 2 of 5 • Production Capstones',
     'Chapter 3 of 5 • 1-on-1 Code Audits',
@@ -34,10 +34,41 @@ function initWhyMiracleIt(container = document) {
     'Chapter 5 of 5 • Transparency Pledge'
   ];
 
+  const chapterTitlesShort = [
+    'Ch. 1/5 • Formula',
+    'Ch. 2/5 • Capstones',
+    'Ch. 3/5 • Code Audits',
+    'Ch. 4/5 • Matrix',
+    'Ch. 5/5 • Pledge'
+  ];
+
+  const chapterTitlesMini = [
+    'Ch. 1/5',
+    'Ch. 2/5',
+    'Ch. 3/5',
+    'Ch. 4/5',
+    'Ch. 5/5'
+  ];
+
+  const getChapterTitle = (idx) => {
+    const w = window.innerWidth;
+    if (w <= 420) return chapterTitlesMini[idx] || '';
+    if (w <= 680) return chapterTitlesShort[idx] || '';
+    return chapterTitlesFull[idx] || '';
+  };
+
+  let activeSlideIndex = 0;
+
+  // Set initial chapter text based on current width
+  if (chapterText) {
+    chapterText.textContent = getChapterTitle(0);
+  }
+
   dots.forEach(dot => {
     dot.addEventListener('click', () => {
       const targetIdx = parseInt(dot.getAttribute('data-slide-target'), 10);
       if (isNaN(targetIdx)) return;
+      activeSlideIndex = targetIdx;
 
       // If ScrollTrigger timeline exists on desktop, let ScrollTrigger scroll to it
       if (window.whyTabletTimeline && window.whyTabletTimeline.scrollTrigger) {
@@ -57,8 +88,8 @@ function initWhyMiracleIt(container = document) {
         }
         
         dots.forEach((d, i) => d.classList.toggle('is-active', i === targetIdx));
-        if (chapterText && chapterTitles[targetIdx]) {
-          chapterText.textContent = chapterTitles[targetIdx];
+        if (chapterText) {
+          chapterText.textContent = getChapterTitle(targetIdx);
         }
         if (progressBar) {
           progressBar.style.width = `${((targetIdx + 1) / dots.length) * 100}%`;
@@ -78,14 +109,22 @@ function initWhyMiracleIt(container = document) {
         const w = viewport.clientWidth;
         if (!w) return;
         const currentIdx = Math.min(Math.max(Math.round(viewport.scrollLeft / w), 0), dots.length - 1);
+        activeSlideIndex = currentIdx;
         dots.forEach((d, i) => d.classList.toggle('is-active', i === currentIdx));
-        if (chapterText && chapterTitles[currentIdx]) {
-          chapterText.textContent = chapterTitles[currentIdx];
+        if (chapterText) {
+          chapterText.textContent = getChapterTitle(currentIdx);
         }
         if (progressBar) {
           progressBar.style.width = `${((currentIdx + 1) / dots.length) * 100}%`;
         }
       }, 60);
+    }, { passive: true });
+
+    // Window resize handler to update text density dynamically
+    window.addEventListener('resize', () => {
+      if (chapterText && (!window.whyTabletTimeline || !window.whyTabletTimeline.scrollTrigger)) {
+        chapterText.textContent = getChapterTitle(activeSlideIndex);
+      }
     }, { passive: true });
   }
 }

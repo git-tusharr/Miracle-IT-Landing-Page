@@ -390,6 +390,14 @@
   white-space: nowrap;
 }
 
+.ratio-text-mobile {
+  display: none;
+}
+
+.ratio-text-desktop {
+  display: inline;
+}
+
 .ratio-coding {
   background: linear-gradient(90deg, #4F46E5 0%, #7C3AED 50%, #06B6D4 100%);
   color: #FFFFFF;
@@ -760,6 +768,14 @@
   font-family: var(--font-mono, monospace);
   font-size: 0.72rem;
   color: #64748B;
+}
+
+.story-scroll-hint .hint-mobile {
+  display: none;
+}
+
+.story-scroll-hint .hint-desktop {
+  display: inline;
 }
 
 .hint-arrow {
