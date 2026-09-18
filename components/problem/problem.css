@@ -561,11 +561,60 @@
 }
 
 @media (max-width: 900px) {
+  .problem-cards-grid,
+  .comp-cards-grid {
+    display: flex !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 1rem;
+    padding: 0.5rem 0.25rem 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .problem-cards-grid::-webkit-scrollbar,
+  .comp-cards-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .problem-card {
+    flex: 0 0 min(300px, 84vw);
+    scroll-snap-align: start;
+    padding: 1.5rem 1.25rem;
+    border-radius: var(--radius-lg);
+  }
+
   .problem-transition-banner {
     flex-direction: column;
     align-items: stretch;
-    gap: 1.75rem;
-    padding: 1.75rem;
+    gap: 1.35rem;
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .problem-card {
+    flex: 0 0 min(280px, 82vw);
+    padding: 1.25rem 1rem;
+  }
+
+  .problem-title {
+    font-size: 1.12rem;
+  }
+
+  .problem-desc {
+    font-size: 0.85rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .problem-impact-box {
+    padding: 0.7rem 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .impact-text {
+    font-size: 0.8rem;
   }
 }
 

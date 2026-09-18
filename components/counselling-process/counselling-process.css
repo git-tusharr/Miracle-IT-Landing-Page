@@ -263,30 +263,43 @@
 }
 
 /* ==========================================================================
-   MOBILE & TABLET VERTICAL STACK (< 992px)
+   MOBILE & TABLET HORIZONTAL SNAP JOURNEY (< 992px)
    ========================================================================== */
 @media (max-width: 991px) {
   .counselling-process-section {
-    padding: 4.5rem 0;
+    padding: clamp(3rem, 6vw, 4.5rem) 0;
   }
 
-  .process-scroll-window,
+  .process-scroll-window {
+    width: 100%;
+    overflow: hidden;
+  }
+
   .process-steps-container {
+    display: flex !important;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 1rem;
+    padding: 0.5rem 0.25rem 1.25rem;
     width: 100%;
     height: auto;
   }
 
-  .process-steps-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+  .process-steps-container::-webkit-scrollbar {
+    display: none;
   }
 
   .counselling-step-panel {
-    position: static;
+    position: relative;
     visibility: visible;
     opacity: 1;
-    width: 100%;
+    flex: 0 0 min(310px, 85vw);
+    scroll-snap-align: center;
+    transform: none !important;
+    width: auto;
   }
 
   .counselling-container {
@@ -294,15 +307,44 @@
   }
 
   .step-card {
-    padding: 1.5rem 1.15rem;
+    padding: 1.35rem 1.15rem;
+    border-radius: var(--radius-xl);
+    height: 100%;
+    max-width: 100%;
   }
 
   .step-title {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
   }
 
   .step-detail {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .counselling-step-panel {
+    flex: 0 0 min(285px, 83vw);
+  }
+
+  .step-card {
+    padding: 1.2rem 0.95rem;
+  }
+
+  .step-title {
+    font-size: 1.15rem;
+  }
+
+  .step-detail {
+    font-size: 0.85rem;
+  }
+
+  .step-takeaway-box {
+    padding: 0.7rem 0.8rem;
+  }
+
+  .takeaway-text {
+    font-size: 0.8rem;
   }
 }
 

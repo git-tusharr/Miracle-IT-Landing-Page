@@ -803,9 +803,12 @@
 /* ==========================================================================
    MOBILE & TABLET RESPONSIVE FALLBACK (< 992px)
    ========================================================================== */
+/* ==========================================================================
+   MOBILE & TABLET RESPONSIVE FALLBACK (< 992px)
+   ========================================================================== */
 @media (max-width: 991px) {
   .why-section {
-    padding: 4.5rem 0;
+    padding: clamp(3rem, 6vw, 4.5rem) 0;
   }
 
   .why-container {
@@ -815,18 +818,24 @@
   .tablet-device-chassis {
     padding: 10px 10px 12px 10px;
     border-radius: 24px;
+    max-width: 100%;
   }
 
   .tablet-screen-bezel {
     border-radius: 16px;
     height: auto;
-    min-height: 520px;
+    min-height: 440px;
   }
 
   .tablet-story-viewport {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .tablet-story-viewport::-webkit-scrollbar {
+    display: none;
   }
 
   .tablet-story-track {
@@ -835,21 +844,36 @@
 
   .tablet-slide {
     scroll-snap-align: center;
+    padding: 1.25rem 1rem;
+    overflow-y: visible;
+  }
+
+  /* On Tablet (768px-991px): Pillars remain a balanced 2-column grid */
+  .pillars-slide-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+  }
+
+  .pillar-story-card {
     padding: 1.15rem 1rem;
   }
 
-  .pillars-slide-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
+  /* On Tablet (768px-991px): Comparison table remains 3 columns */
   .comp-row {
-    grid-template-columns: 1fr;
-    gap: 0.35rem;
+    grid-template-columns: 130px 1fr 1.15fr;
+    gap: 0.65rem;
+    padding: 0.55rem 0.75rem;
+    font-size: 0.8rem;
   }
 
+  /* On Tablet (768px-991px): Daily routine stays 3 columns */
   .daily-routine-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.65rem;
+  }
+
+  .routine-phase {
+    padding: 0.75rem 0.85rem;
   }
 
   .story-progress-bar-wrap {
@@ -861,7 +885,10 @@
   }
 }
 
-@media (max-width: 576px) {
+/* ==========================================================================
+   RESPONSIVE: MOBILE (< 640px)
+   ========================================================================== */
+@media (max-width: 640px) {
   .why-container {
     padding: 0 0.75rem;
   }
@@ -869,6 +896,11 @@
   .tablet-device-chassis {
     padding: 8px 8px 10px 8px;
     border-radius: 20px;
+  }
+
+  .tablet-screen-bezel {
+    border-radius: 14px;
+    min-height: 420px;
   }
 
   .tablet-os-bar {
@@ -884,12 +916,147 @@
   }
 
   .slide-title {
-    font-size: 1.25rem;
+    font-size: 1.18rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .slide-sub {
+    font-size: 0.82rem;
+    margin-bottom: 0.85rem;
+  }
+
+  /* Slide 1: Ratio Bar responsive text */
+  .ratio-segment span {
+    font-size: 0.72rem;
+  }
+
+  /* Slide 1: Routine phases become compact horizontal snap strip on mobile */
+  .daily-routine-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 0.6rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .daily-routine-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .routine-phase {
+    flex: 0 0 min(210px, 70vw);
+    scroll-snap-align: start;
+    padding: 0.65rem 0.75rem;
+    border-radius: 10px;
+  }
+
+  .routine-phase strong {
+    font-size: 0.84rem;
+  }
+
+  .routine-phase p {
+    font-size: 0.74rem;
+    line-height: 1.4;
+  }
+
+  /* Slide 2 & 3: Pillars become compact horizontal swipe strip on mobile */
+  .pillars-slide-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 0.65rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .pillars-slide-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .pillar-story-card {
+    flex: 0 0 min(240px, 78vw);
+    scroll-snap-align: start;
+    padding: 0.95rem 0.85rem;
+    border-radius: 12px;
+  }
+
+  .pillar-icon-box {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 0.6rem;
+  }
+
+  .pillar-icon-box svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .pillar-heading {
+    font-size: 0.92rem;
+  }
+
+  .pillar-sub {
+    font-size: 0.78rem;
+    line-height: 1.4;
+    margin-bottom: 0.6rem;
+  }
+
+  /* Slide 4: Comparison rows become cleanly structured cards */
+  .comp-matrix-dashboard {
+    gap: 0.45rem;
+  }
+
+  .comp-row {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.3rem;
+    padding: 0.55rem 0.65rem;
+    border-radius: 8px;
+    font-size: 0.78rem;
+  }
+
+  .comp-factor {
+    font-size: 0.76rem;
+    color: #38BDF8;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding-bottom: 0.2rem;
+  }
+
+  .comp-trad {
+    font-size: 0.74rem;
+  }
+
+  .comp-trad::before {
+    content: '✕ Traditional: ';
+    color: #EF4444;
+    font-weight: 700;
+  }
+
+  .comp-miracle {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.45rem;
+  }
+
+  .comp-miracle::before {
+    content: '✔ Miracle IT: ';
+    color: #10B981;
+    font-weight: 800;
+  }
+
+  /* Slide 5: Pledge card */
+  .pledge-card-wrap {
+    padding: 1rem 0.75rem;
   }
 
   .pledge-actions-row {
     flex-direction: column;
     width: 100%;
+    gap: 0.6rem;
   }
 
   .pledge-actions-row .btn {
@@ -908,7 +1075,7 @@
 
   .tablet-screen-bezel {
     border-radius: 12px;
-    min-height: 480px;
+    min-height: 400px;
   }
 
   .tablet-os-bar {
@@ -926,7 +1093,7 @@
   }
 
   .slide-title {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     margin-bottom: 0.35rem;
   }
 
@@ -936,36 +1103,39 @@
   }
 
   .comp-row {
-    padding: 0.5rem 0.6rem;
-    font-size: 0.78rem;
-    gap: 0.25rem;
+    padding: 0.45rem 0.55rem;
+    gap: 0.2rem;
+  }
+
+  .comp-factor, .comp-trad, .comp-miracle {
+    font-size: 0.72rem;
   }
 
   .pledge-card-wrap {
-    padding: 1rem 0.75rem;
-    border-radius: 14px;
+    padding: 0.85rem 0.65rem;
+    border-radius: 12px;
   }
 
   .pledge-quote-text {
-    font-size: 0.82rem;
-    padding-left: 0.65rem;
-    margin-bottom: 0.85rem;
+    font-size: 0.8rem;
+    padding-left: 0.5rem;
+    margin-bottom: 0.75rem;
   }
 
   .pledge-trust-row {
-    gap: 0.4rem;
-    margin-bottom: 1rem;
+    gap: 0.35rem;
+    margin-bottom: 0.85rem;
   }
 
   .pledge-pill {
-    font-size: 0.68rem;
-    padding: 0.2rem 0.5rem;
+    font-size: 0.65rem;
+    padding: 0.18rem 0.45rem;
   }
 
   .tablet-bottom-hud {
     padding: 0 0.5rem;
-    height: 38px;
-    min-height: 38px;
+    height: 36px;
+    min-height: 36px;
   }
 
   .story-nav-dots {

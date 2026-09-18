@@ -688,6 +688,53 @@
 }
 
 /* ==========================================================================
+   RESPONSIVE: MOBILE HORIZONTAL SNAP ROWS (<= 640px)
+   ========================================================================== */
+@media (max-width: 640px) {
+  .transit-routes-grid {
+    display: flex !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 0.85rem;
+    padding: 0.25rem 0.25rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .transit-routes-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .transit-card {
+    flex: 0 0 min(260px, 78vw);
+    scroll-snap-align: start;
+    padding: 1.15rem 1rem;
+  }
+
+  .campus-amenities-bar {
+    display: flex !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 0.75rem;
+    padding: 0.25rem 0.25rem 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .campus-amenities-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .amenity-item {
+    flex: 0 0 min(240px, 74vw);
+    scroll-snap-align: start;
+    padding: 1rem 0.85rem;
+  }
+}
+
+/* ==========================================================================
    RESPONSIVE: SMALL & ULTRA-NARROW PHONES (<= 380px & 320px)
    ========================================================================== */
 @media (max-width: 380px) {

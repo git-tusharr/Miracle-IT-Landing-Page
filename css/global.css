@@ -705,8 +705,21 @@ p {
 }
 
 /* ==========================================================================
-   RESPONSIVE: MOBILE VIEWPORTS (<= 768px, <= 380px & <= 340px/320px)
+   RESPONSIVE: GRADUATED BREAKPOINTS (1024px, 768px, 480px, 380px, 340px)
    ========================================================================== */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 960px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .section {
+    padding-top: clamp(3.75rem, 5.5vw, 5.5rem);
+    padding-bottom: clamp(3.75rem, 5.5vw, 5.5rem);
+  }
+}
+
 @media (max-width: 768px) {
   .container,
   .container-narrow {
@@ -715,17 +728,38 @@ p {
   }
 
   .section {
-    padding-top: clamp(3.5rem, 7vw, 5rem);
-    padding-bottom: clamp(3.5rem, 7vw, 5rem);
+    padding-top: clamp(3rem, 5vw, 4.25rem);
+    padding-bottom: clamp(3rem, 5vw, 4.25rem);
   }
 
   .card {
-    padding: 1.5rem 1.15rem;
+    padding: 1.35rem 1.1rem;
   }
 
   .btn-lg {
-    padding: 0.95rem 1.5rem;
-    font-size: 1rem;
+    padding: 0.85rem 1.4rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding-top: 2.75rem;
+    padding-bottom: 2.75rem;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .section-header h2 {
+    font-size: clamp(1.4rem, 5vw, 1.85rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-header p {
+    font-size: 0.92rem;
+    line-height: 1.55;
   }
 }
 

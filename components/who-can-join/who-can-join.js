@@ -240,7 +240,8 @@ function initWhoCanJoin(container = document) {
 
           cards[targetIndex].scrollIntoView({
             behavior: 'smooth',
-            block: 'center'
+            block: 'nearest',
+            inline: 'center'
           });
 
           pills.forEach((p, i) => {

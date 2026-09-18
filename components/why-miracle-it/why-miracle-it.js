@@ -45,11 +45,16 @@ function initWhyMiracleIt(container = document) {
         const st = window.whyTabletTimeline.scrollTrigger;
         const targetScroll = st.start + (st.end - st.start) * progress;
         window.scrollTo({ top: targetScroll + 2, behavior: 'smooth' });
-      } else if (track) {
-        // Fallback for mobile / reduced motion
-        const pct = targetIdx * 20; // 5 slides, 20% each
-        track.style.transform = `translate3d(-${pct}%, 0, 0)`;
-        track.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+      } else {
+        // Fallback for mobile / touch / reduced motion
+        const viewport = section.querySelector('#tabletStoryViewport');
+        if (viewport && viewport.clientWidth) {
+          viewport.scrollTo({ left: targetIdx * viewport.clientWidth, behavior: 'smooth' });
+        } else if (track) {
+          const pct = targetIdx * 20; // 5 slides, 20% each
+          track.style.transform = `translate3d(-${pct}%, 0, 0)`;
+          track.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+        }
         
         dots.forEach((d, i) => d.classList.toggle('is-active', i === targetIdx));
         if (chapterText && chapterTitles[targetIdx]) {
@@ -61,6 +66,28 @@ function initWhyMiracleIt(container = document) {
       }
     });
   });
+
+  // 3. Mobile touch swipe scroll listener to sync dots & chapters
+  const viewport = section.querySelector('#tabletStoryViewport');
+  if (viewport) {
+    let scrollTimer;
+    viewport.addEventListener('scroll', () => {
+      if (window.whyTabletTimeline && window.whyTabletTimeline.scrollTrigger) return;
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(() => {
+        const w = viewport.clientWidth;
+        if (!w) return;
+        const currentIdx = Math.min(Math.max(Math.round(viewport.scrollLeft / w), 0), dots.length - 1);
+        dots.forEach((d, i) => d.classList.toggle('is-active', i === currentIdx));
+        if (chapterText && chapterTitles[currentIdx]) {
+          chapterText.textContent = chapterTitles[currentIdx];
+        }
+        if (progressBar) {
+          progressBar.style.width = `${((currentIdx + 1) / dots.length) * 100}%`;
+        }
+      }, 60);
+    }, { passive: true });
+  }
 }
 
 if (typeof window !== 'undefined') {

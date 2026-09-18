@@ -54,6 +54,9 @@ function initCourses(container = document) {
     if (nextNav) {
       nextNav.classList.add('is-active');
       nextNav.setAttribute('aria-selected', 'true');
+      if (window.innerWidth < 768) {
+        nextNav.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
     }
 
     // Reduced motion fallback: instant swap

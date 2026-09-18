@@ -51,7 +51,7 @@ function initProblem(container = document) {
       const cardIdx = parseInt(btn.getAttribute('data-target-card'), 10);
       const targetCard = dilemmaCards[cardIdx];
       if (targetCard) {
-        targetCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        targetCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
         targetCard.style.transition = 'all 400ms cubic-bezier(0.22, 1, 0.36, 1)';
         targetCard.style.boxShadow = '0 0 35px 4px rgba(99, 102, 241, 0.7), 0 0 15px rgba(56, 189, 248, 0.4)';
         targetCard.style.borderColor = 'rgba(99, 102, 241, 0.9)';

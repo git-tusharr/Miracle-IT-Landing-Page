@@ -378,27 +378,36 @@
     font-size: 0.8rem;
   }
 
-  /* When JS Pin is disabled on mobile, stack cards stick with natural CSS sticky */
+  /* Horizontal snap-scroll deck on mobile & small tablets */
   .who-stack-deck {
     min-height: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    display: flex !important;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 1rem;
+    padding: 0.5rem 0.25rem 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .who-stack-deck::-webkit-scrollbar {
+    display: none;
   }
 
   .who-stack-card {
     position: relative;
     top: auto;
     left: auto;
-    width: 100%;
-    padding: 1.5rem 1.25rem;
-  }
-
-  /* Sticky stacking effect on mobile if desired */
-  .mobile-sticky-active .who-stack-card {
-    position: sticky;
-    top: 85px;
-    margin-bottom: 1.5rem;
+    flex: 0 0 min(310px, 86vw);
+    scroll-snap-align: center;
+    padding: 1.35rem 1.15rem;
+    border-radius: var(--radius-xl);
+    box-sizing: border-box;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
   }
 
   .who-card-watermark {
