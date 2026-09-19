@@ -286,7 +286,13 @@
 }
 
 .header-contact-pill.whatsapp-pill .contact-icon {
-  color: #10B981;
+  color: #25D366;
+  transition: color 150ms ease, transform 150ms ease;
+}
+
+.header-contact-pill.whatsapp-pill:hover .contact-icon {
+  color: #34D399;
+  transform: scale(1.08);
 }
 
 .contact-sep {
@@ -628,6 +634,10 @@
   .mobile-nav-actions .btn {
     width: 100%;
     min-height: 46px;
+  }
+
+  .mobile-nav-actions [data-config-whatsapp] .btn-icon {
+    color: #25D366;
   }
 }
 

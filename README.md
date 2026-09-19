@@ -89,10 +89,11 @@ To update phone numbers, WhatsApp links, or address details across the **entire 
 
 ```javascript
 const SITE_CONFIG = {
-  phone: "+919876543210",              // Update official phone
-  phoneDisplay: "+91 98765 43210",     // Update formatted display text
-  whatsapp: "+919876543210",          // Update WhatsApp number
-  address: "Plot No. 12, Zone-II, M.P. Nagar, Bhopal...",
+  phone: "+917880003127",              // Official helpline
+  phoneDisplay: "+91 78800 03127",     // Formatted display text
+  email: "info@miracleinfoserv.com",   // Official academy email
+  whatsapp: "+917880003127",          // Official WhatsApp number
+  address: "Plot No.80, 3rd Floor, Aakriti Complex, Zone-2, M.P.Nagar, Bhopal, M.P.",
   directionsUrl: "https://maps.google.com/?q=...",
   apiBaseUrl: "/api/counselling"       // Backend CRM endpoint
 };
