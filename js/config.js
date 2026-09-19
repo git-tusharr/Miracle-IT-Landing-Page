@@ -44,37 +44,43 @@ const SITE_CONFIG = {
       city: "Bhopal",
       type: "Main Campus & Head Office",
       address: "Plot No.80, 3rd Floor, Aakriti Complex, Zone-2, M.P.Nagar, Bhopal, M.P.",
-      phone: "0755-4907790"
+      phone: "0755-4907790",
+      mapUrl: "https://maps.google.com/?q=Plot+No.80,+Aakriti+Complex,+Zone-2,+M.P.+Nagar,+Bhopal"
     },
     {
       city: "Jabalpur",
       type: "Regional Center",
       address: "2nd Floor, In front of Maruti Suzuki Showroom, Jabalpur Hospital Road, Napier Town, Jabalpur, M.P.",
-      phone: "0761-4920378"
+      phone: "0761-4920378",
+      mapUrl: "https://maps.google.com/?q=Miracle+IT+Career+Academy,+Jabalpur+Hospital+Road,+Napier+Town,+Jabalpur,+Madhya+Pradesh"
     },
     {
       city: "Gwalior",
       type: "Regional Center",
       address: "A-8, 201, 2nd Floor, Opp. Aditya College, City Center, Gwalior, M.P.",
-      phone: "0751-4901188"
+      phone: "0751-4901188",
+      mapUrl: "https://maps.google.com/?q=Miracle+IT+Career+Academy,+A-8,+201,+City+Center,+Gwalior,+Madhya+Pradesh"
     },
     {
       city: "Ratlam",
       type: "Regional Center",
       address: "76, B-Plaza, First Floor, T.I.Y Road Corner, Above Raymond Showroom, Station Road, Ratlam, M.P.",
-      phone: "07412-403025"
+      phone: "07412-403025",
+      mapUrl: "https://maps.google.com/?q=Miracle+IT+Career+Academy,+76,+B-Plaza,+Station+Road,+Ratlam,+Madhya+Pradesh"
     },
     {
       city: "Ujjain",
       type: "Regional Center",
       address: "301, 3rd Floor, Mahakaal Kanak, Malipura, Dewas Gate, Ujjain, M.P.",
-      phone: "0734-4030236"
+      phone: "0734-4030236",
+      mapUrl: "https://maps.google.com/?q=Miracle+IT+Career+Academy,+301,+Mahakaal+Kanak,+Malipura,+Dewas+Gate,+Ujjain,+Madhya+Pradesh"
     },
     {
       city: "Nagpur",
       type: "Regional Center",
       address: "301, 3rd Floor, Mahakaal Kanak, Malipura, Dewas Gate, Ujjain, M.P.",
-      phone: "0734-4030236"
+      phone: "0734-4030236",
+      mapUrl: "https://maps.google.com/?q=Miracle+IT+Career+Academy,+Nagpur"
     }
   ],
 

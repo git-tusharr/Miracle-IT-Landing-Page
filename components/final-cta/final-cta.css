@@ -143,6 +143,18 @@ html.motion-ready .final-cta-section.is-revealed .final-hero-btn:hover {
   box-shadow: 0 0 15px rgba(99, 102, 241, 0.25);
 }
 
+.shortcut-link.whatsapp-color svg {
+  color: #25D366;
+  fill: currentColor;
+}
+
+.shortcut-link.whatsapp-color:hover {
+  border-color: rgba(37, 211, 102, 0.5);
+  background-color: rgba(37, 211, 102, 0.15);
+  box-shadow: 0 0 15px rgba(37, 211, 102, 0.25);
+  color: #FFFFFF;
+}
+
 /* ==========================================================================
    RESPONSIVE: SMALL & ULTRA-NARROW PHONES (<= 480px & 320px)
    ========================================================================== */
