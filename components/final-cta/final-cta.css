@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .final-cta-section {
-  background: radial-gradient(circle at 50% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 70%),
+  background: radial-gradient(circle at 50% 30%, rgba(255, 122, 0, 0.15) 0%, transparent 70%),
               linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%);
   border-top: 1px solid var(--color-border);
   padding: clamp(5rem, 9vw, 8rem) 0;
@@ -52,11 +52,11 @@
 .final-hero-btn {
   font-size: 1.12rem;
   padding: 1.15rem 2.85rem;
-  box-shadow: 0 4px 25px rgba(99, 102, 241, 0.45);
+  box-shadow: 0 4px 25px rgba(255, 122, 0, 0.45);
 }
 
 .final-hero-btn:hover {
-  box-shadow: 0 8px 35px rgba(99, 102, 241, 0.65);
+  box-shadow: 0 8px 35px rgba(255, 122, 0, 0.65);
   transform: translateY(-2px);
 }
 
@@ -136,11 +136,11 @@ html.motion-ready .final-cta-section.is-revealed .final-hero-btn:hover {
 }
 
 .shortcut-link:hover {
-  border-color: rgba(99, 102, 241, 0.45);
+  border-color: rgba(255, 122, 0, 0.45);
   color: #FFFFFF;
-  background-color: rgba(99, 102, 241, 0.15);
+  background-color: rgba(255, 122, 0, 0.15);
   transform: translateY(-2px);
-  box-shadow: 0 0 15px rgba(99, 102, 241, 0.25);
+  box-shadow: 0 0 15px rgba(255, 122, 0, 0.25);
 }
 
 .shortcut-link.whatsapp-color svg {

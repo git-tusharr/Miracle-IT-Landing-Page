@@ -38,7 +38,7 @@ function initLearningExperience(container = document) {
   let autoplayTimer = null;
   let isTransitioning = false;
   let isHovered = false;
-  const AUTOPLAY_INTERVAL = 2500; // 2.5 seconds (between 2-3 seconds)
+  const AUTOPLAY_INTERVAL = 5000; // 5.0 seconds relaxed interval for comfortable reading
 
   // Check reduced motion preference
   const prefersReducedMotion = () => {

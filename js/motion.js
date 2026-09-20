@@ -813,10 +813,10 @@
       if (!section) return;
 
       const track = section.querySelector('#tabletStoryTrack');
-      if (!track) return;
-
       const slides = Array.from(section.querySelectorAll('.tablet-slide'));
-      if (!slides.length) return;
+      const tabletDevice = section.querySelector('#whyTabletDevice');
+      const stage = section.querySelector('.tablet-perspective-stage');
+      if (!track || slides.length === 0) return;
 
       const dots = Array.from(section.querySelectorAll('.story-dot'));
       const chapterText = section.querySelector('#tabletChapterText');
@@ -841,15 +841,130 @@
       const ScrollTrigger = window.ScrollTrigger;
       gsap.registerPlugin(ScrollTrigger);
 
+      // 1. Smooth Section Entrance: Tablet gently rises and scales into position as section nears viewport
+      if (tabletDevice) {
+        gsap.fromTo(tabletDevice,
+          { y: 35, scale: 0.96, opacity: 0.85, rotateX: 2.5 },
+          {
+            y: 0,
+            scale: 1,
+            opacity: 1,
+            rotateX: 0,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: section,
+              start: "top 85%",
+              end: "top 76px",
+              scrub: 1
+            }
+          }
+        );
+      }
+
+      // 2. Subtle Interactive 3D Mouse Parallax on Desktop
+      if (stage && tabletDevice && window.innerWidth >= 992) {
+        let isHovered = false;
+        stage.addEventListener('mouseenter', () => { isHovered = true; });
+        stage.addEventListener('mousemove', (e) => {
+          if (!isHovered) return;
+          const rect = stage.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width - 0.5; // -0.5 to 0.5
+          const y = (e.clientY - rect.top) / rect.height - 0.5;
+          gsap.to(tabletDevice, {
+            rotateY: x * 3.5,
+            rotateX: -y * 3.5,
+            duration: 0.6,
+            ease: "power1.out",
+            transformPerspective: 1400
+          });
+        });
+        stage.addEventListener('mouseleave', () => {
+          isHovered = false;
+          gsap.to(tabletDevice, {
+            rotateY: 0,
+            rotateX: 0,
+            duration: 0.8,
+            ease: "power2.out"
+          });
+        });
+      }
+
+      // Helper function to animate card contents on slide change
+      let lastActiveSlide = -1;
+      const animateSlideCards = (slideIdx) => {
+        if (slideIdx === lastActiveSlide) return;
+        lastActiveSlide = slideIdx;
+
+        const currentSlide = slides[slideIdx];
+        if (!currentSlide) return;
+
+        if (slideIdx === 0) {
+          // Slide 1: Routine phases stagger + coding bar fill
+          const routinePhases = currentSlide.querySelectorAll('.routine-phase');
+          const statPills = currentSlide.querySelectorAll('.stat-pill');
+          if (routinePhases.length) {
+            gsap.fromTo(routinePhases,
+              { y: 16, opacity: 0.4 },
+              { y: 0, opacity: 1, stagger: 0.08, duration: 0.45, ease: "power2.out" }
+            );
+          }
+          if (statPills.length) {
+            gsap.fromTo(statPills,
+              { y: 12, opacity: 0.4 },
+              { y: 0, opacity: 1, stagger: 0.06, duration: 0.4, ease: "power2.out" }
+            );
+          }
+          if (codingBar) {
+            gsap.fromTo(codingBar, { width: '0%' }, { width: '70%', duration: 0.7, ease: "power2.out" });
+          }
+        } else if (slideIdx === 1 || slideIdx === 2) {
+          // Slide 2 & 3: Pillar cards float up smoothly
+          const pillarCards = currentSlide.querySelectorAll('.pillar-story-card');
+          if (pillarCards.length) {
+            gsap.fromTo(pillarCards,
+              { y: 20, opacity: 0.35, scale: 0.98 },
+              { y: 0, opacity: 1, scale: 1, stagger: 0.12, duration: 0.5, ease: "power2.out" }
+            );
+          }
+        } else if (slideIdx === 3) {
+          // Slide 4: Comparison rows cascade sequentially
+          const compRows = currentSlide.querySelectorAll('.comp-row');
+          if (compRows.length) {
+            gsap.fromTo(compRows,
+              { x: 22, opacity: 0.3 },
+              { x: 0, opacity: 1, stagger: 0.05, duration: 0.45, ease: "power2.out" }
+            );
+          }
+        } else if (slideIdx === 4) {
+          // Slide 5: Transparency pledge card reveal
+          const pledgeCard = currentSlide.querySelector('.pledge-card-wrap');
+          const pledgePills = currentSlide.querySelectorAll('.pledge-pill');
+          if (pledgeCard) {
+            gsap.fromTo(pledgeCard,
+              { scale: 0.96, opacity: 0.4, y: 12 },
+              { scale: 1, opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
+            );
+          }
+          if (pledgePills.length) {
+            gsap.fromTo(pledgePills,
+              { opacity: 0.3, y: 8 },
+              { opacity: 1, y: 0, stagger: 0.08, duration: 0.4, ease: "power2.out" }
+            );
+          }
+        }
+      };
+
       ScrollTrigger.matchMedia({
         // DESKTOP (>= 992px)
         "(min-width: 992px)": function() {
-          // Calculate horizontal slide distance: (slides.length - 1) * 20% in 500% container = 80%
           const maxPercent = -((slides.length - 1) * (100 / slides.length));
 
           // Set initial state
           gsap.set(track, { xPercent: 0 });
           if (progressBar) progressBar.style.width = '20%';
+
+          // Trigger initial slide 1 animation
+          animateSlideCards(0);
 
           const tl = gsap.timeline({
             scrollTrigger: {
@@ -887,10 +1002,8 @@
                   chapterText.textContent = chapterTitles[activeIdx];
                 }
 
-                // Animate 70% coding bar when on slide 1
-                if (codingBar) {
-                  codingBar.style.width = '70%';
-                }
+                // Trigger smooth card entrance for current slide
+                animateSlideCards(activeIdx);
               }
             }
           });

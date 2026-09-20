@@ -1,38 +1,61 @@
 /* ==========================================================================
-   FOOTER SECTION STYLES — NEXT-GEN TECH AESTHETIC
+   FOOTER SECTION STYLES — HARMONIOUS, PROPORTIONATE & NEXT-GEN TECH AESTHETIC
    ========================================================================== */
 
 .site-footer {
   background-color: #05070B;
   color: var(--color-text-muted);
-  padding-top: 5rem;
+  padding-top: 4.5rem;
   padding-bottom: 2.5rem;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   position: relative;
+  overflow: hidden;
 }
 
+/* Subtle ambient backdrop illumination */
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 220px;
+  background: radial-gradient(ellipse at top, rgba(255, 122, 0, 0.05) 0%, rgba(37, 99, 235, 0.03) 50%, transparent 80%);
+  pointer-events: none;
+}
+
+/* Four-Column Proportional Grid */
 .footer-top-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
-  margin-bottom: 3.5rem;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
 }
 
 @media (min-width: 640px) {
   .footer-top-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2.75rem 2rem;
   }
 }
 
 @media (min-width: 1024px) {
   .footer-top-grid {
-    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    grid-template-columns: 1.35fr 0.95fr 1.15fr 1.25fr;
+    gap: 2.75rem;
+    align-items: start;
   }
 }
 
+/* --------------------------------------------------------------------------
+   COLUMN 1: BRAND IDENTITY & SOCIAL CONNECT
+   -------------------------------------------------------------------------- */
 .brand-col .footer-logo {
   display: block;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.15rem;
 }
 
 .footer-logo-link {
@@ -49,146 +72,47 @@
 .footer-brand-logo-img {
   display: block;
   width: 100%;
-  max-width: 250px;
+  max-width: 120px;
   height: auto;
   filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.45));
 }
 
-.brand-col .brand-name {
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: #FFFFFF;
-}
-
-.brand-col .brand-sub {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #38BDF8;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
 .footer-about {
-  font-size: 0.925rem;
-  line-height: 1.65;
-  color: var(--color-text-muted);
-  margin-bottom: 1.25rem;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #94A3B8;
+  margin-bottom: 1rem;
 }
 
 .footer-location-brief {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: #CBD5E1;
+  margin-bottom: 1.25rem;
 }
 
 .footer-icon {
-  width: 16px;
-  height: 16px;
-  color: #818CF8;
+  width: 15px;
+  height: 15px;
+  color: var(--color-brand, #FF7A00);
   flex-shrink: 0;
 }
 
-.footer-heading {
-  font-size: 1rem;
-  font-weight: 800;
-  color: #FFFFFF;
-  margin-bottom: 1.25rem;
-  letter-spacing: -0.01em;
-}
-
-.footer-nav, .footer-contact-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.footer-nav a, .footer-contact-list a {
-  color: var(--color-text-muted);
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: all var(--transition-fast);
-}
-
-.footer-nav a:hover, .footer-contact-list a:hover {
-  color: #FFFFFF;
-  transform: translateX(2px);
-}
-
-.footer-contact-list li {
-  font-size: 0.9rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-
-.footer-contact-list strong {
-  color: #E2E8F0;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.footer-cta-li {
-  margin-top: 0.5rem;
-}
-
-/* Bottom Footer */
-.footer-bottom {
-  padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.footer-disclaimer p {
-  font-size: 0.8rem;
-  color: var(--color-text-dim);
-  line-height: 1.55;
-  margin: 0;
-}
-
-.footer-bottom-bar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding-top: 0.75rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.03);
-}
-
-.footer-copyright {
-  width: 100%;
-  text-align: center;
-}
-
-.footer-copyright p {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  color: var(--color-text-dim);
-  margin: 0;
-}
-
-/* --------------------------------------------------------------------------
-   FOOTER SOCIAL MEDIA ICONS (UNDER CONTACT & VISIT)
-   -------------------------------------------------------------------------- */
+/* Social Media Icons (Integrated in Brand Column) */
 .footer-social-section {
-  margin-top: 1.5rem;
-  padding-top: 1.15rem;
+  padding-top: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
+  gap: 0.6rem;
 }
 
 .footer-social-heading {
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   font-weight: 700;
-  color: #E2E8F0;
+  color: #94A3B8;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -196,19 +120,19 @@
 .footer-social-row {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.6rem;
   flex-wrap: wrap;
 }
 
 .footer-social-btn {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
   color: #94A3B8;
   text-decoration: none;
   transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
@@ -217,68 +141,205 @@
 }
 
 .footer-social-btn svg {
-  width: 18px;
-  height: 18px;
+  width: 17px;
+  height: 17px;
   transition: transform 0.22s ease, fill 0.22s ease;
 }
 
-/* Individual Platform Brand Accents on Hover */
 .footer-social-btn.social-whatsapp:hover {
-  background: rgba(37, 211, 102, 0.14);
-  border-color: rgba(37, 211, 102, 0.45);
+  background: rgba(37, 211, 102, 0.15);
+  border-color: rgba(37, 211, 102, 0.5);
   color: #25D366;
-  box-shadow: 0 0 14px rgba(37, 211, 102, 0.32);
+  box-shadow: 0 0 14px rgba(37, 211, 102, 0.35);
   transform: translateY(-2px);
 }
 
 .footer-social-btn.social-facebook:hover {
-  background: rgba(24, 119, 242, 0.14);
-  border-color: rgba(24, 119, 242, 0.45);
+  background: rgba(24, 119, 242, 0.15);
+  border-color: rgba(24, 119, 242, 0.5);
   color: #1877F2;
-  box-shadow: 0 0 14px rgba(24, 119, 242, 0.32);
+  box-shadow: 0 0 14px rgba(24, 119, 242, 0.35);
   transform: translateY(-2px);
 }
 
 .footer-social-btn.social-instagram:hover {
-  background: rgba(225, 48, 108, 0.14);
-  border-color: rgba(225, 48, 108, 0.45);
+  background: rgba(225, 48, 108, 0.15);
+  border-color: rgba(225, 48, 108, 0.5);
   color: #E1306C;
-  box-shadow: 0 0 14px rgba(225, 48, 108, 0.32);
+  box-shadow: 0 0 14px rgba(225, 48, 108, 0.35);
   transform: translateY(-2px);
 }
 
-/* Unlinked Items (LinkedIn & YouTube) */
 .footer-social-btn.is-unlinked {
   cursor: default;
   opacity: 0.75;
 }
 
 .footer-social-btn.is-unlinked.social-linkedin:hover {
-  background: rgba(10, 102, 194, 0.14);
-  border-color: rgba(10, 102, 194, 0.45);
+  background: rgba(10, 102, 194, 0.15);
+  border-color: rgba(10, 102, 194, 0.5);
   color: #0A66C2;
-  box-shadow: 0 0 14px rgba(10, 102, 194, 0.32);
+  box-shadow: 0 0 14px rgba(10, 102, 194, 0.35);
   transform: translateY(-2px);
   opacity: 1;
 }
 
 .footer-social-btn.social-youtube:hover,
 .footer-social-btn.is-unlinked.social-youtube:hover {
-  background: rgba(255, 0, 0, 0.14);
-  border-color: rgba(255, 0, 0, 0.45);
+  background: rgba(255, 0, 0, 0.15);
+  border-color: rgba(255, 0, 0, 0.5);
   color: #FF0000;
-  box-shadow: 0 0 14px rgba(255, 0, 0, 0.32);
+  box-shadow: 0 0 14px rgba(255, 0, 0, 0.35);
   transform: translateY(-2px);
   opacity: 1;
 }
 
-/* ==========================================================================
-   RESPONSIVE: SMALL & ULTRA-NARROW PHONES (<= 1024px, <= 640px, <= 480px & 320px)
-   ========================================================================== */
+/* --------------------------------------------------------------------------
+   COLUMN HEADINGS & NAVIGATION LINKS
+   -------------------------------------------------------------------------- */
+.footer-heading {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 1.15rem;
+  letter-spacing: -0.01em;
+  position: relative;
+}
+
+.footer-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.footer-nav a {
+  color: #94A3B8;
+  text-decoration: none;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  transition: color 0.18s ease, transform 0.18s ease;
+  display: inline-block;
+}
+
+.footer-nav a:hover {
+  color: #FFFFFF;
+  transform: translateX(3px);
+}
+
+/* --------------------------------------------------------------------------
+   COLUMN 4: CONTACT & VISIT
+   -------------------------------------------------------------------------- */
+.footer-contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.footer-contact-list li {
+  font-size: 0.88rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.footer-contact-list strong {
+  color: #64748B;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+
+.footer-contact-list a {
+  color: #F1F5F9;
+  text-decoration: none;
+  transition: color 0.18s ease, transform 0.18s ease;
+}
+
+.footer-contact-list a:hover {
+  color: var(--color-brand, #FF7A00);
+  transform: translateX(2px);
+}
+
+.footer-contact-list span {
+  color: #E2E8F0;
+}
+
+.footer-cta-li {
+  margin-top: 0.65rem;
+}
+
+.footer-cta-li .btn {
+  padding: 0.65rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   BOTTOM FOOTER: DISCLAIMER & COPYRIGHT
+   -------------------------------------------------------------------------- */
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-disclaimer {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 0.85rem 1.25rem;
+}
+
+.footer-disclaimer p {
+  font-size: 0.78rem;
+  color: #64748B;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.footer-disclaimer strong {
+  color: #94A3B8;
+}
+
+.footer-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding-top: 0.5rem;
+}
+
+.footer-copyright p,
+.footer-bottom-meta p {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: #64748B;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE: MOBILE & TABLETS (<= 1024px, <= 640px, <= 480px, <= 360px)
+   -------------------------------------------------------------------------- */
 @media (max-width: 640px) {
   .footer-bottom-bar {
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    gap: 0.5rem;
   }
 }
 
@@ -289,30 +350,22 @@
   }
 
   .footer-top-grid {
-    gap: 2.25rem;
-    margin-bottom: 2.5rem;
-  }
-
-  .brand-col .brand-name {
-    font-size: 1.15rem;
+    gap: 2rem;
+    margin-bottom: 2.25rem;
   }
 
   .footer-brand-logo-img {
-    max-width: 210px;
+    max-width: 110px;
   }
 
   .footer-social-btn {
-    width: 36px;
-    height: 36px;
+    width: 35px;
+    height: 35px;
   }
 
   .footer-social-btn svg {
-    width: 17px;
-    height: 17px;
-  }
-
-  .footer-social-row {
-    gap: 0.65rem;
+    width: 16px;
+    height: 16px;
   }
 }
 
@@ -328,30 +381,25 @@
   }
 
   .footer-heading {
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     margin-bottom: 0.85rem;
   }
 
   .footer-about {
-    font-size: 0.86rem;
+    font-size: 0.85rem;
   }
 
   .footer-brand-logo-img {
-    max-width: 185px;
+    max-width: 105px;
   }
 
   .footer-nav a, .footer-contact-list a {
-    font-size: 0.85rem;
+    font-size: 0.84rem;
   }
 
   .footer-social-btn {
     width: 34px;
     height: 34px;
-  }
-
-  .footer-social-btn svg {
-    width: 16px;
-    height: 16px;
   }
 
   .footer-social-row {

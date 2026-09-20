@@ -94,9 +94,20 @@ function initWhyMiracleIt(container = document) {
         if (progressBar) {
           progressBar.style.width = `${((targetIdx + 1) / dots.length) * 100}%`;
         }
+        animateMobileSlide(targetIdx);
       }
     });
   });
+
+  const animateMobileSlide = (idx) => {
+    const slides = Array.from(section.querySelectorAll('.tablet-slide'));
+    const slide = slides[idx];
+    if (!slide) return;
+    const cards = slide.querySelectorAll('.routine-phase, .pillar-story-card, .comp-row, .pledge-card-wrap');
+    if (cards.length && typeof window.gsap !== 'undefined') {
+      gsap.fromTo(cards, { opacity: 0.5, y: 8 }, { opacity: 1, y: 0, duration: 0.35, stagger: 0.05, ease: 'power2.out' });
+    }
+  };
 
   // 3. Mobile touch swipe scroll listener to sync dots & chapters
   const viewport = section.querySelector('#tabletStoryViewport');
@@ -109,13 +120,16 @@ function initWhyMiracleIt(container = document) {
         const w = viewport.clientWidth;
         if (!w) return;
         const currentIdx = Math.min(Math.max(Math.round(viewport.scrollLeft / w), 0), dots.length - 1);
-        activeSlideIndex = currentIdx;
-        dots.forEach((d, i) => d.classList.toggle('is-active', i === currentIdx));
-        if (chapterText) {
-          chapterText.textContent = getChapterTitle(currentIdx);
-        }
-        if (progressBar) {
-          progressBar.style.width = `${((currentIdx + 1) / dots.length) * 100}%`;
+        if (currentIdx !== activeSlideIndex) {
+          activeSlideIndex = currentIdx;
+          dots.forEach((d, i) => d.classList.toggle('is-active', i === currentIdx));
+          if (chapterText) {
+            chapterText.textContent = getChapterTitle(currentIdx);
+          }
+          if (progressBar) {
+            progressBar.style.width = `${((currentIdx + 1) / dots.length) * 100}%`;
+          }
+          animateMobileSlide(currentIdx);
         }
       }, 60);
     }, { passive: true });

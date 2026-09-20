@@ -124,7 +124,7 @@ function initHero(container = document) {
 
     shuffleTimer = setInterval(() => {
       shuffleNext();
-    }, 2000); // 2-second interval requested
+    }, 4800); // Relaxed 4.8s interval for natural reading pace
   };
 
   const stopShuffleTimer = () => {

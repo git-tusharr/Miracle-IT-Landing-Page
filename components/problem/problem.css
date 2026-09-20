@@ -63,10 +63,10 @@
 }
 
 .dilemma-pill.is-active {
-  background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+  background: linear-gradient(135deg, #FF851A 0%, #EA580C 100%);
   color: #FFFFFF;
   border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 18px rgba(99, 102, 241, 0.4);
+  box-shadow: 0 4px 18px rgba(255, 122, 0, 0.4);
 }
 
 .pill-dot {
@@ -154,9 +154,9 @@
 .diagnostic-btn:hover {
   color: #FFFFFF;
   background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(99, 102, 241, 0.55);
+  border-color: rgba(255, 122, 0, 0.55);
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 4px 16px rgba(255, 122, 0, 0.3);
 }
 
 .diagnostic-btn:focus-visible {
@@ -165,12 +165,12 @@
 }
 
 .diagnostic-btn.is-active {
-  background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+  background: linear-gradient(135deg, #FF851A 0%, #EA580C 100%);
   border-color: rgba(255, 255, 255, 0.4);
   color: #FFFFFF;
   font-weight: 700;
   transform: translateY(-1px);
-  box-shadow: 0 0 20px rgba(99, 102, 241, 0.55), 0 4px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 20px rgba(255, 122, 0, 0.55), 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 /* Individual card accents on hover/active */
@@ -188,15 +188,15 @@
 }
 
 .diagnostic-btn[data-target-card="0"].is-active {
-  background: linear-gradient(135deg, #E11D48 0%, #9333EA 100%);
+  background: linear-gradient(135deg, #E11D48 0%, #EA580C 100%);
   box-shadow: 0 0 20px rgba(225, 29, 72, 0.5), 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 .diagnostic-btn[data-target-card="1"].is-active {
-  background: linear-gradient(135deg, #D97706 0%, #7C3AED 100%);
+  background: linear-gradient(135deg, #D97706 0%, #FF7A00 100%);
   box-shadow: 0 0 20px rgba(217, 119, 6, 0.5), 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 .diagnostic-btn[data-target-card="2"].is-active {
-  background: linear-gradient(135deg, #0284C7 0%, #4F46E5 100%);
+  background: linear-gradient(135deg, #0284C7 0%, #2563EB 100%);
   box-shadow: 0 0 20px rgba(2, 132, 199, 0.5), 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
@@ -243,7 +243,7 @@
 
 .problem-card:hover {
   background: var(--color-bg-card-hover);
-  border-color: rgba(99, 102, 241, 0.45);
+  border-color: rgba(255, 122, 0, 0.45);
   transform: translateY(-4px);
   box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.8), var(--shadow-glow);
 }
@@ -259,16 +259,16 @@
   width: 38px;
   height: 38px;
   border-radius: var(--radius-md);
-  background: rgba(99, 102, 241, 0.15);
-  color: #A5B4FC;
+  background: rgba(255, 122, 0, 0.15);
+  color: #FF9433;
   font-family: var(--font-mono);
   font-size: 0.9rem;
   font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(99, 102, 241, 0.35);
-  box-shadow: 0 0 12px rgba(99, 102, 241, 0.25);
+  border: 1px solid rgba(255, 122, 0, 0.35);
+  box-shadow: 0 0 12px rgba(255, 122, 0, 0.25);
 }
 
 .dilemma-status-tag {
@@ -293,7 +293,7 @@
   font-family: Georgia, serif;
   font-size: 2.75rem;
   line-height: 1;
-  color: #818CF8;
+  color: #FF7A00;
   opacity: 0.3;
   position: absolute;
   top: -16px;
@@ -357,7 +357,7 @@
   width: 100%;
   font-size: 0.885rem;
   font-weight: 700;
-  color: #818CF8;
+  color: #FF7A00;
   transition: all var(--transition-fast);
 }
 
@@ -368,7 +368,7 @@
 }
 
 .solution-link-btn:hover {
-  color: #C084FC;
+  color: #FF9433;
 }
 
 .solution-link-btn:hover svg {
@@ -531,14 +531,14 @@
   width: 48px;
   height: 48px;
   border-radius: var(--radius-md);
-  background: rgba(99, 102, 241, 0.15);
-  color: #818CF8;
+  background: rgba(255, 122, 0, 0.15);
+  color: #FF9433;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  border: 1px solid rgba(99, 102, 241, 0.35);
-  box-shadow: 0 0 15px rgba(99, 102, 241, 0.25);
+  border: 1px solid rgba(255, 122, 0, 0.35);
+  box-shadow: 0 0 15px rgba(255, 122, 0, 0.25);
 }
 
 .transition-icon svg {
@@ -684,4 +684,178 @@
   .transition-sub {
     font-size: 0.85rem;
   }
+}
+
+
+/* ==========================================================================
+   COMPREHENSIVE LIGHT THEME OPTIMIZATION: PROBLEM SECTION
+   ========================================================================== */
+.section-light.problem-section {
+  background-color: #F8FAFC !important;
+  color: #0F172A !important;
+}
+
+.section-light .problem-diagnostic-box {
+  background: #FFFFFF !important;
+  border: 1.5px solid #E2E8F0 !important;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.section-light .problem-diagnostic-box .matcher-label {
+  color: #0F172A !important;
+  text-shadow: none !important;
+}
+
+.section-light .diagnostic-btn {
+  background: #F8FAFC !important;
+  border: 1.5px solid #CBD5E1 !important;
+  color: #334155 !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05) !important;
+}
+
+.section-light .diagnostic-btn:hover {
+  background: #FFF7ED !important;
+  border-color: var(--color-brand) !important;
+  color: #C2410C !important;
+}
+
+.section-light .diagnostic-btn.is-active {
+  background: linear-gradient(135deg, #FF851A 0%, #EA580C 100%) !important;
+  border-color: transparent !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(255, 122, 0, 0.35) !important;
+}
+
+.section-light .problem-card {
+  background: #FFFFFF !important;
+  border: 1.5px solid #E2E8F0 !important;
+  border-top: 4px solid var(--color-brand) !important;
+  box-shadow: 0 8px 25px -4px rgba(15, 23, 42, 0.07) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.section-light .problem-card:hover {
+  background: #FFFFFF !important;
+  border-color: var(--color-brand) !important;
+  border-top-color: var(--color-brand) !important;
+  box-shadow: 0 18px 38px -6px rgba(15, 23, 42, 0.12), 0 0 20px rgba(255, 122, 0, 0.12) !important;
+}
+
+.section-light .problem-title {
+  color: #0F172A !important;
+}
+
+.section-light .problem-desc {
+  color: #334155 !important;
+}
+
+.section-light .quote-symbol {
+  color: #FF7A00 !important;
+  opacity: 0.2 !important;
+}
+
+.section-light .problem-number-badge {
+  background: #FFF7ED !important;
+  color: #C2410C !important;
+  border-color: #FED7AA !important;
+  box-shadow: none !important;
+}
+
+.section-light .dilemma-status-tag {
+  background: #FEF3C7 !important;
+  color: #92400E !important;
+  border-color: #FDE68A !important;
+}
+
+.section-light .problem-impact-box {
+  background: #FFF7ED !important;
+  border: 1px solid #FED7AA !important;
+}
+
+.section-light .impact-label {
+  color: #C2410C !important;
+}
+
+.section-light .impact-text {
+  color: #9A3412 !important;
+}
+
+.section-light .solution-link-btn {
+  background: #F8FAFC !important;
+  border: 1px solid #E2E8F0 !important;
+  color: #0F172A !important;
+}
+
+.section-light .solution-link-btn:hover {
+  background: #FFF7ED !important;
+  border-color: var(--color-brand) !important;
+  color: #C2410C !important;
+}
+
+/* Light Mode Overrides for Toggle & Diagnostics */
+.section-light .problem-toggle-pills {
+  background-color: #FFFFFF !important;
+  border: 1px solid #CBD5E1 !important;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06) !important;
+}
+
+.section-light .dilemma-pill {
+  color: #64748B !important;
+}
+
+.section-light .dilemma-pill:hover {
+  color: #0F172A !important;
+  background: #F1F5F9 !important;
+}
+
+.section-light .dilemma-pill.is-active {
+  background: linear-gradient(135deg, #FF7A00 0%, #EA580C 100%) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(255, 122, 0, 0.35) !important;
+}
+
+.section-light .problem-diagnostic-box {
+  background: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06) !important;
+}
+
+.section-light .problem-diagnostic-box .matcher-label {
+  color: #0284C7 !important;
+  text-shadow: none !important;
+}
+
+.section-light .diagnostic-btn {
+  background: #F8FAFC !important;
+  border: 1.5px solid #E2E8F0 !important;
+  color: #334155 !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04) !important;
+}
+
+.section-light .diagnostic-btn:hover {
+  background: #FFF7ED !important;
+  border-color: #FF7A00 !important;
+  color: #C2410C !important;
+}
+
+.section-light .comparison-table-wrapper {
+  background: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06) !important;
+}
+
+.section-light .comparison-row {
+  border-bottom: 1px solid #F1F5F9 !important;
+}
+
+.section-light .col-without {
+  color: #64748B !important;
+}
+
+.section-light .col-with {
+  color: #0F172A !important;
+  font-weight: 600 !important;
 }

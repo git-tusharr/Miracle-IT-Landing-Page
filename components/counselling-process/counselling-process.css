@@ -77,14 +77,14 @@
 }
 
 .step-card:hover {
-  border-color: rgba(99, 102, 241, 0.5);
-  box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.95), 0 0 35px rgba(99, 102, 241, 0.25);
+  border-color: rgba(255, 122, 0, 0.5);
+  box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.95), 0 0 35px rgba(255, 122, 0, 0.25);
 }
 
 .highlight-step .step-card {
   background: linear-gradient(135deg, rgba(26, 35, 62, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%);
-  border-color: rgba(99, 102, 241, 0.55);
-  box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.95), 0 0 35px rgba(99, 102, 241, 0.3);
+  border-color: rgba(255, 122, 0, 0.55);
+  box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.95), 0 0 35px rgba(255, 122, 0, 0.3);
 }
 
 /* Card Header: Number + Step Indicator Pill */
@@ -112,10 +112,10 @@
 }
 
 .highlight-step .step-badge-number {
-  background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+  background: linear-gradient(135deg, #FF851A 0%, #EA580C 100%);
   color: #FFFFFF;
   border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 0 25px rgba(99, 102, 241, 0.5);
+  box-shadow: 0 0 25px rgba(255, 122, 0, 0.5);
 }
 
 .step-indicator-pill {
@@ -132,9 +132,9 @@
 }
 
 .step-indicator-pill.pill-active {
-  color: #A5B4FC;
-  background: rgba(99, 102, 241, 0.18);
-  border-color: rgba(99, 102, 241, 0.4);
+  color: #FF9433;
+  background: rgba(255, 122, 0, 0.18);
+  border-color: rgba(255, 122, 0, 0.4);
 }
 
 .step-title {
