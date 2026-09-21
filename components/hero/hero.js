@@ -206,18 +206,57 @@ function initHeroScrollMotion() {
   updateHeroScroll();
 }
 
+/**
+ * HERO TECH PARALLAX
+ * Subtle cursor tracking for ambient tech nodes (desktop only)
+ */
+function initHeroParallax() {
+  const heroSection = document.querySelector('#hero');
+  if (!heroSection) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (window.innerWidth < 992) return;
+
+  const orbits = Array.from(heroSection.querySelectorAll('.hero-tech-orbit'));
+  if (!orbits.length) return;
+
+  let rafId = null;
+  heroSection.addEventListener('mousemove', (e) => {
+    if (rafId) return;
+    rafId = requestAnimationFrame(() => {
+      const rect = heroSection.getBoundingClientRect();
+      const xRel = (e.clientX - rect.left) / rect.width - 0.5;
+      const yRel = (e.clientY - rect.top) / rect.height - 0.5;
+
+      orbits.forEach((orbit, i) => {
+        const factor = (i % 2 === 0 ? 1 : -1) * (6 + (i * 2));
+        orbit.style.transform = `translate3d(${xRel * factor}px, ${yRel * factor}px, 0)`;
+      });
+      rafId = null;
+    });
+  }, { passive: true });
+
+  heroSection.addEventListener('mouseleave', () => {
+    orbits.forEach(orbit => {
+      orbit.style.transform = '';
+    });
+  }, { passive: true });
+}
+
 // Global registration and auto-initialization
 if (typeof window !== 'undefined') {
   window.initHero = initHero;
   window.initHeroScrollMotion = initHeroScrollMotion;
+  window.initHeroParallax = initHeroParallax;
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
       initHero();
       initHeroScrollMotion();
+      initHeroParallax();
     });
   } else {
     initHero();
     initHeroScrollMotion();
+    initHeroParallax();
   }
 }

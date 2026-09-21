@@ -22,7 +22,6 @@ const LANDING_COMPONENTS = [
   'proof',
   'location',
   'faq',
-  'counselling-form',
   'final-cta',
   'footer',
   'mobile-sticky-cta'

@@ -19,6 +19,54 @@
   z-index: 1;
 }
 
+/* Miracle IT Brand Logo */
+.final-cta-logo-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.35rem;
+  position: relative;
+}
+
+.final-cta-logo-wrap::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 220px;
+  height: 60px;
+  background: radial-gradient(ellipse, rgba(255, 122, 0, 0.28) 0%, transparent 70%);
+  filter: blur(14px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.final-cta-logo-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.final-cta-logo-img {
+  height: clamp(40px, 4.5vw, 52px);
+  width: auto;
+  max-width: 230px;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.5));
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+}
+
+.final-cta-logo-link:hover .final-cta-logo-img {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 20px rgba(255, 122, 0, 0.55));
+}
+
 .final-cta-title {
   font-size: clamp(2.2rem, 4.4vw, 3.4rem);
   color: #FFFFFF;

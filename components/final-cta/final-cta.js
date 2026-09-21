@@ -2,7 +2,9 @@
  * FINAL CTA COMPONENT CONTROLLER
  */
 function initFinalCta(container = document) {
-  // Tracking or dynamic interactions
+  if (typeof window.initCounsellingForm === 'function') {
+    window.initCounsellingForm(container);
+  }
 }
 
 if (typeof window !== 'undefined') {

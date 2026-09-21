@@ -765,21 +765,23 @@
 /* Exact Rectangular Company Logo in Header */
 .header-brand-logo-img {
   display: block;
-  height: 42px;
+  height: 48px;
   width: auto;
-  max-width: 220px;
+  max-width: 230px;
   object-fit: contain;
-  transition: transform 180ms ease, opacity 180ms ease;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.45));
+  transition: transform 180ms ease, opacity 180ms ease, filter 180ms ease;
 }
 
 .brand-logo:hover .header-brand-logo-img {
-  transform: scale(1.02);
-  opacity: 0.95;
+  transform: scale(1.03);
+  opacity: 1;
+  filter: drop-shadow(0 4px 16px rgba(255, 122, 0, 0.35));
 }
 
 @media (max-width: 768px) {
   .header-brand-logo-img {
-    height: 36px;
-    max-width: 175px;
+    height: 40px;
+    max-width: 190px;
   }
 }

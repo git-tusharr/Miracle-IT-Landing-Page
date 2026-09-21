@@ -1,16 +1,36 @@
 <!-- ==========================================================================
-     FINAL HIGH-VISIBILITY CTA SECTION COMPONENT (v2.0 OPTIMIZED)
-     Approved Copy: "Your career decision deserves the right guidance."
+     SECTION 12: FINAL CTA & COUNSELLING VISIT COMPONENT (APPROVED SPECIFICATION)
+     Headline: "Your career decision deserves the right guidance."
+     CTA: "Book a free career counselling visit."
+     Include: Form, Call, WhatsApp, Directions
      ========================================================================== -->
+<link rel="stylesheet" href="./components/counselling-form/counselling-form.css">
 <link rel="stylesheet" href="./components/final-cta/final-cta.css">
+
 <section class="section final-cta-section" id="final-cta">
+  <!-- Smooth anchor target for all in-page Book Visit buttons -->
+  <div id="counselling-form" style="position:relative; top:-90px; visibility:hidden;" aria-hidden="true"></div>
+
   <div class="container text-center">
     
+    <!-- Section Header (Approved Headline & Messaging) -->
     <div class="final-cta-content bento-spotlight tilt-card">
-      
-      <span class="section-tag">Take the Next Step</span>
+      <!-- Miracle IT Brand Logo -->
+      <div class="final-cta-logo-wrap">
+        <a href="./" class="final-cta-logo-link" aria-label="Miracle IT Career Academy Homepage">
+          <img
+            src="./assets/images/miracle-it-logo.png"
+            alt="Miracle IT Career Academy"
+            class="final-cta-logo-img"
+            width="180"
+            height="45"
+            loading="lazy"
+          >
+        </a>
+      </div>
 
-      <!-- Approved Exact Messaging with Skiper UI Shimmer -->
+      <span class="section-tag">Take the Next Step</span>
+      
       <h2 class="final-cta-title shimmer-text">
         Your career decision deserves the right guidance.
       </h2>
@@ -23,40 +43,27 @@
         Meet directly with senior mentors at our M.P. Nagar campus in Bhopal. Clear all doubts about course selection, project roadmaps, and career transitions before investing a single rupee.
       </p>
 
-      <!-- High-Visibility Primary Action Button with Skiper UI Magnetic Physics -->
-      <div class="final-cta-button-row">
-        <a href="#counselling-form" class="btn btn-primary btn-lg final-hero-btn btn-magnetic" data-track-cta="final_book_counselling">
-          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-            <line x1="16" y1="2" x2="16" y2="6"></line>
-            <line x1="8" y1="2" x2="8" y2="6"></line>
-            <line x1="3" y1="10" x2="21" y2="10"></line>
-          </svg>
-          <span>Book My Free Career Counselling Visit</span>
-        </a>
-      </div>
-
-      <!-- Quick Contact Shortcuts: Call | WhatsApp | Directions -->
-      <div class="final-shortcuts-bar">
-        <span class="shortcuts-label">Or connect with an advisor right now:</span>
+      <!-- Immediate Contact Channels: Call | WhatsApp | Directions -->
+      <div class="final-shortcuts-bar" style="margin-top: 1.5rem; margin-bottom: 2.5rem; padding-top: 1.25rem;">
+        <span class="shortcuts-label">Prefer to talk directly right now?</span>
         <div class="shortcuts-links">
           
-          <a href="tel:+917880003127" class="shortcut-link" data-config-phone data-track-cta="final_call_click">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <a href="tel:+917880003127" class="shortcut-link" data-config-phone data-track-cta="final_call_click" title="Call Miracle IT Academy">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
             </svg>
             <span>Call: <span data-config-text="phoneDisplay">+91 78800 03127</span></span>
           </a>
 
-          <a href="#" class="shortcut-link whatsapp-color" data-config-whatsapp data-track-cta="final_whatsapp_click">
+          <a href="#" class="shortcut-link whatsapp-color" data-config-whatsapp data-track-cta="final_whatsapp_click" title="Chat on WhatsApp">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
               <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 10.23c-.25-.13-1.47-.72-1.7-.81-.23-.09-.39-.14-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.71 4.3 3.8.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.22-.17-.47-.3"/>
             </svg>
             <span>WhatsApp Us</span>
           </a>
 
-          <a href="https://maps.google.com/?q=M.P.+Nagar,+Bhopal" class="shortcut-link directions-color" data-config-directions data-track-cta="final_directions_click">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <a href="https://maps.google.com/?q=M.P.+Nagar,+Bhopal" class="shortcut-link directions-color" data-config-directions data-track-cta="final_directions_click" title="Directions to M.P. Nagar campus">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
             </svg>
             <span>Directions (M.P. Nagar)</span>
@@ -65,6 +72,228 @@
         </div>
       </div>
 
+    </div>
+
+    <!-- Booking Form Container with Glowing Border Beam -->
+    <div class="container-narrow" style="margin-top: 1rem; text-align: left;">
+      <div class="border-beam-wrapper">
+        <div class="border-beam-inner">
+          <div class="form-wrapper-card bento-spotlight">
+            
+            <!-- Live Availability Status -->
+            <div class="form-card-header text-center" style="padding-top: 0.5rem; margin-bottom: 1.5rem;">
+              <div class="dynamic-island-status" style="margin-bottom: 1rem; display: inline-flex;">
+                <span class="pulse-dot" style="background:#F59E0B; box-shadow:0 0 8px #F59E0B;"></span>
+                <span style="color:#FCD34D;">⚠️ Only 4 In-Person Counselling Slots Remaining for This Weekend</span>
+              </div>
+              <div class="form-top-badge" style="margin-top: 0.25rem;">
+                <span class="pulsing-dot" aria-hidden="true"></span>
+                <span>Free 30-Minute In-Person Career Audit</span>
+              </div>
+            </div>
+
+            <!-- Main Interactive Booking Form -->
+            <form id="counsellingForm" class="counselling-form" novalidate>
+              
+              <!-- Spam Honeypot -->
+              <div style="display:none;" aria-hidden="true">
+                <input type="text" name="_hp_security_check" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="form-grid">
+                
+                <!-- Field 1: Full Name -->
+                <div class="form-group">
+                  <label for="fullName" class="form-label">
+                    Full Name <span class="required-star" aria-hidden="true">*</span>
+                  </label>
+                  <div class="input-with-icon">
+                    <input 
+                      type="text" 
+                      id="fullName" 
+                      name="fullName" 
+                      class="form-input" 
+                      placeholder="Rahul Sharma" 
+                      required 
+                      autocomplete="name"
+                    >
+                    <span class="field-status-icon" aria-hidden="true"></span>
+                  </div>
+                  <span class="error-msg" id="nameError">Please enter your full name (minimum 2 characters).</span>
+                </div>
+
+                <!-- Field 2: Mobile / WhatsApp -->
+                <div class="form-group">
+                  <label for="phoneNumber" class="form-label">
+                    Mobile / WhatsApp Number <span class="required-star" aria-hidden="true">*</span>
+                  </label>
+                  <div class="phone-input-wrap">
+                    <span class="country-prefix">+91</span>
+                    <input 
+                      type="tel" 
+                      id="phoneNumber" 
+                      name="phoneNumber" 
+                      class="form-input phone-input" 
+                      placeholder="10-digit mobile number" 
+                      pattern="[0-9]{10}" 
+                      maxlength="10" 
+                      required 
+                      autocomplete="tel"
+                    >
+                    <span class="phone-valid-tick" id="phoneValidTick" aria-hidden="true">✓</span>
+                  </div>
+                  <span class="error-msg" id="phoneError">Please enter a valid 10-digit Indian mobile number.</span>
+                </div>
+
+                <!-- Field 3: Course Interest with Quick Chips -->
+                <div class="form-group">
+                  <label for="courseInterest" class="form-label">
+                    Course / Domain of Interest <span class="required-star" aria-hidden="true">*</span>
+                  </label>
+                  <div class="matcher-chips form-course-chips">
+                    <button type="button" class="matcher-chip form-course-chip" data-val="Full Stack">⚡ Full Stack</button>
+                    <button type="button" class="matcher-chip form-course-chip" data-val="Data Analytics / Data Science">📊 Data &amp; BI</button>
+                    <button type="button" class="matcher-chip form-course-chip" data-val="AI / ML">🐍 AI/ML</button>
+                    <button type="button" class="matcher-chip form-course-chip" data-val="Cybersecurity">🛡️ Cyber Defense</button>
+                    <button type="button" class="matcher-chip form-course-chip" data-val="Cloud / DevOps">☁️ Cloud/DevOps</button>
+                  </div>
+                  <select id="courseInterest" name="courseInterest" class="form-select" required>
+                    <option value="" disabled selected>Select a learning track...</option>
+                    <option value="Full Stack">Full Stack Web Development</option>
+                    <option value="Data Analytics / Data Science">Data Analytics &amp; Data Science</option>
+                    <option value="AI / ML">AI &amp; Machine Learning</option>
+                    <option value="Cybersecurity">Cybersecurity Fundamentals</option>
+                    <option value="Cloud / DevOps">Cloud &amp; DevOps</option>
+                    <option value="Other">Other Verified Program / Custom Track</option>
+                    <option value="Not Sure">Not Sure (Discuss with Counsellor)</option>
+                  </select>
+                  <span class="error-msg" id="courseError">Please select a course track or 'Not Sure'.</span>
+                </div>
+
+                <!-- Field 4: Current Education -->
+                <div class="form-group">
+                  <label for="currentEducation" class="form-label">
+                    Current Education / Background <span class="required-star" aria-hidden="true">*</span>
+                  </label>
+                  <select id="currentEducation" name="currentEducation" class="form-select" required>
+                    <option value="" disabled selected>Select your current education...</option>
+                    <option value="12th">12th Standard / School Pursuing</option>
+                    <option value="Diploma">Polytechnic / Diploma</option>
+                    <option value="B.Tech / BE">B.Tech / BE (CS / IT / EC / Other)</option>
+                    <option value="BCA">BCA (Bachelor of Computer Applications)</option>
+                    <option value="B.Sc">B.Sc (Math / CS / IT / Gen)</option>
+                    <option value="B.Com">B.Com (Commerce)</option>
+                    <option value="BBA">BBA (Business Administration)</option>
+                    <option value="MBA">MBA (Management)</option>
+                    <option value="M.Tech">M.Tech / MCA / Post Graduate</option>
+                    <option value="Graduate">Other Graduate Stream</option>
+                    <option value="Working Professional">Working Professional</option>
+                    <option value="Other">Other</option>
+                  </select>
+                  <span class="error-msg" id="educationError">Please select your educational background.</span>
+                </div>
+
+              </div>
+
+              <!-- Interactive Preferred Visit Day Selector -->
+              <div class="visit-day-section">
+                <label class="form-label">
+                  Select Preferred Visit Day <span class="required-star" aria-hidden="true">*</span>
+                </label>
+                <div class="day-chips-grid" id="dayChips">
+                  <button type="button" class="day-chip" data-day="Today">Today</button>
+                  <button type="button" class="day-chip is-selected" data-day="Tomorrow">Tomorrow</button>
+                  <button type="button" class="day-chip" data-day="This Saturday">This Saturday</button>
+                  <button type="button" class="day-chip" data-day="This Sunday">This Sunday</button>
+                  <button type="button" class="day-chip" data-day="Upcoming Weekday">Upcoming Weekday</button>
+                </div>
+                <!-- Hidden Native Select synced with chips -->
+                <select id="visitDay" name="visitDay" class="visually-hidden" required>
+                  <option value="Today">Today</option>
+                  <option value="Tomorrow" selected>Tomorrow</option>
+                  <option value="This Saturday">This Saturday</option>
+                  <option value="This Sunday">This Sunday</option>
+                  <option value="Upcoming Weekday">Upcoming Weekday</option>
+                </select>
+                <span class="error-msg" id="dayError">Please select a preferred visit day.</span>
+              </div>
+
+              <!-- Preferred Time Slot (Optional) -->
+              <div class="form-group" style="margin-top: 1.25rem; margin-bottom: 2rem;">
+                <label for="visitTime" class="form-label">
+                  Preferred Time Window <span class="optional-label">(Optional)</span>
+                </label>
+                <select id="visitTime" name="visitTime" class="form-select">
+                  <option value="Flexible">Flexible / Any Open Slot</option>
+                  <option value="Morning (10:00 AM - 1:00 PM)">Morning (10:00 AM – 1:00 PM)</option>
+                  <option value="Afternoon (1:00 PM - 4:00 PM)">Afternoon (1:00 PM – 4:00 PM)</option>
+                  <option value="Evening (4:00 PM - 7:00 PM)">Evening (4:00 PM – 7:00 PM)</option>
+                </select>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="form-submit-wrap">
+                <button type="submit" id="submitBtn" class="btn btn-primary btn-lg btn-full form-cta-btn btn-magnetic" data-track-cta="submit_counselling_form">
+                  <span class="btn-text">BOOK MY FREE CAREER COUNSELLING VISIT</span>
+                  <span class="btn-loader" aria-hidden="true">
+                    <svg class="spinner" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke-width="3"></circle></svg>
+                  </span>
+                </button>
+                
+                <div class="form-privacy-note">
+                  <svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                  </svg>
+                  <span>100% Free &amp; Confidential • Zero Spam Guarantee • Center: M.P. Nagar, Bhopal</span>
+                </div>
+              </div>
+
+            </form>
+
+            <!-- Post-Submission Success State -->
+            <div id="formSuccessState" class="form-success-box" hidden>
+              
+              <div class="success-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+
+              <h3 class="success-heading">Your career counselling visit request has been received!</h3>
+              <p class="success-sub">
+                Your free in-person slot is reserved. A senior academic advisor from Miracle IT will call or WhatsApp you to confirm directions and timing.
+              </p>
+
+              <!-- Direct Fast-Track Actions -->
+              <div class="success-actions-grid">
+                <a href="tel:+917880003127" class="btn btn-phone btn-lg btn-full btn-magnetic" data-config-phone data-track-cta="success_call_click">
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                  <span>Call Now for Immediate Confirmation</span>
+                </a>
+
+                <a href="#" class="btn btn-whatsapp btn-lg btn-full btn-magnetic" data-config-whatsapp data-track-cta="success_whatsapp_click">
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 10.23c-.25-.13-1.47-.72-1.7-.81-.23-.09-.39-.14-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.71 4.3 3.8.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.22-.17-.47-.3"/>
+                  </svg>
+                  <span>Message Directly on WhatsApp</span>
+                </a>
+
+                <a href="https://maps.google.com/?q=M.P.+Nagar,+Bhopal" class="btn btn-secondary btn-lg btn-full btn-magnetic" data-config-directions data-track-cta="success_directions_click">
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+                  </svg>
+                  <span>Open Directions (M.P. Nagar)</span>
+                </a>
+              </div>
+
+            </div>
+
+          </div><!-- /.form-wrapper-card -->
+        </div><!-- /.border-beam-inner -->
+      </div><!-- /.border-beam-wrapper -->
     </div>
 
   </div>

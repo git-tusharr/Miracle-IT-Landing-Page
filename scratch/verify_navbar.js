@@ -79,7 +79,7 @@ async function run() {
     console.log('--- NAVBAR SPECIFICATION INSPECTION ---');
     console.log(JSON.stringify(navInspection.result.result.value, null, 2));
 
-    const outDir = 'C:\\Users\\Lenovo\\.gemini\\antigravity-ide\\brain\\c22db8df-be12-447f-9c1b-8ca1b3855256';
+    const outDir = 'C:\\Users\\Lenovo\\.gemini\\antigravity-ide\\brain\\a59e7e53-8dfe-4d83-842a-18fd1d581ccc';
 
     // Capture desktop navbar screenshot
     const desktopScreenshot = await send('Page.captureScreenshot', {

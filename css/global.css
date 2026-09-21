@@ -1740,6 +1740,17 @@ body[data-theme="obsidian-glow"] {
   line-height: 1.65;
 }
 
+/* Exception for high-contrast dark callout cards inside light sections */
+.section-light .problem-transition-banner h4,
+.section-light .problem-transition-banner .transition-heading {
+  color: #FFFFFF !important;
+}
+
+.section-light .problem-transition-banner p,
+.section-light .problem-transition-banner .transition-sub {
+  color: #E2E8F0 !important;
+}
+
 .section-light .section-tag {
   background: #FFF7ED !important;
   color: #C2410C !important;

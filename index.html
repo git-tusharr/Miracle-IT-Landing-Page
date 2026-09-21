@@ -34,16 +34,16 @@
   <link rel="stylesheet" href="./components/header/header.css?v=5.0">
   <link rel="stylesheet" href="./components/hero/hero.css?v=5.0">
   <link rel="stylesheet" href="./components/problem/problem.css?v=5.0">
-  <link rel="stylesheet" href="./components/courses/courses.css?v=5.0">
+  <link rel="stylesheet" href="./components/courses/courses.css?v=5.1">
   <link rel="stylesheet" href="./components/why-miracle-it/why-miracle-it.css?v=5.0">
   <link rel="stylesheet" href="./components/learning-experience/learning-experience.css?v=5.0">
   <link rel="stylesheet" href="./components/who-can-join/who-can-join.css?v=5.0">
   <link rel="stylesheet" href="./components/counselling-process/counselling-process.css?v=5.0">
-  <link rel="stylesheet" href="./components/proof/proof.css?v=5.0">
+  <link rel="stylesheet" href="./components/proof/proof.css?v=5.1">
   <link rel="stylesheet" href="./components/location/location.css?v=5.0">
   <link rel="stylesheet" href="./components/faq/faq.css?v=5.0">
   <link rel="stylesheet" href="./components/counselling-form/counselling-form.css?v=5.0">
-  <link rel="stylesheet" href="./components/final-cta/final-cta.css?v=5.0">
+  <link rel="stylesheet" href="./components/final-cta/final-cta.css?v=5.1">
   <link rel="stylesheet" href="./components/footer/footer.css?v=5.0">
   <link rel="stylesheet" href="./components/mobile-sticky-cta/mobile-sticky-cta.css?v=5.0">
 
@@ -178,6 +178,37 @@
   <div class="hero-ambient-orb hero-orb-indigo" aria-hidden="true"></div>
   <div class="hero-ambient-orb hero-orb-cyan" aria-hidden="true"></div>
 
+  <!-- Ambient Circuit Grid & Tech Orbit Nodes Backdrop -->
+  <div class="hero-tech-backdrop" aria-hidden="true">
+    <div class="hero-grid-matrix"></div>
+    <!-- Floating Tech Orbit Badges -->
+    <div class="hero-tech-orbit orbit-fullstack" title="Full Stack Track">
+      <span class="orbit-icon">&lt;/&gt;</span>
+      <span class="orbit-label">Full Stack</span>
+      <span class="orbit-dot"></span>
+    </div>
+    <div class="hero-tech-orbit orbit-aiml" title="AI & Machine Learning">
+      <span class="orbit-icon">✦</span>
+      <span class="orbit-label">AI &amp; ML</span>
+      <span class="orbit-dot"></span>
+    </div>
+    <div class="hero-tech-orbit orbit-cyber" title="Cybersecurity Track">
+      <span class="orbit-icon">⛉</span>
+      <span class="orbit-label">Cybersecurity</span>
+      <span class="orbit-dot"></span>
+    </div>
+    <div class="hero-tech-orbit orbit-data" title="Data Analytics Track">
+      <span class="orbit-icon">▲</span>
+      <span class="orbit-label">Data &amp; BI</span>
+      <span class="orbit-dot"></span>
+    </div>
+    <div class="hero-tech-orbit orbit-cloud" title="Cloud & DevOps Track">
+      <span class="orbit-icon">☁</span>
+      <span class="orbit-label">DevOps &amp; Cloud</span>
+      <span class="orbit-dot"></span>
+    </div>
+  </div>
+
   <div class="container hero-container">
     <div class="hero-grid">
       
@@ -187,17 +218,18 @@
         <!-- Live Availability Tag -->
         <div class="hero-tag">
           <span class="pulsing-dot" aria-hidden="true"></span>
-          <span class="hero-tag-text">2026 Batch Filling Fast • 1-on-1 Lab in M.P. Nagar</span>
+          <span class="hero-tag-text">⚡ Bhopal's Practical IT Academy • M.P. Nagar Center</span>
         </div>
 
-        <!-- Approved Exact Headline -->
+        <!-- Approved Exact Headline with Elevated Visual Hierarchy -->
         <h1 class="hero-title">
-          Confused About Your IT Career? <span class="highlight-text">Start With The Right Course.</span>
+          <span class="hero-title-lead">Confused About Your IT Career?</span>
+          <span class="hero-title-highlight">Start With The Right Course.<span class="title-laser-glow" aria-hidden="true"></span></span>
         </h1>
 
-        <!-- Approved Supporting Copy -->
+        <!-- Approved Supporting Copy with Course & Bhopal Context -->
         <p class="hero-subtitle">
-          Explore Full Stack, Data Analytics, AI/ML, Cybersecurity and other career-focused learning options in Bhopal with 100% practical lab projects.
+          Explore <span class="sub-pill">Full Stack</span>, <span class="sub-pill">Data Analytics</span>, <span class="sub-pill">AI/ML</span>, <span class="sub-pill">Cybersecurity</span> and other career-focused learning options in Bhopal.
         </p>
 
         <!-- Primary & Secondary Conversion CTAs -->
@@ -210,6 +242,7 @@
               <line x1="3" y1="10" x2="21" y2="10"></line>
             </svg>
             <span>Book Free Career Counselling Visit</span>
+            <span class="btn-shimmer" aria-hidden="true"></span>
           </a>
 
           <a href="https://maps.google.com/?q=M.P.+Nagar,+Bhopal" class="btn btn-secondary-light btn-lg hero-dir-btn" data-config-directions data-track-cta="hero_get_directions">
@@ -441,303 +474,6 @@ metrics = model.train(epochs=<span class="c-number">50</span>, learning_rate=<sp
   </div>
 </section>
 
-<!-- 2.5 Big Companies Horizontal Sliding Marquee (Below Hero Section) -->
-<section class="company-ticker-section" id="companies" aria-label="Top Companies Hiring IT Talent">
-  <div class="container">
-    <div class="company-ticker-header">
-      <span class="company-ticker-pill">
-        <span class="ticker-pulse-dot" aria-hidden="true"></span>
-        TOP HIRING ECOSYSTEM & TECH GIANTS
-      </span>
-      <p class="company-ticker-title">
-        Our practical project-first curriculum prepares you for high-impact roles at leading enterprises
-      </p>
-    </div>
-  </div>
-
-  <div class="company-marquee-wrap">
-    <div class="company-marquee-mask">
-      <div class="company-marquee-track">
-        <!-- Set 1 of 16 Top Tech Companies -->
-        <div class="company-card" title="Google">
-          <svg class="company-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-            <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
-            <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.26v3.15C3.25 21.36 7.33 24 12 24z"/>
-            <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.26C.46 8.16 0 9.97 0 12s.46 3.84 1.26 5.42l4.02-3.15z"/>
-            <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.25 2.64 1.26 6.58l4.02 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
-          </svg>
-          <span class="company-name">Google</span>
-        </div>
-
-        <div class="company-card" title="Microsoft">
-          <svg class="company-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-            <rect x="2" y="2" width="9" height="9" fill="#F25022"/>
-            <rect x="13" y="2" width="9" height="9" fill="#7FBA00"/>
-            <rect x="2" y="13" width="9" height="9" fill="#00A4EF"/>
-            <rect x="13" y="13" width="9" height="9" fill="#FFB900"/>
-          </svg>
-          <span class="company-name">Microsoft</span>
-        </div>
-
-        <div class="company-card" title="Amazon">
-          <svg class="company-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-            <path fill="#FF9900" d="M14.8 18.2c-4.1 2.8-9.8.7-13.2-1.4-.4-.3-.1-.8.3-.6 3.4 1.8 8.6 3.8 12.2 1.2.6-.4 1.1.2.7.8z"/>
-            <path fill="#FF9900" d="M15.7 16.9c-.4-.5-2.6-.2-3.6 0-.3 0-.3-.3 0-.5 1.9-1.1 4.7-.8 5.1-.2.4.6-.2 3.4-2 4.7-.3.2-.5.1-.4-.2.5-.9 1-3.1.9-3.8z"/>
-            <path fill="#FFFFFF" d="M13 5.5c-4.1 0-7 2.9-7 7.2 0 4.2 2.9 7.1 7 7.1 2.1 0 3.8-.8 4.9-2l-1.5-1.5c-.8.8-2 1.4-3.4 1.4-2.8 0-4.7-2.1-4.7-5s1.9-5 4.7-5c1.4 0 2.6.6 3.4 1.4l1.5-1.5C16.8 6.3 15.1 5.5 13 5.5z"/>
-          </svg>
-          <span class="company-name">Amazon</span>
-        </div>
-
-        <div class="company-card" title="Meta">
-          <svg class="company-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-            <path fill="#0081FB" d="M12 8.5c-2.1 0-3.6 1.6-4.6 3-1-1.4-2.5-3-4.6-3C-.2 8.5-1.5 11.1-1.5 14c0 3.2 1.8 5.2 4.3 5.2 2.1 0 3.6-1.5 4.6-3 1 1.5 2.5 3 4.6 3 2.5 0 4.3-2 4.3-5.2 0-2.9-1.3-5.5-4.3-5.5zm-7.4 8.5c-1.4 0-2.3-1.2-2.3-3 0-1.8.9-3 2.3-3 1.4 0 2.5 1.4 3.2 3-.7 1.6-1.8 3-3.2 3zm9.5 0c-1.4 0-2.5-1.4-3.2-3 .7-1.6 1.8-3 3.2-3 1.4 0 2.3 1.2 2.3 3 0 1.8-.9 3-2.3 3z" transform="scale(0.85) translate(3, 2)"/>
-          </svg>
-          <span class="company-name">Meta</span>
-        </div>
-
-        <div class="company-card" title="Apple">
-          <svg class="company-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-            <path fill="#FFFFFF" d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 1.01-2.87-.9.04-2 .6-2.65 1.35-.58.65-1.08 1.71-1.04 2.76 1 .08 2.06-.49 2.68-1.24z"/>
-          </svg>
-          <span class="company-name">Apple</span>
-        </div>
-
-        <div class="company-card" title="Netflix">
-          <svg class="company-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-            <path fill="#E50914" d="M4 1h4l8 17.5V1h4v22h-4L8 5.5V23H4z"/>
-          </svg>
-          <span class="company-name">Netflix</span>
-        </div>
-
-        <div class="company-card" title="TCS">
-          <svg class="company-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-            <rect width="24" height="24" rx="6" fill="#003366"/>
-            <text x="12" y="16.5" fill="#38BDF8" font-family="system-ui, sans-serif" font-weight="900" font-size="9" text-anchor="middle" letter-spacing="0.5">TCS</text>
-          </svg>
-          <span class="company-name">TCS</span>
-        </div>
-
-        <div class="company-card" title="Infosys">
-          <svg class="company-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-            <rect width="24" height="24" rx="6" fill="rgba(0, 124, 195, 0.2)"/>
-            <path fill="#007CC3" d="M4 6h3.5v12H4zm6 0h3.5v7.5H10zm6 0h3.5v12H16zm-6 9.5h3.5V18H10z"/>
-          </svg>
-          <span class="company-name">Infosys</span>
-        </div>
-
-        <div class="company-card" title="Wipro">
-          <svg class="company-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-            <circle cx="7" cy="7" r="3.2" fill="#D8292F"/>
-            <circle cx="17" cy="7" r="3.2" fill="#00965E"/>
-            <circle cx="17" cy="17" r="3.2" fill="#582C83"/>
-            <circle cx="7" cy="17" r="3.2" fill="#FDB813"/>
-          </svg>
-          <span class="company-name">Wipro</span>
-        </div>
-
-        <div class="company-card" title="Cognizant">
-          <svg class="company-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-            <circle cx="12" cy="12" r="9" fill="none" stroke="#0033A0" stroke-width="2.5"/>
-            <path d="M12 6.5a5.5 5.5 0 1 0 4.5 2.4" fill="none" stroke="#1BA4E8" stroke-width="2.5" stroke-linecap="round"/>
-          </svg>
-          <span class="company-name">Cognizant</span>
-        </div>
-
-        <div class="company-card" title="Accenture">
-          <svg class="company-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-            <path fill="#A100FF" d="M3 18L14.5 12 3 6l2.2-4.2L22 12 5.2 22.2z"/>
-          </svg>
-          <span class="company-name">Accenture</span>
-        </div>
-
-        <div class="company-card" title="IBM">
-          <svg class="company-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-            <rect x="2" y="3.5" width="20" height="2" fill="#0F62FE"/>
-            <rect x="2" y="6.5" width="20" height="2" fill="#0F62FE"/>
-            <rect x="2" y="9.5" width="20" height="2" fill="#0F62FE"/>
-            <rect x="2" y="12.5" width="20" height="2" fill="#0F62FE"/>
-            <rect x="2" y="15.5" width="20" height="2" fill="#0F62FE"/>
-            <rect x="2" y="18.5" width="20" height="2" fill="#0F62FE"/>
-          </svg>
-          <span class="company-name">IBM</span>
-        </div>
-
-        <div class="company-card" title="Oracle">
-          <svg class="company-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-            <rect x="2" y="7" width="20" height="10" rx="5" fill="#F80000"/>
-            <rect x="6.5" y="9.5" width="11" height="5" rx="2.5" fill="#080B14"/>
-          </svg>
-          <span class="company-name">Oracle</span>
-        </div>
-
-        <div class="company-card" title="Cisco">
-          <svg class="company-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-            <rect x="2" y="13" width="2.2" height="6.5" rx="1.1" fill="#049FD9"/>
-            <rect x="6.5" y="9" width="2.2" height="10.5" rx="1.1" fill="#049FD9"/>
-            <rect x="11" y="4.5" width="2.2" height="15" rx="1.1" fill="#049FD9"/>
-            <rect x="15.5" y="9" width="2.2" height="10.5" rx="1.1" fill="#049FD9"/>
-            <rect x="20" y="13" width="2.2" height="6.5" rx="1.1" fill="#049FD9"/>
-          </svg>
-          <span class="company-name">Cisco</span>
-        </div>
-
-        <div class="company-card" title="Adobe">
-          <svg class="company-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-            <rect width="24" height="24" rx="5" fill="#FA0F00"/>
-            <path fill="#FFFFFF" d="M14.8 4h5.2v16L14.8 4zM4 4h5.2l5.5 16h-4.2l-1.8-4.8H4.8V4zm3 8.2h2.2L8.1 7.2l-.9 5z"/>
-          </svg>
-          <span class="company-name">Adobe</span>
-        </div>
-
-        <div class="company-card" title="NVIDIA">
-          <svg class="company-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-            <path fill="#76B900" d="M12 3.5c-4.4 0-8 3.6-8 8s3.6 8 8 8c2.9 0 5.4-1.5 6.8-3.8-.5.1-1 .1-1.6.1-3.6 0-6.5-2.9-6.5-6.5 0-1.8.7-3.4 1.9-4.6-.2-.7-.4-1.2-.6-1.2zm-.1 3.5c-2.5 0-4.5 2-4.5 4.5s2 4.5 4.5 4.5c1.7 0 3.2-.9 4-2.3-.6.2-1.3.3-2 .3-2.5 0-4.5-2-4.5-4.5s1.4-3.9 3.3-4.4c-.3-.1-.5-.1-.8-.1z"/>
-          </svg>
-          <span class="company-name">NVIDIA</span>
-        </div>
-
-        <!-- Set 2 (Duplicate for Seamless Continuous Infinite Loop) -->
-        <div class="company-card" title="Google" aria-hidden="true">
-          <svg class="company-icon" viewBox="0 0 24 24" width="22" height="22">
-            <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
-            <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.26v3.15C3.25 21.36 7.33 24 12 24z"/>
-            <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.26C.46 8.16 0 9.97 0 12s.46 3.84 1.26 5.42l4.02-3.15z"/>
-            <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.25 2.64 1.26 6.58l4.02 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
-          </svg>
-          <span class="company-name">Google</span>
-        </div>
-
-        <div class="company-card" title="Microsoft" aria-hidden="true">
-          <svg class="company-icon" viewBox="0 0 24 24" width="22" height="22">
-            <rect x="2" y="2" width="9" height="9" fill="#F25022"/>
-            <rect x="13" y="2" width="9" height="9" fill="#7FBA00"/>
-            <rect x="2" y="13" width="9" height="9" fill="#00A4EF"/>
-            <rect x="13" y="13" width="9" height="9" fill="#FFB900"/>
-          </svg>
-          <span class="company-name">Microsoft</span>
-        </div>
-
-        <div class="company-card" title="Amazon" aria-hidden="true">
-          <svg class="company-icon" viewBox="0 0 24 24" width="22" height="22">
-            <path fill="#FF9900" d="M14.8 18.2c-4.1 2.8-9.8.7-13.2-1.4-.4-.3-.1-.8.3-.6 3.4 1.8 8.6 3.8 12.2 1.2.6-.4 1.1.2.7.8z"/>
-            <path fill="#FF9900" d="M15.7 16.9c-.4-.5-2.6-.2-3.6 0-.3 0-.3-.3 0-.5 1.9-1.1 4.7-.8 5.1-.2.4.6-.2 3.4-2 4.7-.3.2-.5.1-.4-.2.5-.9 1-3.1.9-3.8z"/>
-            <path fill="#FFFFFF" d="M13 5.5c-4.1 0-7 2.9-7 7.2 0 4.2 2.9 7.1 7 7.1 2.1 0 3.8-.8 4.9-2l-1.5-1.5c-.8.8-2 1.4-3.4 1.4-2.8 0-4.7-2.1-4.7-5s1.9-5 4.7-5c1.4 0 2.6.6 3.4 1.4l1.5-1.5C16.8 6.3 15.1 5.5 13 5.5z"/>
-          </svg>
-          <span class="company-name">Amazon</span>
-        </div>
-
-        <div class="company-card" title="Meta" aria-hidden="true">
-          <svg class="company-icon" viewBox="0 0 24 24" width="22" height="22">
-            <path fill="#0081FB" d="M12 8.5c-2.1 0-3.6 1.6-4.6 3-1-1.4-2.5-3-4.6-3C-.2 8.5-1.5 11.1-1.5 14c0 3.2 1.8 5.2 4.3 5.2 2.1 0 3.6-1.5 4.6-3 1 1.5 2.5 3 4.6 3 2.5 0 4.3-2 4.3-5.2 0-2.9-1.3-5.5-4.3-5.5zm-7.4 8.5c-1.4 0-2.3-1.2-2.3-3 0-1.8.9-3 2.3-3 1.4 0 2.5 1.4 3.2 3-.7 1.6-1.8 3-3.2 3zm9.5 0c-1.4 0-2.5-1.4-3.2-3 .7-1.6 1.8-3 3.2-3 1.4 0 2.3 1.2 2.3 3 0 1.8-.9 3-2.3 3z" transform="scale(0.85) translate(3, 2)"/>
-          </svg>
-          <span class="company-name">Meta</span>
-        </div>
-
-        <div class="company-card" title="Apple" aria-hidden="true">
-          <svg class="company-icon" viewBox="0 0 24 24" width="22" height="22">
-            <path fill="#FFFFFF" d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 1.01-2.87-.9.04-2 .6-2.65 1.35-.58.65-1.08 1.71-1.04 2.76 1 .08 2.06-.49 2.68-1.24z"/>
-          </svg>
-          <span class="company-name">Apple</span>
-        </div>
-
-        <div class="company-card" title="Netflix" aria-hidden="true">
-          <svg class="company-icon" viewBox="0 0 24 24" width="22" height="22">
-            <path fill="#E50914" d="M4 1h4l8 17.5V1h4v22h-4L8 5.5V23H4z"/>
-          </svg>
-          <span class="company-name">Netflix</span>
-        </div>
-
-        <div class="company-card" title="TCS" aria-hidden="true">
-          <svg class="company-icon" viewBox="0 0 24 24" width="22" height="22">
-            <rect width="24" height="24" rx="6" fill="#003366"/>
-            <text x="12" y="16.5" fill="#38BDF8" font-family="system-ui, sans-serif" font-weight="900" font-size="9" text-anchor="middle" letter-spacing="0.5">TCS</text>
-          </svg>
-          <span class="company-name">TCS</span>
-        </div>
-
-        <div class="company-card" title="Infosys" aria-hidden="true">
-          <svg class="company-icon" viewBox="0 0 24 24" width="22" height="22">
-            <rect width="24" height="24" rx="6" fill="rgba(0, 124, 195, 0.2)"/>
-            <path fill="#007CC3" d="M4 6h3.5v12H4zm6 0h3.5v7.5H10zm6 0h3.5v12H16zm-6 9.5h3.5V18H10z"/>
-          </svg>
-          <span class="company-name">Infosys</span>
-        </div>
-
-        <div class="company-card" title="Wipro" aria-hidden="true">
-          <svg class="company-icon" viewBox="0 0 24 24" width="22" height="22">
-            <circle cx="7" cy="7" r="3.2" fill="#D8292F"/>
-            <circle cx="17" cy="7" r="3.2" fill="#00965E"/>
-            <circle cx="17" cy="17" r="3.2" fill="#582C83"/>
-            <circle cx="7" cy="17" r="3.2" fill="#FDB813"/>
-          </svg>
-          <span class="company-name">Wipro</span>
-        </div>
-
-        <div class="company-card" title="Cognizant" aria-hidden="true">
-          <svg class="company-icon" viewBox="0 0 24 24" width="22" height="22">
-            <circle cx="12" cy="12" r="9" fill="none" stroke="#0033A0" stroke-width="2.5"/>
-            <path d="M12 6.5a5.5 5.5 0 1 0 4.5 2.4" fill="none" stroke="#1BA4E8" stroke-width="2.5" stroke-linecap="round"/>
-          </svg>
-          <span class="company-name">Cognizant</span>
-        </div>
-
-        <div class="company-card" title="Accenture" aria-hidden="true">
-          <svg class="company-icon" viewBox="0 0 24 24" width="22" height="22">
-            <path fill="#A100FF" d="M3 18L14.5 12 3 6l2.2-4.2L22 12 5.2 22.2z"/>
-          </svg>
-          <span class="company-name">Accenture</span>
-        </div>
-
-        <div class="company-card" title="IBM" aria-hidden="true">
-          <svg class="company-icon" viewBox="0 0 24 24" width="22" height="22">
-            <rect x="2" y="3.5" width="20" height="2" fill="#0F62FE"/>
-            <rect x="2" y="6.5" width="20" height="2" fill="#0F62FE"/>
-            <rect x="2" y="9.5" width="20" height="2" fill="#0F62FE"/>
-            <rect x="2" y="12.5" width="20" height="2" fill="#0F62FE"/>
-            <rect x="2" y="15.5" width="20" height="2" fill="#0F62FE"/>
-            <rect x="2" y="18.5" width="20" height="2" fill="#0F62FE"/>
-          </svg>
-          <span class="company-name">IBM</span>
-        </div>
-
-        <div class="company-card" title="Oracle" aria-hidden="true">
-          <svg class="company-icon" viewBox="0 0 24 24" width="22" height="22">
-            <rect x="2" y="7" width="20" height="10" rx="5" fill="#F80000"/>
-            <rect x="6.5" y="9.5" width="11" height="5" rx="2.5" fill="#080B14"/>
-          </svg>
-          <span class="company-name">Oracle</span>
-        </div>
-
-        <div class="company-card" title="Cisco" aria-hidden="true">
-          <svg class="company-icon" viewBox="0 0 24 24" width="22" height="22">
-            <rect x="2" y="13" width="2.2" height="6.5" rx="1.1" fill="#049FD9"/>
-            <rect x="6.5" y="9" width="2.2" height="10.5" rx="1.1" fill="#049FD9"/>
-            <rect x="11" y="4.5" width="2.2" height="15" rx="1.1" fill="#049FD9"/>
-            <rect x="15.5" y="9" width="2.2" height="10.5" rx="1.1" fill="#049FD9"/>
-            <rect x="20" y="13" width="2.2" height="6.5" rx="1.1" fill="#049FD9"/>
-          </svg>
-          <span class="company-name">Cisco</span>
-        </div>
-
-        <div class="company-card" title="Adobe" aria-hidden="true">
-          <svg class="company-icon" viewBox="0 0 24 24" width="22" height="22">
-            <rect width="24" height="24" rx="5" fill="#FA0F00"/>
-            <path fill="#FFFFFF" d="M14.8 4h5.2v16L14.8 4zM4 4h5.2l5.5 16h-4.2l-1.8-4.8H4.8V4zm3 8.2h2.2L8.1 7.2l-.9 5z"/>
-          </svg>
-          <span class="company-name">Adobe</span>
-        </div>
-
-        <div class="company-card" title="NVIDIA" aria-hidden="true">
-          <svg class="company-icon" viewBox="0 0 24 24" width="22" height="22">
-            <path fill="#76B900" d="M12 3.5c-4.4 0-8 3.6-8 8s3.6 8 8 8c2.9 0 5.4-1.5 6.8-3.8-.5.1-1 .1-1.6.1-3.6 0-6.5-2.9-6.5-6.5 0-1.8.7-3.4 1.9-4.6-.2-.7-.4-1.2-.6-1.2zm-.1 3.5c-2.5 0-4.5 2-4.5 4.5s2 4.5 4.5 4.5c1.7 0 3.2-.9 4-2.3-.6.2-1.3.3-2 .3-2.5 0-4.5-2-4.5-4.5s1.4-3.9 3.3-4.4c-.3-.1-.5-.1-.8-.1z"/>
-          </svg>
-          <span class="company-name">NVIDIA</span>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
     </div>
 
     <!-- 3. Problem / Career Confusion Section -->
@@ -801,7 +537,7 @@ metrics = model.train(epochs=<span class="c-number">50</span>, learning_rate=<sp
           </p>
 
           <div class="problem-impact-box">
-            <div class="impact-label">The Risk:</div>
+            <div class="impact-label">The Challenge:</div>
             <p class="impact-text">Wasting 6–12 months trying random YouTube tutorials without ever completing a deployable project.</p>
           </div>
 
@@ -830,7 +566,7 @@ metrics = model.train(epochs=<span class="c-number">50</span>, learning_rate=<sp
           </p>
 
           <div class="problem-impact-box">
-            <div class="impact-label">The Risk:</div>
+            <div class="impact-label">The Challenge:</div>
             <p class="impact-text">Paying high fees for a course that doesn't fit your strengths, leading to frustration and dropping out.</p>
           </div>
 
@@ -859,7 +595,7 @@ metrics = model.train(epochs=<span class="c-number">50</span>, learning_rate=<sp
           </p>
 
           <div class="problem-impact-box">
-            <div class="impact-label">The Risk:</div>
+            <div class="impact-label">The Challenge:</div>
             <p class="impact-text">Accumulating superficial certificates with zero GitHub portfolio proof to verify your skills.</p>
           </div>
 
@@ -962,19 +698,32 @@ metrics = model.train(epochs=<span class="c-number">50</span>, learning_rate=<sp
     <!-- Empathetic Transition Banner -->
     <div class="problem-transition-banner">
       <div class="transition-content">
-        <div class="transition-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <div class="transition-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
             <polyline points="22 4 12 14.01 9 11.01"></polyline>
           </svg>
         </div>
-        <div>
-          <h4 class="transition-heading">Don't guess with your career. Get guidance before choosing your next course.</h4>
-          <p class="transition-sub">Visit our M.P. Nagar center for a free 30-minute consultation with a senior mentor. Zero sales pressure, complete honesty.</p>
+        <div class="transition-text-wrap">
+          <div class="transition-kicker">
+            <span class="transition-kicker-dot"></span>
+            Free Career Guidance &amp; Consultation
+          </div>
+          <h4 class="transition-heading">
+            <span class="transition-heading-accent">Don't guess with your career.</span> Get guidance before choosing your next course.
+          </h4>
+          <p class="transition-sub">
+            Visit our M.P. Nagar center for a <strong class="transition-sub-bold">free 30-minute consultation</strong> with a senior mentor.
+            <span class="transition-trust-pill">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Zero sales pressure, complete honesty.
+            </span>
+          </p>
         </div>
       </div>
-      <a href="#counselling-form" class="btn btn-primary btn-lg" data-track-cta="problem_cta_discuss">
-        Discuss Your Dilemma With A Counsellor
+      <a href="#counselling-form" class="btn btn-primary btn-lg transition-cta-btn" data-track-cta="problem_cta_discuss">
+        <span>Discuss Your Dilemma With A Counsellor</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
       </a>
     </div>
 
@@ -988,7 +737,7 @@ metrics = model.train(epochs=<span class="c-number">50</span>, learning_rate=<sp
      COURSES SECTION COMPONENT — EDITORIAL SELECTOR & SLIDING PREVIEW
      Miracle IT Career Academy
      ========================================================================== -->
-<link rel="stylesheet" href="./components/courses/courses.css">
+<link rel="stylesheet" href="./components/courses/courses.css?v=5.1">
 <section class="section courses-section" id="courses" data-theme="midnight">
   <div class="container">
     
@@ -1110,63 +859,75 @@ metrics = model.train(epochs=<span class="c-number">50</span>, learning_rate=<sp
           
           <!-- Card 01: Full Stack Web Development -->
           <article class="course-preview-card is-active" id="course-panel-0" role="tabpanel" aria-labelledby="course-tab-0" data-index="0">
-            <div class="card-inner">
+            <div class="card-inner compact-card">
               <div class="course-card-top">
                 <div class="course-badge-row">
                   <span class="badge badge-blue">Web Engineering</span>
-                  <span class="course-duration-hint">⏱️ 4–6 Months • Intensive Lab</span>
-                  <span class="card-demand-tag">Most In-Demand in Bhopal</span>
+                  <span class="course-duration-hint">⏱️ 4–6 Months</span>
+                  <span class="card-demand-tag">Most In-Demand</span>
                 </div>
                 <h3 class="course-card-title">Full Stack Web Development</h3>
               </div>
 
-              <p class="course-card-desc">
-                Frontend + Backend + Database + APIs + Real Capstones. Master the modern web development stack from browser layouts to cloud-deployed production servers.
+              <p class="course-card-summary">
+                <strong>Who it is for:</strong> CS/IT students, engineering graduates &amp; beginners seeking to build production web applications.
               </p>
 
-              <div class="course-capstone-box">
-                <span class="capstone-tag">Featured Capstone</span>
-                <p class="capstone-desc">Production Multi-User SaaS Application with Secure Authentication, Relational DB, and Automated Payment Gateway.</p>
-              </div>
-
-              <!-- Interactive Syllabus Peek -->
-              <details class="syllabus-accordion">
-                <summary class="syllabus-summary"><span>⚡ Quick Syllabus Breakdown</span> <span class="accordion-arrow">▼</span></summary>
-                <div class="syllabus-content">
-                  <ul class="syllabus-list">
-                    <li><strong>Weeks 1–4:</strong> Modern ES6+ JavaScript, Responsive UI, Async &amp; DOM</li>
-                    <li><strong>Weeks 5–9:</strong> Node.js, Express REST APIs, PostgreSQL Relational Schema</li>
-                    <li><strong>Weeks 10–14:</strong> React 19, Full-Stack Auth, Redux, Microservices</li>
-                    <li><strong>Weeks 15–18:</strong> Production SaaS Deployment, CI/CD &amp; Portfolio Prep</li>
-                  </ul>
-                </div>
-              </details>
-
-              <div class="course-outcomes">
-                <span class="outcome-label">Hiring Roles:</span>
-                <span class="outcome-text">Full Stack Developer, Frontend Engineer, Node/Backend Dev, React Specialist</span>
-              </div>
-
+              <!-- Relevant Technology & Tool Logos -->
               <div class="course-tech-stack">
-                <span class="tech-stack-title">Technologies &amp; Tools Mastered:</span>
-                <div class="tech-badges-grid">
-                  <div class="tech-pill" title="HTML5"><img src="./assets/icons/tech/html5.svg" alt="HTML5" class="tech-icon" width="18" height="18"><span class="tech-name">HTML5</span></div>
-                  <div class="tech-pill" title="CSS3"><img src="./assets/icons/tech/css3.svg" alt="CSS3" class="tech-icon" width="18" height="18"><span class="tech-name">CSS3</span></div>
-                  <div class="tech-pill" title="JavaScript (ES6+)"><img src="./assets/icons/tech/javascript.svg" alt="JavaScript" class="tech-icon" width="18" height="18"><span class="tech-name">JavaScript</span></div>
-                  <div class="tech-pill" title="React"><img src="./assets/icons/tech/react.svg" alt="React" class="tech-icon" width="18" height="18"><span class="tech-name">React</span></div>
-                  <div class="tech-pill" title="Node.js"><img src="./assets/icons/tech/nodejs.svg" alt="Node.js" class="tech-icon" width="18" height="18"><span class="tech-name">Node.js</span></div>
-                  <div class="tech-pill" title="Express.js"><img src="./assets/icons/tech/express.svg" alt="Express.js" class="tech-icon" width="18" height="18"><span class="tech-name">Express</span></div>
-                  <div class="tech-pill" title="PostgreSQL"><img src="./assets/icons/tech/postgresql.svg" alt="PostgreSQL" class="tech-icon" width="18" height="18"><span class="tech-name">PostgreSQL</span></div>
-                  <div class="tech-pill" title="MongoDB"><img src="./assets/icons/tech/mongodb.svg" alt="MongoDB" class="tech-icon" width="18" height="18"><span class="tech-name">MongoDB</span></div>
-                  <div class="tech-pill" title="Git &amp; GitHub"><img src="./assets/icons/tech/git.svg" alt="Git" class="tech-icon" width="18" height="18"><span class="tech-name">Git</span></div>
+                <span class="tech-stack-title">Core Technologies &amp; Tools:</span>
+                <div class="tech-logos-grid">
+                  <span class="tech-logo-pill" title="React 19">
+                    <img src="./assets/icons/tech/react.svg" alt="React" width="18" height="18" loading="lazy">
+                    <span class="tech-name">React</span>
+                  </span>
+                  <span class="tech-logo-pill" title="Node.js Runtime">
+                    <img src="./assets/icons/tech/nodejs.svg" alt="Node.js" width="18" height="18" loading="lazy">
+                    <span class="tech-name">Node.js</span>
+                  </span>
+                  <span class="tech-logo-pill" title="JavaScript ES6+">
+                    <img src="./assets/icons/tech/javascript.svg" alt="JavaScript" width="18" height="18" loading="lazy">
+                    <span class="tech-name">JavaScript</span>
+                  </span>
+                  <span class="tech-logo-pill" title="HTML5 Semantic Markup">
+                    <img src="./assets/icons/tech/html5.svg" alt="HTML5" width="18" height="18" loading="lazy">
+                    <span class="tech-name">HTML5</span>
+                  </span>
+                  <span class="tech-logo-pill" title="CSS3 Modern Styling">
+                    <img src="./assets/icons/tech/css3.svg" alt="CSS3" width="18" height="18" loading="lazy">
+                    <span class="tech-name">CSS3</span>
+                  </span>
+                  <span class="tech-logo-pill" title="Express.js REST APIs">
+                    <img src="./assets/icons/tech/express.svg" alt="Express" width="18" height="18" loading="lazy">
+                    <span class="tech-name">Express</span>
+                  </span>
+                  <span class="tech-logo-pill" title="MongoDB NoSQL Database">
+                    <img src="./assets/icons/tech/mongodb.svg" alt="MongoDB" width="18" height="18" loading="lazy">
+                    <span class="tech-name">MongoDB</span>
+                  </span>
+                  <span class="tech-logo-pill" title="PostgreSQL Relational DB">
+                    <img src="./assets/icons/tech/postgresql.svg" alt="PostgreSQL" width="18" height="18" loading="lazy">
+                    <span class="tech-name">PostgreSQL</span>
+                  </span>
+                </div>
+              </div>
+
+              <div class="course-key-areas">
+                <span class="key-areas-title">Key Learning Areas:</span>
+                <div class="key-chips-grid">
+                  <span class="key-chip">React 19 &amp; Modern JavaScript</span>
+                  <span class="key-chip">Node.js &amp; Express REST APIs</span>
+                  <span class="key-chip">PostgreSQL &amp; Database Design</span>
+                  <span class="key-chip">Full-Stack Auth &amp; Deployment</span>
                 </div>
               </div>
 
               <div class="course-card-footer">
-                <a href="./full-stack-course-bhopal/" class="btn btn-secondary btn-sm" data-track-cta="view_course_fullstack">
-                  Curriculum Details →
+                <a href="./full-stack-course-bhopal/" class="btn btn-primary btn-sm btn-explore-track" data-track-cta="view_course_fullstack">
+                  <span>Explore Full Stack Track</span>
+                  <svg class="explore-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>
-                <a href="#counselling-form" class="btn btn-primary btn-sm btn-magnetic" data-track-cta="book_course_fullstack">
+                <a href="#counselling-form" class="btn btn-secondary-light btn-sm btn-counselling-sub" data-track-cta="book_course_fullstack">
                   Book Free Counselling
                 </a>
               </div>
@@ -1175,60 +936,71 @@ metrics = model.train(epochs=<span class="c-number">50</span>, learning_rate=<sp
 
           <!-- Card 02: Data Analytics & Data Science -->
           <article class="course-preview-card" id="course-panel-1" role="tabpanel" aria-labelledby="course-tab-1" data-index="1" hidden>
-            <div class="card-inner">
+            <div class="card-inner compact-card">
               <div class="course-card-top">
                 <div class="course-badge-row">
                   <span class="badge badge-emerald">Data &amp; BI</span>
-                  <span class="course-duration-hint">⏱️ 3–5 Months • Practical Labs</span>
+                  <span class="course-duration-hint">⏱️ 3–5 Months</span>
+                  <span class="card-demand-tag">High Growth</span>
                 </div>
                 <h3 class="course-card-title">Data Analytics &amp; Data Science</h3>
               </div>
 
-              <p class="course-card-desc">
-                Extract business value from real-world datasets. Learn data extraction, statistical querying, visual storytelling, and automated dashboard creation.
+              <p class="course-card-summary">
+                <strong>Who it is for:</strong> B.Com, BBA, BCA, Math/Stats students &amp; graduates wanting high-growth data analytics &amp; business intelligence roles.
               </p>
 
-              <div class="course-capstone-box">
-                <span class="capstone-tag">Featured Capstone</span>
-                <p class="capstone-desc">Interactive Retail Sales BI Dashboard with Automated ETL Pipeline and Executive KPI Metrics.</p>
-              </div>
-
-              <!-- Interactive Syllabus Peek -->
-              <details class="syllabus-accordion">
-                <summary class="syllabus-summary"><span>⚡ Quick Syllabus Breakdown</span> <span class="accordion-arrow">▼</span></summary>
-                <div class="syllabus-content">
-                  <ul class="syllabus-list">
-                    <li><strong>Weeks 1–3:</strong> Advanced SQL, Window Functions, Complex Joins</li>
-                    <li><strong>Weeks 4–7:</strong> Python for Analytics, Pandas, NumPy, Data Cleaning</li>
-                    <li><strong>Weeks 8–11:</strong> Power BI Enterprise Dashboards, DAX Calculations</li>
-                    <li><strong>Weeks 12–14:</strong> End-to-End Business Case Studies &amp; Executive Storytelling</li>
-                  </ul>
-                </div>
-              </details>
-
-              <div class="course-outcomes">
-                <span class="outcome-label">Hiring Roles:</span>
-                <span class="outcome-text">Data Analyst, Business Intelligence Developer, Operations Data Lead</span>
-              </div>
-
+              <!-- Relevant Technology & Tool Logos -->
               <div class="course-tech-stack">
-                <span class="tech-stack-title">Technologies &amp; Tools Mastered:</span>
-                <div class="tech-badges-grid">
-                  <div class="tech-pill" title="Python"><img src="./assets/icons/tech/python.svg" alt="Python" class="tech-icon" width="18" height="18"><span class="tech-name">Python</span></div>
-                  <div class="tech-pill" title="SQL"><img src="./assets/icons/tech/sql.svg" alt="SQL" class="tech-icon" width="18" height="18"><span class="tech-name">SQL</span></div>
-                  <div class="tech-pill" title="Power BI"><img src="./assets/icons/tech/powerbi.svg" alt="Power BI" class="tech-icon" width="18" height="18"><span class="tech-name">Power BI</span></div>
-                  <div class="tech-pill" title="Tableau"><img src="./assets/icons/tech/tableau.svg" alt="Tableau" class="tech-icon" width="18" height="18"><span class="tech-name">Tableau</span></div>
-                  <div class="tech-pill" title="Advanced Excel"><img src="./assets/icons/tech/excel.svg" alt="Excel" class="tech-icon" width="18" height="18"><span class="tech-name">Excel</span></div>
-                  <div class="tech-pill" title="PostgreSQL"><img src="./assets/icons/tech/postgresql.svg" alt="PostgreSQL" class="tech-icon" width="18" height="18"><span class="tech-name">PostgreSQL</span></div>
-                  <div class="tech-pill" title="Git"><img src="./assets/icons/tech/git.svg" alt="Git" class="tech-icon" width="18" height="18"><span class="tech-name">Git</span></div>
+                <span class="tech-stack-title">Core Technologies &amp; Tools:</span>
+                <div class="tech-logos-grid">
+                  <span class="tech-logo-pill" title="Python for Data Science">
+                    <img src="./assets/icons/tech/python.svg" alt="Python" width="18" height="18" loading="lazy">
+                    <span class="tech-name">Python</span>
+                  </span>
+                  <span class="tech-logo-pill" title="SQL & Relational Databases">
+                    <img src="./assets/icons/tech/sql.svg" alt="SQL" width="18" height="18" loading="lazy">
+                    <span class="tech-name">SQL</span>
+                  </span>
+                  <span class="tech-logo-pill" title="Microsoft Power BI">
+                    <img src="./assets/icons/tech/powerbi.svg" alt="Power BI" width="18" height="18" loading="lazy">
+                    <span class="tech-name">Power BI</span>
+                  </span>
+                  <span class="tech-logo-pill" title="Advanced Microsoft Excel">
+                    <img src="./assets/icons/tech/excel.svg" alt="Excel" width="18" height="18" loading="lazy">
+                    <span class="tech-name">Excel</span>
+                  </span>
+                  <span class="tech-logo-pill" title="Pandas Data Manipulation">
+                    <img src="./assets/icons/tech/pandas.svg" alt="Pandas" width="18" height="18" loading="lazy">
+                    <span class="tech-name">Pandas</span>
+                  </span>
+                  <span class="tech-logo-pill" title="NumPy Numerical Computing">
+                    <img src="./assets/icons/tech/numpy.svg" alt="NumPy" width="18" height="18" loading="lazy">
+                    <span class="tech-name">NumPy</span>
+                  </span>
+                  <span class="tech-logo-pill" title="Tableau Business Dashboards">
+                    <img src="./assets/icons/tech/tableau.svg" alt="Tableau" width="18" height="18" loading="lazy">
+                    <span class="tech-name">Tableau</span>
+                  </span>
+                </div>
+              </div>
+
+              <div class="course-key-areas">
+                <span class="key-areas-title">Key Learning Areas:</span>
+                <div class="key-chips-grid">
+                  <span class="key-chip">Advanced SQL Querying &amp; Joins</span>
+                  <span class="key-chip">Python for Analytics (Pandas/NumPy)</span>
+                  <span class="key-chip">Power BI &amp; Interactive Dashboards</span>
+                  <span class="key-chip">Business KPIs &amp; Executive Storytelling</span>
                 </div>
               </div>
 
               <div class="course-card-footer">
-                <a href="./data-analytics-course-bhopal/" class="btn btn-secondary btn-sm" data-track-cta="view_course_data_analytics">
-                  Curriculum Details →
+                <a href="./data-analytics-course-bhopal/" class="btn btn-primary btn-sm btn-explore-track" data-track-cta="view_course_data_analytics">
+                  <span>Explore Data Analytics Track</span>
+                  <svg class="explore-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>
-                <a href="#counselling-form" class="btn btn-primary btn-sm btn-magnetic" data-track-cta="book_course_data_analytics">
+                <a href="#counselling-form" class="btn btn-secondary-light btn-sm btn-counselling-sub" data-track-cta="book_course_data_analytics">
                   Book Free Counselling
                 </a>
               </div>
@@ -1237,60 +1009,71 @@ metrics = model.train(epochs=<span class="c-number">50</span>, learning_rate=<sp
 
           <!-- Card 03: AI & Machine Learning -->
           <article class="course-preview-card" id="course-panel-2" role="tabpanel" aria-labelledby="course-tab-2" data-index="2" hidden>
-            <div class="card-inner">
+            <div class="card-inner compact-card">
               <div class="course-card-top">
                 <div class="course-badge-row">
                   <span class="badge badge-amber">Artificial Intelligence</span>
-                  <span class="course-duration-hint">⏱️ 4–6 Months • Code-First</span>
+                  <span class="course-duration-hint">⏱️ 4–6 Months</span>
+                  <span class="card-demand-tag">Cutting Edge</span>
                 </div>
                 <h3 class="course-card-title">AI &amp; Machine Learning</h3>
               </div>
 
-              <p class="course-card-desc">
-                Practical machine learning without academic fluff. Learn data feature engineering, supervised regression/classification, and neural model deployment.
+              <p class="course-card-summary">
+                <strong>Who it is for:</strong> CS/IT students, developers &amp; analytical minds eager to build applied machine learning algorithms and neural models.
               </p>
 
-              <div class="course-capstone-box">
-                <span class="capstone-tag">Featured Capstone</span>
-                <p class="capstone-desc">Production Machine Learning Model for Customer Retention Prediction deployed as a live REST API.</p>
-              </div>
-
-              <!-- Interactive Syllabus Peek -->
-              <details class="syllabus-accordion">
-                <summary class="syllabus-summary"><span>⚡ Quick Syllabus Breakdown</span> <span class="accordion-arrow">▼</span></summary>
-                <div class="syllabus-content">
-                  <ul class="syllabus-list">
-                    <li><strong>Weeks 1–4:</strong> Math for ML, Python Vectorization &amp; Matrix Ops</li>
-                    <li><strong>Weeks 5–8:</strong> Scikit-Learn Algorithms, Regression, Decision Trees</li>
-                    <li><strong>Weeks 9–13:</strong> Neural Networks, PyTorch Basics, Computer Vision / NLP</li>
-                    <li><strong>Weeks 14–18:</strong> Live Model Serving, FastAPI, Docker Deployment</li>
-                  </ul>
-                </div>
-              </details>
-
-              <div class="course-outcomes">
-                <span class="outcome-label">Hiring Roles:</span>
-                <span class="outcome-text">Junior ML Engineer, Applied AI Associate, Data Scientist Trainee</span>
-              </div>
-
+              <!-- Relevant Technology & Tool Logos -->
               <div class="course-tech-stack">
-                <span class="tech-stack-title">Technologies &amp; Tools Mastered:</span>
-                <div class="tech-badges-grid">
-                  <div class="tech-pill" title="Python"><img src="./assets/icons/tech/python.svg" alt="Python" class="tech-icon" width="18" height="18"><span class="tech-name">Python</span></div>
-                  <div class="tech-pill" title="TensorFlow"><img src="./assets/icons/tech/tensorflow.svg" alt="TensorFlow" class="tech-icon" width="18" height="18"><span class="tech-name">TensorFlow</span></div>
-                  <div class="tech-pill" title="PyTorch"><img src="./assets/icons/tech/pytorch.svg" alt="PyTorch" class="tech-icon" width="18" height="18"><span class="tech-name">PyTorch</span></div>
-                  <div class="tech-pill" title="Scikit-Learn"><img src="./assets/icons/tech/scikit-learn.svg" alt="Scikit-Learn" class="tech-icon" width="18" height="18"><span class="tech-name">Scikit-Learn</span></div>
-                  <div class="tech-pill" title="OpenCV"><img src="./assets/icons/tech/opencv.svg" alt="OpenCV" class="tech-icon" width="18" height="18"><span class="tech-name">OpenCV</span></div>
-                  <div class="tech-pill" title="SQL"><img src="./assets/icons/tech/sql.svg" alt="SQL" class="tech-icon" width="18" height="18"><span class="tech-name">SQL</span></div>
-                  <div class="tech-pill" title="Git"><img src="./assets/icons/tech/git.svg" alt="Git" class="tech-icon" width="18" height="18"><span class="tech-name">Git</span></div>
+                <span class="tech-stack-title">Core Technologies &amp; Tools:</span>
+                <div class="tech-logos-grid">
+                  <span class="tech-logo-pill" title="Python Machine Learning">
+                    <img src="./assets/icons/tech/python.svg" alt="Python" width="18" height="18" loading="lazy">
+                    <span class="tech-name">Python</span>
+                  </span>
+                  <span class="tech-logo-pill" title="PyTorch Deep Learning">
+                    <img src="./assets/icons/tech/pytorch.svg" alt="PyTorch" width="18" height="18" loading="lazy">
+                    <span class="tech-name">PyTorch</span>
+                  </span>
+                  <span class="tech-logo-pill" title="TensorFlow Neural Networks">
+                    <img src="./assets/icons/tech/tensorflow.svg" alt="TensorFlow" width="18" height="18" loading="lazy">
+                    <span class="tech-name">TensorFlow</span>
+                  </span>
+                  <span class="tech-logo-pill" title="Scikit-Learn ML Algorithms">
+                    <img src="./assets/icons/tech/scikit-learn.svg" alt="Scikit-Learn" width="18" height="18" loading="lazy">
+                    <span class="tech-name">Scikit-Learn</span>
+                  </span>
+                  <span class="tech-logo-pill" title="NumPy Vector Math">
+                    <img src="./assets/icons/tech/numpy.svg" alt="NumPy" width="18" height="18" loading="lazy">
+                    <span class="tech-name">NumPy</span>
+                  </span>
+                  <span class="tech-logo-pill" title="Pandas Data Pipelines">
+                    <img src="./assets/icons/tech/pandas.svg" alt="Pandas" width="18" height="18" loading="lazy">
+                    <span class="tech-name">Pandas</span>
+                  </span>
+                  <span class="tech-logo-pill" title="OpenCV Computer Vision">
+                    <img src="./assets/icons/tech/opencv.svg" alt="OpenCV" width="18" height="18" loading="lazy">
+                    <span class="tech-name">OpenCV</span>
+                  </span>
+                </div>
+              </div>
+
+              <div class="course-key-areas">
+                <span class="key-areas-title">Key Learning Areas:</span>
+                <div class="key-chips-grid">
+                  <span class="key-chip">Applied Math &amp; Python Vectorization</span>
+                  <span class="key-chip">Scikit-Learn Machine Learning</span>
+                  <span class="key-chip">Deep Learning with PyTorch</span>
+                  <span class="key-chip">FastAPI Live Model Deployment</span>
                 </div>
               </div>
 
               <div class="course-card-footer">
-                <a href="./ai-ml-course-bhopal/" class="btn btn-secondary btn-sm" data-track-cta="view_course_aiml">
-                  Curriculum Details →
+                <a href="./ai-ml-course-bhopal/" class="btn btn-primary btn-sm btn-explore-track" data-track-cta="view_course_aiml">
+                  <span>Explore AI / ML Track</span>
+                  <svg class="explore-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>
-                <a href="#counselling-form" class="btn btn-primary btn-sm btn-magnetic" data-track-cta="book_course_aiml">
+                <a href="#counselling-form" class="btn btn-secondary-light btn-sm btn-counselling-sub" data-track-cta="book_course_aiml">
                   Book Free Counselling
                 </a>
               </div>
@@ -1299,58 +1082,63 @@ metrics = model.train(epochs=<span class="c-number">50</span>, learning_rate=<sp
 
           <!-- Card 04: Cybersecurity Fundamentals -->
           <article class="course-preview-card" id="course-panel-3" role="tabpanel" aria-labelledby="course-tab-3" data-index="3" hidden>
-            <div class="card-inner">
+            <div class="card-inner compact-card">
               <div class="course-card-top">
                 <div class="course-badge-row">
                   <span class="badge badge-blue">Security &amp; Defense</span>
-                  <span class="course-duration-hint">⏱️ 4–5 Months • Sandbox Labs</span>
+                  <span class="course-duration-hint">⏱️ 4–5 Months</span>
+                  <span class="card-demand-tag">Critical Skill</span>
                 </div>
                 <h3 class="course-card-title">Cybersecurity Fundamentals</h3>
               </div>
 
-              <p class="course-card-desc">
-                Defend digital systems and networks. Practice live packet tracing, ethical vulnerability assessments, and defensive perimeter architecture in sandbox labs.
+              <p class="course-card-summary">
+                <strong>Who it is for:</strong> BCA/B.Tech/MCA students and IT enthusiasts aiming for network security, SOC defense, and penetration testing careers.
               </p>
 
-              <div class="course-capstone-box">
-                <span class="capstone-tag">Featured Capstone</span>
-                <p class="capstone-desc">Full Security Audit &amp; Vulnerability Assessment Report for a Live Sandbox Enterprise Network.</p>
-              </div>
-
-              <!-- Interactive Syllabus Peek -->
-              <details class="syllabus-accordion">
-                <summary class="syllabus-summary"><span>⚡ Quick Syllabus Breakdown</span> <span class="accordion-arrow">▼</span></summary>
-                <div class="syllabus-content">
-                  <ul class="syllabus-list">
-                    <li><strong>Weeks 1–3:</strong> Networking Fundamentals, OSI Model, Wireshark Packet Tracing</li>
-                    <li><strong>Weeks 4–7:</strong> Linux Security, Kali Linux Utilities, Bash Hardening</li>
-                    <li><strong>Weeks 8–11:</strong> OWASP Top 10, Web Application Security Auditing</li>
-                    <li><strong>Weeks 12–15:</strong> SIEM Tools, Threat Intelligence &amp; Incident Response</li>
-                  </ul>
-                </div>
-              </details>
-
-              <div class="course-outcomes">
-                <span class="outcome-label">Hiring Roles:</span>
-                <span class="outcome-text">SOC Analyst, Cybersecurity Associate, Network Defense Technician</span>
-              </div>
-
+              <!-- Relevant Technology & Tool Logos -->
               <div class="course-tech-stack">
-                <span class="tech-stack-title">Technologies &amp; Tools Mastered:</span>
-                <div class="tech-badges-grid">
-                  <div class="tech-pill" title="Linux"><img src="./assets/icons/tech/linux.svg" alt="Linux" class="tech-icon" width="18" height="18"><span class="tech-name">Linux</span></div>
-                  <div class="tech-pill" title="Wireshark"><img src="./assets/icons/tech/wireshark.svg" alt="Wireshark" class="tech-icon" width="18" height="18"><span class="tech-name">Wireshark</span></div>
-                  <div class="tech-pill" title="Kali Linux"><img src="./assets/icons/tech/kali.svg" alt="Kali Linux" class="tech-icon" width="18" height="18"><span class="tech-name">Kali Linux</span></div>
-                  <div class="tech-pill" title="Python"><img src="./assets/icons/tech/python.svg" alt="Python" class="tech-icon" width="18" height="18"><span class="tech-name">Python Security</span></div>
-                  <div class="tech-pill" title="Git"><img src="./assets/icons/tech/git.svg" alt="Git" class="tech-icon" width="18" height="18"><span class="tech-name">Git</span></div>
+                <span class="tech-stack-title">Core Technologies &amp; Tools:</span>
+                <div class="tech-logos-grid">
+                  <span class="tech-logo-pill" title="Kali Linux Penetration Testing">
+                    <img src="./assets/icons/tech/kali.svg" alt="Kali Linux" width="18" height="18" loading="lazy">
+                    <span class="tech-name">Kali Linux</span>
+                  </span>
+                  <span class="tech-logo-pill" title="Linux System Hardening">
+                    <img src="./assets/icons/tech/linux.svg" alt="Linux" width="18" height="18" loading="lazy">
+                    <span class="tech-name">Linux</span>
+                  </span>
+                  <span class="tech-logo-pill" title="Wireshark Network Packet Analysis">
+                    <img src="./assets/icons/tech/wireshark.svg" alt="Wireshark" width="18" height="18" loading="lazy">
+                    <span class="tech-name">Wireshark</span>
+                  </span>
+                  <span class="tech-logo-pill" title="Python Security Scripting">
+                    <img src="./assets/icons/tech/python.svg" alt="Python" width="18" height="18" loading="lazy">
+                    <span class="tech-name">Python</span>
+                  </span>
+                  <span class="tech-logo-pill" title="Metasploit Exploit Framework">
+                    <img src="./assets/icons/tech/metasploit.svg" alt="Metasploit" width="18" height="18" loading="lazy">
+                    <span class="tech-name">Metasploit</span>
+                  </span>
+                </div>
+              </div>
+
+              <div class="course-key-areas">
+                <span class="key-areas-title">Key Learning Areas:</span>
+                <div class="key-chips-grid">
+                  <span class="key-chip">Networking Protocols &amp; Wireshark Tracing</span>
+                  <span class="key-chip">Linux System Hardening &amp; Kali Linux</span>
+                  <span class="key-chip">OWASP Top 10 Web Vulnerabilities</span>
+                  <span class="key-chip">SIEM Threat Analysis &amp; Incident Response</span>
                 </div>
               </div>
 
               <div class="course-card-footer">
-                <a href="./cybersecurity-course-bhopal/" class="btn btn-secondary btn-sm" data-track-cta="view_course_cybersecurity">
-                  Curriculum Details →
+                <a href="./cybersecurity-course-bhopal/" class="btn btn-primary btn-sm btn-explore-track" data-track-cta="view_course_cybersecurity">
+                  <span>Explore Cybersecurity Track</span>
+                  <svg class="explore-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>
-                <a href="#counselling-form" class="btn btn-primary btn-sm btn-magnetic" data-track-cta="book_course_cybersecurity">
+                <a href="#counselling-form" class="btn btn-secondary-light btn-sm btn-counselling-sub" data-track-cta="book_course_cybersecurity">
                   Book Free Counselling
                 </a>
               </div>
@@ -1359,59 +1147,71 @@ metrics = model.train(epochs=<span class="c-number">50</span>, learning_rate=<sp
 
           <!-- Card 05: Cloud & DevOps Engineering -->
           <article class="course-preview-card" id="course-panel-4" role="tabpanel" aria-labelledby="course-tab-4" data-index="4" hidden>
-            <div class="card-inner">
+            <div class="card-inner compact-card">
               <div class="course-card-top">
                 <div class="course-badge-row">
                   <span class="badge badge-emerald">Cloud Infrastructure</span>
-                  <span class="course-duration-hint">⏱️ 4–5 Months • Production Labs</span>
+                  <span class="course-duration-hint">⏱️ 4–5 Months</span>
+                  <span class="card-demand-tag">Enterprise Scale</span>
                 </div>
                 <h3 class="course-card-title">Cloud &amp; DevOps Engineering</h3>
               </div>
 
-              <p class="course-card-desc">
-                Bridge software development and IT operations. Build robust CI/CD pipelines, containerize applications with Docker, and manage cloud environments.
+              <p class="course-card-summary">
+                <strong>Who it is for:</strong> Developers, sysadmins &amp; engineering graduates seeking infrastructure automation, container orchestration &amp; cloud engineering.
               </p>
 
-              <div class="course-capstone-box">
-                <span class="capstone-tag">Featured Capstone</span>
-                <p class="capstone-desc">Automated CI/CD Pipeline Deploying a Multi-Service Application onto Cloud Workstations with Zero Downtime.</p>
-              </div>
-
-              <!-- Interactive Syllabus Peek -->
-              <details class="syllabus-accordion">
-                <summary class="syllabus-summary"><span>⚡ Quick Syllabus Breakdown</span> <span class="accordion-arrow">▼</span></summary>
-                <div class="syllabus-content">
-                  <ul class="syllabus-list">
-                    <li><strong>Weeks 1–3:</strong> Linux System Administration &amp; Shell Automation</li>
-                    <li><strong>Weeks 4–7:</strong> Docker Containers, Multi-Container Orchestration</li>
-                    <li><strong>Weeks 8–11:</strong> GitHub Actions, CI/CD Pipeline Configuration</li>
-                    <li><strong>Weeks 12–15:</strong> AWS Core Services, Terraform Basics, Cloud Monitoring</li>
-                  </ul>
-                </div>
-              </details>
-
-              <div class="course-outcomes">
-                <span class="outcome-label">Hiring Roles:</span>
-                <span class="outcome-text">DevOps Engineer, Cloud Operations Associate, Build &amp; Release Engineer</span>
-              </div>
-
+              <!-- Relevant Technology & Tool Logos -->
               <div class="course-tech-stack">
-                <span class="tech-stack-title">Technologies &amp; Tools Mastered:</span>
-                <div class="tech-badges-grid">
-                  <div class="tech-pill" title="AWS Cloud"><img src="./assets/icons/tech/aws.svg" alt="AWS" class="tech-icon" width="18" height="18"><span class="tech-name">AWS</span></div>
-                  <div class="tech-pill" title="Docker"><img src="./assets/icons/tech/docker.svg" alt="Docker" class="tech-icon" width="18" height="18"><span class="tech-name">Docker</span></div>
-                  <div class="tech-pill" title="Kubernetes"><img src="./assets/icons/tech/kubernetes.svg" alt="Kubernetes" class="tech-icon" width="18" height="18"><span class="tech-name">Kubernetes</span></div>
-                  <div class="tech-pill" title="Linux"><img src="./assets/icons/tech/linux.svg" alt="Linux" class="tech-icon" width="18" height="18"><span class="tech-name">Linux</span></div>
-                  <div class="tech-pill" title="Terraform"><img src="./assets/icons/tech/terraform.svg" alt="Terraform" class="tech-icon" width="18" height="18"><span class="tech-name">Terraform</span></div>
-                  <div class="tech-pill" title="Git &amp; CI/CD"><img src="./assets/icons/tech/git.svg" alt="Git" class="tech-icon" width="18" height="18"><span class="tech-name">Git &amp; CI/CD</span></div>
+                <span class="tech-stack-title">Core Technologies &amp; Tools:</span>
+                <div class="tech-logos-grid">
+                  <span class="tech-logo-pill" title="Amazon Web Services (AWS)">
+                    <img src="./assets/icons/tech/aws.svg" alt="AWS" width="18" height="18" loading="lazy">
+                    <span class="tech-name">AWS</span>
+                  </span>
+                  <span class="tech-logo-pill" title="Microsoft Azure Cloud">
+                    <img src="./assets/icons/tech/azure.svg" alt="Azure" width="18" height="18" loading="lazy">
+                    <span class="tech-name">Azure</span>
+                  </span>
+                  <span class="tech-logo-pill" title="Docker Containerization">
+                    <img src="./assets/icons/tech/docker.svg" alt="Docker" width="18" height="18" loading="lazy">
+                    <span class="tech-name">Docker</span>
+                  </span>
+                  <span class="tech-logo-pill" title="Kubernetes Orchestration">
+                    <img src="./assets/icons/tech/kubernetes.svg" alt="Kubernetes" width="18" height="18" loading="lazy">
+                    <span class="tech-name">Kubernetes</span>
+                  </span>
+                  <span class="tech-logo-pill" title="Linux Administration">
+                    <img src="./assets/icons/tech/linux.svg" alt="Linux" width="18" height="18" loading="lazy">
+                    <span class="tech-name">Linux</span>
+                  </span>
+                  <span class="tech-logo-pill" title="Git Version Control">
+                    <img src="./assets/icons/tech/git.svg" alt="Git" width="18" height="18" loading="lazy">
+                    <span class="tech-name">Git</span>
+                  </span>
+                  <span class="tech-logo-pill" title="Terraform Infrastructure as Code">
+                    <img src="./assets/icons/tech/terraform.svg" alt="Terraform" width="18" height="18" loading="lazy">
+                    <span class="tech-name">Terraform</span>
+                  </span>
+                </div>
+              </div>
+
+              <div class="course-key-areas">
+                <span class="key-areas-title">Key Learning Areas:</span>
+                <div class="key-chips-grid">
+                  <span class="key-chip">Linux Administration &amp; Shell Scripting</span>
+                  <span class="key-chip">Docker Containers &amp; Kubernetes Clusters</span>
+                  <span class="key-chip">GitHub Actions CI/CD Pipelines</span>
+                  <span class="key-chip">AWS Core Cloud &amp; Terraform Automation</span>
                 </div>
               </div>
 
               <div class="course-card-footer">
-                <a href="./cloud-devops-course-bhopal/" class="btn btn-secondary btn-sm" data-track-cta="view_course_devops">
-                  Curriculum Details →
+                <a href="./cloud-devops-course-bhopal/" class="btn btn-primary btn-sm btn-explore-track" data-track-cta="view_course_devops">
+                  <span>Explore Cloud &amp; DevOps Track</span>
+                  <svg class="explore-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>
-                <a href="#counselling-form" class="btn btn-primary btn-sm btn-magnetic" data-track-cta="book_course_devops">
+                <a href="#counselling-form" class="btn btn-secondary-light btn-sm btn-counselling-sub" data-track-cta="book_course_devops">
                   Book Free Counselling
                 </a>
               </div>
@@ -1420,57 +1220,68 @@ metrics = model.train(epochs=<span class="c-number">50</span>, learning_rate=<sp
 
           <!-- Card 06: Tech Transition & Logic Bridge -->
           <article class="course-preview-card" id="course-panel-5" role="tabpanel" aria-labelledby="course-tab-5" data-index="5" hidden>
-            <div class="card-inner">
+            <div class="card-inner compact-card">
               <div class="course-card-top">
                 <div class="course-badge-row">
                   <span class="badge badge-amber">Personalized Pathway</span>
                   <span class="course-duration-hint">⏱️ Flexible Duration</span>
+                  <span class="card-demand-tag">Zero-Barrier</span>
                 </div>
                 <h3 class="course-card-title">Tech Transition &amp; Logic Bridge</h3>
               </div>
 
-              <p class="course-card-desc">
-                Transitioning from a non-technical degree (B.Com, BA, BBA) or career gap? We build a tailored 1-on-1 bridge curriculum to bring you up to developer speed.
+              <p class="course-card-summary">
+                <strong>Who it is for:</strong> Non-IT graduates (B.Com, BA, BBA) and career switchers wanting a structured, gentle 1-on-1 pathway into technology.
               </p>
 
-              <div class="course-capstone-box">
-                <span class="capstone-tag">Personalized Milestone</span>
-                <p class="capstone-desc">From Zero Coding Experience to Building and Deploying Your First Full Web Application in 60 Days.</p>
-              </div>
-
-              <!-- Interactive Syllabus Peek -->
-              <details class="syllabus-accordion">
-                <summary class="syllabus-summary"><span>⚡ Quick Syllabus Breakdown</span> <span class="accordion-arrow">▼</span></summary>
-                <div class="syllabus-content">
-                  <ul class="syllabus-list">
-                    <li><strong>Module 1:</strong> Logical Problem Solving &amp; Everyday Code Syntax</li>
-                    <li><strong>Module 2:</strong> Data Structures &amp; Practical Problem Decomposition</li>
-                    <li><strong>Module 3:</strong> Building Real Projects with 1-on-1 Desk Mentorship</li>
-                    <li><strong>Module 4:</strong> Portfolio Curation &amp; Career Switching Preparation</li>
-                  </ul>
-                </div>
-              </details>
-
-              <div class="course-outcomes">
-                <span class="outcome-label">Target Goal:</span>
-                <span class="outcome-text">Confidently Pivot into Software Roles with Authentic Hands-On Code</span>
-              </div>
-
+              <!-- Relevant Technology & Tool Logos -->
               <div class="course-tech-stack">
-                <span class="tech-stack-title">Technologies &amp; Tools Mastered:</span>
-                <div class="tech-badges-grid">
-                  <div class="tech-pill" title="Python"><img src="./assets/icons/tech/python.svg" alt="Python" class="tech-icon" width="18" height="18"><span class="tech-name">Python</span></div>
-                  <div class="tech-pill" title="JavaScript"><img src="./assets/icons/tech/javascript.svg" alt="JavaScript" class="tech-icon" width="18" height="18"><span class="tech-name">JavaScript</span></div>
-                  <div class="tech-pill" title="SQL"><img src="./assets/icons/tech/sql.svg" alt="SQL" class="tech-icon" width="18" height="18"><span class="tech-name">SQL</span></div>
-                  <div class="tech-pill" title="HTML5"><img src="./assets/icons/tech/html5.svg" alt="HTML5" class="tech-icon" width="18" height="18"><span class="tech-name">HTML5</span></div>
-                  <div class="tech-pill" title="CSS3"><img src="./assets/icons/tech/css3.svg" alt="CSS3" class="tech-icon" width="18" height="18"><span class="tech-name">CSS3</span></div>
-                  <div class="tech-pill" title="Git"><img src="./assets/icons/tech/git.svg" alt="Git" class="tech-icon" width="18" height="18"><span class="tech-name">Git</span></div>
+                <span class="tech-stack-title">Core Technologies &amp; Tools:</span>
+                <div class="tech-logos-grid">
+                  <span class="tech-logo-pill" title="Python Programming Fundamentals">
+                    <img src="./assets/icons/tech/python.svg" alt="Python" width="18" height="18" loading="lazy">
+                    <span class="tech-name">Python</span>
+                  </span>
+                  <span class="tech-logo-pill" title="JavaScript Frontend Basics">
+                    <img src="./assets/icons/tech/javascript.svg" alt="JavaScript" width="18" height="18" loading="lazy">
+                    <span class="tech-name">JavaScript</span>
+                  </span>
+                  <span class="tech-logo-pill" title="SQL Database Fundamentals">
+                    <img src="./assets/icons/tech/sql.svg" alt="SQL" width="18" height="18" loading="lazy">
+                    <span class="tech-name">SQL</span>
+                  </span>
+                  <span class="tech-logo-pill" title="HTML5 Web Essentials">
+                    <img src="./assets/icons/tech/html5.svg" alt="HTML5" width="18" height="18" loading="lazy">
+                    <span class="tech-name">HTML5</span>
+                  </span>
+                  <span class="tech-logo-pill" title="Git & GitHub Basics">
+                    <img src="./assets/icons/tech/git.svg" alt="Git" width="18" height="18" loading="lazy">
+                    <span class="tech-name">Git</span>
+                  </span>
+                  <span class="tech-logo-pill" title="Linux Command Line">
+                    <img src="./assets/icons/tech/linux.svg" alt="Linux" width="18" height="18" loading="lazy">
+                    <span class="tech-name">Linux</span>
+                  </span>
+                </div>
+              </div>
+
+              <div class="course-key-areas">
+                <span class="key-areas-title">Key Learning Areas:</span>
+                <div class="key-chips-grid">
+                  <span class="key-chip">Logical Problem Solving &amp; Algorithmic Thinking</span>
+                  <span class="key-chip">Everyday Code Syntax (Python &amp; JavaScript)</span>
+                  <span class="key-chip">Relational Database Fundamentals (SQL)</span>
+                  <span class="key-chip">1-on-1 Desk Mentorship &amp; Real Mini-Projects</span>
                 </div>
               </div>
 
               <div class="course-card-footer">
-                <a href="#counselling-form" class="btn btn-primary btn-full btn-magnetic" data-track-cta="book_custom_track">
-                  Discuss Personalized Track →
+                <a href="#counselling-form" class="btn btn-primary btn-sm btn-explore-track" data-track-cta="view_custom_track">
+                  <span>Explore Custom Bridge Track</span>
+                  <svg class="explore-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+                <a href="#counselling-form" class="btn btn-secondary-light btn-sm btn-counselling-sub" data-track-cta="book_custom_track">
+                  Book Free Counselling
                 </a>
               </div>
             </div>
@@ -2078,11 +1889,6 @@ metrics = model.train(epochs=<span class="c-number">50</span>, learning_rate=<sp
       </div>
       <div class="campus-stat-divider"></div>
       <div class="campus-stat">
-        <span class="stat-number" data-stat-target="2" data-stat-type="roman">Zone-II</span>
-        <span class="stat-label">Central M.P. Nagar Location</span>
-      </div>
-      <div class="campus-stat-divider"></div>
-      <div class="campus-stat">
         <span class="stat-number" data-stat-target="100" data-stat-suffix="%">100%</span>
         <span class="stat-label">Practical Code-First Sessions</span>
       </div>
@@ -2450,7 +2256,7 @@ metrics = model.train(epochs=<span class="c-number">50</span>, learning_rate=<sp
      PROOF / TRUST SECTION COMPONENT
      Strict verification policy: Zero fabricated testimonials, ratings, or logos
      ========================================================================== -->
-<link rel="stylesheet" href="./components/proof/proof.css">
+<link rel="stylesheet" href="./components/proof/proof.css?v=5.1">
 <section class="section section-light proof-section" id="proof" data-theme="light">
   <div class="container">
     
@@ -4346,266 +4152,41 @@ metrics = model.train(epochs=<span class="c-number">50</span>, learning_rate=<sp
 </section>
     </div>
 
-    <!-- 12. Book Free Counselling Visit Form Section -->
-    <div data-component="counselling-form">
-<!-- ==========================================================================
-     COUNSELLING LEAD FORM COMPONENT — HIGH CONVERTING (v2.0 OPTIMIZED)
-     ========================================================================== -->
-<link rel="stylesheet" href="./components/counselling-form/counselling-form.css">
-<section class="section form-section" id="counselling-form">
-  <div class="container container-narrow">
-    
-    <div class="border-beam-wrapper">
-      <div class="border-beam-inner">
-        <div class="form-wrapper-card bento-spotlight">
-          
-          <!-- Form Header with Skiper UI Urgency Pill -->
-          <div class="form-card-header text-center">
-                        <div class="form-brand-header">
-              <img
-                src="./assets/images/miracle-it-logo.png"
-                alt="Miracle IT Career Academy"
-                class="form-brand-logo-img"
-                width="190"
-                height="48"
-                loading="lazy"
-              >
-            </div>
-<div class="dynamic-island-status" style="margin-bottom: 1.25rem; display: inline-flex;">
-              <span class="pulse-dot" style="background:#F59E0B; box-shadow:0 0 8px #F59E0B;"></span>
-              <span style="color:#FCD34D;">⚠️ Only 4 In-Person Counselling Slots Remaining for This Weekend</span>
-            </div>
-            <div class="form-top-badge" style="margin-top: 0.5rem;">
-              <span class="pulsing-dot" aria-hidden="true"></span>
-              <span>Free 30-Minute In-Person Career Audit</span>
-            </div>
-            <h2 class="form-main-title">Book Your Free Career Counselling Visit</h2>
-            <p class="form-main-subtitle">
-              Visit our academy in M.P. Nagar, Bhopal. Review your degree background, inspect live projects, and get complete roadmap clarity without sales pressure.
-            </p>
-          </div>
-
-          <!-- Main Booking Form -->
-          <form id="counsellingForm" class="counselling-form" novalidate>
-            
-            <!-- Spam Honeypot -->
-            <div style="display:none;" aria-hidden="true">
-              <input type="text" name="_hp_security_check" tabindex="-1" autocomplete="off">
-            </div>
-
-            <div class="form-grid">
-              
-              <!-- Field 1: Full Name -->
-              <div class="form-group">
-                <label for="fullName" class="form-label">
-                  Full Name <span class="required-star" aria-hidden="true">*</span>
-                </label>
-                <div class="input-with-icon">
-                  <input 
-                    type="text" 
-                    id="fullName" 
-                    name="fullName" 
-                    class="form-input" 
-                    placeholder="Rahul Sharma" 
-                    required 
-                    autocomplete="name"
-                  >
-                  <span class="field-status-icon" aria-hidden="true"></span>
-                </div>
-                <span class="error-msg" id="nameError">Please enter your full name (minimum 2 characters).</span>
-              </div>
-
-              <!-- Field 2: Mobile / WhatsApp -->
-              <div class="form-group">
-                <label for="phoneNumber" class="form-label">
-                  Mobile / WhatsApp Number <span class="required-star" aria-hidden="true">*</span>
-                </label>
-                <div class="phone-input-wrap">
-                  <span class="country-prefix">+91</span>
-                  <input 
-                    type="tel" 
-                    id="phoneNumber" 
-                    name="phoneNumber" 
-                    class="form-input phone-input" 
-                    placeholder="10-digit mobile number" 
-                    pattern="[0-9]{10}" 
-                    maxlength="10" 
-                    required 
-                    autocomplete="tel"
-                  >
-                  <span class="phone-valid-tick" id="phoneValidTick" aria-hidden="true">✓</span>
-                </div>
-                <span class="error-msg" id="phoneError">Please enter a valid 10-digit Indian mobile number.</span>
-              </div>
-
-              <!-- Field 3: Course Interest with Quick Chips -->
-              <div class="form-group">
-                <label for="courseInterest" class="form-label">
-                  Course / Domain of Interest <span class="required-star" aria-hidden="true">*</span>
-                </label>
-                <div class="matcher-chips form-course-chips">
-                  <button type="button" class="matcher-chip form-course-chip" data-val="Full Stack">⚡ Full Stack</button>
-                  <button type="button" class="matcher-chip form-course-chip" data-val="Data Analytics / Data Science">📊 Data & BI</button>
-                  <button type="button" class="matcher-chip form-course-chip" data-val="AI / ML">🐍 AI/ML</button>
-                  <button type="button" class="matcher-chip form-course-chip" data-val="Cybersecurity">🛡️ Cyber Defense</button>
-                </div>
-                <select id="courseInterest" name="courseInterest" class="form-select" required>
-                  <option value="" disabled selected>Select a learning track...</option>
-                  <option value="Full Stack">Full Stack Web Development</option>
-                  <option value="Data Analytics / Data Science">Data Analytics & Data Science</option>
-                  <option value="AI / ML">AI & Machine Learning</option>
-                  <option value="Cybersecurity">Cybersecurity Fundamentals</option>
-                  <option value="Cloud / DevOps">Cloud & DevOps</option>
-                  <option value="Other">Other Verified Program / Custom Track</option>
-                  <option value="Not Sure">Not Sure (Discuss with Counsellor)</option>
-                </select>
-                <span class="error-msg" id="courseError">Please select a course track or 'Not Sure'.</span>
-              </div>
-
-              <!-- Field 4: Current Education -->
-              <div class="form-group">
-                <label for="currentEducation" class="form-label">
-                  Current Education / Background <span class="required-star" aria-hidden="true">*</span>
-                </label>
-                <select id="currentEducation" name="currentEducation" class="form-select" required>
-                  <option value="" disabled selected>Select your current education...</option>
-                  <option value="12th">12th Standard / School Pursuing</option>
-                  <option value="Diploma">Polytechnic / Diploma</option>
-                  <option value="B.Tech / BE">B.Tech / BE (CS / IT / EC / Other)</option>
-                  <option value="BCA">BCA (Bachelor of Computer Applications)</option>
-                  <option value="B.Sc">B.Sc (Math / CS / IT / Gen)</option>
-                  <option value="B.Com">B.Com (Commerce)</option>
-                  <option value="BBA">BBA (Business Administration)</option>
-                  <option value="MBA">MBA (Management)</option>
-                  <option value="M.Tech">M.Tech / MCA / Post Graduate</option>
-                  <option value="Graduate">Other Graduate Stream</option>
-                  <option value="Working Professional">Working Professional</option>
-                  <option value="Other">Other</option>
-                </select>
-                <span class="error-msg" id="educationError">Please select your educational background.</span>
-              </div>
-
-            </div>
-
-            <!-- Interactive Preferred Visit Day Selector -->
-            <div class="visit-day-section">
-              <label class="form-label">
-                Select Preferred Visit Day <span class="required-star" aria-hidden="true">*</span>
-              </label>
-              <div class="day-chips-grid" id="dayChips">
-                <button type="button" class="day-chip" data-day="Today">Today</button>
-                <button type="button" class="day-chip is-selected" data-day="Tomorrow">Tomorrow</button>
-                <button type="button" class="day-chip" data-day="This Saturday">This Saturday</button>
-                <button type="button" class="day-chip" data-day="This Sunday">This Sunday</button>
-                <button type="button" class="day-chip" data-day="Upcoming Weekday">Upcoming Weekday</button>
-              </div>
-              <!-- Hidden Native Select synced with chips -->
-              <select id="visitDay" name="visitDay" class="visually-hidden" required>
-                <option value="Today">Today</option>
-                <option value="Tomorrow" selected>Tomorrow</option>
-                <option value="This Saturday">This Saturday</option>
-                <option value="This Sunday">This Sunday</option>
-                <option value="Upcoming Weekday">Upcoming Weekday</option>
-              </select>
-              <span class="error-msg" id="dayError">Please select a preferred visit day.</span>
-            </div>
-
-            <!-- Preferred Time Slot (Optional) -->
-            <div class="form-group" style="margin-top: 1.25rem; margin-bottom: 2rem;">
-              <label for="visitTime" class="form-label">
-                Preferred Time Window <span class="optional-label">(Optional)</span>
-              </label>
-              <select id="visitTime" name="visitTime" class="form-select">
-                <option value="Flexible">Flexible / Any Open Slot</option>
-                <option value="Morning (10:00 AM - 1:00 PM)">Morning (10:00 AM – 1:00 PM)</option>
-                <option value="Afternoon (1:00 PM - 4:00 PM)">Afternoon (1:00 PM – 4:00 PM)</option>
-                <option value="Evening (4:00 PM - 7:00 PM)">Evening (4:00 PM – 7:00 PM)</option>
-              </select>
-            </div>
-
-            <!-- Submit Button -->
-            <div class="form-submit-wrap">
-              <button type="submit" id="submitBtn" class="btn btn-primary btn-lg btn-full form-cta-btn btn-magnetic" data-track-cta="submit_counselling_form">
-                <span class="btn-text">BOOK MY FREE CAREER COUNSELLING VISIT</span>
-                <span class="btn-loader" aria-hidden="true">
-                  <svg class="spinner" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke-width="3"></circle></svg>
-                </span>
-              </button>
-              
-              <div class="form-privacy-note">
-                <svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                </svg>
-                <span>100% Free & Confidential • Zero Spam Guarantee • Center: M.P. Nagar, Bhopal</span>
-              </div>
-            </div>
-
-          </form>
-
-          <!-- Post-Submission Success State -->
-          <div id="formSuccessState" class="form-success-box" hidden>
-            
-            <div class="success-icon-wrap">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-            </div>
-
-            <h3 class="success-heading">Your career counselling visit request has been received!</h3>
-            <p class="success-sub">
-              Your free in-person slot is reserved. A senior academic advisor from Miracle IT will call or WhatsApp you to confirm directions and timing.
-            </p>
-
-            <!-- Direct Fast-Track Actions -->
-            <div class="success-actions-grid">
-              <a href="tel:+917880003127" class="btn btn-phone btn-lg btn-full btn-magnetic" data-config-phone data-track-cta="success_call_click">
-                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                </svg>
-                <span>Call Now for Immediate Confirmation</span>
-              </a>
-
-              <a href="#" class="btn btn-whatsapp btn-lg btn-full btn-magnetic" data-config-whatsapp data-track-cta="success_whatsapp_click">
-                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                </svg>
-                <span>Message Directly on WhatsApp</span>
-              </a>
-
-              <a href="https://maps.google.com/?q=M.P.+Nagar,+Bhopal" class="btn btn-secondary btn-lg btn-full btn-magnetic" data-config-directions data-track-cta="success_directions_click">
-                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
-                </svg>
-                <span>Open Directions (M.P. Nagar)</span>
-              </a>
-            </div>
-
-          </div>
-
-        </div><!-- /.form-wrapper-card -->
-      </div><!-- /.border-beam-inner -->
-    </div><!-- /.border-beam-wrapper -->
-
-  </div>
-</section>
-    </div>
-
-    <!-- 13. Final Decision / Closing CTA Section -->
+    <!-- 12. Final Decision / Closing CTA & Booking Form Section (Approved Brief Specification) -->
     <div data-component="final-cta">
 <!-- ==========================================================================
-     FINAL HIGH-VISIBILITY CTA SECTION COMPONENT (v2.0 OPTIMIZED)
-     Approved Copy: "Your career decision deserves the right guidance."
+     SECTION 12: FINAL CTA & COUNSELLING VISIT COMPONENT (APPROVED SPECIFICATION)
+     Headline: "Your career decision deserves the right guidance."
+     CTA: "Book a free career counselling visit."
+     Include: Form, Call, WhatsApp, Directions
      ========================================================================== -->
+<link rel="stylesheet" href="./components/counselling-form/counselling-form.css">
 <link rel="stylesheet" href="./components/final-cta/final-cta.css">
-<section class="section final-cta-section" id="final-cta" data-theme="obsidian-glow">
+
+<section class="section final-cta-section" id="final-cta">
+  <!-- Smooth anchor target for all in-page Book Visit buttons -->
+  <div id="counselling-form" style="position:relative; top:-90px; visibility:hidden;" aria-hidden="true"></div>
+
   <div class="container text-center">
     
+    <!-- Section Header (Approved Headline & Messaging) -->
     <div class="final-cta-content bento-spotlight tilt-card">
-      
-      <span class="section-tag">Take the Next Step</span>
+      <!-- Miracle IT Brand Logo -->
+      <div class="final-cta-logo-wrap">
+        <a href="./" class="final-cta-logo-link" aria-label="Miracle IT Career Academy Homepage">
+          <img
+            src="./assets/images/miracle-it-logo.png"
+            alt="Miracle IT Career Academy"
+            class="final-cta-logo-img"
+            width="180"
+            height="45"
+            loading="lazy"
+          >
+        </a>
+      </div>
 
-      <!-- Approved Exact Messaging with Skiper UI Shimmer -->
+      <span class="section-tag">Take the Next Step</span>
+      
       <h2 class="final-cta-title shimmer-text">
         Your career decision deserves the right guidance.
       </h2>
@@ -4618,40 +4199,27 @@ metrics = model.train(epochs=<span class="c-number">50</span>, learning_rate=<sp
         Meet directly with senior mentors at our M.P. Nagar campus in Bhopal. Clear all doubts about course selection, project roadmaps, and career transitions before investing a single rupee.
       </p>
 
-      <!-- High-Visibility Primary Action Button with Skiper UI Magnetic Physics -->
-      <div class="final-cta-button-row">
-        <a href="#counselling-form" class="btn btn-primary btn-lg final-hero-btn btn-magnetic" data-track-cta="final_book_counselling">
-          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-            <line x1="16" y1="2" x2="16" y2="6"></line>
-            <line x1="8" y1="2" x2="8" y2="6"></line>
-            <line x1="3" y1="10" x2="21" y2="10"></line>
-          </svg>
-          <span>Book My Free Career Counselling Visit</span>
-        </a>
-      </div>
-
-      <!-- Quick Contact Shortcuts: Call | WhatsApp | Directions -->
-      <div class="final-shortcuts-bar">
-        <span class="shortcuts-label">Or connect with an advisor right now:</span>
+      <!-- Immediate Contact Channels: Call | WhatsApp | Directions -->
+      <div class="final-shortcuts-bar" style="margin-top: 1.5rem; margin-bottom: 2.5rem; padding-top: 1.25rem;">
+        <span class="shortcuts-label">Prefer to talk directly right now?</span>
         <div class="shortcuts-links">
           
-          <a href="tel:+917880003127" class="shortcut-link" data-config-phone data-track-cta="final_call_click">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <a href="tel:+917880003127" class="shortcut-link" data-config-phone data-track-cta="final_call_click" title="Call Miracle IT Academy">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
             </svg>
             <span>Call: <span data-config-text="phoneDisplay">+91 78800 03127</span></span>
           </a>
 
-          <a href="#" class="shortcut-link whatsapp-color" data-config-whatsapp data-track-cta="final_whatsapp_click">
+          <a href="#" class="shortcut-link whatsapp-color" data-config-whatsapp data-track-cta="final_whatsapp_click" title="Chat on WhatsApp">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
               <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 10.23c-.25-.13-1.47-.72-1.7-.81-.23-.09-.39-.14-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.71 4.3 3.8.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.22-.17-.47-.3"/>
             </svg>
             <span>WhatsApp Us</span>
           </a>
 
-          <a href="https://maps.google.com/?q=M.P.+Nagar,+Bhopal" class="shortcut-link directions-color" data-config-directions data-track-cta="final_directions_click">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <a href="https://maps.google.com/?q=M.P.+Nagar,+Bhopal" class="shortcut-link directions-color" data-config-directions data-track-cta="final_directions_click" title="Directions to M.P. Nagar campus">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
             </svg>
             <span>Directions (M.P. Nagar)</span>
@@ -4660,6 +4228,228 @@ metrics = model.train(epochs=<span class="c-number">50</span>, learning_rate=<sp
         </div>
       </div>
 
+    </div>
+
+    <!-- Booking Form Container with Glowing Border Beam -->
+    <div class="container-narrow" style="margin-top: 1rem; text-align: left;">
+      <div class="border-beam-wrapper">
+        <div class="border-beam-inner">
+          <div class="form-wrapper-card bento-spotlight">
+            
+            <!-- Live Availability Status -->
+            <div class="form-card-header text-center" style="padding-top: 0.5rem; margin-bottom: 1.5rem;">
+              <div class="dynamic-island-status" style="margin-bottom: 1rem; display: inline-flex;">
+                <span class="pulse-dot" style="background:#F59E0B; box-shadow:0 0 8px #F59E0B;"></span>
+                <span style="color:#FCD34D;">⚠️ Only 4 In-Person Counselling Slots Remaining for This Weekend</span>
+              </div>
+              <div class="form-top-badge" style="margin-top: 0.25rem;">
+                <span class="pulsing-dot" aria-hidden="true"></span>
+                <span>Free 30-Minute In-Person Career Audit</span>
+              </div>
+            </div>
+
+            <!-- Main Interactive Booking Form -->
+            <form id="counsellingForm" class="counselling-form" novalidate>
+              
+              <!-- Spam Honeypot -->
+              <div style="display:none;" aria-hidden="true">
+                <input type="text" name="_hp_security_check" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="form-grid">
+                
+                <!-- Field 1: Full Name -->
+                <div class="form-group">
+                  <label for="fullName" class="form-label">
+                    Full Name <span class="required-star" aria-hidden="true">*</span>
+                  </label>
+                  <div class="input-with-icon">
+                    <input 
+                      type="text" 
+                      id="fullName" 
+                      name="fullName" 
+                      class="form-input" 
+                      placeholder="Rahul Sharma" 
+                      required 
+                      autocomplete="name"
+                    >
+                    <span class="field-status-icon" aria-hidden="true"></span>
+                  </div>
+                  <span class="error-msg" id="nameError">Please enter your full name (minimum 2 characters).</span>
+                </div>
+
+                <!-- Field 2: Mobile / WhatsApp -->
+                <div class="form-group">
+                  <label for="phoneNumber" class="form-label">
+                    Mobile / WhatsApp Number <span class="required-star" aria-hidden="true">*</span>
+                  </label>
+                  <div class="phone-input-wrap">
+                    <span class="country-prefix">+91</span>
+                    <input 
+                      type="tel" 
+                      id="phoneNumber" 
+                      name="phoneNumber" 
+                      class="form-input phone-input" 
+                      placeholder="10-digit mobile number" 
+                      pattern="[0-9]{10}" 
+                      maxlength="10" 
+                      required 
+                      autocomplete="tel"
+                    >
+                    <span class="phone-valid-tick" id="phoneValidTick" aria-hidden="true">✓</span>
+                  </div>
+                  <span class="error-msg" id="phoneError">Please enter a valid 10-digit Indian mobile number.</span>
+                </div>
+
+                <!-- Field 3: Course Interest with Quick Chips -->
+                <div class="form-group">
+                  <label for="courseInterest" class="form-label">
+                    Course / Domain of Interest <span class="required-star" aria-hidden="true">*</span>
+                  </label>
+                  <div class="matcher-chips form-course-chips">
+                    <button type="button" class="matcher-chip form-course-chip" data-val="Full Stack">⚡ Full Stack</button>
+                    <button type="button" class="matcher-chip form-course-chip" data-val="Data Analytics / Data Science">📊 Data &amp; BI</button>
+                    <button type="button" class="matcher-chip form-course-chip" data-val="AI / ML">🐍 AI/ML</button>
+                    <button type="button" class="matcher-chip form-course-chip" data-val="Cybersecurity">🛡️ Cyber Defense</button>
+                    <button type="button" class="matcher-chip form-course-chip" data-val="Cloud / DevOps">☁️ Cloud/DevOps</button>
+                  </div>
+                  <select id="courseInterest" name="courseInterest" class="form-select" required>
+                    <option value="" disabled selected>Select a learning track...</option>
+                    <option value="Full Stack">Full Stack Web Development</option>
+                    <option value="Data Analytics / Data Science">Data Analytics &amp; Data Science</option>
+                    <option value="AI / ML">AI &amp; Machine Learning</option>
+                    <option value="Cybersecurity">Cybersecurity Fundamentals</option>
+                    <option value="Cloud / DevOps">Cloud &amp; DevOps</option>
+                    <option value="Other">Other Verified Program / Custom Track</option>
+                    <option value="Not Sure">Not Sure (Discuss with Counsellor)</option>
+                  </select>
+                  <span class="error-msg" id="courseError">Please select a course track or 'Not Sure'.</span>
+                </div>
+
+                <!-- Field 4: Current Education -->
+                <div class="form-group">
+                  <label for="currentEducation" class="form-label">
+                    Current Education / Background <span class="required-star" aria-hidden="true">*</span>
+                  </label>
+                  <select id="currentEducation" name="currentEducation" class="form-select" required>
+                    <option value="" disabled selected>Select your current education...</option>
+                    <option value="12th">12th Standard / School Pursuing</option>
+                    <option value="Diploma">Polytechnic / Diploma</option>
+                    <option value="B.Tech / BE">B.Tech / BE (CS / IT / EC / Other)</option>
+                    <option value="BCA">BCA (Bachelor of Computer Applications)</option>
+                    <option value="B.Sc">B.Sc (Math / CS / IT / Gen)</option>
+                    <option value="B.Com">B.Com (Commerce)</option>
+                    <option value="BBA">BBA (Business Administration)</option>
+                    <option value="MBA">MBA (Management)</option>
+                    <option value="M.Tech">M.Tech / MCA / Post Graduate</option>
+                    <option value="Graduate">Other Graduate Stream</option>
+                    <option value="Working Professional">Working Professional</option>
+                    <option value="Other">Other</option>
+                  </select>
+                  <span class="error-msg" id="educationError">Please select your educational background.</span>
+                </div>
+
+              </div>
+
+              <!-- Interactive Preferred Visit Day Selector -->
+              <div class="visit-day-section">
+                <label class="form-label">
+                  Select Preferred Visit Day <span class="required-star" aria-hidden="true">*</span>
+                </label>
+                <div class="day-chips-grid" id="dayChips">
+                  <button type="button" class="day-chip" data-day="Today">Today</button>
+                  <button type="button" class="day-chip is-selected" data-day="Tomorrow">Tomorrow</button>
+                  <button type="button" class="day-chip" data-day="This Saturday">This Saturday</button>
+                  <button type="button" class="day-chip" data-day="This Sunday">This Sunday</button>
+                  <button type="button" class="day-chip" data-day="Upcoming Weekday">Upcoming Weekday</button>
+                </div>
+                <!-- Hidden Native Select synced with chips -->
+                <select id="visitDay" name="visitDay" class="visually-hidden" required>
+                  <option value="Today">Today</option>
+                  <option value="Tomorrow" selected>Tomorrow</option>
+                  <option value="This Saturday">This Saturday</option>
+                  <option value="This Sunday">This Sunday</option>
+                  <option value="Upcoming Weekday">Upcoming Weekday</option>
+                </select>
+                <span class="error-msg" id="dayError">Please select a preferred visit day.</span>
+              </div>
+
+              <!-- Preferred Time Slot (Optional) -->
+              <div class="form-group" style="margin-top: 1.25rem; margin-bottom: 2rem;">
+                <label for="visitTime" class="form-label">
+                  Preferred Time Window <span class="optional-label">(Optional)</span>
+                </label>
+                <select id="visitTime" name="visitTime" class="form-select">
+                  <option value="Flexible">Flexible / Any Open Slot</option>
+                  <option value="Morning (10:00 AM - 1:00 PM)">Morning (10:00 AM – 1:00 PM)</option>
+                  <option value="Afternoon (1:00 PM - 4:00 PM)">Afternoon (1:00 PM – 4:00 PM)</option>
+                  <option value="Evening (4:00 PM - 7:00 PM)">Evening (4:00 PM – 7:00 PM)</option>
+                </select>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="form-submit-wrap">
+                <button type="submit" id="submitBtn" class="btn btn-primary btn-lg btn-full form-cta-btn btn-magnetic" data-track-cta="submit_counselling_form">
+                  <span class="btn-text">BOOK MY FREE CAREER COUNSELLING VISIT</span>
+                  <span class="btn-loader" aria-hidden="true">
+                    <svg class="spinner" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke-width="3"></circle></svg>
+                  </span>
+                </button>
+                
+                <div class="form-privacy-note">
+                  <svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                  </svg>
+                  <span>100% Free &amp; Confidential • Zero Spam Guarantee • Center: M.P. Nagar, Bhopal</span>
+                </div>
+              </div>
+
+            </form>
+
+            <!-- Post-Submission Success State -->
+            <div id="formSuccessState" class="form-success-box" hidden>
+              
+              <div class="success-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+
+              <h3 class="success-heading">Your career counselling visit request has been received!</h3>
+              <p class="success-sub">
+                Your free in-person slot is reserved. A senior academic advisor from Miracle IT will call or WhatsApp you to confirm directions and timing.
+              </p>
+
+              <!-- Direct Fast-Track Actions -->
+              <div class="success-actions-grid">
+                <a href="tel:+917880003127" class="btn btn-phone btn-lg btn-full btn-magnetic" data-config-phone data-track-cta="success_call_click">
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                  <span>Call Now for Immediate Confirmation</span>
+                </a>
+
+                <a href="#" class="btn btn-whatsapp btn-lg btn-full btn-magnetic" data-config-whatsapp data-track-cta="success_whatsapp_click">
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 10.23c-.25-.13-1.47-.72-1.7-.81-.23-.09-.39-.14-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.71 4.3 3.8.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.22-.17-.47-.3"/>
+                  </svg>
+                  <span>Message Directly on WhatsApp</span>
+                </a>
+
+                <a href="https://maps.google.com/?q=M.P.+Nagar,+Bhopal" class="btn btn-secondary btn-lg btn-full btn-magnetic" data-config-directions data-track-cta="success_directions_click">
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+                  </svg>
+                  <span>Open Directions (M.P. Nagar)</span>
+                </a>
+              </div>
+
+            </div>
+
+          </div><!-- /.form-wrapper-card -->
+        </div><!-- /.border-beam-inner -->
+      </div><!-- /.border-beam-wrapper -->
     </div>
 
   </div>
@@ -4732,11 +4522,13 @@ metrics = model.train(epochs=<span class="c-number">50</span>, learning_rate=<sp
         <ul class="footer-nav">
           <li><a href="#hero">Back to Top</a></li>
           <li><a href="#problem">Career Dilemma</a></li>
+          <li><a href="#courses">Career Courses</a></li>
           <li><a href="#why-miracle-it">Why Miracle IT</a></li>
           <li><a href="#learning-experience">Lab &amp; Classroom</a></li>
+          <li><a href="#who-can-join">Who Can Join</a></li>
           <li><a href="#counselling-process">5-Step Process</a></li>
+          <li><a href="#proof">Reviews / Proof</a></li>
           <li><a href="#location">Campus Location</a></li>
-          <li><a href="#other-centers">Regional Centers</a></li>
           <li><a href="#faq">Frequently Asked Questions</a></li>
         </ul>
       </div>
@@ -4800,6 +4592,11 @@ metrics = model.train(epochs=<span class="c-number">50</span>, learning_rate=<sp
         <div class="footer-copyright">
           <p>© 2026 Miracle IT Career Academy. All rights reserved.</p>
         </div>
+        <div class="footer-legal-links">
+          <button type="button" class="footer-legal-link" id="btnOpenPrivacy" aria-haspopup="dialog">Privacy Policy</button>
+          <span class="legal-sep" aria-hidden="true">•</span>
+          <button type="button" class="footer-legal-link" id="btnOpenTerms" aria-haspopup="dialog">Terms of Service</button>
+        </div>
         <div class="footer-bottom-meta">
           <p>Zone-II, M.P. Nagar, Bhopal, M.P. • Practical Tech Education</p>
         </div>
@@ -4807,10 +4604,46 @@ metrics = model.train(epochs=<span class="c-number">50</span>, learning_rate=<sp
     </div>
 
   </div>
+
+  <!-- Privacy Policy Modal Dialog -->
+  <div class="legal-modal" id="privacyModal" role="dialog" aria-modal="true" aria-labelledby="privacyTitle" hidden>
+    <div class="legal-modal-content">
+      <button type="button" class="legal-modal-close" id="btnClosePrivacy" aria-label="Close Privacy Policy">×</button>
+      <h3 id="privacyTitle">Privacy Policy</h3>
+      <p><strong>Effective Date:</strong> January 2026 | Miracle IT Career Academy, Bhopal</p>
+      <p>At Miracle IT Career Academy, we respect your personal privacy. When you request a career counselling visit through our website, we collect your name, contact number, educational background, and course interests solely for academic advisory purposes.</p>
+      <h4 style="color:#F1F5F9; margin: 1rem 0 0.5rem;">Information Use</h4>
+      <ul>
+        <li>To schedule and confirm your free in-person counselling visit at our M.P. Nagar center.</li>
+        <li>To share course roadmaps, batch schedules, and practical learning resources on WhatsApp or phone.</li>
+        <li>We never sell, rent, or trade your contact data to third-party telemarketers.</li>
+      </ul>
+      <h4 style="color:#F1F5F9; margin: 1rem 0 0.5rem;">Contact Us</h4>
+      <p>For any privacy inquiries or to delete your lead records, contact us at <a href="mailto:info@miracleinfoserv.com" style="color:#FF7A00;">info@miracleinfoserv.com</a> or call <a href="tel:+917880003127" style="color:#FF7A00;">+91 78800 03127</a>.</p>
+    </div>
+  </div>
+
+  <!-- Terms of Service Modal Dialog -->
+  <div class="legal-modal" id="termsModal" role="dialog" aria-modal="true" aria-labelledby="termsTitle" hidden>
+    <div class="legal-modal-content">
+      <button type="button" class="legal-modal-close" id="btnCloseTerms" aria-label="Close Terms of Service">×</button>
+      <h3 id="termsTitle">Terms of Service</h3>
+      <p><strong>Effective Date:</strong> January 2026 | Miracle IT Career Academy, Bhopal</p>
+      <p>By browsing this website and scheduling a counselling visit with Miracle IT Career Academy, you agree to the following transparent terms:</p>
+      <h4 style="color:#F1F5F9; margin: 1rem 0 0.5rem;">Academy Guidelines</h4>
+      <ul>
+        <li>All counselling sessions are free of charge and non-binding. Attending a session does not obligate you to enroll in any course.</li>
+        <li>Course syllabus, batch timings, lab access, and fee schedules are finalized transparently during your in-person visit.</li>
+        <li>Miracle IT Career Academy provides skills training, project evaluation, and interview preparation. We maintain strict ethical transparency and do not make false 100% placement guarantee claims.</li>
+      </ul>
+      <h4 style="color:#F1F5F9; margin: 1rem 0 0.5rem;">Center Location</h4>
+      <p>Plot No.80, 3rd Floor, Aakriti Complex, Zone-2, M.P. Nagar, Bhopal, Madhya Pradesh.</p>
+    </div>
+  </div>
 </footer>
   </div>
 
-  <!-- 15. Mobile Sticky CTA Bar (Call | WhatsApp | Book Visit) -->
+  <!-- Mobile Sticky CTA Bar (Call | WhatsApp | Book Visit) -->
   <div data-component="mobile-sticky-cta">
 <!-- ==========================================================================
      MOBILE STICKY CTA BAR

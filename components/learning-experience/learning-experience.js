@@ -381,7 +381,6 @@ function initLearningExperience(container = document) {
  * Numbers count up from 0 when entering viewport or upon page load/refresh:
  * - 1:0 -> 1:15 (Trainer-to-Student Ratio)
  * - 0 hrs/day -> 10 hrs/day (Open Lab Workstation Access)
- * - Zone-0 -> Zone-I -> Zone-II (Central M.P. Nagar Location)
  * - 0% -> 100% (Practical Code-First Sessions)
  */
 function initCampusStatsCounter(section) {
@@ -403,15 +402,6 @@ function initCampusStatsCounter(section) {
       target: 10,
       render: (val) => `${val} hrs/day`,
       finalText: '10 hrs/day'
-    },
-    {
-      target: 2,
-      render: (val) => {
-        if (val === 0) return 'Zone-0';
-        if (val === 1) return 'Zone-I';
-        return 'Zone-II';
-      },
-      finalText: 'Zone-II'
     },
     {
       target: 100,
