@@ -189,12 +189,16 @@
   border-top: 1px solid var(--color-border);
 }
 
-@media (max-width: 540px) {
+@media (max-width: 640px) {
   .location-contact-actions {
     flex-direction: column;
+    gap: 0.65rem;
   }
   .location-contact-actions .btn {
     width: 100%;
+    min-height: 48px;
+    justify-content: center;
+    font-size: 0.95rem;
   }
 }
 
@@ -789,6 +793,55 @@
   }
 }
 
+@media (max-width: 340px) {
+  .location-info-card {
+    padding: 1.15rem 0.75rem;
+  }
+
+  .location-heading {
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .info-block {
+    gap: 0.75rem;
+    margin-bottom: 1.15rem;
+  }
+
+  .info-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .info-icon svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .info-text strong {
+    font-size: 0.88rem;
+  }
+
+  .info-text p {
+    font-size: 0.82rem;
+  }
+
+  .btn-copy-address {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+  }
+
+  .media-tab {
+    padding: 0.4rem 0.55rem;
+    font-size: 0.72rem;
+  }
+
+  .route-chip {
+    font-size: 0.72rem;
+    padding: 0.35rem 0.6rem;
+  }
+}
+
 /* ==========================================================================
    OTHER REGIONAL CENTERS SUBSECTION (At End of Location Section)
    ========================================================================== */
@@ -875,9 +928,10 @@
     scroll-snap-type: x mandatory !important;
     -webkit-overflow-scrolling: touch !important;
     gap: 1rem !important;
-    padding: 0.5rem 0.75rem 1.5rem !important;
-    margin-left: -0.85rem !important;
-    margin-right: -0.85rem !important;
+    padding: 0.5rem 0.25rem 1.25rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
     scrollbar-width: thin;
     scrollbar-color: rgba(255, 122, 0, 0.5) rgba(255, 255, 255, 0.04);
   }
@@ -898,8 +952,8 @@
   }
 
   .other-center-card {
-    flex: 0 0 min(290px, 80vw) !important;
-    max-width: 82vw !important;
+    flex: 0 0 min(280px, 82vw) !important;
+    max-width: 84vw !important;
     scroll-snap-align: start !important;
     scroll-snap-stop: always;
   }

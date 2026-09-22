@@ -208,67 +208,87 @@ html.motion-ready .final-cta-section.is-revealed .final-hero-btn:hover {
    ========================================================================== */
 @media (max-width: 480px) {
   .final-cta-section {
-    padding: 3.75rem 0;
+    padding: 3.5rem 0;
   }
 
   .final-cta-title {
-    font-size: 1.85rem;
+    font-size: clamp(1.4rem, 5.5vw, 1.85rem);
   }
 
   .final-cta-subtitle {
-    font-size: 1.25rem;
-    margin-bottom: 1.15rem;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
   }
 
   .final-cta-note {
-    font-size: 0.95rem;
-    margin-bottom: 2rem;
+    font-size: 0.92rem;
+    margin-bottom: 1.75rem;
   }
 
   .final-hero-btn {
-    padding: 0.95rem 1.75rem;
-    font-size: 1rem;
+    padding: 0.95rem 1.5rem;
+    font-size: 0.96rem;
     width: 100%;
     max-width: 100%;
   }
 
   .final-shortcuts-bar {
-    margin-top: 2.5rem;
-    padding-top: 1.75rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    width: 100%;
+  }
+
+  .shortcuts-links {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .shortcut-link {
+    width: 100%;
+    justify-content: center;
+    min-height: 46px;
+    font-size: 0.88rem;
+    padding: 0.65rem 1rem;
   }
 }
 
 @media (max-width: 360px) {
   .final-cta-section {
-    padding: 3rem 0;
+    padding: 2.75rem 0;
   }
 
   .final-cta-title {
-    font-size: 1.55rem;
+    font-size: 1.35rem;
   }
 
   .final-cta-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
 
   .final-cta-note {
-    font-size: 0.88rem;
-    margin-bottom: 1.75rem;
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
   }
 
   .final-hero-btn {
-    padding: 0.85rem 1.15rem;
-    font-size: 0.92rem;
-  }
-
-  .shortcuts-links {
-    gap: 0.5rem;
+    padding: 0.85rem 1rem;
+    font-size: 0.88rem;
   }
 
   .shortcut-link {
-    padding: 0.45rem 0.85rem;
     font-size: 0.82rem;
-    width: 100%;
-    justify-content: center;
+    padding: 0.55rem 0.75rem;
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 320px) {
+  .final-cta-title {
+    font-size: 1.25rem;
+  }
+
+  .final-cta-subtitle {
+    font-size: 0.98rem;
   }
 }

@@ -2,7 +2,7 @@
      WHY MIRACLE IT — REALISTIC TABLET DEVICE FRAME & HORIZONTAL STORYTELLING
      A Practical, Honest Approach to Tech Education
      ========================================================================== -->
-<link rel="stylesheet" href="./components/why-miracle-it/why-miracle-it.css">
+<link rel="stylesheet" href="./components/why-miracle-it/why-miracle-it.css?v=3.2">
 <section class="section section-light why-section" id="why-miracle-it">
   <div class="why-pin-wrapper" id="whyPinWrapper">
     <div class="why-sticky-viewport" id="whyStickyViewport">
@@ -17,11 +17,30 @@
         <!-- Realistic Physical Tablet Frame -->
         <div class="tablet-perspective-stage">
           <div class="tablet-device-chassis" id="whyTabletDevice">
+
+            <!-- Physical Hardware Edge Details: Buttons & Antenna Bands -->
+            <span class="tablet-power-btn" aria-hidden="true" title="Sleep / Wake"></span>
+            <span class="tablet-volume-rocker" aria-hidden="true" title="Volume Controls">
+              <i class="vol-btn vol-up"></i>
+              <i class="vol-btn vol-down"></i>
+            </span>
+            <span class="tablet-speaker-slots" aria-hidden="true">
+              <i></i><i></i><i></i><i></i><i></i><i></i>
+            </span>
+            <span class="tablet-antenna-band band-tl" aria-hidden="true"></span>
+            <span class="tablet-antenna-band band-tr" aria-hidden="true"></span>
             
-            <!-- Tablet Top Bezel: Camera Lens & Sensors -->
+            <!-- Tablet Top Bezel: Precision Camera & Sensor Cluster -->
             <div class="tablet-camera-notch" aria-hidden="true">
-              <span class="tablet-camera-lens"></span>
-              <span class="tablet-sensor-dot"></span>
+              <span class="tablet-camera-housing">
+                <span class="tablet-camera-lens">
+                  <span class="lens-core"></span>
+                  <span class="lens-glint"></span>
+                </span>
+              </span>
+              <span class="tablet-sensor-dot" title="TrueDepth / Ambient Sensor"></span>
+              <span class="tablet-mic-hole" title="Studio Mic"></span>
+              <span class="tablet-privacy-led" title="Active"></span>
             </div>
 
             <!-- Tablet Specular Glass Reflection (Physical Depth) -->
@@ -29,6 +48,15 @@
 
             <!-- Tablet OLED Display Screen -->
             <div class="tablet-screen-bezel">
+
+              <!-- Live Ambient Display Layer (drifting grid, aurora, scan sweep) -->
+              <div class="tablet-screen-ambience" aria-hidden="true">
+                <span class="amb-grid"></span>
+                <span class="amb-orb amb-orb-a"></span>
+                <span class="amb-orb amb-orb-b"></span>
+                <span class="amb-scan"></span>
+              </div>
+
               
               <!-- Tablet OS Status Bar -->
               <div class="tablet-os-bar">
@@ -47,6 +75,11 @@
                 
                 <div class="os-right">
                   <span class="os-badge-pill">70/30 Standard</span>
+                  <span class="os-sys-wifi" title="Lab Fiber 1Gbps">
+                    <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M17.778 8.222c-4.296-4.296-11.26-4.296-15.556 0A1 1 0 01.808 6.808c5.076-5.077 13.308-5.077 18.384 0a1 1 0 01-1.414 1.414zM14.95 11.05a7 7 0 00-9.9 0 1 1 0 01-1.414-1.414 9 9 0 0112.728 0 1 1 0 01-1.414 1.414zm-2.829 2.828a3 3 0 00-4.242 0 1 1 0 01-1.415-1.414 5 5 0 017.072 0 1 1 0 01-1.415 1.414zM10 16a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+                    </svg>
+                  </span>
                   <span class="os-time" id="tabletClock">10:42 AM</span>
                   <div class="os-battery" title="System Ready: 100%">
                     <span class="battery-level"></span>
@@ -75,7 +108,7 @@
                       <!-- Visual Ratio Bar -->
                       <div class="ratio-bar-track">
                         <div class="ratio-segment ratio-coding" style="width: 70%;">
-                          <span class="ratio-text-desktop">70% Hands-on Live Coding & Debugging</span>
+                          <span class="ratio-text-desktop">70% Hands-on Live Coding &amp; Debugging</span>
                           <span class="ratio-text-mobile">70% Live Coding</span>
                         </div>
                         <div class="ratio-segment ratio-theory" style="width: 30%;">
@@ -98,16 +131,34 @@
                         </div>
                         <div class="routine-phase">
                           <span class="phase-time">Final 30 Mins</span>
-                          <strong>1-on-1 Code Review & Git Push</strong>
+                          <strong>1-on-1 Code Review &amp; Git Push</strong>
                           <p>Reviewing clean code practices and committing changes to GitHub.</p>
                         </div>
                       </div>
 
-                      <!-- Quick Metric Pills -->
-                      <div class="ratio-quick-stats">
-                        <div class="stat-pill"><span class="stat-badge" data-counter-target="15">15</span> Max Students per Cohort</div>
-                        <div class="stat-pill"><span class="stat-badge" data-counter-target="100">100%</span> Practical Lab Desk Reviews</div>
-                        <div class="stat-pill"><span class="stat-badge" data-counter-target="0">0</span> Rote Slide Presentations</div>
+                      <!-- Quick Metric Pills & Live Lab Console (Streamlined Bottom Dock) -->
+                      <div class="slide-bottom-dock">
+                        <div class="ratio-quick-stats">
+                          <div class="stat-pill"><span class="stat-badge" data-counter-target="15">15</span> Max Students / Cohort</div>
+                          <div class="stat-pill"><span class="stat-badge" data-counter-target="100">100%</span> Practical Lab Reviews</div>
+                        </div>
+
+                        <!-- Live Lab Console Strip -->
+                        <div class="lab-console-strip" aria-hidden="true">
+                          <span class="console-dots">
+                            <i class="cdot cdot-r"></i><i class="cdot cdot-y"></i><i class="cdot cdot-g"></i>
+                          </span>
+                          <span class="console-label">lab-07</span>
+                          <span class="console-feed">
+                            <span class="console-line"><b>$</b> git commit -m "feat: auth refresh"</span>
+                            <span class="console-line"><b>$</b> npm run build &amp;&amp; test:pass</span>
+                            <span class="console-line"><b>$</b> trainer audit --file auth.js</span>
+                            <span class="console-line"><b>$</b> docker compose up -d</span>
+                          </span>
+                          <span class="console-status">
+                            <i class="console-pulse"></i> live
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </article>
@@ -256,6 +307,28 @@
                       <h3 class="slide-title">Our Transparency Pledge to Every Bhopal Student</h3>
 
                       <div class="pledge-card-wrap">
+                        <!-- Animated Verification Seal -->
+                        <div class="pledge-seal" aria-hidden="true">
+                          <svg viewBox="0 0 120 120" role="presentation" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                              <linearGradient id="sealBrand" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0%" stop-color="#FF9433"/>
+                                <stop offset="100%" stop-color="#EA580C"/>
+                              </linearGradient>
+                              <path id="sealArc" d="M60 60 m-42 0 a42 42 0 1 1 84 0 a42 42 0 1 1 -84 0"/>
+                            </defs>
+                            <circle class="seal-ring-outer" cx="60" cy="60" r="52"/>
+                            <circle class="seal-ring-dash" cx="60" cy="60" r="46"/>
+                            <circle class="seal-disc" cx="60" cy="60" r="33" fill="url(#sealBrand)"/>
+                            <path class="seal-tick" d="M46 61l10 10 20-22"/>
+                            <text class="seal-caption">
+                              <textPath href="#sealArc" startOffset="50%" text-anchor="middle">
+                                VERIFIED • HONEST COUNSELLING • BHOPAL •
+                              </textPath>
+                            </text>
+                          </svg>
+                        </div>
+
                         <p class="pledge-quote-text">
                           “We will never sell you a course that does not fit your academic background. We will never make fake 100% job guarantee promises. We invite you to visit our M.P. Nagar center, inspect our classrooms, and talk directly to current students before making any payment.”
                         </p>
@@ -284,6 +357,11 @@
 
               <!-- Tablet Bottom Navigation & Interactive Story HUD -->
               <div class="tablet-bottom-hud">
+                <button type="button" class="hud-nav-arrow hud-nav-prev" id="btnHudPrev" aria-label="Previous Chapter" title="Previous Chapter">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                  <span>Prev</span>
+                </button>
+
                 <div class="story-nav-dots" id="tabletStoryNavDots">
                   <button type="button" class="story-dot is-active" data-slide-target="0" aria-label="Go to Chapter 1"></button>
                   <button type="button" class="story-dot" data-slide-target="1" aria-label="Go to Chapter 2"></button>
@@ -296,16 +374,21 @@
                   <div class="story-progress-bar-fill" id="tabletProgressBar"></div>
                 </div>
 
-                <div class="story-scroll-hint">
-                  <span class="hint-text hint-desktop">Scroll down to explore story</span>
-                  <span class="hint-text hint-mobile">Swipe chapters</span>
-                  <span class="hint-arrow">→</span>
-                </div>
+                <button type="button" class="hud-nav-arrow hud-nav-next" id="btnHudNext" aria-label="Next Chapter" title="Next Chapter">
+                  <span>Next</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
               </div>
+
+              <!-- Tablet Native Home Indicator Bar (Physical Device Touch Gasket) -->
+              <div class="tablet-home-indicator" aria-hidden="true"></div>
 
             </div>
 
           </div>
+
+          <!-- Realistic Physical Desk Contact & Occlusion Shadow -->
+          <div class="tablet-desk-shadow" aria-hidden="true"></div>
         </div>
 
       </div>

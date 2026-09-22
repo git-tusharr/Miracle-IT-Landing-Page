@@ -81,7 +81,7 @@ function initHero(container = document) {
     // 1. Top card glides out with rotation
     topCard.classList.add('is-shuffling-out');
 
-    // 2. Advance the stack after slight delay
+    // 2. Advance the stack after slight delay (snappier pace)
     setTimeout(() => {
       const prevTop = stackOrder.shift();
       stackOrder.push(prevTop);
@@ -90,8 +90,8 @@ function initHero(container = document) {
       // 3. Reset animation flag
       setTimeout(() => {
         isShuffling = false;
-      }, 340);
-    }, 280);
+      }, 260);
+    }, 220);
   };
 
   /**
@@ -110,13 +110,13 @@ function initHero(container = document) {
         shuffleNext();
         setTimeout(() => {
           shuffleNext();
-        }, 320);
+        }, 260);
       }
     }
   };
 
   /**
-   * 2-Second Shuffle Loop
+   * Active Dynamic Shuffle Loop (2.4s pace, with hover-pause for reading)
    */
   const startShuffleTimer = () => {
     clearInterval(shuffleTimer);
@@ -124,7 +124,7 @@ function initHero(container = document) {
 
     shuffleTimer = setInterval(() => {
       shuffleNext();
-    }, 4800); // Relaxed 4.8s interval for natural reading pace
+    }, 2400); // Snappy, active 2.4s interval
   };
 
   const stopShuffleTimer = () => {

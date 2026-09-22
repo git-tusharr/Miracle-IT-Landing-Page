@@ -44,7 +44,7 @@
 
 .marquee-track {
   display: flex;
-  gap: 1.25rem;
+  gap: 1.75rem;
   width: max-content;
   will-change: transform;
 }
@@ -55,6 +55,7 @@
 
 .marquee-left {
   animation: marqueeLeft 34s linear infinite;
+  margin-bottom: 1.5rem;
 }
 
 .marquee-right {
@@ -336,6 +337,14 @@
    ========================================================================== */
 
 @media (max-width: 767px) {
+  .marquee-track {
+    gap: 1.25rem;
+  }
+
+  .marquee-left {
+    margin-bottom: 1.1rem;
+  }
+
   .marquee-pill {
     padding: 6px 14px;
     gap: 0.5rem;

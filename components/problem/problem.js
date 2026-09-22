@@ -1,6 +1,7 @@
 /**
  * PROBLEM COMPONENT CONTROLLER
- * Toggles between Dilemma Cards and Before/After Comparison views
+ * Toggles between Dilemma Cards and Before/After Comparison views,
+ * handles interactive diagnostic quick-filter and card highlight states.
  */
 
 function initProblem(container = document) {
@@ -52,21 +53,42 @@ function initProblem(container = document) {
       const targetCard = dilemmaCards[cardIdx];
       if (targetCard) {
         targetCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-        targetCard.style.transition = 'all 400ms cubic-bezier(0.22, 1, 0.36, 1)';
-        targetCard.style.boxShadow = '0 0 35px 4px rgba(99, 102, 241, 0.7), 0 0 15px rgba(56, 189, 248, 0.4)';
-        targetCard.style.borderColor = 'rgba(99, 102, 241, 0.9)';
-        targetCard.style.transform = 'translateY(-6px) scale(1.02)';
+        
+        // Remove highlight from all cards
+        dilemmaCards.forEach(c => c.classList.remove('is-highlighted'));
+        
+        // Add active highlight to target card
+        targetCard.classList.add('is-highlighted');
 
         setTimeout(() => {
-          targetCard.style.boxShadow = '';
-          targetCard.style.borderColor = '';
-          targetCard.style.transform = '';
-        }, 1200);
+          targetCard.classList.remove('is-highlighted');
+        }, 1800);
       }
     });
+  });
+
+  // Optional: Clicking on a card's reality pill or contrast box also smooth-scrolls to booking form
+  dilemmaCards.forEach((card, idx) => {
+    const contrastBox = card.querySelector('.dilemma-contrast-box');
+    if (contrastBox) {
+      contrastBox.style.cursor = 'pointer';
+      contrastBox.setAttribute('title', 'Click to consult a mentor about this dilemma');
+      contrastBox.addEventListener('click', (e) => {
+        const actionBtn = card.querySelector('.solution-link-btn');
+        if (actionBtn) {
+          actionBtn.click();
+        }
+      });
+    }
   });
 }
 
 if (typeof window !== 'undefined') {
   window.initProblem = initProblem;
+  // If document already loaded, initialize immediately
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    initProblem();
+  } else {
+    document.addEventListener('DOMContentLoaded', () => initProblem());
+  }
 }

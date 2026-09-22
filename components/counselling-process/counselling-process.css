@@ -320,6 +320,19 @@
   .step-detail {
     font-size: 0.9rem;
   }
+
+  .step-actions-row {
+    width: 100%;
+    margin-top: 0.85rem;
+  }
+
+  .step-actions-row .btn {
+    width: 100%;
+    font-size: clamp(0.82rem, 3.5vw, 0.95rem);
+    padding: 0.75rem 1rem;
+    min-height: 46px;
+    box-sizing: border-box;
+  }
 }
 
 @media (max-width: 480px) {

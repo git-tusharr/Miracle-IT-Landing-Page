@@ -1,19 +1,15 @@
 /**
- * LEARNING EXPERIENCE CONTROLLER — 3D CIRCULAR COVERFLOW CAROUSEL (v4.1)
+ * LEARNING EXPERIENCE CONTROLLER — HIGH-PERFORMANCE 3D COVERFLOW (v5.0)
  * Miracle IT Career Academy
  * 
- * Features:
- * - Automatic rotation every 2.5 seconds (2–3s interval)
- * - Immediate stop when hovering over the carousel
- * - Resumes automatic scrolling when mouse leaves
- * - Continuous 4-card 3D perspective circular orbit
- * - Hardware-accelerated GSAP transitions (window.gsap)
- * - Prev / Next navigation buttons
- * - Interactive pagination dots with ARIA synchronization
- * - Direct clicking on visible side cards to bring them to center
- * - Touch & swipe gesture detection
+ * Enhancements:
+ * - Ultra-snappy 0.42s GSAP power3.out hardware-accelerated transitions
+ * - Dynamic 3.5-second auto-orbit with instant pause-on-hover & resume
+ * - Smooth 3D circular coverflow geometry with depth-of-field hierarchy
+ * - Direct click-to-center on visible side cards
+ * - Frictionless touch & swipe gesture detection
  * - Keyboard navigation (ArrowLeft / ArrowRight)
- * - Accessibility & prefers-reduced-motion support
+ * - Viewport-driven animated counter for campus statistics
  */
 
 function initLearningExperience(container = document) {
@@ -38,7 +34,7 @@ function initLearningExperience(container = document) {
   let autoplayTimer = null;
   let isTransitioning = false;
   let isHovered = false;
-  const AUTOPLAY_INTERVAL = 5000; // 5.0 seconds relaxed interval for comfortable reading
+  const AUTOPLAY_INTERVAL = 3500; // 3.5s dynamic showcase interval
 
   // Check reduced motion preference
   const prefersReducedMotion = () => {
@@ -53,57 +49,57 @@ function initLearningExperience(container = document) {
     if (width <= 360) {
       return {
         sideOffset: 85,
-        depthCenter: 20,
-        depthSide: -30,
-        depthBack: -90,
-        rotateAngle: 8,
+        depthCenter: 15,
+        depthSide: -25,
+        depthBack: -80,
+        rotateAngle: 6,
         scaleCenter: 1,
-        scaleSide: 0.72,
-        scaleBack: 0.52
+        scaleSide: 0.74,
+        scaleBack: 0.54
       };
     } else if (width <= 420) {
       return {
         sideOffset: 140,
-        depthCenter: 30,
-        depthSide: -35,
-        depthBack: -110,
-        rotateAngle: 12,
+        depthCenter: 22,
+        depthSide: -30,
+        depthBack: -95,
+        rotateAngle: 10,
         scaleCenter: 1,
-        scaleSide: 0.83,
+        scaleSide: 0.82,
         scaleBack: 0.62
       };
     } else if (width <= 768) {
       return {
-        sideOffset: 195,
-        depthCenter: 45,
-        depthSide: -50,
-        depthBack: -145,
-        rotateAngle: 16,
+        sideOffset: 190,
+        depthCenter: 35,
+        depthSide: -45,
+        depthBack: -125,
+        rotateAngle: 12,
         scaleCenter: 1,
-        scaleSide: 0.85,
-        scaleBack: 0.64
+        scaleSide: 0.86,
+        scaleBack: 0.66
       };
     } else if (width <= 1024) {
       return {
-        sideOffset: 265,
-        depthCenter: 70,
-        depthSide: -60,
-        depthBack: -180,
-        rotateAngle: 22,
+        sideOffset: 260,
+        depthCenter: 60,
+        depthSide: -50,
+        depthBack: -150,
+        rotateAngle: 16,
         scaleCenter: 1,
-        scaleSide: 0.86,
-        scaleBack: 0.66
+        scaleSide: 0.88,
+        scaleBack: 0.68
       };
     } else {
       return {
-        sideOffset: 345,
-        depthCenter: 100,
-        depthSide: -65,
-        depthBack: -220,
-        rotateAngle: 26,
+        sideOffset: 340,
+        depthCenter: 80,
+        depthSide: -55,
+        depthBack: -170,
+        rotateAngle: 18,
         scaleCenter: 1,
-        scaleSide: 0.86,
-        scaleBack: 0.66
+        scaleSide: 0.88,
+        scaleBack: 0.70
       };
     }
   };
@@ -157,7 +153,7 @@ function initLearningExperience(container = document) {
         targetZ = dim.depthSide;
         targetRotateY = -dim.rotateAngle;
         targetScale = dim.scaleSide;
-        targetOpacity = 0.72;
+        targetOpacity = 0.68;
         targetZIndex = 5;
         card.classList.add('is-side');
         card.setAttribute('aria-hidden', 'true');
@@ -167,7 +163,7 @@ function initLearningExperience(container = document) {
         targetZ = dim.depthSide;
         targetRotateY = dim.rotateAngle;
         targetScale = dim.scaleSide;
-        targetOpacity = 0.72;
+        targetOpacity = 0.68;
         targetZIndex = 5;
         card.classList.add('is-side');
         card.setAttribute('aria-hidden', 'true');
@@ -177,7 +173,7 @@ function initLearningExperience(container = document) {
         targetZ = dim.depthBack;
         targetRotateY = 0;
         targetScale = dim.scaleBack;
-        targetOpacity = 0.18;
+        targetOpacity = 0.10;
         targetZIndex = 1;
         card.classList.add('is-back');
         card.setAttribute('aria-hidden', 'true');
@@ -193,8 +189,8 @@ function initLearningExperience(container = document) {
           scale: targetScale,
           opacity: targetOpacity,
           zIndex: targetZIndex,
-          duration: immediate ? 0 : 0.75,
-          ease: 'power2.out',
+          duration: immediate ? 0 : 0.42, // Fast, silky 0.42s transition
+          ease: 'power3.out',
           overwrite: 'auto',
           onComplete: () => {
             if (index === totalCards - 1) {
@@ -220,13 +216,14 @@ function initLearningExperience(container = document) {
   };
 
   /**
-   * Navigate to specific index
+   * Navigate to specific index with tight debounce
    */
   const goTo = (newIndex) => {
     if (newIndex === activeIndex) return;
     isTransitioning = true;
     activeIndex = (newIndex % totalCards + totalCards) % totalCards;
     updatePositions(false);
+    setTimeout(() => { isTransitioning = false; }, 380);
   };
 
   const next = () => {
@@ -238,7 +235,7 @@ function initLearningExperience(container = document) {
   };
 
   /**
-   * Autoplay management: runs every 2.5s, stops when hovered
+   * Autoplay management: runs every 3.5s, stops when hovered
    */
   const startAutoplay = () => {
     if (prefersReducedMotion() || isHovered) return;
@@ -311,7 +308,9 @@ function initLearningExperience(container = document) {
 
   // Event Listeners: Click on visible side cards to center them
   cards.forEach((card, index) => {
-    card.addEventListener('click', () => {
+    card.addEventListener('click', (e) => {
+      // If clicking directly on a CTA link, let the link navigate
+      if (e.target.closest('.card-action-chip')) return;
       if (index !== activeIndex) {
         goTo(index);
         if (!isHovered) startAutoplay();
@@ -338,8 +337,8 @@ function initLearningExperience(container = document) {
         const deltaX = e.changedTouches[0].clientX - touchStartX;
         const deltaY = e.changedTouches[0].clientY - touchStartY;
 
-        // Check horizontal swipe threshold
-        if (Math.abs(deltaX) > 40 && Math.abs(deltaX) > Math.abs(deltaY)) {
+        // Check horizontal swipe threshold (35px for responsive flicking)
+        if (Math.abs(deltaX) > 35 && Math.abs(deltaX) > Math.abs(deltaY)) {
           if (deltaX < 0) {
             next();
           } else {
@@ -365,7 +364,7 @@ function initLearningExperience(container = document) {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => {
       updatePositions(true);
-    }, 100);
+    }, 80);
   }, { passive: true });
 
   // Initial layout mounting and start automatic scrolling
@@ -459,7 +458,7 @@ function initCampusStatsCounter(section) {
       el.classList.add('is-counting');
     });
 
-    const duration = 1400; // 1.4 seconds smooth counter
+    const duration = 1200; // 1.2 seconds smooth counter
     let startTime = null;
 
     const frame = (timestamp) => {
@@ -502,7 +501,7 @@ function initCampusStatsCounter(section) {
   // Set initial zero values
   setZeroState();
 
-  // If already in viewport on load or refresh, start counting immediately with slight initial tick
+  // If already in viewport on load or refresh, start counting immediately
   if (isElementInViewport()) {
     setTimeout(() => {
       startCountAnimation();
@@ -518,7 +517,6 @@ function initCampusStatsCounter(section) {
             startCountAnimation();
           }
         } else {
-          // Scrolled completely out of view - re-arm for next entry
           if (!isAnimating && hasAnimated) {
             setZeroState();
             hasAnimated = false;
@@ -532,7 +530,6 @@ function initCampusStatsCounter(section) {
 
     observer.observe(statsBar);
   } else {
-    // Fallback if IntersectionObserver not supported
     window.addEventListener('scroll', () => {
       if (isElementInViewport()) {
         if (!hasAnimated && !isAnimating) {

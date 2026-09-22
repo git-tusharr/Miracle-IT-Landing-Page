@@ -120,6 +120,9 @@
     .book-action {
       font-size: 0.7rem;
       padding: 0.55rem 0.25rem;
+      white-space: normal;
+      line-height: 1.15;
+      text-align: center;
     }
   }
 }

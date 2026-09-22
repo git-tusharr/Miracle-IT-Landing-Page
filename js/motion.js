@@ -657,33 +657,50 @@
     },
 
     /**
-     * 5. Smooth Scroll-Based Theme Evolution
-     * Organically shifts canvas background and surface undertones as user scrolls.
+     * 5. Smooth Scroll-Based Theme Evolution (GSAP ScrollTrigger & IntersectionObserver)
+     * Organically shifts canvas background and surface undertones smoothly as user scrolls.
      */
     initThemeTransitions() {
-      const sections = document.querySelectorAll('section[data-theme]');
+      const sections = document.querySelectorAll('section[data-theme], #hero, #final-cta');
       if (!sections.length) return;
 
       // Set baseline theme
       document.body.setAttribute('data-theme', 'obsidian');
 
-      if (!('IntersectionObserver' in window) || this.isReducedMotion) return;
+      if (this.isReducedMotion) return;
 
-      const themeObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const theme = entry.target.getAttribute('data-theme');
-            if (theme) {
-              document.body.setAttribute('data-theme', theme);
-            }
-          }
+      const applyTheme = (theme) => {
+        if (!theme) return;
+        document.body.setAttribute('data-theme', theme);
+      };
+
+      // Prefer GSAP ScrollTrigger for synchronous, silky 60fps theme transitions
+      if (typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined') {
+        sections.forEach(section => {
+          const theme = section.getAttribute('data-theme') || (section.id === 'hero' ? 'obsidian' : 'obsidian-glow');
+          window.ScrollTrigger.create({
+            trigger: section,
+            start: 'top 50%',
+            end: 'bottom 50%',
+            onEnter: () => applyTheme(theme),
+            onEnterBack: () => applyTheme(theme)
+          });
         });
-      }, {
-        threshold: 0.25,
-        rootMargin: '-10% 0px -40% 0px'
-      });
+      } else if ('IntersectionObserver' in window) {
+        const themeObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const theme = entry.target.getAttribute('data-theme') || 'obsidian';
+              applyTheme(theme);
+            }
+          });
+        }, {
+          threshold: 0.2,
+          rootMargin: '-10% 0px -30% 0px'
+        });
 
-      sections.forEach(section => themeObserver.observe(section));
+        sections.forEach(section => themeObserver.observe(section));
+      }
     },
 
     /**
