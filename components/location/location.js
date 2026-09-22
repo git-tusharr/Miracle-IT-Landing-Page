@@ -59,7 +59,7 @@ function initLocation(container = document) {
   routeChips.forEach(chip => {
     chip.addEventListener('click', () => {
       const selectedRoute = chip.getAttribute('data-route');
-      
+
       routeChips.forEach(c => c.classList.remove('is-active'));
       chip.classList.add('is-active');
 
@@ -173,13 +173,13 @@ function initCenters3DCarousel(section, stage, cylinder) {
   function updateRadius() {
     const w = window.innerWidth;
     if (w <= 480) {
-      radius = Math.min(180, Math.floor(w * 0.42));
+      radius = Math.min(140, Math.floor(w * 0.33));   // was 180, w * 0.42
     } else if (w <= 768) {
-      radius = Math.min(225, Math.floor(w * 0.40));
+      radius = Math.min(175, Math.floor(w * 0.31));   // was 225, w * 0.40
     } else if (w <= 1024) {
-      radius = 265;
+      radius = 205;                                    // was 265
     } else {
-      radius = 310;
+      radius = 235;                                    // was 310
     }
 
     // Position each card at its initial cylindrical coordinates
@@ -241,14 +241,20 @@ function initCenters3DCarousel(section, stage, cylinder) {
   }
 
   // Animation Loop (gentle, steady auto-rotation)
+  let lastFrameTime = performance.now();
+
   function tick() {
+    const now = performance.now();
+    const dt = Math.min(now - lastFrameTime, 50);
+    lastFrameTime = now;
+    const dtFactor = dt / 16.67;
+
     if (isAutoRotating && !isHovered && !isDragging) {
-      targetAngle -= 0.12; // Smooth, gentle auto-rotation
+      targetAngle -= 0.4 * dtFactor;   // was 0.12 — increase this for faster spin
     }
 
     if (!isDragging) {
-      // Smooth lerp to target angle
-      currentAngle += (targetAngle - currentAngle) * 0.085;
+      currentAngle += (targetAngle - currentAngle) * Math.min(0.14 * dtFactor, 1);
     }
 
     cylinder.style.transform = `rotateY(${currentAngle}deg)`;
@@ -503,7 +509,7 @@ function initThreeWorldGlobe(section, canvas) {
   let prevPointerY = 0;
   let velocityX = 0;
   let velocityY = 0;
-  const baseSpinSpeed = 0.0022; // silky planetary rotation
+  const baseSpinSpeed = 0.005; // silky planetary rotation
   let currentSpinSpeed = baseSpinSpeed;
 
   function onPointerDown(clientX, clientY) {
@@ -643,33 +649,45 @@ function initCanvasWorldGlobe(section, canvas) {
   const earthLandPoints = [];
   function buildWorldMapPoints() {
     const continentRegions = [
-      { minLat: 14, maxLat: 72, minLon: -168, maxLon: -55, stepLat: 3.5, stepLon: 4.5, filter: (lat, lon) => {
-        if (lat < 25 && lon < -105) return false;
-        if (lat > 50 && lon > -50) return false;
-        return true;
-      }},
-      { minLat: -55, maxLat: 12, minLon: -82, maxLon: -34, stepLat: 3.5, stepLon: 4.0, filter: (lat, lon) => {
-        if (lat > 5 && lon > -50) return false;
-        if (lat < -40 && lon > -60) return false;
-        return true;
-      }},
-      { minLat: 36, maxLat: 71, minLon: -11, maxLon: 40, stepLat: 3.0, stepLon: 3.5, filter: (lat, lon) => {
-        if (lat < 42 && lon < -10) return false;
-        return true;
-      }},
-      { minLat: -35, maxLat: 37, minLon: -18, maxLon: 52, stepLat: 3.5, stepLon: 4.0, filter: (lat, lon) => {
-        if (lat > 32 && lon < -10) return false;
-        if (lat < -10 && lon < 10) return false;
-        return true;
-      }},
-      { minLat: 0, maxLat: 75, minLon: 40, maxLon: 150, stepLat: 3.2, stepLon: 4.0, filter: (lat, lon) => {
-        if (lat < 10 && lon < 95) return false;
-        return true;
-      }},
-      { minLat: -47, maxLat: -11, minLon: 112, maxLon: 178, stepLat: 3.5, stepLon: 4.0, filter: (lat, lon) => {
-        if (lon > 154 && (lat > -34 || lat < -48)) return false;
-        return true;
-      }},
+      {
+        minLat: 14, maxLat: 72, minLon: -168, maxLon: -55, stepLat: 3.5, stepLon: 4.5, filter: (lat, lon) => {
+          if (lat < 25 && lon < -105) return false;
+          if (lat > 50 && lon > -50) return false;
+          return true;
+        }
+      },
+      {
+        minLat: -55, maxLat: 12, minLon: -82, maxLon: -34, stepLat: 3.5, stepLon: 4.0, filter: (lat, lon) => {
+          if (lat > 5 && lon > -50) return false;
+          if (lat < -40 && lon > -60) return false;
+          return true;
+        }
+      },
+      {
+        minLat: 36, maxLat: 71, minLon: -11, maxLon: 40, stepLat: 3.0, stepLon: 3.5, filter: (lat, lon) => {
+          if (lat < 42 && lon < -10) return false;
+          return true;
+        }
+      },
+      {
+        minLat: -35, maxLat: 37, minLon: -18, maxLon: 52, stepLat: 3.5, stepLon: 4.0, filter: (lat, lon) => {
+          if (lat > 32 && lon < -10) return false;
+          if (lat < -10 && lon < 10) return false;
+          return true;
+        }
+      },
+      {
+        minLat: 0, maxLat: 75, minLon: 40, maxLon: 150, stepLat: 3.2, stepLon: 4.0, filter: (lat, lon) => {
+          if (lat < 10 && lon < 95) return false;
+          return true;
+        }
+      },
+      {
+        minLat: -47, maxLat: -11, minLon: 112, maxLon: 178, stepLat: 3.5, stepLon: 4.0, filter: (lat, lon) => {
+          if (lon > 154 && (lat > -34 || lat < -48)) return false;
+          return true;
+        }
+      },
       { minLat: 60, maxLat: 83, minLon: -58, maxLon: -18, stepLat: 4.0, stepLon: 5.0, filter: () => true },
       { minLat: 30, maxLat: 46, minLon: 129, maxLon: 146, stepLat: 2.5, stepLon: 2.5, filter: () => true },
       { minLat: -10, maxLat: 18, minLon: 95, maxLon: 130, stepLat: 3.0, stepLon: 3.5, filter: () => true }
