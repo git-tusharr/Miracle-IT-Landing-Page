@@ -1463,11 +1463,11 @@
     border-radius: 16px;
   }
 
-  /* Display Screen: Flexible content-driven height with generous minimum */
+  /* Display Screen: Flexible content-driven height with snug fit */
   .tablet-screen-bezel {
     border-radius: 18px;
     height: auto !important;
-    min-height: 480px !important;
+    min-height: 380px !important;
     max-height: none !important;
   }
 
@@ -1529,15 +1529,19 @@
 
   .tablet-slide {
     scroll-snap-align: center;
-    padding: 1.25rem 1.15rem;
+    padding: clamp(0.85rem, 2.5vw, 1.25rem) clamp(0.75rem, 2vw, 1.25rem);
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     overflow-y: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
     scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+  }
+
+  .tablet-slide.slide-formula {
+    justify-content: flex-start;
   }
 
   /* Slide Headings */
@@ -1770,977 +1774,7 @@
   }
 }
 
-/* --------------------------------------------------------------------------
-   2. SMALL TABLET / PHABLET (max-width: 680px) — specifically 600px
-   -------------------------------------------------------------------------- */
-@media (max-width: 680px) {
-  .why-container {
-    padding: 0 0.85rem;
-  }
 
-  .tablet-device-chassis {
-    padding: 8px 8px 10px 8px;
-    border-radius: 20px;
-  }
-
-  .tablet-camera-notch {
-    top: 3.5px;
-    height: 6px;
-    gap: 6px;
-  }
-
-  .tablet-camera-lens {
-    width: 5px;
-    height: 5px;
-  }
-
-  .tablet-sensor-dot {
-    width: 3px;
-    height: 3px;
-  }
-
-  .tablet-glass-glare {
-    inset: 8px 8px 10px 8px;
-    border-radius: 14px;
-  }
-
-  .tablet-screen-bezel {
-    border-radius: 14px;
-    min-height: 440px;
-  }
-
-  .tablet-os-bar {
-    height: 34px;
-    min-height: 34px;
-    padding: 0 0.75rem;
-  }
-
-  .os-brand {
-    font-size: 0.72rem;
-  }
-
-  .os-brand .os-version {
-    display: none;
-  }
-
-  .tablet-chapter-pill {
-    padding: 0.18rem 0.55rem;
-    font-size: 0.68rem;
-    max-width: 180px;
-  }
-
-  .os-time {
-    font-size: 0.7rem;
-  }
-
-  .os-battery {
-    width: 18px;
-    height: 9px;
-  }
-
-  .tablet-slide {
-    padding: 1rem 0.85rem;
-  }
-
-  .slide-kicker-row {
-    margin-bottom: 0.5rem;
-  }
-
-  .slide-tag {
-    font-size: 0.7rem;
-    padding: 0.2rem 0.6rem;
-  }
-
-  .slide-badge-meta {
-    font-size: 0.68rem;
-  }
-
-  .slide-title {
-    font-size: 1.22rem;
-    margin-bottom: 0.35rem;
-  }
-
-  .slide-sub {
-    font-size: 0.8rem;
-    margin-bottom: 0.75rem;
-  }
-
-  /* Slide 1: Ratio Bar responsive mobile text */
-  .ratio-text-desktop {
-    display: none;
-  }
-
-  .ratio-text-mobile {
-    display: inline;
-  }
-
-  .ratio-bar-track {
-    height: 34px;
-    margin-bottom: 0.85rem;
-  }
-
-  .ratio-segment {
-    font-size: 0.7rem;
-    padding: 0 0.4rem;
-  }
-
-  .daily-routine-grid {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    gap: 0.6rem;
-    margin-bottom: 0.75rem;
-    padding-bottom: 0.25rem;
-  }
-
-  .daily-routine-grid::-webkit-scrollbar {
-    display: none;
-  }
-
-  .routine-phase {
-    flex: 0 0 min(210px, 68vw);
-    scroll-snap-align: start;
-    padding: 0.65rem 0.75rem;
-    border-radius: 10px;
-  }
-
-  .routine-phase strong {
-    font-size: 0.84rem;
-    margin-bottom: 0.2rem;
-  }
-
-  .routine-phase p {
-    font-size: 0.74rem;
-    line-height: 1.4;
-  }
-
-  .phase-time {
-    font-size: 0.66rem;
-    margin-bottom: 0.2rem;
-  }
-
-  .slide-bottom-dock {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.45rem;
-  }
-
-  .ratio-quick-stats {
-    gap: 0.4rem;
-  }
-
-  .stat-pill {
-    font-size: 0.72rem;
-    padding: 0.25rem 0.6rem;
-  }
-
-  /* Slides 2 & 3: Pillars Horizontal Snap Row */
-  .pillars-slide-grid {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    gap: 0.65rem;
-    padding-bottom: 0.25rem;
-  }
-
-  .pillars-slide-grid::-webkit-scrollbar {
-    display: none;
-  }
-
-  .pillar-story-card {
-    flex: 0 0 min(245px, 75vw);
-    scroll-snap-align: start;
-    padding: 0.9rem 0.85rem;
-    border-radius: 12px;
-  }
-
-  .pillar-icon-box {
-    width: 36px;
-    height: 36px;
-    margin-bottom: 0.6rem;
-  }
-
-  .pillar-heading {
-    font-size: 0.92rem;
-    margin-bottom: 0.35rem;
-  }
-
-  .pillar-sub {
-    font-size: 0.78rem;
-    line-height: 1.4;
-    margin-bottom: 0.6rem;
-  }
-
-  .pillar-footer-tag span {
-    font-size: 0.7rem;
-    padding: 0.16rem 0.45rem;
-  }
-
-  /* Slide 4: Comparison Table at 600px */
-  .comp-row {
-    grid-template-columns: 105px 1fr 1.1fr;
-    gap: 0.5rem;
-    padding: 0.4rem 0.6rem;
-    font-size: 0.74rem;
-  }
-
-  .comp-factor {
-    font-size: 0.74rem;
-  }
-
-  .comp-trad {
-    font-size: 0.72rem;
-  }
-
-  .comp-miracle {
-    font-size: 0.74rem;
-    padding: 0.22rem 0.45rem;
-  }
-
-  /* Slide 5: Pledge Card */
-  .pledge-card-wrap {
-    padding: 1rem 1.15rem;
-    border-radius: 14px;
-  }
-
-  .pledge-quote-text {
-    font-size: 0.82rem;
-    line-height: 1.5;
-    margin-bottom: 0.75rem;
-    padding-left: 0.75rem;
-  }
-
-  .pledge-trust-row {
-    gap: 0.4rem;
-    margin-bottom: 0.85rem;
-  }
-
-  .pledge-pill {
-    font-size: 0.7rem;
-    padding: 0.2rem 0.55rem;
-  }
-
-  .pledge-actions-row {
-    gap: 0.65rem;
-  }
-
-  .pledge-actions-row .btn {
-    font-size: 0.8rem;
-    padding: 0.45rem 0.95rem;
-  }
-
-  /* Bottom HUD */
-  .tablet-bottom-hud {
-    height: 34px;
-    min-height: 34px;
-    padding: 0 0.75rem;
-  }
-
-  .story-nav-dots {
-    gap: 0.4rem;
-  }
-
-  .story-dot {
-    width: 16px;
-    height: 4.5px;
-  }
-
-  .story-dot.is-active {
-    width: 24px;
-  }
-
-  .story-scroll-hint {
-    font-size: 0.7rem;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   3. LARGE MOBILE (max-width: 520px) — specifically 480px
-   -------------------------------------------------------------------------- */
-@media (max-width: 520px) {
-  .why-container {
-    padding: 0 0.65rem;
-  }
-
-  .tablet-device-chassis {
-    padding: 7px 7px 9px 7px;
-    border-radius: 18px;
-    box-shadow: 
-      0 0 0 1.5px rgba(255, 255, 255, 0.1),
-      0 0 0 2px rgba(15, 23, 42, 0.8),
-      inset 0 1px 1.5px rgba(255, 255, 255, 0.2),
-      inset 0 -1.5px 2px rgba(0, 0, 0, 0.8),
-      0 18px 40px -8px rgba(0, 0, 0, 0.85),
-      0 0 25px rgba(255, 122, 0, 0.14);
-  }
-
-  .tablet-camera-notch {
-    top: 3px;
-    height: 5px;
-    gap: 5px;
-  }
-
-  .tablet-camera-lens {
-    width: 4.5px;
-    height: 4.5px;
-  }
-
-  .tablet-sensor-dot {
-    width: 2.5px;
-    height: 2.5px;
-  }
-
-  .tablet-glass-glare {
-    inset: 7px 7px 9px 7px;
-    border-radius: 12px;
-  }
-
-  .tablet-screen-bezel {
-    border-radius: 13px;
-    min-height: 430px;
-  }
-
-  .tablet-os-bar {
-    height: 32px;
-    min-height: 32px;
-    padding: 0 0.65rem;
-  }
-
-  .os-brand {
-    font-size: 0.7rem;
-  }
-
-  .tablet-chapter-pill {
-    padding: 0.16rem 0.48rem;
-    font-size: 0.66rem;
-    max-width: 130px;
-  }
-
-  .os-time {
-    font-size: 0.68rem;
-  }
-
-  .os-battery {
-    width: 17px;
-    height: 8.5px;
-  }
-
-  .tablet-slide {
-    padding: 0.85rem 0.75rem;
-  }
-
-  .slide-kicker-row {
-    margin-bottom: 0.45rem;
-    flex-wrap: wrap;
-    gap: 0.35rem;
-  }
-
-  .slide-tag {
-    font-size: 0.68rem;
-    padding: 0.18rem 0.55rem;
-  }
-
-  .slide-badge-meta {
-    font-size: 0.66rem;
-  }
-
-  .slide-title {
-    font-size: 1.12rem;
-    margin-bottom: 0.3rem;
-  }
-
-  .slide-sub {
-    font-size: 0.76rem;
-    margin-bottom: 0.65rem;
-    line-height: 1.4;
-  }
-
-  /* Slide 1: Compact Ratio Bar & Routine */
-  .ratio-bar-track {
-    height: 32px;
-    margin-bottom: 0.85rem;
-  }
-
-  .ratio-segment {
-    font-size: 0.66rem;
-    padding: 0 0.3rem;
-  }
-
-  .routine-phase {
-    flex: 0 0 min(200px, 68vw);
-    padding: 0.6rem 0.7rem;
-  }
-
-  .routine-phase strong {
-    font-size: 0.82rem;
-  }
-
-  .routine-phase p {
-    font-size: 0.72rem;
-    line-height: 1.35;
-  }
-
-  .stat-pill {
-    font-size: 0.7rem;
-    padding: 0.2rem 0.55rem;
-  }
-
-  .stat-badge {
-    font-size: 0.7rem;
-  }
-
-  /* Slides 2 & 3: Compact Pillars */
-  .pillar-story-card {
-    flex: 0 0 min(230px, 76vw);
-    padding: 0.85rem 0.8rem;
-  }
-
-  .pillar-icon-box {
-    width: 34px;
-    height: 34px;
-    margin-bottom: 0.5rem;
-  }
-
-  .pillar-icon-box svg {
-    width: 17px;
-    height: 17px;
-  }
-
-  .pillar-heading {
-    font-size: 0.88rem;
-    margin-bottom: 0.3rem;
-  }
-
-  .pillar-sub {
-    font-size: 0.76rem;
-    line-height: 1.4;
-    margin-bottom: 0.5rem;
-  }
-
-  .pillar-footer-tag span {
-    font-size: 0.68rem;
-    padding: 0.14rem 0.4rem;
-  }
-
-  /* Slide 4: Comparison Rows become Structured Cards */
-  .comp-matrix-dashboard {
-    gap: 0.35rem;
-  }
-
-  .comp-row {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.2rem;
-    padding: 0.4rem 0.55rem;
-    border-radius: 8px;
-    font-size: 0.72rem;
-  }
-
-  .comp-factor {
-    font-size: 0.72rem;
-    color: #38BDF8;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    padding-bottom: 0.15rem;
-  }
-
-  .comp-trad {
-    font-size: 0.7rem;
-    line-height: 1.3;
-  }
-
-  .comp-trad::before {
-    content: '✕ Traditional: ';
-    color: #EF4444;
-    font-weight: 700;
-  }
-
-  .comp-miracle {
-    font-size: 0.72rem;
-    line-height: 1.3;
-    padding: 0.2rem 0.4rem;
-    border-radius: 5px;
-  }
-
-  .comp-miracle::before {
-    content: '✔ Miracle IT: ';
-    color: #10B981;
-    font-weight: 800;
-  }
-
-  /* Slide 5: Compact Pledge Card */
-  .pledge-card-wrap {
-    padding: 0.85rem 0.75rem;
-    border-radius: 12px;
-  }
-
-  .pledge-quote-text {
-    font-size: 0.78rem;
-    line-height: 1.42;
-    margin-bottom: 0.65rem;
-    padding-left: 0.65rem;
-    border-left-width: 2.5px;
-  }
-
-  .pledge-trust-row {
-    gap: 0.35rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .pledge-pill {
-    font-size: 0.68rem;
-    padding: 0.18rem 0.5rem;
-  }
-
-  .pledge-actions-row {
-    flex-direction: column;
-    width: 100%;
-    gap: 0.45rem;
-  }
-
-  .pledge-actions-row .btn {
-    width: 100%;
-    min-height: 38px;
-    font-size: 0.78rem;
-    padding: 0.45rem 0.75rem;
-    justify-content: center;
-    text-align: center;
-  }
-
-  /* Bottom HUD */
-  .tablet-bottom-hud {
-    height: 38px;
-    min-height: 38px;
-    padding: 0 0.5rem;
-  }
-
-  .hud-nav-arrow span {
-    display: none;
-  }
-
-  .hud-nav-arrow {
-    padding: 0.25rem 0.45rem;
-    min-width: 28px;
-    justify-content: center;
-  }
-
-  .story-nav-dots {
-    gap: 0.35rem;
-  }
-
-  .story-dot {
-    width: 14px;
-    height: 4px;
-  }
-
-  .story-dot.is-active {
-    width: 20px;
-  }
-
-  .story-scroll-hint {
-    display: none;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   4. STANDARD MOBILE (max-width: 420px) — specifically 390px
-   -------------------------------------------------------------------------- */
-@media (max-width: 420px) {
-  .tablet-screen-bezel {
-    min-height: 420px;
-    border-radius: 12px;
-  }
-
-  .tablet-os-bar {
-    height: 30px;
-    min-height: 30px;
-    padding: 0 0.55rem;
-  }
-
-  .os-brand {
-    font-size: 0.69rem;
-  }
-
-  .tablet-chapter-pill {
-    padding: 0.14rem 0.42rem;
-    font-size: 0.65rem;
-    max-width: 115px;
-  }
-
-  .os-time {
-    font-size: 0.67rem;
-  }
-
-  .os-battery {
-    width: 16px;
-    height: 8px;
-  }
-
-  .tablet-slide {
-    padding: 0.8rem 0.65rem;
-  }
-
-  .slide-title {
-    font-size: 1.05rem;
-    margin-bottom: 0.25rem;
-  }
-
-  .slide-sub {
-    font-size: 0.72rem;
-    margin-bottom: 0.55rem;
-    line-height: 1.35;
-  }
-
-  /* Slide 1 */
-  .ratio-bar-track {
-    height: 30px;
-  }
-
-  .ratio-segment {
-    font-size: 0.64rem;
-    padding: 0 0.25rem;
-  }
-
-  .routine-phase {
-    flex: 0 0 185px;
-    padding: 0.55rem 0.65rem;
-  }
-
-  .routine-phase strong {
-    font-size: 0.8rem;
-  }
-
-  .routine-phase p {
-    font-size: 0.7rem;
-  }
-
-  .stat-pill {
-    font-size: 0.68rem;
-    padding: 0.18rem 0.5rem;
-  }
-
-  /* Slides 2 & 3 */
-  .pillar-story-card {
-    flex: 0 0 215px;
-    padding: 0.75rem 0.7rem;
-  }
-
-  .pillar-heading {
-    font-size: 0.85rem;
-  }
-
-  .pillar-sub {
-    font-size: 0.74rem;
-  }
-
-  .pillar-footer-tag span {
-    font-size: 0.66rem;
-    padding: 0.12rem 0.35rem;
-  }
-
-  /* Slide 4 */
-  .comp-row {
-    padding: 0.35rem 0.5rem;
-    gap: 0.18rem;
-  }
-
-  .comp-factor {
-    font-size: 0.7rem;
-  }
-
-  .comp-trad {
-    font-size: 0.68rem;
-  }
-
-  .comp-miracle {
-    font-size: 0.7rem;
-    padding: 0.18rem 0.35rem;
-  }
-
-  /* Slide 5 */
-  .pledge-card-wrap {
-    padding: 0.8rem 0.65rem;
-  }
-
-  .pledge-quote-text {
-    font-size: 0.75rem;
-    margin-bottom: 0.55rem;
-  }
-
-  .pledge-pill {
-    font-size: 0.65rem;
-    padding: 0.15rem 0.45rem;
-  }
-
-  .pledge-actions-row .btn {
-    min-height: 36px;
-    font-size: 0.76rem;
-  }
-
-  /* Bottom HUD */
-  .tablet-bottom-hud {
-    height: 30px;
-    min-height: 30px;
-    padding: 0 0.55rem;
-  }
-
-  .story-dot {
-    width: 13px;
-    height: 3.5px;
-  }
-
-  .story-dot.is-active {
-    width: 18px;
-  }
-
-  .story-scroll-hint {
-    font-size: 0.65rem;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   5. COMPACT MOBILE (max-width: 360px) — specifically 360px & down to 320px
-   -------------------------------------------------------------------------- */
-@media (max-width: 360px) {
-  .why-container {
-    padding: 0 0.5rem;
-  }
-
-  .tablet-device-chassis {
-    padding: 6px 6px 8px 6px;
-    border-radius: 16px;
-    box-shadow: 
-      0 0 0 1px rgba(255, 255, 255, 0.1),
-      0 0 0 2px rgba(15, 23, 42, 0.8),
-      inset 0 1px 1px rgba(255, 255, 255, 0.18),
-      inset 0 -1px 2px rgba(0, 0, 0, 0.8),
-      0 12px 30px -6px rgba(0, 0, 0, 0.85);
-  }
-
-  .tablet-camera-notch {
-    top: 2.5px;
-    height: 4.5px;
-    gap: 4px;
-  }
-
-  .tablet-camera-lens {
-    width: 4px;
-    height: 4px;
-  }
-
-  .tablet-sensor-dot {
-    width: 2px;
-    height: 2px;
-  }
-
-  .tablet-glass-glare {
-    inset: 6px 6px 8px 6px;
-    border-radius: 10px;
-  }
-
-  .tablet-screen-bezel {
-    min-height: 410px;
-    border-radius: 10px;
-  }
-
-  .tablet-os-bar {
-    height: 28px;
-    min-height: 28px;
-    padding: 0 0.45rem;
-  }
-
-  .os-brand {
-    font-size: 0.66rem;
-  }
-
-  .tablet-chapter-pill {
-    padding: 0.12rem 0.38rem;
-    font-size: 0.62rem;
-    max-width: 95px;
-  }
-
-  .chapter-live-dot {
-    width: 5px;
-    height: 5px;
-  }
-
-  .os-time {
-    font-size: 0.65rem;
-  }
-
-  .os-battery {
-    width: 15px;
-    height: 8px;
-  }
-
-  .tablet-slide {
-    padding: 0.7rem 0.55rem;
-  }
-
-  .slide-tag {
-    font-size: 0.62rem;
-    padding: 0.12rem 0.42rem;
-  }
-
-  .slide-badge-meta {
-    font-size: 0.62rem;
-  }
-
-  .slide-title {
-    font-size: 0.98rem;
-    margin-bottom: 0.2rem;
-  }
-
-  .slide-sub {
-    font-size: 0.68rem;
-    margin-bottom: 0.45rem;
-    line-height: 1.3;
-  }
-
-  /* Slide 1 */
-  .ratio-bar-track {
-    height: 28px;
-    margin-bottom: 0.7rem;
-  }
-
-  .ratio-segment {
-    font-size: 0.62rem;
-    padding: 0 0.2rem;
-  }
-
-  .routine-phase {
-    flex: 0 0 170px;
-    padding: 0.5rem 0.6rem;
-  }
-
-  .routine-phase strong {
-    font-size: 0.78rem;
-  }
-
-  .routine-phase p {
-    font-size: 0.68rem;
-    line-height: 1.3;
-  }
-
-  .stat-pill {
-    font-size: 0.65rem;
-    padding: 0.15rem 0.45rem;
-  }
-
-  /* Slides 2 & 3 */
-  .pillar-story-card {
-    flex: 0 0 200px;
-    padding: 0.7rem 0.65rem;
-  }
-
-  .pillar-icon-box {
-    width: 30px;
-    height: 30px;
-    margin-bottom: 0.45rem;
-  }
-
-  .pillar-icon-box svg {
-    width: 15px;
-    height: 15px;
-  }
-
-  .pillar-heading {
-    font-size: 0.82rem;
-  }
-
-  .pillar-sub {
-    font-size: 0.72rem;
-    line-height: 1.35;
-  }
-
-  .pillar-footer-tag span {
-    font-size: 0.64rem;
-    padding: 0.1rem 0.3rem;
-  }
-
-  /* Slide 4 */
-  .comp-row {
-    padding: 0.3rem 0.45rem;
-    gap: 0.15rem;
-  }
-
-  .comp-factor {
-    font-size: 0.68rem;
-  }
-
-  .comp-trad {
-    font-size: 0.66rem;
-  }
-
-  .comp-miracle {
-    font-size: 0.68rem;
-    padding: 0.15rem 0.3rem;
-  }
-
-  /* Slide 5 */
-  .pledge-card-wrap {
-    padding: 0.7rem 0.55rem;
-  }
-
-  .pledge-quote-text {
-    font-size: 0.72rem;
-    margin-bottom: 0.5rem;
-    padding-left: 0.5rem;
-  }
-
-  .pledge-trust-row {
-    gap: 0.25rem;
-    margin-bottom: 0.6rem;
-  }
-
-  .pledge-pill {
-    font-size: 0.62rem;
-    padding: 0.12rem 0.38rem;
-  }
-
-  .pledge-actions-row .btn {
-    min-height: 35px;
-    font-size: 0.72rem;
-    padding: 0.35rem 0.45rem;
-  }
-
-  /* Bottom HUD */
-  .tablet-bottom-hud {
-    height: 38px;
-    min-height: 38px;
-    padding: 0 0.45rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .hud-nav-arrow span {
-    display: none;
-  }
-
-  .hud-nav-arrow {
-    padding: 0.2rem 0.35rem;
-    min-width: 26px;
-    min-height: 28px;
-  }
-
-  .story-dot {
-    width: 12px;
-    height: 3px;
-  }
-
-  .story-dot.is-active {
-    width: 16px;
-  }
-
-  .story-scroll-hint {
-    font-size: 0.62rem;
-  }
-}
 
 /* ==========================================================================
    ACCESSIBILITY & PREFERS-REDUCED-MOTION
@@ -3753,3 +2787,911 @@
 .comp-miracle::before,
 .comp-trad::before,
 .comp-icon { flex-shrink: 0; }
+
+/* ==========================================================================
+   MOBILE & SMALL SCREEN TABLET DENSITY & NO-EMPTY-SPACE REFINEMENTS (< 1024px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .section-light .tablet-slide {
+    justify-content: center !important;
+    padding: clamp(0.75rem, 2.4vw, 1.25rem) clamp(0.7rem, 2vw, 1.15rem) !important;
+  }
+
+  .section-light .tablet-slide.slide-formula {
+    justify-content: flex-start !important;
+  }
+
+  .section-light .slide-title {
+    font-size: clamp(0.95rem, 2.7vw, 1.15rem) !important;
+    line-height: 1.25 !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  .section-light .slide-sub {
+    font-size: clamp(0.72rem, 1.9vw, 0.8rem) !important;
+    line-height: 1.35 !important;
+    margin-bottom: 0.45rem !important;
+  }
+
+  .section-light .ratio-bar-track {
+    height: 30px !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .section-light .ratio-segment {
+    font-size: 0.72rem !important;
+  }
+
+  .section-light .slide-bottom-dock {
+    margin-top: 0.4rem !important;
+  }
+
+  .section-light .stat-pill {
+    padding: 0.2rem 0.5rem !important;
+    font-size: 0.68rem !important;
+  }
+
+  .section-light .lab-console-strip {
+    padding: 0.28rem 0.55rem !important;
+    font-size: 0.66rem !important;
+  }
+
+  /* Slide 4 (Comparison Matrix) on Mobile */
+  .slide-matrix .comp-matrix-dashboard {
+    gap: 4px !important;
+  }
+
+  .slide-matrix .comp-row {
+    padding: 0.35rem 0.6rem !important;
+  }
+
+  /* Slide 5 (Pledge) on Mobile */
+  .slide-pledge .pledge-seal {
+    width: 52px !important;
+    height: 52px !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  .slide-pledge .pledge-quote-text {
+    font-size: 0.76rem !important;
+    line-height: 1.38 !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .slide-pledge .pledge-trust-row {
+    gap: 0.3rem !important;
+    margin-bottom: 0.6rem !important;
+  }
+
+  .slide-pledge .pledge-pill {
+    font-size: 0.66rem !important;
+    padding: 0.15rem 0.45rem !important;
+  }
+
+  .slide-pledge .pledge-actions-row {
+    gap: 0.4rem !important;
+  }
+
+  .slide-pledge .pledge-actions-row .btn {
+    min-height: 36px !important;
+    font-size: 0.76rem !important;
+    padding: 0.38rem 0.7rem !important;
+  }
+}
+
+/* ==========================================================================
+   AUTHENTIC FLAGSHIP SMARTPHONE DEVICE TRANSFORMATION (max-width: 680px)
+   Transforms the tablet into an ultra-realistic smartphone in portrait orientation.
+   Features:
+   - Contained viewport height (no more excessive/stretched page length)
+   - 2-Way Navigation: Horizontal chapter swipe + smooth vertical slide scroll
+   - Dynamic Island notch with sapphire lens glint & green privacy indicator
+   - Titanium frame with realistic chamfer, metallic rim, and desk contact shadow
+   - Physical hardware details: side power button (right), volume buttons (left), speaker grille
+   - Native mobile status bar with time, wifi, cellular, battery
+   - Genuine, polished mobile app UI inside each slide
+   - Floating glass bottom HUD with chapter dots & Apple-style Home Indicator
+   ========================================================================== */
+@media (max-width: 680px) {
+  #why-miracle-it.why-section {
+    padding-top: clamp(2.5rem, 5vw, 3.5rem) !important;
+    padding-bottom: clamp(2.5rem, 5vw, 3.5rem) !important;
+  }
+
+  #why-miracle-it .why-container {
+    padding: 0 0.75rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  #why-miracle-it .why-header {
+    margin-bottom: 1.25rem !important;
+    text-align: center !important;
+  }
+
+  #why-miracle-it .why-header .section-tag {
+    font-size: 0.7rem !important;
+    padding: 0.18rem 0.65rem !important;
+  }
+
+  #why-miracle-it .why-header h2 {
+    font-size: clamp(1.25rem, 5vw, 1.55rem) !important;
+    line-height: 1.25 !important;
+  }
+
+  /* 1. Smartphone Perspective Stage: Centered Smartphone Proportions */
+  #why-miracle-it .tablet-perspective-stage {
+    max-width: min(390px, calc(100vw - 1.5rem)) !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    perspective: 1200px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    position: relative !important;
+    overflow: visible !important;
+  }
+
+  /* 2. Authentic Flagship Smartphone Chassis (iPhone 16 Pro / Flagship Silhouette) */
+  #why-miracle-it .tablet-device-chassis {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 10px 10px 12px 10px !important;
+    border-radius: 46px !important;
+    background: linear-gradient(155deg, #3A4354 0%, #1E2638 35%, #0F1522 70%, #222B3D 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.22) !important;
+    box-shadow: 
+      0 0 0 1px rgba(255, 255, 255, 0.25),
+      0 0 0 2.5px #111724,
+      0 0 0 4px rgba(255, 255, 255, 0.08),
+      inset 0 1.5px 2px rgba(255, 255, 255, 0.38),
+      inset 0 -2px 3px rgba(0, 0, 0, 0.9),
+      0 20px 48px -8px rgba(15, 23, 42, 0.35),
+      0 0 35px rgba(255, 122, 0, 0.08) !important;
+    position: relative !important;
+    box-sizing: border-box !important;
+    transform: none !important;
+  }
+
+  /* Physical Hardware: Power Button on Right Edge */
+  #why-miracle-it .tablet-power-btn {
+    display: block !important;
+    position: absolute !important;
+    right: -3.5px !important;
+    left: auto !important;
+    top: 110px !important;
+    width: 3.5px !important;
+    height: 50px !important;
+    background: linear-gradient(180deg, #64748B 0%, #334155 100%) !important;
+    border-radius: 0 3px 3px 0 !important;
+    box-shadow: 1px 0 2px rgba(255, 255, 255, 0.25) !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+  }
+
+  /* Physical Hardware: Volume Buttons on Left Edge */
+  #why-miracle-it .tablet-volume-rocker {
+    display: flex !important;
+    position: absolute !important;
+    left: -3.5px !important;
+    right: auto !important;
+    top: 92px !important;
+    width: 3.5px !important;
+    height: 76px !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+  }
+
+  #why-miracle-it .tablet-volume-rocker .vol-btn {
+    display: block !important;
+    width: 3.5px !important;
+    height: 35px !important;
+    background: linear-gradient(180deg, #64748B 0%, #334155 100%) !important;
+    border-radius: 3px 0 0 3px !important;
+    box-shadow: -1px 0 2px rgba(255, 255, 255, 0.25) !important;
+  }
+
+  /* Top Stereo Speaker Earpiece */
+  #why-miracle-it .tablet-speaker-slots {
+    position: absolute !important;
+    top: 4px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    display: flex !important;
+    gap: 3px !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+  }
+
+  #why-miracle-it .tablet-speaker-slots i {
+    display: block !important;
+    width: 3px !important;
+    height: 2px !important;
+    background: #090D15 !important;
+    border-radius: 1px !important;
+  }
+
+  /* Antenna Bands on Smartphone Frame */
+  #why-miracle-it .tablet-antenna-band.band-tl { top: 0 !important; left: 24px !important; width: 1.5px !important; height: 10px !important; }
+  #why-miracle-it .tablet-antenna-band.band-tr { top: 0 !important; right: 24px !important; width: 1.5px !important; height: 10px !important; }
+
+  /* 3. Dynamic Island Notch: Flagship Smartphone Pill */
+  #why-miracle-it .tablet-camera-notch {
+    position: absolute !important;
+    top: 8px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 90px !important;
+    height: 20px !important;
+    background: #000000 !important;
+    border-radius: 20px !important;
+    z-index: 30 !important;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 2px 6px rgba(0, 0, 0, 0.7) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0 8px !important;
+    box-sizing: border-box !important;
+    pointer-events: none !important;
+  }
+
+  #why-miracle-it .tablet-camera-housing {
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  #why-miracle-it .tablet-camera-lens {
+    width: 9px !important;
+    height: 9px !important;
+    border-radius: 50% !important;
+    background: radial-gradient(circle at 35% 35%, #38BDF8 0%, #1D4ED8 45%, #050B14 100%) !important;
+    box-shadow: 0 0 2px rgba(56, 189, 248, 0.7) !important;
+    display: block !important;
+    position: relative !important;
+  }
+
+  #why-miracle-it .lens-glint {
+    width: 3px !important;
+    height: 3px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.85) !important;
+    display: block !important;
+  }
+
+  #why-miracle-it .tablet-sensor-dot {
+    width: 5px !important;
+    height: 5px !important;
+    border-radius: 50% !important;
+    background: #090D15 !important;
+    display: block !important;
+  }
+
+  #why-miracle-it .tablet-privacy-led {
+    width: 3px !important;
+    height: 3px !important;
+    border-radius: 50% !important;
+    background: #10B981 !important;
+    box-shadow: 0 0 4px #10B981 !important;
+    display: block !important;
+  }
+
+  #why-miracle-it .tablet-mic-hole {
+    display: none !important;
+  }
+
+  /* 4. Smartphone Display Screen (Proper Aspect Ratio, Not Stretched Tall) */
+  #why-miracle-it .tablet-screen-bezel {
+    border-radius: 36px !important;
+    height: clamp(500px, 68vh, 560px) !important;
+    max-height: calc(100vh - 120px) !important;
+    min-height: unset !important;
+    background: #FFFFFF !important;
+    border: 1px solid #E2E8F0 !important;
+    box-shadow: 
+      inset 0 1px 3px rgba(15, 23, 42, 0.08),
+      inset 0 -1px 2px rgba(15, 23, 42, 0.04),
+      0 4px 16px rgba(15, 23, 42, 0.04) !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+  }
+
+  /* Glass Glare Layer across Screen */
+  #why-miracle-it .tablet-glass-glare {
+    inset: 8px 8px 10px 8px !important;
+    border-radius: 28px !important;
+    pointer-events: none !important;
+  }
+
+  /* 5. Smartphone Native Status Bar */
+  #why-miracle-it .tablet-os-bar {
+    height: 38px !important;
+    min-height: 38px !important;
+    padding: 0 1.25rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    background: #F8FAFC !important;
+    border-bottom: 1px solid #E2E8F0 !important;
+    z-index: 20 !important;
+    position: relative !important;
+  }
+
+  #why-miracle-it .os-left {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.35rem !important;
+  }
+
+  #why-miracle-it .os-brand {
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+    color: #0F172A !important;
+    font-family: var(--font-mono, monospace) !important;
+  }
+
+  #why-miracle-it .os-brand .os-version,
+  #why-miracle-it .os-dot-separator,
+  #why-miracle-it .os-location {
+    display: none !important;
+  }
+
+  #why-miracle-it .os-center {
+    display: none !important; /* Dynamic Island sits physically in center */
+  }
+
+  #why-miracle-it .os-right {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.45rem !important;
+  }
+
+  #why-miracle-it .os-badge-pill {
+    display: none !important;
+  }
+
+  #why-miracle-it .os-time {
+    font-size: 0.74rem !important;
+    font-weight: 700 !important;
+    color: #0F172A !important;
+    font-family: var(--font-mono, monospace) !important;
+  }
+
+  #why-miracle-it .os-battery {
+    width: 18px !important;
+    height: 9px !important;
+    border-radius: 2.5px !important;
+    border: 1.5px solid #64748B !important;
+    position: relative !important;
+  }
+
+  #why-miracle-it .battery-level {
+    background: #10B981 !important;
+  }
+
+  /* 6. Story Track & Viewport: Sideways Swipe Between Chapters */
+  #why-miracle-it .tablet-story-viewport {
+    flex: 1 !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    position: relative !important;
+  }
+
+  #why-miracle-it .tablet-story-viewport::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  #why-miracle-it .tablet-story-track {
+    display: flex !important;
+    width: 500% !important;
+    height: 100% !important;
+  }
+
+  /* 7. Individual Slide: Up-and-Down Vertical Scrolling Inside */
+  #why-miracle-it .tablet-slide {
+    width: 20% !important;
+    height: 100% !important;
+    flex-shrink: 0 !important;
+    scroll-snap-align: center !important;
+    padding: 0.75rem 0.95rem 2.2rem 0.95rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: thin !important;
+    scrollbar-color: rgba(15, 23, 42, 0.18) transparent !important;
+    box-sizing: border-box !important;
+    touch-action: pan-y pan-x !important;
+  }
+
+  #why-miracle-it .tablet-slide::-webkit-scrollbar {
+    width: 3.5px !important;
+  }
+
+  #why-miracle-it .tablet-slide::-webkit-scrollbar-thumb {
+    background: rgba(15, 23, 42, 0.18) !important;
+    border-radius: 4px !important;
+  }
+
+  #why-miracle-it .slide-content-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* Mobile App Kicker Row */
+  #why-miracle-it .slide-kicker-row {
+    margin-bottom: 0.45rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 0.35rem !important;
+  }
+
+  #why-miracle-it .slide-tag {
+    font-size: 0.68rem !important;
+    padding: 0.2rem 0.55rem !important;
+    border-radius: var(--radius-full, 9999px) !important;
+    background: #FFF7ED !important;
+    color: #C2410C !important;
+    border: 1px solid #FED7AA !important;
+    font-weight: 700 !important;
+  }
+
+  #why-miracle-it .slide-badge-meta {
+    font-size: 0.64rem !important;
+    padding: 0.15rem 0.45rem !important;
+    border-radius: var(--radius-full, 9999px) !important;
+    background: #F1F5F9 !important;
+    color: #64748B !important;
+    border: 1px solid #E2E8F0 !important;
+    white-space: nowrap !important;
+  }
+
+  #why-miracle-it .slide-title {
+    font-size: 1.08rem !important;
+    font-weight: 800 !important;
+    line-height: 1.28 !important;
+    margin-bottom: 0.35rem !important;
+    color: #0F172A !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  #why-miracle-it .slide-sub {
+    font-size: 0.78rem !important;
+    color: #475569 !important;
+    line-height: 1.38 !important;
+    margin-bottom: 0.65rem !important;
+  }
+
+  /* Slide 1: Ratio Bar */
+  #why-miracle-it .ratio-bar-track {
+    height: 32px !important;
+    margin-bottom: 0.65rem !important;
+    border-radius: 8px !important;
+    background: #F1F5F9 !important;
+    border: 1px solid #CBD5E1 !important;
+  }
+
+  #why-miracle-it .ratio-text-desktop { display: none !important; }
+  #why-miracle-it .ratio-text-mobile { display: inline !important; }
+
+  #why-miracle-it .ratio-segment {
+    font-size: 0.7rem !important;
+    padding: 0 0.45rem !important;
+    font-weight: 700 !important;
+  }
+
+  /* Slide 1: Daily Routine Progression Cards */
+  #why-miracle-it .daily-routine-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.4rem !important;
+    margin-bottom: 0.65rem !important;
+    overflow: visible !important;
+  }
+
+  #why-miracle-it .daily-routine-grid::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  #why-miracle-it .routine-phase {
+    flex: 1 1 auto !important;
+    width: 100% !important;
+    padding: 0.5rem 0.75rem !important;
+    border-radius: 10px !important;
+    background: #F8FAFC !important;
+    border: 1px solid #E2E8F0 !important;
+    box-sizing: border-box !important;
+  }
+
+  #why-miracle-it .routine-phase.phase-active {
+    background: #F0FDF4 !important;
+    border-color: #86EFAC !important;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.15) !important;
+  }
+
+  #why-miracle-it .phase-time {
+    font-size: 0.64rem !important;
+    font-weight: 700 !important;
+    color: #0284C7 !important;
+    font-family: var(--font-mono, monospace) !important;
+    margin-bottom: 0.15rem !important;
+  }
+
+  #why-miracle-it .routine-phase strong {
+    font-size: 0.82rem !important;
+    color: #0F172A !important;
+    margin-bottom: 0.15rem !important;
+    display: block !important;
+  }
+
+  #why-miracle-it .routine-phase p {
+    font-size: 0.72rem !important;
+    color: #64748B !important;
+    line-height: 1.35 !important;
+    margin: 0 !important;
+  }
+
+  /* Slide 1 Bottom Dock */
+  #why-miracle-it .slide-bottom-dock {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.4rem !important;
+    margin-top: 0.5rem !important;
+  }
+
+  #why-miracle-it .ratio-quick-stats {
+    display: flex !important;
+    justify-content: space-between !important;
+    gap: 0.35rem !important;
+  }
+
+  #why-miracle-it .stat-pill {
+    flex: 1 !important;
+    font-size: 0.7rem !important;
+    padding: 0.25rem 0.55rem !important;
+    justify-content: center !important;
+    text-align: center !important;
+    background: #F1F5F9 !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: var(--radius-full, 9999px) !important;
+    color: #334155 !important;
+    font-weight: 600 !important;
+  }
+
+  #why-miracle-it .stat-badge {
+    font-weight: 800 !important;
+    color: var(--color-brand, #FF7A00) !important;
+    margin-right: 0.25rem !important;
+  }
+
+  #why-miracle-it .lab-console-strip {
+    padding: 0.35rem 0.65rem !important;
+    font-size: 0.68rem !important;
+    background: #0B1120 !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  #why-miracle-it .console-feed {
+    color: #38BDF8 !important;
+    font-family: var(--font-mono, monospace) !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+    max-width: 220px !important;
+  }
+
+  #why-miracle-it .console-status {
+    font-size: 0.64rem !important;
+    color: #10B981 !important;
+    font-weight: 700 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.25rem !important;
+  }
+
+  /* Slides 2 & 3: Stacked Feature Cards */
+  #why-miracle-it .pillars-slide-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.55rem !important;
+    overflow: visible !important;
+    padding-bottom: 0 !important;
+  }
+
+  #why-miracle-it .pillars-slide-grid::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  #why-miracle-it .pillar-story-card {
+    flex: 1 1 auto !important;
+    width: 100% !important;
+    padding: 0.75rem 0.85rem !important;
+    border-radius: 12px !important;
+    background: #F8FAFC !important;
+    border: 1px solid #E2E8F0 !important;
+    box-sizing: border-box !important;
+  }
+
+  #why-miracle-it .pillar-icon-box {
+    width: 30px !important;
+    height: 30px !important;
+    margin-bottom: 0.35rem !important;
+    border-radius: 8px !important;
+  }
+
+  #why-miracle-it .pillar-icon-box svg {
+    width: 15px !important;
+    height: 15px !important;
+  }
+
+  #why-miracle-it .pillar-heading {
+    font-size: 0.88rem !important;
+    color: #0F172A !important;
+    margin-bottom: 0.25rem !important;
+    font-weight: 700 !important;
+  }
+
+  #why-miracle-it .pillar-sub {
+    font-size: 0.74rem !important;
+    color: #64748B !important;
+    line-height: 1.35 !important;
+    margin-bottom: 0.45rem !important;
+  }
+
+  #why-miracle-it .pillar-footer-tag {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.3rem !important;
+  }
+
+  #why-miracle-it .pillar-footer-tag span {
+    font-size: 0.66rem !important;
+    padding: 0.12rem 0.4rem !important;
+    background: #F1F5F9 !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: var(--radius-full, 9999px) !important;
+    color: #334155 !important;
+    font-weight: 600 !important;
+  }
+
+  /* Slide 4: Comparison Rows */
+  #why-miracle-it .comp-matrix-dashboard {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.35rem !important;
+  }
+
+  #why-miracle-it .comp-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.2rem !important;
+    padding: 0.38rem 0.6rem !important;
+    border-radius: 8px !important;
+    background: #F8FAFC !important;
+    border: 1px solid #E2E8F0 !important;
+  }
+
+  #why-miracle-it .comp-factor {
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+    color: #0284C7 !important;
+    border-bottom: 1px solid #E2E8F0 !important;
+    padding-bottom: 0.15rem !important;
+  }
+
+  #why-miracle-it .comp-trad {
+    font-size: 0.7rem !important;
+    color: #64748B !important;
+    line-height: 1.3 !important;
+  }
+
+  #why-miracle-it .comp-trad::before {
+    content: '✕ Traditional: ' !important;
+    color: #EF4444 !important;
+    font-weight: 700 !important;
+  }
+
+  #why-miracle-it .comp-miracle {
+    font-size: 0.72rem !important;
+    color: #065F46 !important;
+    background: #ECFDF5 !important;
+    border: 1px solid #A7F3D0 !important;
+    border-radius: 5px !important;
+    padding: 0.15rem 0.4rem !important;
+    line-height: 1.3 !important;
+  }
+
+  #why-miracle-it .comp-miracle::before {
+    content: '✔ Miracle IT: ' !important;
+    color: #10B981 !important;
+    font-weight: 800 !important;
+  }
+
+  /* Slide 5: Pledge Card */
+  #why-miracle-it .pledge-card-wrap {
+    padding: 0.85rem 0.75rem !important;
+    border-radius: 12px !important;
+    background: #F8FAFC !important;
+    border: 1px solid #E2E8F0 !important;
+    text-align: center !important;
+  }
+
+  #why-miracle-it .pledge-seal {
+    width: 50px !important;
+    height: 50px !important;
+    margin: 0 auto 0.4rem auto !important;
+  }
+
+  #why-miracle-it .pledge-quote-text {
+    font-size: 0.76rem !important;
+    color: #334155 !important;
+    line-height: 1.38 !important;
+    margin-bottom: 0.65rem !important;
+    padding-left: 0.65rem !important;
+    border-left: 3px solid var(--color-brand, #FF7A00) !important;
+    text-align: left !important;
+  }
+
+  #why-miracle-it .pledge-trust-row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 0.3rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  #why-miracle-it .pledge-pill {
+    font-size: 0.66rem !important;
+    padding: 0.14rem 0.45rem !important;
+    background: #FFFFFF !important;
+    border: 1px solid #CBD5E1 !important;
+    border-radius: var(--radius-full, 9999px) !important;
+    color: #0F172A !important;
+    font-weight: 600 !important;
+  }
+
+  #why-miracle-it .pledge-actions-row {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 0.4rem !important;
+  }
+
+  #why-miracle-it .pledge-actions-row .btn {
+    width: 100% !important;
+    min-height: 38px !important;
+    font-size: 0.78rem !important;
+    padding: 0.4rem 0.75rem !important;
+    justify-content: center !important;
+    text-align: center !important;
+    border-radius: var(--radius-full, 9999px) !important;
+  }
+
+  /* 8. Native Mobile App Floating Bottom HUD */
+  #why-miracle-it .tablet-bottom-hud {
+    height: 38px !important;
+    min-height: 38px !important;
+    padding: 0 0.85rem !important;
+    background: rgba(248, 250, 252, 0.95) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-top: 1px solid #E2E8F0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    position: relative !important;
+    z-index: 20 !important;
+  }
+
+  #why-miracle-it .hud-nav-arrow {
+    width: 26px !important;
+    height: 26px !important;
+    min-width: 26px !important;
+    border-radius: 50% !important;
+    background: #FFFFFF !important;
+    border: 1px solid #E2E8F0 !important;
+    color: #0F172A !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  #why-miracle-it .hud-nav-arrow span {
+    display: none !important;
+  }
+
+  #why-miracle-it .hud-nav-arrow svg {
+    width: 12px !important;
+    height: 12px !important;
+  }
+
+  #why-miracle-it .story-nav-dots {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.35rem !important;
+  }
+
+  #why-miracle-it .story-dot {
+    width: 14px !important;
+    height: 4px !important;
+    border-radius: 3px !important;
+    background: #CBD5E1 !important;
+  }
+
+  #why-miracle-it .story-dot.is-active {
+    width: 22px !important;
+    background: var(--color-brand, #FF7A00) !important;
+  }
+
+  #why-miracle-it .story-scroll-hint {
+    display: none !important;
+  }
+
+  /* 9. Authentic iOS / Android Home Indicator */
+  #why-miracle-it .tablet-home-indicator {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 5px 0 6px 0 !important;
+    background: rgba(248, 250, 252, 0.95) !important;
+    position: relative !important;
+    z-index: 20 !important;
+  }
+
+  #why-miracle-it .tablet-home-indicator::after {
+    content: '' !important;
+    display: block !important;
+    width: 110px !important;
+    height: 4px !important;
+    border-radius: 10px !important;
+    background: rgba(15, 23, 42, 0.35) !important;
+    margin: 0 auto !important;
+  }
+
+  /* 10. Smartphone Contact Shadow */
+  #why-miracle-it .tablet-desk-shadow {
+    width: 78% !important;
+    height: 18px !important;
+    margin: 8px auto 0 auto !important;
+    background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(15, 23, 42, 0.28) 0%, transparent 75%) !important;
+    filter: blur(10px) !important;
+  }
+}
+
+/* Micro Smartphone Adjustments (max-width: 380px) */
+@media (max-width: 380px) {
+  #why-miracle-it .tablet-screen-bezel {
+    height: clamp(460px, 65vh, 510px) !important;
+  }
+
+  #why-miracle-it .slide-title {
+    font-size: 1.02rem !important;
+  }
+
+  #why-miracle-it .routine-phase strong {
+    font-size: 0.78rem !important;
+  }
+
+  #why-miracle-it .tablet-home-indicator::after {
+    width: 90px !important;
+  }
+}
+
+

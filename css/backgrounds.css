@@ -318,7 +318,7 @@
     /* Fine converging technical grid (44px x 44px) */
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44'%3E%3Cpath d='M 44 0 L 0 0 0 44' fill='none' stroke='rgba(255,255,255,0.048)' stroke-width='1'/%3E%3Ccircle cx='44' cy='44' r='1' fill='rgba(255,122,0,0.25)'/%3E%3C/svg%3E"),
     /* Deep obsidian vertical gradient */
-    linear-gradient(180deg, var(--color-bg-alt, #07090E) 0%, var(--color-bg, #0A0E1A) 100%) !important;
+    linear-gradient(180deg, #0A0E1A 0%, #07090E 100%) !important;
   background-size: auto, auto, 44px 44px, 100% 100% !important;
   background-position: center top, center, center top, center !important;
 }
@@ -346,11 +346,30 @@
 
 
 /* --------------------------------------------------------------------------
-   8. VISUAL BREATHING ROOM SECTIONS
+   8. LOCATION SECTION — Deep Slate Atmosphere + Clean Blueprint Accents
+   Section: #location / .location-section
+   -------------------------------------------------------------------------- */
+
+#location.location-section,
+.location-section {
+  position: relative;
+  background-color: #080E18 !important;
+  background-image:
+    /* Deep slate radial atmosphere */
+    radial-gradient(ellipse 900px 520px at 50% 18%, rgba(15, 23, 42, 0.95) 0%, #080E18 75%),
+    /* Micro tech dot grid */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'%3E%3Ccircle cx='18' cy='18' r='1' fill='rgba(255,255,255,0.035)'/%3E%3C/svg%3E") !important;
+  background-size: 100% 100%, 36px 36px !important;
+  background-position: center top, 0 0 !important;
+  color: #F8FAFC;
+}
+
+
+/* --------------------------------------------------------------------------
+   9. VISUAL BREATHING ROOM SECTIONS
    The following sections intentionally retain their clean styling for balance:
    - #problem (.problem-section)
    - #who-can-join (.who-join-section)
-   - #location (.location-section)
    - #faq (.faq-section)
    -------------------------------------------------------------------------- */
 

@@ -48,47 +48,51 @@ function initLearningExperience(container = document) {
     const width = window.innerWidth;
     if (width <= 360) {
       return {
-        sideOffset: 85,
-        depthCenter: 15,
+        sideOffset: 65,
+        depthCenter: 12,
         depthSide: -25,
-        depthBack: -80,
-        rotateAngle: 6,
+        depthBack: -75,
+        rotateAngle: 5,
         scaleCenter: 1,
-        scaleSide: 0.74,
-        scaleBack: 0.54
+        scaleSide: 0.70,
+        scaleBack: 0.50,
+        opacitySide: 0.25
       };
     } else if (width <= 420) {
       return {
-        sideOffset: 140,
-        depthCenter: 22,
+        sideOffset: 95,
+        depthCenter: 18,
         depthSide: -30,
-        depthBack: -95,
-        rotateAngle: 10,
+        depthBack: -85,
+        rotateAngle: 8,
         scaleCenter: 1,
-        scaleSide: 0.82,
-        scaleBack: 0.62
+        scaleSide: 0.75,
+        scaleBack: 0.56,
+        opacitySide: 0.30
       };
     } else if (width <= 768) {
       return {
-        sideOffset: 190,
-        depthCenter: 35,
-        depthSide: -45,
-        depthBack: -125,
-        rotateAngle: 12,
+        sideOffset: 145,
+        depthCenter: 30,
+        depthSide: -40,
+        depthBack: -110,
+        rotateAngle: 10,
         scaleCenter: 1,
-        scaleSide: 0.86,
-        scaleBack: 0.66
+        scaleSide: 0.80,
+        scaleBack: 0.62,
+        opacitySide: 0.35
       };
     } else if (width <= 1024) {
       return {
-        sideOffset: 260,
-        depthCenter: 60,
+        sideOffset: 240,
+        depthCenter: 55,
         depthSide: -50,
-        depthBack: -150,
-        rotateAngle: 16,
+        depthBack: -140,
+        rotateAngle: 15,
         scaleCenter: 1,
-        scaleSide: 0.88,
-        scaleBack: 0.68
+        scaleSide: 0.86,
+        scaleBack: 0.66,
+        opacitySide: 0.65
       };
     } else {
       return {
@@ -99,7 +103,8 @@ function initLearningExperience(container = document) {
         rotateAngle: 18,
         scaleCenter: 1,
         scaleSide: 0.88,
-        scaleBack: 0.70
+        scaleBack: 0.70,
+        opacitySide: 0.68
       };
     }
   };
@@ -153,7 +158,7 @@ function initLearningExperience(container = document) {
         targetZ = dim.depthSide;
         targetRotateY = -dim.rotateAngle;
         targetScale = dim.scaleSide;
-        targetOpacity = 0.68;
+        targetOpacity = dim.opacitySide !== undefined ? dim.opacitySide : 0.68;
         targetZIndex = 5;
         card.classList.add('is-side');
         card.setAttribute('aria-hidden', 'true');
@@ -163,7 +168,7 @@ function initLearningExperience(container = document) {
         targetZ = dim.depthSide;
         targetRotateY = dim.rotateAngle;
         targetScale = dim.scaleSide;
-        targetOpacity = 0.68;
+        targetOpacity = dim.opacitySide !== undefined ? dim.opacitySide : 0.68;
         targetZIndex = 5;
         card.classList.add('is-side');
         card.setAttribute('aria-hidden', 'true');

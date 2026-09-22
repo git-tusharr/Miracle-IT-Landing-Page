@@ -2,9 +2,12 @@
    FINAL CTA SECTION STYLES — NEXT-GEN TECH AESTHETIC
    ========================================================================== */
 
+#final-cta.final-cta-section,
 .final-cta-section {
+  background-color: #07090E !important;
   background: radial-gradient(circle at 50% 30%, rgba(255, 122, 0, 0.15) 0%, transparent 70%),
-              linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%);
+              linear-gradient(180deg, #0A0E1A 0%, #07090E 100%) !important;
+  color: #F8FAFC;
   border-top: 1px solid var(--color-border);
   padding: clamp(5rem, 9vw, 8rem) 0;
   position: relative;

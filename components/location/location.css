@@ -3,9 +3,22 @@
    Bhopal Campus & Directions: M.P. Nagar Zone-II Hub
    ========================================================================== */
 
+#location.location-section,
 .location-section {
-  background-color: var(--color-bg);
+  background-color: #080E18 !important;
+  color: var(--color-text-main, #F8FAFC);
   position: relative;
+  overflow: hidden;
+}
+
+#location .section-header h2,
+.location-section .section-header h2 {
+  color: #FFFFFF !important;
+}
+
+#location .section-header p,
+.location-section .section-header p {
+  color: #94A3B8 !important;
 }
 
 /* Quick Campus Location Badges Under Header */

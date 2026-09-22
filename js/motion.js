@@ -680,8 +680,8 @@
           const theme = section.getAttribute('data-theme') || (section.id === 'hero' ? 'obsidian' : 'obsidian-glow');
           window.ScrollTrigger.create({
             trigger: section,
-            start: 'top 50%',
-            end: 'bottom 50%',
+            start: 'top 75%',
+            end: 'bottom 25%',
             onEnter: () => applyTheme(theme),
             onEnterBack: () => applyTheme(theme)
           });
