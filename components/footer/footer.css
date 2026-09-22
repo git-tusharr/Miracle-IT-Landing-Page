@@ -338,6 +338,10 @@
   margin: 0;
 }
 
+.disclaimer-mobile {
+  display: none;
+}
+
 .footer-disclaimer strong {
   color: #94A3B8;
 }
@@ -459,78 +463,223 @@
 }
 
 /* --------------------------------------------------------------------------
-   RESPONSIVE: MOBILE & TABLETS (<= 1024px, <= 640px, <= 480px, <= 360px)
+   RESPONSIVE: MOBILE & TABLETS (<= 640px, <= 480px, <= 360px)
+   Ultra-optimized compact layout to eliminate excessive page length
    -------------------------------------------------------------------------- */
 @media (max-width: 640px) {
+  .site-footer {
+    padding-top: 2.5rem;
+    padding-bottom: 1.75rem;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 1rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .footer-col.brand-col {
+    grid-column: 1 / -1;
+    margin-bottom: 0.25rem;
+  }
+
+  .footer-col.contact-col {
+    grid-column: 1 / -1;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* Compact link columns: Quick Links & Learning Tracks side-by-side */
+  .footer-link-desktop-only {
+    display: none !important;
+  }
+
+  .footer-heading {
+    font-size: 0.88rem;
+    margin-bottom: 0.65rem;
+    color: #F8FAFC;
+    font-weight: 700;
+  }
+
+  .footer-nav {
+    gap: 0.42rem;
+  }
+
+  .footer-nav a {
+    font-size: 0.82rem;
+    line-height: 1.35;
+    color: #CBD5E1;
+  }
+
+  .footer-all-courses-link {
+    color: var(--color-brand, #FF7A00) !important;
+    font-weight: 700 !important;
+  }
+
+  /* Brand Column Mobile Polish */
+  .footer-brand-logo-img {
+    max-width: 105px;
+  }
+
+  .footer-about {
+    font-size: 0.82rem;
+    line-height: 1.48;
+    margin-bottom: 0.65rem;
+    color: #94A3B8;
+  }
+
+  .footer-location-brief {
+    margin-bottom: 0.85rem;
+    font-size: 0.78rem;
+    color: #CBD5E1;
+  }
+
+  .footer-social-section {
+    padding-top: 0.75rem;
+    gap: 0.45rem;
+  }
+
+  .footer-social-heading {
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+  }
+
+  .footer-social-row {
+    gap: 0.5rem;
+  }
+
+  .footer-social-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .footer-social-btn svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  /* Contact Column: Modern 2-Column Grid on Mobile */
+  .footer-contact-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.65rem 0.85rem;
+  }
+
+  .footer-contact-list li {
+    font-size: 0.78rem;
+    gap: 0.1rem;
+  }
+
+  .footer-contact-list strong {
+    font-size: 0.66rem;
+    color: #94A3B8;
+    letter-spacing: 0.04em;
+  }
+
+  .footer-contact-list a {
+    font-size: 0.8rem;
+    color: #F1F5F9;
+    word-break: break-word;
+  }
+
+  .footer-contact-list span {
+    font-size: 0.78rem;
+  }
+
+  .footer-cta-li {
+    grid-column: 1 / -1;
+    margin-top: 0.25rem;
+    padding-top: 0;
+  }
+
+  .footer-cta-li .btn {
+    min-height: 36px;
+    font-size: 0.8rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 8px;
+  }
+
+  /* Bottom Footer: Condensed Transparency Notice & Clean Single Row */
+  .footer-bottom {
+    padding-top: 1.25rem;
+    gap: 0.75rem;
+  }
+
+  .footer-disclaimer {
+    padding: 0.6rem 0.85rem;
+  }
+
+  .disclaimer-desktop {
+    display: none !important;
+  }
+
+  .disclaimer-mobile {
+    display: block !important;
+    font-size: 0.74rem !important;
+    line-height: 1.45 !important;
+    color: #64748B !important;
+    margin: 0 !important;
+  }
+
+  .footer-bottom-meta {
+    display: none !important; /* Hide redundant address text on mobile */
+  }
+
+  .footer-bottom-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-top: 0.25rem;
+  }
+
+  .footer-copyright p {
+    font-size: 0.72rem;
+    color: #64748B;
+  }
+
+  .footer-legal-links {
+    gap: 0.45rem;
+  }
+
+  .footer-legal-link {
+    font-size: 0.72rem;
+    color: #94A3B8;
+  }
+}
+
+@media (max-width: 440px) {
+  .footer-contact-list {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+  }
+
   .footer-bottom-bar {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 0.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .site-footer {
-    padding-top: 3.5rem;
-    padding-bottom: 2rem;
-  }
-
-  .footer-top-grid {
-    gap: 2rem;
-    margin-bottom: 2.25rem;
-  }
-
-  .footer-brand-logo-img {
-    max-width: 110px;
-  }
-
-  .footer-social-btn {
-    width: 35px;
-    height: 35px;
-  }
-
-  .footer-social-btn svg {
-    width: 16px;
-    height: 16px;
+    gap: 0.35rem;
   }
 }
 
 @media (max-width: 360px) {
   .site-footer {
-    padding-top: 2.75rem;
-    padding-bottom: 1.75rem;
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
   }
 
   .footer-top-grid {
-    gap: 1.75rem;
-    margin-bottom: 2rem;
+    gap: 1.25rem 0.75rem;
   }
 
   .footer-heading {
-    font-size: 0.92rem;
-    margin-bottom: 0.85rem;
-  }
-
-  .footer-about {
-    font-size: 0.85rem;
-  }
-
-  .footer-brand-logo-img {
-    max-width: 105px;
-  }
-
-  .footer-nav a, .footer-contact-list a {
     font-size: 0.84rem;
   }
 
-  .footer-social-btn {
-    width: 34px;
-    height: 34px;
-  }
-
-  .footer-social-row {
-    gap: 0.5rem;
+  .footer-nav a {
+    font-size: 0.78rem;
   }
 }
 
