@@ -2,7 +2,7 @@
      LOCATION SECTION COMPONENT — ULTRA OPTIMIZED & ENRICHED (v3.0)
      Bhopal Campus & Directions: M.P. Nagar Zone-II Hub
      ========================================================================== -->
-<link rel="stylesheet" href="./components/location/location.css">
+<link rel="stylesheet" href="./components/location/location.css?v=7.0">
 <section class="section location-section" id="location">
   <div class="container">
     
@@ -437,126 +437,258 @@
         </p>
       </div>
 
-      <div class="other-centers-grid">
-        <!-- Jabalpur -->
-        <div class="other-center-card">
-          <div class="other-center-top">
-            <div class="other-center-city-wrap">
-              <span class="city-icon">📍</span>
-              <h4 class="other-center-city">Jabalpur</h4>
+      <!-- Two-Column 3D Showcase: Left = 3D Rotating Carousel | Right = 3D Rotating World Globe -->
+      <div class="other-centers-showcase" id="otherCentersShowcase">
+        
+        <!-- Left: 3D Continuous Rotating Carousel of Center Cards -->
+        <div class="other-centers-carousel-col">
+          <div class="carousel-col-top">
+            <div class="carousel-orbit-badge">
+              <span class="orbit-live-beacon"></span>
+              <span>3D Dynamic Orbit • 5 Regional Hubs</span>
             </div>
-            <span class="other-center-pill">Regional Center</span>
+            <div class="carousel-orbit-controls">
+              <button type="button" class="orbit-control-btn" id="orbitPrevBtn" aria-label="Previous Center Card" title="Rotate Left">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button type="button" class="orbit-control-btn orbit-pause-btn" id="orbitPauseBtn" aria-label="Pause Rotation" title="Pause / Resume Rotation">
+                <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg>
+                <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:none;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </button>
+              <button type="button" class="orbit-control-btn" id="orbitNextBtn" aria-label="Next Center Card" title="Rotate Right">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
           </div>
-          <p class="other-center-address">
-            2nd Floor, In front of Maruti Suzuki Showroom, Jabalpur Hospital Road, Napier Town, Jabalpur, M.P.
-          </p>
-          <div class="other-center-contact">
-            <a href="tel:07614920378" class="other-center-btn other-center-call-btn" title="Call Jabalpur Center">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon-svg"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              <span>0761-4920378</span>
-            </a>
-            <a href="https://maps.google.com/?q=Miracle+IT+Career+Academy,+Jabalpur+Hospital+Road,+Napier+Town,+Jabalpur,+Madhya+Pradesh" target="_blank" rel="noopener noreferrer" class="other-center-btn other-center-map-btn" title="View Jabalpur Center on Google Maps">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon-svg"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-              <span>Location</span>
-            </a>
+
+          <!-- 3D Perspective Stage -->
+          <div class="other-centers-3d-stage" id="centers3dStage" aria-label="3D Rotating Centers Carousel">
+            <div class="other-centers-3d-cylinder" id="centers3dCylinder">
+
+              <!-- Card 01: Jabalpur -->
+              <div class="other-center-card is-active" data-center-index="0" data-city="Jabalpur" data-state="Madhya Pradesh" data-coords="23.18, 79.98">
+                <div class="other-center-top">
+                  <div class="other-center-city-wrap">
+                    <span class="city-icon">📍</span>
+                    <h4 class="other-center-city">Jabalpur</h4>
+                  </div>
+                  <span class="other-center-pill">Regional Hub</span>
+                </div>
+                <p class="other-center-address">
+                  2nd Floor, In front of Maruti Suzuki Showroom, Jabalpur Hospital Road, Napier Town, Jabalpur, M.P.
+                </p>
+                <div class="other-center-features">
+                  <span class="center-feat-tag">✓ Offline Labs</span>
+                  <span class="center-feat-tag">✓ Mentor Desk</span>
+                </div>
+                <div class="other-center-contact">
+                  <a href="tel:07614920378" class="other-center-btn other-center-call-btn" title="Call Jabalpur Center">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon-svg">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    <span>0761-4920378</span>
+                  </a>
+                  <a href="https://maps.google.com/?q=Miracle+IT+Career+Academy,+Jabalpur+Hospital+Road,+Napier+Town,+Jabalpur,+Madhya+Pradesh"
+                    target="_blank" rel="noopener noreferrer" class="other-center-btn other-center-map-btn" title="View Jabalpur Center on Google Maps">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon-svg">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Location</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Card 02: Gwalior -->
+              <div class="other-center-card" data-center-index="1" data-city="Gwalior" data-state="Madhya Pradesh" data-coords="26.22, 78.18">
+                <div class="other-center-top">
+                  <div class="other-center-city-wrap">
+                    <span class="city-icon">📍</span>
+                    <h4 class="other-center-city">Gwalior</h4>
+                  </div>
+                  <span class="other-center-pill">Regional Hub</span>
+                </div>
+                <p class="other-center-address">
+                  A-8, 201, 2nd Floor, Opp. Aditya College, City Center, Gwalior, M.P.
+                </p>
+                <div class="other-center-features">
+                  <span class="center-feat-tag">✓ Offline Labs</span>
+                  <span class="center-feat-tag">✓ Project Cell</span>
+                </div>
+                <div class="other-center-contact">
+                  <a href="tel:07514901188" class="other-center-btn other-center-call-btn" title="Call Gwalior Center">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon-svg">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    <span>0751-4901188</span>
+                  </a>
+                  <a href="https://maps.google.com/?q=Miracle+IT+Career+Academy,+A-8,+201,+City+Center,+Gwalior,+Madhya+Pradesh"
+                    target="_blank" rel="noopener noreferrer" class="other-center-btn other-center-map-btn" title="View Gwalior Center on Google Maps">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon-svg">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Location</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Card 03: Ratlam -->
+              <div class="other-center-card" data-center-index="2" data-city="Ratlam" data-state="Madhya Pradesh" data-coords="23.33, 75.04">
+                <div class="other-center-top">
+                  <div class="other-center-city-wrap">
+                    <span class="city-icon">📍</span>
+                    <h4 class="other-center-city">Ratlam</h4>
+                  </div>
+                  <span class="other-center-pill">Regional Hub</span>
+                </div>
+                <p class="other-center-address">
+                  76, B-Plaza, First Floor, T.I.Y Road Corner, Above Raymond Showroom, Station Road, Ratlam, M.P.
+                </p>
+                <div class="other-center-features">
+                  <span class="center-feat-tag">✓ Offline Labs</span>
+                  <span class="center-feat-tag">✓ Counselling</span>
+                </div>
+                <div class="other-center-contact">
+                  <a href="tel:07412403025" class="other-center-btn other-center-call-btn" title="Call Ratlam Center">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon-svg">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    <span>07412-403025</span>
+                  </a>
+                  <a href="https://maps.google.com/?q=Miracle+IT+Career+Academy,+76,+B-Plaza,+Station+Road,+Ratlam,+Madhya+Pradesh"
+                    target="_blank" rel="noopener noreferrer" class="other-center-btn other-center-map-btn" title="View Ratlam Center on Google Maps">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon-svg">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Location</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Card 04: Ujjain -->
+              <div class="other-center-card" data-center-index="3" data-city="Ujjain" data-state="Madhya Pradesh" data-coords="23.18, 75.78">
+                <div class="other-center-top">
+                  <div class="other-center-city-wrap">
+                    <span class="city-icon">📍</span>
+                    <h4 class="other-center-city">Ujjain</h4>
+                  </div>
+                  <span class="other-center-pill">Regional Hub</span>
+                </div>
+                <p class="other-center-address">
+                  301, 3rd Floor, Mahakaal Kanak, Malipura, Dewas Gate, Ujjain, M.P.
+                </p>
+                <div class="other-center-features">
+                  <span class="center-feat-tag">✓ Offline Labs</span>
+                  <span class="center-feat-tag">✓ Interview Prep</span>
+                </div>
+                <div class="other-center-contact">
+                  <a href="tel:07344030236" class="other-center-btn other-center-call-btn" title="Call Ujjain Center">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon-svg">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    <span>0734-4030236</span>
+                  </a>
+                  <a href="https://maps.google.com/?q=Miracle+IT+Career+Academy,+301,+Mahakaal+Kanak,+Malipura,+Dewas+Gate,+Ujjain,+Madhya+Pradesh"
+                    target="_blank" rel="noopener noreferrer" class="other-center-btn other-center-map-btn" title="View Ujjain Center on Google Maps">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon-svg">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Location</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Card 05: Nagpur -->
+              <div class="other-center-card" data-center-index="4" data-city="Nagpur" data-state="Maharashtra" data-coords="21.15, 79.08">
+                <div class="other-center-top">
+                  <div class="other-center-city-wrap">
+                    <span class="city-icon">📍</span>
+                    <h4 class="other-center-city">Nagpur</h4>
+                  </div>
+                  <span class="other-center-pill">Regional Hub</span>
+                </div>
+                <p class="other-center-address">
+                  Plot No. 12, 1st Floor, Near Sitabuldi Metro Interchange, Wardha Road, Sitabuldi, Nagpur, Maharashtra
+                </p>
+                <div class="other-center-features">
+                  <span class="center-feat-tag">✓ Offline Labs</span>
+                  <span class="center-feat-tag">✓ Placement Cell</span>
+                </div>
+                <div class="other-center-contact">
+                  <a href="tel:07122550188" class="other-center-btn other-center-call-btn" title="Call Nagpur Center">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon-svg">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    <span>0712-2550188</span>
+                  </a>
+                  <a href="https://maps.google.com/?q=Miracle+IT+Career+Academy,+Nagpur,+Maharashtra"
+                    target="_blank" rel="noopener noreferrer" class="other-center-btn other-center-map-btn" title="View Nagpur Center on Google Maps">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon-svg">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Location</span>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Interactive City Selection Pills -->
+          <div class="centers-orbit-nav" id="centersOrbitNav">
+            <button type="button" class="orbit-city-pill is-active" data-orbit-target="0">📍 Jabalpur</button>
+            <button type="button" class="orbit-city-pill" data-orbit-target="1">📍 Gwalior</button>
+            <button type="button" class="orbit-city-pill" data-orbit-target="2">📍 Ratlam</button>
+            <button type="button" class="orbit-city-pill" data-orbit-target="3">📍 Ujjain</button>
+            <button type="button" class="orbit-city-pill" data-orbit-target="4">📍 Nagpur</button>
           </div>
         </div>
 
-        <!-- Gwalior -->
-        <div class="other-center-card">
-          <div class="other-center-top">
-            <div class="other-center-city-wrap">
-              <span class="city-icon">📍</span>
-              <h4 class="other-center-city">Gwalior</h4>
+        <!-- Right: 3D Rotating World Globe -->
+        <div class="other-centers-globe-col">
+          <div class="globe-showcase-card">
+            <div class="globe-header-strip">
+              <div class="globe-status-pill">
+                <span class="globe-radar-ping"></span>
+                <span>Interactive 3D Earth</span>
+              </div>
+              <span class="globe-telemetry">World Perspective • 60 FPS</span>
             </div>
-            <span class="other-center-pill">Regional Center</span>
-          </div>
-          <p class="other-center-address">
-            A-8, 201, 2nd Floor, Opp. Aditya College, City Center, Gwalior, M.P.
-          </p>
-          <div class="other-center-contact">
-            <a href="tel:07514901188" class="other-center-btn other-center-call-btn" title="Call Gwalior Center">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon-svg"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              <span>0751-4901188</span>
-            </a>
-            <a href="https://maps.google.com/?q=Miracle+IT+Career+Academy,+A-8,+201,+City+Center,+Gwalior,+Madhya+Pradesh" target="_blank" rel="noopener noreferrer" class="other-center-btn other-center-map-btn" title="View Gwalior Center on Google Maps">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon-svg"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-              <span>Location</span>
-            </a>
+
+            <!-- 3D Rotating Globe Canvas -->
+            <div class="globe-viewport" id="globeViewport" title="Drag to rotate Planet Earth">
+              <canvas id="centersWorldGlobe" width="460" height="460" aria-label="3D Rotating World Globe of Planet Earth"></canvas>
+              <div class="globe-ambient-ring"></div>
+            </div>
+
+            <!-- Global Perspective Strip -->
+            <div class="globe-metrics-bar">
+              <div class="globe-metric-col">
+                <span class="globe-metric-num">360°</span>
+                <span class="globe-metric-lbl">Continuous Orbit</span>
+              </div>
+              <div class="globe-metric-sep"></div>
+              <div class="globe-metric-col">
+                <span class="globe-metric-num">24</span>
+                <span class="globe-metric-lbl">Global Timezones</span>
+              </div>
+              <div class="globe-metric-sep"></div>
+              <div class="globe-metric-col">
+                <span class="globe-metric-num">Touch / Drag</span>
+                <span class="globe-metric-lbl">3D View Angle</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Ratlam -->
-        <div class="other-center-card">
-          <div class="other-center-top">
-            <div class="other-center-city-wrap">
-              <span class="city-icon">📍</span>
-              <h4 class="other-center-city">Ratlam</h4>
-            </div>
-            <span class="other-center-pill">Regional Center</span>
-          </div>
-          <p class="other-center-address">
-            76, B-Plaza, First Floor, T.I.Y Road Corner, Above Raymond Showroom, Station Road, Ratlam, M.P.
-          </p>
-          <div class="other-center-contact">
-            <a href="tel:07412403025" class="other-center-btn other-center-call-btn" title="Call Ratlam Center">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon-svg"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              <span>07412-403025</span>
-            </a>
-            <a href="https://maps.google.com/?q=Miracle+IT+Career+Academy,+76,+B-Plaza,+Station+Road,+Ratlam,+Madhya+Pradesh" target="_blank" rel="noopener noreferrer" class="other-center-btn other-center-map-btn" title="View Ratlam Center on Google Maps">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon-svg"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-              <span>Location</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Ujjain -->
-        <div class="other-center-card">
-          <div class="other-center-top">
-            <div class="other-center-city-wrap">
-              <span class="city-icon">📍</span>
-              <h4 class="other-center-city">Ujjain</h4>
-            </div>
-            <span class="other-center-pill">Regional Center</span>
-          </div>
-          <p class="other-center-address">
-            301, 3rd Floor, Mahakaal Kanak, Malipura, Dewas Gate, Ujjain, M.P.
-          </p>
-          <div class="other-center-contact">
-            <a href="tel:07344030236" class="other-center-btn other-center-call-btn" title="Call Ujjain Center">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon-svg"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              <span>0734-4030236</span>
-            </a>
-            <a href="https://maps.google.com/?q=Miracle+IT+Career+Academy,+301,+Mahakaal+Kanak,+Malipura,+Dewas+Gate,+Ujjain,+Madhya+Pradesh" target="_blank" rel="noopener noreferrer" class="other-center-btn other-center-map-btn" title="View Ujjain Center on Google Maps">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon-svg"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-              <span>Location</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Nagpur -->
-        <div class="other-center-card">
-          <div class="other-center-top">
-            <div class="other-center-city-wrap">
-              <span class="city-icon">📍</span>
-              <h4 class="other-center-city">Nagpur</h4>
-            </div>
-            <span class="other-center-pill">Regional Center</span>
-          </div>
-          <p class="other-center-address">
-            301, 3rd Floor, Mahakaal Kanak, Malipura, Dewas Gate, Ujjain, M.P.
-          </p>
-          <div class="other-center-contact">
-            <a href="tel:07344030236" class="other-center-btn other-center-call-btn" title="Call Nagpur Center">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon-svg"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              <span>0734-4030236</span>
-            </a>
-            <a href="https://maps.google.com/?q=Miracle+IT+Career+Academy,+Nagpur" target="_blank" rel="noopener noreferrer" class="other-center-btn other-center-map-btn" title="View Nagpur Center on Google Maps">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon-svg"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-              <span>Location</span>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
 
