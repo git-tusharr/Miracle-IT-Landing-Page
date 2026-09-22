@@ -35,21 +35,38 @@ function initProblem(container = document) {
     });
   }
 
-  // Instant Dilemma Diagnostic Quick-Filter
+  // Instant Dilemma Diagnostic Quick-Filter & Carousel Sync
   const diagnosticBtns = section.querySelectorAll('.diagnostic-btn');
   const dilemmaCards = section.querySelectorAll('.problem-cards-grid .problem-card');
+  const cardsGrid = section.querySelector('.problem-cards-grid');
+  const scrollDots = section.querySelectorAll('.problem-dot');
 
-  diagnosticBtns.forEach(btn => {
+  // Helper to sync dots state
+  const setActiveDot = (index) => {
+    scrollDots.forEach((dot, idx) => {
+      dot.classList.toggle('is-active', idx === index);
+      dot.setAttribute('aria-selected', idx === index ? 'true' : 'false');
+    });
+  };
+
+  // Helper to sync diagnostic button state
+  const setActiveChip = (index) => {
+    diagnosticBtns.forEach((btn, idx) => {
+      btn.classList.toggle('is-active', idx === index);
+    });
+  };
+
+  diagnosticBtns.forEach((btn, idx) => {
     btn.addEventListener('click', () => {
       // Ensure dilemma view is active
       if (btnDilemmas && !btnDilemmas.classList.contains('is-active')) {
         btnDilemmas.click();
       }
 
-      diagnosticBtns.forEach(b => b.classList.remove('is-active'));
-      btn.classList.add('is-active');
+      const cardIdx = parseInt(btn.getAttribute('data-target-card') || idx, 10);
+      setActiveChip(cardIdx);
+      setActiveDot(cardIdx);
 
-      const cardIdx = parseInt(btn.getAttribute('data-target-card'), 10);
       const targetCard = dilemmaCards[cardIdx];
       if (targetCard) {
         targetCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
@@ -66,6 +83,55 @@ function initProblem(container = document) {
       }
     });
   });
+
+  // Indicator Dots click handlers
+  scrollDots.forEach((dot, idx) => {
+    dot.addEventListener('click', () => {
+      // Ensure dilemma view is active
+      if (btnDilemmas && !btnDilemmas.classList.contains('is-active')) {
+        btnDilemmas.click();
+      }
+
+      setActiveDot(idx);
+      setActiveChip(idx);
+
+      const targetCard = dilemmaCards[idx];
+      if (targetCard) {
+        targetCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    });
+  });
+
+  // Listen to horizontal scroll on mobile to keep dots and chips in sync
+  if (cardsGrid && dilemmaCards.length > 0) {
+    let scrollDebounce;
+    cardsGrid.addEventListener('scroll', () => {
+      clearTimeout(scrollDebounce);
+      scrollDebounce = setTimeout(() => {
+        const gridRect = cardsGrid.getBoundingClientRect();
+        const gridCenter = gridRect.left + gridRect.width / 2;
+
+        let closestIdx = 0;
+        let minDistance = Infinity;
+
+        dilemmaCards.forEach((card, idx) => {
+          const cardRect = card.getBoundingClientRect();
+          const cardCenter = cardRect.left + cardRect.width / 2;
+          const distance = Math.abs(gridCenter - cardCenter);
+
+          if (distance < minDistance) {
+            minDistance = distance;
+            closestIdx = idx;
+          }
+        });
+
+        setActiveDot(closestIdx);
+        if (window.innerWidth <= 768) {
+          setActiveChip(closestIdx);
+        }
+      }, 50);
+    }, { passive: true });
+  }
 
   // Optional: Clicking on a card's reality pill or contrast box also smooth-scrolls to booking form
   dilemmaCards.forEach((card, idx) => {

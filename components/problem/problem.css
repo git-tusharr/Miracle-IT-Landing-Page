@@ -229,6 +229,10 @@
   margin-bottom: 3.5rem;
 }
 
+.problem-scroll-dots {
+  display: none;
+}
+
 /* Card Container */
 .section-light .problem-card,
 .problem-card {
@@ -849,7 +853,8 @@
   .problem-diagnostic-box {
     width: 100%;
     border-radius: var(--radius-lg);
-    padding: 0.85rem 1rem;
+    padding: 0.75rem 0.85rem;
+    margin-top: 1.25rem;
   }
 
   .problem-diagnostic-box .matcher-label {
@@ -857,39 +862,112 @@
     text-align: center;
     width: 100%;
     display: block;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.35rem;
+    font-size: 0.74rem;
   }
 
   .problem-diagnostic-box .matcher-chips {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    gap: 0.45rem;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 0.5rem;
+    padding-bottom: 0.25rem;
+    scrollbar-width: none;
+  }
+
+  .problem-diagnostic-box .matcher-chips::-webkit-scrollbar {
+    display: none;
   }
 
   .diagnostic-btn {
-    width: 100%;
-    white-space: normal;
-    text-align: center;
-    min-height: 44px;
-    padding: 0.6rem 0.85rem;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    white-space: nowrap;
+    font-size: 0.78rem;
+    padding: 0.45rem 0.85rem;
+    min-height: 36px;
   }
 
+  /* Horizontal Scroll Carousel for 3 Dilemma Cards */
   .problem-cards-grid {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
-    overflow-x: visible !important;
-    padding: 0 !important;
-    margin-bottom: 2.25rem;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 1.15rem !important;
+    margin-left: calc(-1 * var(--container-gutter, 1rem)) !important;
+    margin-right: calc(-1 * var(--container-gutter, 1rem)) !important;
+    padding: 0.5rem 1rem 1.25rem 1rem !important;
+    margin-bottom: 0.5rem !important;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 122, 0, 0.4) transparent;
   }
 
+  .problem-cards-grid::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .problem-cards-grid::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.06);
+    border-radius: 4px;
+  }
+
+  .problem-cards-grid::-webkit-scrollbar-thumb {
+    background: var(--color-brand, #FF7A00);
+    border-radius: 4px;
+  }
+
+  .section-light .problem-card,
   .problem-card {
-    flex: none !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 1.5rem 1.25rem;
-    border-radius: var(--radius-lg);
+    flex: 0 0 clamp(290px, 82vw, 340px) !important;
+    width: clamp(290px, 82vw, 340px) !important;
+    max-width: 85vw !important;
+    scroll-snap-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-self: stretch !important;
+    padding: 0 !important;
+    border-radius: var(--radius-xl, 20px) !important;
+  }
+
+  .problem-card-media {
+    height: 170px !important;
+  }
+
+  .problem-card-body {
+    padding: 1.15rem 1.15rem 1.35rem 1.15rem !important;
+  }
+
+  /* Indicator Dots */
+  .problem-scroll-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0.25rem 0 2rem 0;
+  }
+
+  .problem-dot {
+    width: 14px;
+    height: 4px;
+    border-radius: 3px;
+    background: #CBD5E1;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .problem-dot.is-active {
+    width: 26px;
+    background: var(--color-brand, #FF7A00);
+    box-shadow: 0 0 8px rgba(255, 122, 0, 0.4);
   }
 
   .problem-transition-banner {
@@ -916,12 +994,19 @@
 }
 
 @media (max-width: 480px) {
+  .section-light .problem-card,
   .problem-card {
-    padding: 1.25rem 1rem;
+    flex: 0 0 clamp(275px, 80vw, 320px) !important;
+    width: clamp(275px, 80vw, 320px) !important;
+    padding: 0 !important;
+  }
+
+  .problem-card-body {
+    padding: 1rem 1rem 1.25rem 1rem !important;
   }
 
   .problem-title {
-    font-size: 1.15rem;
+    font-size: 1.12rem;
   }
 
   .problem-desc {
