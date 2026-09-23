@@ -120,6 +120,9 @@ function initScrollObserver() {
  */
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    if (anchor.dataset.smoothScrollBound === 'true') return;
+    anchor.dataset.smoothScrollBound = 'true';
+
     anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
       if (!targetId || targetId === '#') return;
@@ -127,12 +130,13 @@ function initSmoothScroll() {
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
         e.preventDefault();
-        const headerOffset = 80;
+        const headerEl = document.querySelector('#siteHeader') || document.querySelector('.site-header');
+        const headerOffset = (headerEl ? headerEl.offsetHeight : 76) + 16;
         const elementPosition = targetElement.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
         window.scrollTo({
-          top: offsetPosition,
+          top: Math.max(0, offsetPosition),
           behavior: 'smooth'
         });
 
@@ -141,7 +145,10 @@ function initSmoothScroll() {
         if (navMenu && navMenu.classList.contains('is-open')) {
           navMenu.classList.remove('is-open');
           const toggleBtn = document.querySelector('#navToggle');
-          if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
+          if (toggleBtn) {
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            toggleBtn.setAttribute('aria-label', 'Open navigation menu');
+          }
         }
       }
     });
@@ -174,12 +181,13 @@ async function assemblePage() {
     window.populateFormUTMs(leadForm);
   }
 
+  // Smooth scrolling offset calculation for sticky header (Always active)
+  initSmoothScroll();
+
   // Initialize Miracle Motion Engine
   if (window.MiracleMotion && typeof window.MiracleMotion.init === 'function') {
     window.MiracleMotion.init();
   } else {
-    // Fallback legacy smooth scroll & scroll observer
-    initSmoothScroll();
     initScrollObserver();
   }
 

@@ -1319,39 +1319,80 @@
   letter-spacing: 0.04em;
 }
 
-.globe-viewport {
+.globe-viewport,
+.india-map-viewport {
   position: relative;
-  width: min(340px, 85vw);
-  height: min(340px, 85vw);
+  width: 100%;
+  max-width: 440px;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: grab;
   user-select: none;
 }
 
-.globe-viewport:active {
-  cursor: grabbing;
-}
-
-#centersWorldGlobe {
+.india-network-svg {
   width: 100%;
-  height: 100%;
+  height: auto;
+  max-height: 380px;
   display: block;
-  border-radius: 50%;
+  border-radius: var(--radius-lg, 16px);
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.45));
 }
 
-.globe-ambient-ring {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 102%;
-  height: 102%;
-  margin-top: -51%;
-  margin-left: -51%;
-  border-radius: 50%;
-  box-shadow: inset 0 0 25px rgba(56, 189, 248, 0.35), 0 0 35px rgba(56, 189, 248, 0.15);
-  pointer-events: none;
+.hub-pulse-wave {
+  animation: hubRadarPulse 2.4s ease-out infinite;
+  transform-origin: center;
+}
+
+@keyframes hubRadarPulse {
+  0% {
+    r: 10px;
+    opacity: 0.9;
+  }
+  100% {
+    r: 32px;
+    opacity: 0;
+  }
+}
+
+.telemetry-line {
+  stroke-dashoffset: 0;
+  animation: telemetryFlow 30s linear infinite;
+}
+
+@keyframes telemetryFlow {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.map-regional-pin {
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), filter 0.25s ease;
+}
+
+.map-regional-pin:hover,
+.map-regional-pin.is-active {
+  filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.75));
+  transform: scale(1.08);
+}
+
+.map-regional-pin:hover circle:nth-child(2),
+.map-regional-pin.is-active circle:nth-child(2) {
+  fill: #FF7A00;
+}
+
+.map-regional-pin:hover rect,
+.map-regional-pin.is-active rect {
+  stroke: #FF7A00;
+  fill: #1E293B;
+}
+
+.map-hub-group {
+  cursor: default;
 }
 
 

@@ -963,6 +963,9 @@
       const headerHeight = 85;
 
       document.querySelectorAll('a[href^="#"]').forEach(link => {
+        if (link.dataset.smoothScrollBound === 'true') return;
+        link.dataset.smoothScrollBound = 'true';
+
         link.addEventListener('click', (e) => {
           const href = link.getAttribute('href');
           if (!href || href === '#') return;
