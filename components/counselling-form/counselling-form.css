@@ -32,7 +32,7 @@
   color: #FB923C;
   border: 1px solid rgba(255, 122, 0, 0.35);
   border-radius: var(--radius-full);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.8rem;
   font-weight: 700;
   margin-bottom: 1.25rem;
@@ -76,7 +76,7 @@
 
 .form-label {
   font-size: 0.885rem;
-  font-weight: 700;
+  font-weight: 500;
   color: #FFFFFF;
   margin-bottom: 0.5rem;
   letter-spacing: -0.01em;
@@ -142,7 +142,7 @@
   padding: 0.95rem 1rem;
   background-color: rgba(255, 255, 255, 0.06);
   color: #38BDF8;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-weight: 700;
   font-size: 0.9rem;
   border-right: 1.5px solid rgba(255, 255, 255, 0.1);

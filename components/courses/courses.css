@@ -76,7 +76,7 @@
 }
 
 .course-nav-number {
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-sans);
   font-size: 0.9rem;
   font-weight: 800;
   color: rgba(148, 163, 184, 0.5);
@@ -322,10 +322,12 @@
 }
 
 .course-duration-hint {
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-sans);
   font-size: 0.78rem;
   color: #CBD5E1;
   font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
 /* Course Name: Primary Visual Focal Point */
@@ -360,12 +362,12 @@
 
 .tech-stack-title {
   display: block;
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-sans);
   font-size: 0.72rem;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
-  color: rgba(148, 163, 184, 0.85);
+  letter-spacing: 0.03em;
+  color: var(--color-brand);
   margin-bottom: 0.5rem;
 }
 
@@ -455,13 +457,13 @@
 
 .key-areas-title {
   display: block;
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-sans);
   font-size: 0.74rem;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
-  color: rgba(148, 163, 184, 0.85);
-  margin-bottom: 0.55rem;
+  letter-spacing: 0.03em;
+  color: var(--color-cyan);
+  margin-bottom: 0.65rem;
 }
 
 .key-chips-grid {

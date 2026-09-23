@@ -199,7 +199,7 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   color: #FFFFFF;
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-sans);
   font-size: 0.72rem;
   font-weight: 700;
   padding: 0.3rem 0.75rem;
@@ -292,9 +292,11 @@
 }
 
 .card-step-badge {
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-sans);
   font-size: 0.7rem;
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
   color: rgba(148, 163, 184, 0.85);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -594,7 +596,7 @@
 }
 
 .stat-number {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: clamp(1.6rem, 2.5vw, 2.2rem);
   font-weight: 900;
   color: #FFFFFF;

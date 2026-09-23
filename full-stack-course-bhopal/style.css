@@ -29,7 +29,7 @@
 }
 
 .course-brand span {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.72rem;
   font-weight: 600;
   color: #38BDF8;

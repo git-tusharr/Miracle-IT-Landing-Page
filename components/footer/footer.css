@@ -357,7 +357,7 @@
 
 .footer-copyright p,
 .footer-bottom-meta p {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.76rem;
   color: #64748B;
   margin: 0;
@@ -370,7 +370,7 @@
 }
 
 .footer-legal-link {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.76rem;
   color: #94A3B8;
   text-decoration: underline;

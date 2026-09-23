@@ -31,7 +31,7 @@
 }
 
 .quick-pill {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.825rem;
   font-weight: 600;
   color: #CBD5E1;
@@ -95,7 +95,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.78rem;
   font-weight: 700;
   color: #34D399;
@@ -168,7 +168,7 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   color: #38BDF8;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.78rem;
   font-weight: 700;
   cursor: pointer;
@@ -296,7 +296,7 @@
 }
 
 .route-filter-label {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.78rem;
   font-weight: 700;
   color: var(--color-text-dim);
@@ -315,7 +315,7 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
   padding: 0.25rem 0.75rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.76rem;
   font-weight: 600;
   color: var(--color-text-muted);
@@ -410,9 +410,10 @@
 
 .summary-pill {
   display: inline-block;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.76rem;
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: 0.03em;
   background: rgba(255, 255, 255, 0.05);
   color: #E2E8F0;
   padding: 0.2rem 0.65rem;
@@ -578,7 +579,7 @@
 }
 
 .transit-time-tag {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.75rem;
   font-weight: 800;
   color: #38BDF8;
@@ -597,7 +598,7 @@
 }
 
 .transit-distance {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.78rem;
   font-weight: 700;
   color: var(--color-text-dim);
@@ -886,7 +887,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-sans);
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -953,7 +954,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-sans);
   font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -1122,7 +1123,7 @@
 }
 
 .other-center-pill {
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-sans);
   font-size: 0.7rem;
   font-weight: 600;
   color: #38BDF8;
@@ -1151,7 +1152,7 @@
 .center-feat-tag {
   font-size: 0.72rem;
   font-weight: 600;
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-sans);
   color: #A7F3D0;
   background: rgba(16, 185, 129, 0.1);
   border: 1px solid rgba(16, 185, 129, 0.22);
@@ -1171,7 +1172,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-sans);
   font-size: 0.78rem;
   font-weight: 600;
   text-decoration: none;
@@ -1233,7 +1234,7 @@
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: #94A3B8;
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-sans);
   font-size: 0.74rem;
   font-weight: 600;
   padding: 0.32rem 0.7rem;
@@ -1293,7 +1294,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-sans);
   font-size: 0.72rem;
   font-weight: 700;
   color: #FF9433;
@@ -1313,7 +1314,7 @@
 }
 
 .globe-telemetry {
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-sans);
   font-size: 0.7rem;
   color: #64748B;
   letter-spacing: 0.04em;
@@ -1423,7 +1424,7 @@
   display: block;
   font-size: 0.68rem;
   color: #94A3B8;
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-sans);
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }

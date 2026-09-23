@@ -108,10 +108,10 @@
 
 /* Category Badges */
 .marquee-pill-badge {
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-sans);
   font-size: 0.70rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
+  font-weight: 600;
+  letter-spacing: 0.03em;
   border-radius: 9999px;
   padding: 2.5px 8px;
   text-transform: uppercase;
@@ -262,9 +262,10 @@
 }
 
 .proof-tag {
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-sans);
   font-size: 0.75rem;
-  font-weight: 800;
+  font-weight: 600;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: #34D399;
@@ -429,7 +430,7 @@
   background: rgba(255, 122, 0, 0.1);
   border: 1px solid rgba(255, 122, 0, 0.25);
   border-radius: var(--radius-full, 9999px);
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-sans);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -611,10 +612,10 @@ body[data-theme="light"] .placed-students-section .proof-students-mask::after {
   right: 8px;
   background: rgba(16, 185, 129, 0.92);
   color: #FFFFFF;
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-sans);
   font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  font-weight: 600;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   padding: 0.18rem 0.5rem;
   border-radius: var(--radius-full, 9999px);
@@ -815,10 +816,10 @@ body[data-theme="light"] .placed-students-section .proof-students-mask::after {
 }
 
 .proof-review-badge {
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-sans);
   font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  font-weight: 600;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #10B981;
   background: rgba(16, 185, 129, 0.12);
@@ -1192,4 +1193,167 @@ body[data-theme="light"] .placed-students-section .proof-students-mask::after {
 
 .section-light .proof-verification-notice p {
   color: #334155 !important;
+}
+
+
+/* ==========================================================================
+   LEADING COMPANIES HIRING PARTNERS SLIDER
+   Continuous infinite kinetic slide directly beneath Placed Students slider
+   ========================================================================== */
+.hiring-companies-slider-wrap {
+  width: 100%;
+  margin-top: 3.5rem;
+  padding-top: 2.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  position: relative;
+  z-index: 2;
+}
+
+.hiring-companies-slider-header {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.proof-slider-pill-cyan {
+  border-color: rgba(6, 182, 212, 0.35) !important;
+  color: #38BDF8 !important;
+  background: rgba(6, 182, 212, 0.08) !important;
+  box-shadow: 0 0 15px -3px rgba(6, 182, 212, 0.2) !important;
+}
+
+.dot-cyan {
+  background: #38BDF8 !important;
+  box-shadow: 0 0 8px #38BDF8 !important;
+}
+
+.hiring-companies-mask {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 0.75rem 0 1.25rem;
+  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+.hiring-companies-mask::before,
+.hiring-companies-mask::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: clamp(50px, 10vw, 140px);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.hiring-companies-mask::before,
+.placed-students-section .hiring-companies-mask::before,
+body[data-theme="light"] .placed-students-section .hiring-companies-mask::before {
+  left: 0;
+  background: linear-gradient(to right, #0A0E1A 0%, transparent 100%) !important;
+}
+
+.hiring-companies-mask::after,
+.placed-students-section .hiring-companies-mask::after,
+body[data-theme="light"] .placed-students-section .hiring-companies-mask::after {
+  right: 0;
+  background: linear-gradient(to left, #0A0E1A 0%, transparent 100%) !important;
+}
+
+.hiring-companies-track {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: max-content;
+  will-change: transform;
+  animation: hiringCompaniesMarquee 38s linear infinite;
+  padding: 0.5rem 0;
+}
+
+.hiring-companies-track:hover {
+  animation-play-state: paused !important;
+}
+
+@keyframes hiringCompaniesMarquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.company-logo-card {
+  flex-shrink: 0;
+  width: clamp(170px, 15vw, 210px);
+  height: 82px;
+  background: rgba(15, 23, 42, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg, 16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.4rem;
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.company-logo-card:hover {
+  transform: translateY(-4px) scale(1.04);
+  background: rgba(22, 32, 54, 0.95);
+  border-color: rgba(6, 182, 212, 0.45);
+  box-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.8), 0 0 24px rgba(6, 182, 212, 0.25);
+  z-index: 10;
+}
+
+.company-logo-img {
+  max-width: 130px;
+  max-height: 42px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: brightness(0.96) contrast(1.05);
+  display: block;
+}
+
+.company-logo-card:hover .company-logo-img {
+  transform: scale(1.06);
+  filter: brightness(1.06) contrast(1.1);
+}
+
+.company-logo-card[data-company="wipro"] .company-logo-img,
+.company-logo-card img[src*="wipro"] {
+  max-width: 155px;
+  max-height: 56px;
+}
+
+@media (max-width: 640px) {
+  .hiring-companies-slider-wrap {
+    margin-top: 2.25rem;
+    padding-top: 1.75rem;
+  }
+  .company-logo-card {
+    width: 148px;
+    height: 68px;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+  }
+  .company-logo-img {
+    max-width: 105px;
+    max-height: 32px;
+  }
+  .company-logo-card[data-company="wipro"] .company-logo-img,
+  .company-logo-card img[src*="wipro"] {
+    max-width: 120px;
+    max-height: 44px;
+  }
+  .hiring-companies-track {
+    gap: 1rem;
+  }
 }
