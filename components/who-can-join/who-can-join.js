@@ -2,14 +2,9 @@
  * WHO CAN JOIN SECTION CONTROLLER — GSAP SCROLL STACKING CARDS
  * Miracle IT Career Academy
  *
- * Features:
- * - GSAP ScrollTrigger hardware-accelerated 3D stacking card deck
- * - Preceding cards scale down, shift upward, and depth-dim to simulate physical card stacking
- * - Interactive navigation pill bar with live scroll position synchronization
- * - Direct click navigation to smoothly scroll to any card
- * - Snap-to-card scrub physics
- * - Full responsive handling with native sticky stacking fallback on mobile (< 768px)
- * - Accessibility & prefers-reduced-motion support
+ * Ultra-smooth, hardware-accelerated 3D stacking card deck.
+ * Uses pure GPU compositor properties (transform & opacity) with zero dynamic blur filters
+ * for flawless 60+ FPS performance.
  */
 
 function initWhoCanJoin(container = document) {
@@ -25,33 +20,33 @@ function initWhoCanJoin(container = document) {
 
   if (cards.length < 2) return;
 
+  // Clean up any existing instance to avoid duplicate listeners on repeated calls
+  if (window._whoCanJoinCleanup && typeof window._whoCanJoinCleanup === 'function') {
+    window._whoCanJoinCleanup();
+    window._whoCanJoinCleanup = null;
+  }
+
   // Reduced motion preference
   const prefersReducedMotion = () => {
     return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   };
 
   if (prefersReducedMotion()) {
-    console.log('[WhoCanJoin] prefers-reduced-motion active. High-accessibility mode enabled.');
+    cards.forEach(card => {
+      card.style.opacity = '1';
+      card.style.transform = 'none';
+    });
     return;
   }
 
   // Guard: GSAP and ScrollTrigger availability
   if (typeof window.gsap === 'undefined' || typeof window.ScrollTrigger === 'undefined') {
-    console.warn('[WhoCanJoin] GSAP or ScrollTrigger not loaded. Using fallback display.');
     return;
   }
 
   const gsap = window.gsap;
   const ScrollTrigger = window.ScrollTrigger;
   gsap.registerPlugin(ScrollTrigger);
-
-  // Clean up any existing instance to avoid duplicate listeners on hot reload
-  if (window.whoCanJoinScrollTrigger) {
-    if (typeof window.whoCanJoinScrollTrigger.kill === 'function') {
-      window.whoCanJoinScrollTrigger.kill(true);
-    }
-    window.whoCanJoinScrollTrigger = null;
-  }
 
   // Helper to dynamically calculate deck height based on content
   const syncDeckHeight = () => {
@@ -67,26 +62,31 @@ function initWhoCanJoin(container = document) {
   syncDeckHeight();
   window.addEventListener('resize', syncDeckHeight);
 
+  // Track matchMedia and pill listeners for global cleanup
+  const cleanupFns = [
+    () => window.removeEventListener('resize', syncDeckHeight)
+  ];
+
   // Use ScrollTrigger.matchMedia for clean responsive switching
   ScrollTrigger.matchMedia({
     // DESKTOP & TABLET SCREENS (>= 769px)
     "(min-width: 769px)": function() {
       syncDeckHeight();
 
-      // Set initial stacked state
+      // Set initial stacked state using pure GPU transform/opacity (no expensive blur filters)
       cards.forEach((card, index) => {
         gsap.set(card, {
           zIndex: index + 1,
           scale: 1,
-          yPercent: index === 0 ? 0 : 115,
+          yPercent: index === 0 ? 0 : 112,
+          y: 0,
           opacity: index === 0 ? 1 : 0,
-          filter: "brightness(1) blur(0px)",
           transformOrigin: "top center",
           immediateRender: true
         });
       });
 
-      // Master scrubbing timeline
+      // Master scrubbing timeline with luxurious 1.0s smoothing dampening
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: stackContainer,
@@ -95,19 +95,17 @@ function initWhoCanJoin(container = document) {
           pin: true,
           pinSpacing: true,
           anticipatePin: 1,
-          scrub: 0.8,
+          scrub: 1.0,
           snap: {
             snapTo: [0, 0.3333, 0.6666, 1.0],
-            duration: { min: 0.25, max: 0.55 },
-            delay: 0.05,
-            ease: "power2.inOut"
+            duration: { min: 0.25, max: 0.5 },
+            delay: 0.18,
+            ease: "power1.out"
           },
           onUpdate: (self) => {
-            const p = self.progress; // 0 to 1
-            // Active index (0, 1, 2, or 3)
+            const p = self.progress;
             const activeIndex = Math.min(Math.floor(p * 3 + 0.5), 3);
 
-            // Update pills
             pills.forEach((pill, idx) => {
               const isActive = idx === activeIndex;
               pill.classList.toggle('is-active', isActive);
@@ -121,36 +119,36 @@ function initWhoCanJoin(container = document) {
       tl.to(cards[1], {
         yPercent: 0,
         opacity: 1,
-        ease: "none",
+        ease: "power1.out",
         duration: 1
       }, 0);
       tl.to(cards[0], {
         scale: 0.94,
-        y: -18,
-        filter: "brightness(0.65) blur(0.5px)",
-        ease: "none",
+        y: -22,
+        opacity: 0.65,
+        ease: "power1.out",
         duration: 1
       }, 0);
 
-      // Segment 2: Card 2 glides up over Card 1; Card 1 and Card 0 scale down
+      // Segment 2: Card 2 glides up over Card 1; Card 1 and Card 0 cascade down
       tl.to(cards[2], {
         yPercent: 0,
         opacity: 1,
-        ease: "none",
+        ease: "power1.out",
         duration: 1
       }, 1);
       tl.to(cards[1], {
         scale: 0.94,
-        y: -18,
-        filter: "brightness(0.65) blur(0.5px)",
-        ease: "none",
+        y: -22,
+        opacity: 0.65,
+        ease: "power1.out",
         duration: 1
       }, 1);
       tl.to(cards[0], {
         scale: 0.88,
-        y: -36,
-        filter: "brightness(0.35) blur(1.5px)",
-        ease: "none",
+        y: -42,
+        opacity: 0.35,
+        ease: "power1.out",
         duration: 1
       }, 1);
 
@@ -158,36 +156,35 @@ function initWhoCanJoin(container = document) {
       tl.to(cards[3], {
         yPercent: 0,
         opacity: 1,
-        ease: "none",
+        ease: "power1.out",
         duration: 1
       }, 2);
       tl.to(cards[2], {
         scale: 0.94,
-        y: -18,
-        filter: "brightness(0.65) blur(0.5px)",
-        ease: "none",
+        y: -22,
+        opacity: 0.65,
+        ease: "power1.out",
         duration: 1
       }, 2);
       tl.to(cards[1], {
         scale: 0.88,
-        y: -36,
-        filter: "brightness(0.35) blur(1.5px)",
-        ease: "none",
+        y: -42,
+        opacity: 0.35,
+        ease: "power1.out",
         duration: 1
       }, 2);
       tl.to(cards[0], {
         scale: 0.82,
-        y: -54,
-        filter: "brightness(0.2) blur(2.5px)",
-        ease: "none",
+        y: -60,
+        opacity: 0.18,
+        ease: "power1.out",
         duration: 1
       }, 2);
 
-      // Save reference globally
       window.whoCanJoinScrollTrigger = tl.scrollTrigger;
 
-      // Handle pill click navigation
-      const pillCleanupFns = [];
+      // Pill click navigation
+      const pillCleanups = [];
       pills.forEach((pill) => {
         const clickHandler = (e) => {
           e.preventDefault();
@@ -206,31 +203,29 @@ function initWhoCanJoin(container = document) {
         };
 
         pill.addEventListener('click', clickHandler);
-        pillCleanupFns.push(() => pill.removeEventListener('click', clickHandler));
+        pillCleanups.push(() => pill.removeEventListener('click', clickHandler));
       });
 
-      // Delayed refresh to guarantee correct trigger coordinates after image/layout settles
+      // Quick settle check
       setTimeout(() => {
         syncDeckHeight();
         ScrollTrigger.refresh();
-      }, 250);
+      }, 200);
 
       return function() {
         tl.kill();
-        pillCleanupFns.forEach(fn => fn());
+        pillCleanups.forEach(fn => fn());
         window.whoCanJoinScrollTrigger = null;
       };
     },
 
     // MOBILE SCREENS (< 769px)
     "(max-width: 768px)": function() {
-      // Clear all GSAP inline styles to let native responsive layout take effect
       cards.forEach(card => {
         gsap.set(card, { clearProps: "all" });
       });
       if (deck) deck.style.minHeight = 'auto';
 
-      // Connect pill clicks to smooth scroll to the target card
       const mobilePillCleanups = [];
       pills.forEach((pill) => {
         const clickHandler = (e) => {
@@ -254,7 +249,6 @@ function initWhoCanJoin(container = document) {
         mobilePillCleanups.push(() => pill.removeEventListener('click', clickHandler));
       });
 
-      // Highlight active pill on mobile scroll via IntersectionObserver
       let activeObserver = null;
       if ('IntersectionObserver' in window) {
         activeObserver = new IntersectionObserver((entries) => {
@@ -269,9 +263,7 @@ function initWhoCanJoin(container = document) {
               }
             }
           });
-        }, {
-          threshold: 0.6
-        });
+        }, { threshold: 0.6 });
 
         cards.forEach(card => activeObserver.observe(card));
       }
@@ -283,14 +275,15 @@ function initWhoCanJoin(container = document) {
     }
   });
 
-  // Global window load refresh
-  window.addEventListener('load', () => {
-    syncDeckHeight();
-    ScrollTrigger.refresh();
-  });
+  window._whoCanJoinCleanup = () => {
+    cleanupFns.forEach(fn => fn());
+    if (window.whoCanJoinScrollTrigger && typeof window.whoCanJoinScrollTrigger.kill === 'function') {
+      window.whoCanJoinScrollTrigger.kill(true);
+      window.whoCanJoinScrollTrigger = null;
+    }
+  };
 }
 
-// Export globally
 if (typeof window !== 'undefined') {
   window.initWhoCanJoin = initWhoCanJoin;
 }

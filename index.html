@@ -43,8 +43,8 @@
   <link rel="stylesheet" href="./components/courses/courses.css?v=5.1">
   <link rel="stylesheet" href="./components/why-miracle-it/why-miracle-it.css?v=5.3">
   <link rel="stylesheet" href="./components/learning-experience/learning-experience.css?v=5.3">
-  <link rel="stylesheet" href="./components/who-can-join/who-can-join.css?v=5.0">
-  <link rel="stylesheet" href="./components/counselling-process/counselling-process.css?v=5.0">
+  <link rel="stylesheet" href="./components/who-can-join/who-can-join.css?v=6.0">
+  <link rel="stylesheet" href="./components/counselling-process/counselling-process.css?v=6.0">
   <link rel="stylesheet" href="./components/proof/proof.css?v=5.2">
   <link rel="stylesheet" href="./components/location/location.css?v=7.0">
   <link rel="stylesheet" href="./components/faq/faq.css?v=6.2">
@@ -2665,6 +2665,35 @@ metrics = model.train(epochs=<span class="c-number">50</span>, learning_rate=<sp
                 <h2>How the Free Counselling Visit Works</h2>
                 <p class="text-lead">A transparent 5-step journey to complete clarity on your career direction.</p>
               </div>
+
+              <!-- Interactive 5-Step Progress Pill Navigation -->
+              <nav class="counselling-step-nav" id="counsellingStepNav" aria-label="5-Step Counselling Process">
+                <button class="counselling-nav-pill is-active" data-step-target="0" type="button" aria-selected="true">
+                  <span class="pill-dot"></span>
+                  <span class="pill-num">01</span>
+                  <span class="pill-text">Career Goal</span>
+                </button>
+                <button class="counselling-nav-pill" data-step-target="1" type="button" aria-selected="false">
+                  <span class="pill-dot"></span>
+                  <span class="pill-num">02</span>
+                  <span class="pill-text">Background</span>
+                </button>
+                <button class="counselling-nav-pill" data-step-target="2" type="button" aria-selected="false">
+                  <span class="pill-dot"></span>
+                  <span class="pill-num">03</span>
+                  <span class="pill-text">Course Tracks</span>
+                </button>
+                <button class="counselling-nav-pill" data-step-target="3" type="button" aria-selected="false">
+                  <span class="pill-dot"></span>
+                  <span class="pill-num">04</span>
+                  <span class="pill-text">Action Plan</span>
+                </button>
+                <button class="counselling-nav-pill" data-step-target="4" type="button" aria-selected="false">
+                  <span class="pill-dot"></span>
+                  <span class="pill-num">05</span>
+                  <span class="pill-text">Campus Visit</span>
+                </button>
+              </nav>
 
               <!-- 5-Step Centered Cards Stage Window -->
               <div class="process-scroll-window" id="processScrollWindow">
@@ -6111,8 +6140,8 @@ metrics = model.train(epochs=<span class="c-number">50</span>, learning_rate=<sp
   <script src="./components/courses/courses.js"></script>
   <script src="./components/why-miracle-it/why-miracle-it.js?v=5.3"></script>
   <script src="./components/learning-experience/learning-experience.js?v=5.3"></script>
-  <script src="./components/who-can-join/who-can-join.js"></script>
-  <script src="./components/counselling-process/counselling-process.js"></script>
+  <script src="./components/who-can-join/who-can-join.js?v=6.0"></script>
+  <script src="./components/counselling-process/counselling-process.js?v=6.0"></script>
   <script src="./components/proof/proof.js"></script>
   <script src="./components/location/location.js?v=7.0"></script>
   <script src="./components/faq/faq.js?v=6.2"></script>
@@ -6122,7 +6151,7 @@ metrics = model.train(epochs=<span class="c-number">50</span>, learning_rate=<sp
   <script src="./components/mobile-sticky-cta/mobile-sticky-cta.js"></script>
 
   <!-- Central Motion System Controller -->
-  <script src="./js/motion.js?v=5.3"></script>
+  <script src="./js/motion.js?v=6.0"></script>
 
   <!-- Master Page Loader & Orchestrator -->
   <script src="./js/main.js"></script>

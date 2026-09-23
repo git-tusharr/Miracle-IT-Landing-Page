@@ -59,6 +59,99 @@
 }
 
 /* --------------------------------------------------------------------------
+   Interactive Step Progress Navigation Pill Bar
+   -------------------------------------------------------------------------- */
+.counselling-step-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0 auto 2.25rem auto;
+  padding: 0.35rem 0.5rem;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full, 9999px);
+  width: fit-content;
+  max-width: 100%;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  position: relative;
+  z-index: 20;
+}
+
+.counselling-nav-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-full, 9999px);
+  color: #94A3B8;
+  font-family: var(--font-sans, system-ui);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  outline: none;
+  white-space: nowrap;
+}
+
+.counselling-nav-pill:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.counselling-nav-pill .pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #64748B;
+  transition: all 0.25s ease;
+}
+
+.counselling-nav-pill .pill-num {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  opacity: 0.7;
+}
+
+.counselling-nav-pill.is-active {
+  background: rgba(6, 182, 212, 0.16);
+  border-color: rgba(6, 182, 212, 0.45);
+  color: #FFFFFF;
+  box-shadow: 0 0 18px rgba(6, 182, 212, 0.25);
+}
+
+.counselling-nav-pill.is-active .pill-dot {
+  background: #38BDF8;
+  box-shadow: 0 0 8px #38BDF8;
+  transform: scale(1.3);
+}
+
+.counselling-nav-pill.is-active .pill-num {
+  color: #38BDF8;
+  opacity: 1;
+}
+
+.counselling-nav-pill:last-child.is-active {
+  background: rgba(255, 122, 0, 0.18);
+  border-color: rgba(255, 122, 0, 0.45);
+  box-shadow: 0 0 20px rgba(255, 122, 0, 0.25);
+}
+
+.counselling-nav-pill:last-child.is-active .pill-dot {
+  background: #FF7A00;
+  box-shadow: 0 0 8px #FF7A00;
+}
+
+.counselling-nav-pill:last-child.is-active .pill-num {
+  color: #FF9433;
+}
+
+/* --------------------------------------------------------------------------
    Step Card Styling (Common to Mobile & Desktop)
    -------------------------------------------------------------------------- */
 .step-card {
@@ -239,6 +332,7 @@
     opacity: 0;
     pointer-events: none;
     z-index: 1;
+    will-change: transform, opacity;
   }
 
   .counselling-step-panel.is-active {
@@ -254,6 +348,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    will-change: transform, opacity;
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
 
   .step-card {
@@ -268,6 +366,28 @@
 @media (max-width: 991px) {
   .counselling-process-section {
     padding: clamp(3rem, 6vw, 4.5rem) 0;
+  }
+
+  .counselling-step-nav {
+    display: flex;
+    overflow-x: auto;
+    max-width: 100%;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding: 0.25rem 0.35rem;
+    gap: 0.35rem;
+    margin-bottom: 1.5rem;
+    border-radius: var(--radius-full);
+  }
+
+  .counselling-step-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .counselling-nav-pill {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.78rem;
+    flex-shrink: 0;
   }
 
   .process-scroll-window {

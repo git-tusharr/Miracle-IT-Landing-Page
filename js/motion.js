@@ -706,112 +706,12 @@
     /**
     /**
      * 6. Cinematic Centered 5-Step Card Transitions on Scroll (Desktop >= 992px)
-     * Cards stay centered; vertical scrolling smoothly transitions between the 5 cards.
+     * Cards stay centered; vertical scrolling smoothly transitions between the 5 cards with dwell time.
      */
     initCounsellingProcessTransition() {
-      const section = document.querySelector('#counselling-process');
-      if (!section) return;
-
-      const panels = Array.from(section.querySelectorAll('.counselling-step-panel'));
-      if (!panels.length) return;
-
-      // Guard: If GSAP or ScrollTrigger is not available or reduced motion is active
-      if (typeof window.gsap === 'undefined' || typeof window.ScrollTrigger === 'undefined' || this.isReducedMotion) {
-        panels.forEach(p => {
-          p.classList.add('is-active');
-          p.style.opacity = '1';
-          p.style.visibility = 'visible';
-          p.style.transform = 'none';
-        });
-        return;
+      if (typeof window.initCounsellingProcess === 'function') {
+        window.initCounsellingProcess();
       }
-
-      const gsap = window.gsap;
-      const ScrollTrigger = window.ScrollTrigger;
-      gsap.registerPlugin(ScrollTrigger);
-
-      ScrollTrigger.matchMedia({
-        // DESKTOP / LARGE TABLET (>= 992px)
-        "(min-width: 992px)": function() {
-          // Reset initial states
-          gsap.set(panels[0], { autoAlpha: 1, zIndex: 2 });
-          const p0Outer = panels[0].querySelector('.step-outer');
-          if (p0Outer) gsap.set(p0Outer, { y: 0, opacity: 1, scale: 1 });
-
-          for (let i = 1; i < panels.length; i++) {
-            gsap.set(panels[i], { autoAlpha: 0, zIndex: 1 });
-            const outer = panels[i].querySelector('.step-outer');
-            if (outer) gsap.set(outer, { y: 30, opacity: 0, scale: 0.98 });
-          }
-
-          // Master ScrollTrigger timeline pinned in place
-          const tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: section,
-              start: "top 76px",
-              end: "+=2000",
-              pin: true,
-              pinSpacing: true,
-              anticipatePin: 1,
-              scrub: true,
-              invalidateOnRefresh: true
-            }
-          });
-
-          // Sequence the transitions between the 5 panels
-          for (let i = 0; i < panels.length - 1; i++) {
-            const current = panels[i];
-            const next = panels[i + 1];
-
-            const curOuter = current.querySelector('.step-outer');
-            const nextOuter = next.querySelector('.step-outer');
-
-            const timePos = `step${i}`;
-            tl.addLabel(timePos);
-
-            // Outgoing panel gently fades & lifts up
-            if (curOuter) {
-              tl.to(curOuter, {
-                y: -25,
-                opacity: 0,
-                scale: 0.97,
-                ease: "power2.inOut",
-                duration: 0.8
-              }, timePos);
-            }
-            tl.set(current, { autoAlpha: 0, zIndex: 1 }, `${timePos}+=0.7`);
-
-            // Incoming panel smoothly enters from below to center
-            tl.set(next, { autoAlpha: 1, zIndex: i + 2 }, `${timePos}+=0.1`);
-            if (nextOuter) {
-              tl.fromTo(nextOuter,
-                { y: 25, opacity: 0, scale: 0.97 },
-                { y: 0, opacity: 1, scale: 1, ease: "power2.inOut", duration: 0.8 },
-                `${timePos}+=0.1`
-              );
-            }
-          }
-
-          tl.addLabel("step4");
-
-          return function() {
-            tl.kill();
-          };
-        },
-
-        // MOBILE & TABLET FALLBACK (< 992px)
-        "(max-width: 991px)": function() {
-          panels.forEach((p) => {
-            gsap.set(p, { clearProps: "all" });
-            const outer = p.querySelector('.step-outer');
-            if (outer) gsap.set(outer, { clearProps: "all" });
-          });
-        }
-      });
-
-      // Ensure ScrollTriggers are sorted by true document order and refreshed
-      ScrollTrigger.sort();
-      ScrollTrigger.refresh();
     },
 
     /**
