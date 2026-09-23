@@ -1,172 +1,423 @@
 <!-- ==========================================================================
-     FAQ SECTION COMPONENT — ACCESSIBLE VANILLA JS ACCORDION
-     Strictly verified responses with transparent placeholders
+     FAQ SECTION COMPONENT — CLEAN PROFESSIONAL DROPDOWN ACCORDION
+     Miracle IT Career Academy — Modern Light-Theme Aesthetics
      ========================================================================== -->
-<link rel="stylesheet" href="./components/faq/faq.css">
-<section class="section section-light faq-section" id="faq">
+<link rel="stylesheet" href="./components/faq/faq.css?v=6.2">
+
+<section class="section section-light faq-section" id="faq" data-theme="light">
   <div class="container container-narrow">
     
-    <div class="section-header">
-      <span class="section-tag">Common Questions</span>
-      <h2>Frequently Asked Questions</h2>
-      <p class="text-lead">
-        Straightforward answers to the most common queries about our courses, counselling visits, and academy policies.
+    <!-- Section Header -->
+    <div class="section-header text-center">
+      <span class="section-tag faq-section-tag">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+          <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg>
+        <span>Honest & Clear Guidance</span>
+      </span>
+      <h2 class="faq-main-heading">Frequently Asked Questions</h2>
+      <p class="text-lead faq-main-subheading">
+        Straightforward, transparent answers about our courses, fees, batch schedules, project training, and free counselling visits.
       </p>
     </div>
 
-    <!-- Instant FAQ Search Filter (Skiper UI) -->
-    <div class="faq-search-box" style="margin-bottom: 2rem;">
-      <div style="position: relative; max-width: 560px; margin: 0 auto;">
-        <input type="search" id="faqSearchInput" placeholder="🔍 Search questions (e.g. fees, duration, projects, offline)..." class="form-input faq-search-input" style="background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 9999px; padding: 0.8rem 1.5rem; color: #0F172A; width: 100%; font-size: 0.92rem; box-shadow: 0 2px 10px rgba(15, 23, 42, 0.05);">
+    <!-- Live Search & Category Controls Bar -->
+    <div class="faq-controls-bar">
+      <!-- Search Input -->
+      <div class="faq-search-wrapper">
+        <span class="faq-search-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </span>
+        <input 
+          type="search" 
+          id="faqSearchInput" 
+          class="faq-search-input" 
+          placeholder="Search questions (e.g. fees, duration, projects, offline, timings)..." 
+          aria-label="Search frequently asked questions"
+          autocomplete="off">
+        <button type="button" class="faq-search-clear" id="faqSearchClear" aria-label="Clear search" style="display: none;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="faq-filter-tabs" role="tablist" aria-label="Filter FAQ by topic">
+        <button type="button" class="faq-tab-btn is-active" data-filter="all" role="tab" aria-selected="true">
+          <span>All Questions</span>
+          <span class="faq-tab-count">9</span>
+        </button>
+        <button type="button" class="faq-tab-btn" data-filter="fees" role="tab" aria-selected="false">
+          <span>Fees & Admissions</span>
+          <span class="faq-tab-count">2</span>
+        </button>
+        <button type="button" class="faq-tab-btn" data-filter="courses" role="tab" aria-selected="false">
+          <span>Courses & Batches</span>
+          <span class="faq-tab-count">3</span>
+        </button>
+        <button type="button" class="faq-tab-btn" data-filter="projects" role="tab" aria-selected="false">
+          <span>Projects & Certificate</span>
+          <span class="faq-tab-count">2</span>
+        </button>
+        <button type="button" class="faq-tab-btn" data-filter="career" role="tab" aria-selected="false">
+          <span>Career & Guidance</span>
+          <span class="faq-tab-count">2</span>
+        </button>
+      </div>
+
+      <!-- Results Count Status -->
+      <div class="faq-status-bar" id="faqStatusBar" aria-live="polite">
+        <span class="faq-status-text" id="faqStatusText">Showing 9 of 9 questions</span>
       </div>
     </div>
 
-    <!-- Accordion Wrapper -->
+    <!-- Dropdown Accordion Container -->
     <div class="faq-accordion" id="faqAccordion">
-      
-      <!-- FAQ 1: Fees -->
-      <div class="faq-item bento-spotlight">
+
+      <!-- FAQ Item 1: Fees -->
+      <div class="faq-item" data-category="fees" data-faq-id="1">
         <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-ans-1" id="faq-q-1">
-          <span class="faq-question">What are the course fees?</span>
+          <div class="faq-trigger-content">
+            <span class="faq-category-badge tag-fees">Fees & Investment</span>
+            <span class="faq-question">What are the course fees?</span>
+          </div>
           <span class="faq-chevron" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
           </span>
         </button>
-        <div class="faq-panel" id="faq-ans-1" role="region" aria-labelledby="faq-q-1" hidden>
-          <div class="faq-content">
-            <p>Course fee details will be updated after confirmation from the institute. Fees depend on the specific program (Full Stack, Data Analytics, etc.), duration, and installment options. Complete transparent fee structures are provided during your free counselling visit with zero obligation.</p>
+        <div class="faq-panel" id="faq-ans-1" role="region" aria-labelledby="faq-q-1">
+          <div class="faq-panel-inner">
+            <p class="faq-lead-text">
+              Course fee details depend on the specific program (Full Stack Web Development, Data Analytics & AI, Cloud & DevOps, or Cybersecurity), duration, and payment plan. Complete transparent fee breakdowns are provided during your free 1-on-1 counselling visit with zero obligation, zero pressure, and no hidden charges.
+            </p>
+            <div class="faq-takeaways">
+              <span class="faq-takeaways-title">Key Highlights:</span>
+              <ul class="faq-takeaways-list">
+                <li><span class="faq-check">✓</span> 100% transparent fee schedule with complete curriculum breakdown</li>
+                <li><span class="faq-check">✓</span> Flexible zero-cost EMI financing and milestone installments available</li>
+                <li><span class="faq-check">✓</span> Zero hidden charges, lab access fees, or mandatory exam surcharges</li>
+              </ul>
+            </div>
+            <div class="faq-panel-action">
+              <span>Want a personalized fee estimate?</span>
+              <a href="#counselling-form" class="faq-panel-link">Book Free 1-on-1 Counselling Visit →</a>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- FAQ 2: Duration -->
-      <div class="faq-item bento-spotlight">
+      <!-- FAQ Item 2: Duration -->
+      <div class="faq-item" data-category="courses" data-faq-id="2">
         <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-ans-2" id="faq-q-2">
-          <span class="faq-question">How long is the course?</span>
+          <div class="faq-trigger-content">
+            <span class="faq-category-badge tag-courses">Duration & Batches</span>
+            <span class="faq-question">How long is the course?</span>
+          </div>
           <span class="faq-chevron" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
           </span>
         </button>
-        <div class="faq-panel" id="faq-ans-2" role="region" aria-labelledby="faq-q-2" hidden>
-          <div class="faq-content">
-            <p>Course duration details will be updated after confirmation from the institute. Programs typically range from fast-track intensive tracks to comprehensive 3 to 6-month hands-on programs depending on whether you choose weekday or weekend cohorts.</p>
+        <div class="faq-panel" id="faq-ans-2" role="region" aria-labelledby="faq-q-2">
+          <div class="faq-panel-inner">
+            <p class="faq-lead-text">
+              Course duration typically ranges from 3 to 6 months depending on the specific domain chosen and whether you enroll in regular weekday cohorts or weekend tracks. Fast-track options are also available for candidates wanting accelerated placement readiness.
+            </p>
+            <div class="faq-takeaways">
+              <span class="faq-takeaways-title">Key Highlights:</span>
+              <ul class="faq-takeaways-list">
+                <li><span class="faq-check">✓</span> 3 to 6 months structured, industry-aligned syllabus roadmap</li>
+                <li><span class="faq-check">✓</span> Daily 2 to 3 hours of mandatory hands-on lab workstation practice</li>
+                <li><span class="faq-check">✓</span> Flexible weekday cohorts (Mon-Fri) and weekend executive tracks (Sat-Sun)</li>
+              </ul>
+            </div>
+            <div class="faq-panel-action">
+              <span>Need help planning your learning timeline?</span>
+              <a href="#counselling-form" class="faq-panel-link">Speak with an Academic Advisor →</a>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- FAQ 3: Eligibility -->
-      <div class="faq-item bento-spotlight">
+      <!-- FAQ Item 3: Eligibility -->
+      <div class="faq-item" data-category="fees" data-faq-id="3">
         <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-ans-3" id="faq-q-3">
-          <span class="faq-question">Who is eligible to join?</span>
+          <div class="faq-trigger-content">
+            <span class="faq-category-badge tag-fees">Admissions & Eligibility</span>
+            <span class="faq-question">Who is eligible to join?</span>
+          </div>
           <span class="faq-chevron" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
           </span>
         </button>
-        <div class="faq-panel" id="faq-ans-3" role="region" aria-labelledby="faq-q-3" hidden>
-          <div class="faq-content">
-            <p>Anyone with a commitment to learn practical IT skills! We welcome final-year college students, engineering & diploma holders (B.Tech, BCA, MCA, B.Sc), non-tech graduates (B.Com, BBA), and working professionals seeking career pivots. During counselling, we match you with a track that fits your academic foundation.</p>
+        <div class="faq-panel" id="faq-ans-3" role="region" aria-labelledby="faq-q-3">
+          <div class="faq-panel-inner">
+            <p class="faq-lead-text">
+              Anyone with a genuine commitment to building practical tech skills is eligible! We welcome final-year college students, technical graduates (B.Tech, BE, BCA, MCA, B.Sc CS/IT), non-tech graduates (B.Com, BBA, BA), and working professionals seeking career pivots into high-growth software roles. Prior coding knowledge is NOT mandatory.
+            </p>
+            <div class="faq-takeaways">
+              <span class="faq-takeaways-title">Key Highlights:</span>
+              <ul class="faq-takeaways-list">
+                <li><span class="faq-check">✓</span> Zero prior coding experience required — starts from programming fundamentals</li>
+                <li><span class="faq-check">✓</span> Graduates from both tech and non-tech streams are welcome</li>
+                <li><span class="faq-check">✓</span> Dedicated foundation-leveling support to bring all students up to speed</li>
+              </ul>
+            </div>
+            <div class="faq-panel-action">
+              <span>Unsure which domain fits your background?</span>
+              <a href="#counselling-form" class="faq-panel-link">Get 1-on-1 Profile Evaluation →</a>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- FAQ 4: Batch Timings -->
-      <div class="faq-item bento-spotlight">
+      <!-- FAQ Item 4: Batch Timings -->
+      <div class="faq-item" data-category="courses" data-faq-id="4">
         <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-ans-4" id="faq-q-4">
-          <span class="faq-question">What are the batch timings?</span>
+          <div class="faq-trigger-content">
+            <span class="faq-category-badge tag-courses">Schedules & Batches</span>
+            <span class="faq-question">What are the batch timings?</span>
+          </div>
           <span class="faq-chevron" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
           </span>
         </button>
-        <div class="faq-panel" id="faq-ans-4" role="region" aria-labelledby="faq-q-4" hidden>
-          <div class="faq-content">
-            <p>Exact batch schedules are allocated according to current cohort availability. We offer morning slots for college students, afternoon batches, and weekend sessions designed for working professionals. Current available timings can be discussed during your visit.</p>
+        <div class="faq-panel" id="faq-ans-4" role="region" aria-labelledby="faq-q-4">
+          <div class="faq-panel-inner">
+            <p class="faq-lead-text">
+              We run multiple flexible batches throughout the day at our M.P. Nagar center in Bhopal. Timings include morning slots (ideal for college students), afternoon sessions, evening batches, and dedicated Saturday-Sunday weekend sessions for working executives. Missed class backup sessions are also provided.
+            </p>
+            <div class="faq-takeaways">
+              <span class="faq-takeaways-title">Key Highlights:</span>
+              <ul class="faq-takeaways-list">
+                <li><span class="faq-check">✓</span> Morning (8 AM - 11 AM), Afternoon (12 PM - 3 PM), Evening (4 PM - 7 PM)</li>
+                <li><span class="faq-check">✓</span> Dedicated weekend cohorts for working professionals</li>
+                <li><span class="faq-check">✓</span> Unlimited lab workstation access beyond classroom lecture hours</li>
+              </ul>
+            </div>
+            <div class="faq-panel-action">
+              <span>Want to select a timing that fits your routine?</span>
+              <a href="tel:+917880003127" class="faq-panel-link">Call to Check Available Slots: +91 78800 03127 →</a>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- FAQ 5: Online vs Offline -->
-      <div class="faq-item bento-spotlight">
+      <!-- FAQ Item 5: Online vs Offline -->
+      <div class="faq-item" data-category="courses" data-faq-id="5">
         <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-ans-5" id="faq-q-5">
-          <span class="faq-question">Is the course online or offline?</span>
+          <div class="faq-trigger-content">
+            <span class="faq-category-badge tag-courses">Learning Mode</span>
+            <span class="faq-question">Is the course online or offline?</span>
+          </div>
           <span class="faq-chevron" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
           </span>
         </button>
-        <div class="faq-panel" id="faq-ans-5" role="region" aria-labelledby="faq-q-5" hidden>
-          <div class="faq-content">
-            <p>Our primary emphasis is in-person classroom and lab learning at our M.P. Nagar center in Bhopal. Physical presence ensures direct faculty mentorship, immediate code debugging, and an accountable peer learning environment.</p>
+        <div class="faq-panel" id="faq-ans-5" role="region" aria-labelledby="faq-q-5">
+          <div class="faq-panel-inner">
+            <p class="faq-lead-text">
+              Our core training is delivered 100% in-person at our modern tech campus in M.P. Nagar Zone-II, Bhopal. Physical presence ensures direct faculty mentorship, immediate over-the-shoulder code debugging, modern computer lab workstations, and an accountable peer learning environment.
+            </p>
+            <div class="faq-takeaways">
+              <span class="faq-takeaways-title">Key Highlights:</span>
+              <ul class="faq-takeaways-list">
+                <li><span class="faq-check">✓</span> 100% in-person classroom and lab learning at M.P. Nagar Zone-II, Bhopal</li>
+                <li><span class="faq-check">✓</span> Real-time live faculty debugging directly on your computer screen</li>
+                <li><span class="faq-check">✓</span> High peer accountability and collaborative project hackathons</li>
+              </ul>
+            </div>
+            <div class="faq-panel-action">
+              <span>Want to tour our computer lab in Bhopal?</span>
+              <a href="#counselling-form" class="faq-panel-link">Schedule a Free Campus Visit →</a>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- FAQ 6: Projects -->
-      <div class="faq-item bento-spotlight">
+      <!-- FAQ Item 6: Projects -->
+      <div class="faq-item" data-category="projects" data-faq-id="6">
         <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-ans-6" id="faq-q-6">
-          <span class="faq-question">Will I work on real projects?</span>
+          <div class="faq-trigger-content">
+            <span class="faq-category-badge tag-projects">Curriculum & Projects</span>
+            <span class="faq-question">Will I work on real projects?</span>
+          </div>
           <span class="faq-chevron" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
           </span>
         </button>
-        <div class="faq-panel" id="faq-ans-6" role="region" aria-labelledby="faq-q-6" hidden>
-          <div class="faq-content">
-            <p>Yes, absolutely. Project work is central to our curriculum. You will build modular applications, link backend databases, consume REST APIs, and push production-ready code repositories to your GitHub portfolio.</p>
+        <div class="faq-panel" id="faq-ans-6" role="region" aria-labelledby="faq-q-6">
+          <div class="faq-panel-inner">
+            <p class="faq-lead-text">
+              Yes, absolutely! Hands-on project work is central to our curriculum. You will build modular applications, link relational and NoSQL databases, consume REST APIs, implement authentication, and deploy production-ready repositories to your public GitHub portfolio for recruiters to inspect.
+            </p>
+            <div class="faq-takeaways">
+              <span class="faq-takeaways-title">Key Highlights:</span>
+              <ul class="faq-takeaways-list">
+                <li><span class="faq-check">✓</span> 5+ major production-grade projects built from architectural scratch</li>
+                <li><span class="faq-check">✓</span> Live database integrations (MongoDB, PostgreSQL, MySQL)</li>
+                <li><span class="faq-check">✓</span> Public GitHub portfolio ready for recruiter technical reviews</li>
+              </ul>
+            </div>
+            <div class="faq-panel-action">
+              <span>Want to see sample student projects?</span>
+              <a href="#proof" class="faq-panel-link">Explore Placed Student Work & Proof →</a>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- FAQ 7: Certification -->
-      <div class="faq-item bento-spotlight">
+      <!-- FAQ Item 7: Certification -->
+      <div class="faq-item" data-category="projects" data-faq-id="7">
         <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-ans-7" id="faq-q-7">
-          <span class="faq-question">Will I receive certification?</span>
+          <div class="faq-trigger-content">
+            <span class="faq-category-badge tag-projects">Certification</span>
+            <span class="faq-question">Will I receive certification?</span>
+          </div>
           <span class="faq-chevron" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
           </span>
         </button>
-        <div class="faq-panel" id="faq-ans-7" role="region" aria-labelledby="faq-q-7" hidden>
-          <div class="faq-content">
-            <p>Yes. Upon successful completion of project evaluations, assignments, and curriculum modules, students receive a verified course completion certificate from Miracle IT Career Academy detailing their specialized skills.</p>
+        <div class="faq-panel" id="faq-ans-7" role="region" aria-labelledby="faq-q-7">
+          <div class="faq-panel-inner">
+            <p class="faq-lead-text">
+              Yes. Upon successful completion of practical project evaluations, milestone assessments, and curriculum modules, students receive a verified Course Completion Certificate from Miracle IT Career Academy detailing their specialized technical capabilities and evaluated proficiencies.
+            </p>
+            <div class="faq-takeaways">
+              <span class="faq-takeaways-title">Key Highlights:</span>
+              <ul class="faq-takeaways-list">
+                <li><span class="faq-check">✓</span> Industry-recognized certificate from Miracle IT Career Academy</li>
+                <li><span class="faq-check">✓</span> Verifiable credential detailing specific practical skills</li>
+                <li><span class="faq-check">✓</span> Shareable directly on your LinkedIn profile and digital resume</li>
+              </ul>
+            </div>
+            <div class="faq-panel-action">
+              <span>Have questions about credentials?</span>
+              <a href="#counselling-form" class="faq-panel-link">Inquire During Free Counselling →</a>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- FAQ 8: Career Support -->
-      <div class="faq-item bento-spotlight">
+      <!-- FAQ Item 8: Career Support -->
+      <div class="faq-item" data-category="career" data-faq-id="8">
         <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-ans-8" id="faq-q-8">
-          <span class="faq-question">Is career support available?</span>
+          <div class="faq-trigger-content">
+            <span class="faq-category-badge tag-career">Career Support</span>
+            <span class="faq-question">Is career support available?</span>
+          </div>
           <span class="faq-chevron" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
           </span>
         </button>
-        <div class="faq-panel" id="faq-ans-8" role="region" aria-labelledby="faq-q-8" hidden>
-          <div class="faq-content">
-            <p>Career assistance includes resume structuring, technical interview preparation, GitHub portfolio audits, and mock technical screenings. We believe in realistic skill building rather than gimmicky placement claims.</p>
+        <div class="faq-panel" id="faq-ans-8" role="region" aria-labelledby="faq-q-8">
+          <div class="faq-panel-inner">
+            <p class="faq-lead-text">
+              Career assistance includes 1-on-1 resume optimization, technical mock interviews, LinkedIn branding, GitHub portfolio audits, and direct coordination with hiring partners across Bhopal, Indore, and major tech hubs. We believe in realistic skill building rather than gimmicky placement claims.
+            </p>
+            <div class="faq-takeaways">
+              <span class="faq-takeaways-title">Key Highlights:</span>
+              <ul class="faq-takeaways-list">
+                <li><span class="faq-check">✓</span> 1-on-1 mock technical interviews and live whiteboarding practice</li>
+                <li><span class="faq-check">✓</span> ATS-optimized resume formatting and LinkedIn audits</li>
+                <li><span class="faq-check">✓</span> Direct partner interview referrals and campus recruitment drives</li>
+              </ul>
+            </div>
+            <div class="faq-panel-action">
+              <span>Want to discuss job prospects in your field?</span>
+              <a href="tel:+917880003127" class="faq-panel-link">Talk with Placement Counsellor →</a>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- FAQ 9: Counselling Visit -->
-      <div class="faq-item bento-spotlight">
+      <!-- FAQ Item 9: Counselling Visit -->
+      <div class="faq-item" data-category="career" data-faq-id="9">
         <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-ans-9" id="faq-q-9">
-          <span class="faq-question">How does the free counselling visit work?</span>
+          <div class="faq-trigger-content">
+            <span class="faq-category-badge tag-career">1-on-1 Counselling</span>
+            <span class="faq-question">How does the free counselling visit work?</span>
+          </div>
           <span class="faq-chevron" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
           </span>
         </button>
-        <div class="faq-panel" id="faq-ans-9" role="region" aria-labelledby="faq-q-9" hidden>
-          <div class="faq-content">
-            <p>You book a preferred date and time slot using our form. When you arrive at our M.P. Nagar center, you sit down 1-on-1 with a faculty advisor. You discuss your educational background, inspect the lab, review course roadmaps, and ask any questions freely without pressure.</p>
+        <div class="faq-panel" id="faq-ans-9" role="region" aria-labelledby="faq-q-9">
+          <div class="faq-panel-inner">
+            <p class="faq-lead-text">
+              You book a preferred date and time slot using our form or call. When you arrive at our center in M.P. Nagar Zone-II, Bhopal, you sit down 1-on-1 with a senior faculty advisor. You discuss your educational background, inspect the lab, review course roadmaps, and ask any questions freely without high-pressure sales pitches.
+            </p>
+            <div class="faq-takeaways">
+              <span class="faq-takeaways-title">Key Highlights:</span>
+              <ul class="faq-takeaways-list">
+                <li><span class="faq-check">✓</span> 100% free 30-45 minute 1-on-1 personalized academic review</li>
+                <li><span class="faq-check">✓</span> Full walkthrough of computer lab and active class sessions</li>
+                <li><span class="faq-check">✓</span> Honest roadmap guidance with zero sales pressure or obligation</li>
+              </ul>
+            </div>
+            <div class="faq-panel-action">
+              <span>Ready to visit our center in M.P. Nagar?</span>
+              <a href="#counselling-form" class="faq-panel-link">Book Your Free Visit Now →</a>
+            </div>
           </div>
         </div>
       </div>
 
     </div>
 
-    <!-- Have more questions callout -->
-    <div class="faq-footer-callout text-center">
-      <p>Have a question not covered here?</p>
-      <a href="tel:+917880003127" class="btn btn-secondary btn-sm" data-config-phone data-track-cta="faq_call_counsellor">
-        Speak Directly with an Advisor
-      </a>
+    <!-- Empty Search State -->
+    <div class="faq-empty-state" id="faqEmptyState" style="display: none;">
+      <div class="faq-empty-icon" aria-hidden="true">🔍</div>
+      <h3 class="faq-empty-title">No matching questions found</h3>
+      <p class="faq-empty-desc">We couldn't find questions matching your search term. Feel free to speak directly with our senior technical advisor.</p>
+      <div class="faq-empty-actions">
+        <button type="button" class="btn btn-secondary btn-sm" id="faqResetSearchBtn">Clear Search Filter</button>
+        <a href="tel:+917880003127" class="btn btn-primary btn-sm">Speak with Advisor</a>
+      </div>
+    </div>
+
+    <!-- Have more questions callout strip -->
+    <div class="faq-footer-callout">
+      <div class="faq-callout-icon" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF7A00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+      </div>
+      <div class="faq-callout-text">
+        <h4>Have a question not covered here?</h4>
+        <p>Talk directly with a technical faculty advisor. No automated bot, no pushy sales pitches.</p>
+      </div>
+      <div class="faq-callout-buttons">
+        <a href="tel:+917880003127" class="btn btn-primary btn-sm" data-config-phone data-track-cta="faq_call_counsellor">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <span>Call: +91 78800 03127</span>
+        </a>
+        <a href="https://wa.me/917880003127?text=Hi%20Miracle%20IT%2C%20I%20have%20a%20question%20about%20your%20courses" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" data-track-cta="faq_whatsapp_counsellor">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+          <span>WhatsApp Chat</span>
+        </a>
+      </div>
     </div>
 
   </div>
