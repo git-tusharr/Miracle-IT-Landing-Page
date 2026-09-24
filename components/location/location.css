@@ -1257,29 +1257,33 @@
   box-shadow: 0 0 12px rgba(255, 122, 0, 0.35);
 }
 
-/* RIGHT COLUMN: 3D Rotating World Globe */
+/* ==========================================================================
+   RIGHT COLUMN: INTERACTIVE CENTRAL INDIA NETWORK MAP & COMMAND DECK
+   High-tech telemetry, animated data beams, radar scan, and dynamic HUD sync
+   ========================================================================== */
 .other-centers-globe-col {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   min-width: 0;
+  width: 100%;
 }
 
 .globe-showcase-card {
   width: 100%;
-  max-width: 480px;
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  max-width: 500px;
+  background: rgba(11, 17, 33, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-xl, 24px);
-  padding: 1.4rem;
+  padding: 1.25rem 1.35rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
   position: relative;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.65), 0 0 35px rgba(56, 189, 248, 0.08);
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.75), 0 0 35px rgba(56, 189, 248, 0.08);
+  box-sizing: border-box;
 }
 
 .globe-header-strip {
@@ -1287,7 +1291,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.65rem;
 }
 
 .globe-status-pill {
@@ -1299,8 +1303,8 @@
   font-weight: 700;
   color: #FF9433;
   background: rgba(255, 122, 0, 0.1);
-  border: 1px solid rgba(255, 122, 0, 0.25);
-  padding: 0.28rem 0.65rem;
+  border: 1px solid rgba(255, 122, 0, 0.28);
+  padding: 0.25rem 0.65rem;
   border-radius: var(--radius-full, 9999px);
 }
 
@@ -1313,18 +1317,73 @@
   animation: pulseBeacon 1.8s infinite ease-in-out;
 }
 
+.map-live-telemetry {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.live-signal-badge {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 8px #10B981;
+  animation: pulseDot 2s infinite;
+}
+
 .globe-telemetry {
   font-family: var(--font-sans);
   font-size: 0.7rem;
-  color: #64748B;
+  color: #94A3B8;
   letter-spacing: 0.04em;
+  font-weight: 600;
 }
 
-.globe-viewport,
+/* Interactive Map Category Filter Strip */
+.map-filter-strip {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.2rem;
+}
+.map-filter-strip::-webkit-scrollbar { display: none; }
+
+.map-filter-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94A3B8;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.22rem 0.65rem;
+  border-radius: var(--radius-full, 9999px);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-filter-btn:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.map-filter-btn.is-active {
+  color: #FF9433;
+  background: rgba(255, 122, 0, 0.16);
+  border-color: #FF7A00;
+  box-shadow: 0 0 10px rgba(255, 122, 0, 0.3);
+}
+
+/* 2D India Regional SVG Map Viewport */
 .india-map-viewport {
   position: relative;
   width: 100%;
-  max-width: 440px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1337,74 +1396,252 @@
   max-height: 380px;
   display: block;
   border-radius: var(--radius-lg, 16px);
-  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.45));
+  filter: drop-shadow(0 14px 32px rgba(0, 0, 0, 0.55));
 }
 
-.hub-pulse-wave {
-  animation: hubRadarPulse 2.4s ease-out infinite;
+/* Animated Radar Sweep around Bhopal HQ (240, 195) */
+.radar-scan-arm {
+  transform-origin: 240px 195px;
+  animation: radarScanSweep 8.5s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes radarScanSweep {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Concentric Pulsing Radar Waves on Bhopal HQ */
+.hub-pulse-wave.hub-pulse-1 {
+  animation: hubRadarPulse 2.8s ease-out infinite;
   transform-origin: center;
+  pointer-events: none;
+}
+
+.hub-pulse-wave.hub-pulse-2 {
+  animation: hubRadarPulse 2.8s ease-out infinite 1.4s;
+  transform-origin: center;
+  pointer-events: none;
 }
 
 @keyframes hubRadarPulse {
-  0% {
-    r: 10px;
-    opacity: 0.9;
-  }
-  100% {
-    r: 32px;
-    opacity: 0;
-  }
+  0%   { r: 12px; opacity: 0.95; }
+  100% { r: 38px; opacity: 0; }
 }
 
-.telemetry-line {
-  stroke-dashoffset: 0;
-  animation: telemetryFlow 30s linear infinite;
+/* Telemetry Circuit Lines & Flow */
+.telemetry-circuit-lines path {
+  stroke-dasharray: 6,4;
+  animation: telemetryFlow 18s linear infinite;
+  pointer-events: none;
 }
 
 @keyframes telemetryFlow {
-  from {
-    stroke-dashoffset: 100;
-  }
-  to {
-    stroke-dashoffset: 0;
-  }
+  from { stroke-dashoffset: 120; }
+  to   { stroke-dashoffset: 0; }
 }
 
-.map-regional-pin {
+/* Campus Map Nodes & Interactive Pins */
+.map-campus-node {
   cursor: pointer;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), filter 0.25s ease;
+  outline: none;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), filter 0.28s ease, opacity 0.28s ease;
 }
 
-.map-regional-pin:hover,
-.map-regional-pin.is-active {
-  filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.75));
-  transform: scale(1.08);
+.map-campus-node:hover,
+.map-campus-node:focus-visible,
+.map-campus-node.is-active {
+  transform: scale(1.12);
+  filter: drop-shadow(0 0 14px rgba(56, 189, 248, 0.95));
 }
 
-.map-regional-pin:hover circle:nth-child(2),
-.map-regional-pin.is-active circle:nth-child(2) {
-  fill: #FF7A00;
+.map-hub-group:hover,
+.map-hub-group:focus-visible,
+.map-hub-group.is-active {
+  transform: scale(1.12);
+  filter: drop-shadow(0 0 18px rgba(255, 122, 0, 0.95));
 }
 
-.map-regional-pin:hover rect,
-.map-regional-pin.is-active rect {
+.map-campus-node.is-dimmed {
+  opacity: 0.22 !important;
+  filter: grayscale(0.85) !important;
+}
+
+.pin-halo {
+  animation: pinHaloPulse 2.4s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+@keyframes pinHaloPulse {
+  0%   { r: 12px; stroke-opacity: 0.35; }
+  100% { r: 17px; stroke-opacity: 0.85; stroke-width: 1.6px; }
+}
+
+/* Pin Tag Hover / Focus Highlight */
+.map-campus-node:hover rect,
+.map-campus-node.is-active rect {
+  stroke: #38BDF8;
+  fill: #0F1D38;
+}
+
+.map-hub-group:hover rect,
+.map-hub-group.is-active rect {
   stroke: #FF7A00;
-  fill: #1E293B;
+  fill: #151F36;
 }
 
-.map-hub-group {
-  cursor: default;
+/* ==========================================================================
+   INTERACTIVE CENTER INTELLIGENCE HUD CARD
+   ========================================================================== */
+.map-telemetry-hud {
+  width: 100%;
+  margin-top: 0.9rem;
+  background: rgba(11, 18, 33, 0.96);
+  border: 1px solid rgba(56, 189, 248, 0.28);
+  border-top: 2px solid #FF7A00;
+  border-radius: var(--radius-lg, 16px);
+  padding: 0.95rem 1.15rem;
+  box-shadow: 0 12px 30px -6px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 122, 0, 0.12);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  animation: hudReveal 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+@keyframes hudReveal {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 
+.map-telemetry-hud.is-hq {
+  border-color: rgba(255, 122, 0, 0.45);
+  border-top: 2px solid #FF7A00;
+  box-shadow: 0 12px 32px -6px rgba(0, 0, 0, 0.8), 0 0 24px rgba(255, 122, 0, 0.22);
+}
+
+.hud-top-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.45rem;
+}
+
+.hud-identity {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.hud-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 10px #10B981;
+  flex-shrink: 0;
+  animation: pulseDot 2s infinite;
+}
+
+.hud-center-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #F8FAFC;
+  margin: 0;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+.hud-center-sub {
+  font-size: 0.72rem;
+  color: #38BDF8;
+  display: block;
+  margin-top: 0.15rem;
+  font-weight: 500;
+}
+
+.hud-badge-status {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #10B981;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 0.18rem 0.55rem;
+  border-radius: var(--radius-full, 9999px);
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+.hud-center-address {
+  font-size: 0.78rem;
+  color: #94A3B8;
+  line-height: 1.45;
+  margin: 0 0 0.55rem 0;
+}
+
+.hud-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.hud-pill-tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #CBD5E1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.15rem 0.48rem;
+  border-radius: 6px;
+}
+
+.hud-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.hud-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  padding: 0.36rem 0.7rem;
+  border-radius: var(--radius-sm, 8px);
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hud-icon {
+  width: 13px;
+  height: 13px;
+  stroke: currentColor;
+  flex-shrink: 0;
+}
+
+.hud-sync-trigger {
+  background: rgba(255, 122, 0, 0.14);
+  color: #FF9433;
+  border: 1px solid rgba(255, 122, 0, 0.35);
+}
+
+.hud-sync-trigger:hover {
+  background: #FF7A00;
+  color: #FFFFFF;
+  border-color: #FF7A00;
+  box-shadow: 0 4px 12px rgba(255, 122, 0, 0.35);
+}
 
 .globe-metrics-bar {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin-top: 1rem;
-  padding-top: 0.85rem;
+  margin-top: 0.85rem;
+  padding-top: 0.75rem;
   border-top: 1px solid rgba(255, 255, 255, 0.07);
 }
 
