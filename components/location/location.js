@@ -170,13 +170,13 @@ function initCenters3DCarousel(section, stage, cylinder) {
   function updateRadius() {
     const w = window.innerWidth;
     if (w <= 480) {
-      radius = Math.min(140, Math.floor(w * 0.33));   // was 180, w * 0.42
+      radius = 180;
     } else if (w <= 768) {
-      radius = Math.min(175, Math.floor(w * 0.31));   // was 225, w * 0.40
+      radius = 210;
     } else if (w <= 1024) {
-      radius = 205;                                    // was 265
+      radius = 230;
     } else {
-      radius = 235;                                    // was 310
+      radius = 260;
     }
 
     // Position each card at its initial cylindrical coordinates
@@ -194,6 +194,7 @@ function initCenters3DCarousel(section, stage, cylinder) {
   function updateCardsDepth(rotation) {
     let closestIndex = 0;
     let minDiff = Infinity;
+    const isMobile = window.innerWidth <= 768;
 
     cards.forEach((card, idx) => {
       const baseAngle = parseFloat(card.dataset.baseAngle) || (idx * stepAngle);
@@ -208,25 +209,49 @@ function initCenters3DCarousel(section, stage, cylinder) {
         closestIndex = idx;
       }
 
-      // Convert to radian for depth factor: cos(0)=1 (front), cos(180)=-1 (back)
-      const rad = relativeAngle * (Math.PI / 180);
-      const cosVal = Math.cos(rad);
-      const depthFactor = (cosVal + 1) / 2; // 0 to 1
-
-      // Dynamic opacity & scale based on depth
-      const opacity = Math.max(0.32, 0.35 + depthFactor * 0.65);
-      const scale = (0.86 + depthFactor * 0.18).toFixed(3);
-      card.style.opacity = opacity.toFixed(2);
-
-      // Inactive cards are smoothly blurred & scaled down
-      if (depthFactor > 0.68) {
-        card.style.filter = 'none';
-        card.style.pointerEvents = 'auto';
-        card.style.zIndex = '10';
+      if (isMobile) {
+        // On mobile / small screens: smoothly isolate the active card to prevent 3D collisions and visual overlap
+        if (absDiff <= 28) {
+          card.style.opacity = '1';
+          card.style.filter = 'none';
+          card.style.pointerEvents = 'auto';
+          card.style.visibility = 'visible';
+          card.style.zIndex = '10';
+        } else if (absDiff <= 55) {
+          // Smooth rotation fade between cards
+          const fadeProgress = (absDiff - 28) / 27; // 0 to 1
+          card.style.opacity = (1 - fadeProgress).toFixed(2);
+          card.style.filter = `blur(${fadeProgress * 2.5}px)`;
+          card.style.pointerEvents = 'none';
+          card.style.visibility = 'visible';
+          card.style.zIndex = '2';
+        } else {
+          // Hide cards that are rotated into the side/rear so they never collide or overlap with the front card
+          card.style.opacity = '0';
+          card.style.filter = 'none';
+          card.style.pointerEvents = 'none';
+          card.style.visibility = 'hidden';
+          card.style.zIndex = '0';
+        }
       } else {
-        card.style.filter = 'blur(1.2px)';
-        card.style.pointerEvents = 'auto'; // allow click to bring to front
-        card.style.zIndex = '1';
+        // Desktop: dynamic depth falloff with visible cylindrical orbit
+        const rad = relativeAngle * (Math.PI / 180);
+        const cosVal = Math.cos(rad);
+        const depthFactor = (cosVal + 1) / 2; // 0 to 1
+
+        const opacity = Math.max(0.32, 0.35 + depthFactor * 0.65);
+        card.style.opacity = opacity.toFixed(2);
+        card.style.visibility = 'visible';
+
+        if (depthFactor > 0.68) {
+          card.style.filter = 'none';
+          card.style.pointerEvents = 'auto';
+          card.style.zIndex = '10';
+        } else {
+          card.style.filter = 'blur(1.2px)';
+          card.style.pointerEvents = 'auto';
+          card.style.zIndex = '1';
+        }
       }
     });
 
@@ -250,8 +275,9 @@ function initCenters3DCarousel(section, stage, cylinder) {
     lastFrameTime = now;
     const dtFactor = dt / 16.67;
 
+    const spinSpeed = window.innerWidth <= 768 ? 0.22 : 0.35;
     if (isAutoRotating && !isHovered && !isDragging) {
-      targetAngle -= 0.4 * dtFactor;   // was 0.12 — increase this for faster spin
+      targetAngle -= spinSpeed * dtFactor;
     }
 
     if (!isDragging) {
