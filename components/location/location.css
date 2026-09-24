@@ -1462,10 +1462,10 @@
   }
 
   .other-center-card {
-    width: clamp(240px, 75vw, 265px);
-    height: 230px;
-    margin-top: -115px;
-    margin-left: calc(-1 * clamp(240px, 75vw, 265px) / 2);
+    width: 270px;
+    height: 235px;
+    margin-top: -117px;
+    margin-left: -135px;
     padding: 1.05rem 1.15rem;
   }
 
@@ -1521,11 +1521,21 @@
   }
 
   .other-center-card {
-    width: clamp(225px, 78vw, 250px);
-    height: 220px;
-    margin-top: -110px;
-    margin-left: calc(-1 * clamp(225px, 78vw, 250px) / 2);
+    width: 255px;
+    height: 225px;
+    margin-top: -112px;
+    margin-left: -127px;
     padding: 0.95rem 1rem;
+  }
+
+  @media (max-width: 360px) {
+    .other-center-card {
+      width: 235px;
+      height: 225px;
+      margin-top: -112px;
+      margin-left: -117px;
+      padding: 0.85rem 0.9rem;
+    }
   }
 
   .other-center-city {
