@@ -169,12 +169,14 @@ function initCenters3DCarousel(section, stage, cylinder) {
   // Compute adaptive radius based on viewport width
   function updateRadius() {
     const w = window.innerWidth;
-    if (w <= 480) {
-      radius = 180;
+    if (w <= 360) {
+      radius = 160;
+    } else if (w <= 480) {
+      radius = 175;
     } else if (w <= 768) {
-      radius = 210;
+      radius = 195;
     } else if (w <= 1024) {
-      radius = 230;
+      radius = 220;
     } else {
       radius = 260;
     }
@@ -263,6 +265,9 @@ function initCenters3DCarousel(section, stage, cylinder) {
       pins.forEach(pin => {
         pin.classList.toggle('is-active', pin.getAttribute('data-center-index') === String(activeIndex));
       });
+      if (typeof section.updateTelemetryHud === 'function') {
+        section.updateTelemetryHud(activeIndex);
+      }
     }
   }
 
@@ -428,30 +433,253 @@ function initCenters3DCarousel(section, stage, cylinder) {
 }
 
 /**
- * 2D INDIA REGIONAL NETWORK MAP CONTROLLER
- * Connects the 6 verified centers (Bhopal HQ, Jabalpur, Gwalior, Ratlam, Ujjain, Nagpur)
- * with the 3D rotating cards carousel.
+ * INTERACTIVE CENTRAL INDIA REGIONAL NETWORK MAP CONTROLLER
+ * Features: 2-way sync with 3D Carousel, Live Telemetry HUD, Category Filters,
+ * Hover & Tap inspection for all 6 campuses (Bhopal HQ + 5 Regional Hubs).
  */
 function initIndiaNetworkMap(section) {
-  const pins = section.querySelectorAll('.map-regional-pin');
-  pins.forEach(pin => {
-    pin.addEventListener('click', () => {
-      const targetIndex = pin.getAttribute('data-center-index');
-      if (targetIndex !== null) {
-        const correspondingPill = section.querySelector(`.orbit-city-pill[data-orbit-target="${targetIndex}"]`);
+  const REGIONAL_CENTERS_INFO = {
+    '0': {
+      title: 'Jabalpur Regional Hub',
+      sub: 'East MP • Authorized Learning Center',
+      status: 'Active Lab',
+      address: '2nd Floor, In front of Maruti Suzuki Showroom, Jabalpur Hospital Road, Napier Town, Jabalpur, M.P.',
+      tags: ['✓ Offline Labs', '✓ Mentor Desk', '✓ Direct Bhopal Sync'],
+      phone: '0761-4920378',
+      phoneHref: 'tel:07614920378',
+      mapUrl: 'https://maps.google.com/?q=Miracle+IT+Career+Academy,+Napier+Town,+Jabalpur',
+      isHq: false
+    },
+    '1': {
+      title: 'Gwalior Regional Hub',
+      sub: 'North MP • Authorized Learning Center',
+      status: 'Active Lab',
+      address: 'A-8, 201, 2nd Floor, Opp. Aditya College, City Center, Gwalior, M.P.',
+      tags: ['✓ Offline Labs', '✓ Project Cell', '✓ Doubt Desk'],
+      phone: '0751-4901188',
+      phoneHref: 'tel:07514901188',
+      mapUrl: 'https://maps.google.com/?q=Miracle+IT+Career+Academy,+City+Center,+Gwalior',
+      isHq: false
+    },
+    '2': {
+      title: 'Ratlam Regional Hub',
+      sub: 'West MP • Authorized Learning Center',
+      status: 'Active Lab',
+      address: '76, B-Plaza, First Floor, T.I.Y Road Corner, Above Raymond Showroom, Station Road, Ratlam, M.P.',
+      tags: ['✓ Offline Labs', '✓ Counselling Desk', '✓ Weekend Batches'],
+      phone: '07412-403025',
+      phoneHref: 'tel:07412403025',
+      mapUrl: 'https://maps.google.com/?q=Miracle+IT+Career+Academy,+Station+Road,+Ratlam',
+      isHq: false
+    },
+    '3': {
+      title: 'Ujjain Regional Hub',
+      sub: 'Malwa Regional Hub • Authorized Center',
+      status: 'Active Lab',
+      address: '301, 3rd Floor, Mahakaal Kanak, Malipura, Dewas Gate, Ujjain, M.P.',
+      tags: ['✓ Offline Labs', '✓ Interview Prep', '✓ Doubt Clearing'],
+      phone: '0734-4030236',
+      phoneHref: 'tel:07344030236',
+      mapUrl: 'https://maps.google.com/?q=Miracle+IT+Career+Academy,+Malipura,+Ujjain',
+      isHq: false
+    },
+    '4': {
+      title: 'Nagpur Regional Hub',
+      sub: 'Maharashtra Regional Hub • Authorized Center',
+      status: 'Active Lab',
+      address: 'Plot No. 12, 1st Floor, Near Sitabuldi Metro Interchange, Wardha Road, Sitabuldi, Nagpur, Maharashtra',
+      tags: ['✓ Full-Stack Lab', '✓ Placement Cell', '✓ Cloud Workstations'],
+      phone: '0712-2550188',
+      phoneHref: 'tel:07122550188',
+      mapUrl: 'https://maps.google.com/?q=Miracle+IT+Career+Academy,+Sitabuldi,+Nagpur',
+      isHq: false
+    },
+    'bhopal': {
+      title: 'Bhopal Headquarters (Main Campus)',
+      sub: 'M.P. Nagar Zone-II • Central Academy Campus',
+      status: 'HQ Campus',
+      address: 'Plot No.80, 3rd Floor, Aakriti Complex, Zone-2, M.P. Nagar, Bhopal, M.P.',
+      tags: ['✓ Central Academy HQ', '✓ 4 Advanced Tech Labs', '✓ Visiting Desk Open'],
+      phone: '+91 78800 03127',
+      phoneHref: 'tel:+917880003127',
+      mapUrl: 'https://maps.google.com/?q=M.P.+Nagar,+Bhopal',
+      isHq: true
+    }
+  };
+
+  // Dynamic Telemetry HUD Updater
+  section.updateTelemetryHud = function(key) {
+    const data = REGIONAL_CENTERS_INFO[String(key)];
+    if (!data) return;
+
+    const hud = section.querySelector('#mapTelemetryHud');
+    if (!hud) return;
+
+    hud.classList.toggle('is-hq', !!data.isHq);
+
+    const titleEl = hud.querySelector('#hudCenterTitle');
+    const subEl = hud.querySelector('#hudCenterSub');
+    const badgeEl = hud.querySelector('#hudBadgeStatus');
+    const addrEl = hud.querySelector('#hudCenterAddress');
+    const pillsRow = hud.querySelector('#hudPillsRow');
+    const callBtn = hud.querySelector('#hudCallBtn');
+    const phoneText = hud.querySelector('#hudPhoneText');
+    const mapBtn = hud.querySelector('#hudMapBtn');
+    const syncBtn = hud.querySelector('#hudSyncBtn');
+
+    if (titleEl) titleEl.textContent = data.title;
+    if (subEl) subEl.textContent = data.sub;
+    if (badgeEl) badgeEl.textContent = data.status;
+    if (addrEl) addrEl.textContent = data.address;
+    if (phoneText) phoneText.textContent = data.phone;
+    if (callBtn) callBtn.setAttribute('href', data.phoneHref);
+    if (mapBtn) mapBtn.setAttribute('href', data.mapUrl);
+
+    if (pillsRow) {
+      pillsRow.innerHTML = data.tags.map(t => `<span class="hud-pill-tag">${t}</span>`).join('');
+    }
+
+    if (syncBtn) {
+      syncBtn.setAttribute('data-target-center', String(key));
+      if (data.isHq) {
+        syncBtn.innerHTML = '<span>Visit Bhopal Desk ↑</span>';
+      } else {
+        syncBtn.innerHTML = '<span>Focus 3D Card ➔</span>';
+      }
+    }
+
+    // Synchronize active state on SVG nodes and highlight corresponding lines
+    const lineKeyMap = {
+      '0': { telem: '#telemLineJabalpur', halo: '#lineHaloJabalpur' },
+      '1': { telem: '#telemLineGwalior', halo: '#lineHaloGwalior' },
+      '2': { telem: '#telemLineRatlam', halo: '#lineHaloRatlam' },
+      '3': { telem: '#telemLineUjjain', halo: '#lineHaloUjjain' },
+      '4': { telem: '#telemLineNagpur', halo: '#lineHaloNagpur' }
+    };
+
+    // Reset all line highlights
+    section.querySelectorAll('.telemetry-line, #lineHaloGwalior, #lineHaloJabalpur, #lineHaloNagpur, #lineHaloUjjain, #lineHaloRatlam').forEach(el => {
+      el.classList.remove('is-highlighted');
+    });
+
+    if (data.isHq) {
+      // Highlight all 5 lines when Bhopal HQ is selected
+      section.querySelectorAll('.telemetry-line, #lineHaloGwalior, #lineHaloJabalpur, #lineHaloNagpur, #lineHaloUjjain, #lineHaloRatlam').forEach(el => {
+        el.classList.add('is-highlighted');
+      });
+    } else if (lineKeyMap[String(key)]) {
+      const match = lineKeyMap[String(key)];
+      const tEl = section.querySelector(match.telem);
+      const hEl = section.querySelector(match.halo);
+      if (tEl) tEl.classList.add('is-highlighted');
+      if (hEl) hEl.classList.add('is-highlighted');
+    }
+
+    // Synchronize active state on SVG nodes
+    const allNodes = section.querySelectorAll('.map-campus-node');
+    allNodes.forEach(node => {
+      const pinId = node.getAttribute('data-center-id');
+      const pinIdx = node.getAttribute('data-center-index');
+      const isMatch = (data.isHq && pinId === 'bhopal') || (pinIdx === String(key));
+      node.classList.toggle('is-active', isMatch);
+    });
+  };
+
+  // Click & Keyboard Navigation on SVG Pins
+  const allNodes = section.querySelectorAll('.map-campus-node');
+  allNodes.forEach(node => {
+    node.addEventListener('mouseenter', () => {
+      const pinId = node.getAttribute('data-center-id');
+      const pinIdx = node.getAttribute('data-center-index');
+      if (pinId === 'bhopal') {
+        section.updateTelemetryHud('bhopal');
+      } else if (pinIdx !== null) {
+        section.updateTelemetryHud(pinIdx);
+      }
+    });
+    node.addEventListener('click', () => {
+      const pinId = node.getAttribute('data-center-id');
+      const pinIdx = node.getAttribute('data-center-index');
+
+      if (pinId === 'bhopal') {
+        section.updateTelemetryHud('bhopal');
+      } else if (pinIdx !== null) {
+        const correspondingPill = section.querySelector(`.orbit-city-pill[data-orbit-target="${pinIdx}"]`);
         if (correspondingPill) {
           correspondingPill.click();
         }
+        section.updateTelemetryHud(pinIdx);
       }
     });
 
-    pin.addEventListener('keydown', (e) => {
+    node.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        pin.click();
+        node.click();
       }
     });
   });
+
+  // HUD Sync Action Button (Rotate Carousel or Scroll to Bhopal Desk)
+  const syncBtn = section.querySelector('#hudSyncBtn');
+  if (syncBtn) {
+    syncBtn.addEventListener('click', () => {
+      const target = syncBtn.getAttribute('data-target-center');
+      if (target === 'bhopal') {
+        const bhopalCard = section.querySelector('.location-info-card');
+        if (bhopalCard) {
+          bhopalCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      } else if (target !== null) {
+        const pill = section.querySelector(`.orbit-city-pill[data-orbit-target="${target}"]`);
+        if (pill) {
+          pill.click();
+          const stage = section.querySelector('#centers3dStage');
+          if (stage) stage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }
+    });
+  }
+
+  // Map Filter Category Tabs (All, Bhopal HQ, MP Centers, Nagpur MH)
+  const filterBtns = section.querySelectorAll('.map-filter-btn');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+
+      const filter = btn.getAttribute('data-filter');
+      allNodes.forEach(node => {
+        const pinId = node.getAttribute('data-center-id');
+        let shouldShow = true;
+
+        if (filter === 'bhopal') {
+          shouldShow = (pinId === 'bhopal');
+        } else if (filter === 'mp') {
+          shouldShow = (pinId === 'bhopal' || pinId === 'jabalpur' || pinId === 'gwalior' || pinId === 'ujjain' || pinId === 'ratlam');
+        } else if (filter === 'mh') {
+          shouldShow = (pinId === 'nagpur');
+        }
+
+        node.classList.toggle('is-dimmed', !shouldShow);
+      });
+
+      if (filter === 'bhopal') {
+        section.updateTelemetryHud('bhopal');
+      } else if (filter === 'mh') {
+        const nagpurPill = section.querySelector('.orbit-city-pill[data-orbit-target="4"]');
+        if (nagpurPill) nagpurPill.click();
+        section.updateTelemetryHud('4');
+      } else if (filter === 'mp') {
+        const jabalpurPill = section.querySelector('.orbit-city-pill[data-orbit-target="0"]');
+        if (jabalpurPill) jabalpurPill.click();
+        section.updateTelemetryHud('0');
+      }
+    });
+  });
+
+  // Initial HUD activation with index 0 (Jabalpur)
+  section.updateTelemetryHud(0);
 }
 
 if (typeof window !== 'undefined') {
