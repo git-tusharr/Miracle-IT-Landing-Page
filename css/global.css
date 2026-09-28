@@ -1794,15 +1794,16 @@ body[data-theme="light"]::before {
 
 /* Individual Section Tonal Shades */
 .hero-section {
-  background-color: #07090E;
+  background-color: #F8FAFC !important;
   border-top: none;
 }
 
 .placed-students-section {
-  background-color: #090D17;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: #F8FAFC !important;
+  border-top: 1px solid #E2E8F0;
 }
 
+/* Middle Sections: Kept in rich, dark obsidian / midnight tech theme */
 .problem-section {
   background-color: #0D1424 !important;
   color: #F8FAFC !important;
@@ -1847,28 +1848,28 @@ body[data-theme="light"]::before {
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+/* Ending Sections: Bright Theme */
 .faq-section {
-  background-color: #0A1020 !important;
-  color: #F8FAFC !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background-color: #F8FAFC !important;
+  color: #0F172A !important;
+  border-top: 1px solid #E2E8F0 !important;
 }
 
 .final-cta-section {
-  background-color: #07090E !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background-color: #FFFFFF !important;
+  border-top: 1px solid #E2E8F0 !important;
 }
 
 .site-footer {
-  background-color: #05070B !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  background-color: #F8FAFC !important;
+  border-top: 1px solid #E2E8F0 !important;
 }
 
-/* Ensure headings and text remain high-contrast and readable across all shades */
+/* Headings and text in dark middle sections */
 .problem-section h1, .problem-section h2, .problem-section h3, .problem-section h4,
 .why-section h1, .why-section h2, .why-section h3, .why-section h4,
 .who-join-section h1, .who-join-section h2, .who-join-section h3, .who-join-section h4,
-.proof-section h1, .proof-section h2, .proof-section h3, .proof-section h4,
-.faq-section h1, .faq-section h2, .faq-section h3, .faq-section h4 {
+.proof-section h1, .proof-section h2, .proof-section h3, .proof-section h4 {
   color: #F8FAFC;
   letter-spacing: -0.02em;
 }
@@ -1876,18 +1877,15 @@ body[data-theme="light"]::before {
 .problem-section p, .problem-section .text-lead,
 .why-section p, .why-section .text-lead,
 .who-join-section p, .who-join-section .text-lead,
-.proof-section p, .proof-section .text-lead,
-.faq-section p, .faq-section .text-lead {
+.proof-section p, .proof-section .text-lead {
   color: #94A3B8;
   line-height: 1.65;
 }
 
-/* Cards across all dark tonal sections */
+/* Cards across dark middle sections */
 .problem-section .card, .problem-section .problem-card,
 .why-section .why-card, .why-section .pillar-story-card,
-.who-join-section .who-card, .who-join-section .who-stack-card,
-.proof-section .proof-student-card-inner,
-.faq-section .faq-item {
+.who-join-section .who-card, .who-join-section .who-stack-card {
   background: rgba(15, 23, 42, 0.65) !important;
   border: 1px solid rgba(255, 255, 255, 0.08) !important;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35) !important;
@@ -1954,3 +1952,40 @@ body[data-theme="light"]::before {
   }
 }
 
+
+
+/* ==========================================================================
+   SEAMLESS ARCHITECTURAL SECTION TRANSITIONS (ZERO BLUR, CRISP VECTOR FLOW)
+   Miracle IT Dual-Theme Flow: Bright -> Dark Core -> Bright Ending
+   ========================================================================== */
+
+.section-seam-divider {
+  display: block;
+  width: 100%;
+  line-height: 0;
+  position: relative;
+  z-index: 5;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.section-seam-divider svg {
+  display: block;
+  width: 100%;
+  height: clamp(34px, 4vw, 56px);
+  vertical-align: bottom;
+}
+
+/* Light to Dark Transition: Placed Students -> Problem */
+.seam-bright-to-dark {
+  background-color: #F8FAFC;
+  margin-top: 0;
+  margin-bottom: -1px;
+}
+
+/* Dark to Light Transition: Location -> FAQ */
+.seam-dark-to-bright {
+  background-color: #080E18;
+  margin-top: 0;
+  margin-bottom: -1px;
+}

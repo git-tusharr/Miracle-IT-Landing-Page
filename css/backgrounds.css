@@ -21,12 +21,11 @@
 #hero.hero-section,
 .hero-section {
   position: relative;
-  background-color: #07090E;
-  /* Multi-tone atmospheric depth */
+  background-color: #F8FAFC !important;
   background-image:
-    radial-gradient(ellipse 900px 500px at 15% 25%, rgba(255, 122, 0, 0.16) 0%, transparent 60%),
-    radial-gradient(ellipse 800px 520px at 85% 60%, rgba(6, 182, 212, 0.15) 0%, transparent 60%),
-    linear-gradient(180deg, rgba(7, 9, 14, 0.82) 0%, #07090E 100%);
+    radial-gradient(ellipse 900px 500px at 15% 25%, rgba(255, 122, 0, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 800px 520px at 85% 60%, rgba(14, 165, 233, 0.08) 0%, transparent 60%),
+    linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%) !important;
   overflow: hidden;
 }
 
@@ -306,18 +305,10 @@
 #final-cta.final-cta-section,
 .final-cta-section {
   position: relative;
-  background-color: #07090E !important;
+  background-color: #FFFFFF !important;
   background:
-    /* High-impact warm amber cinematic spotlight */
-    radial-gradient(ellipse 820px 440px at 50% 28%, rgba(255, 122, 0, 0.20) 0%, rgba(255, 122, 0, 0.05) 45%, transparent 72%),
-    /* Secondary cyan ambient fill */
-    radial-gradient(circle at 88% 85%, rgba(6, 182, 212, 0.07) 0%, transparent 45%),
-    /* Fine converging technical grid (44px x 44px) */
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44'%3E%3Cpath d='M 44 0 L 0 0 0 44' fill='none' stroke='rgba(255,255,255,0.048)' stroke-width='1'/%3E%3Ccircle cx='44' cy='44' r='1' fill='rgba(255,122,0,0.25)'/%3E%3C/svg%3E"),
-    /* Deep obsidian vertical gradient */
-    linear-gradient(180deg, #0A0E1A 0%, #07090E 100%) !important;
-  background-size: auto, auto, 44px 44px, 100% 100% !important;
-  background-position: center top, center, center top, center !important;
+    radial-gradient(ellipse 820px 440px at 50% 28%, rgba(255, 122, 0, 0.08) 0%, transparent 65%),
+    linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%) !important;
 }
 
 /* Laser-line accent beam at the top border of the Final CTA */

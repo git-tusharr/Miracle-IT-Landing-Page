@@ -2009,3 +2009,10 @@
     line-height: 1.25;
   }
 }
+
+
+/* Seamless architectural section transition (Zero blur, crisp vector flow) */
+#location.location-section::after,
+.location-section::after {
+  display: none !important;
+}

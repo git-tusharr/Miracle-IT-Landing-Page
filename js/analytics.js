@@ -27,12 +27,20 @@ const Analytics = {
     console.log('Payload:', payload);
     console.groupEnd();
 
-    // Hook for Google Analytics 4 (if gtag is loaded)
+    // Hook for Google Tag Manager (dataLayer push)
+    if (window.dataLayer && Array.isArray(window.dataLayer)) {
+      window.dataLayer.push({
+        event: eventName,
+        ...data
+      });
+    }
+
+    // Hook for Google Analytics 4 (if gtag is directly loaded)
     if (typeof window.gtag === 'function') {
       window.gtag('event', eventName, data);
     }
 
-    // Hook for Meta Pixel (if fbq is loaded)
+    // Hook for Meta Pixel (if fbq is directly loaded)
     if (typeof window.fbq === 'function') {
       if (eventName === 'form_submit') {
         window.fbq('track', 'Lead', data);
