@@ -1,289 +1,184 @@
 <!-- ==========================================================================
-     PROBLEM SECTION COMPONENT — ULTRA OPTIMIZED & CONVERSION-ENGINEERED
-     Addressing real student dilemmas with side-by-side clarity comparison
+     PROBLEM SECTION COMPONENT — ULTRA CLEAN & INSTANTLY SCANNABLE
+     Audience understands the dilemma and solution within 3 seconds of viewing
      ========================================================================== -->
-<link rel="stylesheet" href="./components/problem/problem.css?v=5.3">
-<section class="section section-light problem-section" id="problem">
+<link rel="stylesheet" href="./components/problem/problem.css?v=6.0">
+<section class="section problem-section" id="problem">
   <div class="container">
     
-    <div class="section-header">
+    <!-- Ultra Clean Header — No Clutter, Immediate Visual Focus -->
+    <div class="section-header problem-header">
       <span class="section-tag">Career Dilemmas We Solve</span>
-      <h2>Sound Familiar? You Are Not Alone in This Dilemma.</h2>
-      <p class="text-lead">
-        Most students in Bhopal complete their degree only to find that traditional college curriculum left them unprepared for real industry expectations. Here is how we break the cycle.
+      <h2 class="problem-main-heading">Sound Familiar? You Are Not Alone in This Dilemma.</h2>
+      <p class="text-lead problem-lead">
+        College gives you the degree, but tech companies hire for production code. Here is how we bridge the gap.
       </p>
-
-      <!-- Dilemma / Solution View Switcher -->
-      <div class="problem-toggle-wrap">
-        <div class="problem-toggle-pills" role="tablist" aria-label="Dilemma and Solution Comparison">
-          <button type="button" class="dilemma-pill is-active" id="btnShowDilemmas" role="tab" aria-selected="true">
-            <span class="pill-dot warning-dot"></span> The 3 Common Dilemmas
-          </button>
-          <button type="button" class="dilemma-pill" id="btnShowComparison" role="tab" aria-selected="false">
-            <span class="pill-dot emerald-dot"></span> Without Guidance vs With Miracle IT
-          </button>
-        </div>
-      </div>
-
-      <!-- Instant Dilemma Diagnostic Quick-Filter (Skiper UI Pill Selector) -->
-      <div class="career-matcher-box problem-diagnostic-box">
-        <span class="matcher-label">Identify Your Exact Dilemma:</span>
-        <div class="matcher-chips">
-          <button type="button" class="matcher-chip diagnostic-btn" data-target-card="0">Just Finished Degree?</button>
-          <button type="button" class="matcher-chip diagnostic-btn" data-target-card="1">Confused Across 10+ Courses?</button>
-          <button type="button" class="matcher-chip diagnostic-btn" data-target-card="2">Stuck in YouTube Tutorial Hell?</button>
-        </div>
-      </div>
     </div>
 
-    <!-- VIEW 1: The 3 Core Student Dilemma Cards (Default) -->
-    <div class="problem-view" id="viewDilemmas">
-      <div class="grid-3 problem-cards-grid">
-        
-        <!-- Dilemma 01 -->
-        <div class="card problem-card bento-spotlight tilt-card" data-dilemma-index="0">
-          <div class="problem-card-media">
-            <img 
-              src="./assets/images/dilemma-post-degree.jpg" 
-              alt="Student analyzing degree syllabus versus production job requirements" 
-              class="problem-card-img" 
-              width="600" 
-              height="338" 
-              loading="lazy"
-            >
-            <div class="problem-media-scrim"></div>
-            <div class="problem-media-badges">
-              <div class="problem-number-badge">01</div>
-              <span class="dilemma-status-tag tag-rose">The Post-College Void</span>
-            </div>
-            <div class="problem-reality-pill">
-              <span class="reality-dot"></span>
-              <span>Reality: 85% College Theory vs 0% Production</span>
-            </div>
-          </div>
-
-          <div class="problem-card-body">
-            <h3 class="problem-title">Degree Done, No Practical Direction</h3>
-            <p class="problem-desc">
-              You cleared semester exams, but job portals demand live frameworks and deployment skills never taught in college.
-            </p>
-
-            <div class="dilemma-contrast-box">
-              <div class="contrast-row trap-row">
-                <span class="contrast-badge trap-badge">The Dilemma</span>
-                <span class="contrast-text">Wasting 6–12 months on theory without building deployable apps.</span>
-              </div>
-              <div class="contrast-row fix-row">
-                <span class="contrast-badge fix-badge">Miracle IT Fix</span>
-                <span class="contrast-text">Production capstone projects + 1-on-1 code reviews in M.P. Nagar.</span>
-              </div>
-            </div>
-
-            <div class="problem-solution-link">
-              <a href="#counselling-form" class="solution-link-btn" data-track-cta="dilemma_solve_1">
-                <span>Get Your Post-Degree Roadmap</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-              </a>
-            </div>
+    <!-- The 3 Core Student Dilemma Cards Grid -->
+    <div class="problem-cards-grid">
+      
+      <!-- Dilemma 01 -->
+      <div class="card problem-card bento-spotlight" data-dilemma-index="0">
+        <div class="problem-card-media">
+          <img 
+            src="./assets/images/dilemma-post-degree.jpg" 
+            alt="Student after college degree realizing practical skills gap" 
+            class="problem-card-img" 
+            width="600" 
+            height="338" 
+            loading="lazy"
+          >
+          <div class="problem-media-scrim"></div>
+          <div class="problem-badge-row">
+            <span class="dilemma-num-pill">01</span>
+            <span class="dilemma-tag-pill">Post-College Gap</span>
           </div>
         </div>
 
-        <!-- Dilemma 02 -->
-        <div class="card problem-card bento-spotlight tilt-card" data-dilemma-index="1">
-          <div class="problem-card-media">
-            <img 
-              src="./assets/images/dilemma-course-confusion.jpg" 
-              alt="Student exploring multiple technical course tracks and roadmaps" 
-              class="problem-card-img" 
-              width="600" 
-              height="338" 
-              loading="lazy"
-            >
-            <div class="problem-media-scrim"></div>
-            <div class="problem-media-badges">
-              <div class="problem-number-badge">02</div>
-              <span class="dilemma-status-tag tag-amber">Domain Overload</span>
+        <div class="problem-card-body">
+          <h3 class="problem-title">Degree Done, Zero Practical Skills</h3>
+          <p class="problem-summary">
+            Cleared all semester exams, but job portals demand live frameworks and deployment skills never taught in college.
+          </p>
+
+          <div class="problem-contrast-flow">
+            <div class="contrast-row trap-row">
+              <span class="contrast-badge trap-badge">
+                <span class="dot-indicator trap-dot"></span> The Dilemma
+              </span>
+              <p class="contrast-text">Wasting 6–12 months on theory without building a single deployable app.</p>
             </div>
-            <div class="problem-reality-pill">
-              <span class="reality-dot" style="background-color: #F59E0B; box-shadow: 0 0 8px #F59E0B;"></span>
-              <span>Reality: 10+ Tech Tracks, Zero Aptitude Match</span>
+            
+            <div class="contrast-row fix-row">
+              <span class="contrast-badge fix-badge">
+                <span class="dot-indicator fix-dot"></span> Miracle IT Fix
+              </span>
+              <p class="contrast-text">Build 3 production capstone apps with 1-on-1 code reviews in M.P. Nagar.</p>
             </div>
           </div>
 
-          <div class="problem-card-body">
-            <h3 class="problem-title">Overwhelmed by 10+ Tech Courses</h3>
-            <p class="problem-desc">
-              Full Stack, AI/ML, or DevOps? Picking based on marketing hype without assessing your natural logic aptitude causes burnout.
-            </p>
-
-            <div class="dilemma-contrast-box">
-              <div class="contrast-row trap-row">
-                <span class="contrast-badge trap-badge">The Dilemma</span>
-                <span class="contrast-text">Paying high fees for a course that doesn't fit your strengths.</span>
-              </div>
-              <div class="contrast-row fix-row">
-                <span class="contrast-badge fix-badge">Miracle IT Fix</span>
-                <span class="contrast-text">Free 1-on-1 logic & aptitude assessment before enrolling in any track.</span>
-              </div>
-            </div>
-
-            <div class="problem-solution-link">
-              <a href="#counselling-form" class="solution-link-btn" data-track-cta="dilemma_solve_2">
-                <span>Assess Your Aptitude Free</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-              </a>
-            </div>
+          <div class="problem-card-action">
+            <a href="#counselling-form" class="problem-action-btn" data-track-cta="dilemma_solve_1">
+              <span>Bridge The Practical Gap</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
           </div>
         </div>
-
-        <!-- Dilemma 03 -->
-        <div class="card problem-card bento-spotlight tilt-card" data-dilemma-index="2">
-          <div class="problem-card-media">
-            <img 
-              src="./assets/images/dilemma-tutorial-hell.jpg" 
-              alt="Developer stuck with video tutorials and empty IDE seeking guidance" 
-              class="problem-card-img" 
-              width="600" 
-              height="338" 
-              loading="lazy"
-            >
-            <div class="problem-media-scrim"></div>
-            <div class="problem-media-badges">
-              <div class="problem-number-badge">03</div>
-              <span class="dilemma-status-tag tag-cyan">The Tutorial Loop</span>
-            </div>
-            <div class="problem-reality-pill">
-              <span class="reality-dot" style="background-color: #06B6D4; box-shadow: 0 0 8px #06B6D4;"></span>
-              <span>Reality: 50+ Hours Watched, 0 Repos Shipped</span>
-            </div>
-          </div>
-
-          <div class="problem-card-body">
-            <h3 class="problem-title">Trapped in the YouTube Tutorial Loop</h3>
-            <p class="problem-desc">
-              Watching video playlists feels productive until you open a blank IDE with zero mentor feedback on your code.
-            </p>
-
-            <div class="dilemma-contrast-box">
-              <div class="contrast-row trap-row">
-                <span class="contrast-badge trap-badge">The Dilemma</span>
-                <span class="contrast-text">Collecting superficial certificates with zero GitHub portfolio proof.</span>
-              </div>
-              <div class="contrast-row fix-row">
-                <span class="contrast-badge fix-badge">Miracle IT Fix</span>
-                <span class="contrast-text">Daily workstation coding sprints with senior developers in Bhopal.</span>
-              </div>
-            </div>
-
-            <div class="problem-solution-link">
-              <a href="#counselling-form" class="solution-link-btn" data-track-cta="dilemma_solve_3">
-                <span>Map a Step-by-Step Plan</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
       </div>
 
-      <!-- Mobile Horizontal Scroll Indicator Dots -->
-      <div class="problem-scroll-dots" id="problemScrollDots" aria-hidden="true">
-        <button type="button" class="problem-dot is-active" data-dot-target="0" aria-label="Go to Dilemma 1"></button>
-        <button type="button" class="problem-dot" data-dot-target="1" aria-label="Go to Dilemma 2"></button>
-        <button type="button" class="problem-dot" data-dot-target="2" aria-label="Go to Dilemma 3"></button>
+      <!-- Dilemma 02 -->
+      <div class="card problem-card bento-spotlight" data-dilemma-index="1">
+        <div class="problem-card-media">
+          <img 
+            src="./assets/images/dilemma-course-confusion.jpg" 
+            alt="Student overwhelmed by dozens of tech roadmaps" 
+            class="problem-card-img" 
+            width="600" 
+            height="338" 
+            loading="lazy"
+          >
+          <div class="problem-media-scrim"></div>
+          <div class="problem-badge-row">
+            <span class="dilemma-num-pill">02</span>
+            <span class="dilemma-tag-pill">Roadmap Confusion</span>
+          </div>
+        </div>
+
+        <div class="problem-card-body">
+          <h3 class="problem-title">Overwhelmed by 10+ Tech Courses</h3>
+          <p class="problem-summary">
+            Full Stack, AI/ML, Cloud, or DevOps? Picking based on hype without assessing personal logic aptitude leads to burnout.
+          </p>
+
+          <div class="problem-contrast-flow">
+            <div class="contrast-row trap-row">
+              <span class="contrast-badge trap-badge">
+                <span class="dot-indicator trap-dot"></span> The Dilemma
+              </span>
+              <p class="contrast-text">Paying high fees for a trendy course that doesn't match your strengths.</p>
+            </div>
+            
+            <div class="contrast-row fix-row">
+              <span class="contrast-badge fix-badge">
+                <span class="dot-indicator fix-dot"></span> Miracle IT Fix
+              </span>
+              <p class="contrast-text">Free 1-on-1 logic & aptitude assessment before enrolling in any track.</p>
+            </div>
+          </div>
+
+          <div class="problem-card-action">
+            <a href="#counselling-form" class="problem-action-btn" data-track-cta="dilemma_solve_2">
+              <span>Assess Your Aptitude Free</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </div>
       </div>
+
+      <!-- Dilemma 03 -->
+      <div class="card problem-card bento-spotlight" data-dilemma-index="2">
+        <div class="problem-card-media">
+          <img 
+            src="./assets/images/dilemma-tutorial-hell.jpg" 
+            alt="Developer trapped in passive video playlists with blank IDE" 
+            class="problem-card-img" 
+            width="600" 
+            height="338" 
+            loading="lazy"
+          >
+          <div class="problem-media-scrim"></div>
+          <div class="problem-badge-row">
+            <span class="dilemma-num-pill">03</span>
+            <span class="dilemma-tag-pill">The Tutorial Trap</span>
+          </div>
+        </div>
+
+        <div class="problem-card-body">
+          <h3 class="problem-title">Trapped in the YouTube Tutorial Loop</h3>
+          <p class="problem-summary">
+            Watching video playlists feels productive until you open a blank IDE with zero mentor feedback on your code.
+          </p>
+
+          <div class="problem-contrast-flow">
+            <div class="contrast-row trap-row">
+              <span class="contrast-badge trap-badge">
+                <span class="dot-indicator trap-dot"></span> The Dilemma
+              </span>
+              <p class="contrast-text">Collecting superficial certificates with zero GitHub portfolio proof.</p>
+            </div>
+            
+            <div class="contrast-row fix-row">
+              <span class="contrast-badge fix-badge">
+                <span class="dot-indicator fix-dot"></span> Miracle IT Fix
+              </span>
+              <p class="contrast-text">Daily workstation coding sprints with senior developers in Bhopal.</p>
+            </div>
+          </div>
+
+          <div class="problem-card-action">
+            <a href="#counselling-form" class="problem-action-btn" data-track-cta="dilemma_solve_3">
+              <span>Break The Tutorial Loop</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- VIEW 2: Comparison Table (Activated via toggle) -->
-    <div class="problem-view is-hidden" id="viewComparison">
-      <div class="comparison-card">
-        <div class="comparison-grid">
-          
-          <!-- Column A: Without Guidance -->
-          <div class="comparison-col col-without">
-            <div class="comparison-header">
-              <span class="comp-badge badge-danger">Without Career Guidance</span>
-              <h3>The Guesswork Route</h3>
-            </div>
-            <ul class="comp-list">
-              <li>
-                <span class="comp-icon red-cross">✕</span>
-                <div>
-                  <strong>Guessing course suitability:</strong>
-                  <p>Joining trendy tracks without knowing if you have the math/logic prerequisites.</p>
-                </div>
-              </li>
-              <li>
-                <span class="comp-icon red-cross">✕</span>
-                <div>
-                  <strong>Endless tutorial rabbit holes:</strong>
-                  <p>Watching passive video playlists without building independently.</p>
-                </div>
-              </li>
-              <li>
-                <span class="comp-icon red-cross">✕</span>
-                <div>
-                  <strong>Zero personalized code debugging:</strong>
-                  <p>Getting stuck on an error for days with no senior mentor to review your code.</p>
-                </div>
-              </li>
-              <li>
-                <span class="comp-icon red-cross">✕</span>
-                <div>
-                  <strong>Empty resume & no Git links:</strong>
-                  <p>Graduating with certificates that recruiters ignore without live URLs.</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Column B: With Miracle IT -->
-          <div class="comparison-col col-with">
-            <div class="comparison-header">
-              <span class="comp-badge badge-success">With Miracle IT Counselling</span>
-              <h3>The Guided Roadmap</h3>
-            </div>
-            <ul class="comp-list">
-              <li>
-                <span class="comp-icon green-tick">✓</span>
-                <div>
-                  <strong>Degree-to-domain matching:</strong>
-                  <p>We evaluate your academic background (CS, BCA, B.Com, etc.) before suggesting a path.</p>
-                </div>
-              </li>
-              <li>
-                <span class="comp-icon green-tick">✓</span>
-                <div>
-                  <strong>Production capstone focus:</strong>
-                  <p>Build real-world web apps and datasets you can showcase on GitHub.</p>
-                </div>
-              </li>
-              <li>
-                <span class="comp-icon green-tick">✓</span>
-                <div>
-                  <strong>1-on-1 In-person mentoring:</strong>
-                  <p>Trainers sit with you in M.P. Nagar, explain root causes, and guide your code.</p>
-                </div>
-              </li>
-              <li>
-                <span class="comp-icon green-tick">✓</span>
-                <div>
-                  <strong>Verified portfolio & interview readiness:</strong>
-                  <p>Targeted interview prep, resume structuring, and practical engineering skills.</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
+    <!-- Mobile Horizontal Scroll Indicator Dots -->
+    <div class="problem-scroll-dots" id="problemScrollDots" aria-hidden="true">
+      <button type="button" class="problem-dot is-active" data-dot-target="0" aria-label="Go to Dilemma 1"></button>
+      <button type="button" class="problem-dot" data-dot-target="1" aria-label="Go to Dilemma 2"></button>
+      <button type="button" class="problem-dot" data-dot-target="2" aria-label="Go to Dilemma 3"></button>
     </div>
 
-    <!-- Empathetic Transition Banner -->
+    <!-- Reassuring Empathetic Consultation Banner -->
     <div class="problem-transition-banner">
       <div class="transition-content">
         <div class="transition-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
             <polyline points="22 4 12 14.01 9 11.01"></polyline>
           </svg>
@@ -294,7 +189,7 @@
             Free Career Guidance &amp; Consultation
           </div>
           <h4 class="transition-heading">
-            <span class="transition-heading-accent">Don't guess with your career.</span> Get guidance before choosing your next course.
+            <span class="transition-heading-accent">Don't guess with your career.</span> Get clarity before choosing your next step.
           </h4>
           <p class="transition-sub">
             Visit our M.P. Nagar center for a <strong class="transition-sub-bold">free 30-minute consultation</strong> with a senior mentor.

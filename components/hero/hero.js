@@ -18,6 +18,8 @@ function initHero(container = document) {
   if (heroSection.dataset.heroInitialized === 'true') return;
   heroSection.dataset.heroInitialized = 'true';
 
+  const folderCard = heroSection.querySelector('#heroFolderCard');
+  const folderToggle = heroSection.querySelector('#heroFolderToggle');
   const stackContainer = heroSection.querySelector('#codeCardsStack');
   const cards = Array.from(heroSection.querySelectorAll('.code-stack-card'));
   const tabs = Array.from(heroSection.querySelectorAll('.stack-tab'));
@@ -27,7 +29,9 @@ function initHero(container = document) {
   // Stack state: index 0 is top (front), 1 is middle, 2 is back
   let stackOrder = [0, 1, 2];
   let shuffleTimer = null;
+  let initialSwapTimer = null;
   let isShuffling = false;
+  let isFolderOpen = false;
 
   const prefersReducedMotion = () => {
     return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -66,7 +70,7 @@ function initHero(container = document) {
    * Smoothly shuffle the top card out and tuck it into the back
    */
   const shuffleNext = () => {
-    if (isShuffling) return;
+    if (isShuffling || !isFolderOpen) return;
 
     if (prefersReducedMotion()) {
       const prevTop = stackOrder.shift();
@@ -78,10 +82,10 @@ function initHero(container = document) {
     isShuffling = true;
     const topCard = cards[stackOrder[0]];
 
-    // 1. Top card glides out with rotation
+    // 1. Top card sweeps out with 3D elevation & rotation
     topCard.classList.add('is-shuffling-out');
 
-    // 2. Advance the stack after slight delay (snappier pace)
+    // 2. Advance the stack after slight delay
     setTimeout(() => {
       const prevTop = stackOrder.shift();
       stackOrder.push(prevTop);
@@ -90,8 +94,8 @@ function initHero(container = document) {
       // 3. Reset animation flag
       setTimeout(() => {
         isShuffling = false;
-      }, 260);
-    }, 220);
+      }, 280);
+    }, 240);
   };
 
   /**
@@ -110,66 +114,146 @@ function initHero(container = document) {
         shuffleNext();
         setTimeout(() => {
           shuffleNext();
-        }, 260);
+        }, 280);
       }
     }
   };
 
   /**
-   * Active Dynamic Shuffle Loop (2.4s pace, with hover-pause for reading)
+   * Dynamic Auto-Swap Loop (2.6s interval when folder is OPEN)
    */
   const startShuffleTimer = () => {
     clearInterval(shuffleTimer);
-    if (prefersReducedMotion()) return;
+    if (prefersReducedMotion() || !isFolderOpen) return;
 
     shuffleTimer = setInterval(() => {
-      shuffleNext();
-    }, 2400); // Snappy, active 2.4s interval
+      if (isFolderOpen) {
+        shuffleNext();
+      }
+    }, 2600); // 2.6s interval as requested by client
   };
 
   const stopShuffleTimer = () => {
     clearInterval(shuffleTimer);
+    clearTimeout(initialSwapTimer);
   };
 
-  // Tab click listeners
+  /**
+   * Folder Open / Close Controller
+   */
+  const onFolderStateChange = (isOpen) => {
+    isFolderOpen = isOpen;
+    stopShuffleTimer();
+
+    if (folderToggle && folderToggle.checked !== isOpen) {
+      folderToggle.checked = isOpen;
+    }
+
+    if (isOpen) {
+      // When folder is opened, cards come up.
+      // After 2.5s initial delay, the cards begin swapping every 2.6s!
+      initialSwapTimer = setTimeout(() => {
+        if (isFolderOpen) {
+          shuffleNext();
+          startShuffleTimer();
+        }
+      }, 2500);
+    }
+  };
+
+  // Checkbox toggle listener
+  if (folderToggle) {
+    folderToggle.addEventListener('change', () => {
+      onFolderStateChange(folderToggle.checked);
+    });
+  }
+
+  // Switcher Tab click listeners (opens folder if closed, and jumps to card)
   tabs.forEach((tab) => {
     tab.addEventListener('click', (e) => {
+      e.preventDefault();
       e.stopPropagation();
       const targetIndex = parseInt(tab.dataset.index, 10);
+      
+      // Ensure folder is open
+      if (!isFolderOpen) {
+        onFolderStateChange(true);
+      }
+      
       shuffleTo(targetIndex);
+      
+      // Reset 2.6s timer
+      stopShuffleTimer();
       startShuffleTimer();
     });
   });
 
-  // Direct card click listeners (clicking background card brings it forward)
+  // Direct card clicks:
+  // - If folder is closed: clicking opens the folder
+  // - If folder is open: clicking brings background card forward, while clicking top card allows reading/copying without closing
   cards.forEach((card, idx) => {
-    card.addEventListener('click', () => {
+    card.addEventListener('click', (e) => {
+      if (!isFolderOpen) {
+        // Let event bubble to label to open folder
+        return;
+      }
+      // If folder is already open, prevent label from toggling it closed
+      e.stopPropagation();
+
       if (idx !== stackOrder[0]) {
         shuffleTo(idx);
+        stopShuffleTimer();
         startShuffleTimer();
       }
     });
   });
 
-  // Desktop hover pause / resume
-  stackContainer.addEventListener('mouseenter', stopShuffleTimer);
-  stackContainer.addEventListener('mouseleave', startShuffleTimer);
-
-  const switcher = heroSection.querySelector('.code-stack-switcher');
-  if (switcher) {
-    switcher.addEventListener('mouseenter', stopShuffleTimer);
-    switcher.addEventListener('mouseleave', startShuffleTimer);
+  // Prevent clicks on CLI prompt bar or code snippet from toggling the folder closed
+  const searchBar = heroSection.querySelector('#folderSearch');
+  if (searchBar) {
+    searchBar.addEventListener('click', (e) => {
+      if (isFolderOpen) {
+        e.stopPropagation();
+      }
+    });
   }
 
-  // Mobile touch pause / resume
-  stackContainer.addEventListener('touchstart', stopShuffleTimer, { passive: true });
-  stackContainer.addEventListener('touchend', startShuffleTimer, { passive: true });
+  // Desktop hover pause / resume on open folder
+  if (stackContainer) {
+    stackContainer.addEventListener('mouseenter', () => {
+      if (isFolderOpen) stopShuffleTimer();
+    });
+    stackContainer.addEventListener('mouseleave', () => {
+      if (isFolderOpen) startShuffleTimer();
+    });
 
-  // Initial render & timer start
+    // Mobile touch pause / resume
+    stackContainer.addEventListener('touchstart', () => {
+      if (isFolderOpen) stopShuffleTimer();
+    }, { passive: true });
+    stackContainer.addEventListener('touchend', () => {
+      if (isFolderOpen) startShuffleTimer();
+    }, { passive: true });
+  }
+
+  // Keyboard accessibility on folder card
+  if (folderCard) {
+    folderCard.setAttribute('tabindex', '0');
+    folderCard.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        onFolderStateChange(!isFolderOpen);
+      }
+    });
+  }
+
+  // Initial state setup: closed folder, ready to open on click
   updateStackClasses();
-  startShuffleTimer();
+  if (folderToggle && folderToggle.checked) {
+    onFolderStateChange(true);
+  }
 
-  console.log('[HeroComponent] Stacked code cards shuffle engine initialized (2s interval).');
+  console.log('[HeroComponent] 3D Folder Card & 2.6s swap engine initialized.');
 }
 
 /**

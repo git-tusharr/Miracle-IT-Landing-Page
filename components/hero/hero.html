@@ -82,50 +82,95 @@
 
       </div>
 
-      <!-- Right Column: Interactive Developer Terminal / Stacked Code Cards -->
+      <!-- Right Column: Interactive 3D Developer Folder & Code Showcase -->
       <div class="hero-visual" aria-label="Interactive Code Showcase">
         
         <!-- Interactive Stack Tabs Nav -->
         <div class="code-stack-switcher" role="tablist" aria-label="Interactive Code Files">
           <button type="button" class="stack-tab is-active" data-index="0" role="tab" id="tab-code-0" aria-selected="true" aria-controls="card-code-0">
-            <span class="tab-code-tag">JS</span> roadmap.js
+            <span class="tab-code-tag tag-js">JS</span> roadmap.js
           </button>
           <button type="button" class="stack-tab" data-index="1" role="tab" id="tab-code-1" aria-selected="false" aria-controls="card-code-1">
-            <span class="tab-code-tag">PY</span> ai_model.py
+            <span class="tab-code-tag tag-py">PY</span> ai_model.py
           </button>
           <button type="button" class="stack-tab" data-index="2" role="tab" id="tab-code-2" aria-selected="false" aria-controls="card-code-2">
-            <span class="tab-code-tag">SQL</span> insights.sql
+            <span class="tab-code-tag tag-sql">SQL</span> insights.sql
           </button>
           <span class="stack-status-chip" title="Interactive live projects">
-            <span class="chip-pulse"></span> Interactive Code
+            <span class="chip-pulse"></span> <span class="chip-text">Interactive Code</span>
           </span>
         </div>
 
-        <!-- Stack Container housing 3 Layered Code Cards -->
-        <div class="code-cards-stack" id="codeCardsStack">
-          
-          <!-- Card 1: roadmap.js -->
-          <div class="code-stack-card is-top" id="card-code-0" data-index="0" role="tabpanel" aria-labelledby="tab-code-0">
-            <div class="terminal-header">
-              <div class="terminal-dots">
-                <span class="dot dot-red"></span>
-                <span class="dot dot-yellow"></span>
-                <span class="dot dot-green"></span>
-              </div>
-              <div class="card-file-label">
-                <span class="term-file-badge">JS</span> <strong>roadmap.js</strong>
-                <span class="card-lang-tag tag-fullstack">Full Stack</span>
+        <!-- 3D Folder Card Component (Interactive Click to Open & 3-Second Card Auto-Swap) -->
+        <label class="folder-card" id="heroFolderCard" for="heroFolderToggle">
+          <input type="checkbox" class="folder-toggle" id="heroFolderToggle" aria-label="Toggle Curriculum Folder" />
+
+          <!-- Hint Badge with Animated Curved Arrow -->
+          <div class="hint-wrapper" aria-hidden="true">
+            <span class="hint-text">Click to open</span>
+            <svg class="hint-arrow" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 35 5 C 35 5, 15 5, 10 25 M 10 25 L 3 18 M 10 25 L 18 22" stroke="#38BDF8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+
+          <div class="folder-container" id="heroFolderContainer">
+            
+            <!-- Folder Back Flap (Deep Tech Obsidian Gradient) -->
+            <div class="folder-back-wrap" aria-hidden="true">
+              <svg class="folder-back" viewBox="0 0 500 400" preserveAspectRatio="none" fill="none">
+                <defs>
+                  <linearGradient id="folderBackGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#0E1E38" />
+                    <stop offset="50%" stop-color="#081426" />
+                    <stop offset="100%" stop-color="#040914" />
+                  </linearGradient>
+                  <linearGradient id="folderBackBorderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="rgba(56, 189, 248, 0.45)" />
+                    <stop offset="50%" stop-color="rgba(255, 122, 0, 0.35)" />
+                    <stop offset="100%" stop-color="rgba(56, 189, 248, 0.25)" />
+                  </linearGradient>
+                </defs>
+                <path d="M0 40C0 17.9086 17.9086 0 40 0H165.24C177.21 0 188.415 5.4051 195.74 14.673L224.26 50.654C231.585 59.9219 242.79 65.327 254.76 65.327H460C482.091 65.327 500 83.2356 500 105.327V360C500 382.091 482.091 400 460 400H40C17.9086 400 0 382.091 0 360V40Z" fill="url(#folderBackGrad)" stroke="url(#folderBackBorderGrad)" stroke-width="2" />
+              </svg>
+            </div>
+
+            <!-- Terminal CLI Search & Path Bar -->
+            <div class="folder-search" id="folderSearch">
+              <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="#38BDF8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <div class="search-cli-path">
+                <span class="cli-user">miracle-it@bhopal</span>:<span class="cli-dir">~/curriculum</span>$ <span class="cli-cmd">cat active_stack</span><span class="cli-blink">_</span>
               </div>
             </div>
 
-            <div class="terminal-body code-font">
-              <div class="terminal-cli-bar" aria-hidden="true">
-                <span class="cli-prompt">miracle-it@bhopal:~$</span>
-                <span class="cli-typing">npm run career:assess --target="fullstack"</span>
-                <span class="cli-cursor">_</span>
-              </div>
+            <!-- 3 Stacked Tech Developer Cards (roadmap.js, ai_model.py, insights.sql) -->
+            <div class="code-cards-stack" id="codeCardsStack">
+              
+              <!-- Card 1: roadmap.js -->
+              <article class="code-stack-card is-top" id="card-code-0" data-index="0" role="tabpanel" aria-labelledby="tab-code-0">
+                <div class="shine" aria-hidden="true"></div>
+                <div class="terminal-header">
+                  <div class="terminal-dots">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                  </div>
+                  <div class="card-file-label">
+                    <span class="term-file-badge">JS</span> <strong>roadmap.js</strong>
+                    <span class="card-lang-tag tag-fullstack">Full Stack</span>
+                  </div>
+                </div>
 
-              <pre class="code-snippet"><code><span class="c-comment">// Miracle IT 1-on-1 Engineering Roadmap</span>
+                <div class="terminal-body code-font">
+                  <div class="terminal-cli-bar" aria-hidden="true">
+                    <span class="cli-prompt">miracle-it@bhopal:~$</span>
+                    <span class="cli-typing">npm run career:assess --target="fullstack"</span>
+                    <span class="cli-cursor">_</span>
+                  </div>
+
+                  <pre class="code-snippet"><code><span class="c-comment">// Miracle IT 1-on-1 Engineering Roadmap</span>
 <span class="c-keyword">import</span> { assessBackground } <span class="c-keyword">from</span> <span class="c-string">'@miracle-it/academy'</span>;
 
 <span class="c-keyword">const</span> student = <span class="c-keyword">await</span> assessBackground({
@@ -142,41 +187,42 @@
 
 <span class="c-keyword">await</span> roadmap.buildProductionCapstones();
 <span class="c-fn">console</span>.log(<span class="c-string">'100% Practical Portfolio Live on GitHub!'</span>);</code></pre>
-            </div>
+                </div>
 
-            <div class="terminal-footer code-font">
-              <div class="term-status-badge">
-                <span class="status-pulse"></span>
-                <span>LIVE COMPILER: 0 ERRORS</span>
-              </div>
-              <div class="term-branch-badge">
-                <span>git:(main) ✓ Bhopal Campus</span>
-              </div>
-            </div>
-          </div>
+                <div class="terminal-footer code-font">
+                  <div class="term-status-badge">
+                    <span class="status-pulse"></span>
+                    <span>LIVE COMPILER: 0 ERRORS</span>
+                  </div>
+                  <div class="term-branch-badge">
+                    <span>git:(main) ✓ Bhopal Campus</span>
+                  </div>
+                </div>
+              </article>
 
-          <!-- Card 2: ai_model.py -->
-          <div class="code-stack-card is-middle" id="card-code-1" data-index="1" role="tabpanel" aria-labelledby="tab-code-1">
-            <div class="terminal-header">
-              <div class="terminal-dots">
-                <span class="dot dot-red"></span>
-                <span class="dot dot-yellow"></span>
-                <span class="dot dot-green"></span>
-              </div>
-              <div class="card-file-label">
-                <span class="term-file-badge">PY</span> <strong>ai_model.py</strong>
-                <span class="card-lang-tag tag-ai">AI &amp; ML</span>
-              </div>
-            </div>
+              <!-- Card 2: ai_model.py -->
+              <article class="code-stack-card is-middle" id="card-code-1" data-index="1" role="tabpanel" aria-labelledby="tab-code-1">
+                <div class="shine" aria-hidden="true"></div>
+                <div class="terminal-header">
+                  <div class="terminal-dots">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                  </div>
+                  <div class="card-file-label">
+                    <span class="term-file-badge">PY</span> <strong>ai_model.py</strong>
+                    <span class="card-lang-tag tag-ai">AI &amp; ML</span>
+                  </div>
+                </div>
 
-            <div class="terminal-body code-font">
-              <div class="terminal-cli-bar" aria-hidden="true">
-                <span class="cli-prompt">miracle-it@bhopal:~$</span>
-                <span class="cli-typing">python train_model.py --dataset="bhopal_ai"</span>
-                <span class="cli-cursor">_</span>
-              </div>
+                <div class="terminal-body code-font">
+                  <div class="terminal-cli-bar" aria-hidden="true">
+                    <span class="cli-prompt">miracle-it@bhopal:~$</span>
+                    <span class="cli-typing">python train_model.py --dataset="bhopal_ai"</span>
+                    <span class="cli-cursor">_</span>
+                  </div>
 
-              <pre class="code-snippet"><code><span class="c-comment"># Miracle IT AI &amp; Machine Learning Track</span>
+                  <pre class="code-snippet"><code><span class="c-comment"># Miracle IT AI &amp; Machine Learning Track</span>
 <span class="c-keyword">import</span> torch
 <span class="c-keyword">from</span> miracle_lab <span class="c-keyword">import</span> ModelTrainer, BhopalDataset
 
@@ -189,41 +235,42 @@ metrics = model.train(epochs=<span class="c-number">50</span>, learning_rate=<sp
 <span class="c-keyword">if</span> metrics.accuracy &gt; <span class="c-number">0.96</span>:
     model.deploy_to_cloud(endpoint=<span class="c-string">"https://api.miracleit.dev/ai"</span>)
     <span class="c-fn">print</span>(<span class="c-string">"✓ Production Model Deployed with Live API"</span>)</code></pre>
-            </div>
+                </div>
 
-            <div class="terminal-footer code-font">
-              <div class="term-status-badge">
-                <span class="status-pulse"></span>
-                <span>ACCURACY: 96.4% • LIVE API</span>
-              </div>
-              <div class="term-branch-badge">
-                <span>git:(main) ✓ Bhopal Campus</span>
-              </div>
-            </div>
-          </div>
+                <div class="terminal-footer code-font">
+                  <div class="term-status-badge">
+                    <span class="status-pulse"></span>
+                    <span>ACCURACY: 96.4% • LIVE API</span>
+                  </div>
+                  <div class="term-branch-badge">
+                    <span>git:(main) ✓ Bhopal Campus</span>
+                  </div>
+                </div>
+              </article>
 
-          <!-- Card 3: insights.sql -->
-          <div class="code-stack-card is-back" id="card-code-2" data-index="2" role="tabpanel" aria-labelledby="tab-code-2">
-            <div class="terminal-header">
-              <div class="terminal-dots">
-                <span class="dot dot-red"></span>
-                <span class="dot dot-yellow"></span>
-                <span class="dot dot-green"></span>
-              </div>
-              <div class="card-file-label">
-                <span class="term-file-badge">SQL</span> <strong>insights.sql</strong>
-                <span class="card-lang-tag tag-data">Data &amp; SQL</span>
-              </div>
-            </div>
+              <!-- Card 3: insights.sql -->
+              <article class="code-stack-card is-back" id="card-code-2" data-index="2" role="tabpanel" aria-labelledby="tab-code-2">
+                <div class="shine" aria-hidden="true"></div>
+                <div class="terminal-header">
+                  <div class="terminal-dots">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                  </div>
+                  <div class="card-file-label">
+                    <span class="term-file-badge">SQL</span> <strong>insights.sql</strong>
+                    <span class="card-lang-tag tag-data">Data &amp; SQL</span>
+                  </div>
+                </div>
 
-            <div class="terminal-body code-font">
-              <div class="terminal-cli-bar" aria-hidden="true">
-                <span class="cli-prompt">miracle-it@bhopal:~$</span>
-                <span class="cli-typing">psql -d miracle_academy -f student_growth.sql</span>
-                <span class="cli-cursor">_</span>
-              </div>
+                <div class="terminal-body code-font">
+                  <div class="terminal-cli-bar" aria-hidden="true">
+                    <span class="cli-prompt">miracle-it@bhopal:~$</span>
+                    <span class="cli-typing">psql -d miracle_academy -f student_growth.sql</span>
+                    <span class="cli-cursor">_</span>
+                  </div>
 
-              <pre class="code-snippet"><code><span class="c-comment">-- Miracle IT Data Analytics &amp; SQL Engineering</span>
+                  <pre class="code-snippet"><code><span class="c-comment">-- Miracle IT Data Analytics &amp; SQL Engineering</span>
 <span class="c-keyword">WITH</span> student_growth <span class="c-keyword">AS</span> (
   <span class="c-keyword">SELECT</span> 
     student_id,
@@ -236,20 +283,58 @@ metrics = model.train(epochs=<span class="c-number">50</span>, learning_rate=<sp
 <span class="c-keyword">SELECT</span> track_name, <span class="c-fn">COUNT</span>(*) <span class="c-keyword">AS</span> job_ready_students
 <span class="c-keyword">FROM</span> student_growth
 <span class="c-keyword">GROUP BY</span> track_name;</code></pre>
+                </div>
+
+                <div class="terminal-footer code-font">
+                  <div class="term-status-badge">
+                    <span class="status-pulse"></span>
+                    <span>QUERY EXEC: 12ms • 142 ROWS</span>
+                  </div>
+                  <div class="term-branch-badge">
+                    <span>git:(main) ✓ Bhopal Campus</span>
+                  </div>
+                </div>
+              </article>
+
             </div>
 
-            <div class="terminal-footer code-font">
-              <div class="term-status-badge">
-                <span class="status-pulse"></span>
-                <span>QUERY EXEC: 12ms • 142 ROWS</span>
+            <!-- Folder Front Flap (Opens in 3D Forward) -->
+            <div class="folder-front-wrapper" aria-hidden="true">
+              <svg class="folder-front" viewBox="0 0 500 320" preserveAspectRatio="none" fill="none">
+                <defs>
+                  <linearGradient id="folderFrontGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="rgba(15, 37, 68, 0.94)" />
+                    <stop offset="50%" stop-color="rgba(10, 26, 49, 0.90)" />
+                    <stop offset="100%" stop-color="rgba(5, 15, 30, 0.96)" />
+                  </linearGradient>
+                  <linearGradient id="folderFrontBorderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="rgba(56, 189, 248, 0.7)" />
+                    <stop offset="50%" stop-color="rgba(255, 122, 0, 0.55)" />
+                    <stop offset="100%" stop-color="rgba(56, 189, 248, 0.45)" />
+                  </linearGradient>
+                </defs>
+                <path d="M0 40C0 17.9086 17.9086 0 40 0H460C482.091 0 500 17.9086 500 40V280C500 302.091 482.091 320 460 320H40C17.9086 320 0 302.091 0 280V40Z" fill="url(#folderFrontGrad)" stroke="url(#folderFrontBorderGrad)" stroke-width="2.5" />
+              </svg>
+              
+              <!-- Subtle Cyber Grid Texture on Front Flap -->
+              <div class="folder-front-grid"></div>
+
+              <!-- Folder Front Tab Label -->
+              <div class="folder-front-brand">
+                <span class="folder-tab-notch"></span>
+                <span class="folder-brand-text">MIRACLE IT • SYLLABUS</span>
               </div>
-              <div class="term-branch-badge">
-                <span>git:(main) ✓ Bhopal Campus</span>
+
+              <!-- Counter Badge (Tracks 03) with Status Dot -->
+              <div class="counter" title="3 Practical Learning Tracks">
+                <div class="status-dot"></div>
+                <span class="counter-label">TRACKS</span>
+                <span class="counter-number">03</span>
               </div>
             </div>
+
           </div>
-
-        </div>
+        </label>
 
       </div>
 

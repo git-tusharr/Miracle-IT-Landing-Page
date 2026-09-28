@@ -192,10 +192,10 @@
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
-  transform: translate3d(100%, 0, 0);
+  transform: translate3d(24px, 0, 0);
   transition:
-    transform 520ms cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 520ms cubic-bezier(0.22, 1, 0.36, 1);
+    transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 260ms cubic-bezier(0.22, 1, 0.36, 1);
   will-change: transform, opacity;
 }
 
@@ -213,7 +213,7 @@
   visibility: visible;
   opacity: 0;
   pointer-events: none;
-  transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-24px, 0, 0);
   z-index: 1;
 }
 
@@ -221,21 +221,21 @@
   visibility: visible;
   opacity: 0;
   pointer-events: none;
-  transform: translate3d(100%, 0, 0);
+  transform: translate3d(24px, 0, 0);
   z-index: 1;
 }
 
 .course-preview-card.is-entering-left {
   visibility: visible;
   opacity: 0;
-  transform: translate3d(-100%, 0, 0) !important;
+  transform: translate3d(-24px, 0, 0) !important;
   transition: none !important;
 }
 
 .course-preview-card.is-entering-right {
   visibility: visible;
   opacity: 0;
-  transform: translate3d(100%, 0, 0) !important;
+  transform: translate3d(24px, 0, 0) !important;
   transition: none !important;
 }
 

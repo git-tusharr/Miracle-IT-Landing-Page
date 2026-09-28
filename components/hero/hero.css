@@ -378,22 +378,202 @@
   50% { transform: scale(1.4); opacity: 0.6; }
 }
 
-/* 3D Stack Viewport */
-.code-cards-stack {
+/* ==========================================================================
+   3D FOLDER CARD & STACKED CODE CARDS ENGINE (MIRACLE IT GEN-Z TECH THEME)
+   ========================================================================== */
+
+/* 3D Perspective Folder Stage */
+.folder-card {
   position: relative;
-  display: grid;
-  grid-template-areas: "card";
   width: 100%;
-  height: 440px;
-  perspective: 1200px;
+  max-width: 530px;
+  height: 450px;
+  perspective: 1400px;
+  cursor: pointer;
+  display: block;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0 auto;
+}
+
+/* Hidden Accessible Toggle Checkbox */
+.folder-toggle {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+}
+
+/* Floating Hint: "Click to open" with Animated Arrow */
+.hint-wrapper {
+  position: absolute;
+  top: -36px;
+  right: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  pointer-events: none;
+  z-index: 120;
+  animation: floatHint 2.4s ease-in-out infinite;
+}
+
+.hint-text {
+  font-family: var(--font-sans, "Inter", sans-serif);
+  color: #38BDF8;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-shadow: 0 0 14px rgba(56, 189, 248, 0.75);
+  transform: rotate(8deg);
+  background: rgba(14, 165, 233, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  backdrop-filter: blur(8px);
+}
+
+.hint-arrow {
+  height: 34px;
+  width: 34px;
+  filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.6));
+}
+
+@keyframes floatHint {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(7px); }
+}
+
+.folder-toggle:checked ~ .hint-wrapper {
+  opacity: 0;
+  transform: translateY(-12px);
+}
+
+/* 3D Folder Container */
+.folder-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.65s cubic-bezier(0.23, 1, 0.32, 1);
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+.folder-toggle:checked ~ .folder-container {
+  transform: rotateX(10deg) rotateY(-4deg);
+}
+
+/* Folder Back Flap */
+.folder-back-wrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.9));
+}
+
+.folder-back {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Terminal CLI Search & Path Bar */
+.folder-search {
+  position: absolute;
+  top: 14px;
+  left: 20px;
+  right: 20px;
+  height: 38px;
+  background: rgba(11, 19, 36, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  gap: 10px;
+  border: 1px solid rgba(56, 189, 248, 0.28);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  z-index: 80;
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  opacity: 0.9;
+  cursor: text;
+}
+
+.folder-search .search-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+.search-cli-path {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.72rem;
+  color: #E2E8F0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 0.02em;
+}
+
+.search-cli-path .cli-user {
+  color: #38BDF8;
+  font-weight: 600;
+}
+
+.search-cli-path .cli-dir {
+  color: #F59E0B;
+}
+
+.search-cli-path .cli-cmd {
+  color: #A7F3D0;
+  font-weight: 500;
+}
+
+.search-cli-path .cli-blink {
+  animation: blinkCursor 1s step-end infinite;
+  color: #38BDF8;
+  font-weight: 700;
+}
+
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.folder-toggle:checked ~ .folder-container .folder-search {
+  top: -46px;
+  opacity: 1;
+  border-color: rgba(255, 122, 0, 0.45);
+  box-shadow: 0 0 25px rgba(255, 122, 0, 0.22), 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+/* 3D Stack Viewport (Holds the 3 Terminal Cards) */
+.code-cards-stack {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  transform-style: preserve-3d;
 }
 
 /* Stacked Code Card Chassis */
 .code-stack-card {
-  grid-area: card;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(11, 15, 25, 0.96);
+  background: rgba(11, 15, 25, 0.97);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-lg, 16px);
   overflow: hidden;
@@ -405,74 +585,303 @@
   transform-origin: center bottom;
   will-change: transform, opacity, box-shadow;
   transition:
-    transform 420ms cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 420ms cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 420ms cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 300ms ease;
+    transform 520ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 480ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 480ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 320ms ease;
   user-select: text;
 }
 
-/* Card in Front / Top */
+/* Shimmering Shine Sweep */
+.shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+  transform: skewX(-20deg);
+  pointer-events: none;
+  z-index: 25;
+}
+
+.folder-toggle:checked ~ .folder-container .shine {
+  left: 160%;
+  transition: left 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition-delay: 0.25s;
+}
+
+/* ==========================================================================
+   CARDS IN CLOSED STATE (Tucked Inside Folder, Top Header Visible)
+   ========================================================================== */
 .code-stack-card.is-top {
+  z-index: 20;
+  opacity: 0.98;
+  transform: translate3d(0, 42px, 16px) scale(0.95) rotate(0deg);
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.85);
+}
+
+.code-stack-card.is-middle {
+  z-index: 15;
+  opacity: 0.78;
+  transform: translate3d(12px, 28px, 10px) scale(0.92) rotate(1.2deg);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.75);
+}
+
+.code-stack-card.is-back {
   z-index: 10;
+  opacity: 0.58;
+  transform: translate3d(20px, 14px, 4px) scale(0.89) rotate(2.4deg);
+  border-color: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 20px -5px rgba(0, 0, 0, 0.65);
+}
+
+/* ==========================================================================
+   CARDS IN OPEN STATE (Cards ELEVATE and Pop Up Out of Folder)
+   ========================================================================== */
+.folder-toggle:checked ~ .folder-container .code-stack-card.is-top {
+  z-index: 50;
   opacity: 1;
   pointer-events: auto;
-  transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
-  border-color: rgba(255, 122, 0, 0.5);
+  transform: translate3d(0, -82px, 50px) scale(1) rotate(0deg);
+  border-color: rgba(255, 122, 0, 0.55);
   box-shadow:
-    0 25px 60px -10px rgba(0, 0, 0, 0.88),
-    0 0 35px rgba(255, 122, 0, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    0 32px 75px -10px rgba(0, 0, 0, 0.95),
+    0 0 35px rgba(255, 122, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
 }
 
-/* Card in Middle */
-.code-stack-card.is-middle {
-  z-index: 8;
-  opacity: 0.78;
+.folder-toggle:checked ~ .folder-container .code-stack-card.is-middle {
+  z-index: 38;
+  opacity: 0.86;
   pointer-events: auto;
   cursor: pointer;
-  transform: translate3d(14px, 14px, -20px) scale(0.96) rotate(1.4deg);
-  border-color: rgba(255, 255, 255, 0.10);
+  transform: translate3d(18px, -58px, 32px) scale(0.96) rotate(1.8deg);
+  border-color: rgba(56, 189, 248, 0.3);
   box-shadow:
-    0 16px 40px -10px rgba(0, 0, 0, 0.75),
-    0 0 20px rgba(0, 0, 0, 0.4);
+    0 22px 50px -10px rgba(0, 0, 0, 0.82),
+    0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-.code-stack-card.is-middle:hover {
-  opacity: 0.92;
-  transform: translate3d(14px, 10px, -10px) scale(0.97) rotate(1deg);
+.folder-toggle:checked ~ .folder-container .code-stack-card.is-middle:hover {
+  opacity: 0.96;
+  transform: translate3d(18px, -64px, 36px) scale(0.97) rotate(1.2deg);
+  border-color: rgba(255, 122, 0, 0.4);
+}
+
+.folder-toggle:checked ~ .folder-container .code-stack-card.is-back {
+  z-index: 28;
+  opacity: 0.68;
+  pointer-events: auto;
+  cursor: pointer;
+  transform: translate3d(-14px, -38px, 18px) scale(0.92) rotate(-1.8deg);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 14px 35px -8px rgba(0, 0, 0, 0.75);
+}
+
+.folder-toggle:checked ~ .folder-container .code-stack-card.is-back:hover {
+  opacity: 0.84;
+  transform: translate3d(-14px, -44px, 22px) scale(0.94) rotate(-1.2deg);
   border-color: rgba(255, 122, 0, 0.35);
 }
 
-/* Card in Back */
-.code-stack-card.is-back {
-  z-index: 6;
-  opacity: 0.52;
-  pointer-events: auto;
-  cursor: pointer;
-  transform: translate3d(28px, 28px, -40px) scale(0.92) rotate(2.8deg);
-  border-color: rgba(255, 255, 255, 0.07);
-  box-shadow:
-    0 10px 30px -10px rgba(0, 0, 0, 0.65);
-}
-
-.code-stack-card.is-back:hover {
-  opacity: 0.75;
-  transform: translate3d(28px, 24px, -30px) scale(0.93) rotate(2deg);
-  border-color: rgba(255, 122, 0, 0.3);
-}
-
-/* Shuffling Out state: Top card sweeps out smoothly to the side */
+/* ==========================================================================
+   CARD SWAPPING ANIMATION (When Top Card Shuffles Out to Back)
+   ========================================================================== */
 .code-stack-card.is-shuffling-out {
-  z-index: 15 !important;
-  opacity: 0.88;
+  z-index: 60 !important;
+  opacity: 0.85 !important;
   pointer-events: none;
-  transform: translate3d(85px, -35px, 30px) rotate(8deg) scale(1.03);
-  box-shadow: 0 35px 70px -10px rgba(0, 0, 0, 0.95), 0 0 40px rgba(255, 122, 0, 0.4);
+  transform: translate3d(70px, -145px, 65px) rotate(8deg) scale(0.95) !important;
+  box-shadow: 0 35px 80px -10px rgba(0, 0, 0, 0.98), 0 0 45px rgba(255, 122, 0, 0.5) !important;
   transition:
-    transform 240ms cubic-bezier(0.34, 1.3, 0.64, 1),
-    opacity 240ms ease,
-    box-shadow 240ms ease;
+    transform 260ms cubic-bezier(0.34, 1.3, 0.64, 1),
+    opacity 260ms ease,
+    box-shadow 260ms ease !important;
+}
+
+/* ==========================================================================
+   FOLDER FRONT FLAP (Swings Open in 3D Forward)
+   ========================================================================== */
+.folder-front-wrapper {
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 310px;
+  z-index: 45;
+  transform-origin: bottom center;
+  transform: translate3d(0, 0, 28px);
+  transition: transform 0.65s cubic-bezier(0.175, 0.885, 0.32, 1.25);
+  pointer-events: auto;
+}
+
+.folder-toggle:checked ~ .folder-container .folder-front-wrapper {
+  transform: rotateX(-54deg) translate3d(0, 15px, 28px);
+}
+
+.folder-front {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: drop-shadow(0 -5px 25px rgba(0, 0, 0, 0.65));
+}
+
+/* Subtle Cyber Grid Texture on Front Flap */
+.folder-front-grid {
+  position: absolute;
+  inset: 12px;
+  border-radius: 12px;
+  background-image: 
+    linear-gradient(to right, rgba(56, 189, 248, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(56, 189, 248, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+  mask-image: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, transparent 80%);
+  -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, transparent 80%);
+}
+
+/* Folder Front Tab Label & Branding */
+.folder-front-brand {
+  position: absolute;
+  top: 14px;
+  left: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.folder-tab-notch {
+  width: 24px;
+  height: 5px;
+  background: linear-gradient(90deg, #FF7A00 0%, #38BDF8 100%);
+  border-radius: 9999px;
+  box-shadow: 0 0 10px rgba(255, 122, 0, 0.6);
+}
+
+.folder-brand-text {
+  font-family: var(--font-sans, "Inter", sans-serif);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #E2E8F0;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Counter Badge (3 Practical Tracks) with Status Dot */
+.counter {
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 4px 10px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  transition: all 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 70;
+  cursor: pointer;
+}
+
+.counter:hover {
+  background: rgba(30, 58, 102, 0.95);
+  border-color: #38BDF8;
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 8px 25px rgba(56, 189, 248, 0.35);
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  background: #10B981;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 10px #10B981;
+}
+
+.status-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #10B981;
+  animation: pulseDot 2s infinite ease-out;
+}
+
+@keyframes pulseDot {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(3); opacity: 0; }
+}
+
+.counter-label {
+  font-family: var(--font-sans, "Inter", sans-serif);
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #94A3B8;
+  letter-spacing: 0.05em;
+}
+
+.counter-number {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.80rem;
+  font-weight: 800;
+  color: #38BDF8;
+  text-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
+}
+
+/* Responsive Scaling for Small Devices */
+@media (max-width: 991px) {
+  .hero-visual {
+    margin-top: 2.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-visual {
+    margin-top: 2rem;
+  }
+  .folder-card {
+    max-width: 100%;
+    height: 420px;
+  }
+  .folder-toggle:checked ~ .folder-container .code-stack-card.is-top {
+    transform: translate3d(0, -60px, 35px) scale(0.98);
+  }
+  .folder-toggle:checked ~ .folder-container .code-stack-card.is-middle {
+    transform: translate3d(12px, -42px, 15px) scale(0.94) rotate(1.2deg);
+  }
+  .folder-toggle:checked ~ .folder-container .code-stack-card.is-back {
+    transform: translate3d(-10px, -28px, 0) scale(0.90) rotate(-1.2deg);
+  }
+  .hint-wrapper {
+    top: -26px;
+    right: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .folder-card {
+    height: 390px;
+  }
+  .folder-search {
+    display: none; /* Hide on very small screens to give maximum room to code */
+  }
+  .folder-toggle:checked ~ .folder-container .code-stack-card.is-top {
+    transform: translate3d(0, -45px, 25px) scale(0.96);
+  }
+  .folder-toggle:checked ~ .folder-container .code-stack-card.is-middle {
+    transform: translate3d(8px, -30px, 10px) scale(0.92);
+  }
+  .folder-toggle:checked ~ .folder-container .code-stack-card.is-back {
+    transform: translate3d(-6px, -18px, 0) scale(0.88);
+  }
 }
 
 /* Header File Labels & Domain Tags */

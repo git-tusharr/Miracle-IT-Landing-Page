@@ -1,180 +1,69 @@
 /**
- * MIRACLE IT CAREER ACADEMY — FAQ ACCORDION CONTROLLER
- * High-performance, fully accessible Vanilla JS dropdown accordion.
- * Features:
- *  - Event delegation with double-initialization guard (prevents duplicate bindings)
- *  - Smooth dropdown accordion animation with ARIA state management
- *  - Category filter tabs with live item counter
- *  - Real-time Instant Search with auto-clear
- *  - URL hash linking support (e.g. #faq-2)
+ * MIRACLE IT CAREER ACADEMY — EDITORIAL ACCORDION CONTROLLER
+ * Fully accessible Vanilla JS Accordion:
+ *  - Only ONE FAQ open at a time
+ *  - Clicking active question closes it
+ *  - Accessible ARIA states (aria-expanded, aria-controls, role="region")
+ *  - Keyboard navigable (Enter / Space / Tab)
+ *  - Butter-smooth CSS Grid height transition
  */
 
 function initFAQ(container = document) {
   const accordion = container.querySelector('#faqAccordion') || document.querySelector('#faqAccordion');
   if (!accordion) return;
 
-  // Prevent duplicate initialization when both DOMContentLoaded & main.js invoke it
+  // Prevent duplicate initialization
   if (accordion.dataset.faqInitialized === 'true') {
     return;
   }
   accordion.dataset.faqInitialized = 'true';
 
   const items = Array.from(accordion.querySelectorAll('.faq-item'));
-  const searchInput = container.querySelector('#faqSearchInput') || document.querySelector('#faqSearchInput');
-  const searchClearBtn = container.querySelector('#faqSearchClear') || document.querySelector('#faqSearchClear');
-  const filterTabs = container.querySelectorAll('.faq-tab-btn');
-  const statusText = container.querySelector('#faqStatusText') || document.querySelector('#faqStatusText');
-  const emptyState = container.querySelector('#faqEmptyState') || document.querySelector('#faqEmptyState');
-  const resetSearchBtn = container.querySelector('#faqResetSearchBtn') || document.querySelector('#faqResetSearchBtn');
 
-  let activeFilter = 'all';
-
-  // Reliable Event Delegation on Accordion Container
+  // Event delegation on accordion container
   accordion.addEventListener('click', (e) => {
-    const trigger = e.target.closest('.faq-trigger');
-    if (!trigger) return;
+    const btn = e.target.closest('.faq-question-btn');
+    if (!btn) return;
 
     e.preventDefault();
-    const item = trigger.closest('.faq-item');
-    if (!item) return;
+    const currentItem = btn.closest('.faq-item');
+    if (!currentItem) return;
 
-    const isCurrentlyActive = item.classList.contains('is-active');
+    const isCurrentlyOpen = currentItem.classList.contains('is-open');
 
-    // Close all other items for a clean single-open accordion experience
-    items.forEach(otherItem => {
-      if (otherItem !== item) {
-        otherItem.classList.remove('is-active');
-        const otherTrigger = otherItem.querySelector('.faq-trigger');
-        if (otherTrigger) {
-          otherTrigger.setAttribute('aria-expanded', 'false');
-        }
-      }
-    });
-
-    // Toggle clicked item
-    if (isCurrentlyActive) {
-      item.classList.remove('is-active');
-      trigger.setAttribute('aria-expanded', 'false');
-    } else {
-      item.classList.add('is-active');
-      trigger.setAttribute('aria-expanded', 'true');
-    }
-  });
-
-  // Filtering & Live Search Logic
-  function applyFilterAndSearch() {
-    const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
-    let visibleCount = 0;
-
+    // Close all other items (Single open accordion behavior)
     items.forEach(item => {
-      const itemCategory = item.getAttribute('data-category');
-      const itemText = item.textContent.toLowerCase();
-      const matchesCategory = (activeFilter === 'all' || itemCategory === activeFilter);
-      const matchesQuery = (!query || itemText.includes(query));
-
-      if (matchesCategory && matchesQuery) {
-        item.style.display = '';
-        visibleCount++;
-      } else {
-        item.style.display = 'none';
-      }
-    });
-
-    // Update Status Bar
-    if (statusText) {
-      if (query) {
-        statusText.textContent = `Showing ${visibleCount} matching question${visibleCount === 1 ? '' : 's'} for "${query}"`;
-      } else if (activeFilter !== 'all') {
-        statusText.textContent = `Showing ${visibleCount} question${visibleCount === 1 ? '' : 's'} in selected topic`;
-      } else {
-        statusText.textContent = `Showing ${visibleCount} of ${items.length} questions`;
-      }
-    }
-
-    // Empty state handling
-    if (emptyState) {
-      if (visibleCount === 0) {
-        emptyState.style.display = 'block';
-        accordion.style.display = 'none';
-      } else {
-        emptyState.style.display = 'none';
-        accordion.style.display = 'flex';
-      }
-    }
-
-    // Toggle clear search button
-    if (searchClearBtn) {
-      searchClearBtn.style.display = query ? 'flex' : 'none';
-    }
-  }
-
-  // Category Tabs click binding
-  filterTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      filterTabs.forEach(t => {
-        t.classList.remove('is-active');
-        t.setAttribute('aria-selected', 'false');
-      });
-      tab.classList.add('is-active');
-      tab.setAttribute('aria-selected', 'true');
-      activeFilter = tab.getAttribute('data-filter') || 'all';
-      applyFilterAndSearch();
-    });
-  });
-
-  // Search input binding
-  if (searchInput) {
-    searchInput.addEventListener('input', applyFilterAndSearch);
-  }
-
-  if (searchClearBtn) {
-    searchClearBtn.addEventListener('click', () => {
-      if (searchInput) {
-        searchInput.value = '';
-        searchInput.focus();
-        applyFilterAndSearch();
-      }
-    });
-  }
-
-  if (resetSearchBtn) {
-    resetSearchBtn.addEventListener('click', () => {
-      if (searchInput) searchInput.value = '';
-      activeFilter = 'all';
-      filterTabs.forEach(t => {
-        const isAll = t.getAttribute('data-filter') === 'all';
-        t.classList.toggle('is-active', isAll);
-        t.setAttribute('aria-selected', isAll ? 'true' : 'false');
-      });
-      applyFilterAndSearch();
-    });
-  }
-
-  // Handle URL hash direct linking (e.g. #faq-2)
-  if (window.location.hash && window.location.hash.startsWith('#faq-')) {
-    const targetId = parseInt(window.location.hash.replace('#faq-', ''), 10);
-    if (!isNaN(targetId) && targetId >= 1 && targetId <= items.length) {
-      setTimeout(() => {
-        const targetItem = accordion.querySelector(`[data-faq-id="${targetId}"]`);
-        if (targetItem) {
-          const trigger = targetItem.querySelector('.faq-trigger');
-          if (trigger) trigger.click();
-          targetItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (item !== currentItem && item.classList.contains('is-open')) {
+        item.classList.remove('is-open');
+        const trigger = item.querySelector('.faq-question-btn');
+        if (trigger) {
+          trigger.setAttribute('aria-expanded', 'false');
         }
-      }, 350);
+      }
+    });
+
+    // Toggle current item
+    if (isCurrentlyOpen) {
+      currentItem.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
+    } else {
+      currentItem.classList.add('is-open');
+      btn.setAttribute('aria-expanded', 'true');
     }
-  }
+  });
 }
 
-// Global exports for component loaders and inline scripts
+// Support both casing conventions for automatic loader
 if (typeof window !== 'undefined') {
   window.initFAQ = initFAQ;
-  window.initFaq = initFAQ; // Support main.js camelCase mapping
+  window.initFaq = initFAQ;
 }
 
-// Auto-run if DOM is already ready
-if (document.readyState === 'interactive' || document.readyState === 'complete') {
-  initFAQ();
-} else {
-  document.addEventListener('DOMContentLoaded', () => initFAQ());
+// Fallback auto-init on DOMContentLoaded
+if (typeof document !== 'undefined') {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => initFAQ());
+  } else {
+    initFAQ();
+  }
 }

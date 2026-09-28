@@ -69,14 +69,20 @@
 }
 
 .footer-logo-link {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
   text-decoration: none;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .footer-logo-link:hover {
-  transform: translateY(-2px);
-  opacity: 0.95;
+  transform: translateY(-2px) scale(1.03);
+  opacity: 1;
 }
 
 .footer-brand-logo-img {
@@ -84,7 +90,7 @@
   width: 100%;
   max-width: 120px;
   height: auto;
-  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.45));
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.6));
 }
 
 .footer-about {

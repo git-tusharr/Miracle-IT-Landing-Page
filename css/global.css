@@ -1780,239 +1780,138 @@ body[data-theme="light"]::before {
 
 
 /* ==========================================================================
-   LIGHT / BRIGHT ALTERNATING SECTION THEME
-   Art-directed, high-contrast, premium editorial appearance.
-   Strictly zero tacky AI-generated glow arches or muddy dark-tint artifacts.
+   HARMONIOUS SECTION THEME SYSTEM — SUBTLE TONAL SHADES & SEAMLESS TRANSITIONS
+   Strictly unified palette: Eliminates harsh bright-white to dark flash transitions.
+   Smooth, continuous, ultra-premium editorial dark-tech aesthetic across all sections.
    ========================================================================== */
-.section-light {
-  background-color: #F8FAFC !important;
-  color: #0F172A !important;
-  border-top: none !important;
-  border-bottom: none !important;
+
+/* Universal Section Smooth Transitions & Subtle Borders */
+.section, .section-alt, section {
   position: relative;
-  z-index: 1;
-  padding-top: clamp(5.25rem, 9vw, 8rem) !important;
-  padding-bottom: clamp(5.25rem, 9vw, 8rem) !important;
+  transition: background-color 0.45s cubic-bezier(0.22, 1, 0.36, 1), color 0.4s ease;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Ensure all interactive content, text, and cards float cleanly above boundary gradients */
-.section-light > .container,
-.section-light .container,
-.section-light .problem-container,
-.section-light .why-container,
-.section-light .who-join-container,
-.section-light .proof-container,
-.section-light .proof-marquee-outer,
-.section-light .faq-container {
-  position: relative;
-  z-index: 5;
+/* Individual Section Tonal Shades */
+.hero-section {
+  background-color: #07090E;
+  border-top: none;
 }
 
-/* Top Boundary Dissolve: Seamlessly merges from the preceding dark section (#07090E) into #F8FAFC */
-.section-light::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: clamp(120px, 15vw, 175px);
-  background: linear-gradient(180deg, 
-    #07090E 0%, 
-    rgba(7, 9, 14, 0.96) 10%, 
-    rgba(12, 20, 36, 0.85) 24%, 
-    rgba(22, 32, 53, 0.62) 42%, 
-    rgba(45, 59, 82, 0.38) 60%, 
-    rgba(93, 111, 138, 0.18) 76%, 
-    rgba(160, 177, 199, 0.07) 88%, 
-    rgba(248, 250, 252, 0) 100%
-  );
-  background: linear-gradient(180deg in oklab, 
-    #07090E 0%, 
-    rgba(7, 9, 14, 0.96) 10%, 
-    rgba(12, 20, 36, 0.85) 24%, 
-    rgba(22, 32, 53, 0.62) 42%, 
-    rgba(45, 59, 82, 0.38) 60%, 
-    rgba(93, 111, 138, 0.18) 76%, 
-    rgba(160, 177, 199, 0.07) 88%, 
-    rgba(248, 250, 252, 0) 100%
-  );
-  pointer-events: none;
-  z-index: 2;
+.placed-students-section {
+  background-color: #090D17;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Bottom Boundary Dissolve: Seamlessly merges from #F8FAFC down into the following dark section (#07090E) */
-.section-light::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: clamp(120px, 15vw, 175px);
-  background: linear-gradient(0deg, 
-    #07090E 0%, 
-    rgba(7, 9, 14, 0.96) 10%, 
-    rgba(12, 20, 36, 0.85) 24%, 
-    rgba(22, 32, 53, 0.62) 42%, 
-    rgba(45, 59, 82, 0.38) 60%, 
-    rgba(93, 111, 138, 0.18) 76%, 
-    rgba(160, 177, 199, 0.07) 88%, 
-    rgba(248, 250, 252, 0) 100%
-  );
-  background: linear-gradient(0deg in oklab, 
-    #07090E 0%, 
-    rgba(7, 9, 14, 0.96) 10%, 
-    rgba(12, 20, 36, 0.85) 24%, 
-    rgba(22, 32, 53, 0.62) 42%, 
-    rgba(45, 59, 82, 0.38) 60%, 
-    rgba(93, 111, 138, 0.18) 76%, 
-    rgba(160, 177, 199, 0.07) 88%, 
-    rgba(248, 250, 252, 0) 100%
-  );
-  pointer-events: none;
-  z-index: 2;
+.problem-section {
+  background-color: #0D1424 !important;
+  color: #F8FAFC !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* Clean up old SVG dividers: hidden to remove tacky neon-glow curved arches */
-.section-divider {
-  display: none !important;
+.courses-section {
+  background-color: #080D1A !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* Typography Hierarchy in Light Sections */
-.section-light h1,
-.section-light h2,
-.section-light h3,
-.section-light h4,
-.section-light h5,
-.section-light h6 {
-  color: #0F172A !important;
+.why-section {
+  background-color: #0C1322 !important;
+  color: #F8FAFC !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.learning-experience-section {
+  background-color: #080D1A !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.who-join-section {
+  background-color: #0B1120 !important;
+  color: #F8FAFC !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.counselling-process-section {
+  background-color: #080D1A !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.proof-section {
+  background-color: #0E1628 !important;
+  color: #F8FAFC !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.location-section {
+  background-color: #070B14 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.faq-section {
+  background-color: #0A1020 !important;
+  color: #F8FAFC !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.final-cta-section {
+  background-color: #07090E !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.site-footer {
+  background-color: #05070B !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* Ensure headings and text remain high-contrast and readable across all shades */
+.problem-section h1, .problem-section h2, .problem-section h3, .problem-section h4,
+.why-section h1, .why-section h2, .why-section h3, .why-section h4,
+.who-join-section h1, .who-join-section h2, .who-join-section h3, .who-join-section h4,
+.proof-section h1, .proof-section h2, .proof-section h3, .proof-section h4,
+.faq-section h1, .faq-section h2, .faq-section h3, .faq-section h4 {
+  color: #F8FAFC;
   letter-spacing: -0.02em;
 }
 
-.section-light .section-header h2 {
-  background: none !important;
-  -webkit-text-fill-color: initial !important;
-  color: #0F172A !important;
-}
-
-.section-light p,
-.section-light .text-lead,
-.section-light .section-header p {
-  color: #475569 !important;
+.problem-section p, .problem-section .text-lead,
+.why-section p, .why-section .text-lead,
+.who-join-section p, .who-join-section .text-lead,
+.proof-section p, .proof-section .text-lead,
+.faq-section p, .faq-section .text-lead {
+  color: #94A3B8;
   line-height: 1.65;
 }
 
-/* Exception for high-contrast dark callout cards inside light sections */
-.section-light .problem-transition-banner h4,
-.section-light .problem-transition-banner .transition-heading,
-.section-light .who-cta-box h3,
-.section-light .who-cta-text h3 {
-  color: #FFFFFF !important;
-}
-
-.section-light .problem-transition-banner p,
-.section-light .problem-transition-banner .transition-sub,
-.section-light .who-cta-box p,
-.section-light .who-cta-text p {
+/* Cards across all dark tonal sections */
+.problem-section .card, .problem-section .problem-card,
+.why-section .why-card, .why-section .pillar-story-card,
+.who-join-section .who-card, .who-join-section .who-stack-card,
+.proof-section .proof-student-card-inner,
+.faq-section .faq-item {
+  background: rgba(15, 23, 42, 0.65) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35) !important;
   color: #E2E8F0 !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
-.section-light .section-tag {
-  background: #FFF7ED !important;
-  color: #C2410C !important;
-  border: 1px solid rgba(255, 122, 0, 0.28) !important;
-  box-shadow: 0 1px 2px rgba(255, 122, 0, 0.06) !important;
-  font-weight: 700;
+/* Section tags */
+.section-tag {
+  background: rgba(255, 122, 0, 0.12) !important;
+  color: #FF9433 !important;
+  border: 1px solid rgba(255, 122, 0, 0.3) !important;
 }
 
-.section-light .section-tag::before {
-  background: #FF7A00 !important;
-  box-shadow: 0 0 6px rgba(255, 122, 0, 0.4) !important;
+/* Clean up legacy .section-light rules */
+.section-light {
+  background-color: #0D1424 !important;
+  color: #F8FAFC !important;
 }
 
-/* Card Surfaces in Light Sections */
-.section-light .card,
-.section-light .card-base,
-.section-light .problem-card,
-.section-light .why-card,
-.section-light .who-card,
-.section-light .who-stack-card,
-.section-light .faq-item,
-.section-light .proof-student-card-inner {
-  background: #FFFFFF !important;
-  border: 1px solid #E2E8F0 !important;
-  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04), 0 8px 24px -4px rgba(15, 23, 42, 0.06) !important;
-  color: #1E293B !important;
-  border-radius: var(--radius-lg, 16px);
-  transition: transform 0.26s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.26s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.26s ease !important;
-}
-
-.section-light .card:hover,
-.section-light .problem-card:hover,
-.section-light .why-card:hover,
-.section-light .who-card:hover,
-.section-light .faq-item:hover {
-  border-color: rgba(255, 122, 0, 0.45) !important;
-  box-shadow: 0 12px 30px -4px rgba(15, 23, 42, 0.1), 0 0 18px rgba(255, 122, 0, 0.08) !important;
-  transform: translateY(-3px) !important;
-}
-
-/* Form Controls & Inputs in Light Sections */
-.section-light .form-input,
-.section-light input[type="search"],
-.section-light input[type="text"] {
-  background: #FFFFFF !important;
-  border: 1px solid #CBD5E1 !important;
-  color: #0F172A !important;
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.section-light .form-input::placeholder,
-.section-light input::placeholder {
-  color: #94A3B8 !important;
-}
-
-.section-light .form-input:focus,
-.section-light input[type="search"]:focus {
-  border-color: #FF7A00 !important;
-  box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.2) !important;
-  outline: none;
-}
-
-/* Secondary Buttons & Interactive Pills in Light Sections */
-.section-light .btn-secondary {
-  background: #FFFFFF !important;
-  border: 1px solid #CBD5E1 !important;
-  color: #0F172A !important;
-  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05) !important;
-}
-
-.section-light .btn-secondary:hover {
-  background: #FFF7ED !important;
-  border-color: #FF7A00 !important;
-  color: #C2410C !important;
-}
-
-.section-light .matcher-chip {
-  background: #FFFFFF !important;
-  border: 1px solid #CBD5E1 !important;
-  color: #334155 !important;
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
-}
-
-.section-light .matcher-chip:hover {
-  border-color: #FF7A00 !important;
-  color: #C2410C !important;
-  background: #FFF7ED !important;
-}
-
-.section-light .matcher-chip.is-selected {
-  background: #FF7A00 !important;
-  border-color: #FF7A00 !important;
-  color: #FFFFFF !important;
-  box-shadow: 0 4px 12px rgba(255, 122, 0, 0.3) !important;
+.section-light::before,
+.section-light::after {
+  display: none !important;
 }
 
 /* ==========================================================================

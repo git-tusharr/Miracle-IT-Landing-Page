@@ -158,18 +158,16 @@
 
 #why-miracle-it.why-section,
 .section-light.why-section {
-  background-color: #F8FAFC !important;
+  background-color: #0C1322 !important;
   background-image:
-    /* Soft center radial mask: dots smoothly fade around the physical tablet frame */
-    radial-gradient(ellipse 900px 520px at 50% 55%, rgba(255, 255, 255, 0.92) 20%, rgba(248, 250, 252, 0.7) 65%, transparent 100%),
-    /* Precision 24px tech dot matrix in crisp slate */
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='1.25' fill='rgba(15,23,42,0.085)'/%3E%3C/svg%3E"),
-    /* Architectural vertical guideline columns */
-    linear-gradient(to right, transparent 0%, rgba(15, 23, 42, 0.038) 1px, transparent 1px, transparent 100%) !important;
+    radial-gradient(ellipse 900px 520px at 50% 55%, rgba(37, 99, 235, 0.08) 20%, transparent 70%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='1.25' fill='rgba(255,255,255,0.04)'/%3E%3C/svg%3E"),
+    linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.02) 1px, transparent 1px, transparent 100%) !important;
   background-size: 100% 100%, 24px 24px, 140px 100% !important;
   background-position: center, 0 0, 50% 0 !important;
   background-repeat: no-repeat, repeat, repeat !important;
   position: relative;
+  color: #F8FAFC !important;
 }
 
 /* Architectural technical container layering */
@@ -238,16 +236,15 @@
 
 #proof.proof-section,
 .section-light.proof-section {
-  background-color: #F8FAFC !important;
+  background-color: #0E1628 !important;
   background-image:
-    /* Clean radial feather mask ensuring clear readability around proof cards */
-    radial-gradient(ellipse 1100px 700px at 50% 50%, rgba(255, 255, 255, 0.88) 35%, rgba(248, 250, 252, 0.6) 75%, transparent 100%),
-    /* Restrained 32px precision dot matrix */
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='1.15' fill='rgba(15,23,42,0.075)'/%3E%3C/svg%3E") !important;
+    radial-gradient(ellipse 1100px 700px at 50% 50%, rgba(255, 122, 0, 0.06) 0%, rgba(37, 99, 235, 0.04) 50%, transparent 75%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='1.15' fill='rgba(255,255,255,0.035)'/%3E%3C/svg%3E") !important;
   background-size: 100% 100%, 32px 32px !important;
   background-position: center, 0 0 !important;
   background-repeat: no-repeat, repeat !important;
   position: relative;
+  color: #F8FAFC !important;
 }
 
 

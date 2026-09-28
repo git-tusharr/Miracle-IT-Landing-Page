@@ -729,26 +729,15 @@
       const section = document.querySelector('#why-miracle-it');
       if (!section) return;
 
-      const track = section.querySelector('#tabletStoryTrack');
-      const slides = Array.from(section.querySelectorAll('.tablet-slide'));
-      const tabletDevice = section.querySelector('#whyTabletDevice');
-      const stage = section.querySelector('.tablet-perspective-stage');
-      if (!track || slides.length === 0) return;
-
-      const dots = Array.from(section.querySelectorAll('.story-dot'));
-      const chapterText = section.querySelector('#tabletChapterText');
-      const progressBar = section.querySelector('#tabletProgressBar');
+      const stageCard = section.querySelector('.tablet-device-chassis') || section.querySelector('.why-stage-card') || section.querySelector('.why-showcase-container');
+      const chapterNav = section.querySelector('.why-chapter-nav');
       const codingBar = section.querySelector('.ratio-coding');
 
-      const chapterTitles = [
-        'Chapter 1 of 5 • Classroom Formula',
-        'Chapter 2 of 5 • Production Capstones',
-        'Chapter 3 of 5 • 1-on-1 Code Audits',
-        'Chapter 4 of 5 • Institution Matrix',
-        'Chapter 5 of 5 • Transparency Pledge'
-      ];
+      // Initialize component interactive controller
+      if (typeof window.initWhyMiracleIt === 'function') {
+        window.initWhyMiracleIt(section);
+      }
 
-      // Guard: If GSAP or ScrollTrigger is not available or reduced motion is active
       if (typeof window.gsap === 'undefined' || typeof window.ScrollTrigger === 'undefined' || this.isReducedMotion) {
         if (codingBar) codingBar.style.width = '70%';
         return;
@@ -758,195 +747,52 @@
       const ScrollTrigger = window.ScrollTrigger;
       gsap.registerPlugin(ScrollTrigger);
 
-      // 1. Smooth Section Entrance: Tablet gently rises and scales into position as section nears viewport
-      if (tabletDevice) {
-        gsap.fromTo(tabletDevice,
-          { y: 35, scale: 0.96, opacity: 0.85, rotateX: 2.5 },
+      // Smooth Section Entrance Reveal
+      if (stageCard) {
+        gsap.fromTo(stageCard,
+          { y: 30, opacity: 0.85 },
           {
             y: 0,
-            scale: 1,
             opacity: 1,
-            rotateX: 0,
+            duration: 0.75,
             ease: "power2.out",
             scrollTrigger: {
               trigger: section,
-              start: "top 85%",
-              end: "top 76px",
-              scrub: 1
+              start: "top 80%",
+              toggleActions: "play none none none"
             }
           }
         );
       }
 
-      // 2. Subtle Interactive 3D Mouse Parallax on Desktop
-      if (stage && tabletDevice && window.innerWidth >= 992) {
-        let isHovered = false;
-        stage.addEventListener('mouseenter', () => { isHovered = true; });
-        stage.addEventListener('mousemove', (e) => {
-          if (!isHovered) return;
-          const rect = stage.getBoundingClientRect();
-          const x = (e.clientX - rect.left) / rect.width - 0.5; // -0.5 to 0.5
-          const y = (e.clientY - rect.top) / rect.height - 0.5;
-          gsap.to(tabletDevice, {
-            rotateY: x * 3.5,
-            rotateX: -y * 3.5,
+      if (chapterNav) {
+        gsap.fromTo(chapterNav,
+          { y: 20, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
             duration: 0.6,
-            ease: "power1.out",
-            transformPerspective: 1400
-          });
-        });
-        stage.addEventListener('mouseleave', () => {
-          isHovered = false;
-          gsap.to(tabletDevice, {
-            rotateY: 0,
-            rotateX: 0,
-            duration: 0.8,
-            ease: "power2.out"
-          });
-        });
-      }
-
-      // Helper function to animate card contents on slide change
-      let lastActiveSlide = -1;
-      const animateSlideCards = (slideIdx) => {
-        if (slideIdx === lastActiveSlide) return;
-        lastActiveSlide = slideIdx;
-
-        const currentSlide = slides[slideIdx];
-        if (!currentSlide) return;
-
-        if (slideIdx === 0) {
-          // Slide 1: Routine phases stagger + coding bar fill
-          const routinePhases = currentSlide.querySelectorAll('.routine-phase');
-          const statPills = currentSlide.querySelectorAll('.stat-pill');
-          if (routinePhases.length) {
-            gsap.fromTo(routinePhases,
-              { y: 16, opacity: 0.4 },
-              { y: 0, opacity: 1, stagger: 0.08, duration: 0.45, ease: "power2.out" }
-            );
-          }
-          if (statPills.length) {
-            gsap.fromTo(statPills,
-              { y: 12, opacity: 0.4 },
-              { y: 0, opacity: 1, stagger: 0.06, duration: 0.4, ease: "power2.out" }
-            );
-          }
-          if (codingBar) {
-            gsap.fromTo(codingBar, { width: '0%' }, { width: '70%', duration: 0.7, ease: "power2.out" });
-          }
-        } else if (slideIdx === 1 || slideIdx === 2) {
-          // Slide 2 & 3: Pillar cards float up smoothly
-          const pillarCards = currentSlide.querySelectorAll('.pillar-story-card');
-          if (pillarCards.length) {
-            gsap.fromTo(pillarCards,
-              { y: 20, opacity: 0.35, scale: 0.98 },
-              { y: 0, opacity: 1, scale: 1, stagger: 0.12, duration: 0.5, ease: "power2.out" }
-            );
-          }
-        } else if (slideIdx === 3) {
-          // Slide 4: Comparison rows cascade sequentially
-          const compRows = currentSlide.querySelectorAll('.comp-row');
-          if (compRows.length) {
-            gsap.fromTo(compRows,
-              { x: 22, opacity: 0.3 },
-              { x: 0, opacity: 1, stagger: 0.05, duration: 0.45, ease: "power2.out" }
-            );
-          }
-        } else if (slideIdx === 4) {
-          // Slide 5: Transparency pledge card reveal
-          const pledgeCard = currentSlide.querySelector('.pledge-card-wrap');
-          const pledgePills = currentSlide.querySelectorAll('.pledge-pill');
-          if (pledgeCard) {
-            gsap.fromTo(pledgeCard,
-              { scale: 0.96, opacity: 0.4, y: 12 },
-              { scale: 1, opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
-            );
-          }
-          if (pledgePills.length) {
-            gsap.fromTo(pledgePills,
-              { opacity: 0.3, y: 8 },
-              { opacity: 1, y: 0, stagger: 0.08, duration: 0.4, ease: "power2.out" }
-            );
-          }
-        }
-      };
-
-      ScrollTrigger.matchMedia({
-        // DESKTOP (>= 992px)
-        "(min-width: 992px)": function() {
-          const maxPercent = -((slides.length - 1) * (100 / slides.length));
-
-          // Set initial state
-          gsap.set(track, { xPercent: 0 });
-          if (progressBar) progressBar.style.width = '20%';
-
-          // Trigger initial slide 1 animation
-          animateSlideCards(0);
-
-          const tl = gsap.timeline({
+            ease: "power2.out",
             scrollTrigger: {
               trigger: section,
-              start: "top 76px",
-              end: "+=3200",
-              pin: true,
-              anticipatePin: 1,
-              scrub: 0.8,
-              snap: {
-                snapTo: [0, 0.25, 0.5, 0.75, 1.0],
-                duration: { min: 0.3, max: 0.6 },
-                delay: 0.05,
-                ease: "power2.inOut"
-              },
-              onUpdate: (self) => {
-                const p = self.progress; // 0 to 1
-                
-                // Progress bar fill inside tablet
-                if (progressBar) {
-                  const fillPct = 20 + p * 80;
-                  progressBar.style.width = `${fillPct}%`;
-                }
-
-                // Active chapter index
-                const activeIdx = Math.min(Math.floor(p * slides.length + 0.1), slides.length - 1);
-                
-                // Update dots
-                dots.forEach((dot, idx) => {
-                  dot.classList.toggle('is-active', idx === activeIdx);
-                });
-
-                // Update chapter text in OS bar
-                if (chapterText && chapterTitles[activeIdx]) {
-                  chapterText.textContent = chapterTitles[activeIdx];
-                }
-
-                // Trigger smooth card entrance for current slide
-                animateSlideCards(activeIdx);
-              }
+              start: "top 85%",
+              toggleActions: "play none none none"
             }
-          });
+          }
+        );
+      }
 
-          // Animate track horizontally from 0% to -80%
-          tl.to(track, {
-            xPercent: maxPercent,
-            ease: "none",
-            duration: 1
-          });
-
-          // Save globally so dot click handlers can reference
-          window.whyTabletTimeline = tl;
-
-          return function() {
-            tl.kill();
-            window.whyTabletTimeline = null;
-          };
-        },
-
-        // MOBILE & TABLET FALLBACK (< 992px)
-        "(max-width: 991px)": function() {
-          gsap.set(track, { clearProps: "all" });
-          if (codingBar) codingBar.style.width = '70%';
-        }
-      });
+      // Coding bar fill animation when entering view
+      if (codingBar) {
+        ScrollTrigger.create({
+          trigger: section,
+          start: "top 70%",
+          once: true,
+          onEnter: () => {
+            gsap.fromTo(codingBar, { width: '0%' }, { width: '70%', duration: 0.9, ease: "power2.out" });
+          }
+        });
+      }
     },
 
     /**

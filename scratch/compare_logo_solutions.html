@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      body {
+        margin: 0;
+        padding: 40px;
+        background: #07090E;
+        color: #F8FAFC;
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      }
+      h2 { font-size: 20px; color: #94A3B8; margin-top: 30px; margin-bottom: 12px; }
+      .row {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        padding: 24px;
+        background: #0D1424;
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 16px;
+        margin-bottom: 24px;
+      }
+      .label { width: 320px; }
+      .label h3 { margin: 0 0 6px 0; font-size: 16px; color: #FFFFFF; }
+      .label p { margin: 0; font-size: 13px; color: #94A3B8; }
+      
+      /* Styles under test */
+      .demo-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 240px;
+        min-height: 70px;
+      }
+      
+      /* Style A: Completely Transparent Floating (No background at all) with Bold Crisp Outline */
+      .style-a img {
+        height: 48px;
+        width: auto;
+        display: block;
+        filter: drop-shadow(0 2px 10px rgba(0,0,0,0.6));
+      }
+
+      /* Style B: Completely Transparent Floating with Silver Mode (Official Dark Mode typography) */
+      .style-b img {
+        height: 48px;
+        width: auto;
+        display: block;
+        filter: drop-shadow(0 2px 10px rgba(0,0,0,0.6));
+      }
+
+      /* Style C: Subtle Dark Glassmorphic Pill (Glass 5% white, NOT solid white) */
+      .style-c {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(12px);
+        padding: 8px 20px;
+        border-radius: 9999px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      }
+      .style-c img {
+        height: 44px;
+        width: auto;
+        display: block;
+      }
+
+      /* Style D: Ambient Radiant Glow behind Logo (Radial glow, no box border) */
+      .style-d {
+        position: relative;
+        padding: 6px 12px;
+      }
+      .style-d::before {
+        content: '';
+        position: absolute;
+        inset: -10px;
+        background: radial-gradient(ellipse at center, rgba(255, 122, 0, 0.22) 0%, rgba(37, 99, 235, 0.15) 50%, transparent 75%);
+        filter: blur(10px);
+        z-index: 0;
+      }
+      .style-d img {
+        position: relative;
+        z-index: 1;
+        height: 48px;
+        width: auto;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="margin-top:0; font-size:24px;">Logo Alternatives (Without Awkward White Background)</h1>
+    
+    <div class="row">
+      <div class="label">
+        <h3>Option 1: Bold Keyline Floating Logo</h3>
+        <p>100% transparent floating. Keeps dark grey text core with crisp outer edge. Zero container box.</p>
+      </div>
+      <div class="demo-box style-a">
+        <img src="logo_bold_keyline.png" alt="Bold Keyline">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="label">
+        <h3>Option 2: Platinum/Silver Dark Mode</h3>
+        <p>Official modern dark-mode treatment. "Career Academy" in elegant cool silver (#E2E8F0). Clean & ultra-sharp.</p>
+      </div>
+      <div class="demo-box style-b">
+        <img src="logo_silver_mode.png" alt="Silver Dark Mode">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="label">
+        <h3>Option 3: Dark Glassmorphic Pill</h3>
+        <p>Subtle 5% frosted dark glass (NOT solid white). Matches dark theme seamlessly.</p>
+      </div>
+      <div class="demo-box style-c">
+        <img src="logo_silver_mode.png" alt="Glass Pill">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="label">
+        <h3>Option 4: Ambient Brand Backlight</h3>
+        <p>Soft orange/blue brand glow behind transparent logo. Zero box border.</p>
+      </div>
+      <div class="demo-box style-d">
+        <img src="logo_silver_mode.png" alt="Backlight">
+      </div>
+    </div>
+  </body>
+  </html>

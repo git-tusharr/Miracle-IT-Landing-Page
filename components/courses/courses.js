@@ -1,10 +1,11 @@
 /**
- * COURSES SECTION CONTROLLER — EDITORIAL INDEX & DIRECTIONAL SLIDE PREVIEW (v4.0)
+ * COURSES SECTION CONTROLLER — EDITORIAL INDEX & DIRECTIONAL SLIDE PREVIEW (v4.5)
  * Miracle IT Career Academy
  * 
  * Features:
- * - Desktop hover & keyboard focus selection
- * - Directional horizontal slide animations (enter-from-right / enter-from-left)
+ * - Fluid, instantaneous desktop hover & keyboard focus selection
+ * - Non-blocking rapid cursor tracking (no stuck states, seamless interruption)
+ * - Directional subtle horizontal glide animations (260ms hardware-accelerated)
  * - Mobile tap / click selection
  * - ARIA tablist / tabpanel synchronization
  * - Reduced motion instant switching support
@@ -25,7 +26,8 @@ function initCourses(container = document) {
   if (!navItems.length || !cards.length) return;
 
   let activeIndex = 0;
-  let isTransitioning = false;
+  let transitionTimer = null;
+  let hoverDebounceTimer = null;
 
   const prefersReducedMotion = () => {
     return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -33,71 +35,76 @@ function initCourses(container = document) {
 
   /**
    * Directional slide transition between course cards
+   * Non-blocking, interruptible, robust against fast cursor movements
    */
   const setActiveCourse = (newIndex) => {
-    if (newIndex === activeIndex || isTransitioning) return;
+    if (newIndex === activeIndex && cards[newIndex].classList.contains('is-active')) {
+      return;
+    }
 
     const prevIndex = activeIndex;
     const direction = newIndex > prevIndex ? 'forward' : 'backward';
-    isTransitioning = true;
+
+    // Clear any pending animation cleanup timer
+    if (transitionTimer) {
+      clearTimeout(transitionTimer);
+      transitionTimer = null;
+    }
 
     const prevNav = navItems[prevIndex];
     const nextNav = navItems[newIndex];
     const prevCard = cards[prevIndex];
     const nextCard = cards[newIndex];
 
-    // Update Nav Items active & ARIA states
-    if (prevNav) {
-      prevNav.classList.remove('is-active');
-      prevNav.setAttribute('aria-selected', 'false');
+    if (!nextNav || !nextCard) return;
+
+    // Immediately update Nav Items active & ARIA states for instant feedback
+    navItems.forEach((item, idx) => {
+      const isCurrent = idx === newIndex;
+      item.classList.toggle('is-active', isCurrent);
+      item.setAttribute('aria-selected', isCurrent ? 'true' : 'false');
+    });
+
+    if (window.innerWidth < 768) {
+      nextNav.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
     }
-    if (nextNav) {
-      nextNav.classList.add('is-active');
-      nextNav.setAttribute('aria-selected', 'true');
-      if (window.innerWidth < 768) {
-        nextNav.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+
+    // Clean up any cards that are neither previous nor next
+    cards.forEach((c, idx) => {
+      if (idx !== newIndex && idx !== prevIndex) {
+        c.classList.remove('is-active', 'is-entering-left', 'is-entering-right', 'is-exiting-left', 'is-exiting-right');
+        c.hidden = true;
       }
-    }
+    });
 
     // Reduced motion fallback: instant swap
     if (prefersReducedMotion()) {
-      if (prevCard) {
-        prevCard.classList.remove('is-active');
+      if (prevCard && prevCard !== nextCard) {
+        prevCard.classList.remove('is-active', 'is-entering-left', 'is-entering-right', 'is-exiting-left', 'is-exiting-right');
         prevCard.hidden = true;
       }
-      if (nextCard) {
-        nextCard.classList.add('is-active');
-        nextCard.hidden = false;
-      }
+      nextCard.classList.remove('is-entering-left', 'is-entering-right', 'is-exiting-left', 'is-exiting-right');
+      nextCard.classList.add('is-active');
+      nextCard.hidden = false;
       activeIndex = newIndex;
-      isTransitioning = false;
       return;
     }
 
     // Prepare incoming card position
     nextCard.hidden = false;
-    nextCard.classList.remove('is-active', 'is-exiting-left', 'is-exiting-right', 'is-entering-left', 'is-entering-right');
-
-    if (direction === 'forward') {
-      nextCard.classList.add('is-entering-right');
-    } else {
-      nextCard.classList.add('is-entering-left');
-    }
+    nextCard.classList.remove('is-active', 'is-exiting-left', 'is-exiting-right');
+    nextCard.classList.add(direction === 'forward' ? 'is-entering-right' : 'is-entering-left');
 
     // Force layout reflow before triggering CSS transition
     void nextCard.offsetWidth;
 
     // Animate previous card out
-    if (prevCard) {
+    if (prevCard && prevCard !== nextCard) {
       prevCard.classList.remove('is-active', 'is-entering-left', 'is-entering-right');
-      if (direction === 'forward') {
-        prevCard.classList.add('is-exiting-left');
-      } else {
-        prevCard.classList.add('is-exiting-right');
-      }
+      prevCard.classList.add(direction === 'forward' ? 'is-exiting-left' : 'is-exiting-right');
     }
 
-    // Animate incoming card to center
+    // Animate incoming card to center active position
     requestAnimationFrame(() => {
       nextCard.classList.remove('is-entering-left', 'is-entering-right');
       nextCard.classList.add('is-active');
@@ -106,29 +113,37 @@ function initCourses(container = document) {
     activeIndex = newIndex;
 
     // Transition completion cleanup
-    setTimeout(() => {
-      if (prevCard && prevIndex !== activeIndex) {
-        prevCard.classList.remove('is-exiting-left', 'is-exiting-right');
+    transitionTimer = setTimeout(() => {
+      if (prevCard && prevCard !== cards[activeIndex]) {
+        prevCard.classList.remove('is-exiting-left', 'is-exiting-right', 'is-active');
         prevCard.hidden = true;
       }
-      isTransitioning = false;
-    }, 540);
+      transitionTimer = null;
+    }, 280);
   };
 
   // Nav Item Event Listeners
   navItems.forEach((item, index) => {
-    // Desktop: Hover selection
-    item.addEventListener('mouseenter', () => {
-      setActiveCourse(index);
-    });
+    // Desktop: Smooth, non-blocking hover selection
+    const handleHover = () => {
+      if (hoverDebounceTimer) clearTimeout(hoverDebounceTimer);
+      hoverDebounceTimer = setTimeout(() => {
+        setActiveCourse(index);
+      }, 35);
+    };
 
-    // Keyboard & Mobile: Click / Touch selection
-    item.addEventListener('click', (e) => {
+    item.addEventListener('mouseenter', handleHover);
+    item.addEventListener('pointerenter', handleHover);
+
+    // Immediate selection on click / touch
+    item.addEventListener('click', () => {
+      if (hoverDebounceTimer) clearTimeout(hoverDebounceTimer);
       setActiveCourse(index);
     });
 
     // Keyboard focus selection
     item.addEventListener('focus', () => {
+      if (hoverDebounceTimer) clearTimeout(hoverDebounceTimer);
       setActiveCourse(index);
     });
 

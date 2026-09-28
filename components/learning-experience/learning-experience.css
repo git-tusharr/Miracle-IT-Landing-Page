@@ -6,7 +6,7 @@
 :root {
   --carousel-perspective: 1200px;
   --carousel-card-width: 580px;
-  --carousel-stage-height: 710px;
+  --carousel-stage-height: 480px;
   --carousel-depth: 80px;
   --carousel-side-offset: 350px;
   --carousel-rotation: 18deg;
@@ -316,6 +316,44 @@
   color: var(--color-text-muted, #94a3b8);
   line-height: 1.5;
   margin-bottom: 0.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   STREAMLINED FEATURE CHIPS ROW
+   -------------------------------------------------------------------------- */
+.card-feature-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 0.75rem;
+}
+
+.feature-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #E2E8F0;
+  letter-spacing: 0.01em;
+  transition: all 180ms ease;
+}
+
+.carousel-card.is-center .feature-chip:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.chip-icon {
+  font-size: 0.85rem;
+  line-height: 1;
 }
 
 /* --------------------------------------------------------------------------
@@ -725,7 +763,7 @@
 @media (max-width: 1024px) {
   :root {
     --carousel-card-width: 500px;
-    --carousel-stage-height: 610px;
+    --carousel-stage-height: 460px;
     --carousel-side-offset: 260px;
     --carousel-rotation: 16deg;
     --carousel-depth: 60px;
@@ -747,7 +785,7 @@
 @media (max-width: 768px) {
   :root {
     --carousel-card-width: min(400px, calc(100vw - 32px));
-    --carousel-stage-height: 550px;
+    --carousel-stage-height: 440px;
     --carousel-side-offset: 145px;
     --carousel-rotation: 12deg;
     --carousel-depth: 35px;
@@ -844,7 +882,7 @@
 @media (max-width: 420px) {
   :root {
     --carousel-card-width: min(340px, calc(100vw - 20px));
-    --carousel-stage-height: 520px;
+    --carousel-stage-height: 420px;
     --carousel-side-offset: 95px;
     --carousel-rotation: 8deg;
     --carousel-depth: 18px;
@@ -894,7 +932,7 @@
 @media (max-width: 360px) {
   :root {
     --carousel-card-width: min(305px, calc(100vw - 16px));
-    --carousel-stage-height: 490px;
+    --carousel-stage-height: 395px;
     --carousel-side-offset: 65px;
     --carousel-rotation: 4deg;
     --carousel-depth: 10px;

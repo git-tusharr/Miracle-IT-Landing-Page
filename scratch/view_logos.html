@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Logo Inspection</title>
+<style>
+  body {
+    font-family: sans-serif;
+    margin: 20px;
+    background: #1e1e1e;
+    color: #fff;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .card {
+    background: #2a2a2a;
+    padding: 16px;
+    border-radius: 8px;
+  }
+  .preview {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .box {
+    padding: 12px;
+    border-radius: 6px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .box.dark { background: #0a0e17; }
+  .box.navy { background: #0f172a; }
+  .box.grey { background: #e2e8f0; }
+  .box.white { background: #ffffff; }
+  img {
+    max-width: 100%;
+    max-height: 120px;
+    object-fit: contain;
+  }
+</style>
+</head>
+<body>
+  <h2>Miracle IT Logo Analysis</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>miracle-it-logo-user.jpg (Original User Upload)</h3>
+      <div class="preview">
+        <div class="box white"><img src="../assets/images/miracle-it-logo-user.jpg"></div>
+        <div class="box dark"><img src="../assets/images/miracle-it-logo-user.jpg"></div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>miracle-it-logo.png (Current Navbar / Final CTA)</h3>
+      <div class="preview">
+        <div class="box dark"><img src="../assets/images/miracle-it-logo.png"></div>
+        <div class="box white"><img src="../assets/images/miracle-it-logo.png"></div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>miracle-it-logo-square.png (Footer Logo)</h3>
+      <div class="preview">
+        <div class="box dark"><img src="../assets/images/miracle-it-logo-square.png"></div>
+        <div class="box white"><img src="../assets/images/miracle-it-logo-square.png"></div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>miracle-it-logo-dark.png (Original dark.png from cc32779)</h3>
+      <div class="preview">
+        <div class="box dark"><img src="../assets/images/miracle-it-logo-dark.png"></div>
+        <div class="box white"><img src="../assets/images/miracle-it-logo-dark.png"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
