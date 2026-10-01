@@ -746,13 +746,25 @@
   font-weight: 450;
 }
 
-@media (max-width: 540px) {
+.experience-cta-actions,
+.experience-cta-wrap .flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.25rem; /* Generous separation in normal/desktop screens */
+}
+
+@media (max-width: 640px) {
+  .experience-cta-actions,
   .experience-cta-wrap .flex-center {
     flex-direction: column;
     align-items: stretch;
+    gap: 1rem; /* Clean vertical separation in small screens */
   }
   .experience-cta-wrap .btn {
     width: 100%;
+    justify-content: center;
   }
 }
 
