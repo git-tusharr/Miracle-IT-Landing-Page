@@ -20,6 +20,20 @@ function initWhoCanJoin(container = document) {
 
   if (cards.length < 2) return;
 
+  // Single-instance guard to prevent duplicate matchMedia/ScrollTrigger listeners
+  if (section.__whoInitialized) {
+    if (window.innerWidth >= 769 && deck) {
+      const heights = cards.map(c => c.scrollHeight || c.offsetHeight || 380);
+      const maxHeight = Math.max(...heights, 400);
+      deck.style.minHeight = `${maxHeight + 20}px`;
+    }
+    if (typeof window.ScrollTrigger !== 'undefined') {
+      window.ScrollTrigger.refresh();
+    }
+    return;
+  }
+  section.__whoInitialized = true;
+
   // Clean up any existing instance to avoid duplicate listeners on repeated calls
   if (window._whoCanJoinCleanup && typeof window._whoCanJoinCleanup === 'function') {
     window._whoCanJoinCleanup();
@@ -62,9 +76,27 @@ function initWhoCanJoin(container = document) {
   syncDeckHeight();
   window.addEventListener('resize', syncDeckHeight);
 
+  const refreshAll = () => {
+    syncDeckHeight();
+    if (typeof ScrollTrigger !== 'undefined') {
+      ScrollTrigger.refresh();
+    }
+  };
+
+  if (document.readyState === 'complete') {
+    refreshAll();
+  } else {
+    window.addEventListener('load', refreshAll, { passive: true, once: true });
+  }
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(refreshAll);
+  }
+
   // Track matchMedia and pill listeners for global cleanup
   const cleanupFns = [
-    () => window.removeEventListener('resize', syncDeckHeight)
+    () => window.removeEventListener('resize', syncDeckHeight),
+    () => window.removeEventListener('load', refreshAll)
   ];
 
   // Use ScrollTrigger.matchMedia for clean responsive switching
@@ -276,6 +308,7 @@ function initWhoCanJoin(container = document) {
   });
 
   window._whoCanJoinCleanup = () => {
+    section.__whoInitialized = false;
     cleanupFns.forEach(fn => fn());
     if (window.whoCanJoinScrollTrigger && typeof window.whoCanJoinScrollTrigger.kill === 'function') {
       window.whoCanJoinScrollTrigger.kill(true);

@@ -19,6 +19,15 @@ function initCounsellingProcess(container = document) {
   const pills = Array.from(section.querySelectorAll('.counselling-nav-pill'));
   if (panels.length < 2) return;
 
+  // Single-instance guard to prevent duplicate matchMedia/ScrollTrigger listeners
+  if (section.__counsellingInitialized) {
+    if (typeof window.ScrollTrigger !== 'undefined') {
+      window.ScrollTrigger.refresh();
+    }
+    return;
+  }
+  section.__counsellingInitialized = true;
+
   // Clean up any previous instance on re-initialization
   if (window._counsellingCleanup && typeof window._counsellingCleanup === 'function') {
     window._counsellingCleanup();
@@ -49,6 +58,22 @@ function initCounsellingProcess(container = document) {
   const gsap = window.gsap;
   const ScrollTrigger = window.ScrollTrigger;
   gsap.registerPlugin(ScrollTrigger);
+
+  const refreshCounselling = () => {
+    if (typeof ScrollTrigger !== 'undefined') {
+      ScrollTrigger.refresh();
+    }
+  };
+
+  if (document.readyState === 'complete') {
+    refreshCounselling();
+  } else {
+    window.addEventListener('load', refreshCounselling, { passive: true, once: true });
+  }
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(refreshCounselling);
+  }
 
   // Responsive switching using ScrollTrigger.matchMedia
   ScrollTrigger.matchMedia({
@@ -226,6 +251,7 @@ function initCounsellingProcess(container = document) {
   });
 
   window._counsellingCleanup = () => {
+    section.__counsellingInitialized = false;
     if (window.counsellingScrollTrigger && typeof window.counsellingScrollTrigger.kill === 'function') {
       window.counsellingScrollTrigger.kill(true);
       window.counsellingScrollTrigger = null;

@@ -277,14 +277,14 @@
   }
 
   .counselling-sticky-viewport {
-    min-height: 100vh;
-    height: 100vh;
+    min-height: calc(100vh - 76px);
+    height: calc(100vh - 76px);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2rem 1.5rem;
+    padding: 1.5rem 1.5rem;
   }
 
   .counselling-header {

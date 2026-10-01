@@ -42,7 +42,9 @@ async function loadComponent(name) {
   // If already pre-rendered in index.html, initialize immediately (100% zero-config file:// & server support)
   if (mountPoint.children.length > 0) {
     mountPoint.classList.add('component-loaded');
-    if (typeof window[initFnName] === 'function') {
+    // Motion-managed sections are initialized centrally by MiracleMotion.init() in strict DOM sequence
+    const isMotionManaged = ['who-can-join', 'counselling-process', 'why-miracle-it'].includes(name);
+    if (!isMotionManaged && typeof window[initFnName] === 'function') {
       window[initFnName](mountPoint);
     }
     return;
@@ -189,6 +191,23 @@ async function assemblePage() {
     window.MiracleMotion.init();
   } else {
     initScrollObserver();
+  }
+
+  // Recalculate and synchronize ScrollTrigger bounds when remote assets finish loading
+  const refreshScrollTriggers = () => {
+    if (typeof window.ScrollTrigger !== 'undefined') {
+      window.ScrollTrigger.refresh();
+    }
+  };
+
+  if (document.readyState === 'complete') {
+    refreshScrollTriggers();
+  } else {
+    window.addEventListener('load', refreshScrollTriggers, { passive: true, once: true });
+  }
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(refreshScrollTriggers);
   }
 
   // Fire analytics page_view event

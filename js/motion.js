@@ -79,6 +79,23 @@
         window.ScrollTrigger.refresh();
       }
 
+      // Re-synchronize ScrollTrigger trigger offsets once remote web fonts and images load
+      const refreshMotionST = () => {
+        if (typeof window.ScrollTrigger !== 'undefined') {
+          window.ScrollTrigger.refresh();
+        }
+      };
+
+      if (document.readyState === 'complete') {
+        refreshMotionST();
+      } else {
+        window.addEventListener('load', refreshMotionST, { passive: true, once: true });
+      }
+
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(refreshMotionST);
+      }
+
       this.initAnchorOffsetScroll();
 
       console.log('[MiracleMotion] Premium Skiper UI & Vengeance UI motion system initialized.');
