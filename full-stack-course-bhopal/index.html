@@ -1,132 +1,1153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-XXXXXXXX');</script>
-  <!-- End Google Tag Manager -->
-
-  <!-- Meta Pixel Code (Replace YOUR_PIXEL_ID with your actual Meta Pixel ID) -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'YOUR_PIXEL_ID');
-    fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
-    alt="Meta Pixel" /></noscript>
-  <!-- End Meta Pixel Code -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <title>Full Stack Web Development Course in Bhopal | Miracle IT Career Academy</title>
-  <meta name="description" content="Master Frontend, Backend, Databases, and APIs with practical capstone projects at Miracle IT Career Academy in M.P. Nagar, Bhopal. Free counselling available.">
-  <link rel="stylesheet" href="../css/global.css">
-  <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXXX"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+  <meta name="description" content="Build Frontend + Backend Skills With Practical Learning in Bhopal. Master React, Node.js, Express, MongoDB & PostgreSQL with live capstones at M.P. Nagar. Book free counselling visit.">
+  <meta name="keywords" content="Full Stack Web Development Course Bhopal, MERN Stack Bhopal, React JS Course Bhopal, Node JS Training MP Nagar, Web Development Institute Bhopal">
+  <link rel="canonical" href="https://miracleitindia.com/full-stack-course-bhopal/">
 
-  <!-- Top Header Navigation -->
-  <header class="course-page-header">
-    <div class="container flex-between">
-      <a href="../" class="course-brand">
-        <strong>Miracle IT</strong> <span>Career Academy • Bhopal</span>
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://miracleitindia.com/full-stack-course-bhopal/">
+  <meta property="og:title" content="Full Stack Web Development Course in Bhopal | Miracle IT">
+  <meta property="og:description" content="Build Frontend + Backend Skills With Practical Learning. Explore the right learning path based on your current level and career goal.">
+  <meta property="og:image" content="https://miracleitindia.com/assets/images/computer-lab.webp">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Global Design System & Component Styles -->
+  <link rel="stylesheet" href="../css/global.css?v=7.0">
+  <link rel="stylesheet" href="../components/counselling-form/counselling-form.css?v=5.0">
+  <link rel="stylesheet" href="./style.css?v=2.0">
+</head>
+<body data-theme="dark">
+
+  <!-- ========================================================================
+       TOP STICKY NAVIGATION HEADER
+       ======================================================================== -->
+  <header class="course-header" id="courseHeader">
+    <div class="container">
+      
+      <a href="../" class="course-header-brand" title="Back to Miracle IT Home">
+        <img src="../assets/images/miracle-it-logo.png" alt="Miracle IT Career Academy" class="course-header-logo" width="160" height="40">
+        <span class="course-header-badge">
+          <span class="dot"></span>
+          <span>Full Stack Hub</span>
+        </span>
       </a>
-      <div class="flex gap-3">
-        <a href="../#courses" class="btn btn-secondary btn-sm">All Courses</a>
-        <a href="../#counselling-form" class="btn btn-primary btn-sm">Book Free Counselling</a>
+
+      <!-- Desktop Nav -->
+      <nav class="course-header-nav" id="courseNav">
+        <a href="#curriculum" class="course-nav-link">Curriculum</a>
+        <a href="#audience" class="course-nav-link">Who It's For</a>
+        <a href="#labs" class="course-nav-link">Workstation Labs</a>
+        <a href="#projects" class="course-nav-link">Live Projects</a>
+        <a href="#specs" class="course-nav-link">Batches & Fees</a>
+        <a href="#placements" class="course-nav-link">Placements</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="course-header-actions">
+        <a href="tel:+917880003127" class="course-header-phone" data-config-phone title="Call Academy">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <span>+91 78800 03127</span>
+        </a>
+
+        <a href="#counselling-form" class="btn btn-primary btn-sm btn-magnetic">
+          <span>Book Free Visit</span>
+        </a>
+
+        <!-- Mobile Drawer Toggle -->
+        <button type="button" class="nav-toggle-btn" id="navToggleBtn" aria-label="Toggle Navigation Menu">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
       </div>
+
     </div>
   </header>
 
-  <!-- Course Hero -->
-  <section class="course-hero section">
+
+  <!-- ========================================================================
+       HERO SECTION (APPROVED COPY & TECH AESTHETICS)
+       ======================================================================== -->
+  <section class="course-hero-section">
     <div class="container">
-      <div class="course-hero-content">
-        <span class="badge badge-blue">Full Stack Web Engineering Track</span>
-        <h1>Full Stack Web Development in Bhopal</h1>
-        <p class="text-lead">
-          Learn modern web applications development from responsive frontend interfaces to scalable backend APIs and databases with hands-on practical learning at M.P. Nagar, Bhopal.
-        </p>
-        <div class="flex gap-3 flex-wrap">
-          <a href="../#counselling-form" class="btn btn-primary btn-lg" data-track-cta="course_page_book_fullstack">
-            Book Free Counselling for Full Stack
-          </a>
-          <a href="tel:+917880003127" class="btn btn-secondary btn-lg" data-config-phone>
-            Call Course Advisor
-          </a>
+      <div class="course-hero-grid">
+        
+        <!-- Left Column: Copy & Actions -->
+        <div class="course-hero-left">
+          
+          <div class="course-hero-kicker">
+            <span class="pulse-beacon"></span>
+            <span>M.P. Nagar Zone-2 • Code-First Full Stack Track</span>
+          </div>
+
+          <h1 class="course-hero-title">
+            Full Stack Web Development Course in <span class="gradient-text">Bhopal</span>
+          </h1>
+
+          <p class="course-hero-subtitle">
+            Build Frontend + Backend Skills With Practical Learning
+          </p>
+
+          <p class="course-hero-desc">
+            Explore the right learning path based on your current level and career goal. Master semantic HTML/CSS, modern React.js, Node.js server architectures, RESTful APIs, and MongoDB/PostgreSQL database engineering through live project sprints.
+          </p>
+
+          <div class="course-hero-cta-group">
+            <a href="#counselling-form" class="btn btn-primary btn-lg btn-glow btn-magnetic" data-track-cta="hero_book_visit">
+              <span>Book Free Career Counselling Visit</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+
+            <a href="https://wa.me/917880003127?text=Hello%20Miracle%20IT%2C%20I%20want%20to%20know%20more%20about%20the%20Full%20Stack%20Web%20Development%20Course%20in%20Bhopal." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg" data-config-whatsapp>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 10.23c-.25-.13-1.47-.72-1.7-.81-.23-.09-.39-.14-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.71 4.3 3.8.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.22-.17-.47-.3"/>
+              </svg>
+              <span>WhatsApp Us</span>
+            </a>
+          </div>
+
+          <!-- Hero Metrics Strip -->
+          <div class="hero-stats-row">
+            <div class="hero-stat-item">
+              <span class="hero-stat-val">4 - 6 <span class="accent">Mo</span></span>
+              <span class="hero-stat-label">Verified Duration</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="hero-stat-val">100<span class="accent">%</span></span>
+              <span class="hero-stat-label">Lab Practice</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="hero-stat-val">5<span class="accent">+</span></span>
+              <span class="hero-stat-label">Live Capstones</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="hero-stat-val">1 : 1</span>
+              <span class="hero-stat-label">Senior Mentorship</span>
+            </div>
+          </div>
+
         </div>
+
+        <!-- Right Column: Interactive IDE Live Code Window -->
+        <div class="course-hero-right">
+          <div class="hero-code-terminal">
+            
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="terminal-title">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                <span>server.js • Express + MongoDB API</span>
+              </div>
+              <span style="font-size:0.7rem; color:#64748B;">Node v20.x</span>
+            </div>
+
+            <div class="terminal-body">
+              <pre><code><span class="code-comment">// Miracle IT Full Stack Production API Pattern</span>
+<span class="code-keyword">import</span> express <span class="code-keyword">from</span> <span class="code-string">'express'</span>;
+<span class="code-keyword">import</span> { connectDatabase } <span class="code-keyword">from</span> <span class="code-string">'./config/db.js'</span>;
+<span class="code-keyword">import</span> { authenticateJWT } <span class="code-keyword">from</span> <span class="code-string">'./middleware/auth.js'</span>;
+
+<span class="code-keyword">const</span> app = <span class="code-fn">express</span>();
+<span class="code-keyword">await</span> <span class="code-fn">connectDatabase</span>();
+
+<span class="code-comment">// Secure Endpoint for Real-time Dashboard</span>
+app.<span class="code-fn">get</span>(<span class="code-string">'/api/v1/projects'</span>, authenticateJWT, <span class="code-keyword">async</span> (req, res) => {
+  <span class="code-keyword">const</span> projects = <span class="code-keyword">await</span> Project.<span class="code-fn">find</span>({ userId: req.user.id })
+    .<span class="code-fn">populate</span>(<span class="code-string">'techStack'</span>)
+    .<span class="code-fn">sort</span>({ updatedAt: -<span class="code-type">1</span> });
+
+  <span class="code-keyword">return</span> res.<span class="code-fn">status</span>(<span class="code-type">200</span>).<span class="code-fn">json</span>({
+    success: <span class="code-keyword">true</span>,
+    count: projects.length,
+    data: projects
+  });
+});
+
+app.<span class="code-fn">listen</span>(<span class="code-type">5000</span>, () => console.<span class="code-fn">log</span>(<span class="code-string">'⚡ Live in M.P. Nagar Lab'</span>));</code></pre>
+            </div>
+
+            <div class="terminal-footer-badge">
+              <div class="ping-wrap">
+                <span class="ping-dot"></span>
+                <span>Active Bhopal Workstation Lab Server</span>
+              </div>
+              <span>200 OK • 18ms</span>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Core Modules Breakdown -->
-  <section class="section section-alt">
+
+  <!-- ========================================================================
+       SECTION: WHO IS IT FOR?
+       ======================================================================== -->
+  <section class="audience-section" id="audience">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Curriculum Focus</span>
-        <h2>What You Will Master</h2>
-        <p>A practical, code-first syllabus designed around contemporary web developer expectations.</p>
+      
+      <div class="section-head">
+        <span class="section-tag-pill">Personalized Career Roadmaps</span>
+        <h2>Who Is This Full Stack Track For?</h2>
+        <p>CS/IT students, graduates, and learners who want to explore modern web engineering with clear, mentor-backed milestones.</p>
       </div>
 
-      <div class="grid-3">
-        <div class="card">
-          <div class="badge badge-blue">Module 01</div>
-          <h3 style="margin: 0.5rem 0;">Modern Frontend Engineering</h3>
-          <p>Semantic HTML5, responsive CSS3 (Flexbox, Grid), and Vanilla JavaScript DOM manipulation, event loops, async/await, and component structure.</p>
+      <div class="audience-grid">
+        
+        <!-- Profile 1: CS/IT Students -->
+        <div class="audience-card">
+          <div class="audience-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+              <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+            </svg>
+          </div>
+          <span class="audience-badge">Undergraduates</span>
+          <h3>CS &amp; IT College Students</h3>
+          <p>Overcome textbook theory. Build industry-grade React and Node.js applications during your semester to gain a massive edge in campus placements.</p>
+          <ul class="audience-perks-list">
+            <li><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Minor &amp; Major Project Support</li>
+            <li><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Flexible Morning &amp; Evening Batches</li>
+            <li><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> GitHub Portfolio Creation</li>
+          </ul>
         </div>
-        <div class="card">
-          <div class="badge badge-emerald">Module 02</div>
-          <h3 style="margin: 0.5rem 0;">Backend APIs & Business Logic</h3>
-          <p>RESTful API architecture, server routing, authentication tokens, middleware validation, and error handling.</p>
+
+        <!-- Profile 2: Recent Graduates -->
+        <div class="audience-card">
+          <div class="audience-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+          </div>
+          <span class="audience-badge">Job Seekers</span>
+          <h3>Recent Graduates &amp; Freshers</h3>
+          <p>Graduated with a degree but feeling underprepared for full-stack developer technical rounds? Master real-world system design and live REST APIs.</p>
+          <ul class="audience-perks-list">
+            <li><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Technical Mock Interview Desk</li>
+            <li><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> 5+ Production Ready Capstones</li>
+            <li><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Direct Placement Drive Referrals</li>
+          </ul>
         </div>
-        <div class="card">
-          <div class="badge badge-amber">Module 03</div>
-          <h3 style="margin: 0.5rem 0;">Databases & Cloud Hosting</h3>
-          <p>Relational SQL querying, NoSQL document modeling, schema design, Git version control, and deploying live production applications.</p>
+
+        <!-- Profile 3: Career Switchers -->
+        <div class="audience-card">
+          <div class="audience-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+              <polyline points="17 6 23 6 23 12"></polyline>
+            </svg>
+          </div>
+          <span class="audience-badge">Non-Tech / Switch</span>
+          <h3>Career Switchers to IT</h3>
+          <p>Transition from Non-Tech, Commerce, Arts, or Sales into Software Engineering. Starts with a dedicated 2-week logic foundation before full-stack frameworks.</p>
+          <ul class="audience-perks-list">
+            <li><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Zero Prior Coding Required</li>
+            <li><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Step-by-Step Logic Mentoring</li>
+            <li><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Resume Transition Strategy</li>
+          </ul>
         </div>
+
+        <!-- Profile 4: Working Professionals -->
+        <div class="audience-card">
+          <div class="audience-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+          </div>
+          <span class="audience-badge">Up-skilling</span>
+          <h3>Working Professionals</h3>
+          <p>Stuck in manual testing, L1 support, or legacy tech stacks? Upgrade to modern MERN/PERN full stack architecture with weekend and evening flexibility.</p>
+          <ul class="audience-perks-list">
+            <li><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Weekend Intensive Batches</li>
+            <li><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Microservices &amp; Cloud Deployment</li>
+            <li><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Senior Architect Mentorship</li>
+          </ul>
+        </div>
+
       </div>
+
     </div>
   </section>
 
-  <!-- Practical Project Capstone -->
-  <section class="section">
-    <div class="container container-narrow text-center">
-      <h2>Live Portfolio Projects</h2>
-      <p class="text-lead" style="margin-bottom: 2rem;">
-        You will not leave with just a certificate. You leave with functional web applications deployed on live URLs and documented on GitHub.
+
+  <!-- ========================================================================
+       CURRICULUM FLOW (FRONTEND → BACKEND → DATABASE → APIS → PROJECTS)
+       ======================================================================== -->
+  <section class="curriculum-section" id="curriculum">
+    <div class="container">
+      
+      <div class="section-head">
+        <span class="section-tag-pill">Structured 5-Stage Architecture</span>
+        <h2>What You Will Actually Master</h2>
+        <p>We teach ONLY industry-standard technologies with practical implementation. Zero outdated filler content.</p>
+      </div>
+
+      <!-- Flow Bar Navigation -->
+      <div class="roadmap-flow-bar">
+        <div class="flow-step-pill is-active">
+          <span class="step-num">1</span>
+          <span>Frontend Architecture</span>
+        </div>
+        <span class="flow-arrow">➔</span>
+        <div class="flow-step-pill">
+          <span class="step-num">2</span>
+          <span>Backend Logic</span>
+        </div>
+        <span class="flow-arrow">➔</span>
+        <div class="flow-step-pill">
+          <span class="step-num">3</span>
+          <span>Databases</span>
+        </div>
+        <span class="flow-arrow">➔</span>
+        <div class="flow-step-pill">
+          <span class="step-num">4</span>
+          <span>APIs &amp; Security</span>
+        </div>
+        <span class="flow-arrow">➔</span>
+        <div class="flow-step-pill">
+          <span class="step-num">5</span>
+          <span>Live Capstones</span>
+        </div>
+      </div>
+
+      <!-- 5-Stage Curriculum Grid -->
+      <div class="curriculum-grid">
+        
+        <!-- Stage 1: Frontend -->
+        <div class="module-card">
+          <div class="module-top-row">
+            <span class="module-step-tag">Phase 01</span>
+            <span class="module-duration">Weeks 1 - 5</span>
+          </div>
+          <h3 class="module-title">Frontend Engineering</h3>
+          <p class="module-desc">
+            Build high-performance, accessible, mobile-first user interfaces using semantic HTML5, modern CSS Grid/Flexbox, ES6+ JavaScript, and component-driven React.js.
+          </p>
+          <div class="module-tech-chips">
+            <span class="tech-chip highlight">HTML5 / Semantic UI</span>
+            <span class="tech-chip highlight">CSS3 / Flexbox / Grid</span>
+            <span class="tech-chip highlight">Vanilla JS (ES6+)</span>
+            <span class="tech-chip highlight">React.js &amp; Hooks</span>
+            <span class="tech-chip">React Router v6</span>
+            <span class="tech-chip">Tailwind CSS</span>
+          </div>
+        </div>
+
+        <!-- Stage 2: Backend -->
+        <div class="module-card">
+          <div class="module-top-row">
+            <span class="module-step-tag">Phase 02</span>
+            <span class="module-duration">Weeks 6 - 9</span>
+          </div>
+          <h3 class="module-title">Backend Architecture</h3>
+          <p class="module-desc">
+            Master asynchronous server runtime engineering with Node.js and Express.js. Build clean MVC modular controllers, error handlers, and authentication pipelines.
+          </p>
+          <div class="module-tech-chips">
+            <span class="tech-chip highlight">Node.js Runtime</span>
+            <span class="tech-chip highlight">Express.js Framework</span>
+            <span class="tech-chip highlight">JWT Authentication</span>
+            <span class="tech-chip highlight">bcrypt Password Hash</span>
+            <span class="tech-chip">CORS &amp; Rate Limiting</span>
+            <span class="tech-chip">Custom Middlewares</span>
+          </div>
+        </div>
+
+        <!-- Stage 3: Database -->
+        <div class="module-card">
+          <div class="module-top-row">
+            <span class="module-step-tag">Phase 03</span>
+            <span class="module-duration">Weeks 10 - 13</span>
+          </div>
+          <h3 class="module-title">Database Engineering</h3>
+          <p class="module-desc">
+            Learn both Relational SQL and NoSQL database modeling. Design robust database schemas, indexing strategies, complex joins, and aggregation pipelines.
+          </p>
+          <div class="module-tech-chips">
+            <span class="tech-chip highlight">PostgreSQL / SQL</span>
+            <span class="tech-chip highlight">MongoDB Atlas</span>
+            <span class="tech-chip highlight">Mongoose ODM</span>
+            <span class="tech-chip">Schema Normalization</span>
+            <span class="tech-chip">Aggregation Pipelines</span>
+            <span class="tech-chip">Database Migrations</span>
+          </div>
+        </div>
+
+        <!-- Stage 4: APIs & Tooling -->
+        <div class="module-card">
+          <div class="module-top-row">
+            <span class="module-step-tag">Phase 04</span>
+            <span class="module-duration">Weeks 14 - 17</span>
+          </div>
+          <h3 class="module-title">APIs &amp; Cloud Tooling</h3>
+          <p class="module-desc">
+            Design industry-standard RESTful APIs, test endpoints via Postman, and integrate external cloud services including payment gateways and cloud storage.
+          </p>
+          <div class="module-tech-chips">
+            <span class="tech-chip highlight">RESTful API Design</span>
+            <span class="tech-chip highlight">Postman Testing</span>
+            <span class="tech-chip highlight">Razorpay Gateway</span>
+            <span class="tech-chip highlight">Cloudinary Media</span>
+            <span class="tech-chip">Git / GitHub Workflows</span>
+            <span class="tech-chip">Environment Configs</span>
+          </div>
+        </div>
+
+        <!-- Stage 5: Projects & Deployment -->
+        <div class="module-card">
+          <div class="module-top-row">
+            <span class="module-step-tag">Phase 05</span>
+            <span class="module-duration">Weeks 18 - 24</span>
+          </div>
+          <h3 class="module-title">Live Capstone Deployments</h3>
+          <p class="module-desc">
+            Engineer end-to-end full-stack web applications from scratch, configure continuous deployment (CI/CD) on Vercel and Render, and publish employer-ready GitHub repositories.
+          </p>
+          <div class="module-tech-chips">
+            <span class="tech-chip highlight">Full Stack Capstones</span>
+            <span class="tech-chip highlight">Vercel &amp; Render Cloud</span>
+            <span class="tech-chip highlight">CI/CD Automation</span>
+            <span class="tech-chip highlight">GitHub Portfolio Review</span>
+            <span class="tech-chip">DSA Problem Solving</span>
+            <span class="tech-chip">Technical Mock Rounds</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       REAL CLASSROOM FOOTAGE & WORKSTATION LABS
+       ======================================================================== -->
+  <section class="classroom-section" id="labs">
+    <div class="container">
+      
+      <div class="section-head">
+        <span class="section-tag-pill">Real Campus Facilities • Bhopal</span>
+        <h2>Experience Our Classroom &amp; Labs In Person</h2>
+        <p>Step inside our Zone-2 M.P. Nagar campus. No virtual shortcuts — real workstations, dedicated code monitors, and daily mentor desks.</p>
+      </div>
+
+      <div class="footage-grid">
+        
+        <!-- Photo 1: Computer Lab -->
+        <div class="footage-card">
+          <div class="footage-thumb">
+            <img src="../assets/images/computer-lab.webp" alt="Workstation Lab at Miracle IT Bhopal" loading="lazy">
+            <span class="footage-badge-overlay">Dedicated Workstations</span>
+          </div>
+          <div class="footage-body">
+            <h3>Open Workstation Lab Access</h3>
+            <p>High-speed internet workstations with modern developer toolchains (VS Code, Node.js, Git, Postman) accessible throughout the day.</p>
+          </div>
+        </div>
+
+        <!-- Photo 2: Classroom -->
+        <div class="footage-card">
+          <div class="footage-thumb">
+            <img src="../assets/images/classroom.webp" alt="Smart Classroom at Miracle IT Career Academy" loading="lazy">
+            <span class="footage-badge-overlay">Interactive Classrooms</span>
+          </div>
+          <div class="footage-body">
+            <h3>Code-First Lectures</h3>
+            <p>Smart AC classrooms where instructors live-code full-stack applications on large displays, explaining each line and error boundary.</p>
+          </div>
+        </div>
+
+        <!-- Photo 3: Project Development -->
+        <div class="footage-card">
+          <div class="footage-thumb">
+            <img src="../assets/images/project-development.webp" alt="Collaborative Project Development Bay" loading="lazy">
+            <span class="footage-badge-overlay">Project Sprint Bays</span>
+          </div>
+          <div class="footage-body">
+            <h3>Collaborative Sprint Bays</h3>
+            <p>Students collaborate in agile sprint pods, conducting code reviews, resolving merge conflicts, and practicing team workflows.</p>
+          </div>
+        </div>
+
+        <!-- Photo 4: Mentorship -->
+        <div class="footage-card">
+          <div class="footage-thumb">
+            <img src="../assets/images/mentorship.webp" alt="1-on-1 Mentorship Desk at Miracle IT" loading="lazy">
+            <span class="footage-badge-overlay">Daily 1-on-1 Mentorship</span>
+          </div>
+          <div class="footage-body">
+            <h3>1-on-1 Mentor Guidance</h3>
+            <p>Stuck on an async bug or database connection pool? Sit directly with senior mentors to inspect code and clarify architectural logic.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       LIVE CAPSTONE PROJECTS SHOWCASE
+       ======================================================================== -->
+  <section class="projects-section" id="projects">
+    <div class="container">
+      
+      <div class="section-head">
+        <span class="section-tag-pill">Proof of Practical Competence</span>
+        <h2>Real Projects You Build &amp; Deploy</h2>
+        <p>You don't graduate with just a paper certificate. You leave with functional, cloud-deployed web applications on your live GitHub portfolio.</p>
+      </div>
+
+      <div class="projects-grid">
+        
+        <!-- Project 1: DevPulse -->
+        <div class="project-card">
+          <div class="project-header-bar">
+            <span class="project-status">
+              <span class="pulse-dot"></span>
+              <span>Live Cloud Deployed</span>
+            </span>
+            <span class="project-type-tag">Full Stack MERN SaaS</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">DevPulse — Developer Job Portal &amp; Tech Hub</h3>
+            <p class="project-desc">
+              A comprehensive developer community and job board with role-based JWT authentication, resume upload pipelines, and real-time application tracking.
+            </p>
+            <ul class="project-features-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Role-Based Access (Recruiter vs Candidate)</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Cloudinary File Upload &amp; Resume Parsing</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Full-text Search &amp; Salary Filter Aggregation</span>
+              </li>
+            </ul>
+            <div class="project-stack-wrap">
+              <span class="tech-chip highlight">React.js</span>
+              <span class="tech-chip highlight">Node.js</span>
+              <span class="tech-chip highlight">Express</span>
+              <span class="tech-chip highlight">MongoDB</span>
+              <span class="tech-chip">JWT / Cookies</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: ShopSphere -->
+        <div class="project-card">
+          <div class="project-header-bar">
+            <span class="project-status">
+              <span class="pulse-dot"></span>
+              <span>Live Cloud Deployed</span>
+            </span>
+            <span class="project-type-tag">Enterprise E-Commerce</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">ShopSphere — Scalable Multi-Vendor Marketplace</h3>
+            <p class="project-desc">
+              High-volume e-commerce application featuring product catalog management, persistent carts, Razorpay payment webhooks, and order tracking telemetry.
+            </p>
+            <ul class="project-features-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Razorpay Payment Gateway Integration</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Relational Schema Design &amp; Inventory Sync</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Automated PDF Invoice Generation &amp; Emailing</span>
+              </li>
+            </ul>
+            <div class="project-stack-wrap">
+              <span class="tech-chip highlight">React</span>
+              <span class="tech-chip highlight">Node.js</span>
+              <span class="tech-chip highlight">PostgreSQL</span>
+              <span class="tech-chip highlight">Razorpay API</span>
+              <span class="tech-chip">Tailwind CSS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: CareSync -->
+        <div class="project-card">
+          <div class="project-header-bar">
+            <span class="project-status">
+              <span class="pulse-dot"></span>
+              <span>Live Cloud Deployed</span>
+            </span>
+            <span class="project-type-tag">Healthcare Booking App</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">CareSync — Hospital &amp; Doctor Appointment Engine</h3>
+            <p class="project-desc">
+              Smart doctor appointment scheduling platform with calendar slot conflict prevention, automated WhatsApp/email notifications, and doctor prescriptions.
+            </p>
+            <ul class="project-features-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Real-Time Slot Reservation Logic</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Patient Medical History &amp; Prescription Vault</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Doctor Admin Analytics &amp; Revenue Reports</span>
+              </li>
+            </ul>
+            <div class="project-stack-wrap">
+              <span class="tech-chip highlight">React.js</span>
+              <span class="tech-chip highlight">Express</span>
+              <span class="tech-chip highlight">MongoDB</span>
+              <span class="tech-chip highlight">Nodemailer</span>
+              <span class="tech-chip">Vercel &amp; Render</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       VERIFIED COURSE DETAILS (DURATION, ELIGIBILITY, TIMINGS & FEES)
+       ======================================================================== -->
+  <section class="specs-section" id="specs">
+    <div class="container">
+      
+      <div class="section-head">
+        <span class="section-tag-pill">Complete Transparency</span>
+        <h2>Verified Course Specifications</h2>
+        <p>No ambiguous promises or hidden surprises. Here are the clear details on duration, eligibility, timings, and fees.</p>
+      </div>
+
+      <div class="specs-grid">
+        
+        <!-- Spec 1: Duration -->
+        <div class="spec-card">
+          <div class="spec-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <span class="spec-title">Verified Duration</span>
+          <div class="spec-lead">4 - 6 Months</div>
+          <p class="spec-detail">
+            <strong>4 Months:</strong> Fast-Track Intensive (Daily 3-4 hours lab + theory).<br>
+            <strong>6 Months:</strong> Comprehensive Master Track including advanced capstones and interview bootcamps.
+          </p>
+        </div>
+
+        <!-- Spec 2: Eligibility -->
+        <div class="spec-card">
+          <div class="spec-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          </div>
+          <span class="spec-title">Eligibility Criteria</span>
+          <div class="spec-lead">Open to All Streams</div>
+          <p class="spec-detail">
+            B.Tech, BCA, MCA, B.Sc (IT/CS), Diploma, or graduates from non-technical backgrounds (B.Com, B.A, BBA). <strong>No prior coding experience is mandatory.</strong>
+          </p>
+        </div>
+
+        <!-- Spec 3: Batch Timings -->
+        <div class="spec-card">
+          <div class="spec-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          </div>
+          <span class="spec-title">Batch Timings</span>
+          <div class="spec-lead">Flexible Slots</div>
+          <p class="spec-detail">
+            <strong>Morning:</strong> 08:00 AM - 10:00 AM | 10:30 AM - 12:30 PM<br>
+            <strong>Afternoon:</strong> 01:00 PM - 03:00 PM<br>
+            <strong>Evening:</strong> 04:00 PM - 06:00 PM | 06:30 PM - 08:30 PM<br>
+            <strong>Weekend:</strong> Saturday &amp; Sunday Special Batches
+          </p>
+        </div>
+
+        <!-- Spec 4: Fees & Installments -->
+        <div class="spec-card">
+          <div class="spec-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+          </div>
+          <span class="spec-title">Transparent Fees</span>
+          <div class="spec-lead">Affordable &amp; EMI</div>
+          <p class="spec-detail">
+            Transparent fee structure with easy monthly installment options. Inclusive of all workstation lab access, course repositories, and placement evaluation. Zero hidden charges.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Fees Transparency Banner -->
+      <div class="specs-banner-cta">
+        <div class="specs-banner-text">
+          <h4>Want exact fee details and available scholarship concessions?</h4>
+          <p>We believe in 100% upfront honesty. Visit our M.P. Nagar center to inspect the syllabus, speak directly with faculty, and receive a transparent, printed fee roadmap.</p>
+        </div>
+        <a href="#counselling-form" class="btn btn-primary btn-lg btn-magnetic">
+          <span>Schedule Free Fee &amp; Syllabus Audit</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       PLACEMENTS & STUDENT REVIEWS SHOWCASE
+       ======================================================================== -->
+  <section class="proof-course-section" id="placements">
+    <div class="container">
+      
+      <div class="section-head">
+        <span class="section-tag-pill">Real Results In Top IT Companies</span>
+        <h2>Our Students Work At Leading Tech Firms</h2>
+        <p>From campus freshers to successful career switchers. Here are verified graduates who trained in our Bhopal labs.</p>
+      </div>
+
+      <!-- Placed Students Strip -->
+      <div class="placements-strip">
+        <div class="student-hire-card">
+          <img src="../PlacedStudentsMiracleIt/Astik Sarathe-Infosys.png" alt="Astik Sarathe placed at Infosys" class="student-hire-avatar">
+          <span class="student-name">Astik Sarathe</span>
+          <span class="student-company">Infosys</span>
+        </div>
+
+        <div class="student-hire-card">
+          <img src="../PlacedStudentsMiracleIt/Akshat-Accenture.jpg" alt="Akshat placed at Accenture" class="student-hire-avatar">
+          <span class="student-name">Akshat</span>
+          <span class="student-company">Accenture</span>
+        </div>
+
+        <div class="student-hire-card">
+          <img src="../PlacedStudentsMiracleIt/Anuj Kumar Kaushal- TCS.jpeg" alt="Anuj Kumar Kaushal placed at TCS" class="student-hire-avatar">
+          <span class="student-name">Anuj Kaushal</span>
+          <span class="student-company">TCS</span>
+        </div>
+
+        <div class="student-hire-card">
+          <img src="../PlacedStudentsMiracleIt/Siddhant- Infosys.jpeg" alt="Siddhant placed at Infosys" class="student-hire-avatar">
+          <span class="student-name">Siddhant</span>
+          <span class="student-company">Infosys</span>
+        </div>
+
+        <div class="student-hire-card">
+          <img src="../PlacedStudentsMiracleIt/Namit Shirode- Uline (USA).jpeg" alt="Namit Shirode placed at Uline USA" class="student-hire-avatar">
+          <span class="student-name">Namit Shirode</span>
+          <span class="student-company">Uline (USA)</span>
+        </div>
+
+        <div class="student-hire-card">
+          <img src="../PlacedStudentsMiracleIt/Mohit- Dot9 Games.jpeg" alt="Mohit placed at Dot9 Games" class="student-hire-avatar">
+          <span class="student-name">Mohit</span>
+          <span class="student-company">Dot9 Games</span>
+        </div>
+      </div>
+
+      <!-- Real Student Testimonials -->
+      <div class="testimonials-grid">
+        
+        <div class="testimonial-box">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-quote">
+            "I had a great time during the Full Stack course. The hands-on project reviews gave me the practical confidence to crack my technical interviews. The mentors never rush — they make sure you actually understand API architecture."
+          </p>
+          <div class="testimonial-author">
+            <img src="../TestimonialImages/Ankita-I had a great time during the full stack course. I look forward to recommending this course to my friends..jpg" alt="Ankita" class="author-img">
+            <div class="author-info">
+              <h4>Ankita</h4>
+              <span>Full Stack Web Graduate • Miracle IT Bhopal</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-box">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-quote">
+            "The step-by-step transition from frontend React to backend Express APIs and MongoDB was completely clear. 1-on-1 mentor guidance helped me debug real production issues that no tutorial explains."
+          </p>
+          <div class="testimonial-author">
+            <img src="../TestimonialImages/Vinod-I had a great time during the full stack course. I look forward to recommending this course to my friends..jpg" alt="Vinod" class="author-img">
+            <div class="author-info">
+              <h4>Vinod</h4>
+              <span>Full Stack Developer • Placed via Miracle IT</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-box">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-quote">
+            "My overall experience is very good; the faculties are very helpful during lab sessions. You get to build real applications and deploy them on live URLs. It's one of the best institutes in MP for professional IT skills."
+          </p>
+          <div class="testimonial-author">
+            <img src="../TestimonialImages/nilu-My overall experience is very good; the faculties are very helpful to me during training. Thank you, Miracle IT Career Academy..jpg" alt="Nilu" class="author-img">
+            <div class="author-info">
+              <h4>Nilu</h4>
+              <span>Software Engineering Student • Miracle IT</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       INTEGRATED BOOKING FORM SECTION
+       ======================================================================== -->
+  <section class="course-form-section" id="counselling-form">
+    <div class="container">
+      
+      <div class="form-wrapper-box">
+        
+        <div class="form-header-area">
+          <div class="dynamic-island-status" style="margin-bottom: 0.85rem; display: inline-flex;">
+            <span class="pulse-dot" style="background:#F59E0B; box-shadow:0 0 8px #F59E0B;"></span>
+            <span style="color:#FCD34D;">Limited In-Person Lab Counselling Slots for This Week</span>
+          </div>
+          <h2>Book Free Full Stack Career Counselling Visit</h2>
+          <p>Visit our M.P. Nagar center. Meet senior mentors, review the full-stack syllabus line-by-line, and get an honest, non-binding assessment of your learning timeline.</p>
+        </div>
+
+        <form id="counsellingForm" class="counselling-form" novalidate>
+          
+          <!-- Anti-spam Honeypot -->
+          <div style="display:none;" aria-hidden="true">
+            <input type="text" name="_hp_security_check" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="form-grid">
+            
+            <!-- Field 1: Full Name -->
+            <div class="form-group">
+              <label for="fullName" class="form-label">
+                Full Name <span class="required-star" aria-hidden="true">*</span>
+              </label>
+              <div class="input-with-icon">
+                <input 
+                  type="text" 
+                  id="fullName" 
+                  name="fullName" 
+                  class="form-input" 
+                  placeholder="e.g. Rahul Sharma" 
+                  required 
+                  autocomplete="name"
+                >
+              </div>
+              <span class="error-msg" id="nameError">Please enter your full name.</span>
+            </div>
+
+            <!-- Field 2: Phone -->
+            <div class="form-group">
+              <label for="phoneNumber" class="form-label">
+                Mobile / WhatsApp Number <span class="required-star" aria-hidden="true">*</span>
+              </label>
+              <div class="phone-input-wrap">
+                <span class="country-prefix">+91</span>
+                <input 
+                  type="tel" 
+                  id="phoneNumber" 
+                  name="phoneNumber" 
+                  class="form-input phone-input" 
+                  placeholder="10-digit mobile number" 
+                  pattern="[0-9]{10}" 
+                  maxlength="10" 
+                  required 
+                  autocomplete="tel"
+                >
+              </div>
+              <span class="error-msg" id="phoneError">Please enter a valid 10-digit Indian phone number.</span>
+            </div>
+
+            <!-- Field 3: Educational Background -->
+            <div class="form-group">
+              <label for="educationBackground" class="form-label">
+                Current Background / Qualification <span class="required-star" aria-hidden="true">*</span>
+              </label>
+              <select id="educationBackground" name="educationBackground" class="form-select" required>
+                <option value="" disabled selected>Select your current profile</option>
+                <option value="cs_it_student">B.Tech / BCA / MCA / CS Student</option>
+                <option value="graduate_fresher">Recent Graduate / Job Seeker</option>
+                <option value="non_tech_switcher">Non-Tech / Career Switcher</option>
+                <option value="working_professional">Working IT Professional (Up-skilling)</option>
+                <option value="diploma_other">Diploma / Other Stream</option>
+              </select>
+              <span class="error-msg" id="bgError">Please select your current educational background.</span>
+            </div>
+
+            <!-- Field 4: Preferred Batch Timing -->
+            <div class="form-group">
+              <label for="preferredTiming" class="form-label">
+                Preferred Batch Timing
+              </label>
+              <select id="preferredTiming" name="preferredTiming" class="form-select">
+                <option value="morning_slot">Morning Batch (08:00 AM - 12:30 PM)</option>
+                <option value="afternoon_slot">Afternoon Batch (01:00 PM - 03:00 PM)</option>
+                <option value="evening_slot">Evening Batch (04:00 PM - 08:30 PM)</option>
+                <option value="weekend_slot">Weekend Special Batch (Sat &amp; Sun)</option>
+              </select>
+            </div>
+
+            <!-- Hidden Field for Course Interest -->
+            <input type="hidden" id="courseInterest" name="courseInterest" value="Full Stack Web Development">
+
+          </div>
+
+          <!-- Interactive Visit Day Chips -->
+          <div class="visit-day-section" style="margin-top: 1.25rem;">
+            <label class="form-label">
+              When Would You Like To Visit Our M.P. Nagar Center? <span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <div class="day-chips-grid">
+              <button type="button" class="day-chip-btn is-selected" data-day="today">Today</button>
+              <button type="button" class="day-chip-btn" data-day="tomorrow">Tomorrow</button>
+              <button type="button" class="day-chip-btn" data-day="saturday">This Saturday</button>
+              <button type="button" class="day-chip-btn" data-day="sunday">This Sunday</button>
+            </div>
+            <input type="hidden" id="visitDay" name="visitDay" value="today">
+          </div>
+
+          <!-- Submit Button -->
+          <div style="margin-top: 1.75rem;">
+            <button type="submit" class="btn btn-primary btn-lg btn-full btn-glow" id="submitBtn">
+              <span>Confirm Free Counselling Visit</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+            <p style="font-size: 0.78rem; color: #64748B; text-align: center; margin-top: 0.85rem;">
+              🔒 100% Free Consultation • Zero Sales Pressure • We never spam your phone.
+            </p>
+          </div>
+
+        </form>
+
+        <!-- Success Feedback State -->
+        <div id="formSuccessState" class="form-success-state" hidden>
+          <div class="success-icon-wrap" style="color:#10B981; margin-bottom:1rem;">
+            <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
+          <h3 style="color:#FFFFFF; font-size:1.4rem; font-weight:800; margin-bottom:0.5rem;">Counselling Visit Confirmed!</h3>
+          <p style="color:#94A3B8; font-size:0.95rem; line-height:1.6; margin-bottom:1.5rem;">
+            Thank you! Our senior academic mentor will contact you shortly on WhatsApp to confirm your visit time at our M.P. Nagar center.
+          </p>
+          <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+            <a href="https://maps.google.com/?q=Plot+No.80,+Aakriti+Complex,+Zone-2,+M.P.+Nagar,+Bhopal" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+              <span>View Center Directions</span>
+            </a>
+            <a href="https://wa.me/917880003127?text=Hello%20Miracle%20IT%2C%20I%20just%20booked%20my%20counselling%20visit%20for%20Full%20Stack." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+              <span>Message on WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       FINAL CTA SECTION (MATCHING MAIN SITE)
+       ======================================================================== -->
+  <section class="course-final-cta-section" id="final-cta">
+    <div class="container final-cta-container">
+      
+      <h2 class="final-cta-title">
+        Visit Miracle IT Career Academy, Bhopal for Course Counselling
+      </h2>
+
+      <p class="final-cta-subtitle">
+        Walk into our M.P. Nagar campus today.
       </p>
-      <div class="card text-center" style="padding: 2.5rem;">
-        <h3>Ready to inspect the complete Full Stack syllabus?</h3>
-        <p style="margin: 0.75rem 0 1.5rem;">Visit our campus in M.P. Nagar, Bhopal to review past student projects, inspect the lab, and speak directly with the full-stack trainers.</p>
-        <a href="../#counselling-form" class="btn btn-primary btn-lg">Schedule Your Campus Visit</a>
+
+      <p class="final-cta-desc">
+        Review the full-stack syllabus line by line, inspect our developer workstation lab, sit in on an ongoing lecture, and receive an honest career roadmap from senior mentors.
+      </p>
+
+      <div style="display:inline-flex; gap:1rem; flex-wrap:wrap; justify-content:center;">
+        <a href="#counselling-form" class="btn btn-primary btn-lg btn-glow">
+          <span>Book Free Counselling Visit</span>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
       </div>
+
+      <!-- Verified High-Contrast Shortcut Channels -->
+      <div class="final-shortcuts-bar">
+        <span class="shortcuts-label">Prefer to talk directly right now?</span>
+        <div class="shortcuts-links">
+          
+          <a href="tel:+917880003127" class="shortcut-link" data-config-phone title="Call Academy">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span>Call: +91 78800 03127</span>
+          </a>
+
+          <a href="https://wa.me/917880003127?text=Hello%20Miracle%20IT%2C%20I%20want%20to%20visit%20the%20M.P.%20Nagar%20center%20for%20Full%20Stack%20counselling." target="_blank" rel="noopener noreferrer" class="shortcut-link whatsapp-color" data-config-whatsapp title="Chat on WhatsApp">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+              <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 10.23c-.25-.13-1.47-.72-1.7-.81-.23-.09-.39-.14-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.71 4.3 3.8.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.22-.17-.47-.3"/>
+            </svg>
+            <span>WhatsApp Us</span>
+          </a>
+
+          <a href="https://maps.google.com/?q=Plot+No.80,+Aakriti+Complex,+Zone-2,+M.P.+Nagar,+Bhopal" target="_blank" rel="noopener noreferrer" class="shortcut-link directions-color" data-config-directions title="Directions to M.P. Nagar campus">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+            </svg>
+            <span>Directions (M.P. Nagar)</span>
+          </a>
+
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- Simple Footer -->
-  <footer style="background: #0F172A; color: #94A3B8; padding: 2rem 0; text-align: center; border-top: 1px solid #1E293B;">
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="course-footer">
     <div class="container">
-      <p>© 2026 Miracle IT Career Academy • M.P. Nagar, Bhopal</p>
-      <p style="font-size: 0.8rem; margin-top: 0.5rem;"><a href="../" style="color: #60A5FA;">← Back to Main Career Counselling Page</a></p>
+      
+      <div class="footer-inner-grid">
+        
+        <div class="footer-brand-info">
+          <h4>Miracle IT Career Academy • Bhopal</h4>
+          <p>
+            Plot No.80, 3rd Floor, Aakriti Complex, Zone-2, M.P. Nagar, Bhopal, Madhya Pradesh 462011.<br>
+            Authorized IT Training, Project Development &amp; Placement Readiness Center.
+          </p>
+          <p style="color: #64748B; font-size: 0.82rem;">
+            Call / Support: <a href="tel:+917880003127" style="color: #FF7A00;">+91 78800 03127</a> | Email: <a href="mailto:info@miracleinfoserv.com" style="color: #38BDF8;">info@miracleinfoserv.com</a>
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Courses</h5>
+          <ul class="footer-links-list">
+            <li><a href="../full-stack-course-bhopal/">Full Stack Web Development</a></li>
+            <li><a href="../ai-ml-course-bhopal/">AI &amp; Machine Learning</a></li>
+            <li><a href="../data-analytics-course-bhopal/">Data Analytics &amp; Science</a></li>
+            <li><a href="../cloud-devops-course-bhopal/">Cloud Computing &amp; DevOps</a></li>
+            <li><a href="../cybersecurity-course-bhopal/">Cybersecurity &amp; Ethical Hacking</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Academy</h5>
+          <ul class="footer-links-list">
+            <li><a href="../">Main Academy Portal</a></li>
+            <li><a href="../#why-miracle-it">Why Miracle IT</a></li>
+            <li><a href="../#proof">Verified Placements</a></li>
+            <li><a href="../#location">M.P. Nagar Campus</a></li>
+            <li><a href="#counselling-form">Book Counselling Visit</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom-bar">
+        <span>© 2026 Miracle IT Career Academy. All rights reserved.</span>
+        <span>M.P. Nagar Zone-2, Bhopal • Code-First Learning</span>
+      </div>
+
     </div>
   </footer>
 
+
+  <!-- ========================================================================
+       MOBILE STICKY CONVERSION BAR (< 768px)
+       ======================================================================== -->
+  <div class="mobile-course-sticky-bar" aria-label="Quick Mobile Actions">
+    <div class="mobile-sticky-inner">
+      <a href="tel:+917880003127" class="mobile-sticky-btn call-btn" data-config-phone title="Call">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>Call</span>
+      </a>
+
+      <a href="https://wa.me/917880003127?text=Hello%20Miracle%20IT%2C%20I%20want%20to%20book%20a%20free%20counselling%20visit%20for%20Full%20Stack." target="_blank" rel="noopener noreferrer" class="mobile-sticky-btn whatsapp-btn" data-config-whatsapp title="WhatsApp">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 10.23c-.25-.13-1.47-.72-1.7-.81-.23-.09-.39-.14-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.71 4.3 3.8.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.22-.17-.47-.3"/></svg>
+        <span>WhatsApp</span>
+      </a>
+
+      <a href="#counselling-form" class="mobile-sticky-btn book-btn">
+        <span>Book Free Visit</span>
+      </a>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================
+       JAVASCRIPT MODULES & CONTROLLERS
+       ======================================================================== -->
   <script src="../js/config.js"></script>
+  <script src="../js/utm.js"></script>
   <script src="../js/analytics.js"></script>
-  <script src="./script.js"></script>
+  <script src="../js/lead-service.js"></script>
+  <script src="./script.js?v=2.0"></script>
+
 </body>
 </html>
