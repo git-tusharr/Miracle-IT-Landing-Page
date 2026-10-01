@@ -636,19 +636,76 @@
     border-top: 1px solid rgba(15, 23, 42, 0.08);
   }
 
-  .mobile-nav-actions .btn-secondary {
-    background: #FFFFFF;
-    color: #1E293B;
-    border: 1px solid #CBD5E1;
-  }
-
   .mobile-nav-actions .btn {
     width: 100%;
-    min-height: 46px;
+    min-height: 48px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    justify-content: center;
+    gap: 0.6rem;
+    border-radius: 12px;
+  }
+
+  /* Secondary action buttons (Call & WhatsApp) - ensure high contrast and visible on white drawer */
+  .mobile-nav-actions .btn-secondary {
+    background: #FFFFFF !important;
+    color: #0F172A !important;
+    border: 1.5px solid #CBD5E1 !important;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06) !important;
+  }
+
+  .mobile-nav-actions .btn-secondary span {
+    color: #0F172A !important;
+    font-weight: 600;
+  }
+
+  .mobile-nav-actions .btn-secondary .btn-icon {
+    color: #2563EB !important;
+    stroke: #2563EB !important;
+    width: 18px;
+    height: 18px;
+  }
+
+  .mobile-nav-actions .btn-secondary:hover {
+    background: #F8FAFC !important;
+    color: #FF6000 !important;
+    border-color: #FF7A00 !important;
+    box-shadow: 0 4px 12px rgba(255, 122, 0, 0.15) !important;
+  }
+
+  .mobile-nav-actions .btn-secondary:hover span {
+    color: #FF6000 !important;
+  }
+
+  /* Dedicated WhatsApp styling in mobile drawer */
+  .mobile-nav-actions [data-config-whatsapp].btn-secondary {
+    background: #F0FDF4 !important;
+    color: #15803D !important;
+    border-color: #86EFAC !important;
+  }
+
+  .mobile-nav-actions [data-config-whatsapp].btn-secondary span {
+    color: #15803D !important;
+    font-weight: 600;
   }
 
   .mobile-nav-actions [data-config-whatsapp] .btn-icon {
-    color: #25D366;
+    color: #16A34A !important;
+    fill: #16A34A !important;
+    stroke: none !important;
+    width: 18px;
+    height: 18px;
+  }
+
+  .mobile-nav-actions [data-config-whatsapp].btn-secondary:hover {
+    background: #DCFCE7 !important;
+    border-color: #22C55E !important;
+    color: #166534 !important;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.2) !important;
+  }
+
+  .mobile-nav-actions [data-config-whatsapp].btn-secondary:hover span {
+    color: #166534 !important;
   }
 }
 
