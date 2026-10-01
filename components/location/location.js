@@ -513,42 +513,40 @@ function initIndiaNetworkMap(section) {
     if (!data) return;
 
     const hud = section.querySelector('#mapTelemetryHud');
-    if (!hud) return;
+    if (hud) {
+      hud.classList.toggle('is-hq', !!data.isHq);
+      const titleEl = hud.querySelector('#hudCenterTitle');
+      const subEl = hud.querySelector('#hudCenterSub');
+      const badgeEl = hud.querySelector('#hudBadgeStatus');
+      const addrEl = hud.querySelector('#hudCenterAddress');
+      const pillsRow = hud.querySelector('#hudPillsRow');
+      const callBtn = hud.querySelector('#hudCallBtn');
+      const phoneText = hud.querySelector('#hudPhoneText');
+      const mapBtn = hud.querySelector('#hudMapBtn');
+      const syncBtn = hud.querySelector('#hudSyncBtn');
 
-    hud.classList.toggle('is-hq', !!data.isHq);
+      if (titleEl) titleEl.textContent = data.title;
+      if (subEl) subEl.textContent = data.sub;
+      if (badgeEl) badgeEl.textContent = data.status;
+      if (addrEl) addrEl.textContent = data.address;
+      if (phoneText) phoneText.textContent = data.phone;
+      if (callBtn) callBtn.setAttribute('href', data.phoneHref);
+      if (mapBtn) mapBtn.setAttribute('href', data.mapUrl);
 
-    const titleEl = hud.querySelector('#hudCenterTitle');
-    const subEl = hud.querySelector('#hudCenterSub');
-    const badgeEl = hud.querySelector('#hudBadgeStatus');
-    const addrEl = hud.querySelector('#hudCenterAddress');
-    const pillsRow = hud.querySelector('#hudPillsRow');
-    const callBtn = hud.querySelector('#hudCallBtn');
-    const phoneText = hud.querySelector('#hudPhoneText');
-    const mapBtn = hud.querySelector('#hudMapBtn');
-    const syncBtn = hud.querySelector('#hudSyncBtn');
+      if (pillsRow) {
+        pillsRow.innerHTML = data.tags.map(t => `<span class="hud-pill-tag">${t}</span>`).join('');
+      }
 
-    if (titleEl) titleEl.textContent = data.title;
-    if (subEl) subEl.textContent = data.sub;
-    if (badgeEl) badgeEl.textContent = data.status;
-    if (addrEl) addrEl.textContent = data.address;
-    if (phoneText) phoneText.textContent = data.phone;
-    if (callBtn) callBtn.setAttribute('href', data.phoneHref);
-    if (mapBtn) mapBtn.setAttribute('href', data.mapUrl);
-
-    if (pillsRow) {
-      pillsRow.innerHTML = data.tags.map(t => `<span class="hud-pill-tag">${t}</span>`).join('');
-    }
-
-    if (syncBtn) {
-      syncBtn.setAttribute('data-target-center', String(key));
-      if (data.isHq) {
-        syncBtn.innerHTML = '<span>Visit Bhopal Desk ↑</span>';
-      } else {
-        syncBtn.innerHTML = '<span>Focus 3D Card ➔</span>';
+      if (syncBtn) {
+        syncBtn.setAttribute('data-target-center', String(key));
+        if (data.isHq) {
+          syncBtn.innerHTML = '<span>Visit Bhopal Desk ↑</span>';
+        } else {
+          syncBtn.innerHTML = '<span>Focus 3D Card ➔</span>';
+        }
       }
     }
 
-    // Synchronize active state on SVG nodes and highlight corresponding lines
     const lineKeyMap = {
       '0': { telem: '#telemLineJabalpur', halo: '#lineHaloJabalpur' },
       '1': { telem: '#telemLineGwalior', halo: '#lineHaloGwalior' },

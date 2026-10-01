@@ -944,7 +944,7 @@
 .carousel-col-top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 1rem;
   margin-bottom: 1.25rem;
   padding: 0 0.25rem;

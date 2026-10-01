@@ -780,13 +780,13 @@
   width: auto;
   max-width: 230px;
   object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.45));
+  filter: none !important;
   transition: transform 180ms ease, filter 180ms ease;
 }
 
 .brand-logo:hover .header-brand-logo-img {
   transform: scale(1.02);
-  filter: drop-shadow(0 4px 16px rgba(255, 122, 0, 0.35));
+  filter: none !important;
 }
 
 @media (max-width: 768px) {
