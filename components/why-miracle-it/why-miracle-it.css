@@ -1188,7 +1188,7 @@
    ========================================================================== */
 @media (max-width: 767px) {
   .why-section {
-    padding: 1.75rem 0 4.5rem;
+    padding: 1.75rem 0 2rem;
   }
 
   .why-header {
@@ -1759,6 +1759,10 @@
 
 /* Micro Smartphone Adjustments (max-width: 380px) */
 @media (max-width: 380px) {
+  .why-section {
+    padding: 1.5rem 0 1.5rem;
+  }
+
   .tablet-device-chassis {
     max-width: 330px !important;
     border-radius: 46px !important;

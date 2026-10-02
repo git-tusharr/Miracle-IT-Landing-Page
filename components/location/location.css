@@ -1780,6 +1780,11 @@
 }
 
 @media (max-width: 768px) {
+  #location.location-section,
+  .location-section {
+    padding-bottom: 2rem !important;
+  }
+
   /* Sleek & Compact 3D Stage on Mobile */
   .other-centers-3d-stage {
     height: 270px;
@@ -1917,6 +1922,11 @@
 }
 
 @media (max-width: 480px) {
+  #location.location-section,
+  .location-section {
+    padding-bottom: 1.5rem !important;
+  }
+
   .other-centers-header {
     margin-bottom: 1.5rem;
   }

@@ -1978,6 +1978,12 @@ body[data-theme="light"]::before {
   vertical-align: bottom;
 }
 
+@media (max-width: 768px) {
+  .section-seam-divider svg {
+    height: clamp(16px, 3vw, 24px);
+  }
+}
+
 /* Light to Dark Transition: Placed Students -> Problem */
 .seam-bright-to-dark {
   background-color: #F8FAFC;

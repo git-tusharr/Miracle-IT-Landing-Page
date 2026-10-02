@@ -218,11 +218,19 @@ html.motion-ready .final-cta-section.is-revealed .final-hero-btn:hover {
 }
 
 /* ==========================================================================
-   RESPONSIVE: SMALL & ULTRA-NARROW PHONES (<= 480px & 320px)
+   RESPONSIVE: TABLET & SMARTPHONE BREAKPOINTS (<= 768px, 480px & 360px)
    ========================================================================== */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+  #final-cta.final-cta-section,
   .final-cta-section {
-    padding: 3.5rem 0;
+    padding: 2.25rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  #final-cta.final-cta-section,
+  .final-cta-section {
+    padding: 1.75rem 0;
   }
 
   .final-cta-title {
@@ -268,8 +276,9 @@ html.motion-ready .final-cta-section.is-revealed .final-hero-btn:hover {
 }
 
 @media (max-width: 360px) {
+  #final-cta.final-cta-section,
   .final-cta-section {
-    padding: 2.75rem 0;
+    padding: 1.35rem 0;
   }
 
   .final-cta-title {

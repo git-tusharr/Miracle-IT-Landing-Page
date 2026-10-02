@@ -412,6 +412,18 @@
   z-index: 5;
 }
 
+@media (max-width: 768px) {
+  .placed-students-section {
+    padding: 1.5rem 0 1.5rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .placed-students-section {
+    padding: 1.25rem 0 1.25rem 0;
+  }
+}
+
 /* Seamless architectural section transition (Zero blur, crisp vector flow) */
 .placed-students-section::after {
   display: none !important;

@@ -332,7 +332,7 @@
    ========================================================================== */
 @media (max-width: 767px) {
   .faq-section {
-    padding: 3.75rem 0;
+    padding: 2rem 0;
   }
 
   .faq-container {
@@ -384,7 +384,7 @@
 /* Small phone screens (360px - 390px) */
 @media (max-width: 420px) {
   .faq-section {
-    padding: 3.25rem 0;
+    padding: 1.5rem 0;
   }
 
   .faq-editorial-title {

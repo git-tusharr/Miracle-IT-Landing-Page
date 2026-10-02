@@ -5,11 +5,23 @@
 .site-footer {
   background-color: #F8FAFC !important;
   color: #475569 !important;
-  padding-top: 4.5rem;
+  padding-top: clamp(2.25rem, 5vw, 4.5rem);
   padding-bottom: 2.5rem;
   border-top: 1px solid #E2E8F0 !important;
   position: relative;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding-top: 2rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-footer {
+    padding-top: 1.5rem !important;
+  }
 }
 
 /* Subtle ambient backdrop illumination */
