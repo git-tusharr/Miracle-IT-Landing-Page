@@ -1,0 +1,472 @@
+<section class="curriculum-section" id="curriculum" data-theme="bright">
+  <div class="container curriculum-container">
+    
+    <!-- TOP: Section Header -->
+    <div class="section-head curriculum-section-head">
+      <div class="section-tag-pill">
+        <span class="pill-dot"></span>
+        <span>STRUCTURED LEARNING PATH</span>
+      </div>
+      <h2 class="curriculum-main-title">Structured 5-Stage Mastery Flow</h2>
+      <p class="curriculum-main-subtitle">
+        A structured learning flow from TCP/IP packet protocol analysis to live enterprise SIEM threat hunting and SOC incident response.
+      </p>
+      <div class="curriculum-interaction-hint">
+        <span class="hint-mouse-icon" aria-hidden="true">
+          <span class="hint-mouse-wheel"></span>
+        </span>
+        <span>Scroll to explore the 5 stages</span>
+      </div>
+    </div>
+
+    <!-- ========================================================================
+         VERTICAL ALTERNATING TIMELINE (SCROLL-DRIVEN PROGRESSION)
+         ======================================================================== -->
+    <div class="curriculum-timeline" id="curriculumTimeline" aria-label="Curriculum Progression Timeline">
+      
+      <!-- Central Vertical Line Spine -->
+      <div class="timeline-spine" id="timelineSpine" aria-hidden="true">
+        <div class="timeline-track-inactive"></div>
+        <div class="timeline-track-progress" id="timelineProgressBar">
+          <div class="timeline-head-beacon"></div>
+        </div>
+      </div>
+
+      <!-- ==================== STAGE 01: NETWORKING & PROTOCOLS ==================== -->
+      <div class="timeline-stage-zone is-active" id="stage-zone-1" data-stage="1">
+        
+        <div class="timeline-node-wrapper">
+          <button type="button" class="timeline-node-marker is-active" data-target-stage="1" aria-label="Jump to Stage 1: Networking & Wireshark">
+            <span class="node-number">01</span>
+          </button>
+        </div>
+
+        <div class="stage-row stage-row-odd">
+          <!-- LEFT: Text Column -->
+          <div class="stage-col stage-text-col">
+            <div class="stage-text-card">
+              <div class="panel-meta-row">
+                <div class="panel-stage-badge">
+                  <span class="stage-bullet"></span>
+                  <span class="stage-badge-text">01 — Network Protocols</span>
+                </div>
+                <div class="panel-duration-pill">Weeks 1–3</div>
+              </div>
+
+              <h3 class="panel-stage-title">Computer Networking &amp; Packet Analysis</h3>
+              <p class="panel-stage-description">
+                Dissect live network traffic down to the byte level with Wireshark. Master the TCP/IP stack, 3-way handshakes, subnetting, ARP spoofing detection, and Nmap port discovery.
+              </p>
+
+              <!-- Competencies -->
+              <div class="stage-skills-list">
+                <span class="skill-chip">TCP/IP &amp; OSI 7-Layer Protocol</span>
+                <span class="skill-chip">Wireshark Deep Packet Inspection</span>
+                <span class="skill-chip">Subnetting &amp; CIDR Addressing</span>
+                <span class="skill-chip">Nmap Port &amp; Service Fingerprinting</span>
+              </div>
+
+              <!-- Tech Logos Strip -->
+              <div class="panel-tech-strip">
+                <span class="tech-strip-label">Core Technologies:</span>
+                <div class="tech-badges-list">
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/wireshark.svg" alt="Wireshark" width="18" height="18" loading="lazy">
+                    <span>Wireshark</span>
+                  </div>
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/linux.svg" alt="Linux" width="18" height="18" loading="lazy">
+                    <span>Networking</span>
+                  </div>
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/kali.svg" alt="Nmap" width="18" height="18" loading="lazy">
+                    <span>Nmap</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Picture Card -->
+          <div class="stage-col stage-visual-col">
+            <div class="stage-picture-card stage-visual-card">
+              <div class="card-chrome-header">
+                <div class="window-controls">
+                  <span class="ctrl-dot dot-close"></span>
+                  <span class="ctrl-dot dot-min"></span>
+                  <span class="ctrl-dot dot-max"></span>
+                </div>
+                <div class="card-chrome-title">Stage 1 Output: Wireshark Packet Capture &amp; Port Scan Audit</div>
+                <div class="card-status-pill green">Verified Traffic</div>
+              </div>
+              <div class="card-media-wrap">
+                <img src="../assets/images/curriculum/stage1-frontend-ui.jpg" alt="Stage 1 Network Traffic Audit" class="stage-img" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== STAGE 02: LINUX HARDENING ==================== -->
+      <div class="timeline-stage-zone" id="stage-zone-2" data-stage="2">
+        
+        <div class="timeline-node-wrapper">
+          <button type="button" class="timeline-node-marker" data-target-stage="2" aria-label="Jump to Stage 2: Linux Security">
+            <span class="node-number">02</span>
+          </button>
+        </div>
+
+        <div class="stage-row stage-row-even">
+          <!-- LEFT: Picture Card -->
+          <div class="stage-col stage-visual-col">
+            <div class="stage-picture-card stage-visual-card">
+              <div class="card-chrome-header">
+                <div class="window-controls">
+                  <span class="ctrl-dot dot-close"></span>
+                  <span class="ctrl-dot dot-min"></span>
+                  <span class="ctrl-dot dot-max"></span>
+                </div>
+                <div class="card-chrome-title">Stage 2 Output: Hardened Bastion Host &amp; Recon Script</div>
+                <div class="card-status-pill blue">Linux Hardened</div>
+              </div>
+              <div class="card-media-wrap">
+                <img src="../assets/images/curriculum/stage2-backend-architecture.jpg" alt="Stage 2 Linux Hardening Architecture" class="stage-img" loading="lazy">
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Text Column -->
+          <div class="stage-col stage-text-col">
+            <div class="stage-text-card">
+              <div class="panel-meta-row">
+                <div class="panel-stage-badge">
+                  <span class="stage-bullet"></span>
+                  <span class="stage-badge-text">02 — System Hardening</span>
+                </div>
+                <div class="panel-duration-pill">Weeks 4–7</div>
+              </div>
+
+              <h3 class="panel-stage-title">Linux Security &amp; Bash Recon Automation</h3>
+              <p class="panel-stage-description">
+                Harden Linux distributions against unauthorized access. Master file permissions, sudoers configuration, iptables/UFW firewalls, SSH key security, and automated Bash recon scripts.
+              </p>
+
+              <!-- Competencies -->
+              <div class="stage-skills-list">
+                <span class="skill-chip">Linux File Permissions &amp; chroot</span>
+                <span class="skill-chip">iptables &amp; UFW Firewall Rules</span>
+                <span class="skill-chip">SSH Hardening &amp; Key Pair Auth</span>
+                <span class="skill-chip">Automated Bash Reconnaissance Scripts</span>
+              </div>
+
+              <!-- Tech Logos Strip -->
+              <div class="panel-tech-strip">
+                <span class="tech-strip-label">Core Technologies:</span>
+                <div class="tech-badges-list">
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/linux.svg" alt="Linux" width="18" height="18" loading="lazy">
+                    <span>Linux OS</span>
+                  </div>
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/git.svg" alt="Bash" width="18" height="18" loading="lazy">
+                    <span>Bash Scripting</span>
+                  </div>
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/kali.svg" alt="Hardening" width="18" height="18" loading="lazy">
+                    <span>UFW / iptables</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== STAGE 03: ETHICAL HACKING & PENTESTING ==================== -->
+      <div class="timeline-stage-zone" id="stage-zone-3" data-stage="3">
+        
+        <div class="timeline-node-wrapper">
+          <button type="button" class="timeline-node-marker" data-target-stage="3" aria-label="Jump to Stage 3: Ethical Hacking">
+            <span class="node-number">03</span>
+          </button>
+        </div>
+
+        <div class="stage-row stage-row-odd">
+          <!-- LEFT: Text Column -->
+          <div class="stage-col stage-text-col">
+            <div class="stage-text-card">
+              <div class="panel-meta-row">
+                <div class="panel-stage-badge">
+                  <span class="stage-bullet"></span>
+                  <span class="stage-badge-text">03 — Offensive Pentesting</span>
+                </div>
+                <div class="panel-duration-pill">Weeks 8–11</div>
+              </div>
+
+              <h3 class="panel-stage-title">Ethical Hacking &amp; Metasploit Exploits</h3>
+              <p class="panel-stage-description">
+                Execute authorized penetration testing in isolated sandbox labs. Perform vulnerability scans, exploit unpatched software with Metasploit, configure reverse listeners, and test password entropy.
+              </p>
+
+              <!-- Competencies -->
+              <div class="stage-skills-list">
+                <span class="skill-chip">Vulnerability Scanning (Nessus)</span>
+                <span class="skill-chip">Metasploit Exploit Execution</span>
+                <span class="skill-chip">Reverse Shells &amp; Multi-Handler</span>
+                <span class="skill-chip">Password Cracking (John / Hashcat)</span>
+              </div>
+
+              <!-- Tech Logos Strip -->
+              <div class="panel-tech-strip">
+                <span class="tech-strip-label">Core Technologies:</span>
+                <div class="tech-badges-list">
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/kali.svg" alt="Kali Linux" width="18" height="18" loading="lazy">
+                    <span>Kali Linux</span>
+                  </div>
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/metasploit.svg" alt="Metasploit" width="18" height="18" loading="lazy">
+                    <span>Metasploit</span>
+                  </div>
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/linux.svg" alt="Exploits" width="18" height="18" loading="lazy">
+                    <span>MSFvenom</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Picture Card -->
+          <div class="stage-col stage-visual-col">
+            <div class="stage-picture-card stage-visual-card">
+              <div class="card-chrome-header">
+                <div class="window-controls">
+                  <span class="ctrl-dot dot-close"></span>
+                  <span class="ctrl-dot dot-min"></span>
+                  <span class="ctrl-dot dot-max"></span>
+                </div>
+                <div class="card-chrome-title">Stage 3 Output: Full Vulnerability Assessment &amp; Penetration Audit</div>
+                <div class="card-status-pill purple">VAPT Verified</div>
+              </div>
+              <div class="card-media-wrap">
+                <img src="../assets/images/curriculum/stage3-database-schema.jpg" alt="Stage 3 VAPT Report Schema" class="stage-img" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== STAGE 04: WEB APP SECURITY & OWASP ==================== -->
+      <div class="timeline-stage-zone" id="stage-zone-4" data-stage="4">
+        
+        <div class="timeline-node-wrapper">
+          <button type="button" class="timeline-node-marker" data-target-stage="4" aria-label="Jump to Stage 4: OWASP Top 10">
+            <span class="node-number">04</span>
+          </button>
+        </div>
+
+        <div class="stage-row stage-row-even">
+          <!-- LEFT: Picture Card -->
+          <div class="stage-col stage-visual-col">
+            <div class="stage-picture-card stage-visual-card">
+              <div class="card-chrome-header">
+                <div class="window-controls">
+                  <span class="ctrl-dot dot-close"></span>
+                  <span class="ctrl-dot dot-min"></span>
+                  <span class="ctrl-dot dot-max"></span>
+                </div>
+                <div class="card-chrome-title">Stage 4 Output: OWASP Top 10 Interception &amp; Patch Report</div>
+                <div class="card-status-pill cyan">OWASP Audited</div>
+              </div>
+              <div class="card-media-wrap">
+                <img src="../assets/images/curriculum/stage4-devops-ci-cd.jpg" alt="Stage 4 Web Application Security Flow" class="stage-img" loading="lazy">
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Text Column -->
+          <div class="stage-col stage-text-col">
+            <div class="stage-text-card">
+              <div class="panel-meta-row">
+                <div class="panel-stage-badge">
+                  <span class="stage-bullet"></span>
+                  <span class="stage-badge-text">04 — Web App Security</span>
+                </div>
+                <div class="panel-duration-pill">Weeks 12–14</div>
+              </div>
+
+              <h3 class="panel-stage-title">Web Security &amp; OWASP Top 10 Testing</h3>
+              <p class="panel-stage-description">
+                Intercept and manipulate HTTP traffic with Burp Suite. Discover and remediate critical web vulnerabilities: SQL Injection, Cross-Site Scripting (XSS), CSRF, and Broken Access Control.
+              </p>
+
+              <!-- Competencies -->
+              <div class="stage-skills-list">
+                <span class="skill-chip">Burp Suite Intercepting Proxy</span>
+                <span class="skill-chip">SQL Injection (SQLi) Exploitation</span>
+                <span class="skill-chip">Cross-Site Scripting (Stored &amp; Reflected XSS)</span>
+                <span class="skill-chip">Broken Access Control Remediation</span>
+              </div>
+
+              <!-- Tech Logos Strip -->
+              <div class="panel-tech-strip">
+                <span class="tech-strip-label">Core Technologies:</span>
+                <div class="tech-badges-list">
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/kali.svg" alt="Burp Suite" width="18" height="18" loading="lazy">
+                    <span>Burp Suite</span>
+                  </div>
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/sql.svg" alt="SQLi" width="18" height="18" loading="lazy">
+                    <span>SQL Injection</span>
+                  </div>
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/javascript.svg" alt="XSS" width="18" height="18" loading="lazy">
+                    <span>XSS Patching</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== STAGE 05: SOC OPERATIONS & SIEM ==================== -->
+      <div class="timeline-stage-zone" id="stage-zone-5" data-stage="5">
+        
+        <div class="timeline-node-wrapper">
+          <button type="button" class="timeline-node-marker" data-target-stage="5" aria-label="Jump to Stage 5: SOC & SIEM">
+            <span class="node-number">05</span>
+          </button>
+        </div>
+
+        <div class="stage-row stage-row-odd">
+          <!-- LEFT: Text Column -->
+          <div class="stage-col stage-text-col">
+            <div class="stage-text-card">
+              <div class="panel-meta-row">
+                <div class="panel-stage-badge">
+                  <span class="stage-bullet"></span>
+                  <span class="stage-badge-text">05 — Blue Team SOC</span>
+                </div>
+                <div class="panel-duration-pill">Weeks 15–18</div>
+              </div>
+
+              <h3 class="panel-stage-title">SOC Operations, SIEM &amp; Threat Hunting</h3>
+              <p class="panel-stage-description">
+                Step into a modern Security Operations Center environment. Collect and correlate security telemetry with SIEM platforms, identify brute-force attacks, and execute incident response playbooks.
+              </p>
+
+              <!-- Competencies -->
+              <div class="stage-skills-list">
+                <span class="skill-chip">SIEM Log Telemetry Analysis</span>
+                <span class="skill-chip">Brute-Force &amp; Anomaly Detection</span>
+                <span class="skill-chip">Incident Handling &amp; Escalation</span>
+                <span class="skill-chip">Security Playbook Documentation</span>
+              </div>
+
+              <!-- Tech Logos Strip -->
+              <div class="panel-tech-strip">
+                <span class="tech-strip-label">Core Technologies:</span>
+                <div class="tech-badges-list">
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/docker.svg" alt="SIEM" width="18" height="18" loading="lazy">
+                    <span>SIEM Platform</span>
+                  </div>
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/linux.svg" alt="Linux" width="18" height="18" loading="lazy">
+                    <span>SOC Telemetry</span>
+                  </div>
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/wireshark.svg" alt="Wireshark" width="18" height="18" loading="lazy">
+                    <span>Threat Hunting</span>
+                  </div>
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/git.svg" alt="Portfolio" width="18" height="18" loading="lazy">
+                    <span>Portfolio</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Picture Card -->
+          <div class="stage-col stage-visual-col">
+            <div class="stage-picture-card stage-visual-card">
+              <div class="card-chrome-header">
+                <div class="window-controls">
+                  <span class="ctrl-dot dot-close"></span>
+                  <span class="ctrl-dot dot-min"></span>
+                  <span class="ctrl-dot dot-max"></span>
+                </div>
+                <div class="card-chrome-title">Stage 5 Output: Live SIEM SOC Telemetry &amp; Response Playbook</div>
+                <div class="card-status-pill orange">Live Capstone</div>
+              </div>
+              <div class="card-media-wrap">
+                <img src="../assets/images/curriculum/stage5-fullstack-capstone.jpg" alt="Stage 5 SOC Incident Playbook" class="stage-img" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Central End of Journey Marker -->
+      <div class="timeline-end-node-wrapper" aria-hidden="true">
+        <div class="timeline-end-node">
+          <span class="end-node-icon">✦</span>
+        </div>
+        <span class="end-node-label">5 STAGES COMPLETED — READY FOR CYBER SECURITY ROLES</span>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM: Milestone CTA Card -->
+    <div class="curriculum-bottom-milestone-card">
+      <div class="milestone-content">
+        <span class="milestone-kicker">Free 1-on-1 Roadmap Consultation</span>
+        <h3 class="milestone-title">Ready to Master All 5 Security Stages?</h3>
+        <p class="milestone-desc">
+          Schedule a personalized counselling session at our M.P. Nagar campus. We'll map your technical background directly to this ethical hacking and defensive security syllabus.
+        </p>
+      </div>
+      <div class="milestone-actions">
+        <a href="#counselling-form" class="btn btn-primary" data-track-cta="curriculum_milestone_book">
+          <span>Book Free Counselling Visit</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+        <a href="tel:+917880003127" class="btn btn-outline" data-track-cta="curriculum_milestone_call">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          <span>Call: +91 78800 03127</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ARCHITECTURAL HORIZON TRANSITION (BRIGHT -> DARK) -->
+<div class="seam-horizon-divider seam-bright-to-dark" aria-hidden="true">
+  <svg class="seam-horizon-svg" viewBox="0 0 1440 96" preserveAspectRatio="none" fill="none">
+    <path class="seam-dark-fill" d="M 0,28 Q 720,86 1440,28 L 1440,96 L 0,96 Z" fill="#07090E"/>
+    <path class="seam-energy-rim" d="M 0,28 Q 720,86 1440,28" stroke="#FF7A00" stroke-width="2.5" stroke-linecap="round"/>
+  </svg>
+
+  <div class="seam-conduit-hub">
+    <div class="conduit-spine-stem"></div>
+    <div class="conduit-chip">
+      <span class="conduit-dot pulse"></span>
+      <span class="conduit-tag">TRANSITION TO PRACTICE</span>
+      <span class="conduit-sep">•</span>
+      <span class="conduit-title">How You Learn In The Lab</span>
+      <svg class="conduit-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </div>
+  </div>
+</div>

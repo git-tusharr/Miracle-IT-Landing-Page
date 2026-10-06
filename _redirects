@@ -15,3 +15,10 @@
 /MetaAds/data-science      /MetaAds/data-science-landing/         301
 /MetaAds/full-stack        /MetaAds/fullstack-landing/            301
 /MetaAds/miracle-it-fullstack-landing/* /MetaAds/fullstack-landing/:splat 200
+
+# Dedicated Course Landing Pages
+/full-stack-course-bhopal       /full-stack-course-bhopal/       301
+/data-analytics-course-bhopal   /data-analytics-course-bhopal/   301
+/cybersecurity-course-bhopal    /cybersecurity-course-bhopal/    301
+/ai-ml-course-bhopal            /ai-ml-course-bhopal/            301
+

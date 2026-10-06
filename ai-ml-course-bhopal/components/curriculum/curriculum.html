@@ -1,0 +1,487 @@
+<section class="curriculum-section" id="curriculum" data-theme="bright">
+  <div class="container curriculum-container">
+    
+    <!-- TOP: Section Header -->
+    <div class="section-head curriculum-section-head">
+      <div class="section-tag-pill">
+        <span class="pill-dot"></span>
+        <span>STRUCTURED LEARNING PATH</span>
+      </div>
+      <h2 class="curriculum-main-title">Structured 5-Stage Mastery Flow</h2>
+      <p class="curriculum-main-subtitle">
+        A structured learning flow from vectorized Python mathematics to deep learning neural networks, computer vision, and production GenAI LLM serving.
+      </p>
+      <div class="curriculum-interaction-hint">
+        <span class="hint-mouse-icon" aria-hidden="true">
+          <span class="hint-mouse-wheel"></span>
+        </span>
+        <span>Scroll to explore the 5 stages</span>
+      </div>
+    </div>
+
+    <!-- ========================================================================
+         VERTICAL ALTERNATING TIMELINE (SCROLL-DRIVEN PROGRESSION)
+         ======================================================================== -->
+    <div class="curriculum-timeline" id="curriculumTimeline" aria-label="Curriculum Progression Timeline">
+      
+      <!-- Central Vertical Line Spine -->
+      <div class="timeline-spine" id="timelineSpine" aria-hidden="true">
+        <div class="timeline-track-inactive"></div>
+        <div class="timeline-track-progress" id="timelineProgressBar">
+          <div class="timeline-head-beacon"></div>
+        </div>
+      </div>
+
+      <!-- ==================== STAGE 01: PYTHON & VECTORIZED MATH ==================== -->
+      <div class="timeline-stage-zone stage-zone is-active" id="stage-zone-1" data-stage="1">
+        
+        <div class="timeline-node-wrapper">
+          <button type="button" class="timeline-node-marker stage-marker is-active" data-target-stage="1" aria-label="Jump to Stage 1: Python and Linear Algebra">
+            <span class="node-number">01</span>
+          </button>
+        </div>
+
+        <div class="stage-row stage-row-odd">
+          <!-- LEFT: Text Column -->
+          <div class="stage-col stage-text-col">
+            <div class="stage-text-card">
+              <div class="panel-meta-row">
+                <div class="panel-stage-badge">
+                  <span class="stage-bullet"></span>
+                  <span class="stage-badge-text">01 — Vectorized Math</span>
+                </div>
+                <div class="panel-duration-pill">Weeks 1–3</div>
+              </div>
+
+              <h3 class="panel-stage-title">Python Foundations &amp; Linear Algebra</h3>
+              <p class="panel-stage-description">
+                Lay the mathematical and computational bedrock for machine learning. Master vectorized operations in NumPy, matrix multiplication, eigenvalues, gradient descent calculus, and algorithmic complexity.
+              </p>
+
+              <!-- Competencies -->
+              <div class="stage-skills-list">
+                <span class="skill-chip">NumPy Multi-Dimensional Arrays</span>
+                <span class="skill-chip">Vectorization &amp; Broadcasting</span>
+                <span class="skill-chip">Matrix Math &amp; Inversion</span>
+                <span class="skill-chip">Calculus &amp; Gradient Descent Basics</span>
+              </div>
+
+              <!-- Tech Logos Strip -->
+              <div class="panel-tech-strip">
+                <span class="tech-strip-label">Core Technologies:</span>
+                <div class="tech-badges-list">
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/python.svg" alt="Python" width="18" height="18" loading="lazy">
+                    <span>Python 3</span>
+                  </div>
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/numpy.svg" alt="NumPy" width="18" height="18" loading="lazy">
+                    <span>NumPy</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Picture Card -->
+          <div class="stage-col stage-visual-col">
+            <div class="stage-picture-card stage-visual-card">
+              <div class="card-chrome-header">
+                <div class="window-controls">
+                  <span class="ctrl-dot dot-close"></span>
+                  <span class="ctrl-dot dot-min"></span>
+                  <span class="ctrl-dot dot-max"></span>
+                </div>
+                <div class="card-chrome-title">Stage 1 Output: Vectorized Matrix Operations &amp; Gradient Descent</div>
+                <div class="card-status-pill green">Validated</div>
+              </div>
+              <div class="card-visual-content">
+                <div class="terminal-preview">
+                  <div class="terminal-line"><span class="cmd-prompt">&gt;&gt;&gt;</span> <span class="cmd-text">import numpy as np</span></div>
+                  <div class="terminal-line"><span class="cmd-prompt">&gt;&gt;&gt;</span> <span class="cmd-text">weights = np.random.randn(512, 128) * 0.01</span></div>
+                  <div class="terminal-line"><span class="cmd-prompt">&gt;&gt;&gt;</span> <span class="cmd-text">grad = np.dot(X_batch.T, errors) / len(X_batch)</span></div>
+                  <div class="terminal-line success"><span class="term-tag">[TENSOR]</span> Forward pass latency: 1.2ms (Vectorized SIMD)</div>
+                </div>
+                <div class="metric-row">
+                  <div class="metric-box">
+                    <span class="metric-num">50x</span>
+                    <span class="metric-sub">NumPy Speedup vs Loops</span>
+                  </div>
+                  <div class="metric-box">
+                    <span class="metric-num">100%</span>
+                    <span class="metric-sub">Pure Math Foundations</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== STAGE 02: EDA & FEATURE ENGINEERING ==================== -->
+      <div class="timeline-stage-zone stage-zone" id="stage-zone-2" data-stage="2">
+        
+        <div class="timeline-node-wrapper">
+          <button type="button" class="timeline-node-marker stage-marker" data-target-stage="2" aria-label="Jump to Stage 2: EDA and Feature Engineering">
+            <span class="node-number">02</span>
+          </button>
+        </div>
+
+        <div class="stage-row stage-row-even">
+          <!-- LEFT: Picture Card -->
+          <div class="stage-col stage-visual-col">
+            <div class="stage-picture-card stage-visual-card">
+              <div class="card-chrome-header">
+                <div class="window-controls">
+                  <span class="ctrl-dot dot-close"></span>
+                  <span class="ctrl-dot dot-min"></span>
+                  <span class="ctrl-dot dot-max"></span>
+                </div>
+                <div class="card-chrome-title">Stage 2 Output: Pandas Pipeline &amp; Correlation Heatmap</div>
+                <div class="card-status-pill green">Cleaned Dataset</div>
+              </div>
+              <div class="card-visual-content">
+                <div class="terminal-preview">
+                  <div class="terminal-line"><span class="cmd-prompt">&gt;&gt;&gt;</span> <span class="cmd-text">df_clean = raw_df.pipe(impute_missing).pipe(encode_categorical)</span></div>
+                  <div class="terminal-line"><span class="cmd-prompt">&gt;&gt;&gt;</span> <span class="cmd-text">corr_matrix = df_clean.corr(numeric_only=True)</span></div>
+                  <div class="terminal-line success"><span class="term-tag">[EDA]</span> Skewness reduced: 3.42 -&gt; 0.12 (Box-Cox Transform)</div>
+                </div>
+                <div class="metric-row">
+                  <div class="metric-box">
+                    <span class="metric-num">1.4M+</span>
+                    <span class="metric-sub">Records Cleaned</span>
+                  </div>
+                  <div class="metric-box">
+                    <span class="metric-num">0%</span>
+                    <span class="metric-sub">Missing Value Leakage</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Text Column -->
+          <div class="stage-col stage-text-col">
+            <div class="stage-text-card">
+              <div class="panel-meta-row">
+                <div class="panel-stage-badge">
+                  <span class="stage-bullet"></span>
+                  <span class="stage-badge-text">02 — Feature Engineering</span>
+                </div>
+                <div class="panel-duration-pill">Weeks 4–6</div>
+              </div>
+
+              <h3 class="panel-stage-title">Exploratory Data Analysis &amp; Feature Pipelines</h3>
+              <p class="panel-stage-description">
+                Clean messy real-world datasets with Pandas. Handle missing value imputation, detect distribution outliers, build one-hot encoding matrices, and transform raw variables into predictive features.
+              </p>
+
+              <!-- Competencies -->
+              <div class="stage-skills-list">
+                <span class="skill-chip">Pandas DataFrame Transformations</span>
+                <span class="skill-chip">Missing Value &amp; Outlier Imputation</span>
+                <span class="skill-chip">One-Hot &amp; Ordinal Encoding</span>
+                <span class="skill-chip">Correlation Analysis &amp; Normalization</span>
+              </div>
+
+              <!-- Tech Logos Strip -->
+              <div class="panel-tech-strip">
+                <span class="tech-strip-label">Core Technologies:</span>
+                <div class="tech-badges-list">
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/pandas.svg" alt="Pandas" width="18" height="18" loading="lazy">
+                    <span>Pandas</span>
+                  </div>
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/numpy.svg" alt="NumPy" width="18" height="18" loading="lazy">
+                    <span>NumPy</span>
+                  </div>
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/python.svg" alt="Python" width="18" height="18" loading="lazy">
+                    <span>Seaborn / Matplotlib</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== STAGE 03: CLASSICAL MACHINE LEARNING ==================== -->
+      <div class="timeline-stage-zone stage-zone" id="stage-zone-3" data-stage="3">
+        
+        <div class="timeline-node-wrapper">
+          <button type="button" class="timeline-node-marker stage-marker" data-target-stage="3" aria-label="Jump to Stage 3: Classical Machine Learning">
+            <span class="node-number">03</span>
+          </button>
+        </div>
+
+        <div class="stage-row stage-row-odd">
+          <!-- LEFT: Text Column -->
+          <div class="stage-col stage-text-col">
+            <div class="stage-text-card">
+              <div class="panel-meta-row">
+                <div class="panel-stage-badge">
+                  <span class="stage-bullet"></span>
+                  <span class="stage-badge-text">03 — Classical ML</span>
+                </div>
+                <div class="panel-duration-pill">Weeks 7–10</div>
+              </div>
+
+              <h3 class="panel-stage-title">Supervised, Unsupervised ML &amp; Ensembles</h3>
+              <p class="panel-stage-description">
+                Train robust machine learning models using Scikit-Learn. Implement linear &amp; logistic regression, decision trees, random forests, gradient boosting (XGBoost), k-means clustering, and cross-validation pipelines.
+              </p>
+
+              <!-- Competencies -->
+              <div class="stage-skills-list">
+                <span class="skill-chip">Scikit-Learn Pipelines</span>
+                <span class="skill-chip">Random Forest &amp; XGBoost Classifiers</span>
+                <span class="skill-chip">K-Fold Cross-Validation</span>
+                <span class="skill-chip">Precision, Recall, ROC-AUC Metrics</span>
+              </div>
+
+              <!-- Tech Logos Strip -->
+              <div class="panel-tech-strip">
+                <span class="tech-strip-label">Core Technologies:</span>
+                <div class="tech-badges-list">
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/scikit-learn.svg" alt="Scikit-Learn" width="18" height="18" loading="lazy">
+                    <span>Scikit-Learn</span>
+                  </div>
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/python.svg" alt="Python" width="18" height="18" loading="lazy">
+                    <span>XGBoost</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Picture Card -->
+          <div class="stage-col stage-visual-col">
+            <div class="stage-picture-card stage-visual-card">
+              <div class="card-chrome-header">
+                <div class="window-controls">
+                  <span class="ctrl-dot dot-close"></span>
+                  <span class="ctrl-dot dot-min"></span>
+                  <span class="ctrl-dot dot-max"></span>
+                </div>
+                <div class="card-chrome-title">Stage 3 Output: XGBoost Cross-Validation &amp; ROC Curve</div>
+                <div class="card-status-pill green">94.8% ROC-AUC</div>
+              </div>
+              <div class="card-visual-content">
+                <div class="terminal-preview">
+                  <div class="terminal-line"><span class="cmd-prompt">&gt;&gt;&gt;</span> <span class="cmd-text">model = XGBClassifier(n_estimators=300, learning_rate=0.03)</span></div>
+                  <div class="terminal-line"><span class="cmd-prompt">&gt;&gt;&gt;</span> <span class="cmd-text">scores = cross_val_score(model, X_train, y_train, cv=5)</span></div>
+                  <div class="terminal-line success"><span class="term-tag">[EVAL]</span> Mean 5-Fold F1-Score: 0.942 | ROC-AUC: 0.968</div>
+                </div>
+                <div class="metric-row">
+                  <div class="metric-box">
+                    <span class="metric-num">94.8%</span>
+                    <span class="metric-sub">ROC-AUC Score</span>
+                  </div>
+                  <div class="metric-box">
+                    <span class="metric-num">5-Fold</span>
+                    <span class="metric-sub">Rigorous CV</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== STAGE 04: DEEP LEARNING & COMPUTER VISION ==================== -->
+      <div class="timeline-stage-zone stage-zone" id="stage-zone-4" data-stage="4">
+        
+        <div class="timeline-node-wrapper">
+          <button type="button" class="timeline-node-marker stage-marker" data-target-stage="4" aria-label="Jump to Stage 4: Deep Learning and Computer Vision">
+            <span class="node-number">04</span>
+          </button>
+        </div>
+
+        <div class="stage-row stage-row-even">
+          <!-- LEFT: Picture Card -->
+          <div class="stage-col stage-visual-col">
+            <div class="stage-picture-card stage-visual-card">
+              <div class="card-chrome-header">
+                <div class="window-controls">
+                  <span class="ctrl-dot dot-close"></span>
+                  <span class="ctrl-dot dot-min"></span>
+                  <span class="ctrl-dot dot-max"></span>
+                </div>
+                <div class="card-chrome-title">Stage 4 Output: PyTorch CNN Training &amp; OpenCV Vision</div>
+                <div class="card-status-pill blue">Epoch 45 / 50</div>
+              </div>
+              <div class="card-visual-content">
+                <div class="terminal-preview">
+                  <div class="terminal-line"><span class="cmd-prompt">&gt;&gt;&gt;</span> <span class="cmd-text">class ConvNet(nn.Module): def __init__(self)...</span></div>
+                  <div class="terminal-line"><span class="cmd-prompt">&gt;&gt;&gt;</span> <span class="cmd-text">loss.backward(); optimizer.step()</span></div>
+                  <div class="terminal-line success"><span class="term-tag">[TRAIN]</span> Loss: 0.081 | Val Acc: 97.4% (CUDA Accelerated)</div>
+                </div>
+                <div class="metric-row">
+                  <div class="metric-box">
+                    <span class="metric-num">97.4%</span>
+                    <span class="metric-sub">Validation Accuracy</span>
+                  </div>
+                  <div class="metric-box">
+                    <span class="metric-num">45 FPS</span>
+                    <span class="metric-sub">OpenCV Inference</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Text Column -->
+          <div class="stage-col stage-text-col">
+            <div class="stage-text-card">
+              <div class="panel-meta-row">
+                <div class="panel-stage-badge">
+                  <span class="stage-bullet"></span>
+                  <span class="stage-badge-text">04 — Deep Learning</span>
+                </div>
+                <div class="panel-duration-pill">Weeks 11–15</div>
+              </div>
+
+              <h3 class="panel-stage-title">PyTorch Neural Networks &amp; Computer Vision</h3>
+              <p class="panel-stage-description">
+                Construct and train multi-layer neural architectures with PyTorch and TensorFlow. Master backpropagation, convolutional neural networks (CNNs), transfer learning with ResNet, and real-time image processing with OpenCV.
+              </p>
+
+              <!-- Competencies -->
+              <div class="stage-skills-list">
+                <span class="skill-chip">PyTorch Tensors, Autograd &amp; CUDA</span>
+                <span class="skill-chip">Convolutional Neural Networks (CNN)</span>
+                <span class="skill-chip">Transfer Learning (ResNet / EfficientNet)</span>
+                <span class="skill-chip">OpenCV Real-Time Object Detection</span>
+              </div>
+
+              <!-- Tech Logos Strip -->
+              <div class="panel-tech-strip">
+                <span class="tech-strip-label">Core Technologies:</span>
+                <div class="tech-badges-list">
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/pytorch.svg" alt="PyTorch" width="18" height="18" loading="lazy">
+                    <span>PyTorch</span>
+                  </div>
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/tensorflow.svg" alt="TensorFlow" width="18" height="18" loading="lazy">
+                    <span>TensorFlow</span>
+                  </div>
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/opencv.svg" alt="OpenCV" width="18" height="18" loading="lazy">
+                    <span>OpenCV</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== STAGE 05: GENAI & PRODUCTION ML DEPLOYMENT ==================== -->
+      <div class="timeline-stage-zone stage-zone" id="stage-zone-5" data-stage="5">
+        
+        <div class="timeline-node-wrapper">
+          <button type="button" class="timeline-node-marker stage-marker" data-target-stage="5" aria-label="Jump to Stage 5: GenAI and Production Model Serving">
+            <span class="node-number">05</span>
+          </button>
+        </div>
+
+        <div class="stage-row stage-row-odd">
+          <!-- LEFT: Text Column -->
+          <div class="stage-col stage-text-col">
+            <div class="stage-text-card">
+              <div class="panel-meta-row">
+                <div class="panel-stage-badge">
+                  <span class="stage-bullet"></span>
+                  <span class="stage-badge-text">05 — GenAI &amp; MLOps</span>
+                </div>
+                <div class="panel-duration-pill">Weeks 16–20</div>
+              </div>
+
+              <h3 class="panel-stage-title">Generative AI, RAG &amp; Production Serving</h3>
+              <p class="panel-stage-description">
+                Bridge models from Jupyter notebooks to production servers. Integrate LLM APIs with vector embeddings (RAG), containerize with Docker, and serve low-latency prediction endpoints using FastAPI.
+              </p>
+
+              <!-- Competencies -->
+              <div class="stage-skills-list">
+                <span class="skill-chip">LLM APIs &amp; Prompt Engineering</span>
+                <span class="skill-chip">RAG Architecture &amp; Vector DBs</span>
+                <span class="skill-chip">FastAPI Asynchronous Model Endpoints</span>
+                <span class="skill-chip">Docker Containerization &amp; Deployment</span>
+              </div>
+
+              <!-- Tech Logos Strip -->
+              <div class="panel-tech-strip">
+                <span class="tech-strip-label">Core Technologies:</span>
+                <div class="tech-badges-list">
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/python.svg" alt="FastAPI" width="18" height="18" loading="lazy">
+                    <span>FastAPI</span>
+                  </div>
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/docker.svg" alt="Docker" width="18" height="18" loading="lazy">
+                    <span>Docker</span>
+                  </div>
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/git.svg" alt="Git" width="18" height="18" loading="lazy">
+                    <span>Git / GitHub</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Picture Card -->
+          <div class="stage-col stage-visual-col">
+            <div class="stage-picture-card stage-visual-card">
+              <div class="card-chrome-header">
+                <div class="window-controls">
+                  <span class="ctrl-dot dot-close"></span>
+                  <span class="ctrl-dot dot-min"></span>
+                  <span class="ctrl-dot dot-max"></span>
+                </div>
+                <div class="card-chrome-title">Stage 5 Output: FastAPI Swagger Docs &amp; Docker Inference</div>
+                <div class="card-status-pill green">Production Ready</div>
+              </div>
+              <div class="card-visual-content">
+                <div class="terminal-preview">
+                  <div class="terminal-line"><span class="cmd-prompt">&gt;</span> <span class="cmd-text">docker run -p 8000:8000 --gpus all aiml-api:v2</span></div>
+                  <div class="terminal-line"><span class="cmd-prompt">&gt;</span> <span class="cmd-text">curl -X POST /predict -d '{"features": [...]}'</span></div>
+                  <div class="terminal-line success"><span class="term-tag">[FASTAPI]</span> HTTP 200 OK | Latency: 14ms | GPU Util: 68%</div>
+                </div>
+                <div class="metric-row">
+                  <div class="metric-box">
+                    <span class="metric-num">14ms</span>
+                    <span class="metric-sub">P95 Inference Time</span>
+                  </div>
+                  <div class="metric-box">
+                    <span class="metric-num">Docker</span>
+                    <span class="metric-sub">Containerized API</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Action CTA -->
+    <div class="curriculum-bottom-cta">
+      <a href="#counselling-form" class="btn btn-primary btn-lg btn-magnetic" data-track-cta="curriculum_book_counselling">
+        <span>Book Free Lab Demo &amp; Counselling Visit</span>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
