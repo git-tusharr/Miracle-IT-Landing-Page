@@ -222,6 +222,260 @@
 }
 
 /* --------------------------------------------------------------------------
+   NAVBAR COURSES DROPDOWN (DESKTOP HOVER & FOCUS)
+   -------------------------------------------------------------------------- */
+
+.nav-item-dropdown {
+  position: relative;
+}
+
+.nav-link-dropdown {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.dropdown-chevron {
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), color 180ms ease;
+  color: #64748B;
+  flex-shrink: 0;
+}
+
+.nav-item-dropdown:hover .dropdown-chevron,
+.nav-item-dropdown:focus-within .dropdown-chevron,
+.nav-item-dropdown.is-open .dropdown-chevron {
+  transform: rotate(180deg);
+  color: #FF6000;
+}
+
+/* Dropdown Menu Container (Floating Glass Surface) */
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(8px) scale(0.98);
+  width: 540px;
+  max-width: 92vw;
+
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 20px;
+  padding: 1rem 1rem 0.85rem;
+  box-shadow: 
+    0 24px 50px -10px rgba(15, 23, 42, 0.16),
+    0 10px 24px -5px rgba(15, 23, 42, 0.08),
+    0 0 0 1px rgba(15, 23, 42, 0.04);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 1050;
+
+  transition: 
+    opacity 200ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 200ms cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 200ms ease;
+}
+
+/* Invisible bridge so mouse hover never drops between nav item and menu */
+.nav-dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -14px;
+  left: 0;
+  right: 0;
+  height: 14px;
+  background: transparent;
+}
+
+/* Hover & Focus display triggers */
+.nav-item-dropdown:hover .nav-dropdown-menu,
+.nav-item-dropdown:focus-within .nav-dropdown-menu,
+.nav-item-dropdown.is-open .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+/* Dropdown Header */
+.dropdown-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.35rem 0.65rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.dropdown-menu-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #EA580C;
+}
+
+.dropdown-menu-hint {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #64748B;
+}
+
+/* 2x2 Grid of Course Cards */
+.dropdown-courses-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.55rem;
+}
+
+.dropdown-course-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0.8rem;
+  border-radius: 12px;
+  text-decoration: none;
+  background: #FFFFFF;
+  border: 1px solid #F1F5F9;
+  transition: all 180ms ease;
+  position: relative;
+}
+
+.dropdown-course-card:hover {
+  background: #F8FAFC;
+  border-color: #CBD5E1;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px -4px rgba(15, 23, 42, 0.08);
+}
+
+.dropdown-course-icon-wrap {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 180ms ease;
+}
+
+.dropdown-course-card:hover .dropdown-course-icon-wrap {
+  transform: scale(1.08);
+}
+
+.icon-fullstack {
+  background: #FFF7ED;
+  color: #EA580C;
+  border: 1px solid #FED7AA;
+}
+
+.icon-data {
+  background: #EFF6FF;
+  color: #2563EB;
+  border: 1px solid #BFDBFE;
+}
+
+.icon-aiml {
+  background: #FDF4FF;
+  color: #9333EA;
+  border: 1px solid #F0ABFC;
+}
+
+.icon-cyber {
+  background: #F0FDF4;
+  color: #16A34A;
+  border: 1px solid #BBF7D0;
+}
+
+.dropdown-course-meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+  gap: 0.15rem;
+}
+
+.dropdown-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.dropdown-course-title {
+  font-family: var(--font-heading, 'Sora', sans-serif);
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #0F172A;
+  line-height: 1.25;
+  transition: color 150ms ease;
+}
+
+.dropdown-course-card:hover .dropdown-course-title {
+  color: #FF6000;
+}
+
+.dropdown-duration-badge {
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 0.12rem 0.38rem;
+  border-radius: 4px;
+  background: #F1F5F9;
+  color: #475569;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.dropdown-course-desc {
+  font-size: 0.72rem;
+  color: #64748B;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dropdown-card-arrow {
+  color: #CBD5E1;
+  flex-shrink: 0;
+  transition: transform 180ms ease, color 180ms ease;
+}
+
+.dropdown-course-card:hover .dropdown-card-arrow {
+  color: #FF7A00;
+  transform: translateX(3px);
+}
+
+/* Dropdown Footer */
+.dropdown-menu-footer {
+  margin-top: 0.65rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid #F1F5F9;
+  text-align: center;
+}
+
+.dropdown-all-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #EA580C;
+  text-decoration: none;
+  padding: 0.35rem 0.8rem;
+  border-radius: 9999px;
+  background: #FFF7ED;
+  border: 1px solid #FED7AA;
+  transition: all 180ms ease;
+}
+
+.dropdown-all-link:hover {
+  background: #FFEDD5;
+  color: #C2410C;
+  transform: translateX(2px);
+}
+
+/* --------------------------------------------------------------------------
    HEADER RIGHT ACTIONS
    -------------------------------------------------------------------------- */
 
@@ -622,6 +876,56 @@
     transform: none;
     background: rgba(255, 122, 0, 0.1);
     border-color: rgba(255, 122, 0, 0.35);
+    color: #FF6000;
+  }
+
+  /* Mobile Dropdown Behavior */
+  .nav-item-dropdown {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .nav-link-dropdown {
+    justify-content: space-between !important;
+  }
+
+  .nav-dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-shadow: none !important;
+    border: 1px solid #E2E8F0 !important;
+    margin-top: 0.35rem;
+    padding: 0.65rem !important;
+    background: #F8FAFC !important;
+    border-radius: 14px !important;
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transition: max-height 260ms ease, opacity 220ms ease;
+  }
+
+  .nav-dropdown-menu::before {
+    display: none !important;
+  }
+
+  .dropdown-courses-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.4rem !important;
+  }
+
+  .nav-item-dropdown.is-mobile-expanded .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    max-height: 600px;
+  }
+
+  .nav-item-dropdown.is-mobile-expanded .dropdown-chevron {
+    transform: rotate(180deg);
     color: #FF6000;
   }
 

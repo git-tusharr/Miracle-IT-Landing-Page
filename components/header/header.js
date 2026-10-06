@@ -53,10 +53,22 @@ function initHeader(container = document) {
       }
     });
 
-    // Close on navigation link or mobile CTA button click
+    // Close on navigation link or mobile CTA button click (excluding dropdown toggle when opening)
     const menuLinks = navMenu.querySelectorAll('a');
     menuLinks.forEach((link) => {
-      link.addEventListener('click', () => {
+      link.addEventListener('click', (e) => {
+        if (link.id === 'coursesDropdownToggle' && window.innerWidth <= 1024) {
+          const dropdownItem = link.closest('.nav-item-dropdown');
+          if (dropdownItem) {
+            const isExpanded = dropdownItem.classList.contains('is-mobile-expanded');
+            if (!isExpanded) {
+              e.preventDefault();
+              dropdownItem.classList.add('is-mobile-expanded');
+              link.setAttribute('aria-expanded', 'true');
+              return;
+            }
+          }
+        }
         closeMobileMenu();
       });
     });

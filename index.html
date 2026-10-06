@@ -67,7 +67,7 @@
 
   <!-- Global Design System & Component Stylesheets (Preloaded for Zero Layout Shift) -->
   <link rel="stylesheet" href="./css/global.css?v=7.0">
-  <link rel="stylesheet" href="./components/header/header.css?v=7.0">
+  <link rel="stylesheet" href="./components/header/header.css?v=7.1">
   <link rel="stylesheet" href="./components/hero/hero.css?v=6.0">
   <link rel="stylesheet" href="./components/problem/problem.css?v=7.0">
   <link rel="stylesheet" href="./components/courses/courses.css?v=7.0">
@@ -126,7 +126,7 @@
      MIRACLE IT CAREER ACADEMY
      ========================================================================== -->
 
-<link rel="stylesheet" href="./components/header/header.css?v=7.0">
+<link rel="stylesheet" href="./components/header/header.css?v=7.1">
 
 <header class="site-header" id="siteHeader">
 
@@ -163,10 +163,114 @@
 
       <ul class="nav-list">
 
-        <li>
-          <a href="#courses" class="nav-link">
-            Courses
+        <!-- Courses Dropdown Item -->
+        <li class="nav-item-dropdown" id="coursesDropdownItem">
+          <a href="#courses" class="nav-link nav-link-dropdown" id="coursesDropdownToggle" aria-expanded="false" aria-haspopup="true">
+            <span>Courses</span>
+            <svg class="dropdown-chevron" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
           </a>
+
+          <!-- Dropdown Mega Menu -->
+          <div class="nav-dropdown-menu" id="coursesDropdownMenu" role="menu" aria-label="Course Programs">
+            <div class="dropdown-menu-header">
+              <span class="dropdown-menu-tag">Career Programs</span>
+              <span class="dropdown-menu-hint">In-Person Labs • Bhopal</span>
+            </div>
+
+            <div class="dropdown-courses-grid">
+              <!-- Course 1: Full Stack Web Development -->
+              <a href="./full-stack-course-bhopal/" class="dropdown-course-card" role="menuitem">
+                <div class="dropdown-course-icon-wrap icon-fullstack">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </div>
+                <div class="dropdown-course-meta">
+                  <div class="dropdown-title-row">
+                    <span class="dropdown-course-title">Full Stack Web Dev</span>
+                    <span class="dropdown-duration-badge">4–6 Mo</span>
+                  </div>
+                  <span class="dropdown-course-desc">React, Node.js, Next.js &amp; Cloud</span>
+                </div>
+                <svg class="dropdown-card-arrow" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </a>
+
+              <!-- Course 2: Data Analytics & Data Science -->
+              <a href="./data-analytics-course-bhopal/" class="dropdown-course-card" role="menuitem">
+                <div class="dropdown-course-icon-wrap icon-data">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                  </svg>
+                </div>
+                <div class="dropdown-course-meta">
+                  <div class="dropdown-title-row">
+                    <span class="dropdown-course-title">Data Analytics &amp; AI</span>
+                    <span class="dropdown-duration-badge">3–5 Mo</span>
+                  </div>
+                  <span class="dropdown-course-desc">Power BI, SQL, Python &amp; Tableau</span>
+                </div>
+                <svg class="dropdown-card-arrow" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </a>
+
+              <!-- Course 3: AI & Machine Learning -->
+              <a href="./ai-ml-course-bhopal/" class="dropdown-course-card" role="menuitem">
+                <div class="dropdown-course-icon-wrap icon-aiml">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                  </svg>
+                </div>
+                <div class="dropdown-course-meta">
+                  <div class="dropdown-title-row">
+                    <span class="dropdown-course-title">AI &amp; Machine Learning</span>
+                    <span class="dropdown-duration-badge">4–6 Mo</span>
+                  </div>
+                  <span class="dropdown-course-desc">PyTorch, Scikit-Learn &amp; GenAI</span>
+                </div>
+                <svg class="dropdown-card-arrow" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </a>
+
+              <!-- Course 4: Cyber Security & Ethical Hacking -->
+              <a href="./cybersecurity-course-bhopal/" class="dropdown-course-card" role="menuitem">
+                <div class="dropdown-course-icon-wrap icon-cyber">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                </div>
+                <div class="dropdown-course-meta">
+                  <div class="dropdown-title-row">
+                    <span class="dropdown-course-title">Cyber Security</span>
+                    <span class="dropdown-duration-badge">4–5 Mo</span>
+                  </div>
+                  <span class="dropdown-course-desc">Kali Linux, Wireshark &amp; SOC</span>
+                </div>
+                <svg class="dropdown-card-arrow" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </a>
+            </div>
+
+            <!-- Dropdown Footer -->
+            <div class="dropdown-menu-footer">
+              <a href="#courses" class="dropdown-all-link">
+                <span>View All 8+ Learning Tracks &amp; Roadmaps</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
         </li>
 
         <li>
