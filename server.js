@@ -23,11 +23,58 @@ const MIME_TYPES = {
   '.ttf': 'font/ttf'
 };
 
+const ALIASES = {
+  '/meta/aiml': '/MetaAds/aiml-landing/',
+  '/meta/aiml/': '/MetaAds/aiml-landing/',
+  '/meta/data-analytics': '/MetaAds/data-analytics-landing/',
+  '/meta/data-analytics/': '/MetaAds/data-analytics-landing/',
+  '/meta/data-science': '/MetaAds/data-science-landing/',
+  '/meta/data-science/': '/MetaAds/data-science-landing/',
+  '/meta/fullstack': '/MetaAds/fullstack-landing/',
+  '/meta/fullstack/': '/MetaAds/fullstack-landing/',
+  '/meta/full-stack': '/MetaAds/fullstack-landing/',
+  '/meta/full-stack/': '/MetaAds/fullstack-landing/',
+  '/MetaAds/aiml': '/MetaAds/aiml-landing/',
+  '/MetaAds/aiml/': '/MetaAds/aiml-landing/',
+  '/MetaAds/data-analytics': '/MetaAds/data-analytics-landing/',
+  '/MetaAds/data-analytics/': '/MetaAds/data-analytics-landing/',
+  '/MetaAds/data-science': '/MetaAds/data-science-landing/',
+  '/MetaAds/data-science/': '/MetaAds/data-science-landing/',
+  '/MetaAds/fullstack': '/MetaAds/fullstack-landing/',
+  '/MetaAds/fullstack/': '/MetaAds/fullstack-landing/',
+  '/MetaAds/full-stack': '/MetaAds/fullstack-landing/',
+  '/meta-ads/aiml': '/MetaAds/aiml-landing/',
+  '/meta-ads/aiml/': '/MetaAds/aiml-landing/',
+  '/meta-ads/data-analytics': '/MetaAds/data-analytics-landing/',
+  '/meta-ads/data-analytics/': '/MetaAds/data-analytics-landing/',
+  '/meta-ads/data-science': '/MetaAds/data-science-landing/',
+  '/meta-ads/data-science/': '/MetaAds/data-science-landing/',
+  '/meta-ads/fullstack': '/MetaAds/fullstack-landing/',
+  '/meta-ads/fullstack/': '/MetaAds/fullstack-landing/',
+  '/meta-ads/full-stack': '/MetaAds/fullstack-landing/',
+  '/meta-ads/full-stack/': '/MetaAds/fullstack-landing/',
+  '/MetaAds/miracle-it-fullstack-landing': '/MetaAds/fullstack-landing/',
+  '/MetaAds/miracle-it-fullstack-landing/': '/MetaAds/fullstack-landing/'
+};
+
 const server = http.createServer((req, res) => {
-  let safePath = req.url.split('?')[0].split('#')[0];
+  const [pathnameRaw, queryString] = req.url.split('?');
+  const querySuffix = queryString ? `?${queryString}` : '';
+
+  let safePath = pathnameRaw.split('#')[0];
   try {
     safePath = decodeURIComponent(safePath);
   } catch (e) {}
+
+  // Check alias routes
+  const normalizedPath = safePath.replace(/\/+$/, '') || '/';
+  if (ALIASES[safePath] || ALIASES[normalizedPath]) {
+    const target = ALIASES[safePath] || ALIASES[normalizedPath];
+    res.writeHead(302, { 'Location': `${target}${querySuffix}` });
+    res.end();
+    return;
+  }
+
   if (safePath === '/' || safePath === '') {
     safePath = '/index.html';
   }
@@ -45,6 +92,15 @@ const server = http.createServer((req, res) => {
       res.writeHead(404, { 'Content-Type': 'text/plain' });
       res.end(`404 Not Found: ${safePath}`);
       return;
+    }
+
+    // Auto-redirect directory requests to trailing slash so relative assets resolve properly
+    if (stats.isDirectory()) {
+      if (!pathnameRaw.endsWith('/')) {
+        res.writeHead(301, { 'Location': `${pathnameRaw}/${querySuffix}` });
+        res.end();
+        return;
+      }
     }
 
     let filePath = resolvedPath;
@@ -77,7 +133,12 @@ server.listen(PORT, () => {
   console.log(`\n======================================================`);
   console.log(` Miracle IT Career Academy — Local Server Running!`);
   console.log(` URL: ${url}`);
-  console.log(` Press Ctrl + C to stop the server.`);
+  console.log(`------------------------------------------------------`);
+  console.log(` Meta Ads Hub:               ${url}/MetaAds/`);
+  console.log(` 1. AI & Machine Learning:   ${url}/MetaAds/aiml-landing/`);
+  console.log(` 2. Data Analytics:          ${url}/MetaAds/data-analytics-landing/`);
+  console.log(` 3. Data Science:            ${url}/MetaAds/data-science-landing/`);
+  console.log(` 4. Full Stack Development:  ${url}/MetaAds/fullstack-landing/`);
   console.log(`======================================================\n`);
 
   // Automatically open default browser on Windows unless NO_BROWSER_OPEN is set

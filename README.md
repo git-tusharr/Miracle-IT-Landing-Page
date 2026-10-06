@@ -76,7 +76,13 @@ Every section of the master landing page is isolated in its own folder with its 
 ├── cybersecurity-course-bhopal/         # Standalone Cybersecurity Course Page (index.html, style.css, script.js)
 ├── cloud-devops-course-bhopal/          # Standalone Cloud/DevOps Course Page (index.html, style.css, script.js)
 ├── visit-bhopal/                        # Standalone Campus Visit & Directions Page
-└── thank-you/                           # Post-Submission Confirmation Page
+├── thank-you/                           # Post-Submission Confirmation Page
+└── MetaAds/                             # Dedicated Meta (FB/IG) Ad Landing Pages & Campaign Hub
+    ├── index.html                       # Meta Ads Campaign Hub & Live UTM URL Generator
+    ├── aiml-landing/                    # AI & ML Paid Ad Landing Page
+    ├── data-analytics-landing/          # Data Analytics Paid Ad Landing Page
+    ├── data-science-landing/            # Data Science Paid Ad Landing Page
+    └── fullstack-landing/               # Full Stack Web Dev Paid Ad Landing Page
 ```
 
 ---

@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "rewrites": [
+    { "source": "/meta/aiml", "destination": "/MetaAds/aiml-landing/" },
+    { "source": "/meta/data-analytics", "destination": "/MetaAds/data-analytics-landing/" },
+    { "source": "/meta/data-science", "destination": "/MetaAds/data-science-landing/" },
+    { "source": "/meta/fullstack", "destination": "/MetaAds/fullstack-landing/" },
+    { "source": "/meta/full-stack", "destination": "/MetaAds/fullstack-landing/" },
+    { "source": "/MetaAds/aiml", "destination": "/MetaAds/aiml-landing/" },
+    { "source": "/MetaAds/data-analytics", "destination": "/MetaAds/data-analytics-landing/" },
+    { "source": "/MetaAds/data-science", "destination": "/MetaAds/data-science-landing/" },
+    { "source": "/MetaAds/full-stack", "destination": "/MetaAds/fullstack-landing/" },
+    { "source": "/MetaAds/miracle-it-fullstack-landing/:match*", "destination": "/MetaAds/fullstack-landing/:match*" }
+  ],
+  "headers": [
+    {
+      "source": "/MetaAds/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
+  ]
+}

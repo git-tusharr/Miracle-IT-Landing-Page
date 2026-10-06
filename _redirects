@@ -1,0 +1,17 @@
+# Netlify & Cloudflare Pages Redirects
+/meta/aiml/*               /MetaAds/aiml-landing/:splat           200
+/meta/aiml                 /MetaAds/aiml-landing/                 301
+/meta/data-analytics/*     /MetaAds/data-analytics-landing/:splat 200
+/meta/data-analytics       /MetaAds/data-analytics-landing/       301
+/meta/data-science/*       /MetaAds/data-science-landing/:splat   200
+/meta/data-science         /MetaAds/data-science-landing/         301
+/meta/fullstack/*          /MetaAds/fullstack-landing/:splat      200
+/meta/fullstack            /MetaAds/fullstack-landing/            301
+/meta/full-stack/*         /MetaAds/fullstack-landing/:splat      200
+/meta/full-stack           /MetaAds/fullstack-landing/            301
+
+/MetaAds/aiml              /MetaAds/aiml-landing/                 301
+/MetaAds/data-analytics    /MetaAds/data-analytics-landing/       301
+/MetaAds/data-science      /MetaAds/data-science-landing/         301
+/MetaAds/full-stack        /MetaAds/fullstack-landing/            301
+/MetaAds/miracle-it-fullstack-landing/* /MetaAds/fullstack-landing/:splat 200

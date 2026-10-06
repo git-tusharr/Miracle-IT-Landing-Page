@@ -608,7 +608,7 @@ code, pre, .font-mono, .code-text {
 }
 
 .audience-perks-list li svg {
-  color: #059669;
+  color: #2563EB;
   flex-shrink: 0;
 }
 
@@ -672,7 +672,7 @@ code, pre, .font-mono, .code-text {
   border-radius: 9999px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #38BDF8;
+  color: #FF7A00;
   font-size: 0.84rem;
   font-weight: 600;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
@@ -681,7 +681,7 @@ code, pre, .font-mono, .code-text {
 .hint-mouse-icon {
   width: 14px;
   height: 22px;
-  border: 2px solid #38BDF8;
+  border: 2px solid #FF7A00;
   border-radius: 12px;
   display: inline-block;
   position: relative;
@@ -691,7 +691,7 @@ code, pre, .font-mono, .code-text {
 .hint-mouse-wheel {
   width: 2px;
   height: 5px;
-  background: #38BDF8;
+  background: #FF7A00;
   border-radius: 2px;
   position: absolute;
   top: 3px;
@@ -954,12 +954,12 @@ code, pre, .font-mono, .code-text {
 
 /* Completed Node State (When scrolled past) */
 .timeline-node-marker.is-completed {
-  border-color: #10B981 !important;
-  box-shadow: 0 0 16px rgba(16, 185, 129, 0.4) !important;
+  border-color: #2563EB !important;
+  box-shadow: 0 0 16px rgba(37, 99, 235, 0.4) !important;
 }
 
 .timeline-node-marker.is-completed .node-number {
-  color: #10B981 !important;
+  color: #2563EB !important;
 }
 
 /* ==========================================================================
@@ -1157,10 +1157,11 @@ code, pre, .font-mono, .code-text {
   border-radius: 50%;
 }
 
-.tech-badge-dot.emerald { background: #10B981; box-shadow: 0 0 6px #10B981; }
+.tech-badge-dot.emerald,
+.tech-badge-dot.cyan,
+.tech-badge-dot.blue    { background: #2563EB; box-shadow: 0 0 6px #2563EB; }
+.tech-badge-dot.purple,
 .tech-badge-dot.orange  { background: #FF7A00; box-shadow: 0 0 6px #FF7A00; }
-.tech-badge-dot.purple  { background: #A855F7; box-shadow: 0 0 6px #A855F7; }
-.tech-badge-dot.cyan    { background: #06B6D4; box-shadow: 0 0 6px #06B6D4; }
 
 /* ==========================================================================
    STAGE VISUAL MOCKUP CARDS (TECHNICAL INTERFACES)
@@ -1353,8 +1354,8 @@ code, pre, .font-mono, .code-text {
   width: 28px;
   height: 28px;
   border-radius: 7px;
-  background: rgba(6, 182, 212, 0.15);
-  color: #06B6D4;
+  background: rgba(37, 99, 235, 0.15);
+  color: #2563EB;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1388,8 +1389,10 @@ code, pre, .font-mono, .code-text {
   font-family: var(--font-mono, monospace);
 }
 
-.metric-pill.emerald { background: rgba(16, 185, 129, 0.15); color: #10B981; }
-.metric-pill.cyan    { background: rgba(6, 182, 212, 0.15); color: #06B6D4; }
+.metric-pill.emerald,
+.metric-pill.cyan,
+.metric-pill.blue    { background: rgba(37, 99, 235, 0.15); color: #2563EB; }
+.metric-pill.orange  { background: rgba(255, 122, 0, 0.15); color: #FF7A00; }
 
 /* Terminal Output Strip Inside Stage 2 */
 .mockup-terminal-output {
@@ -1412,8 +1415,8 @@ code, pre, .font-mono, .code-text {
 }
 
 .term-status-badge {
-  background: #10B981;
-  color: #042F2E;
+  background: #2563EB;
+  color: #FFFFFF;
   font-weight: 800;
   padding: 0.1rem 0.35rem;
   border-radius: 4px;
@@ -1430,7 +1433,7 @@ code, pre, .font-mono, .code-text {
 }
 
 .term-latency {
-  color: #34D399;
+  color: #FF7A00;
   flex-shrink: 0;
 }
 
@@ -1443,7 +1446,7 @@ code, pre, .font-mono, .code-text {
 }
 
 .term-security-row svg {
-  color: #10B981;
+  color: #2563EB;
   width: 13px;
   height: 13px;
   flex-shrink: 0;
@@ -1476,8 +1479,9 @@ code, pre, .font-mono, .code-text {
   font-weight: 700;
 }
 
-.text-emerald { color: #10B981; }
-.text-cyan    { color: #06B6D4; }
+.text-emerald,
+.text-cyan,
+.text-blue    { color: #2563EB; }
 .text-orange  { color: #FF7A00; }
 
 /* Git Branch Preview Strip Inside Stage 4 */
@@ -1506,11 +1510,11 @@ code, pre, .font-mono, .code-text {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #38BDF8;
+  background: #2563EB;
 }
 
 .feat-dot {
-  background: #A855F7;
+  background: #FF7A00;
 }
 
 .git-connector {
@@ -1525,8 +1529,8 @@ code, pre, .font-mono, .code-text {
   gap: 4px;
   padding: 0.15rem 0.45rem;
   border-radius: 4px;
-  background: rgba(16, 185, 129, 0.15);
-  color: #34D399;
+  background: rgba(37, 99, 235, 0.15);
+  color: #2563EB;
   font-size: 0.66rem;
   font-weight: 700;
   margin-left: auto;

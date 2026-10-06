@@ -1,0 +1,18 @@
+# Apache / cPanel Rewrite Rules for Meta Ads
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Aliases for Meta Ads Landing Pages
+  RewriteRule ^meta/aiml/?$ MetaAds/aiml-landing/ [R=301,L,QSA]
+  RewriteRule ^meta/data-analytics/?$ MetaAds/data-analytics-landing/ [R=301,L,QSA]
+  RewriteRule ^meta/data-science/?$ MetaAds/data-science-landing/ [R=301,L,QSA]
+  RewriteRule ^meta/fullstack/?$ MetaAds/fullstack-landing/ [R=301,L,QSA]
+  RewriteRule ^meta/full-stack/?$ MetaAds/fullstack-landing/ [R=301,L,QSA]
+
+  RewriteRule ^MetaAds/aiml/?$ MetaAds/aiml-landing/ [R=301,L,QSA]
+  RewriteRule ^MetaAds/data-analytics/?$ MetaAds/data-analytics-landing/ [R=301,L,QSA]
+  RewriteRule ^MetaAds/data-science/?$ MetaAds/data-science-landing/ [R=301,L,QSA]
+  RewriteRule ^MetaAds/full-stack/?$ MetaAds/fullstack-landing/ [R=301,L,QSA]
+  RewriteRule ^MetaAds/miracle-it-fullstack-landing/?$ MetaAds/fullstack-landing/ [R=301,L,QSA]
+</IfModule>
