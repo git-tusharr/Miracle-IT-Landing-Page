@@ -7,7 +7,7 @@
 
   const CONFIG = {
     leadEndpoint: '',          // Google Apps Script Web App URL or CRM webhook
-    metaPixelId: '',           // Meta Pixel ID
+    metaPixelId: '1000423829425342', // Meta Pixel ID
 
     phone: '+917880003127',
     whatsapp: '917880003127',
@@ -21,7 +21,7 @@
 
   /* ---------- Meta Pixel (loads only when an ID is set) ---------- */
   function loadPixel(id) {
-    if (!id) return;
+    if (!id || window.fbq) return;
     /* eslint-disable */
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
