@@ -1,0 +1,304 @@
+<!-- ARCHITECTURAL HORIZON TRANSITION (DARK -> BRIGHT) -->
+<div class="seam-horizon-divider seam-dark-to-bright" aria-hidden="true">
+  <svg class="seam-horizon-svg" viewBox="0 0 1440 96" preserveAspectRatio="none" fill="none">
+    <path class="seam-bright-fill" d="M 0,68 Q 720,14 1440,68 L 1440,96 L 0,96 Z" fill="#F8FAFC"/>
+    <path class="seam-energy-rim" d="M 0,68 Q 720,14 1440,68" stroke="#FF7A00" stroke-width="2.5" stroke-linecap="round"/>
+  </svg>
+
+  <div class="seam-conduit-hub seam-conduit-hub-faq">
+    <div class="conduit-chip">
+      <span class="conduit-dot pulse"></span>
+      <span class="conduit-tag">COMMON CLARIFICATIONS</span>
+      <span class="conduit-sep">•</span>
+      <span class="conduit-title">Frequently Asked Questions</span>
+      <svg class="conduit-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<section class="section faq-section" id="faq" data-theme="midnight-slate">
+  <div class="container faq-container">
+    
+    <!-- LEFT COLUMN: Large Editorial Heading & Context -->
+    <div class="faq-editorial-col">
+      <div class="faq-sticky-header">
+        <span class="section-tag faq-kicker">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+          </svg>
+          <span>Common Enquiries</span>
+        </span>
+
+        <h2 class="faq-editorial-title">
+          Frequently <br class="faq-desktop-br">Asked Questions
+        </h2>
+
+        <p class="faq-editorial-sub">
+          Straightforward answers about our Cloud &amp; DevOps course, hands-on workstation lab, AWS cloud practice, and free 1-on-1 career counselling in M.P. Nagar, Bhopal.
+        </p>
+
+        <div class="faq-editorial-help">
+          <p class="faq-help-label">Have a different question?</p>
+          <a href="#counselling-form" class="btn btn-outline btn-sm faq-counselling-btn" data-track-cta="faq_help_counsellor">
+            <span>Talk to a Counsellor</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN: Vertical Accordion List -->
+    <div class="faq-accordion-col">
+      <div class="faq-accordion" id="faqAccordion">
+
+        <!-- Question 1 (Open by default) -->
+        <div class="faq-item is-open" data-faq-index="1">
+          <button 
+            type="button" 
+            class="faq-question-btn" 
+            id="faq-btn-1" 
+            aria-expanded="true" 
+            aria-controls="faq-panel-1"
+          >
+            <span class="faq-question-text">Can beginners without previous coding or cloud experience learn Cloud &amp; DevOps?</span>
+            <span class="faq-toggle-box" aria-hidden="true">
+              <span class="faq-toggle-line faq-line-h"></span>
+              <span class="faq-toggle-line faq-line-v"></span>
+            </span>
+          </button>
+          <div 
+            class="faq-answer-panel" 
+            id="faq-panel-1" 
+            role="region" 
+            aria-labelledby="faq-btn-1"
+          >
+            <div class="faq-answer-inner">
+              <p class="faq-answer-text">
+                Yes! The course begins from the ground up with Linux OS fundamentals, command-line navigation, and basic TCP/IP networking. You do not need prior software development or programming expertise to excel in cloud infrastructure, container management, and automated deployment pipelines.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="faq-item" data-faq-index="2">
+          <button 
+            type="button" 
+            class="faq-question-btn" 
+            id="faq-btn-2" 
+            aria-expanded="false" 
+            aria-controls="faq-panel-2"
+          >
+            <span class="faq-question-text">Which cloud platform is covered — AWS, Azure, or GCP?</span>
+            <span class="faq-toggle-box" aria-hidden="true">
+              <span class="faq-toggle-line faq-line-h"></span>
+              <span class="faq-toggle-line faq-line-v"></span>
+            </span>
+          </button>
+          <div 
+            class="faq-answer-panel" 
+            id="faq-panel-2" 
+            role="region" 
+            aria-labelledby="faq-btn-2"
+            hidden
+          >
+            <div class="faq-answer-inner">
+              <p class="faq-answer-text">
+                Amazon Web Services (AWS) is covered in deep architectural detail because it represents the largest share of cloud jobs worldwide. Furthermore, core tools taught—Docker, Kubernetes, Terraform, Linux, and GitHub Actions—are open-source and cloud-agnostic, meaning your skills directly transfer to Microsoft Azure and Google Cloud.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="faq-item" data-faq-index="3">
+          <button 
+            type="button" 
+            class="faq-question-btn" 
+            id="faq-btn-3" 
+            aria-expanded="false" 
+            aria-controls="faq-panel-3"
+          >
+            <span class="faq-question-text">How much hands-on practical lab time do students receive?</span>
+            <span class="faq-toggle-box" aria-hidden="true">
+              <span class="faq-toggle-line faq-line-h"></span>
+              <span class="faq-toggle-line faq-line-v"></span>
+            </span>
+          </button>
+          <div 
+            class="faq-answer-panel" 
+            id="faq-panel-3" 
+            role="region" 
+            aria-labelledby="faq-btn-3"
+            hidden
+          >
+            <div class="faq-answer-inner">
+              <p class="faq-answer-text">
+                Over 80% of your course time is spent directly on dedicated workstation lab PCs in M.P. Nagar. You will write Bash scripts, build multi-stage Docker images, spin up Kubernetes clusters, configure Ingress controllers, and provision live AWS cloud architectures.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="faq-item" data-faq-index="4">
+          <button 
+            type="button" 
+            class="faq-question-btn" 
+            id="faq-btn-4" 
+            aria-expanded="false" 
+            aria-controls="faq-panel-4"
+          >
+            <span class="faq-question-text">Does this course prepare me for AWS and Kubernetes certifications?</span>
+            <span class="faq-toggle-box" aria-hidden="true">
+              <span class="faq-toggle-line faq-line-h"></span>
+              <span class="faq-toggle-line faq-line-v"></span>
+            </span>
+          </button>
+          <div 
+            class="faq-answer-panel" 
+            id="faq-panel-4" 
+            role="region" 
+            aria-labelledby="faq-btn-4"
+            hidden
+          >
+            <div class="faq-answer-inner">
+              <p class="faq-answer-text">
+                Yes! Our syllabus rigorously covers topics tested on the AWS Certified Solutions Architect Associate (SAA-C03), Certified Kubernetes Administrator (CKA), and HashiCorp Terraform Associate exams. Our mentors provide exam guidance, scenario practice questions, and architectural dumps.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="faq-item" data-faq-index="5">
+          <button 
+            type="button" 
+            class="faq-question-btn" 
+            id="faq-btn-5" 
+            aria-expanded="false" 
+            aria-controls="faq-panel-5"
+          >
+            <span class="faq-question-text">What job roles can I apply for after completing this course?</span>
+            <span class="faq-toggle-box" aria-hidden="true">
+              <span class="faq-toggle-line faq-line-h"></span>
+              <span class="faq-toggle-line faq-line-v"></span>
+            </span>
+          </button>
+          <div 
+            class="faq-answer-panel" 
+            id="faq-panel-5" 
+            role="region" 
+            aria-labelledby="faq-btn-5"
+            hidden
+          >
+            <div class="faq-answer-inner">
+              <p class="faq-answer-text">
+                You will be eligible to target roles including Cloud Engineer, DevOps Engineer, Site Reliability Engineer (SRE), Kubernetes Administrator, Build &amp; Release Engineer, and Linux Infrastructure Engineer across IT services providers and high-growth product companies.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="faq-item" data-faq-index="6">
+          <button 
+            type="button" 
+            class="faq-question-btn" 
+            id="faq-btn-6" 
+            aria-expanded="false" 
+            aria-controls="faq-panel-6"
+          >
+            <span class="faq-question-text">What are the batch timings and can college students or professionals join?</span>
+            <span class="faq-toggle-box" aria-hidden="true">
+              <span class="faq-toggle-line faq-line-h"></span>
+              <span class="faq-toggle-line faq-line-v"></span>
+            </span>
+          </button>
+          <div 
+            class="faq-answer-panel" 
+            id="faq-panel-6" 
+            role="region" 
+            aria-labelledby="faq-btn-6"
+            hidden
+          >
+            <div class="faq-answer-inner">
+              <p class="faq-answer-text">
+                We operate flexible batches throughout the day: Morning (08:00 AM - 12:30 PM), Afternoon (01:00 PM - 03:00 PM), and Evening (04:00 PM - 08:30 PM). We also host dedicated Weekend Batches (Saturdays &amp; Sundays) tailored specifically for college attendees and working professionals.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="faq-item" data-faq-index="7">
+          <button 
+            type="button" 
+            class="faq-question-btn" 
+            id="faq-btn-7" 
+            aria-expanded="false" 
+            aria-controls="faq-panel-7"
+          >
+            <span class="faq-question-text">Do we practice on real AWS accounts or simulated software?</span>
+            <span class="faq-toggle-box" aria-hidden="true">
+              <span class="faq-toggle-line faq-line-h"></span>
+              <span class="faq-toggle-line faq-line-v"></span>
+            </span>
+          </button>
+          <div 
+            class="faq-answer-panel" 
+            id="faq-panel-7" 
+            role="region" 
+            aria-labelledby="faq-btn-7"
+            hidden
+          >
+            <div class="faq-answer-inner">
+              <p class="faq-answer-text">
+                You work on genuine, live AWS cloud environments (guided within the AWS Free Tier and academy cloud labs) combined with local workstation container clusters using Docker and Minikube/K3s. We never use restrictive mock simulators—you learn on the exact tools industry uses.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="faq-item" data-faq-index="8">
+          <button 
+            type="button" 
+            class="faq-question-btn" 
+            id="faq-btn-8" 
+            aria-expanded="false" 
+            aria-controls="faq-panel-8"
+          >
+            <span class="faq-question-text">What happens during the free career counselling visit?</span>
+            <span class="faq-toggle-box" aria-hidden="true">
+              <span class="faq-toggle-line faq-line-h"></span>
+              <span class="faq-toggle-line faq-line-v"></span>
+            </span>
+          </button>
+          <div 
+            class="faq-answer-panel" 
+            id="faq-panel-8" 
+            role="region" 
+            aria-labelledby="faq-btn-8"
+            hidden
+          >
+            <div class="faq-answer-inner">
+              <p class="faq-answer-text">
+                When you visit our M.P. Nagar center, you will meet 1-on-1 with a senior cloud instructor. You can review the complete curriculum syllabus, inspect our workstation lab PCs, discuss your background and batch timings, and receive clear, printed fee details with zero sales pressure.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>

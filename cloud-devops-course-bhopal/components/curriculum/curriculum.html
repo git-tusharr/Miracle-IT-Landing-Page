@@ -1,0 +1,390 @@
+<section class="curriculum-section" id="curriculum" data-theme="bright">
+  <div class="container curriculum-container">
+    
+    <!-- TOP: Section Header -->
+    <div class="section-head curriculum-section-head">
+      <div class="section-tag-pill">
+        <span class="pill-dot"></span>
+        <span>STRUCTURED LEARNING PATH</span>
+      </div>
+      <h2 class="curriculum-main-title">Structured 5-Stage Mastery Flow</h2>
+      <p class="curriculum-main-subtitle">
+        A structured engineering progression from Linux system administration and Docker containerization to multi-node Kubernetes clusters, AWS cloud architecture, and automated GitOps CI/CD pipelines.
+      </p>
+      <div class="curriculum-interaction-hint">
+        <span class="hint-mouse-icon" aria-hidden="true">
+          <span class="hint-mouse-wheel"></span>
+        </span>
+        <span>Scroll to explore the 5 stages</span>
+      </div>
+    </div>
+
+    <!-- ========================================================================
+         VERTICAL ALTERNATING TIMELINE (SCROLL-DRIVEN PROGRESSION)
+         ======================================================================== -->
+    <div class="curriculum-timeline" id="curriculumTimeline" aria-label="Curriculum Progression Timeline">
+      
+      <!-- Central Vertical Line Spine -->
+      <div class="timeline-spine" id="timelineSpine" aria-hidden="true">
+        <div class="timeline-track-inactive"></div>
+        <div class="timeline-track-progress" id="timelineProgressBar">
+          <div class="timeline-head-beacon"></div>
+        </div>
+      </div>
+
+      <!-- ==================== STAGE 01: LINUX & NETWORKING ==================== -->
+      <div class="timeline-stage-zone is-active" id="stage-zone-1" data-stage="1">
+        
+        <!-- Central Line Checkpoint Marker -->
+        <div class="timeline-node-wrapper">
+          <div class="timeline-node-checkpoint is-active" data-target-stage="1" aria-label="Jump to Stage 1: Linux & Shell Scripting">
+            <span class="checkpoint-halo"></span>
+            <span class="checkpoint-core"></span>
+          </div>
+        </div>
+
+        <div class="stage-row stage-row-odd">
+          <!-- LEFT: Text Column with Big Number -->
+          <div class="stage-col stage-text-col">
+            <div class="stage-text-card">
+              <div class="stage-big-number">01</div>
+              <h3 class="panel-stage-title">Linux Administration, Shell Scripting &amp; Networking</h3>
+              <div class="panel-milestone-kicker">• WEEKS 1–3 — FOUNDATIONAL SYSTEMS MILESTONE</div>
+              <p class="panel-stage-description">
+                Master the Linux operating system from the terminal up. Learn file permissions, systemd service management, automated Bash shell scripting, SSH key security, Nginx reverse proxies, and TCP/IP networking fundamentals.
+              </p>
+
+              <!-- Competencies -->
+              <div class="stage-skills-list">
+                <span class="skill-chip">Linux File System &amp; Permissions</span>
+                <span class="skill-chip">Automated Bash Shell Scripts</span>
+                <span class="skill-chip">SSH Keys &amp; Bastion Host Security</span>
+                <span class="skill-chip">Nginx Reverse Proxy &amp; SSL Certificates</span>
+                <span class="skill-chip">systemd, Cron Jobs &amp; Process Monitoring</span>
+              </div>
+
+              <!-- Tech Logos Strip -->
+              <div class="panel-tech-strip">
+                <span class="tech-strip-label">Core Technologies:</span>
+                <div class="tech-badges-list">
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/linux.svg" alt="Linux" width="18" height="18" loading="lazy">
+                    <span>Linux OS</span>
+                  </div>
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/git.svg" alt="Git" width="18" height="18" loading="lazy">
+                    <span>Git &amp; GitHub</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Picture Card -->
+          <div class="stage-col stage-visual-col">
+            <div class="stage-picture-card stage-visual-card">
+              <div class="card-chrome-header">
+                <div class="window-controls">
+                  <span class="ctrl-dot dot-close"></span>
+                  <span class="ctrl-dot dot-min"></span>
+                  <span class="ctrl-dot dot-max"></span>
+                </div>
+                <div class="card-chrome-title">Stage 1 Output: Automated Server Health Monitor &amp; Nginx Proxy</div>
+                <div class="card-status-pill green">Linux Hardened</div>
+              </div>
+              <div class="card-media-wrap">
+                <img src="../assets/images/curriculum/stage1-cloud-linux-terminal.jpg" alt="Stage 1 Linux Administration Bash Automation and Nginx Reverse Proxy" class="stage-img" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== STAGE 02: DOCKER CONTAINERIZATION ==================== -->
+      <div class="timeline-stage-zone" id="stage-zone-2" data-stage="2">
+        
+        <!-- Central Line Checkpoint Marker -->
+        <div class="timeline-node-wrapper">
+          <div class="timeline-node-checkpoint" data-target-stage="2" aria-label="Jump to Stage 2: Docker Containers">
+            <span class="checkpoint-halo"></span>
+            <span class="checkpoint-core"></span>
+          </div>
+        </div>
+
+        <div class="stage-row stage-row-even">
+          <!-- LEFT: Picture Card -->
+          <div class="stage-col stage-visual-col">
+            <div class="stage-picture-card stage-visual-card">
+              <div class="card-chrome-header">
+                <div class="window-controls">
+                  <span class="ctrl-dot dot-close"></span>
+                  <span class="ctrl-dot dot-min"></span>
+                  <span class="ctrl-dot dot-max"></span>
+                </div>
+                <div class="card-chrome-title">Stage 2 Output: Multi-Service Microservices Stack on Docker</div>
+                <div class="card-status-pill blue">Docker Optimized</div>
+              </div>
+              <div class="card-media-wrap">
+                <img src="../assets/images/curriculum/stage2-cloud-docker-containers.jpg" alt="Stage 2 Docker Multi-Container Compose Architecture and Microservices" class="stage-img" loading="lazy">
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Text Column with Big Number -->
+          <div class="stage-col stage-text-col">
+            <div class="stage-text-card">
+              <div class="stage-big-number">02</div>
+              <h3 class="panel-stage-title">Docker Containerization &amp; Microservice Packaging</h3>
+              <div class="panel-milestone-kicker">• WEEKS 4–7 — CONTAINER INFRASTRUCTURE MILESTONE</div>
+              <p class="panel-stage-description">
+                Eliminate environment discrepancies permanently. Write high-performance Dockerfiles with multi-stage builds, manage persistent data with volumes, link isolated container networks, and orchestrate full-stack apps with Docker Compose.
+              </p>
+
+              <!-- Competencies -->
+              <div class="stage-skills-list">
+                <span class="skill-chip">Docker Architecture &amp; Container Lifecycle</span>
+                <span class="skill-chip">Multi-Stage Dockerfile Optimization</span>
+                <span class="skill-chip">Docker Compose Multi-Container Stacks</span>
+                <span class="skill-chip">Container Networking &amp; Bridge Modes</span>
+                <span class="skill-chip">Docker Hub &amp; AWS ECR Container Registries</span>
+              </div>
+
+              <!-- Tech Logos Strip -->
+              <div class="panel-tech-strip">
+                <span class="tech-strip-label">Core Technologies:</span>
+                <div class="tech-badges-list">
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/docker.svg" alt="Docker" width="18" height="18" loading="lazy">
+                    <span>Docker Engine</span>
+                  </div>
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/linux.svg" alt="Linux" width="18" height="18" loading="lazy">
+                    <span>Containers</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== STAGE 03: KUBERNETES ORCHESTRATION ==================== -->
+      <div class="timeline-stage-zone" id="stage-zone-3" data-stage="3">
+        
+        <!-- Central Line Checkpoint Marker -->
+        <div class="timeline-node-wrapper">
+          <div class="timeline-node-checkpoint" data-target-stage="3" aria-label="Jump to Stage 3: Kubernetes Clusters">
+            <span class="checkpoint-halo"></span>
+            <span class="checkpoint-core"></span>
+          </div>
+        </div>
+
+        <div class="stage-row stage-row-odd">
+          <!-- LEFT: Text Column with Big Number -->
+          <div class="stage-col stage-text-col">
+            <div class="stage-text-card">
+              <div class="stage-big-number">03</div>
+              <h3 class="panel-stage-title">Kubernetes Cluster Orchestration &amp; Scaling</h3>
+              <div class="panel-milestone-kicker">• WEEKS 8–11 — PRODUCTION ORCHESTRATION MILESTONE</div>
+              <p class="panel-stage-description">
+                Scale containers across clusters like modern engineering giants. Master Pods, Deployments, ReplicaSets, ClusterIP &amp; LoadBalancer services, Ingress controllers, Helm chart packaging, and zero-downtime rolling updates.
+              </p>
+
+              <!-- Competencies -->
+              <div class="stage-skills-list">
+                <span class="skill-chip">K8s Control Plane &amp; Worker Architecture</span>
+                <span class="skill-chip">Pods, Deployments &amp; ReplicaSets</span>
+                <span class="skill-chip">ClusterIP, NodePort &amp; LoadBalancer Services</span>
+                <span class="skill-chip">Nginx Ingress Controllers &amp; Routing</span>
+                <span class="skill-chip">ConfigMaps, Secrets &amp; Helm Package Management</span>
+                <span class="skill-chip">Horizontal Pod Autoscaler (HPA)</span>
+              </div>
+
+              <!-- Tech Logos Strip -->
+              <div class="panel-tech-strip">
+                <span class="tech-strip-label">Core Technologies:</span>
+                <div class="tech-badges-list">
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/kubernetes.svg" alt="Kubernetes" width="18" height="18" loading="lazy">
+                    <span>Kubernetes</span>
+                  </div>
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/docker.svg" alt="Docker" width="18" height="18" loading="lazy">
+                    <span>Helm</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Picture Card -->
+          <div class="stage-col stage-visual-col">
+            <div class="stage-picture-card stage-visual-card">
+              <div class="card-chrome-header">
+                <div class="window-controls">
+                  <span class="ctrl-dot dot-close"></span>
+                  <span class="ctrl-dot dot-min"></span>
+                  <span class="ctrl-dot dot-max"></span>
+                </div>
+                <div class="card-chrome-title">Stage 3 Output: Kubernetes Multi-Node Cluster with Ingress &amp; Helm</div>
+                <div class="card-status-pill purple">K8s Orchestrated</div>
+              </div>
+              <div class="card-media-wrap">
+                <img src="../assets/images/curriculum/stage3-cloud-kubernetes-cluster.jpg" alt="Stage 3 Kubernetes Multi-Node Cluster Orchestration HPA and Ingress" class="stage-img" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== STAGE 04: AWS & TERRAFORM IAC ==================== -->
+      <div class="timeline-stage-zone" id="stage-zone-4" data-stage="4">
+        
+        <!-- Central Line Checkpoint Marker -->
+        <div class="timeline-node-wrapper">
+          <div class="timeline-node-checkpoint" data-target-stage="4" aria-label="Jump to Stage 4: AWS & Terraform">
+            <span class="checkpoint-halo"></span>
+            <span class="checkpoint-core"></span>
+          </div>
+        </div>
+
+        <div class="stage-row stage-row-even">
+          <!-- LEFT: Picture Card -->
+          <div class="stage-col stage-visual-col">
+            <div class="stage-picture-card stage-visual-card">
+              <div class="card-chrome-header">
+                <div class="window-controls">
+                  <span class="ctrl-dot dot-close"></span>
+                  <span class="ctrl-dot dot-min"></span>
+                  <span class="ctrl-dot dot-max"></span>
+                </div>
+                <div class="card-chrome-title">Stage 4 Output: Multi-AZ AWS Infrastructure via Terraform IaC</div>
+                <div class="card-status-pill amber">AWS Provisioned</div>
+              </div>
+              <div class="card-media-wrap">
+                <img src="../assets/images/curriculum/stage4-cloud-aws-terraform.jpg" alt="Stage 4 AWS Cloud Architecture and Terraform Infrastructure as Code" class="stage-img" loading="lazy">
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Text Column with Big Number -->
+          <div class="stage-col stage-text-col">
+            <div class="stage-text-card">
+              <div class="stage-big-number">04</div>
+              <h3 class="panel-stage-title">AWS Cloud Architecture &amp; Terraform Infrastructure as Code</h3>
+              <div class="panel-milestone-kicker">• WEEKS 12–15 — ENTERPRISE CLOUD &amp; IAC MILESTONE</div>
+              <p class="panel-stage-description">
+                Design scalable, fault-tolerant enterprise cloud environments on Amazon Web Services. Provision complete VPCs, EC2 auto-scaling groups, ALB load balancers, S3 buckets, and RDS databases programmatically with HashiCorp Terraform.
+              </p>
+
+              <!-- Competencies -->
+              <div class="stage-skills-list">
+                <span class="skill-chip">AWS VPC, Subnets, NAT Gateways &amp; Route Tables</span>
+                <span class="skill-chip">EC2 Compute, Security Groups &amp; Key Pairs</span>
+                <span class="skill-chip">Application Load Balancers (ALB) &amp; Auto-Scaling</span>
+                <span class="skill-chip">S3 Storage, IAM Roles &amp; CloudWatch Metrics</span>
+                <span class="skill-chip">Terraform Syntax (HCL), State Files &amp; Reusable Modules</span>
+              </div>
+
+              <!-- Tech Logos Strip -->
+              <div class="panel-tech-strip">
+                <span class="tech-strip-label">Core Technologies:</span>
+                <div class="tech-badges-list">
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/aws.svg" alt="AWS" width="18" height="18" loading="lazy">
+                    <span>AWS Cloud</span>
+                  </div>
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/terraform.svg" alt="Terraform" width="18" height="18" loading="lazy">
+                    <span>Terraform IaC</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== STAGE 05: CI/CD & OBSERVABILITY ==================== -->
+      <div class="timeline-stage-zone" id="stage-zone-5" data-stage="5">
+        
+        <!-- Central Line Checkpoint Marker -->
+        <div class="timeline-node-wrapper">
+          <div class="timeline-node-checkpoint" data-target-stage="5" aria-label="Jump to Stage 5: CI/CD & Observability">
+            <span class="checkpoint-halo"></span>
+            <span class="checkpoint-core"></span>
+          </div>
+        </div>
+
+        <div class="stage-row stage-row-odd">
+          <!-- LEFT: Text Column with Big Number -->
+          <div class="stage-col stage-text-col">
+            <div class="stage-text-card">
+              <div class="stage-big-number">05</div>
+              <h3 class="panel-stage-title">Automated CI/CD Pipelines, GitOps &amp; Observability</h3>
+              <div class="panel-milestone-kicker">• WEEKS 16–19 — PRODUCTION GITOPS &amp; SRE MILESTONE</div>
+              <p class="panel-stage-description">
+                Complete the DevOps lifecycle. Build end-to-end automated pipelines with GitHub Actions and Jenkins, execute zero-downtime rolling deployments to AWS/Kubernetes, and monitor production reliability with Prometheus and Grafana dashboards.
+              </p>
+
+              <!-- Competencies -->
+              <div class="stage-skills-list">
+                <span class="skill-chip">GitHub Actions Workflows &amp; Secrets Management</span>
+                <span class="skill-chip">Jenkins Declarative Multibranch Pipelines</span>
+                <span class="skill-chip">Automated Testing &amp; Docker Image Scanning</span>
+                <span class="skill-chip">Zero-Downtime Blue/Green &amp; Canary Rollouts</span>
+                <span class="skill-chip">Prometheus Metrics Ingestion &amp; AlertManager</span>
+                <span class="skill-chip">Grafana Visual Telemetry &amp; System Health Dashboards</span>
+              </div>
+
+              <!-- Tech Logos Strip -->
+              <div class="panel-tech-strip">
+                <span class="tech-strip-label">Core Technologies:</span>
+                <div class="tech-badges-list">
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/git.svg" alt="GitHub Actions" width="18" height="18" loading="lazy">
+                    <span>GitHub Actions</span>
+                  </div>
+                  <div class="tech-badge">
+                    <img src="../assets/icons/tech/aws.svg" alt="AWS Cloud" width="18" height="18" loading="lazy">
+                    <span>AWS ECR</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Picture Card -->
+          <div class="stage-col stage-visual-col">
+            <div class="stage-picture-card stage-visual-card">
+              <div class="card-chrome-header">
+                <div class="window-controls">
+                  <span class="ctrl-dot dot-close"></span>
+                  <span class="ctrl-dot dot-min"></span>
+                  <span class="ctrl-dot dot-max"></span>
+                </div>
+                <div class="card-chrome-title">Stage 5 Output: Zero-Downtime Pipeline &amp; Grafana Telemetry</div>
+                <div class="card-status-pill emerald">GitOps Verified</div>
+              </div>
+              <div class="card-media-wrap">
+                <img src="../assets/images/curriculum/stage5-cloud-cicd-observability.jpg" alt="Stage 5 Automated CI/CD Pipeline and Grafana Production Observability" class="stage-img" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Central End of Journey Marker -->
+      <div class="timeline-end-node-wrapper" aria-hidden="true">
+        <div class="timeline-end-node">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+        <span class="end-node-label">5 STAGES COMPLETED — READY FOR CLOUD &amp; DEVOPS ROLES</span>
+      </div>
+
+    </div>
+
+  </div>
+</section>

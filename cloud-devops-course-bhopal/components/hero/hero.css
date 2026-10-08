@@ -1,0 +1,719 @@
+/* ==========================================================================
+   MIRACLE IT — HERO COMPONENT STYLESHEET
+   Cloud & DevOps Course Landing Page Hero
+   Modular Component CSS: components/hero/hero.css
+   5 Separate Floating & Swapping Technology Cards
+   ========================================================================== */
+
+.course-hero-section {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(3.75rem, 5.5vw, 5.75rem) 0 clamp(3rem, 5vw, 4.5rem);
+  background-color: #FAFAFC;
+  background-image: 
+    radial-gradient(circle at 90% 12%, rgba(255, 153, 0, 0.12) 0%, rgba(255, 122, 0, 0.03) 40%, transparent 65%),
+    radial-gradient(circle at 10% 88%, rgba(37, 99, 235, 0.09) 0%, rgba(56, 189, 248, 0.03) 45%, transparent 65%),
+    radial-gradient(ellipse 70% 60% at 50% 30%, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.6) 100%);
+  border-bottom: 1px solid #E2E8F0;
+  color: #0F172A;
+}
+
+/* Ambient Network Backdrop */
+.hero-bg-network {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.hero-grid-matrix {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(148, 163, 184, 0.13) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.13) 1px, transparent 1px);
+  background-size: 38px 38px;
+  mask-image: radial-gradient(ellipse 85% 75% at 50% 50%, #000 35%, transparent 95%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 50%, #000 35%, transparent 95%);
+}
+
+.hero-glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.35;
+  animation: heroOrbPulse 8s ease-in-out infinite alternate;
+}
+
+.hero-orb-aws {
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(255, 153, 0, 0.45) 0%, rgba(255, 122, 0, 0.1) 70%, transparent 100%);
+  top: -60px;
+  right: -40px;
+}
+
+.hero-orb-k8s {
+  width: 340px;
+  height: 340px;
+  background: radial-gradient(circle, rgba(50, 108, 229, 0.4) 0%, rgba(36, 150, 237, 0.1) 70%, transparent 100%);
+  bottom: -60px;
+  left: -40px;
+  animation-delay: -4s;
+}
+
+@keyframes heroOrbPulse {
+  0% { transform: scale(0.92) translate(0, 0); opacity: 0.3; }
+  100% { transform: scale(1.08) translate(15px, 10px); opacity: 0.45; }
+}
+
+.hero-circuit-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.65;
+}
+
+.circuit-line {
+  animation: dashFlow 30s linear infinite;
+}
+
+.circuit-line-2 {
+  animation-direction: reverse;
+  animation-duration: 36s;
+}
+
+@keyframes dashFlow {
+  to { stroke-dashoffset: -1000; }
+}
+
+.course-hero-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.12fr;
+  align-items: center;
+  gap: clamp(1.75rem, 3.2vw, 3.25rem);
+  position: relative;
+  z-index: 1;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.4rem 1.05rem;
+  border-radius: 9999px;
+  background: rgba(255, 122, 0, 0.08);
+  border: 1px solid rgba(255, 122, 0, 0.28);
+  margin-bottom: 1.35rem;
+  box-shadow: 0 2px 12px rgba(255, 122, 0, 0.1);
+}
+
+.pulsing-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #FF7A00;
+  box-shadow: 0 0 10px #FF7A00;
+  animation: beaconPulse 2s infinite ease-in-out;
+}
+
+@keyframes beaconPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+.hero-tag-text {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #C2410C;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.course-hero-title {
+  font-size: clamp(2.4rem, 4.5vw, 3.85rem);
+  font-weight: 900;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  color: #0F172A;
+  font-family: var(--font-heading, 'Sora', sans-serif);
+  margin-bottom: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.hero-title-lead {
+  color: #0F172A;
+}
+
+.hero-title-highlight {
+  position: relative;
+  display: inline-block;
+  color: #FF7A00;
+  -webkit-text-fill-color: #FF7A00;
+  background: none;
+}
+
+.course-hero-desc {
+  font-size: clamp(1.02rem, 1.3vw, 1.15rem);
+  color: #475569;
+  line-height: 1.65;
+  margin-bottom: 2.25rem;
+  max-width: 560px;
+}
+
+.course-hero-cta-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.15rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero-main-btn {
+  padding: 0.95rem 2rem;
+  font-weight: 700;
+  box-shadow: 0 10px 25px -5px rgba(255, 122, 0, 0.4);
+}
+
+/* HIGHLY OPTIMIZED & PROMINENTLY VISIBLE "EXPLORE CURRICULUM" BUTTON */
+.hero-secondary-btn,
+.course-hero-section .hero-secondary-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.55rem !important;
+  padding: 0.95rem 1.85rem !important;
+  font-weight: 700 !important;
+  font-size: 0.98rem !important;
+  color: #0F172A !important;
+  background: #FFFFFF !important;
+  border: 1.5px solid #CBD5E1 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.08) !important;
+  text-decoration: none !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.hero-secondary-btn span,
+.course-hero-section .hero-secondary-btn span {
+  color: #0F172A !important;
+  font-weight: 700 !important;
+}
+
+.hero-secondary-btn svg,
+.course-hero-section .hero-secondary-btn svg {
+  stroke: #2563EB !important;
+  transition: transform 0.25s ease !important;
+}
+
+.hero-secondary-btn:hover,
+.course-hero-section .hero-secondary-btn:hover {
+  background: #F8FAFC !important;
+  border-color: #2563EB !important;
+  color: #2563EB !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.16) !important;
+}
+
+.hero-secondary-btn:hover span,
+.course-hero-section .hero-secondary-btn:hover span {
+  color: #2563EB !important;
+}
+
+.hero-secondary-btn:hover svg,
+.course-hero-section .hero-secondary-btn:hover svg {
+  transform: translateY(2px) !important;
+}
+
+.hero-stats-row {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.2rem, 2.5vw, 2.5rem);
+  padding-top: 1.75rem;
+  border-top: 1px solid #E2E8F0;
+}
+
+.hero-stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-stat-val {
+  font-family: var(--font-heading, 'Sora', sans-serif);
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1.1;
+}
+
+.hero-stat-val .accent {
+  color: #FF7A00;
+}
+
+.hero-stat-label {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.35rem;
+}
+
+/* --------------------------------------------------------------------------
+   RIGHT COLUMN: 5 FLOATING & SWAPPING TECHNOLOGY CARDS STAGE
+   -------------------------------------------------------------------------- */
+.course-hero-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.hero-floating-stage {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  height: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-ambient-auras {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.stage-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(55px);
+  opacity: 0.22;
+}
+
+.stage-orb.orb-primary {
+  width: 240px;
+  height: 240px;
+  background: #FF9900;
+  top: 15%;
+  left: 10%;
+}
+
+.stage-orb.orb-secondary {
+  width: 220px;
+  height: 220px;
+  background: #2563EB;
+  bottom: 10%;
+  right: 10%;
+}
+
+.stage-header-badge {
+  position: absolute;
+  top: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.3rem 0.85rem;
+  border-radius: 9999px;
+  background: #0F172A;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #E2E8F0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  z-index: 25;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.stage-header-badge .badge-sparkle {
+  color: #F59E0B;
+}
+
+.stage-header-badge .badge-sub-dot {
+  font-size: 0.5rem;
+  color: #64748B;
+}
+
+.stage-header-badge .badge-sub-label {
+  color: #94A3B8;
+  font-weight: 500;
+}
+
+/* Cards Stage Track */
+.floating-cards-track {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  margin-top: 24px;
+}
+
+/* Base Floating Card Styling */
+.floating-card {
+  position: absolute;
+  width: 200px;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.75s cubic-bezier(0.34, 1.56, 0.64, 1);
+  outline: none;
+}
+
+.card-float-wrapper {
+  background: #0B1120;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 1.15rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card-glow-edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  opacity: 0.85;
+}
+
+.floating-card.pos-0 .card-glow-edge {
+  opacity: 1;
+  height: 3.5px;
+}
+
+.card-top-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0.15rem 0.55rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 0.55rem;
+}
+
+.pill-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 6px currentColor;
+}
+
+.pill-label {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #E2E8F0;
+}
+
+.card-logo-box {
+  width: 66px;
+  height: 66px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.card-logo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
+  transition: transform 0.4s ease;
+}
+
+.floating-card:hover .card-logo-box img,
+.floating-card.pos-0 .card-logo-box img {
+  transform: scale(1.08);
+}
+
+.card-body-meta {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.card-tech-title {
+  font-family: var(--font-heading, 'Sora', sans-serif);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #F8FAFC;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.card-tech-role {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 1px;
+}
+
+.card-tech-frameworks {
+  font-size: 0.68rem;
+  color: #94A3B8;
+  margin-top: 5px;
+  line-height: 1.35;
+}
+
+/* 5 Positions in 3D Space */
+.floating-card.pos-0 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.12);
+  z-index: 10;
+  opacity: 1;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.6));
+}
+
+.floating-card.pos-1 {
+  top: 50%;
+  left: 50%;
+  transform: translate(calc(-50% + 155px), calc(-50% - 75px)) scale(0.88);
+  z-index: 4;
+  opacity: 0.85;
+}
+
+.floating-card.pos-2 {
+  top: 50%;
+  left: 50%;
+  transform: translate(calc(-50% - 155px), calc(-50% - 75px)) scale(0.88);
+  z-index: 4;
+  opacity: 0.85;
+}
+
+.floating-card.pos-3 {
+  top: 50%;
+  left: 50%;
+  transform: translate(calc(-50% + 135px), calc(-50% + 88px)) scale(0.86);
+  z-index: 3;
+  opacity: 0.82;
+}
+
+.floating-card.pos-4 {
+  top: 50%;
+  left: 50%;
+  transform: translate(calc(-50% - 135px), calc(-50% + 88px)) scale(0.86);
+  z-index: 3;
+  opacity: 0.82;
+}
+
+.floating-card:hover {
+  opacity: 1 !important;
+  z-index: 20 !important;
+}
+
+/* Floating Bobbing Keyframes */
+.floating-card:nth-child(1) .card-float-wrapper { animation: floatLevitate0 4.6s ease-in-out infinite alternate; }
+.floating-card:nth-child(2) .card-float-wrapper { animation: floatLevitate1 5.2s ease-in-out infinite alternate 0.6s; }
+.floating-card:nth-child(3) .card-float-wrapper { animation: floatLevitate2 4.8s ease-in-out infinite alternate 1.2s; }
+.floating-card:nth-child(4) .card-float-wrapper { animation: floatLevitate3 5.4s ease-in-out infinite alternate 1.8s; }
+.floating-card:nth-child(5) .card-float-wrapper { animation: floatLevitate4 5.0s ease-in-out infinite alternate 2.4s; }
+
+@keyframes floatLevitate0 { 0% { transform: translateY(0px) rotate(0deg); } 100% { transform: translateY(-9px) rotate(1deg); } }
+@keyframes floatLevitate1 { 0% { transform: translateY(0px) rotate(0deg); } 100% { transform: translateY(-8px) rotate(-1.2deg); } }
+@keyframes floatLevitate2 { 0% { transform: translateY(0px) rotate(0deg); } 100% { transform: translateY(-10px) rotate(0.8deg); } }
+@keyframes floatLevitate3 { 0% { transform: translateY(0px) rotate(0deg); } 100% { transform: translateY(-8px) rotate(1.2deg); } }
+@keyframes floatLevitate4 { 0% { transform: translateY(0px) rotate(0deg); } 100% { transform: translateY(-9px) rotate(-1deg); } }
+
+/* Theme Color Accents for Cloud & DevOps */
+/* AWS Cloud */
+.card-theme-aws { color: #FF9900; }
+.card-theme-aws .card-glow-edge { background: #FF9900; }
+.card-theme-aws .card-tech-role { color: #FF9900; }
+.card-theme-aws .floating-card.pos-0 .card-float-wrapper,
+.card-theme-aws:hover .card-float-wrapper {
+  border-color: #FF9900;
+  box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.75), 0 0 20px rgba(255, 153, 0, 0.25);
+}
+
+/* Docker */
+.card-theme-docker { color: #2496ED; }
+.card-theme-docker .card-glow-edge { background: #2496ED; }
+.card-theme-docker .card-tech-role { color: #38BDF8; }
+.card-theme-docker .floating-card.pos-0 .card-float-wrapper,
+.card-theme-docker:hover .card-float-wrapper {
+  border-color: #2496ED;
+  box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.75), 0 0 20px rgba(36, 150, 237, 0.25);
+}
+
+/* Kubernetes */
+.card-theme-kubernetes { color: #326CE5; }
+.card-theme-kubernetes .card-glow-edge { background: #326CE5; }
+.card-theme-kubernetes .card-tech-role { color: #60A5FA; }
+.card-theme-kubernetes .floating-card.pos-0 .card-float-wrapper,
+.card-theme-kubernetes:hover .card-float-wrapper {
+  border-color: #326CE5;
+  box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.75), 0 0 20px rgba(50, 108, 229, 0.25);
+}
+
+/* Terraform */
+.card-theme-terraform { color: #844FBA; }
+.card-theme-terraform .card-glow-edge { background: #844FBA; }
+.card-theme-terraform .card-tech-role { color: #C084FC; }
+.card-theme-terraform .floating-card.pos-0 .card-float-wrapper,
+.card-theme-terraform:hover .card-float-wrapper {
+  border-color: #844FBA;
+  box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.75), 0 0 20px rgba(132, 79, 186, 0.25);
+}
+
+/* Linux & CI/CD */
+.card-theme-linux { color: #FCC624; }
+.card-theme-linux .card-glow-edge { background: #FCC624; }
+.card-theme-linux .card-tech-role { color: #FBBF24; }
+.card-theme-linux .floating-card.pos-0 .card-float-wrapper,
+.card-theme-linux:hover .card-float-wrapper {
+  border-color: #FCC624;
+  box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.75), 0 0 20px rgba(252, 198, 36, 0.25);
+}
+
+/* Swapper Controls */
+.stage-swap-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #0F172A;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  z-index: 25;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+}
+
+.swap-arrow-btn {
+  background: transparent;
+  border: none;
+  color: #94A3B8;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 50%;
+  transition: color 0.2s, background 0.2s;
+}
+
+.swap-arrow-btn:hover {
+  color: #F8FAFC;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.swap-indicators {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.swap-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #334155;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.swap-dot.active {
+  width: 22px;
+  border-radius: 9999px;
+  background: #FF7A00;
+  box-shadow: 0 0 8px rgba(255, 122, 0, 0.6);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .course-hero-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .course-hero-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .course-hero-cta-group {
+    justify-content: center;
+  }
+
+  .hero-stats-row {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero-floating-stage {
+    max-width: 420px;
+    height: 390px;
+  }
+
+  .floating-card {
+    width: 180px;
+  }
+
+  .floating-card.pos-1 { transform: translate(calc(-50% + 125px), calc(-50% - 60px)) scale(0.85); }
+  .floating-card.pos-2 { transform: translate(calc(-50% - 125px), calc(-50% - 60px)) scale(0.85); }
+  .floating-card.pos-3 { transform: translate(calc(-50% + 110px), calc(-50% + 70px)) scale(0.83); }
+  .floating-card.pos-4 { transform: translate(calc(-50% - 110px), calc(-50% + 70px)) scale(0.83); }
+}
+
+@media (max-width: 640px) {
+  .hero-stats-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    text-align: left;
+  }
+
+  .hero-floating-stage {
+    max-width: 320px;
+    height: 340px;
+  }
+
+  .floating-card {
+    width: 160px;
+  }
+
+  .card-float-wrapper {
+    padding: 0.9rem 0.75rem 0.75rem;
+  }
+
+  .card-logo-box {
+    width: 52px;
+    height: 52px;
+  }
+
+  .card-tech-title {
+    font-size: 0.92rem;
+  }
+
+  .floating-card.pos-1 { transform: translate(calc(-50% + 80px), calc(-50% - 50px)) scale(0.8); }
+  .floating-card.pos-2 { transform: translate(calc(-50% - 80px), calc(-50% - 50px)) scale(0.8); }
+  .floating-card.pos-3 { transform: translate(calc(-50% + 70px), calc(-50% + 55px)) scale(0.78); }
+  .floating-card.pos-4 { transform: translate(calc(-50% - 70px), calc(-50% + 55px)) scale(0.78); }
+}

@@ -429,6 +429,11 @@
   box-shadow: 0 8px 22px -6px rgba(22, 163, 74, 0.12);
 }
 
+.dropdown-course-card.card-cloud:hover {
+  border-color: rgba(245, 158, 11, 0.45);
+  box-shadow: 0 8px 22px -6px rgba(217, 119, 6, 0.12);
+}
+
 .dropdown-course-icon-wrap {
   width: 42px;
   height: 42px;
@@ -466,6 +471,12 @@
   background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%);
   color: #16A34A;
   border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+.icon-cloud {
+  background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+  color: #D97706;
+  border: 1px solid rgba(245, 158, 11, 0.3);
 }
 
 .dropdown-course-meta {

@@ -1,0 +1,180 @@
+  <section class="course-form-section" id="counselling-form">
+    <div class="container">
+      
+      <div class="form-wrapper-box">
+        
+        <div class="form-header-area">
+          <div class="section-tag-pill" style="margin-bottom: 0.85rem;">
+            <span class="pulse-beacon" style="background:#FF7A00; box-shadow:0 0 8px #FF7A00;"></span>
+            <span>Free 1-on-1 Cloud &amp; DevOps Counselling Desk</span>
+          </div>
+          <h2>Book Free Career Counselling Visit</h2>
+          <p>Visit our M.P. Nagar center. Meet senior cloud &amp; DevOps mentors, review the AWS, Docker &amp; Kubernetes syllabus line-by-line, and get an honest, non-binding assessment of your learning timeline.</p>
+        </div>
+
+        <form id="counsellingForm" class="counselling-form" novalidate>
+          
+          <!-- Anti-spam Honeypot -->
+          <div style="display:none;" aria-hidden="true">
+            <input type="text" name="_hp_security_check" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="form-grid">
+            
+            <!-- Field 1: Full Name -->
+            <div class="form-group">
+              <label for="fullName" class="form-label">
+                Full Name <span class="required-star" aria-hidden="true">*</span>
+              </label>
+              <div class="input-with-icon">
+                <input 
+                  type="text" 
+                  id="fullName" 
+                  name="fullName" 
+                  class="form-input" 
+                  placeholder="e.g. Rahul Sharma" 
+                  required 
+                  autocomplete="name"
+                >
+              </div>
+              <span class="error-msg" id="nameError">Please enter your full name.</span>
+            </div>
+
+            <!-- Field 2: Phone -->
+            <div class="form-group">
+              <label for="phoneNumber" class="form-label">
+                Mobile / WhatsApp Number <span class="required-star" aria-hidden="true">*</span>
+              </label>
+              <div class="phone-input-wrap">
+                <span class="country-prefix">+91</span>
+                <input 
+                  type="tel" 
+                  id="phoneNumber" 
+                  name="phoneNumber" 
+                  class="form-input phone-input" 
+                  placeholder="10-digit mobile number" 
+                  pattern="[0-9]{10}" 
+                  maxlength="10" 
+                  required 
+                  autocomplete="tel"
+                >
+              </div>
+              <span class="error-msg" id="phoneError">Please enter a valid 10-digit Indian phone number.</span>
+            </div>
+
+            <!-- Field 3: Educational Background -->
+            <div class="form-group">
+              <label for="educationBackground" class="form-label">
+                Current Background / Qualification <span class="required-star" aria-hidden="true">*</span>
+              </label>
+              <select id="educationBackground" name="educationBackground" class="form-select" required>
+                <option value="" disabled selected>Select your current profile</option>
+                <option value="cs_it_student">B.Tech / BCA / MCA / CS Student</option>
+                <option value="sysadmin_networking">System / Network Administrator</option>
+                <option value="software_developer">Software Developer (Backend / Full Stack)</option>
+                <option value="graduate_fresher">Recent Graduate / Job Seeker</option>
+                <option value="it_support_ops">IT Support / Operations Specialist</option>
+                <option value="career_switcher">Career Switcher to Cloud &amp; DevOps</option>
+              </select>
+              <span class="error-msg" id="bgError">Please select your current educational background.</span>
+            </div>
+
+            <!-- Field 4: Preferred Batch Timing -->
+            <div class="form-group">
+              <label for="preferredTiming" class="form-label">
+                Preferred Batch Timing
+              </label>
+              <select id="preferredTiming" name="preferredTiming" class="form-select">
+                <option value="morning_slot">Morning Batch (08:00 AM - 12:30 PM)</option>
+                <option value="afternoon_slot">Afternoon Batch (01:00 PM - 03:00 PM)</option>
+                <option value="evening_slot">Evening Batch (04:00 PM - 08:30 PM)</option>
+                <option value="weekend_slot">Weekend Special Batch (Sat &amp; Sun)</option>
+              </select>
+            </div>
+
+            <!-- Hidden Field for Course Interest -->
+            <input type="hidden" id="courseInterest" name="courseInterest" value="Cloud Computing &amp; DevOps">
+
+          </div>
+
+          <!-- Interactive Visit Day Chips -->
+          <div class="visit-day-section">
+            <span class="day-select-label">When would you like to visit our M.P. Nagar center?</span>
+            <div class="day-chips-row">
+              <button type="button" class="day-chip-btn is-selected" data-day="today">
+                <span class="chip-day-name">Today</span>
+                <span class="chip-sub">Desk Open</span>
+              </button>
+              <button type="button" class="day-chip-btn" data-day="tomorrow">
+                <span class="chip-day-name">Tomorrow</span>
+                <span class="chip-sub">Slots Available</span>
+              </button>
+              <button type="button" class="day-chip-btn" data-day="weekend">
+                <span class="chip-day-name">This Weekend</span>
+                <span class="chip-sub">Sat / Sun Batch</span>
+              </button>
+              <button type="button" class="day-chip-btn" data-day="next_week">
+                <span class="chip-day-name">Next Week</span>
+                <span class="chip-sub">Flexible Time</span>
+              </button>
+            </div>
+            <input type="hidden" id="visitDay" name="visitDay" value="today">
+          </div>
+
+          <!-- Form Submit Action -->
+          <div class="form-submit-row">
+            <button type="submit" class="btn btn-primary btn-lg btn-block btn-magnetic" id="submitBtn">
+              <span>Confirm Free Counselling Visit</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+            <p class="form-privacy-note">
+              🔒 100% Free &amp; Non-Binding. No spam, ever. Your contact number is used solely to coordinate your visit time with our Bhopal academic coordinator.
+            </p>
+          </div>
+
+        </form>
+
+        <!-- Form Success State Screen -->
+        <div class="form-success-state" id="formSuccessState" hidden>
+          <div class="success-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <h3>Counselling Visit Slot Confirmed!</h3>
+          <p>
+            Thank you for connecting with Miracle IT Career Academy. Our academic advisor will reach out to you via call or WhatsApp within 15 minutes to confirm your preferred visiting time slot.
+          </p>
+          
+          <div class="success-visit-summary">
+            <div class="summary-line">
+              <span>📍 Campus:</span>
+              <strong>Aakriti Complex, Zone-2, M.P. Nagar, Bhopal</strong>
+            </div>
+            <div class="summary-line">
+              <span>⏱️ Visiting Desk:</span>
+              <strong>Open 10:00 AM – 07:00 PM (Mon to Sat)</strong>
+            </div>
+            <div class="summary-line">
+              <span>📞 Helpline:</span>
+              <strong>+91 78800 03127</strong>
+            </div>
+          </div>
+
+          <div class="success-cta-actions">
+            <a href="https://maps.google.com/?q=Plot+No.80,+Aakriti+Complex,+Zone-2,+M.P.+Nagar,+Bhopal" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+              <span>Get Directions to Campus</span>
+            </a>
+            <a href="https://wa.me/917880003127?text=Hi%2C%20I%20just%20submitted%20the%20form%20for%20Cloud%20%26%20DevOps%20counselling." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+              <span>Chat on WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>

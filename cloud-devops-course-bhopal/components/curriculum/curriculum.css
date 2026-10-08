@@ -1,0 +1,893 @@
+/* ==========================================================================
+   MIRACLE IT — CURRICULUM COMPONENT STYLESHEET (CLEAN BRIGHT THEME)
+   Full Stack Web Development Course Landing Page — "What You'll Learn"
+   Modular Component CSS: components/curriculum/curriculum.css
+   Clean, Clear, Reduced Glow, Scannable Cards & Real Visual Pictures
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Section Container — Clean Technical Editorial Canvas
+   -------------------------------------------------------------------------- */
+.curriculum-section {
+  padding: clamp(4.5rem, 7vw, 6.5rem) 0 clamp(3.5rem, 5vw, 5rem);
+  background-color: #FAFAFD;
+  background-image: 
+    linear-gradient(to right, rgba(226, 232, 240, 0.65) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(226, 232, 240, 0.65) 1px, transparent 1px);
+  background-size: 36px 36px;
+  position: relative;
+  overflow: visible;
+  border-bottom: none;
+  color: #0F172A;
+}
+
+.curriculum-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Section Header (Clean & Scannable)
+   -------------------------------------------------------------------------- */
+.curriculum-section-head {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto clamp(2.8rem, 5vw, 4.2rem);
+}
+
+.curriculum-section-head .section-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0.3rem 0.9rem;
+  border-radius: 9999px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: #FFF7ED;
+  color: #EA580C;
+  border: 1px solid #FED7AA;
+  box-shadow: 0 1px 2px rgba(234, 88, 12, 0.06);
+  margin-bottom: 0.75rem;
+}
+
+.curriculum-section-head .pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #FF7A00;
+}
+
+.curriculum-main-title {
+  font-family: var(--font-heading, 'Sora', sans-serif);
+  font-size: clamp(2rem, 3.8vw, 2.85rem);
+  font-weight: 800;
+  color: #0F172A !important;
+  line-height: 1.18;
+  margin: 0.6rem 0 0.85rem;
+  letter-spacing: -0.025em;
+}
+
+.curriculum-main-subtitle {
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  color: #475569 !important;
+  line-height: 1.6;
+  margin: 0 auto 1.25rem;
+}
+
+.curriculum-interaction-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.35rem 1rem;
+  border-radius: 9999px;
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  color: #0284C7;
+  font-size: 0.8rem;
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+.hint-mouse-icon {
+  width: 13px;
+  height: 20px;
+  border: 1.8px solid #0284C7;
+  border-radius: 10px;
+  display: inline-block;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.hint-mouse-wheel {
+  width: 2px;
+  height: 4px;
+  background: #0284C7;
+  border-radius: 2px;
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: mouseScrollWheel 1.6s infinite ease-in-out;
+}
+
+@keyframes mouseScrollWheel {
+  0% { top: 3px; opacity: 1; }
+  60% { top: 10px; opacity: 0.2; }
+  100% { top: 3px; opacity: 0; }
+}
+
+/* --------------------------------------------------------------------------
+   Vertical Progression Timeline & Spine (Crisp, Perfectly Aligned)
+   -------------------------------------------------------------------------- */
+.curriculum-timeline {
+  position: relative;
+  margin: 0 auto;
+  padding: 0.5rem 0 2.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Central Line Spine (Centered Vertical Timeline) */
+.timeline-spine {
+  position: absolute;
+  top: 1.5rem;
+  bottom: 5rem;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Inactive Dashed Guide Track (matches reference screenshot) */
+.timeline-track-inactive {
+  position: absolute;
+  inset: 0;
+  width: 2px;
+  background-image: linear-gradient(to bottom, #EA580C 35%, transparent 35%);
+  background-size: 2px 14px;
+  background-repeat: repeat-y;
+  opacity: 0.35;
+}
+
+/* Scroll-Driven Active Progress Line */
+.timeline-track-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 0%;
+  background: #FF4D00;
+  box-shadow: 0 0 8px rgba(255, 77, 0, 0.5);
+  will-change: height;
+  z-index: 12;
+}
+
+/* Active Concentric Ring Beacon (matches reference screenshot) */
+.timeline-head-beacon {
+  position: absolute;
+  bottom: -11px;
+  left: 50%;
+  margin-left: -11px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 4px solid #FF4D00;
+  box-shadow: 0 0 0 8px rgba(255, 77, 0, 0.16), 0 2px 10px rgba(255, 77, 0, 0.3);
+  z-index: 20;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: beaconPulse 2s infinite ease-in-out;
+}
+
+.timeline-head-beacon::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #FF4D00;
+}
+
+@keyframes beaconPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 6px rgba(255, 77, 0, 0.16), 0 2px 10px rgba(255, 77, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(255, 77, 0, 0.22), 0 2px 14px rgba(255, 77, 0, 0.45);
+  }
+}
+
+/* Central Node Checkpoint Marker on the Line */
+.timeline-node-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-node-checkpoint {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 3px solid #CBD5E1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 0;
+}
+
+.checkpoint-core {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #94A3B8;
+  transition: all 0.3s ease;
+}
+
+.checkpoint-halo {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: rgba(255, 77, 0, 0.14);
+  opacity: 0;
+  transform: scale(0.6);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.timeline-node-checkpoint:hover,
+.timeline-node-checkpoint.is-active,
+.timeline-stage-zone.is-active .timeline-node-checkpoint {
+  border-color: #FF4D00;
+  box-shadow: 0 0 0 5px rgba(255, 77, 0, 0.15), 0 2px 8px rgba(255, 77, 0, 0.25);
+  transform: scale(1.15);
+}
+
+.timeline-node-checkpoint.is-active .checkpoint-core,
+.timeline-stage-zone.is-active .timeline-node-checkpoint .checkpoint-core {
+  background: #FF4D00;
+  transform: scale(1.1);
+}
+
+.timeline-node-checkpoint.is-active .checkpoint-halo,
+.timeline-stage-zone.is-active .timeline-node-checkpoint .checkpoint-halo {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.timeline-node-checkpoint.is-completed {
+  border-color: #EA580C;
+  background: #FF4D00;
+}
+
+.timeline-node-checkpoint.is-completed .checkpoint-core {
+  background: #FFFFFF;
+}
+
+/* Stage Zone & Alternating Grid Rows */
+.timeline-stage-zone {
+  position: relative;
+  margin-bottom: clamp(3.5rem, 6vw, 5.5rem);
+}
+
+.stage-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(4.5rem, 7.5vw, 6.5rem);
+  align-items: center;
+}
+
+.stage-col {
+  min-width: 0;
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Stage Text Cards (Clean Typography & Scannable Editorial Content)
+   -------------------------------------------------------------------------- */
+.stage-text-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 20px;
+  padding: clamp(1.6rem, 2.8vw, 2.25rem);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+  position: relative;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  overflow: hidden;
+}
+
+.stage-text-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FF4D00, #FF7A00 45%, transparent 85%);
+  opacity: 0.9;
+}
+
+.timeline-stage-zone.is-active .stage-text-card {
+  border-color: #CBD5E1;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.stage-big-number {
+  font-family: var(--font-heading, 'Sora', sans-serif);
+  font-size: clamp(3.2rem, 5.5vw, 4.6rem);
+  font-weight: 900;
+  color: #FF4D00;
+  line-height: 1;
+  margin-bottom: 0.55rem;
+  letter-spacing: -0.04em;
+  display: block;
+}
+
+.panel-stage-title {
+  font-family: var(--font-heading, 'Sora', sans-serif);
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1.25;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.panel-milestone-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #EA580C;
+  margin-bottom: 0.95rem;
+}
+
+.panel-stage-description {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #475569;
+  margin-bottom: 1.15rem;
+}
+
+/* Scannable Skills List */
+.stage-skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1.15rem;
+}
+
+.skill-chip {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #334155;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  line-height: 1.3;
+}
+
+/* Core Tech Logos Strip */
+.panel-tech-strip {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #F1F5F9;
+}
+
+.tech-strip-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tech-badges-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  padding: 0.22rem 0.55rem;
+  border-radius: 6px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: #334155;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+}
+
+.tech-badge img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+/* --------------------------------------------------------------------------
+   Stage Picture Cards (Real Visual Deliverables)
+   -------------------------------------------------------------------------- */
+.stage-picture-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+}
+
+.stage-picture-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FF4D00, #FF7A00 45%, transparent 85%);
+  opacity: 0.9;
+  z-index: 5;
+}
+
+.stage-picture-card:hover {
+  transform: translateY(-3px);
+  border-color: #CBD5E1;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.card-chrome-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.55rem 0.9rem;
+  background: #F8FAFC;
+  border-bottom: 1px solid #E2E8F0;
+  gap: 0.6rem;
+}
+
+.window-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.ctrl-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dot-close { background: #EF4444; }
+.dot-min   { background: #F59E0B; }
+.dot-max   { background: #10B981; }
+
+.card-chrome-title {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #475569;
+  font-family: var(--font-mono, monospace);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-status-pill {
+  font-size: 0.66rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.card-status-pill.green,
+.card-status-pill.cyan,
+.card-status-pill.blue   { background: #EFF6FF; color: #2563EB; border: 1px solid #BFDBFE; }
+.card-status-pill.purple,
+.card-status-pill.orange { background: #FFF7ED; color: #FF7A00; border: 1px solid #FED7AA; }
+
+.card-media-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 9.5;
+  overflow: hidden;
+  background: #F1F5F9;
+}
+
+.stage-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.stage-picture-card:hover .stage-img {
+  transform: scale(1.02);
+}
+
+/* End of Journey Marker (Centered End Node) */
+.timeline-end-node-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 3.5rem auto 0;
+  gap: 0.65rem;
+  position: relative;
+  z-index: 15;
+  text-align: center;
+}
+
+.timeline-end-node {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 2px solid #FF7A00;
+  color: #FF7A00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(255, 122, 0, 0.2), 0 0 0 4px rgba(255, 122, 0, 0.08);
+  transition: all 0.25s ease;
+}
+
+.timeline-end-node svg {
+  stroke: #FF7A00;
+}
+
+.timeline-end-node:hover {
+  transform: scale(1.08);
+  background: #FFF7ED;
+}
+
+.end-node-label {
+  font-family: var(--font-heading, 'Sora', sans-serif);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #64748B;
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   Bottom Milestone Card (Clean Light Aesthetic)
+   -------------------------------------------------------------------------- */
+.curriculum-bottom-milestone-card {
+  margin-top: 3rem;
+  background: #FFFFFF;
+  border: 1px solid #FED7AA;
+  border-radius: 18px;
+  padding: clamp(1.8rem, 3.5vw, 2.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  box-shadow: 0 4px 20px rgba(255, 122, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.curriculum-bottom-milestone-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background: #FF7A00;
+}
+
+.milestone-content {
+  max-width: 620px;
+}
+
+.milestone-kicker {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #EA580C;
+  margin-bottom: 0.45rem;
+}
+
+.milestone-title {
+  font-family: var(--font-heading, 'Sora', sans-serif);
+  font-size: clamp(1.3rem, 2vw, 1.65rem);
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 0.55rem;
+}
+
+.milestone-desc {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #475569;
+  margin: 0;
+}
+
+.milestone-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  flex-shrink: 0;
+}
+
+.milestone-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.75rem 1.4rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  border-radius: 10px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.25s ease;
+}
+
+.milestone-actions .btn-primary {
+  background: #FF7A00;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(255, 122, 0, 0.25);
+}
+
+.milestone-actions .btn-primary:hover {
+  background: #E05D00;
+}
+
+.milestone-actions .btn-outline {
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  color: #0F172A;
+}
+
+.milestone-actions .btn-outline:hover {
+  border-color: #FF7A00;
+  color: #FF7A00;
+}
+
+/* ==========================================================================
+   ARCHITECTURAL HORIZON TRANSITION SEAM (BRIGHT -> DARK)
+   ========================================================================== */
+.seam-horizon-divider.seam-bright-to-dark {
+  display: block;
+  width: 100%;
+  line-height: 0;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  background-color: #F8FAFC;
+  margin-bottom: -1px;
+}
+
+.seam-horizon-divider .seam-horizon-svg {
+  display: block;
+  width: 100%;
+  height: clamp(50px, 5.5vw, 85px);
+  vertical-align: bottom;
+}
+
+.seam-conduit-hub {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 15;
+  pointer-events: auto;
+}
+
+.conduit-spine-stem {
+  width: 2px;
+  height: 16px;
+  background: #FF7A00;
+  margin-bottom: 5px;
+}
+
+.conduit-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.4rem 1.05rem;
+  border-radius: 9999px;
+  background: rgba(15, 23, 42, 0.94);
+  border: 1px solid rgba(255, 122, 0, 0.4);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #F8FAFC;
+  font-size: 0.76rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.conduit-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #FF7A00;
+}
+
+.conduit-dot.pulse {
+  animation: conduitPulse 1.8s infinite;
+}
+
+@keyframes conduitPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.8; }
+}
+
+.conduit-tag {
+  color: #FFA843;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+}
+
+.conduit-sep {
+  color: #64748B;
+  opacity: 0.6;
+}
+
+.conduit-title {
+  color: #E2E8F0;
+}
+
+.conduit-chevron {
+  color: #FF7A00;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .stage-row {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding-left: 56px;
+  }
+  .stage-row-even .stage-text-col {
+    order: 1;
+  }
+  .stage-row-even .stage-visual-col {
+    order: 2;
+  }
+  .curriculum-timeline {
+    padding-left: 0;
+  }
+  .timeline-spine {
+    left: 24px;
+    transform: translateX(-50%);
+  }
+  .timeline-node-wrapper {
+    left: 24px;
+    top: 2rem;
+    transform: translate(-50%, 0);
+  }
+  .timeline-node-checkpoint {
+    width: 18px;
+    height: 18px;
+  }
+  .timeline-end-node-wrapper {
+    align-items: flex-start;
+    padding-left: 3px;
+    margin-top: 2rem;
+  }
+  .curriculum-bottom-milestone-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  .milestone-actions {
+    width: 100%;
+  }
+  .milestone-actions .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .curriculum-section {
+    padding: clamp(3rem, 6vw, 4.5rem) 0 clamp(4rem, 8vw, 6rem);
+  }
+  .stage-row {
+    padding-left: 48px;
+    gap: 1.25rem;
+  }
+  .timeline-spine {
+    left: 20px;
+    transform: translateX(-50%);
+  }
+  .timeline-node-wrapper {
+    left: 20px;
+    top: 1.8rem;
+    transform: translate(-50%, 0);
+  }
+  .stage-text-card {
+    padding: 1.35rem 1.15rem;
+    border-radius: 16px;
+  }
+  .stage-big-number {
+    font-size: 2.75rem;
+  }
+  .panel-stage-title {
+    font-size: 1.22rem;
+  }
+  .panel-stage-description {
+    font-size: 0.85rem;
+    line-height: 1.55;
+    margin-bottom: 0.85rem;
+  }
+  .stage-skills-list {
+    gap: 0.35rem;
+    margin-bottom: 0.85rem;
+  }
+  .skill-chip {
+    font-size: 0.72rem;
+    padding: 0.26rem 0.55rem;
+  }
+  .tech-strip-label {
+    font-size: 0.65rem;
+  }
+  .tech-badge {
+    padding: 0.2rem 0.45rem;
+    font-size: 0.7rem;
+  }
+  .stage-picture-card {
+    border-radius: 16px;
+  }
+  .card-chrome-header {
+    padding: 0.45rem 0.75rem;
+  }
+  .card-chrome-title {
+    font-size: 0.68rem;
+  }
+  .card-status-pill {
+    font-size: 0.62rem;
+    padding: 0.12rem 0.45rem;
+  }
+  .conduit-chip {
+    padding: 0.35rem 0.8rem;
+    font-size: 0.7rem;
+  }
+  .conduit-title {
+    display: none;
+  }
+  .conduit-sep {
+    display: none;
+  }
+}
+
