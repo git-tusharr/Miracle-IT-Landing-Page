@@ -53,28 +53,61 @@ function initHeader(container = document) {
       }
     });
 
+    const coursesDropdownItem = navMenu.querySelector('#coursesDropdownItem');
+    const coursesToggle = navMenu.querySelector('#coursesDropdownToggle');
+
+    // Desktop toggle & outside click handling
+    if (coursesToggle && coursesDropdownItem) {
+      coursesToggle.addEventListener('click', (e) => {
+        if (window.innerWidth > 1024) {
+          e.preventDefault();
+          const isOpen = coursesDropdownItem.classList.toggle('is-open');
+          coursesToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        }
+      });
+    }
+
     // Close on navigation link or mobile CTA button click (excluding dropdown toggle when opening)
     const menuLinks = navMenu.querySelectorAll('a');
     menuLinks.forEach((link) => {
       link.addEventListener('click', (e) => {
-        if (link.id === 'coursesDropdownToggle' && window.innerWidth <= 1024) {
-          const dropdownItem = link.closest('.nav-item-dropdown');
-          if (dropdownItem) {
-            const isExpanded = dropdownItem.classList.contains('is-mobile-expanded');
-            if (!isExpanded) {
+        if (link.id === 'coursesDropdownToggle') {
+          if (window.innerWidth <= 1024) {
+            const dropdownItem = link.closest('.nav-item-dropdown');
+            if (dropdownItem) {
               e.preventDefault();
-              dropdownItem.classList.add('is-mobile-expanded');
-              link.setAttribute('aria-expanded', 'true');
+              const isExpanded = dropdownItem.classList.toggle('is-mobile-expanded');
+              link.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
               return;
             }
+          } else {
+            return; // Handled by desktop listener above
           }
         }
+        
+        // When clicking an item inside the courses dropdown on desktop
+        if (coursesDropdownItem && coursesDropdownItem.classList.contains('is-open')) {
+          coursesDropdownItem.classList.remove('is-open');
+          if (coursesToggle) coursesToggle.setAttribute('aria-expanded', 'false');
+        }
+
         closeMobileMenu();
       });
     });
 
-    // Close on click outside header
+    // Close on click outside header or dropdown
     document.addEventListener('click', (e) => {
+      // Desktop: close dropdown when clicking outside
+      if (
+        coursesDropdownItem &&
+        coursesDropdownItem.classList.contains('is-open') &&
+        !coursesDropdownItem.contains(e.target)
+      ) {
+        coursesDropdownItem.classList.remove('is-open');
+        if (coursesToggle) coursesToggle.setAttribute('aria-expanded', 'false');
+      }
+
+      // Mobile: close drawer when clicking outside
       if (
         navMenu.classList.contains('is-open') &&
         !navMenu.contains(e.target) &&
@@ -86,9 +119,18 @@ function initHeader(container = document) {
 
     // Close on Escape key
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && navMenu.classList.contains('is-open')) {
-        closeMobileMenu();
-        toggleBtn.focus();
+      if (e.key === 'Escape') {
+        if (coursesDropdownItem && coursesDropdownItem.classList.contains('is-open')) {
+          coursesDropdownItem.classList.remove('is-open');
+          if (coursesToggle) {
+            coursesToggle.setAttribute('aria-expanded', 'false');
+            coursesToggle.focus();
+          }
+        }
+        if (navMenu.classList.contains('is-open')) {
+          closeMobileMenu();
+          toggleBtn.focus();
+        }
       }
     });
 
