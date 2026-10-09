@@ -6,7 +6,7 @@
   'use strict';
 
   const CONFIG = {
-    leadEndpoint: '',          // Google Apps Script Web App URL or CRM webhook
+    leadEndpoint: 'https://script.google.com/macros/s/AKfycbwLa3GqHoqBezeVhbgcxA4onWtGOlLfvGsXv4Jq62ozjzx2aO2MlPFBvqcl2G3eHaWEOA/exec',         // Google Apps Script Web App URL or CRM webhook
     metaPixelId: '1000423829425342', // Meta Pixel ID
 
     phone: '+917880003127',
