@@ -428,23 +428,25 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       try {
+        let res = null;
         if (typeof window.LeadService?.submitCounsellingForm === 'function') {
-          await window.LeadService.submitCounsellingForm(payload);
+          res = await window.LeadService.submitCounsellingForm(payload);
         } else {
-          await new Promise(r => setTimeout(r, 600));
-        }
-
-        if (typeof window.trackEvent === 'function') {
-          window.trackEvent('lead_submitted', {
-            course: 'Data Analytics & Data Science',
-            profile: eduVal
-          });
+          throw new Error('Lead service is unavailable. Please call us directly.');
         }
 
         form.hidden = true;
         if (successState) {
           successState.hidden = false;
-          successState.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Redirect to dedicated thank-you page
+        if (typeof window.LeadService?.redirectToThankYou === 'function') {
+          window.LeadService.redirectToThankYou(payload);
+        } else if (res?.thankYouUrl) {
+          setTimeout(() => {
+            window.location.href = res.thankYouUrl;
+          }, 200);
         }
       } catch (err) {
         console.error('[Counselling Form Error]:', err);

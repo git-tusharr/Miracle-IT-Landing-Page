@@ -169,18 +169,23 @@ function initCounsellingForm(container = document) {
             visit_day: leadPayload.preferredVisitDay
           });
           window.trackEvent('visit_confirmed', {
-            lead_id: response.leadId
+            lead_id: response.leadId || Date.now()
           });
         }
 
-        // Show Success UI
+        // Show Success UI briefly if present
         form.hidden = true;
         if (successBox) {
           successBox.hidden = false;
-          if (typeof window.applySiteConfig === 'function') {
-            window.applySiteConfig(successBox);
-          }
-          successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Redirect to dedicated thank-you page
+        if (typeof window.LeadService?.redirectToThankYou === 'function') {
+          window.LeadService.redirectToThankYou(leadPayload);
+        } else if (response.thankYouUrl) {
+          setTimeout(() => {
+            window.location.href = response.thankYouUrl;
+          }, 200);
         }
       } else {
         throw new Error(response?.message || 'Submission error');

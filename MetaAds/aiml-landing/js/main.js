@@ -6,7 +6,7 @@
   'use strict';
 
   const CONFIG = {
-    leadEndpoint: '',          // Google Apps Script Web App URL or CRM webhook
+    leadEndpoint: 'https://script.google.com/macros/s/AKfycbwLa3GqHoqBezeVhbgcxA4onWtGOlLfvGsXv4Jq62ozjzx2aO2MlPFBvqcl2G3eHaWEOA/exec',          // Google Apps Script Web App URL or CRM webhook
     metaPixelId: '1000423829425342', // Meta Pixel ID
 
     phone: '+917880003127',
@@ -224,20 +224,28 @@
     }
 
     async function sendLead(payload) {
-      if (CONFIG.leadEndpoint) {
-        await fetch(CONFIG.leadEndpoint, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-          body: JSON.stringify(payload)
-        });
-      } else {
-        try {
-          const list = JSON.parse(localStorage.getItem('miracle_test_leads') || '[]');
-          list.push(payload);
-          localStorage.setItem('miracle_test_leads', JSON.stringify(list));
-        } catch (_) {}
+      const endpoint = CONFIG.leadEndpoint || 'https://script.google.com/macros/s/AKfycbwLa3GqHoqBezeVhbgcxA4onWtGOlLfvGsXv4Jq62ozjzx2aO2MlPFBvqcl2G3eHaWEOA/exec';
+      const bodyPayload = {
+        sheet_id: '1jy2KDHKzhQgPWjUD90pHB5GJnV1fP8yVAhnMug7soRU',
+        ...payload
+      };
+
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(bodyPayload)
+      });
+
+      if (!res.ok) {
+        throw new Error('Google Sheets HTTP error: ' + res.status);
       }
+
+      const text = (await res.text()).trim();
+      if (text !== 'ok' && !text.toLowerCase().includes('success')) {
+        throw new Error('Backend verification failed: ' + text);
+      }
+
+      return true;
     }
 
     form.addEventListener('submit', async (e) => {
@@ -258,6 +266,9 @@
       submitBtn.disabled = true;
       submitBtn.classList.add('is-busy');
 
+      const formErr = $('#e-form');
+      if (formErr) formErr.hidden = true;
+
       const nameVal = form.elements.name.value.trim();
       const phoneVal = normalisePhone(form.elements.phone.value);
       const emailVal = form.elements.email ? form.elements.email.value.trim() : '';
@@ -266,7 +277,8 @@
 
       const payload = {
         name: nameVal,
-        phone: phoneVal,
+        phone: phoneVal ? `+91 ${phoneVal}` : '',
+        raw_phone: phoneVal,
         email: emailVal,
         status: statusVal,
         batch: batchVal,
@@ -277,6 +289,8 @@
 
       try {
         await sendLead(payload);
+
+        // Track Meta Pixel Lead event ONLY after verified submission
         track('Lead', {
           content_name: CONFIG.course,
           status: statusVal,
@@ -284,18 +298,29 @@
           value: 0
         });
 
-        // Show success state
-        if (formBody) formBody.hidden = true;
-        if (formDone) {
-          formDone.hidden = false;
-          const waBtn = formDone.querySelector('[data-wa-name]');
-          if (waBtn) waBtn.href = waLink(nameVal);
-          formDone.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'nearest' });
-        }
+        // Store for thank-you personalization
+        try {
+          sessionStorage.setItem('mi_last_lead', JSON.stringify(payload));
+        } catch (_) {}
+
+        // Construct redirect URL to dedicated thank-you page
+        const tyParams = new URLSearchParams();
+        tyParams.set('name', nameVal);
+        tyParams.set('course', CONFIG.course);
+        tyParams.set('phone', phoneVal);
+        ATTR_KEYS.forEach(k => {
+          if (payload[k]) tyParams.set(k, payload[k]);
+        });
+
+        // Redirect after short tick to ensure beacon fires
+        setTimeout(() => {
+          window.location.href = '../../thank-you/?' + tyParams.toString();
+        }, 200);
+
       } catch (err) {
-        const formErr = $('#e-form');
+        console.error('[Lead Form Error]:', err);
         if (formErr) {
-          formErr.textContent = 'Could not send request. Please call or WhatsApp us directly.';
+          formErr.textContent = 'Could not record your booking in Google Sheets. Please call or WhatsApp us directly.';
           formErr.hidden = false;
         }
       } finally {
