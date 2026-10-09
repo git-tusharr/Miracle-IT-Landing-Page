@@ -27,7 +27,7 @@
     }(window, document, 'script',
       'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1000423829425342');
-    // NOTE: We only track PageView here. Lead conversion is fired strictly once upon verified form submission.
+    // Note: Lead event is tracked strictly once upon verified form submission before redirect.
     fbq('track', 'PageView');
   </script>
   <noscript><img height="1" width="1" style="display:none"
@@ -36,10 +36,11 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Thank You for Your Interest | Miracle IT Career Academy Bhopal</title>
+  <title>Thank You for Registering | Miracle IT Career Academy Bhopal</title>
   <meta name="description"
-    content="Thank you for booking your career counselling session and workstation lab demo at Miracle IT Career Academy, M.P. Nagar, Bhopal. Our academic team will contact you soon.">
+    content="Thank you for booking your counselling session at Miracle IT Career Academy, M.P. Nagar, Bhopal. Our team will contact you shortly.">
   <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#FFFFFF">
 
   <!-- Favicons -->
   <link rel="icon" type="image/x-icon" href="../favicon.ico?v=2026.1">
@@ -47,43 +48,49 @@
   <link rel="icon" type="image/png" sizes="192x192" href="../assets/images/favicon-192x192.png?v=2026.1">
   <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png?v=2026.1">
 
-  <!-- Google Fonts: Plus Jakarta Sans -->
+  <!-- Brand Typography: Sora (Headings) & Inter (Body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap"
     rel="stylesheet">
 
   <style>
     /* ==========================================================================
-       Miracle IT Career Academy — Thank-You Page Design System
-       Modern, High-Contrast, Conversion-Focused & Ultra-Responsive (320px to 4K)
+       MIRACLE IT CAREER ACADEMY — BRIGHT & CLEAN THEME
+       Simple, Professional, High-Contrast & Ultra-Responsive (320px to 4K)
        ========================================================================== */
     :root {
-      --bg: #07090E;
-      --bg-surface: #0D111A;
-      --bg-card: rgba(17, 24, 39, 0.85);
-      --bg-subtle: rgba(255, 255, 255, 0.03);
-      --border: rgba(255, 255, 255, 0.1);
-      --border-accent: rgba(255, 122, 0, 0.35);
-      
-      --brand-orange: #FF7A00;
-      --brand-orange-dark: #EA580C;
-      --brand-orange-glow: rgba(255, 122, 0, 0.28);
-      
-      --emerald: #10B981;
-      --emerald-dark: #059669;
-      --emerald-glow: rgba(16, 185, 129, 0.25);
-      
-      --text: #F8FAFC;
-      --text-muted: #94A3B8;
+      --bg-page: #F8FAFC;
+      --bg-card: #FFFFFF;
+      --border: #E2E8F0;
+      --border-subtle: #F1F5F9;
+
+      --text-main: #0F172A;
+      --text-muted: #475569;
       --text-subtle: #64748B;
-      
-      --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+      --brand-orange: #FF7A00;
+      --brand-orange-hover: #EA580C;
+      --brand-orange-soft: #FFF7ED;
+      --brand-orange-border: #FDBA74;
+
+      --emerald: #10B981;
+      --emerald-hover: #059669;
+      --emerald-soft: #ECFDF5;
+      --emerald-border: #A7F3D0;
+
+      --font-heading: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
       --radius-sm: 8px;
-      --radius-md: 14px;
+      --radius-md: 12px;
       --radius-lg: 20px;
       --radius-full: 9999px;
+
+      --shadow-card: 0 16px 36px -10px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-btn-wa: 0 4px 14px rgba(16, 185, 129, 0.28);
+      --shadow-btn-call: 0 4px 14px rgba(255, 122, 0, 0.28);
     }
 
     *, *::before, *::after {
@@ -95,18 +102,20 @@
     html, body {
       width: 100%;
       min-height: 100%;
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: var(--font);
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      font-family: var(--font-sans);
       font-size: 16px;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
-    /* Ambient Background Mesh */
-    .bg-ambient {
+    /* Ambient Subtle Warmth */
+    .bg-accent {
       position: fixed;
       top: 0;
       left: 0;
@@ -115,26 +124,27 @@
       pointer-events: none;
       z-index: 0;
       background:
-        radial-gradient(circle at 50% 15%, rgba(255, 122, 0, 0.12) 0%, transparent 50%),
-        radial-gradient(circle at 80% 85%, rgba(16, 185, 129, 0.08) 0%, transparent 45%),
-        radial-gradient(circle at 10% 70%, rgba(37, 99, 235, 0.08) 0%, transparent 40%);
+        radial-gradient(circle at 50% 10%, rgba(255, 122, 0, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 80% 90%, rgba(16, 185, 129, 0.04) 0%, transparent 45%);
     }
 
-    /* Header */
+    /* ==========================================================================
+       SITE HEADER — CLEAN WHITE NAVBAR
+       ========================================================================== */
     .site-header {
       position: relative;
       z-index: 10;
       width: 100%;
+      background: rgba(255, 255, 255, 0.95);
       border-bottom: 1px solid var(--border);
-      background: rgba(7, 9, 14, 0.85);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
     }
 
     .header-inner {
-      max-width: 1120px;
+      max-width: 1080px;
       margin: 0 auto;
-      padding: 0.9rem 1.25rem;
+      padding: 0.85rem 1.25rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -144,253 +154,210 @@
     .brand-link {
       display: inline-flex;
       align-items: center;
-      gap: 0.75rem;
       text-decoration: none;
-      color: var(--text);
     }
 
     .brand-logo-img {
-      width: 38px;
-      height: 38px;
+      height: 42px;
+      width: auto;
+      max-width: 175px;
       object-fit: contain;
-      border-radius: var(--radius-sm);
-    }
-
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .brand-name {
-      font-size: 1.05rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: #FFFFFF;
-      line-height: 1.2;
-    }
-
-    .brand-name span {
-      color: var(--brand-orange);
-    }
-
-    .brand-tag {
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      font-weight: 500;
-      letter-spacing: 0.02em;
+      display: block;
     }
 
     .header-helpline {
       display: inline-flex;
       align-items: center;
-      gap: 0.45rem;
-      padding: 0.45rem 0.95rem;
-      background: rgba(255, 255, 255, 0.06);
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: #FFFFFF;
       border: 1px solid var(--border);
       border-radius: var(--radius-full);
-      color: var(--text);
-      font-size: 0.84rem;
+      color: var(--text-main);
+      font-size: 0.88rem;
       font-weight: 600;
       text-decoration: none;
       transition: all 0.2s ease;
       white-space: nowrap;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
     }
 
     .header-helpline:hover {
-      background: rgba(255, 122, 0, 0.15);
       border-color: var(--brand-orange);
-      color: #FFFFFF;
+      color: var(--brand-orange);
+      background: var(--brand-orange-soft);
+      transform: translateY(-1px);
     }
 
-    /* Main Container */
+    .header-helpline svg {
+      color: var(--brand-orange);
+    }
+
+    /* ==========================================================================
+       MAIN CARD CONTENT (SIMPLE, FOCUSED & IMPACTFUL)
+       ========================================================================== */
     .main-wrap {
       position: relative;
       z-index: 1;
-      max-width: 960px;
-      margin: 0 auto;
-      padding: clamp(2rem, 5vw, 4rem) 1.25rem clamp(2.5rem, 6vw, 5rem);
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(2rem, 5vw, 3.5rem) 1.25rem;
     }
 
-    /* Hero Card */
     .thankyou-card {
-      position: relative;
-      background: var(--bg-surface);
+      width: 100%;
+      max-width: 620px;
+      background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      padding: clamp(1.75rem, 5vw, 3.5rem) clamp(1.25rem, 4.5vw, 3rem);
-      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.65), 0 0 35px rgba(255, 122, 0, 0.08);
-      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      padding: clamp(1.75rem, 5vw, 3rem) clamp(1.25rem, 4vw, 2.5rem);
       text-align: center;
+      position: relative;
     }
 
-    /* Top Accent Line */
-    .thankyou-card::before {
-      content: '';
+    /* Top Orange Gradient Strip */
+    .card-top-strip {
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       height: 4px;
-      background: linear-gradient(90deg, #10B981, #FF7A00, #EA580C, #10B981);
-      background-size: 200% 100%;
-      animation: gradientFlow 6s linear infinite;
+      background: linear-gradient(90deg, #10B981 0%, #FF7A00 50%, #EA580C 100%);
+      border-top-left-radius: var(--radius-lg);
+      border-top-right-radius: var(--radius-lg);
     }
 
-    @keyframes gradientFlow {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 200% 50%; }
-    }
-
-    /* Animated Success Icon */
+    /* Success Icon Badge */
     .success-icon-wrap {
-      width: clamp(72px, 12vw, 92px);
-      height: clamp(72px, 12vw, 92px);
-      margin: 0 auto 1.5rem;
+      width: 68px;
+      height: 68px;
+      margin: 0.5rem auto 1.25rem;
       border-radius: var(--radius-full);
-      background: radial-gradient(circle, rgba(16, 185, 129, 0.22) 0%, rgba(16, 185, 129, 0.05) 70%);
-      border: 2px solid rgba(16, 185, 129, 0.45);
+      background: var(--emerald-soft);
+      border: 2px solid var(--emerald-border);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #10B981;
-      box-shadow: 0 0 30px rgba(16, 185, 129, 0.35);
-      animation: pulseGreen 3s infinite ease-in-out;
-    }
-
-    @keyframes pulseGreen {
-      0%, 100% { transform: scale(1); box-shadow: 0 0 25px rgba(16, 185, 129, 0.3); }
-      50% { transform: scale(1.05); box-shadow: 0 0 40px rgba(16, 185, 129, 0.55); }
+      color: var(--emerald);
+      box-shadow: 0 0 20px rgba(16, 185, 129, 0.18);
     }
 
     .success-icon-wrap svg {
-      width: 44px;
-      height: 44px;
+      width: 36px;
+      height: 36px;
     }
 
-    /* Pill Badge */
+    /* Status Pill */
     .status-badge {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.35rem 0.95rem;
-      background: rgba(16, 185, 129, 0.12);
-      border: 1px solid rgba(16, 185, 129, 0.3);
+      gap: 0.45rem;
+      padding: 0.35rem 0.9rem;
+      background: var(--emerald-soft);
+      border: 1px solid var(--emerald-border);
       border-radius: var(--radius-full);
       font-size: 0.78rem;
       font-weight: 700;
-      color: #34D399;
-      letter-spacing: 0.05em;
+      color: var(--emerald-hover);
+      letter-spacing: 0.04em;
       text-transform: uppercase;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.15rem;
     }
 
     .badge-dot {
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: #10B981;
-      box-shadow: 0 0 8px #10B981;
+      background: var(--emerald);
+      box-shadow: 0 0 6px var(--emerald);
     }
 
-    /* Heading */
+    /* Headings */
     .thankyou-title {
-      font-size: clamp(1.65rem, 4.5vw, 2.6rem);
+      font-family: var(--font-heading);
+      font-size: clamp(1.65rem, 4.5vw, 2.25rem);
       font-weight: 800;
-      color: #FFFFFF;
-      letter-spacing: -0.03em;
-      line-height: 1.22;
-      margin-bottom: 1.1rem;
+      color: var(--text-main);
+      letter-spacing: -0.025em;
+      line-height: 1.25;
+      margin-bottom: 0.85rem;
     }
 
     .thankyou-desc {
-      font-size: clamp(0.95rem, 2vw, 1.12rem);
-      color: #CBD5E1;
-      max-width: 680px;
-      margin: 0 auto 2.25rem;
-      line-height: 1.65;
+      font-size: clamp(0.95rem, 2vw, 1.05rem);
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 1.75rem;
     }
 
     .thankyou-desc strong {
-      color: #FFFFFF;
+      color: var(--text-main);
       font-weight: 700;
     }
 
     .highlight-course {
-      color: var(--brand-orange);
+      color: var(--brand-orange-hover);
       font-weight: 700;
     }
 
-    /* 3 Next Steps Visual Grid */
-    .steps-section {
-      text-align: left;
-      margin-bottom: 2.5rem;
-      background: rgba(15, 23, 42, 0.5);
+    /* Simple Summary Details Box */
+    .details-box {
+      background: var(--bg-page);
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
-      padding: clamp(1.25rem, 3vw, 1.75rem);
+      padding: 1.1rem 1.25rem;
+      margin-bottom: 2rem;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
     }
 
-    .steps-heading {
-      font-size: 0.85rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--brand-orange);
-      margin-bottom: 1.25rem;
+    .detail-row {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-    }
-
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      justify-content: space-between;
       gap: 1rem;
+      font-size: 0.88rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px dashed #E2E8F0;
     }
 
-    .step-card {
-      background: var(--bg-card);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: var(--radius-sm);
-      padding: 1.15rem 1rem;
-      position: relative;
+    .detail-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
     }
 
-    .step-num {
+    .detail-label {
+      color: var(--text-subtle);
+      font-weight: 500;
+      font-size: 0.82rem;
+    }
+
+    .detail-val {
+      color: var(--text-main);
+      font-weight: 600;
+      text-align: right;
+    }
+
+    .detail-status {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      width: 26px;
-      height: 26px;
-      background: var(--brand-orange);
-      color: #FFFFFF;
-      border-radius: 50%;
-      font-size: 0.75rem;
-      font-weight: 800;
-      margin-bottom: 0.65rem;
-    }
-
-    .step-title {
-      font-size: 0.92rem;
+      gap: 0.35rem;
+      color: var(--emerald-hover);
       font-weight: 700;
-      color: #FFFFFF;
-      margin-bottom: 0.35rem;
-      line-height: 1.3;
+      font-size: 0.82rem;
     }
 
-    .step-text {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    /* Action Buttons Grid */
-    .actions-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.9rem;
-      max-width: 680px;
-      margin: 0 auto 2.25rem;
+    /* Action Buttons (Clean & Prominent) */
+    .actions-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
     }
 
     .btn {
@@ -398,149 +365,98 @@
       align-items: center;
       justify-content: center;
       gap: 0.65rem;
-      padding: 0.9rem 1.4rem;
+      padding: 0.95rem 1.5rem;
       min-height: 52px;
-      font-size: 0.95rem;
+      font-size: 0.98rem;
       font-weight: 700;
       text-decoration: none;
       border-radius: var(--radius-md);
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
       cursor: pointer;
-      text-align: center;
       border: none;
+      width: 100%;
     }
 
     .btn svg {
       flex-shrink: 0;
     }
 
-    /* Primary WhatsApp Button */
+    /* 1. WhatsApp Button */
     .btn-whatsapp {
       background: linear-gradient(135deg, #10B981 0%, #059669 100%);
       color: #FFFFFF !important;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      box-shadow: 0 4px 18px var(--emerald-glow);
+      box-shadow: var(--shadow-btn-wa);
     }
 
     .btn-whatsapp:hover {
       background: linear-gradient(135deg, #34D399 0%, #10B981 100%);
-      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.45);
       transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(16, 185, 129, 0.38);
     }
 
-    /* Call Button */
+    /* 2. Call Button */
     .btn-call {
-      background: linear-gradient(135deg, #FF851A 0%, #EA580C 100%);
+      background: linear-gradient(135deg, #FF7A00 0%, #EA580C 100%);
       color: #FFFFFF !important;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      box-shadow: 0 4px 18px var(--brand-orange-glow);
+      box-shadow: var(--shadow-btn-call);
     }
 
     .btn-call:hover {
-      background: linear-gradient(135deg, #FF9B38 0%, #FF6F00 100%);
-      box-shadow: 0 8px 24px rgba(234, 88, 12, 0.5);
+      background: linear-gradient(135deg, #FF9433 0%, #FF6B00 100%);
       transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(234, 88, 12, 0.38);
     }
 
-    /* Directions Button */
-    .btn-directions {
-      background: rgba(255, 255, 255, 0.08);
-      color: #FFFFFF !important;
-      border: 1.5px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .btn-directions:hover {
-      background: rgba(255, 255, 255, 0.16);
-      border-color: #CBD5E1;
-      transform: translateY(-2px);
-    }
-
-    /* Return to Website Button */
+    /* 3. Return Button */
     .btn-return {
-      background: transparent;
-      color: #E2E8F0 !important;
-      border: 1.5px solid rgba(255, 255, 255, 0.25);
+      background: #FFFFFF;
+      color: var(--text-muted) !important;
+      border: 1.5px solid var(--border);
     }
 
     .btn-return:hover {
-      background: rgba(255, 255, 255, 0.08);
-      color: #FFFFFF !important;
-      border-color: #FFFFFF;
-      transform: translateY(-2px);
+      background: var(--bg-page);
+      border-color: #CBD5E1;
+      color: var(--text-main) !important;
+      transform: translateY(-1px);
     }
 
-    /* Center Info Card */
-    .center-info-box {
-      background: rgba(11, 15, 25, 0.7);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 1.25rem 1.5rem;
+    /* Center Location Note */
+    .campus-note {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
-      justify-content: space-around;
-      gap: 1.25rem;
-      text-align: left;
+      justify-content: center;
+      gap: 0.5rem;
+      font-size: 0.84rem;
+      color: var(--text-subtle);
+      line-height: 1.4;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-subtle);
     }
 
-    .info-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.65rem;
-      flex: 1 1 240px;
-    }
-
-    .info-icon {
+    .campus-note svg {
       color: var(--brand-orange);
       flex-shrink: 0;
-      margin-top: 2px;
     }
 
-    .info-title {
-      font-size: 0.76rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 0.15rem;
-    }
-
-    .info-val {
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: #FFFFFF;
-      line-height: 1.35;
-    }
-
-    /* Rating Proof Pill */
-    .rating-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.35rem 0.85rem;
-      background: rgba(255, 186, 8, 0.12);
-      border: 1px solid rgba(255, 186, 8, 0.3);
-      border-radius: var(--radius-full);
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: #FBBF24;
-    }
-
-    /* Footer */
+    /* ==========================================================================
+       SITE FOOTER — SIMPLE & CLEAN BRIGHT FOOTER
+       ========================================================================== */
     .site-footer {
       position: relative;
       z-index: 10;
+      background: #FFFFFF;
       border-top: 1px solid var(--border);
-      background: rgba(5, 7, 10, 0.9);
-      padding: 1.5rem 1.25rem;
+      padding: 1.25rem 1.25rem;
       text-align: center;
+      font-size: 0.84rem;
       color: var(--text-subtle);
-      font-size: 0.82rem;
     }
 
     .site-footer a {
       color: var(--text-muted);
       text-decoration: none;
+      font-weight: 500;
     }
 
     .site-footer a:hover {
@@ -548,56 +464,28 @@
     }
 
     /* ==========================================================================
-       RESPONSIVE ADAPTATIONS (320px - 768px)
+       RESPONSIVE ADJUSTMENTS (320px to 480px)
        ========================================================================== */
-    @media (max-width: 768px) {
+    @media (max-width: 480px) {
       .header-inner {
         padding: 0.75rem 1rem;
       }
-      .brand-tag {
-        display: none;
-      }
-      .steps-grid {
-        grid-template-columns: 1fr;
-        gap: 0.75rem;
-      }
-      .actions-grid {
-        grid-template-columns: 1fr;
-        gap: 0.75rem;
-      }
-      .btn {
-        width: 100%;
-      }
-      .center-info-box {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-        padding: 1rem 1.15rem;
-      }
-      .info-item {
-        width: 100%;
-        flex: 1 1 100%;
-      }
-    }
-
-    /* Small Mobile Devices (320px - 390px) */
-    @media (max-width: 414px) {
-      .main-wrap {
-        padding: 1.5rem 0.85rem 3rem;
-      }
-      .thankyou-card {
-        padding: 1.6rem 0.95rem;
-        border-radius: var(--radius-md);
+      .brand-logo-img {
+        max-width: 140px;
+        height: 34px;
       }
       .header-helpline span {
         display: none;
       }
       .header-helpline {
-        padding: 0.4rem 0.65rem;
+        padding: 0.45rem 0.65rem;
       }
-      .btn {
-        font-size: 0.88rem;
-        padding: 0.85rem 1rem;
+      .main-wrap {
+        padding: 1.5rem 0.85rem 2.5rem;
+      }
+      .thankyou-card {
+        padding: 1.5rem 1rem;
+        border-radius: var(--radius-md);
       }
       .thankyou-title {
         font-size: 1.5rem;
@@ -605,20 +493,28 @@
       .thankyou-desc {
         font-size: 0.92rem;
       }
+      .btn {
+        font-size: 0.92rem;
+        padding: 0.85rem 1.2rem;
+        min-height: 48px;
+      }
+      .campus-note {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.25rem;
+      }
     }
 
-    /* Tiny Mobile Screens (320px) */
     @media (max-width: 340px) {
-      .brand-name {
-        font-size: 0.95rem;
-      }
       .brand-logo-img {
-        width: 32px;
-        height: 32px;
+        max-width: 120px;
+        height: 30px;
+      }
+      .thankyou-title {
+        font-size: 1.35rem;
       }
       .btn {
-        font-size: 0.82rem;
-        gap: 0.45rem;
+        font-size: 0.86rem;
       }
     }
   </style>
@@ -630,22 +526,21 @@
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <!-- Ambient Glow Canvas -->
-  <div class="bg-ambient" aria-hidden="true"></div>
+  <!-- Ambient Backdrop -->
+  <div class="bg-accent" aria-hidden="true"></div>
 
   <!-- Header -->
   <header class="site-header">
     <div class="header-inner">
       <a href="../" class="brand-link" id="brandHomeLink" aria-label="Miracle IT Career Academy Homepage">
-        <img src="../assets/images/favicon-32x32.png" alt="Miracle IT Logo" class="brand-logo-img" width="38" height="38">
-        <div class="brand-text">
-          <span class="brand-name">Miracle <span>IT</span></span>
-          <span class="brand-tag">Career Academy • Bhopal</span>
-        </div>
+        <picture>
+          <source srcset="../assets/images/miracle-it-logo.webp" type="image/webp">
+          <img src="../assets/images/miracle-it-logo.png" alt="Miracle IT Career Academy" class="brand-logo-img" width="175" height="42">
+        </picture>
       </a>
 
-      <a href="tel:+917880003127" class="header-helpline" aria-label="Call Admissions Helpline">
-        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <a href="tel:+917880003127" class="header-helpline" aria-label="Call Admissions Desk">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
         </svg>
         <span>+91 78800 03127</span>
@@ -653,64 +548,59 @@
     </div>
   </header>
 
-  <!-- Main Hero Card -->
+  <!-- Main Card -->
   <main class="main-wrap" id="mainContent">
     <div class="thankyou-card">
-      
-      <!-- Verified Green Icon -->
+      <div class="card-top-strip" aria-hidden="true"></div>
+
+      <!-- Success Checkmark -->
       <div class="success-icon-wrap" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="20 6 9 17 4 12"></polyline>
         </svg>
       </div>
 
-      <!-- Verified Status Pill -->
+      <!-- Status Badge -->
       <div class="status-badge">
         <span class="badge-dot"></span>
-        <span>Visit &amp; Counselling Request Received</span>
+        <span>Counselling Request Received</span>
       </div>
 
       <!-- Main Headline -->
-      <h1 class="thankyou-title" id="thankyouTitle">Thank You for Your Interest! Our team will contact you soon.</h1>
+      <h1 class="thankyou-title" id="thankyouTitle">Thank You!</h1>
 
-      <!-- Dynamic Personalized Description -->
+      <!-- Personalized Description -->
       <p class="thankyou-desc" id="thankyouDesc">
-        Thank you for reaching out to <strong>Miracle IT Career Academy</strong>. We have successfully logged your inquiry. Our senior academic mentor at our M.P. Nagar, Bhopal center will contact you shortly on WhatsApp or phone to confirm your preferred slot.
+        We have received your career counselling and workstation demo request. Our senior mentor at our M.P. Nagar, Bhopal center will contact you shortly to confirm your preferred timing.
       </p>
 
-      <!-- 3 Next Steps Visual Workflow -->
-      <div class="steps-section">
-        <div class="steps-heading">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <polyline points="12 6 12 12 16 14"></polyline>
-          </svg>
-          <span>What Happens Next (Within 15–30 Minutes):</span>
+      <!-- Details Summary Box -->
+      <div class="details-box">
+        <div class="detail-row">
+          <span class="detail-label">Candidate Name</span>
+          <span class="detail-val" id="valStudentName">Registered Candidate</span>
         </div>
-
-        <div class="steps-grid">
-          <div class="step-card">
-            <span class="step-num">1</span>
-            <div class="step-title">Mentor Review</div>
-            <p class="step-text">Our faculty reviews your academic background and pre-configures your tailored course roadmap.</p>
-          </div>
-
-          <div class="step-card">
-            <span class="step-num">2</span>
-            <div class="step-title">Visit Slot Confirmation</div>
-            <p class="step-text">We verify your convenient time slot for a personalized 1-on-1 session at our M.P. Nagar center.</p>
-          </div>
-
-          <div class="step-card">
-            <span class="step-num">3</span>
-            <div class="step-title">Live Lab Demo</div>
-            <p class="step-text">Tour our high-performance workstation lab, inspect real student GitHub projects, and attend a demo class.</p>
-          </div>
+        <div class="detail-row">
+          <span class="detail-label">Interested Program</span>
+          <span class="detail-val" id="valCourseTrack">Career Guidance &amp; Demo</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Campus Center</span>
+          <span class="detail-val">Zone-II, M.P. Nagar, Bhopal</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Status</span>
+          <span class="detail-val detail-status">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Mentor Review Queued
+          </span>
         </div>
       </div>
 
-      <!-- Conversion Action Buttons -->
-      <div class="actions-grid">
+      <!-- Simple Action Buttons Stack -->
+      <div class="actions-stack">
         <!-- 1. WhatsApp Button -->
         <a href="https://wa.me/917880003127?text=Hello%20Miracle%20IT%2C%20I%20just%20submitted%20my%20counselling%20request%20online." 
            class="btn btn-whatsapp" 
@@ -721,33 +611,20 @@
           <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
             <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 10.23c-.25-.13-1.47-.72-1.7-.81-.23-.09-.39-.14-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.71 4.3 3.8.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.22-.17-.47-.3" />
           </svg>
-          <span>Chat on WhatsApp</span>
+          <span>Chat on WhatsApp (Fast Reply)</span>
         </a>
 
-        <!-- 2. Call Button -->
-        <a href="tel:+917880003127" class="btn btn-call" id="btnCall" aria-label="Call Admissions Helpline">
+        <!-- 2. Direct Call Button -->
+        <a href="tel:+917880003127" class="btn btn-call" id="btnCall" aria-label="Call Helpline">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
           </svg>
           <span>Call: +91 78800 03127</span>
         </a>
 
-        <!-- 3. Directions Button -->
-        <a href="https://maps.google.com/?q=Plot+No.80,+Aakriti+Complex,+Zone-2,+M.P.+Nagar,+Bhopal" 
-           class="btn btn-directions" 
-           target="_blank" 
-           rel="noopener noreferrer"
-           aria-label="Get Directions to Center">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-            <circle cx="12" cy="10" r="3"></circle>
-          </svg>
-          <span>Get Center Directions</span>
-        </a>
-
-        <!-- 4. Return to Main Website -->
-        <a href="../" class="btn btn-return" id="btnReturn" aria-label="Return to Main Website">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <!-- 3. Return to Landing Page -->
+        <a href="../" class="btn btn-return" id="btnReturn" aria-label="Return to Course Page">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <line x1="19" y1="12" x2="5" y2="12"></line>
             <polyline points="12 19 5 12 12 5"></polyline>
           </svg>
@@ -755,47 +632,24 @@
         </a>
       </div>
 
-      <!-- Campus Trust & Location Bar -->
-      <div class="center-info-box">
-        <div class="info-item">
-          <svg class="info-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
-            <circle cx="12" cy="10" r="3"></circle>
-          </svg>
-          <div>
-            <div class="info-title">M.P. Nagar Campus Address</div>
-            <div class="info-val">Plot No.80, 3rd Floor, Aakriti Complex, Zone-2, M.P. Nagar, Bhopal</div>
-          </div>
-        </div>
-
-        <div class="info-item">
-          <svg class="info-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <polyline points="12 6 12 12 16 14"></polyline>
-          </svg>
-          <div>
-            <div class="info-title">Walk-in Timings</div>
-            <div class="info-val">Mon – Sat: 9:00 AM – 8:00 PM (IST)</div>
-          </div>
-        </div>
-
-        <div class="rating-pill">
-          <span>★ 4.9 / 5.0</span>
-          <span>(500+ Reviews)</span>
-        </div>
+      <!-- Campus Location Note -->
+      <div class="campus-note">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+        <span>Plot No.80, Aakriti Complex, Zone-2, M.P. Nagar, Bhopal &bull; Mon–Sat: 9 AM–8 PM</span>
       </div>
 
     </div>
   </main>
 
-  <!-- Footer -->
+  <!-- Clean Simple Footer -->
   <footer class="site-footer">
-    <div class="container">
-      <p>© 2026 Miracle IT Career Academy • Central India's Premier IT Training Institute.</p>
-    </div>
+    <p>&copy; 2026 Miracle IT Career Academy &bull; Central India's Premier IT Career Institute &bull; <a href="tel:+917880003127">+91 78800 03127</a></p>
   </footer>
 
-  <!-- Dynamic Personalization & URL Parameter Handler -->
+  <!-- Dynamic Content & Parameter Handler -->
   <script>
     (() => {
       'use strict';
@@ -809,30 +663,43 @@
           if (cached) leadData = JSON.parse(cached);
         } catch (_) {}
 
-        const name = params.get('name') || leadData?.name || '';
-        const course = params.get('course') || leadData?.course || '';
-        const phone = params.get('phone') || leadData?.phone || '';
+        const studentName = (params.get('name') || leadData?.name || '').trim();
+        const courseTrack = (params.get('course') || leadData?.course || '').trim();
 
+        const titleEl = document.getElementById('thankyouTitle');
         const descEl = document.getElementById('thankyouDesc');
-        if (descEl && (name || course)) {
-          let message = 'Thank you';
-          if (name) message += `, <strong>${escapeHtml(name)}</strong>`;
-          message += '! We have received your counselling &amp; lab demo request';
-          if (course) message += ` for the <span class="highlight-course">${escapeHtml(course)}</span>`;
-          message += '. Our senior academic mentor in M.P. Nagar, Bhopal will contact you shortly on WhatsApp or phone to confirm your preferred timing.';
-          descEl.innerHTML = message;
+        const valNameEl = document.getElementById('valStudentName');
+        const valCourseEl = document.getElementById('valCourseTrack');
+
+        if (studentName) {
+          if (titleEl) titleEl.textContent = `Thank You, ${studentName}!`;
+          if (valNameEl) valNameEl.textContent = studentName;
         }
 
-        // Customize WhatsApp button link
+        if (courseTrack) {
+          if (valCourseEl) valCourseEl.textContent = courseTrack;
+        }
+
+        if (descEl && (studentName || courseTrack)) {
+          let msg = 'Thank you';
+          if (studentName) msg += `, <strong>${escapeHtml(studentName)}</strong>`;
+          msg += '! We have received your career counselling request';
+          if (courseTrack) msg += ` for <span class="highlight-course">${escapeHtml(courseTrack)}</span>`;
+          msg += '. Our senior mentor in M.P. Nagar, Bhopal will contact you shortly to confirm your preferred timing.';
+          descEl.innerHTML = msg;
+        }
+
+        // WhatsApp link customization
         const waBtn = document.getElementById('btnWhatsApp');
         if (waBtn) {
           let text = 'Hello Miracle IT, I just submitted my counselling request online.';
-          if (name) text += ` My name is ${name}.`;
-          if (course) text += ` I am interested in ${course}.`;
+          if (studentName) text += ` My name is ${studentName}.`;
+          if (courseTrack) text += ` I am interested in ${courseTrack}.`;
+          text += ' Please confirm my counselling slot.';
           waBtn.href = `https://wa.me/917880003127?text=${encodeURIComponent(text)}`;
         }
 
-        // Return button retains root or previous landing URL
+        // Return button destination
         const returnBtn = document.getElementById('btnReturn');
         const landingUrl = sessionStorage.getItem('mi_landing');
         if (returnBtn && landingUrl && !landingUrl.includes('/thank-you/')) {
@@ -841,7 +708,7 @@
         }
 
       } catch (err) {
-        console.warn('[ThankYou] Initialization warning:', err);
+        console.warn('[ThankYou] View initialization notice:', err);
       }
 
       function escapeHtml(str) {
