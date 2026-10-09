@@ -437,8 +437,12 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = `<span>Securing Your Counselling Slot...</span>`;
+        if (typeof window.LeadService?.setButtonLoading === 'function') {
+          window.LeadService.setButtonLoading(submitBtn, 'Securing Your Counselling Slot...');
+        } else {
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = `<span>Securing Your Counselling Slot...</span>`;
+        }
       }
 
       try {
@@ -454,7 +458,7 @@ document.addEventListener('DOMContentLoaded', () => {
           successState.hidden = false;
         }
 
-        // Redirect to dedicated thank-you page
+        // Redirect to dedicated thank-you page (loader stays active until page transition)
         if (typeof window.LeadService?.redirectToThankYou === 'function') {
           window.LeadService.redirectToThankYou(payload);
         } else if (res?.thankYouUrl) {
@@ -466,8 +470,12 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('[Counselling Form Error]:', err);
         alert(err.message || 'There was an error saving your request. Please contact us directly via WhatsApp or phone.');
         if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = `<span>Confirm Free Counselling Visit</span>`;
+          if (typeof window.LeadService?.resetButton === 'function') {
+            window.LeadService.resetButton(submitBtn);
+          } else {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = `<span>Confirm Free Counselling Visit</span>`;
+          }
         }
       }
     });

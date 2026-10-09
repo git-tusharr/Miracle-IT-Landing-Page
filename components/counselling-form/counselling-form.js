@@ -152,10 +152,14 @@ function initCounsellingForm(container = document) {
       attribution
     };
 
-    // Enter Loading State
+    // Enter Loading State with clean spinner
     isSubmitting = true;
-    submitBtn.classList.add('is-loading');
-    submitBtn.disabled = true;
+    if (typeof window.LeadService?.setButtonLoading === 'function') {
+      window.LeadService.setButtonLoading(submitBtn, 'Securing Your Counselling Slot...');
+    } else {
+      submitBtn.classList.add('is-loading');
+      submitBtn.disabled = true;
+    }
 
     try {
       const response = await window.submitCounsellingForm(leadPayload);
@@ -179,7 +183,7 @@ function initCounsellingForm(container = document) {
           successBox.hidden = false;
         }
 
-        // Redirect to dedicated thank-you page
+        // Redirect to dedicated thank-you page (loader stays active until page transition)
         if (typeof window.LeadService?.redirectToThankYou === 'function') {
           window.LeadService.redirectToThankYou(leadPayload);
         } else if (response.thankYouUrl) {
@@ -193,10 +197,13 @@ function initCounsellingForm(container = document) {
     } catch (err) {
       console.error('[Form Submit Error]:', err);
       alert('We could not record your request. Please call or WhatsApp our M.P. Nagar center directly.');
-    } finally {
       isSubmitting = false;
-      submitBtn.classList.remove('is-loading');
-      submitBtn.disabled = false;
+      if (typeof window.LeadService?.resetButton === 'function') {
+        window.LeadService.resetButton(submitBtn);
+      } else {
+        submitBtn.classList.remove('is-loading');
+        submitBtn.disabled = false;
+      }
     }
   });
 }

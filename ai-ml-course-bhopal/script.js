@@ -418,8 +418,12 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = `<span>Securing Your Counselling Slot...</span>`;
+        if (typeof window.LeadService?.setButtonLoading === 'function') {
+          window.LeadService.setButtonLoading(submitBtn, 'Securing Your Counselling Slot...');
+        } else {
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = `<span>Securing Your Counselling Slot...</span>`;
+        }
       }
 
       try {
@@ -435,7 +439,7 @@ document.addEventListener('DOMContentLoaded', () => {
           successState.hidden = false;
         }
 
-        // Redirect to dedicated thank-you page
+        // Redirect to dedicated thank-you page (loader stays active until page transition)
         if (typeof window.LeadService?.redirectToThankYou === 'function') {
           window.LeadService.redirectToThankYou(payload);
         } else if (res?.thankYouUrl) {
@@ -446,10 +450,13 @@ document.addEventListener('DOMContentLoaded', () => {
       } catch (err) {
         console.error('[Counselling Form Error]:', err);
         alert(err.message || 'There was an error saving your request. Please contact us directly via WhatsApp or phone.');
-      } finally {
         if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = `<span>Confirm Free Lab & Counselling Visit</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`;
+          if (typeof window.LeadService?.resetButton === 'function') {
+            window.LeadService.resetButton(submitBtn);
+          } else {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = `<span>Confirm Free Lab &amp; Counselling Visit</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`;
+          }
         }
       }
     });

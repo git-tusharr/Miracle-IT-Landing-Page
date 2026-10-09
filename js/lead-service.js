@@ -183,6 +183,44 @@
     },
 
     /**
+     * Display a clean, animated spinner loader on any form submit button
+     * @param {HTMLButtonElement} btn 
+     * @param {string} loadingText 
+     */
+    setButtonLoading(btn, loadingText = 'Submitting...') {
+      if (!btn) return;
+      if (!btn.dataset.origHtml) {
+        btn.dataset.origHtml = btn.innerHTML;
+      }
+      btn.disabled = true;
+      btn.classList.add('is-loading');
+      btn.style.pointerEvents = 'none';
+      btn.innerHTML = `
+        <span class="mit-btn-loader-wrap" style="display:inline-flex;align-items:center;justify-content:center;gap:0.55rem;width:100%;">
+          <svg class="mit-btn-spinner" viewBox="0 0 24 24" width="20" height="20" fill="none" style="animation:mitSpin 0.75s linear infinite;flex-shrink:0;" aria-hidden="true">
+            <circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="2.5" opacity="0.25"></circle>
+            <path d="M12 2.5a9.5 9.5 0 0 1 9.5 9.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"></path>
+          </svg>
+          <span class="mit-btn-loader-text">${loadingText}</span>
+        </span>
+      `;
+    },
+
+    /**
+     * Restore original button state if an error or validation failure occurs
+     * @param {HTMLButtonElement} btn 
+     */
+    resetButton(btn) {
+      if (!btn) return;
+      btn.disabled = false;
+      btn.classList.remove('is-loading');
+      btn.style.pointerEvents = '';
+      if (btn.dataset.origHtml) {
+        btn.innerHTML = btn.dataset.origHtml;
+      }
+    },
+
+    /**
      * Helper to navigate to the Thank-You page
      */
     redirectToThankYou(payload, delay = 200) {
@@ -192,6 +230,20 @@
       }, delay);
     }
   };
+
+  // Inject global spinner keyframes into document head
+  if (typeof document !== 'undefined') {
+    const styleId = 'mit-button-loader-styles';
+    if (!document.getElementById(styleId)) {
+      const style = document.createElement('style');
+      style.id = styleId;
+      style.textContent = `
+        @keyframes mitSpin { 100% { transform: rotate(360deg); } }
+        .mit-btn-spinner { display: inline-block; vertical-align: middle; }
+      `;
+      document.head.appendChild(style);
+    }
+  }
 
   // Global exposure
   window.LeadService = LeadService;

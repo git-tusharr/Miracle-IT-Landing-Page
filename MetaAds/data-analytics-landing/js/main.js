@@ -263,8 +263,20 @@
         return;
       }
 
+      if (!submitBtn.dataset.origHtml) {
+        submitBtn.dataset.origHtml = submitBtn.innerHTML;
+      }
       submitBtn.disabled = true;
       submitBtn.classList.add('is-busy');
+      submitBtn.innerHTML = `
+        <span class="btn-loader-wrap" style="display:inline-flex;align-items:center;justify-content:center;gap:0.55rem;width:100%;">
+          <svg class="btn-spinner" viewBox="0 0 24 24" width="20" height="20" fill="none" style="animation:mitSpin 0.75s linear infinite;flex-shrink:0;" aria-hidden="true">
+            <circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="2.5" opacity="0.25"></circle>
+            <path d="M12 2.5a9.5 9.5 0 0 1 9.5 9.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"></path>
+          </svg>
+          <span>Securing Your Free Seat...</span>
+        </span>
+      `;
 
       const formErr = $('#e-form');
       if (formErr) formErr.hidden = true;
@@ -312,7 +324,7 @@
           if (payload[k]) tyParams.set(k, payload[k]);
         });
 
-        // Redirect after short tick to ensure beacon fires
+        // Redirect after short tick (loader remains active until page changes)
         setTimeout(() => {
           window.location.href = '../../thank-you/?' + tyParams.toString();
         }, 200);
@@ -323,9 +335,11 @@
           formErr.textContent = 'Could not record your booking in Google Sheets. Please call or WhatsApp us directly.';
           formErr.hidden = false;
         }
-      } finally {
         submitBtn.disabled = false;
         submitBtn.classList.remove('is-busy');
+        if (submitBtn.dataset.origHtml) {
+          submitBtn.innerHTML = submitBtn.dataset.origHtml;
+        }
       }
     });
   }

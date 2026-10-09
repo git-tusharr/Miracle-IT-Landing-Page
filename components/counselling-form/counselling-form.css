@@ -459,14 +459,14 @@
 
 .btn-loader {
   display: none;
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
 }
 
 .spinner {
-  animation: rotate 1s linear infinite;
-  width: 22px;
-  height: 22px;
+  animation: rotate 0.75s linear infinite;
+  width: 20px;
+  height: 20px;
   stroke: #FFFFFF;
 }
 
@@ -474,12 +474,19 @@
   100% { transform: rotate(360deg); }
 }
 
+button.is-loading {
+  pointer-events: none;
+  opacity: 0.92;
+}
+
 button.is-loading .btn-text {
   display: none;
 }
 
 button.is-loading .btn-loader {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .form-privacy-note {
