@@ -117,10 +117,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // 4. Structured 5-Stage Mastery Flow (Alternating Timeline Scroll Controller)
   const timelineContainer = document.getElementById('curriculumTimeline');
   const stageZones = Array.from(document.querySelectorAll('.timeline-stage-zone'));
-  const nodeMarkers = Array.from(document.querySelectorAll('.timeline-node-marker'));
+  const nodeMarkers = Array.from(document.querySelectorAll('.timeline-node-checkpoint'));
   const progressBar = document.getElementById('timelineProgressBar');
   const timelineSpine = document.querySelector('.timeline-spine');
-  const firstStageNode = document.querySelector('#stage-zone-1 .timeline-node-marker') || (nodeMarkers.length > 0 ? nodeMarkers[0] : null);
+  const firstStageNode = document.querySelector('#stage-zone-1 .timeline-node-checkpoint') || (nodeMarkers.length > 0 ? nodeMarkers[0] : null);
   const endNode = document.querySelector('.timeline-end-node');
 
   let activeIndex = 0;
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
     activeIndex = index;
 
     stageZones.forEach((zone, idx) => {
-      const marker = zone.querySelector('.timeline-node-marker');
+      const marker = zone.querySelector('.timeline-node-checkpoint');
       if (idx === index) {
         zone.classList.add('is-active');
         if (marker) {
@@ -258,8 +258,22 @@ document.addEventListener('DOMContentLoaded', () => {
     updateTimelineOnScroll();
   });
 
+  if (timelineContainer) {
+    const curriculumImgs = timelineContainer.querySelectorAll('img');
+    curriculumImgs.forEach(img => {
+      if (!img.complete) {
+        img.addEventListener('load', () => {
+          calibrateSpineTrack();
+          updateTimelineOnScroll();
+        }, { once: true });
+      }
+    });
+  }
+
   calibrateSpineTrack();
   updateTimelineOnScroll();
+  setTimeout(calibrateSpineTrack, 250);
+  setTimeout(calibrateSpineTrack, 750);
 
   stageZones.forEach((zone, idx) => {
     zone.addEventListener('mouseenter', () => {

@@ -115,19 +115,18 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoSwap();
   }
 
-  // 4. Structured 5-Stage Mastery Flow (Alternating Timeline Scroll & Hover Controller)
+  // 4. Structured 5-Stage Mastery Flow (Alternating Timeline Scroll Controller)
   const timelineContainer = document.getElementById('curriculumTimeline');
   const stageZones = Array.from(document.querySelectorAll('.timeline-stage-zone'));
-  const nodeMarkers = Array.from(document.querySelectorAll('.timeline-node-marker'));
+  const nodeMarkers = Array.from(document.querySelectorAll('.timeline-node-checkpoint'));
   const progressBar = document.getElementById('timelineProgressBar');
   const timelineSpine = document.querySelector('.timeline-spine');
-  const firstStageNode = document.querySelector('#stage-zone-1 .timeline-node-marker') || (nodeMarkers.length > 0 ? nodeMarkers[0] : null);
+  const firstStageNode = document.querySelector('#stage-zone-1 .timeline-node-checkpoint') || (nodeMarkers.length > 0 ? nodeMarkers[0] : null);
   const endNode = document.querySelector('.timeline-end-node');
 
   let activeIndex = 0;
   let isProgrammaticScroll = false;
 
-  // Calibrate spine track so it anchors exactly from Node 01 center to End Destination Node center
   function calibrateSpineTrack() {
     if (!timelineContainer || !timelineSpine || !firstStageNode || !endNode) return;
 
@@ -151,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
     activeIndex = index;
 
     stageZones.forEach((zone, idx) => {
-      const marker = zone.querySelector('.timeline-node-marker');
+      const marker = zone.querySelector('.timeline-node-checkpoint');
       if (idx === index) {
         zone.classList.add('is-active');
         if (marker) {
@@ -159,7 +158,6 @@ document.addEventListener('DOMContentLoaded', () => {
           marker.classList.remove('is-completed');
         }
 
-        // Trigger subtle animation if GSAP is available
         if (triggerAnimation && typeof gsap !== 'undefined') {
           const isOdd = (idx + 1) % 2 !== 0;
           const textCard = zone.querySelector('.stage-text-card');
@@ -194,7 +192,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Calculate viewport alignment so the light follows user scroll and stays visible across all stages
   function updateTimelineOnScroll() {
     if (!timelineContainer || stageZones.length === 0 || !timelineSpine) return;
 
@@ -202,19 +199,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const viewportHeight = window.innerHeight;
     const viewportCenter = viewportHeight * 0.48;
 
-    // Check if timeline is near viewport
     if (timelineRect.bottom < -100 || timelineRect.top > viewportHeight + 100) {
       return;
     }
 
-    // Ensure spine height is calibrated
     if (!timelineSpine.style.height || timelineSpine.offsetHeight === 0) {
       calibrateSpineTrack();
     }
 
     const spineRect = timelineSpine.getBoundingClientRect();
 
-    // 1. Calculate Progress Bar Fill Height along the spine
     if (spineRect.height > 0) {
       const currentScrollPastSpine = viewportCenter - spineRect.top;
       const progressRatio = Math.min(1, Math.max(0, currentScrollPastSpine / spineRect.height));
@@ -223,7 +217,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // 2. Determine which stage is closest to viewport center (skip switching during click smooth-scroll)
     if (isProgrammaticScroll) return;
 
     let closestIndex = 0;
@@ -245,7 +238,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Bind scroll with requestAnimationFrame ticking for butter-smooth 60-120fps response
   let scrollTicking = false;
   function onTimelineScroll() {
     if (!scrollTicking) {
@@ -267,18 +259,29 @@ document.addEventListener('DOMContentLoaded', () => {
     updateTimelineOnScroll();
   });
 
-  // Initial call on load
+  if (timelineContainer) {
+    const curriculumImgs = timelineContainer.querySelectorAll('img');
+    curriculumImgs.forEach(img => {
+      if (!img.complete) {
+        img.addEventListener('load', () => {
+          calibrateSpineTrack();
+          updateTimelineOnScroll();
+        }, { once: true });
+      }
+    });
+  }
+
   calibrateSpineTrack();
   updateTimelineOnScroll();
+  setTimeout(calibrateSpineTrack, 250);
+  setTimeout(calibrateSpineTrack, 750);
 
-  // Hover highlighting: Hovering over any stage zone immediately highlights it
   stageZones.forEach((zone, idx) => {
     zone.addEventListener('mouseenter', () => {
       setActiveStage(idx, true);
     });
   });
 
-  // Secondary interaction: Click node to smoothly scroll to that stage zone
   nodeMarkers.forEach(marker => {
     marker.addEventListener('click', (e) => {
       e.preventDefault();

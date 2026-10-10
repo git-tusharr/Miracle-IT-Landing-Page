@@ -74,10 +74,10 @@
   <link rel="stylesheet" href="../components/counselling-form/counselling-form.css?v=5.0">
   <link rel="stylesheet" href="../components/footer/footer.css?v=6.0">
   <link rel="stylesheet" href="../components/mobile-sticky-cta/mobile-sticky-cta.css?v=5.0">
-  <link rel="stylesheet" href="./style.css?v=5.0">
+  <link rel="stylesheet" href="./style.css?v=7.0">
   <link rel="stylesheet" href="./components/hero/hero.css?v=2.0">
   <link rel="stylesheet" href="./components/audience/audience.css?v=2.0">
-  <link rel="stylesheet" href="./components/curriculum/curriculum.css?v=2.0">
+  <link rel="stylesheet" href="./components/curriculum/curriculum.css?v=3.0">
   <link rel="stylesheet" href="./components/faq/faq.css?v=2.0">
 
   <!-- Structured Data / Schema.org -->
@@ -667,7 +667,7 @@
     <div class="curriculum-timeline" id="curriculumTimeline" aria-label="Curriculum Progression Timeline">
       
       <!-- Central Vertical Line Spine -->
-      <div class="timeline-spine" aria-hidden="true">
+      <div class="timeline-spine" id="timelineSpine" aria-hidden="true">
         <div class="timeline-track-inactive"></div>
         <div class="timeline-track-progress" id="timelineProgressBar">
           <div class="timeline-head-beacon"></div>
@@ -677,25 +677,21 @@
       <!-- ==================== STAGE 01: FRONTEND ==================== -->
       <div class="timeline-stage-zone is-active" id="stage-zone-1" data-stage="1">
         
+        <!-- Central Line Checkpoint Marker -->
         <div class="timeline-node-wrapper">
-          <button type="button" class="timeline-node-marker is-active" data-target-stage="1" aria-label="Jump to Stage 1: Frontend Engineering">
-            <span class="node-number">01</span>
-          </button>
+          <div class="timeline-node-checkpoint is-active" data-target-stage="1" aria-label="Jump to Stage 1: Frontend Engineering">
+            <span class="checkpoint-halo"></span>
+            <span class="checkpoint-core"></span>
+          </div>
         </div>
 
         <div class="stage-row stage-row-odd">
-          <!-- LEFT: Text Column -->
+          <!-- LEFT: Text Column with Big Number -->
           <div class="stage-col stage-text-col">
             <div class="stage-text-card">
-              <div class="panel-meta-row">
-                <div class="panel-stage-badge">
-                  <span class="stage-bullet"></span>
-                  <span class="stage-badge-text">01 — Frontend</span>
-                </div>
-                <div class="panel-duration-pill">Weeks 1–4</div>
-              </div>
-
+              <div class="stage-big-number">01</div>
               <h3 class="panel-stage-title">Frontend Engineering</h3>
+              <div class="panel-milestone-kicker">• WEEKS 1–4 — FRONTEND ARCHITECTURE MILESTONE</div>
               <p class="panel-stage-description">
                 Build responsive, high-performance web applications using component-driven React.js, modern JavaScript, and accessible CSS architecture.
               </p>
@@ -756,10 +752,12 @@
       <!-- ==================== STAGE 02: BACKEND ==================== -->
       <div class="timeline-stage-zone" id="stage-zone-2" data-stage="2">
         
+        <!-- Central Line Checkpoint Marker -->
         <div class="timeline-node-wrapper">
-          <button type="button" class="timeline-node-marker" data-target-stage="2" aria-label="Jump to Stage 2: Backend Architecture">
-            <span class="node-number">02</span>
-          </button>
+          <div class="timeline-node-checkpoint" data-target-stage="2" aria-label="Jump to Stage 2: Backend Architecture">
+            <span class="checkpoint-halo"></span>
+            <span class="checkpoint-core"></span>
+          </div>
         </div>
 
         <div class="stage-row stage-row-even">
@@ -781,18 +779,12 @@
             </div>
           </div>
 
-          <!-- RIGHT: Text Column -->
+          <!-- RIGHT: Text Column with Big Number -->
           <div class="stage-col stage-text-col">
             <div class="stage-text-card">
-              <div class="panel-meta-row">
-                <div class="panel-stage-badge">
-                  <span class="stage-bullet"></span>
-                  <span class="stage-badge-text">02 — Backend</span>
-                </div>
-                <div class="panel-duration-pill">Weeks 5–8</div>
-              </div>
-
+              <div class="stage-big-number">02</div>
               <h3 class="panel-stage-title">Backend Architecture &amp; APIs</h3>
+              <div class="panel-milestone-kicker">• WEEKS 5–8 — BACKEND &amp; REST APIS MILESTONE</div>
               <p class="panel-stage-description">
                 Engineer secure, scalable RESTful microservices, business logic routing, and token authentication with Node.js and Express.
               </p>
@@ -835,25 +827,21 @@
       <!-- ==================== STAGE 03: DATABASES ==================== -->
       <div class="timeline-stage-zone" id="stage-zone-3" data-stage="3">
         
+        <!-- Central Line Checkpoint Marker -->
         <div class="timeline-node-wrapper">
-          <button type="button" class="timeline-node-marker" data-target-stage="3" aria-label="Jump to Stage 3: Database Engineering">
-            <span class="node-number">03</span>
-          </button>
+          <div class="timeline-node-checkpoint" data-target-stage="3" aria-label="Jump to Stage 3: Database Engineering">
+            <span class="checkpoint-halo"></span>
+            <span class="checkpoint-core"></span>
+          </div>
         </div>
 
         <div class="stage-row stage-row-odd">
-          <!-- LEFT: Text Column -->
+          <!-- LEFT: Text Column with Big Number -->
           <div class="stage-col stage-text-col">
             <div class="stage-text-card">
-              <div class="panel-meta-row">
-                <div class="panel-stage-badge">
-                  <span class="stage-bullet"></span>
-                  <span class="stage-badge-text">03 — Databases</span>
-                </div>
-                <div class="panel-duration-pill">Weeks 9–11</div>
-              </div>
-
+              <div class="stage-big-number">03</div>
               <h3 class="panel-stage-title">Database Engineering &amp; Modeling</h3>
+              <div class="panel-milestone-kicker">• WEEKS 9–11 — RELATIONAL &amp; NOSQL ARCHITECTURE MILESTONE</div>
               <p class="panel-stage-description">
                 Design relational schemas in PostgreSQL and flexible document stores in MongoDB with index optimization and data integrity.
               </p>
@@ -914,10 +902,12 @@
       <!-- ==================== STAGE 04: DEVOPS & CLOUD ==================== -->
       <div class="timeline-stage-zone" id="stage-zone-4" data-stage="4">
         
+        <!-- Central Line Checkpoint Marker -->
         <div class="timeline-node-wrapper">
-          <button type="button" class="timeline-node-marker" data-target-stage="4" aria-label="Jump to Stage 4: DevOps & Cloud">
-            <span class="node-number">04</span>
-          </button>
+          <div class="timeline-node-checkpoint" data-target-stage="4" aria-label="Jump to Stage 4: DevOps & Cloud">
+            <span class="checkpoint-halo"></span>
+            <span class="checkpoint-core"></span>
+          </div>
         </div>
 
         <div class="stage-row stage-row-even">
@@ -939,18 +929,12 @@
             </div>
           </div>
 
-          <!-- RIGHT: Text Column -->
+          <!-- RIGHT: Text Column with Big Number -->
           <div class="stage-col stage-text-col">
             <div class="stage-text-card">
-              <div class="panel-meta-row">
-                <div class="panel-stage-badge">
-                  <span class="stage-bullet"></span>
-                  <span class="stage-badge-text">04 — DevOps &amp; Cloud</span>
-                </div>
-                <div class="panel-duration-pill">Weeks 12–14</div>
-              </div>
-
+              <div class="stage-big-number">04</div>
               <h3 class="panel-stage-title">DevOps, Cloud &amp; CI/CD Pipelines</h3>
+              <div class="panel-milestone-kicker">• WEEKS 12–14 — CLOUD &amp; DOCKER DEPLOYMENT MILESTONE</div>
               <p class="panel-stage-description">
                 Containerize full-stack applications with Docker and build automated deployment pipelines pushing code to cloud servers.
               </p>
@@ -993,25 +977,21 @@
       <!-- ==================== STAGE 05: CAPSTONES ==================== -->
       <div class="timeline-stage-zone" id="stage-zone-5" data-stage="5">
         
+        <!-- Central Line Checkpoint Marker -->
         <div class="timeline-node-wrapper">
-          <button type="button" class="timeline-node-marker" data-target-stage="5" aria-label="Jump to Stage 5: Production Capstones">
-            <span class="node-number">05</span>
-          </button>
+          <div class="timeline-node-checkpoint" data-target-stage="5" aria-label="Jump to Stage 5: Production Capstones">
+            <span class="checkpoint-halo"></span>
+            <span class="checkpoint-core"></span>
+          </div>
         </div>
 
         <div class="stage-row stage-row-odd">
-          <!-- LEFT: Text Column -->
+          <!-- LEFT: Text Column with Big Number -->
           <div class="stage-col stage-text-col">
             <div class="stage-text-card">
-              <div class="panel-meta-row">
-                <div class="panel-stage-badge">
-                  <span class="stage-bullet"></span>
-                  <span class="stage-badge-text">05 — Capstones</span>
-                </div>
-                <div class="panel-duration-pill">Weeks 15–16</div>
-              </div>
-
+              <div class="stage-big-number">05</div>
               <h3 class="panel-stage-title">Production Capstone Projects</h3>
+              <div class="panel-milestone-kicker">• WEEKS 15–16 — PRODUCTION CAPSTONE DEPLOYMENT</div>
               <p class="panel-stage-description">
                 Deliver complete, industry-standard full-stack web applications live to production with live monitoring and GitHub portfolio presentation.
               </p>
@@ -1072,7 +1052,9 @@
       <!-- Central End of Journey Marker -->
       <div class="timeline-end-node-wrapper" aria-hidden="true">
         <div class="timeline-end-node">
-          <span class="end-node-icon">✦</span>
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
         </div>
         <span class="end-node-label">5 STAGES COMPLETED — READY FOR INDUSTRY ROLES</span>
       </div>
@@ -2680,7 +2662,7 @@
   <script src="../components/footer/footer.js"></script>
   <script src="../js/vendor/gsap.min.js"></script>
   <script src="../js/vendor/ScrollTrigger.min.js"></script>
-  <script src="./script.js?v=4.0"></script>
+  <script src="./script.js?v=5.0"></script>
 
 </body>
 

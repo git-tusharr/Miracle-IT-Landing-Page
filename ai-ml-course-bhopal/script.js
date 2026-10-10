@@ -132,42 +132,68 @@ document.addEventListener('DOMContentLoaded', () => {
     startTimer();
   }
 
-  // 4. Curriculum Timeline Stage Active State & Progress Bar
+  // 4. Structured 5-Stage Mastery Flow (Alternating Timeline Scroll Controller)
   const timelineContainer = document.getElementById('curriculumTimeline');
+  const stageZones = Array.from(document.querySelectorAll('.timeline-stage-zone'));
+  const nodeMarkers = Array.from(document.querySelectorAll('.timeline-node-checkpoint'));
   const progressBar = document.getElementById('timelineProgressBar');
-  const timelineSpine = document.getElementById('timelineSpine');
-  const stageZones = Array.from(document.querySelectorAll('.stage-zone'));
-  const stageMarkers = Array.from(document.querySelectorAll('.stage-marker'));
+  const timelineSpine = document.querySelector('.timeline-spine');
+  const firstStageNode = document.querySelector('#stage-zone-1 .timeline-node-checkpoint') || (nodeMarkers.length > 0 ? nodeMarkers[0] : null);
+  const endNode = document.querySelector('.timeline-end-node');
 
   let activeIndex = 0;
   let isProgrammaticScroll = false;
 
   function calibrateSpineTrack() {
-    if (!timelineContainer || !timelineSpine || stageMarkers.length < 2) return;
-    const firstMarker = stageMarkers[0];
-    const lastMarker = stageMarkers[stageMarkers.length - 1];
+    if (!timelineContainer || !timelineSpine || !firstStageNode || !endNode) return;
 
-    const firstCenter = firstMarker.offsetTop + firstMarker.offsetHeight / 2;
-    const lastCenter = lastMarker.offsetTop + lastMarker.offsetHeight / 2;
-    const totalDistance = lastCenter - firstCenter;
+    const containerRect = timelineContainer.getBoundingClientRect();
+    const firstNodeRect = firstStageNode.getBoundingClientRect();
+    const endNodeRect = endNode.getBoundingClientRect();
 
-    timelineSpine.style.top = `${firstCenter}px`;
-    timelineSpine.style.height = `${totalDistance}px`;
+    const startY = (firstNodeRect.top + firstNodeRect.height / 2) - containerRect.top;
+    const endY = (endNodeRect.top + endNodeRect.height / 2) - containerRect.top;
+    const totalSpineHeight = Math.max(0, endY - startY);
+
+    timelineSpine.style.top = `${startY}px`;
+    timelineSpine.style.height = `${totalSpineHeight}px`;
+    timelineSpine.style.bottom = 'auto';
   }
 
-  window.addEventListener('resize', calibrateSpineTrack);
-  setTimeout(calibrateSpineTrack, 250);
-
-  function setActiveStage(index, smooth = false) {
-    activeIndex = Math.max(0, Math.min(index, stageZones.length - 1));
+  function setActiveStage(index, triggerAnimation = true) {
+    if (index < 0 || index >= stageZones.length) return;
+    if (activeIndex === index && stageZones[index].classList.contains('is-active')) return;
+    
+    activeIndex = index;
 
     stageZones.forEach((zone, idx) => {
-      const marker = zone.querySelector('.stage-marker');
-      if (idx === activeIndex) {
+      const marker = zone.querySelector('.timeline-node-checkpoint');
+      if (idx === index) {
         zone.classList.add('is-active');
         if (marker) {
           marker.classList.add('is-active');
           marker.classList.remove('is-completed');
+        }
+
+        if (triggerAnimation && typeof gsap !== 'undefined') {
+          const isOdd = (idx + 1) % 2 !== 0;
+          const textCard = zone.querySelector('.stage-text-card');
+          const visualCard = zone.querySelector('.stage-visual-card');
+
+          if (textCard && visualCard) {
+            const textFromX = isOdd ? -20 : 20;
+            const visualFromX = isOdd ? 20 : -20;
+
+            gsap.fromTo(textCard,
+              { x: textFromX, opacity: 0.7 },
+              { x: 0, opacity: 1, duration: 0.4, ease: 'power2.out', overwrite: 'auto' }
+            );
+
+            gsap.fromTo(visualCard,
+              { x: visualFromX, scale: 0.98 },
+              { x: 0, scale: 1, duration: 0.45, ease: 'back.out(1.2)', overwrite: 'auto' }
+            );
+          }
         }
       } else {
         zone.classList.remove('is-active');
@@ -241,18 +267,54 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   window.addEventListener('scroll', onTimelineScroll, { passive: true });
-  setTimeout(updateTimelineOnScroll, 350);
+  window.addEventListener('resize', () => {
+    calibrateSpineTrack();
+    updateTimelineOnScroll();
+  }, { passive: true });
+  window.addEventListener('load', () => {
+    calibrateSpineTrack();
+    updateTimelineOnScroll();
+  });
 
-  // Click on stage marker jumps to zone
-  stageMarkers.forEach((marker, idx) => {
-    marker.style.cursor = 'pointer';
-    marker.addEventListener('click', () => {
-      const targetZone = stageZones[idx];
+  if (timelineContainer) {
+    const curriculumImgs = timelineContainer.querySelectorAll('img');
+    curriculumImgs.forEach(img => {
+      if (!img.complete) {
+        img.addEventListener('load', () => {
+          calibrateSpineTrack();
+          updateTimelineOnScroll();
+        }, { once: true });
+      }
+    });
+  }
+
+  calibrateSpineTrack();
+  updateTimelineOnScroll();
+  setTimeout(calibrateSpineTrack, 250);
+  setTimeout(calibrateSpineTrack, 750);
+
+  stageZones.forEach((zone, idx) => {
+    zone.addEventListener('mouseenter', () => {
+      setActiveStage(idx, true);
+    });
+  });
+
+  nodeMarkers.forEach(marker => {
+    marker.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetStage = marker.getAttribute('data-target-stage');
+      const targetIdx = parseInt(targetStage, 10) - 1;
+      const targetZone = document.getElementById(`stage-zone-${targetStage}`);
+
       if (targetZone) {
         isProgrammaticScroll = true;
-        setActiveStage(idx);
+        setActiveStage(targetIdx, true);
         targetZone.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        setTimeout(() => { isProgrammaticScroll = false; }, 800);
+
+        setTimeout(() => {
+          isProgrammaticScroll = false;
+          updateTimelineOnScroll();
+        }, 800);
       }
     });
   });
