@@ -6,7 +6,7 @@
   'use strict';
 
   const CONFIG = {
-    leadEndpoint: 'https://script.google.com/macros/s/AKfycbwLa3GqHoqBezeVhbgcxA4onWtGOlLfvGsXv4Jq62ozjzx2aO2MlPFBvqcl2G3eHaWEOA/exec',          // Google Apps Script Web App URL or CRM webhook
+    leadEndpoint: 'https://script.google.com/macros/s/AKfycbyMkZtOwDdkUDARaL16YADv4DocQMN3WG-K0-2qD20_q467nGbqIjfwht9414gjDJhh/exec',          // Google Apps Script Web App URL or CRM webhook
     metaPixelId: '1000423829425342', // Meta Pixel ID
 
     phone: '+917880003127',
@@ -224,7 +224,7 @@
     }
 
     async function sendLead(payload) {
-      const endpoint = CONFIG.leadEndpoint || 'https://script.google.com/macros/s/AKfycbwLa3GqHoqBezeVhbgcxA4onWtGOlLfvGsXv4Jq62ozjzx2aO2MlPFBvqcl2G3eHaWEOA/exec';
+      const endpoint = CONFIG.leadEndpoint || 'https://script.google.com/macros/s/AKfycbyMkZtOwDdkUDARaL16YADv4DocQMN3WG-K0-2qD20_q467nGbqIjfwht9414gjDJhh/exec';
       const bodyPayload = {
         sheet_id: '1jy2KDHKzhQgPWjUD90pHB5GJnV1fP8yVAhnMug7soRU',
         ...payload
