@@ -226,7 +226,7 @@
     async function sendLead(payload) {
       const endpoint = CONFIG.leadEndpoint || 'https://script.google.com/macros/s/AKfycbyMkZtOwDdkUDARaL16YADv4DocQMN3WG-K0-2qD20_q467nGbqIjfwht9414gjDJhh/exec';
       const bodyPayload = {
-        sheet_id: '1jy2KDHKzhQgPWjUD90pHB5GJnV1fP8yVAhnMug7soRU',
+        sheet_id: '1S2NJv_zpO1Uo7iBf3kCotJigzz5zck6I3QVb5nwBpkA',
         ...payload
       };
 
