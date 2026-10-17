@@ -141,14 +141,20 @@ function initCounsellingForm(container = document) {
     // Prepare Lead Payload
     const attribution = typeof window.getStoredAttribution === 'function' ? window.getStoredAttribution() : {};
     const leadPayload = {
+      name: nameInput.value.trim(),
       fullName: nameInput.value.trim(),
       phone: `+91${cleanPhone}`,
+      phoneNumber: cleanPhone,
+      course: courseSelect.value,
       courseInterest: courseSelect.value,
+      status: eduSelect.value,
       currentEducation: eduSelect.value,
       preferredVisitDay: daySelect.value,
       preferredVisitTime: timeSelect ? timeSelect.value : 'Flexible',
       submissionTime: new Date().toISOString(),
+      submitted_at: new Date().toISOString(),
       city: 'Bhopal',
+      ...attribution,
       attribution
     };
 

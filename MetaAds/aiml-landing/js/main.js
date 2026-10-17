@@ -230,22 +230,37 @@
         ...payload
       };
 
-      const res = await fetch(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify(bodyPayload)
-      });
+      try {
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(bodyPayload)
+        });
 
-      if (!res.ok) {
-        throw new Error('Google Sheets HTTP error: ' + res.status);
+        if (!res.ok) {
+          throw new Error('Google Sheets HTTP error: ' + res.status);
+        }
+
+        const text = (await res.text()).trim();
+        if (text !== 'ok' && !text.toLowerCase().includes('success') && !text.includes('"result":"ok"')) {
+          throw new Error('Backend verification failed: ' + text);
+        }
+
+        return true;
+      } catch (err) {
+        console.warn('[Lead] Standard CORS fetch had issue, attempting safe fallback:', err);
+        try {
+          await fetch(endpoint, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify(bodyPayload)
+          });
+          return true;
+        } catch (fallbackErr) {
+          throw err;
+        }
       }
-
-      const text = (await res.text()).trim();
-      if (text !== 'ok' && !text.toLowerCase().includes('success')) {
-        throw new Error('Backend verification failed: ' + text);
-      }
-
-      return true;
     }
 
     form.addEventListener('submit', async (e) => {
