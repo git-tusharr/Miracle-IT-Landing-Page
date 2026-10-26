@@ -15,7 +15,7 @@
  *      - Who has access: Anyone  <-- (CRITICAL: Must be "Anyone", NOT "Only myself")
  * 6. Click "Deploy", authorize permissions when prompted.
  * 7. Ensure the Web App URL matches your project config:
- *    https://script.google.com/macros/s/AKfycbyMkZtOwDdkUDARaL16YADv4DocQMN3WG-K0-2qD20_q467nGbqIjfwht9414gjDJhh/exec
+ *    https://script.google.com/macros/s/AKfycbyMkZtOwDdkUDARaL16YADv4DocQMN3WG-K0-2qD20_q467nGbqIjfwht9414gjDJhhh/exec
  */
 
 const SPREADSHEET_ID = '1S2NJv_zpO1Uo7iBf3kCotJigzz5zck6I3QVb5nwBpkA';

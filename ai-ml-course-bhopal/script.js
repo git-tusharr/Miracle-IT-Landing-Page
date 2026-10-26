@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.Analytics.initCTATracking(document);
   }
   if (typeof window.trackEvent === 'function') {
-    window.trackEvent('view_course', { 
+    window.trackEvent('view_course', {
       course: 'AI & Machine Learning',
       city: 'Bhopal',
       campus: 'M.P. Nagar'
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function setSpotlight(index) {
       activeCardIndex = (index + 5) % 5;
-      
+
       floatingCards.forEach((card, i) => {
         const pos = (i - activeCardIndex + 5) % 5;
         card.classList.remove('pos-0', 'pos-1', 'pos-2', 'pos-3', 'pos-4');
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function setActiveStage(index, triggerAnimation = true) {
     if (index < 0 || index >= stageZones.length) return;
     if (activeIndex === index && stageZones[index].classList.contains('is-active')) return;
-    
+
     activeIndex = index;
 
     stageZones.forEach((zone, idx) => {
@@ -327,7 +327,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (videoTrigger && videoModal && videoClose) {
     const videoUrl = videoTrigger.getAttribute('data-video-src') || 'https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=1';
-    
+
     videoTrigger.addEventListener('click', (e) => {
       e.preventDefault();
       if (videoFrame) {
@@ -366,7 +366,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (trigger && answer) {
       trigger.addEventListener('click', () => {
         const isOpen = item.classList.contains('active');
-        
+
         // Close all other items
         faqItems.forEach(otherItem => {
           if (otherItem !== item) {

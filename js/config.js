@@ -85,7 +85,7 @@ const SITE_CONFIG = {
   ],
 
   // API & Google Sheets Integration
-  googleScriptUrl: "https://script.google.com/macros/s/AKfycbyMkZtOwDdkUDARaL16YADv4DocQMN3WG-K0-2qD20_q467nGbqIjfwht9414gjDJhh/exec",
+  googleScriptUrl: "https://script.google.com/macros/s/AKfycbyMkZtOwDdkUDARaL16YADv4DocQMN3WG-K0-2qD20_q467nGbqIjfwht9414gjDJhhh/exec",
   spreadsheetId: "1S2NJv_zpO1Uo7iBf3kCotJigzz5zck6I3QVb5nwBpkA",
   sheetName: "Leads",
   apiBaseUrl: "/api/counselling", // Hook for future backend POST /api/counselling

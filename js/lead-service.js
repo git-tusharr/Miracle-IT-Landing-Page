@@ -2,7 +2,7 @@
  * MIRACLE IT CAREER ACADEMY — UNIFIED LEAD SERVICE & GOOGLE SHEETS INTEGRATION
  * 
  * Target Google Sheet ID: 1S2NJv_zpO1Uo7iBf3kCotJigzz5zck6I3QVb5nwBpkA
- * Google Apps Script Web App: https://script.google.com/macros/s/AKfycbyMkZtOwDdkUDARaL16YADv4DocQMN3WG-K0-2qD20_q467nGbqIjfwht9414gjDJhh/exec
+ * Google Apps Script Web App: https://script.google.com/macros/s/AKfycbyMkZtOwDdkUDARaL16YADv4DocQMN3WG-K0-2qD20_q467nGbqIjfwht9414gjDJhhh/exec
  * 
  * Verifies that submissions are recorded by Google Sheets backend.
  * Avoids duplicate conversion events and safely redirects users to /thank-you/.
@@ -11,7 +11,7 @@
 (() => {
   'use strict';
 
-  const DEFAULT_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyMkZtOwDdkUDARaL16YADv4DocQMN3WG-K0-2qD20_q467nGbqIjfwht9414gjDJhh/exec';
+  const DEFAULT_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyMkZtOwDdkUDARaL16YADv4DocQMN3WG-K0-2qD20_q467nGbqIjfwht9414gjDJhhh/exec';
   const DEFAULT_SHEET_ID = '1S2NJv_zpO1Uo7iBf3kCotJigzz5zck6I3QVb5nwBpkA';
 
   const ATTR_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'fbclid'];
